@@ -1,22 +1,18 @@
-version: '3.9'
-
 services:
   db:
-    image: postgres:16-alpine
-    container_name: wakfu-db
+    image: postgres:15-alpine
+    container_name: wakfu_db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-wakfu}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-wakfu123}
-      POSTGRES_DB: ${POSTGRES_DB:-wakfu_builder}
+      POSTGRES_USER: wakfu
+      POSTGRES_PASSWORD: wakfu123
+      POSTGRES_DB: wakfu_builder
     ports:
       - "5433:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
-    networks:
-      - wakfu-net
+      - postgres_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U wakfu"]
-      interval: 5s
+      interval: 10s
       timeout: 5s
       retries: 5
 
@@ -24,63 +20,53 @@ services:
     build:
       context: ./api
       dockerfile: Dockerfile
-    container_name: wakfu-api
+    container_name: wakfu_api
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-wakfu}:${POSTGRES_PASSWORD:-wakfu123}@db:5432/${POSTGRES_DB:-wakfu_builder}
-      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:3000}
+      DATABASE_URL: postgresql://wakfu:wakfu123@db:5432/wakfu_builder
+      CORS_ORIGINS: http://localhost:3000,http://localhost:5173
+      GAMEDATA_PATH: /wakfu_data/gamedata_1.90.1.43
     ports:
       - "8000:8000"
     volumes:
       - ./api:/app
-      - ./wakfu_data:/wakfu_data:ro
-    networks:
-      - wakfu-net
+      - ./wakfu_data:/wakfu_data
     depends_on:
       db:
         condition: service_healthy
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 
-  worker:
-    build:
-      context: ./worker
-      dockerfile: Dockerfile
-    container_name: wakfu-worker
-    environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-wakfu}:${POSTGRES_PASSWORD:-wakfu123}@db:5432/${POSTGRES_DB:-wakfu_builder}
-      GAMEDATA_VERSION: ${GAMEDATA_VERSION:-1.90.1.43}
-    volumes:
-      - ./worker:/app
-      - ./wakfu_data:/wakfu_data:ro
-    networks:
-      - wakfu-net
-    depends_on:
-      db:
-        condition: service_healthy
-    command: python fetch_and_load.py
-
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    container_name: wakfu-frontend
-    environment:
-      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:8000}
+    container_name: wakfu_frontend
     ports:
-      - "3000:3000"
+      - "5173:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules
-      - /app/.next
-    networks:
-      - wakfu-net
-    depends_on:
-      - api
-    command: npm run dev
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    command: npm run dev -- --host
 
-networks:
-  wakfu-net:
-    driver: bridge
+  worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    container_name: wakfu_worker
+    environment:
+      DATABASE_URL: postgresql://wakfu:wakfu123@db:5432/wakfu_builder
+      GAMEDATA_PATH: /wakfu_data/gamedata_1.90.1.43
+    volumes:
+      - ./wakfu_data:/wakfu_data:ro
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: on-failure
 
 volumes:
-  pgdata:
+  postgres_data:
 
+networks:
+  default:
+    name: wakfu_network

@@ -1,259 +1,157 @@
-# 🚀 Quickstart Guide - Wakfu Builder Crafter
+# 🚀 Inicio Rápido - Wakfu Builder Assistant
 
-Get up and running in 5 minutes!
+## Para Usuarios de Windows
 
-## Prerequisites
+### Opción 1: Scripts Automáticos
 
-✅ Docker and Docker Compose installed  
-✅ At least 4GB free RAM  
-✅ Ports 3000, 8000, and 5432 available  
+1. **Instala los requisitos**:
+   - Node.js 18+ desde [nodejs.org](https://nodejs.org/)
+   - Python 3.10+ desde [python.org](https://www.python.org/)
+   - PostgreSQL 13+ desde [postgresql.org](https://www.postgresql.org/)
 
-## Step-by-Step Setup
+2. **Inicia el Backend**:
+   - Doble clic en `start-backend.bat`
+   - Espera a que el servidor inicie en http://localhost:8000
 
-### 1️⃣ Copy Environment File (5 seconds)
+3. **Inicia el Frontend** (en otra ventana):
+   - Doble clic en `start-frontend.bat`
+   - Espera a que el servidor inicie en http://localhost:5173
 
-```bash
-cp .env.example .env
-```
+4. **¡Listo!** Abre tu navegador en http://localhost:5173
 
-**Optional**: Edit `.env` if you want to change default passwords or ports.
-
-### 2️⃣ Build Docker Images (2-3 minutes)
-
-```bash
-make build
-```
-
-Or without Make:
-```bash
-docker compose build
-```
-
-This builds:
-- ✅ FastAPI backend
-- ✅ Next.js frontend  
-- ✅ Python worker
-
-### 3️⃣ Start All Services (30 seconds)
+### Opción 2: Con Docker
 
 ```bash
-make up
+# Solo necesitas Docker Desktop instalado
+docker-compose up -d
+
+# Espera unos segundos y accede a:
+# http://localhost:5173
 ```
 
-Or without Make:
-```bash
-docker compose up -d
-```
+## Para Usuarios de Linux/Mac
 
-**Services starting:**
-- 🗄️ PostgreSQL database
-- 🔧 FastAPI backend
-- 🎨 Next.js frontend
-- ⚙️ Data worker
-
-### 4️⃣ Load Game Data (2-5 minutes)
-
-Wait ~30 seconds for services to be ready, then:
+### Opción 1: Scripts Automáticos
 
 ```bash
-docker compose restart worker
+# Terminal 1 - Backend
+chmod +x start-backend.sh
+./start-backend.sh
+
+# Terminal 2 - Frontend
+chmod +x start-frontend.sh
+./start-frontend.sh
 ```
 
-**Monitor progress:**
-```bash
-docker compose logs -f worker
-```
-
-You'll see:
-```
-worker  | Loading JSON files...
-worker  | Loaded 50000+ items from JSON
-worker  | Processing items...
-worker  | Loaded 5000-10000 equipment items
-worker  | Processing recipes...
-worker  | Processing harvest resources...
-worker  | ✅ Game data loading complete!
-```
-
-Press `Ctrl+C` to exit logs.
-
-### 5️⃣ Open the Application 🎉
-
-**Frontend**: http://localhost:3000  
-**API Docs**: http://localhost:8000/docs  
-
-## First Build
-
-1. Go to http://localhost:3000
-2. Adjust the "Maximum Level" slider (default: 230)
-3. Set stat priorities (AP and MP for offensive builds)
-4. Click **"Generate Builds"**
-5. Wait 2-10 seconds
-6. See three builds: 🌱 Easy, ⚡ Medium, 🔥 Hard
-
-## Verify Everything Works
-
-### Check API Health
-```bash
-curl http://localhost:8000/health
-```
-
-Expected: `{"status":"healthy"}`
-
-### Check Data Status
-```bash
-curl http://localhost:8000/gamedata/status
-```
-
-Expected: `{"status":"completed","loaded_items":...}`
-
-### Check Items Loaded
-```bash
-curl http://localhost:8000/items?limit=5
-```
-
-Expected: JSON array of 5 items
-
-## Common Issues
-
-### ❌ Port already in use
-
-**Error**: "Bind for 0.0.0.0:3000 failed: port is already allocated"
-
-**Solution**:
-```bash
-# Stop services using the ports
-docker compose down
-
-# Or change ports in docker-compose.yml
-```
-
-### ❌ Worker fails immediately
-
-**Error**: "Database connection failed"
-
-**Solution**: Wait longer for PostgreSQL to initialize (30-60 seconds), then:
-```bash
-docker compose restart worker
-```
-
-### ❌ Frontend shows "Failed to generate builds"
-
-**Causes**:
-1. Data not loaded yet → Check `docker compose logs worker`
-2. API not responding → Check `curl http://localhost:8000/health`
-3. No items match criteria → Lower max level or adjust stat weights
-
-**Solution**:
-```bash
-# Check all services are running
-docker compose ps
-
-# View all logs
-make logs
-```
-
-### ❌ Empty builds returned
-
-**Solution**: Increase level max to 230 and make sure data loaded successfully:
-```bash
-curl http://localhost:8000/gamedata/status
-```
-
-## Useful Commands
+### Opción 2: Con Docker
 
 ```bash
-# View all logs
-make logs
-
-# View specific service
-docker compose logs -f api
-docker compose logs -f frontend
-docker compose logs -f worker
-
-# Restart a service
-docker compose restart api
-
-# Stop all services
-make down
-
-# Clean everything (including database)
-make clean
-
-# Run tests
-make test
+docker-compose up -d
 ```
 
-## What to Try
+## ⚡ Uso Rápido
 
-### 1. Generate Different Builds
-- **Tank build**: High HP, Resistance weights
-- **DPS build**: High AP, Critical Hit, Damage Inflicted
-- **Support build**: High MP, Initiative, Wisdom
+1. **Abre la aplicación** en http://localhost:5173
 
-### 2. Edit Drop Difficulties
-1. Click "Drop Difficulty Editor" tab
-2. Search for an item (e.g., "ring")
-3. Click "Edit"
-4. Enter difficulty (0-100)
-5. Click "Save"
-6. Generate new builds to see the effect
+2. **Configura tu personaje**:
+   ```
+   Nivel Máximo: 230 (ajusta según tu nivel)
+   ```
 
-### 3. Explore the API
-Visit http://localhost:8000/docs for interactive API documentation.
+3. **Ajusta prioridades de stats**:
+   ```
+   HP:                1.0 ⭐
+   AP:                2.5 ⭐⭐⭐
+   MP:                2.0 ⭐⭐
+   Critical_Hit:      1.5 ⭐⭐
+   Distance_Mastery:  2.0 ⭐⭐
+   ```
 
-Try these endpoints:
-- `GET /items` - Browse all items
-- `GET /items/{id}` - Get specific item
-- `POST /build/solve` - Generate builds
-- `GET /build/history` - View past builds
+4. **Genera builds** con el botón "Generar Builds"
 
-## Next Steps
+5. **Revisa resultados** en las 3 pestañas:
+   - **Fácil**: Items fáciles de conseguir
+   - **Medio**: Balance entre stats y dificultad
+   - **Difícil**: Mejores stats, más difícil de conseguir
 
-📖 Read **SETUP.md** for detailed configuration options  
-🏗️ Read **ARCHITECTURE.md** to understand how it works  
-📋 Read **PROJECT_OVERVIEW.md** for the complete feature list  
+## 📊 Interpretación de Resultados
 
-## Performance Tips
+### Dificultad de Items
+- 🟢 **0-3**: Muy fácil (drops comunes, tienda)
+- 🟡 **3-6**: Medio (craft, dungeons normales)
+- 🔴 **6-10**: Difícil (epics, relics, ultimate bosses)
 
-**Faster builds:**
-- Lower the max level (e.g., 200 instead of 230)
-- Reduce stat variety (focus on 2-3 main stats)
+### Stats Totales
+Cada build muestra:
+- Total de stats principales (HP, AP, MP, WP)
+- Total de maestrías elementales
+- Total de stats de combate
+- Dificultad total del build
 
-**Better results:**
-- Update drop difficulties for items you know
-- Higher weights (3-5) on your most important stats
-- Use Medium build as a good balance
+### Items Recomendados
+Cada card muestra:
+- Nombre e imagen del item
+- Nivel y slot del equipo
+- Todos los stats que otorga
+- Fuente de obtención (drop, craft, quest)
+- Dificultad individual
 
-## Stopping the Application
+## 🎯 Tips para Mejores Builds
 
+1. **Prioriza lo que más usas**:
+   - ¿Daño a distancia? → Distance_Mastery alto
+   - ¿Tank? → HP y resistencias altos
+   - ¿Soporte? → Healing_Mastery alto
+
+2. **AP y MP son valiosos**:
+   - Son stats difíciles de conseguir
+   - Usa prioridad 2.5+ si los necesitas
+
+3. **Balanceo de Dificultad**:
+   - **Build Fácil**: Para empezar rápido
+   - **Build Medio**: Para progresar
+   - **Build Difícil**: End-game objetivo
+
+4. **Items Épicos/Reliquias**:
+   - El sistema limita a 1 de cada
+   - Son automáticamente los más potentes
+
+## 🔧 Solución de Problemas
+
+### El backend no inicia
 ```bash
-# Stop services (keeps data)
-make down
+# Verifica que PostgreSQL esté corriendo
+# Windows: Servicios → PostgreSQL
+# Linux: sudo systemctl status postgresql
 
-# Stop and remove everything (clean slate)
-make clean
+# Verifica que la base de datos existe
+psql -U postgres
+CREATE DATABASE wakfu_builder;
 ```
 
-## Support
-
-Having issues? Check:
-1. ✅ All services running: `docker compose ps`
-2. ✅ Logs for errors: `make logs`
-3. ✅ Database has data: `curl http://localhost:8000/gamedata/status`
-4. ✅ API responding: `curl http://localhost:8000/health`
-
----
-
-**Ready to build?** 🎮
-
+### El frontend muestra error de conexión
 ```bash
-make build && make up
-# Wait 30 seconds
-docker compose restart worker
-# Wait 2-5 minutes
-# Open http://localhost:3000
+# Verifica que el backend esté corriendo en puerto 8000
+# Abre http://localhost:8000/health en tu navegador
+# Debería mostrar: {"status": "healthy"}
 ```
 
-Enjoy! ✨
+### No se muestran items en los resultados
+```bash
+# Asegúrate de que los datos del juego estén cargados
+# Revisa que existe: wakfu_data/gamedata_1.90.1.43/
+```
 
+## 📚 Más Información
+
+- Ver [README.md](README.md) para documentación completa
+- Ver [frontend/README.md](frontend/README.md) para docs del frontend
+- Ver [api/README.md](api/README.md) para docs del backend (si existe)
+
+## 🆘 ¿Necesitas Ayuda?
+
+1. Revisa la [documentación de la API](http://localhost:8000/docs)
+2. Abre un issue en GitHub
+3. Contacta al equipo de desarrollo
+
+¡Disfruta creando builds optimizados! 🎮✨

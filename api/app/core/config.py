@@ -4,7 +4,7 @@ from pydantic import field_validator
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql://wakfu:wakfu123@db:5432/wakfu_builder"
-    CORS_ORIGINS: Union[str, List[str]] = "http://localhost:3000"
+    CORS_ORIGINS: Union[str, List[str]] = "http://localhost:3000,http://localhost:5173"
     GAMEDATA_PATH: str = "/wakfu_data/gamedata_1.90.1.43"
     
     @field_validator('CORS_ORIGINS', mode='before')
