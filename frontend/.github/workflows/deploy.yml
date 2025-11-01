@@ -1,0 +1,37 @@
+# Created by MichaelCurrin
+# https://gist.github.com/MichaelCurrin/a698731096f78240f653faf9a9127cba
+
+name: Build and Deploy 
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+
+      - name: Yarn Install
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Copy Index to 404
+        run: cp dist/index.html dist/404.html
+
+      - name: Deploy to GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
