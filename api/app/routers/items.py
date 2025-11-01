@@ -10,6 +10,9 @@ router = APIRouter()
 class ItemResponse(BaseModel):
     item_id: int
     name: str
+    name_es: Optional[str] = None
+    name_en: Optional[str] = None
+    name_fr: Optional[str] = None
     level: int
     rarity: int
     slot: Optional[str]

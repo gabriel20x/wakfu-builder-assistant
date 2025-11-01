@@ -6,7 +6,10 @@ class Item(Base):
     __tablename__ = "items"
     
     item_id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
+    name = Column(String, nullable=False)  # Default name (English)
+    name_es = Column(String)  # Spanish name
+    name_en = Column(String)  # English name
+    name_fr = Column(String)  # French name
     level = Column(Integer, nullable=False, index=True)
     rarity = Column(Integer, default=0)
     slot = Column(String, index=True)  # HEAD, CHEST, LEGS, etc.

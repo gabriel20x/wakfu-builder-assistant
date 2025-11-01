@@ -169,13 +169,18 @@ def _solve_single_build(
             selected_items.append({
                 "item_id": item.item_id,
                 "name": item.name,
+                "name_es": item.name_es,
+                "name_en": item.name_en,
+                "name_fr": item.name_fr,
                 "level": item.level,
                 "slot": item.slot,
                 "rarity": item.rarity,
                 "is_epic": item.is_epic,
                 "is_relic": item.is_relic,
                 "difficulty": item.difficulty,
-                "stats": item.stats
+                "stats": item.stats,
+                "source_type": item.source_type,
+                "has_gem_slot": item.has_gem_slot
             })
             
             # Accumulate stats

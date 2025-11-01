@@ -36,7 +36,10 @@ class Item(Base):
     __tablename__ = "items"
     
     item_id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
+    name = Column(String, nullable=False)  # Default name (English)
+    name_es = Column(String)  # Spanish name
+    name_en = Column(String)  # English name  
+    name_fr = Column(String)  # French name
     level = Column(Integer, nullable=False, index=True)
     rarity = Column(Integer, default=0)
     slot = Column(String, index=True)
@@ -126,26 +129,125 @@ def extract_equipment_stats(item_data: dict) -> dict:
         action_id = effect_def.get("actionId")
         params = effect_def.get("params", [])
         
-        # Map action IDs to stat names
+        # Complete map of Wakfu action IDs to stat names
+        # Based on Wakfu game data analysis
         stat_map = {
+            # Core stats
             20: "HP",
             31: "AP",
             41: "MP",
+            1020: "WP",
+            
+            # Critical
             80: "Critical_Hit",
+            96: "Critical_Mastery",
+            71: "Critical_Resistance",
+            162: "Critical_Resistance",  # Alternative
+            
+            # Damage and healing
             120: "Damage_Inflicted",
-            160: "Resistance",
-            171: "Mastery",
+            122: "Healing_Mastery",
+            191: "Wisdom",
+            1058: "Heals_Performed",
+            
+            # Elemental Masteries
+            130: "Fire_Mastery",
+            131: "Water_Mastery",
+            132: "Earth_Mastery",
+            133: "Air_Mastery",
+            171: "Elemental_Mastery",
+            1068: "Random_Elemental_Mastery",  # Special: params[2] = number of elements
+            
+            # Elemental Resistances  
+            82: "Fire_Resistance",
+            83: "Water_Resistance",
+            84: "Earth_Resistance",
+            85: "Air_Resistance",
+            150: "Fire_Resistance",  # Alternative
+            151: "Water_Resistance",  # Alternative
+            152: "Earth_Resistance",  # Alternative
+            153: "Air_Resistance",  # Alternative
+            160: "Elemental_Resistance",
+            1052: "Elemental_Resistance",
+            1053: "Elemental_Resistance",
+            1069: "Random_Elemental_Resistance",  # Special: params[2] = number of elements
+            
+            # Position Masteries
+            166: "Rear_Mastery",
+            173: "Melee_Mastery",
+            174: "Distance_Mastery",
+            175: "Berserk_Mastery",
+            
+            # Resistances
+            167: "Rear_Resistance",
+            
+            # Movement and positioning
             180: "Lock",
             181: "Dodge",
             184: "Initiative",
-            191: "Wisdom",
+            875: "Range",
+            832: "Control",
+            
+            # Penalties (negative stats) - estos suelen tener valores que deben ser negativos
+            174: "Lock_Penalty",  # -Lock
+            176: "Dodge_Penalty",  # -Dodge
+            
+            # Other
             192: "Prospecting",
+            988: "Block",
+            149: "Kit_Skill",  # Alternative
+            
+            # Armor
+            1055: "Armor_Given",
+            1056: "Armor_Received",
+            26: "Armor_Received",  # Alternative
+            
+            # Force of Will
+            177: "Force_Of_Will",
+            
+            # Percentages
+            39: "Heals_Received",
+            
+            # Special effects (usually ignored for stats)
+            304: None,  # State effects - skip
+            400: None,  # Special mechanics - skip
+            168: "Indirect_Damage",
+            
+            # Additional
+            123: "Dodge",  # Alternative
+            124: "Lock",  # Alternative
+            125: "Initiative",  # Alternative
         }
         
-        stat_name = stat_map.get(action_id)
-        if stat_name and len(params) > 0:
-            stat_value = params[0]
-            stats[stat_name] = stats.get(stat_name, 0) + stat_value
+        # Handle special action IDs with multiple parameters
+        if action_id == 1068 and len(params) >= 3:
+            # Random Elemental Mastery - show mastery value and number of elements
+            mastery_value = params[0]
+            num_elements = int(params[2]) if len(params) > 2 else 0
+            stat_key = f"Elemental_Mastery_{num_elements}_elements"
+            stats[stat_key] = stats.get(stat_key, 0) + mastery_value
+        elif action_id == 1069 and len(params) >= 3:
+            # Random Elemental Resistance - show resistance value and number of elements
+            resist_value = params[0]
+            num_elements = int(params[2]) if len(params) > 2 else 0
+            stat_key = f"Elemental_Resistance_{num_elements}_elements"
+            stats[stat_key] = stats.get(stat_key, 0) + resist_value
+        else:
+            # Normal stats
+            stat_name = stat_map.get(action_id)
+            # Skip if stat_name is None (special effects we don't track as stats)
+            if stat_name is not None and stat_name and len(params) > 0:
+                stat_value = params[0]
+                
+                # Handle penalties (make negative and change to base stat name)
+                if stat_name == "Lock_Penalty":
+                    stat_name = "Lock"
+                    stat_value = -stat_value
+                elif stat_name == "Dodge_Penalty":
+                    stat_name = "Dodge"
+                    stat_value = -stat_value
+                
+                stats[stat_name] = stats.get(stat_name, 0) + stat_value
     
     return stats
 
@@ -305,9 +407,12 @@ def main():
                 is_relic = rarity == 5
                 has_gem_slot = False
                 
-                # Get item name
+                # Get item names in multiple languages
                 title = item_data.get("title", {})
-                name = title.get("en", title.get("fr", f"Item {item_id}"))
+                name_en = title.get("en", f"Item {item_id}")
+                name_es = title.get("es", name_en)  # Fallback to English if no Spanish
+                name_fr = title.get("fr", name_en)  # Fallback to English if no French
+                name = name_en  # Default to English
                 
                 # Extract stats
                 stats = extract_equipment_stats(item_data)
@@ -326,6 +431,9 @@ def main():
                 item = Item(
                     item_id=item_id,
                     name=name,
+                    name_en=name_en,
+                    name_es=name_es,
+                    name_fr=name_fr,
                     level=level,
                     rarity=rarity,
                     slot=slot,
