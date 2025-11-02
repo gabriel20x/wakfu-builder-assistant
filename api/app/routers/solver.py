@@ -18,6 +18,8 @@ class SolveRequest(BaseModel):
     }
     include_pet: bool = True  # Incluir mascotas (pueden ser difíciles de conseguir)
     include_accessory: bool = True  # Incluir emblemas (pueden ser difíciles de conseguir)
+    damage_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para daños elementales
+    resistance_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para resistencias
 
 class BuildResponse(BaseModel):
     items: list
@@ -42,7 +44,9 @@ async def solve(request: SolveRequest, db: Session = Depends(get_db)):
             level_max=request.level_max,
             stat_weights=request.stat_weights,
             include_pet=request.include_pet,
-            include_accessory=request.include_accessory
+            include_accessory=request.include_accessory,
+            damage_preferences=request.damage_preferences,
+            resistance_preferences=request.resistance_preferences
         )
         
         # Save to database

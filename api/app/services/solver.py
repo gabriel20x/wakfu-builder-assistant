@@ -20,6 +20,7 @@ from app.core.config import settings
 from pulp import LpProblem, LpMaximize, LpVariable, lpSum, LpStatus, value
 import logging
 from typing import Dict, List
+from app.services.element_resolver import resolve_build_stats
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +37,9 @@ def solve_build(
     level_max: int,
     stat_weights: Dict[str, float],
     include_pet: bool = True,
-    include_accessory: bool = True
+    include_accessory: bool = True,
+    damage_preferences: List[str] = None,
+    resistance_preferences: List[str] = None
 ) -> Dict:
     """
     Solve for three builds: easy, medium, hard
@@ -44,6 +47,12 @@ def solve_build(
     Returns dict with keys: easy, medium, hard
     Each containing: items, total_stats, total_difficulty, build_type
     """
+    # Default element preferences
+    if damage_preferences is None:
+        damage_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    if resistance_preferences is None:
+        resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    
     # ✅ OPTIMIZATION: Only consider items within 25 levels of target
     # This significantly reduces computation time for high-level builds
     # EXCEPTION: PET slot (always level 0) is included without level restriction
@@ -81,7 +90,9 @@ def solve_build(
         difficulty_max=settings.EASY_DIFFICULTY_MAX,
         lambda_weight=settings.EASY_LAMBDA,
         build_type="easy",
-        db=db
+        db=db,
+        damage_preferences=damage_preferences,
+        resistance_preferences=resistance_preferences
     )
     
     medium_build = _solve_single_build(
@@ -89,7 +100,9 @@ def solve_build(
         difficulty_max=settings.MEDIUM_DIFFICULTY_MAX,
         lambda_weight=settings.MEDIUM_LAMBDA,
         build_type="medium",
-        db=db
+        db=db,
+        damage_preferences=damage_preferences,
+        resistance_preferences=resistance_preferences
     )
     
     hard_build = _solve_single_build(
@@ -97,7 +110,9 @@ def solve_build(
         difficulty_max=settings.HARD_DIFFICULTY_MAX,
         lambda_weight=settings.HARD_LAMBDA,
         build_type="hard",
-        db=db
+        db=db,
+        damage_preferences=damage_preferences,
+        resistance_preferences=resistance_preferences
     )
     
     return {
@@ -113,7 +128,9 @@ def _solve_single_build(
     difficulty_max: float,
     lambda_weight: float,
     build_type: str,
-    db: Session = None
+    db: Session = None,
+    damage_preferences: List[str] = None,
+    resistance_preferences: List[str] = None
 ) -> Dict:
     """
     Solve for a single build using linear programming
@@ -204,30 +221,10 @@ def _solve_single_build(
             prob += lpSum(epic_vars + relic_vars) >= 1, "require_epic_or_relic"
             logger.info(f"Build MEDIUM: Requiring at least 1 Epic or Relic")
     
-    # Constraint: Two-handed weapons block SECOND_WEAPON slot
-    # Detect 2H weapons from raw_data
-    two_handed_weapons = []
-    for item in items:
-        if item.slot == "FIRST_WEAPON" and item.raw_data:
-            # Check equipment type for disabled positions
-            definition = item.raw_data.get('definition', {})
-            item_def = definition.get('item', {})
-            item_type_id = item_def.get('baseParameters', {}).get('itemTypeId')
-            
-            # Load equipment types if we have db access
-            if db and item_type_id:
-                # Check item_type_id for 2H weapons
-                # Common 2H weapon types: 519, 520 (two-handed swords, axes, etc.)
-                # For now, we'll use a simpler heuristic: check if AP cost >= 5 (most 2H weapons)
-                # or check raw_data for specific patterns
-                try:
-                    ap_cost = item_def.get('useParameters', {}).get('useCostAp', 0)
-                    # Most 2H weapons cost 4-6 AP to use
-                    if ap_cost >= 4:
-                        two_handed_weapons.append(item)
-                except:
-                    pass
-    
+    # ✅ IMPROVED: Constraint - Two-handed weapons block SECOND_WEAPON slot
+    # Use blocks_second_weapon field from database (detected during worker data load)
+    two_handed_weapons = [item for item in items 
+                          if item.slot == "FIRST_WEAPON" and item.blocks_second_weapon]
     second_weapons = [item for item in items if item.slot == "SECOND_WEAPON"]
     
     if two_handed_weapons and second_weapons:
@@ -265,7 +262,7 @@ def _solve_single_build(
     
     # Extract solution
     selected_items = []
-    total_stats = {}
+    items_stats_list = []
     total_difficulty = 0.0
     
     for item in items:
@@ -287,11 +284,22 @@ def _solve_single_build(
                 "has_gem_slot": item.has_gem_slot
             })
             
-            # Accumulate stats
-            for stat_name, stat_value in item.stats.items():
-                total_stats[stat_name] = total_stats.get(stat_name, 0) + stat_value
+            # Collect stats for resolution
+            items_stats_list.append(item.stats)
             
             total_difficulty += item.difficulty
+    
+    # Resolve elemental stats based on user preferences
+    if damage_preferences is None:
+        damage_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    if resistance_preferences is None:
+        resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    
+    total_stats = resolve_build_stats(
+        items_stats_list,
+        damage_preferences,
+        resistance_preferences
+    )
     
     # Calculate average difficulty
     avg_difficulty = total_difficulty / len(selected_items) if selected_items else 0.0

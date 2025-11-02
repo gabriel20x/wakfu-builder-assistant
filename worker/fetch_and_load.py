@@ -46,6 +46,7 @@ class Item(Base):
     is_epic = Column(Boolean, default=False, index=True)
     is_relic = Column(Boolean, default=False, index=True)
     has_gem_slot = Column(Boolean, default=False)
+    blocks_second_weapon = Column(Boolean, default=False, index=True)
     source_type = Column(String, index=True)
     difficulty = Column(Float, default=0.0, index=True)
     manual_drop_difficulty = Column(Float, nullable=True)
@@ -154,6 +155,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Damage and healing
             120: "Damage_Inflicted",
             122: "Healing_Mastery",
+            1023: "Healing_Mastery",  # ✅ FIXED - Dominio cura (alternative Action ID)
             1058: "Heals_Performed",
             
             # Elemental Masteries
@@ -179,7 +181,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Position Masteries
             166: "Rear_Mastery",
             1052: "Melee_Mastery",  # Melee Mastery (principal)
-            175: "Dodge",  # ✅ CORRECTED - Esquiva (simplified from Dodge_or_Berserk based on chest review)
+            175: "Dodge_or_Berserk",  # ✅ IMPROVED - Contextual: Dodge (<50) or Berserk_Mastery (>=50)
             1053: "Distance_Mastery",  # Distance Mastery (principal)
             1055: "Armor_or_Berserk",  # Contextual: Armor_Given (≤50) o Berserk_Mastery (>50)
             
@@ -189,7 +191,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             
             # Movement and positioning
             173: "Lock",  # Lock (Placaje)
-            180: "Lock",  # Lock (alternativo)
+            180: "Lock_or_Rear_Mastery",  # ✅ FIXED - Contextual: Rear_Mastery en NECK, Lock en otros
             181: "Rear_Mastery_Penalty",  # -Rear_Mastery (Dominio espalda negativo)
             184: "Control",  # Control (antes era Initiative, pero es Control en todos los casos)
             875: "Block",  # ✅ CORRECTED - % de anticipación/Block (simplified contextual)
@@ -213,7 +215,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             177: "Force_Of_Will",
             
             # Percentages
-            39: "Heals_Received",
+            39: "Heals_Received_or_Armor_Given",  # ✅ FIXED - Contextual: Armor_Given en NECK, Heals_Received en otros
             
             # Special effects (usually ignored for stats)
             304: None,  # State effects - skip
@@ -249,12 +251,34 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                 
                 # Handle contextual stats (depend on item type, slot, and value)
                 if stat_name == "Range_or_Elemental_Res":
-                    # Use slot to determine: weapons/head = Range, other armors = Elemental_Resistance
-                    range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD"]
+                    # ✅ FIXED - Incluir NECK (amuletos) para Range
+                    # Use slot to determine: weapons/head/neck = Range, other armors = Elemental_Resistance
+                    range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD", "NECK"]
                     if slot in range_slots:
                         stat_name = "Range"
                     else:
                         stat_name = "Elemental_Resistance"
+                
+                elif stat_name == "Heals_Received_or_Armor_Given":
+                    # ✅ FIXED - Contextual: En amuletos (NECK) es Armor_Given, en otros es Heals_Received
+                    if slot == "NECK":
+                        stat_name = "Armor_Given"
+                    else:
+                        stat_name = "Heals_Received"
+                
+                elif stat_name == "Lock_or_Rear_Mastery":
+                    # ✅ FIXED - Contextual: En amuletos (NECK) es Rear_Mastery, en otros es Lock
+                    if slot == "NECK":
+                        stat_name = "Rear_Mastery"
+                    else:
+                        stat_name = "Lock"
+                
+                elif stat_name == "Dodge_or_Berserk":
+                    # ✅ IMPROVED: Use value to determine: low values (<50) = Dodge, high values = Berserk_Mastery
+                    if stat_value < 50:
+                        stat_name = "Dodge"
+                    else:
+                        stat_name = "Berserk_Mastery"
                         
                 elif stat_name == "Armor_or_Berserk":
                     # Use value to determine: low values (≤50) = Armor_Given %, high values = Berserk_Mastery
@@ -461,6 +485,15 @@ def main():
                 is_relic = rarity == 5
                 has_gem_slot = False
                 
+                # ✅ IMPROVED: Detect 2H weapons using equipmentItemTypes.json
+                # Check if weapon blocks SECOND_WEAPON slot (two-handed)
+                blocks_second_weapon = False
+                if slot == "FIRST_WEAPON" and equipment_def:
+                    # Check for disabled positions in equipment type
+                    disabled_positions = equipment_def.get("equipmentDisabledPositions", [])
+                    if "SECOND_WEAPON" in disabled_positions:
+                        blocks_second_weapon = True
+                
                 # Get item names in multiple languages
                 title = item_data.get("title", {})
                 name_en = title.get("en", f"Item {item_id}")
@@ -494,6 +527,7 @@ def main():
                     is_epic=is_epic,
                     is_relic=is_relic,
                     has_gem_slot=has_gem_slot,
+                    blocks_second_weapon=blocks_second_weapon,
                     source_type=source_type,
                     stats=stats,
                     raw_data=item_data
