@@ -169,14 +169,14 @@ def extract_equipment_stats(item_data: dict) -> dict:
             153: "Air_Resistance",  # Alternative
             160: "Elemental_Resistance",
             1052: "Elemental_Resistance",
-            1053: "Elemental_Resistance",
             1069: "Random_Elemental_Resistance",  # Special: params[2] = number of elements
             
             # Position Masteries
+            21: "Distance_Mastery",  # Distance Mastery
             166: "Rear_Mastery",
             173: "Melee_Mastery",
-            174: "Distance_Mastery",
             175: "Berserk_Mastery",
+            1053: "Distance_Mastery",  # Distance Mastery (alternative/common)
             
             # Resistances
             167: "Rear_Resistance",
@@ -189,8 +189,8 @@ def extract_equipment_stats(item_data: dict) -> dict:
             832: "Control",
             
             # Penalties (negative stats) - estos suelen tener valores que deben ser negativos
-            174: "Lock_Penalty",  # -Lock
-            176: "Dodge_Penalty",  # -Dodge
+            174: "Lock_Penalty",  # -Lock (en armaduras)
+            176: "Dodge_Penalty",  # -Dodge (en armaduras)
             
             # Other
             192: "Prospecting",
