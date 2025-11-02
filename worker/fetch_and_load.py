@@ -115,7 +115,7 @@ def load_json(file_path: Path):
         logger.error(f"Error loading {file_path}: {e}")
         return []
 
-def extract_equipment_stats(item_data: dict) -> dict:
+def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
     """Extract stats from item equipment effects"""
     stats = {}
     
@@ -123,6 +123,10 @@ def extract_equipment_stats(item_data: dict) -> dict:
         return stats
     
     effects = item_data["definition"]["equipEffects"]
+    
+    # Get item type info for contextual mapping
+    item_def = item_data.get("definition", {}).get("item", {})
+    item_type_id = item_def.get("baseParameters", {}).get("itemTypeId")
     
     for effect in effects:
         effect_def = effect.get("effect", {}).get("definition", {})
@@ -172,11 +176,11 @@ def extract_equipment_stats(item_data: dict) -> dict:
             1069: "Random_Elemental_Resistance",  # Special: params[2] = number of elements
             
             # Position Masteries
-            21: "Distance_Mastery",  # Distance Mastery
             166: "Rear_Mastery",
             173: "Melee_Mastery",
-            175: "Berserk_Mastery",
-            1053: "Distance_Mastery",  # Distance Mastery (alternative/common)
+            175: "Berserk_Mastery",  # Berserk Mastery (también puede ser Dodge en algunos items - conflicto en Wakfu)
+            1053: "Distance_Mastery",  # Distance Mastery (principal)
+            97: "Critical_Mastery",  # Critical Mastery (alternativo)
             
             # Resistances
             167: "Rear_Resistance",
@@ -185,10 +189,12 @@ def extract_equipment_stats(item_data: dict) -> dict:
             180: "Lock",
             181: "Dodge",
             184: "Initiative",
-            875: "Range",
+            875: "Range_or_Block",  # Contextual: Range en armas, Block en escudos
             832: "Control",
+            160: "Range_or_Elemental_Res",  # Contextual: Range en armas, Elemental_Res en armaduras
             
             # Penalties (negative stats) - estos suelen tener valores que deben ser negativos
+            21: "HP_Penalty",  # -HP
             174: "Lock_Penalty",  # -Lock (en armaduras)
             176: "Dodge_Penalty",  # -Dodge (en armaduras)
             
@@ -239,8 +245,26 @@ def extract_equipment_stats(item_data: dict) -> dict:
             if stat_name is not None and stat_name and len(params) > 0:
                 stat_value = params[0]
                 
+                # Handle contextual stats (depend on item type and slot)
+                if stat_name == "Range_or_Block":
+                    # Use slot to determine: SECOND_WEAPON (shields) = Block, others = Range
+                    if slot == "SECOND_WEAPON":
+                        stat_name = "Block"
+                    else:
+                        stat_name = "Range"
+                elif stat_name == "Range_or_Elemental_Res":
+                    # Use slot to determine: weapons = Range, armors = Elemental_Resistance
+                    weapon_slots = ["FIRST_WEAPON", "SECOND_WEAPON"]
+                    if slot in weapon_slots:
+                        stat_name = "Range"
+                    else:
+                        stat_name = "Elemental_Resistance"
+                
                 # Handle penalties (make negative and change to base stat name)
-                if stat_name == "Lock_Penalty":
+                if stat_name == "HP_Penalty":
+                    stat_name = "HP"
+                    stat_value = -stat_value
+                elif stat_name == "Lock_Penalty":
                     stat_name = "Lock"
                     stat_value = -stat_value
                 elif stat_name == "Dodge_Penalty":
@@ -414,8 +438,8 @@ def main():
                 name_fr = title.get("fr", name_en)  # Fallback to English if no French
                 name = name_en  # Default to English
                 
-                # Extract stats
-                stats = extract_equipment_stats(item_data)
+                # Extract stats (pass slot for contextual mapping)
+                stats = extract_equipment_stats(item_data, slot)
                 
                 # Determine source type
                 if item_id in harvest_map:
