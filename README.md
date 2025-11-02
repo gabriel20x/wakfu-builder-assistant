@@ -270,6 +270,59 @@ MIT License - ver archivo LICENSE para más detalles
 - Iconos e imágenes de [WakfuAssets](https://github.com/tmktahu/WakfuAssets)
 - Comunidad de Wakfu por feedback y testing
 
+## 🌐 Deployment
+
+### ¿Quieres deployar tu aplicación GRATIS?
+
+Esta aplicación está lista para deployarse en plataformas gratuitas. ¡Lee las guías de deployment!
+
+#### Opciones Gratuitas de Deployment:
+
+1. **Render.com** (Recomendado - Más Fácil)
+   - ✅ Totalmente gratis
+   - ✅ Setup en 5 minutos
+   - ✅ Auto-deploy desde GitHub
+
+2. **Railway.app** (Mejor Rendimiento)
+   - ✅ $5 créditos gratis mensuales
+   - ✅ Setup en 3 minutos
+
+3. **Fly.io** (Mejor Free Tier)
+   - ✅ 3 VMs gratis
+   - ✅ Mejor rendimiento
+
+#### Guías de Deployment:
+
+- 📖 **[DEPLOYMENT_SUMMARY.md](DEPLOYMENT_SUMMARY.md)** - Resumen ejecutivo y comparación
+- ⚡ **[QUICK_DEPLOY.md](QUICK_DEPLOY.md)** - Deploy en 5 minutos
+- 📚 **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Guía completa y detallada
+- ✅ **[DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** - Checklist paso a paso
+
+#### Deploy Rápido con Scripts:
+
+**Windows:**
+```powershell
+.\deploy.ps1
+```
+
+**Mac/Linux:**
+```bash
+chmod +x deploy.sh
+./deploy.sh
+```
+
+#### Deploy Manual a Render.com:
+
+1. Push tu código a GitHub
+2. Ve a [render.com](https://render.com)
+3. Click "New +" → "Blueprint"
+4. Conecta tu repositorio
+5. ¡Listo! Tu app estará online en 10 minutos 🚀
+
+Ver **[README_DEPLOYMENT.md](README_DEPLOYMENT.md)** para arquitectura y detalles técnicos.
+
+---
+
 ## 🐛 Reportar Bugs
 
 Si encuentras un bug, por favor abre un issue en GitHub con:

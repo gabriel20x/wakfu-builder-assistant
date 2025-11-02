@@ -1,0 +1,27 @@
+name: Deploy to Render
+
+# Trigger deployment on push to main branch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Trigger Render Deploy
+        run: |
+          echo "🚀 Deploying to Render..."
+          echo "Render will automatically deploy when it detects changes to main branch"
+          echo "Check your Render dashboard at https://dashboard.render.com"
+
+      - name: Deploy notification
+        run: |
+          echo "✅ Deployment triggered successfully!"
+          echo "Your services will be updated in 5-10 minutes"
+

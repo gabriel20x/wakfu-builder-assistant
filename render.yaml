@@ -1,0 +1,61 @@
+services:
+  # PostgreSQL Database
+  - type: pserv
+    name: wakfu-db
+    env: docker
+    plan: free
+    # Render free PostgreSQL expires after 90 days, but you can recreate it
+
+  # API Service
+  - type: web
+    name: wakfu-api
+    env: docker
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: ./api
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: wakfu-db
+          property: connectionString
+      - key: CORS_ORIGINS
+        value: https://wakfu-frontend.onrender.com
+      - key: GAMEDATA_PATH
+        value: /wakfu_data/gamedata_1.90.1.43
+    healthCheckPath: /
+    autoDeploy: true
+
+  # Frontend Service
+  - type: web
+    name: wakfu-frontend
+    env: docker
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: ./frontend
+    plan: free
+    envVars:
+      - key: VITE_API_URL
+        value: https://wakfu-api.onrender.com
+    autoDeploy: true
+
+  # Worker Service (Background)
+  - type: worker
+    name: wakfu-worker
+    env: docker
+    dockerfilePath: ./worker/Dockerfile
+    dockerContext: ./worker
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: wakfu-db
+          property: connectionString
+      - key: GAMEDATA_PATH
+        value: /wakfu_data/gamedata_1.90.1.43
+    autoDeploy: true
+
+databases:
+  - name: wakfu-db
+    plan: free
+    databaseName: wakfu_builder
+    user: wakfu
+
