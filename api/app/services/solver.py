@@ -5,10 +5,13 @@ Generates optimal equipment builds with constraints:
 - 1 item per equipment slot
 - Max 1 epic item
 - Max 1 relic item
-- Level <= level_max
+- Level range: [level_max - 25, level_max] (optimization)
+  * Exception: PET slot (level 0) is always included
 - Difficulty <= threshold (for easy/medium builds)
 
 Objective: Maximize weighted stats - lambda * difficulty
+
+Performance: Only considers items within 25 levels of target to reduce computation time
 """
 
 from sqlalchemy.orm import Session
@@ -41,10 +44,21 @@ def solve_build(
     Returns dict with keys: easy, medium, hard
     Each containing: items, total_stats, total_difficulty, build_type
     """
+    # ✅ OPTIMIZATION: Only consider items within 25 levels of target
+    # This significantly reduces computation time for high-level builds
+    # EXCEPTION: PET slot (always level 0) is included without level restriction
+    level_min = max(1, level_max - 25)
+    
     # Fetch all eligible items
+    # Include items in level range OR pets (which are always level 0)
     query = db.query(Item).filter(
-        Item.level <= level_max,
         Item.slot.isnot(None)
+    ).filter(
+        (
+            (Item.level <= level_max) & (Item.level >= level_min)  # Normal items in range
+        ) | (
+            Item.slot == "PET"  # OR pets (always level 0)
+        )
     )
     
     # Filter out PET and ACCESSORY if not included
@@ -59,7 +73,7 @@ def solve_build(
     
     items = query.all()
     
-    logger.info(f"Solving with {len(items)} items, max level {level_max}")
+    logger.info(f"Solving with {len(items)} items (level {level_min}-{level_max} + PET)")
     
     # Generate each build type
     easy_build = _solve_single_build(

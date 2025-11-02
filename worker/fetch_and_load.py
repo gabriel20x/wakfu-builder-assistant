@@ -134,24 +134,26 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
         params = effect_def.get("params", [])
         
         # Complete map of Wakfu action IDs to stat names
-        # Based on Wakfu game data analysis
+        # Based on Wakfu game data analysis and CORAZAS_REVIEW corrections
         stat_map = {
             # Core stats
             20: "HP",
             31: "AP",
             41: "MP",
             1020: "WP",
+            191: "WP",  # ✅ CORRECTED - Wakfu Points (alternative)
             
             # Critical
             150: "Critical_Hit",  # Critical Hit % (valores 3-10%)
             96: "Critical_Mastery",
-            71: "Critical_Resistance",
-            162: "Critical_Resistance",  # Alternative
+            97: "Critical_Mastery",  # Critical Mastery (alternativo)
+            149: "Critical_Mastery",  # ✅ CORRECTED - Dominio crítico (was Kit_Skill)
+            162: "Critical_Resistance",
+            988: "Critical_Resistance",  # ✅ CORRECTED - Resistencia crítica (was Block)
             
             # Damage and healing
             120: "Damage_Inflicted",
             122: "Healing_Mastery",
-            191: "Wisdom",
             1058: "Heals_Performed",
             
             # Elemental Masteries
@@ -160,7 +162,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             132: "Earth_Mastery",
             133: "Air_Mastery",
             171: "Elemental_Mastery",
-            1068: "Random_Elemental_Mastery",  # Special: params[2] = number of elements
+            1068: "Multi_Element_Mastery",  # ✅ CORRECTED - Dominio en N elementos (was Random_Elemental_Mastery)
             
             # Elemental Resistances
             80: "Elemental_Resistance",  # Elemental Resistance (valores bajos 5-10)
@@ -177,20 +179,20 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Position Masteries
             166: "Rear_Mastery",
             1052: "Melee_Mastery",  # Melee Mastery (principal)
-            175: "Dodge_or_Berserk",  # Contextual: Dodge (valores bajos) o Berserk (valores altos)
+            175: "Dodge",  # ✅ CORRECTED - Esquiva (simplified from Dodge_or_Berserk based on chest review)
             1053: "Distance_Mastery",  # Distance Mastery (principal)
             1055: "Armor_or_Berserk",  # Contextual: Armor_Given (≤50) o Berserk_Mastery (>50)
-            97: "Critical_Mastery",  # Critical Mastery (alternativo)
             
             # Resistances
             167: "Rear_Resistance",
+            71: "Rear_Resistance",  # ✅ CORRECTED - Resistencia por la espalda (was Critical_Resistance)
             
             # Movement and positioning
             173: "Lock",  # Lock (Placaje)
             180: "Lock",  # Lock (alternativo)
             181: "Rear_Mastery_Penalty",  # -Rear_Mastery (Dominio espalda negativo)
             184: "Control",  # Control (antes era Initiative, pero es Control en todos los casos)
-            875: "Range_or_Block",  # Contextual: Range en armas, Block en escudos
+            875: "Block",  # ✅ CORRECTED - % de anticipación/Block (simplified contextual)
             832: "Control",  # Control (alternativo)
             160: "Range_or_Elemental_Res",  # Contextual: Range en armas, Elemental_Res en armaduras
             
@@ -202,8 +204,6 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             
             # Other
             192: "Prospecting",
-            988: "Block",
-            149: "Kit_Skill",  # Alternative
             
             # Armor
             1056: "Armor_Received",
@@ -228,16 +228,17 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
         
         # Handle special action IDs with multiple parameters
         if action_id == 1068 and len(params) >= 3:
-            # Random Elemental Mastery - show mastery value and number of elements
+            # ✅ CORRECTED - Multi-Element Mastery (Dominio en N elementos)
+            # params[0] = mastery value, params[2] = number of elements (2 or 3)
             mastery_value = params[0]
             num_elements = int(params[2]) if len(params) > 2 else 0
-            stat_key = f"Elemental_Mastery_{num_elements}_elements"
+            stat_key = f"Multi_Element_Mastery_{num_elements}"
             stats[stat_key] = stats.get(stat_key, 0) + mastery_value
         elif action_id == 1069 and len(params) >= 3:
             # Random Elemental Resistance - show resistance value and number of elements
             resist_value = params[0]
             num_elements = int(params[2]) if len(params) > 2 else 0
-            stat_key = f"Elemental_Resistance_{num_elements}_elements"
+            stat_key = f"Random_Elemental_Resistance_{num_elements}"
             stats[stat_key] = stats.get(stat_key, 0) + resist_value
         else:
             # Normal stats
@@ -247,27 +248,13 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                 stat_value = params[0]
                 
                 # Handle contextual stats (depend on item type, slot, and value)
-                if stat_name == "Range_or_Block":
-                    # Use slot to determine: SECOND_WEAPON (shields) = Block, others = Range
-                    if slot == "SECOND_WEAPON":
-                        stat_name = "Block"
-                    else:
-                        stat_name = "Range"
-                        
-                elif stat_name == "Range_or_Elemental_Res":
+                if stat_name == "Range_or_Elemental_Res":
                     # Use slot to determine: weapons/head = Range, other armors = Elemental_Resistance
                     range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD"]
                     if slot in range_slots:
                         stat_name = "Range"
                     else:
                         stat_name = "Elemental_Resistance"
-                        
-                elif stat_name == "Dodge_or_Berserk":
-                    # Use value to determine: low values (≤100) = Dodge, high values = Berserk_Mastery
-                    if stat_value <= 100:
-                        stat_name = "Dodge"
-                    else:
-                        stat_name = "Berserk_Mastery"
                         
                 elif stat_name == "Armor_or_Berserk":
                     # Use value to determine: low values (≤50) = Armor_Given %, high values = Berserk_Mastery
