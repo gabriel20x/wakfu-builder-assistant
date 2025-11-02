@@ -143,7 +143,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             1020: "WP",
             
             # Critical
-            80: "Critical_Hit",
+            150: "Critical_Hit",  # Critical Hit % (valores 3-10%)
             96: "Critical_Mastery",
             71: "Critical_Resistance",
             162: "Critical_Resistance",  # Alternative
@@ -163,15 +163,15 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             1068: "Random_Elemental_Mastery",  # Special: params[2] = number of elements
             
             # Elemental Resistances
+            80: "Elemental_Resistance",  # Elemental Resistance (valores bajos 5-10)
             82: "Fire_Resistance",
             83: "Water_Resistance",
             84: "Earth_Resistance",
             85: "Air_Resistance",
-            150: "Fire_Resistance",  # Alternative
             151: "Water_Resistance",  # Alternative
             152: "Earth_Resistance",  # Alternative
             153: "Air_Resistance",  # Alternative
-            160: "Elemental_Resistance",
+            160: "Elemental_Resistance",  # Alternative
             1069: "Random_Elemental_Resistance",  # Special: params[2] = number of elements
             
             # Position Masteries
@@ -188,9 +188,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             173: "Lock",  # Lock (Placaje)
             180: "Lock",  # Lock (alternativo)
             181: "Dodge",
-            184: "Initiative",
+            184: "Control",  # Control (antes era Initiative, pero es Control en todos los casos)
             875: "Range_or_Block",  # Contextual: Range en armas, Block en escudos
-            832: "Control",
+            832: "Control",  # Control (alternativo)
             160: "Range_or_Elemental_Res",  # Contextual: Range en armas, Elemental_Res en armaduras
             
             # Penalties (negative stats) - estos suelen tener valores que deben ser negativos
