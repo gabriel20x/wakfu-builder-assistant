@@ -10,7 +10,7 @@ services:
   - type: web
     name: wakfu-api
     env: docker
-    dockerfilePath: ./api/Dockerfile
+    dockerfilePath: ./api/Dockerfile.prod
     dockerContext: ./api
     plan: free
     envVars:
@@ -29,7 +29,7 @@ services:
   - type: web
     name: wakfu-frontend
     env: docker
-    dockerfilePath: ./frontend/Dockerfile
+    dockerfilePath: ./frontend/Dockerfile.prod
     dockerContext: ./frontend
     plan: free
     envVars:
