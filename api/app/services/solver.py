@@ -103,7 +103,23 @@ def _solve_single_build(
 ) -> Dict:
     """
     Solve for a single build using linear programming
+    
+    Build types:
+    - EASY: Max rarity = Mítico (4). Excluye Legendarios/Épicos/Reliquias
+    - MEDIUM: Requiere al menos 1 Épico O 1 Reliquia. Permite Legendarios
+    - HARD: Sin restricciones, completamente optimizado
     """
+    # Filter items by build type rarity restrictions
+    if build_type == "easy":
+        # EASY: Solo hasta Mítico (rarity <= 4), excluye Épicos y Reliquias
+        # También excluye items individuales muy difíciles (difficulty > 48)
+        items = [item for item in items 
+                 if item.rarity <= 4 
+                 and not item.is_epic 
+                 and not item.is_relic
+                 and item.difficulty <= 48.0]
+        logger.info(f"Build EASY: Filtering to rarity <= Mítico, difficulty <= 48. Items: {len(items)}")
+    
     # Create problem
     prob = LpProblem(f"WakfuBuild_{build_type}", LpMaximize)
     
@@ -167,6 +183,12 @@ def _solve_single_build(
     relic_vars = [item_vars[item.item_id] for item in items if item.is_relic]
     if relic_vars:
         prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
+    
+    # Constraint: MEDIUM build must have at least 1 Epic OR 1 Relic
+    if build_type == "medium":
+        if epic_vars or relic_vars:
+            prob += lpSum(epic_vars + relic_vars) >= 1, "require_epic_or_relic"
+            logger.info(f"Build MEDIUM: Requiring at least 1 Epic or Relic")
     
     # Constraint: Two-handed weapons block SECOND_WEAPON slot
     # Detect 2H weapons from raw_data
