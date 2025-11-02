@@ -298,29 +298,50 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
     return stats
 
 def calculate_difficulty(item, recipes_map, harvest_map):
-    """Simple difficulty calculation"""
+    """
+    Calculate difficulty based on rarity, level, and source
+    
+    Rarity drop rates (approximate):
+    - Común (1-2): ~5% drop rate
+    - Raro (3): ~0.2% drop rate → difficulty +15
+    - Mítico (4): ~0.1% drop rate (2x más difícil) → difficulty +30
+    - Legendario (5): ~0.05% drop rate (4x más difícil) → difficulty +50
+    - Épico (7): Muy raro → difficulty +40
+    - Reliquia (6): Muy raro → difficulty +45
+    """
     difficulty = 0.0
     
-    # Base on level
-    difficulty += min(30.0, item.level / 230.0 * 30.0)
+    # Base on level (max 20 points)
+    difficulty += min(20.0, item.level / 245.0 * 20.0)
     
-    # Base on rarity
-    rarity_scores = {0: 5, 1: 10, 2: 15, 3: 20, 4: 25, 5: 30, 6: 20, 7: 30}
+    # Base on rarity (exponential scaling)
+    rarity_scores = {
+        0: 0,   # Sin rareza
+        1: 5,   # Común
+        2: 10,  # Poco común
+        3: 15,  # Raro (~0.2% drop)
+        4: 30,  # Mítico (~0.1% drop, 2x más difícil)
+        5: 50,  # Legendario (~0.05% drop, 4x más difícil)
+        6: 45,  # Reliquia (cyan)
+        7: 40,  # Épico (red)
+    }
     difficulty += rarity_scores.get(item.rarity, 5)
     
-    # Flags
+    # Extra penalty for epic/relic flags
     if item.is_epic:
-        difficulty += 15
+        difficulty += 20  # Épicos son MUY raros
     if item.is_relic:
-        difficulty += 20
+        difficulty += 25  # Reliquias son MUY raras
     
-    # Source type
+    # Source type (cómo se obtiene)
     if item.source_type == "harvest":
-        difficulty += 5
+        difficulty += 3  # Farmeable
     elif item.source_type == "recipe":
-        difficulty += 10
+        difficulty += 8  # Requiere crafteo
     elif item.source_type == "drop":
-        difficulty += 20
+        difficulty += 15  # Drop de mob
+    elif item.source_type == "special":
+        difficulty += 5  # Quest o compra
     
     return min(100.0, difficulty)
 

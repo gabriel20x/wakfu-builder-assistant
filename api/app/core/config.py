@@ -19,14 +19,15 @@ class Settings(BaseSettings):
     MAX_RELIC_ITEMS: int = 1
     
     # Difficulty thresholds for build types
-    EASY_DIFFICULTY_MAX: float = 40.0
-    MEDIUM_DIFFICULTY_MAX: float = 70.0
-    HARD_DIFFICULTY_MAX: float = 100.0
+    EASY_DIFFICULTY_MAX: float = 45.0  # Permite raros pero evita míticos/legendarios
+    MEDIUM_DIFFICULTY_MAX: float = 70.0  # Permite míticos
+    HARD_DIFFICULTY_MAX: float = 100.0  # Permite todo
     
     # Lambda weights for solver (balancing stats vs difficulty)
-    EASY_LAMBDA: float = 2.0  # High penalty for difficulty
-    MEDIUM_LAMBDA: float = 1.0  # Balanced
-    HARD_LAMBDA: float = 0.1  # Low penalty for difficulty
+    # Escala de rareza: Raro(15) → Mítico(30, 2x) → Legendario(50, 4x)
+    EASY_LAMBDA: float = 3.0  # Alta penalización: prefiere Raros, evita Míticos/Legendarios
+    MEDIUM_LAMBDA: float = 1.5  # Balance: acepta Míticos si valen la pena
+    HARD_LAMBDA: float = 0.3  # Baja penalización: prioriza stats sobre rareza
     
     class Config:
         env_file = ".env"
