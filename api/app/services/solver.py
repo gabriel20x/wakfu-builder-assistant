@@ -24,7 +24,8 @@ logger = logging.getLogger(__name__)
 SLOTS = [
     "HEAD", "SHOULDERS", "CHEST", "BACK", "BELT", "LEGS",
     "FIRST_WEAPON", "SECOND_WEAPON",
-    "NECK", "LEFT_HAND", "RIGHT_HAND"  # Amulet and rings
+    "NECK", "LEFT_HAND", "RIGHT_HAND",  # Amulet and rings
+    "PET", "MOUNT", "ACCESSORY"  # Pet, mount, emblem
 ]
 
 def solve_build(
@@ -113,7 +114,7 @@ def _solve_single_build(
     
     prob += lpSum(objective)
     
-    # Constraint: 1 item per slot
+    # Constraint: 1 item per slot (except rings which need special handling)
     slots_used = {}
     for item in items:
         if item.slot not in slots_used:
@@ -121,7 +122,23 @@ def _solve_single_build(
         slots_used[item.slot].append(item_vars[item.item_id])
     
     for slot, vars_in_slot in slots_used.items():
-        prob += lpSum(vars_in_slot) <= 1, f"max_one_{slot}"
+        if slot not in ["LEFT_HAND", "RIGHT_HAND"]:
+            prob += lpSum(vars_in_slot) <= 1, f"max_one_{slot}"
+        else:
+            # Rings can have 1 per hand, but total 2
+            prob += lpSum(vars_in_slot) <= 1, f"max_one_{slot}"
+    
+    # Constraint: Rings cannot be duplicated (same item_id in both hands)
+    if "LEFT_HAND" in slots_used and "RIGHT_HAND" in slots_used:
+        left_items = [item for item in items if item.slot == "LEFT_HAND"]
+        right_items = [item for item in items if item.slot == "RIGHT_HAND"]
+        
+        for left_item in left_items:
+            for right_item in right_items:
+                if left_item.item_id == right_item.item_id:
+                    # Can't equip same ring in both hands
+                    prob += (item_vars[left_item.item_id] + item_vars[right_item.item_id] <= 1), \
+                            f"no_duplicate_ring_{left_item.item_id}"
     
     # Constraint: Max 1 epic
     epic_vars = [item_vars[item.item_id] for item in items if item.is_epic]
@@ -132,6 +149,24 @@ def _solve_single_build(
     relic_vars = [item_vars[item.item_id] for item in items if item.is_relic]
     if relic_vars:
         prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
+    
+    # Constraint: Two-handed weapons block SECOND_WEAPON slot
+    # Check raw_data for disabledSlots containing SECOND_WEAPON
+    two_handed_weapons = []
+    for item in items:
+        if item.slot == "FIRST_WEAPON":
+            # Check if it's a 2H weapon from raw_data
+            raw_data = item.raw_data or {}
+            definition = raw_data.get('definition', {})
+            item_def = definition.get('item', {})
+            base_params = item_def.get('baseParameters', {})
+            
+            # Look for equipment type definition
+            # 2H weapons typically have properties or disabled slots
+            if isinstance(item.raw_data, dict):
+                # This is a simplified check - in production would need equipment type data
+                # For now, we'll skip this constraint as we don't have equipment type info loaded
+                pass
     
     # Constraint: Average difficulty <= threshold (for easy/medium)
     if difficulty_max < 100.0:
