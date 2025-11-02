@@ -177,8 +177,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Position Masteries
             166: "Rear_Mastery",
             1052: "Melee_Mastery",  # Melee Mastery (principal)
-            175: "Berserk_Mastery",  # Berserk Mastery (también puede ser Dodge en algunos items - conflicto en Wakfu)
+            175: "Dodge_or_Berserk",  # Contextual: Dodge (valores bajos) o Berserk (valores altos)
             1053: "Distance_Mastery",  # Distance Mastery (principal)
+            1055: "Armor_or_Berserk",  # Contextual: Armor_Given (≤50) o Berserk_Mastery (>50)
             97: "Critical_Mastery",  # Critical Mastery (alternativo)
             
             # Resistances
@@ -187,7 +188,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Movement and positioning
             173: "Lock",  # Lock (Placaje)
             180: "Lock",  # Lock (alternativo)
-            181: "Dodge",
+            181: "Rear_Mastery_Penalty",  # -Rear_Mastery (Dominio espalda negativo)
             184: "Control",  # Control (antes era Initiative, pero es Control en todos los casos)
             875: "Range_or_Block",  # Contextual: Range en armas, Block en escudos
             832: "Control",  # Control (alternativo)
@@ -205,7 +206,6 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             149: "Kit_Skill",  # Alternative
             
             # Armor
-            1055: "Armor_Given",
             1056: "Armor_Received",
             26: "Armor_Received",  # Alternative
             
@@ -246,20 +246,35 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             if stat_name is not None and stat_name and len(params) > 0:
                 stat_value = params[0]
                 
-                # Handle contextual stats (depend on item type and slot)
+                # Handle contextual stats (depend on item type, slot, and value)
                 if stat_name == "Range_or_Block":
                     # Use slot to determine: SECOND_WEAPON (shields) = Block, others = Range
                     if slot == "SECOND_WEAPON":
                         stat_name = "Block"
                     else:
                         stat_name = "Range"
+                        
                 elif stat_name == "Range_or_Elemental_Res":
-                    # Use slot to determine: weapons = Range, armors = Elemental_Resistance
-                    weapon_slots = ["FIRST_WEAPON", "SECOND_WEAPON"]
-                    if slot in weapon_slots:
+                    # Use slot to determine: weapons/head = Range, other armors = Elemental_Resistance
+                    range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD"]
+                    if slot in range_slots:
                         stat_name = "Range"
                     else:
                         stat_name = "Elemental_Resistance"
+                        
+                elif stat_name == "Dodge_or_Berserk":
+                    # Use value to determine: low values (≤100) = Dodge, high values = Berserk_Mastery
+                    if stat_value <= 100:
+                        stat_name = "Dodge"
+                    else:
+                        stat_name = "Berserk_Mastery"
+                        
+                elif stat_name == "Armor_or_Berserk":
+                    # Use value to determine: low values (≤50) = Armor_Given %, high values = Berserk_Mastery
+                    if stat_value <= 50:
+                        stat_name = "Armor_Given"
+                    else:
+                        stat_name = "Berserk_Mastery"
                 
                 # Handle penalties (make negative and change to base stat name)
                 if stat_name == "HP_Penalty":
@@ -273,6 +288,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                     stat_value = -stat_value
                 elif stat_name == "Dodge_Penalty":
                     stat_name = "Dodge"
+                    stat_value = -stat_value
+                elif stat_name == "Rear_Mastery_Penalty":
+                    stat_name = "Rear_Mastery"
                     stat_value = -stat_value
                 
                 stats[stat_name] = stats.get(stat_name, 0) + stat_value
