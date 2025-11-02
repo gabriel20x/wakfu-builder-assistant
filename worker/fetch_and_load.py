@@ -162,7 +162,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             171: "Elemental_Mastery",
             1068: "Random_Elemental_Mastery",  # Special: params[2] = number of elements
             
-            # Elemental Resistances  
+            # Elemental Resistances
             82: "Fire_Resistance",
             83: "Water_Resistance",
             84: "Earth_Resistance",
@@ -172,12 +172,11 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             152: "Earth_Resistance",  # Alternative
             153: "Air_Resistance",  # Alternative
             160: "Elemental_Resistance",
-            1052: "Elemental_Resistance",
             1069: "Random_Elemental_Resistance",  # Special: params[2] = number of elements
             
             # Position Masteries
             166: "Rear_Mastery",
-            173: "Melee_Mastery",
+            1052: "Melee_Mastery",  # Melee Mastery (principal)
             175: "Berserk_Mastery",  # Berserk Mastery (también puede ser Dodge en algunos items - conflicto en Wakfu)
             1053: "Distance_Mastery",  # Distance Mastery (principal)
             97: "Critical_Mastery",  # Critical Mastery (alternativo)
@@ -186,7 +185,8 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             167: "Rear_Resistance",
             
             # Movement and positioning
-            180: "Lock",
+            173: "Lock",  # Lock (Placaje)
+            180: "Lock",  # Lock (alternativo)
             181: "Dodge",
             184: "Initiative",
             875: "Range_or_Block",  # Contextual: Range en armas, Block en escudos
@@ -195,6 +195,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             
             # Penalties (negative stats) - estos suelen tener valores que deben ser negativos
             21: "HP_Penalty",  # -HP
+            168: "Critical_Hit_Penalty",  # -Critical Hit %
             174: "Lock_Penalty",  # -Lock (en armaduras)
             176: "Dodge_Penalty",  # -Dodge (en armaduras)
             
@@ -263,6 +264,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                 # Handle penalties (make negative and change to base stat name)
                 if stat_name == "HP_Penalty":
                     stat_name = "HP"
+                    stat_value = -stat_value
+                elif stat_name == "Critical_Hit_Penalty":
+                    stat_name = "Critical_Hit"
                     stat_value = -stat_value
                 elif stat_name == "Lock_Penalty":
                     stat_name = "Lock"
