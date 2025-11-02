@@ -16,6 +16,8 @@ class SolveRequest(BaseModel):
         "MP": 2.0,
         "Critical_Hit": 1.5
     }
+    include_pet: bool = True  # Incluir mascotas (pueden ser difíciles de conseguir)
+    include_accessory: bool = True  # Incluir emblemas (pueden ser difíciles de conseguir)
 
 class BuildResponse(BaseModel):
     items: list
@@ -38,7 +40,9 @@ async def solve(request: SolveRequest, db: Session = Depends(get_db)):
         builds = solve_build(
             db=db,
             level_max=request.level_max,
-            stat_weights=request.stat_weights
+            stat_weights=request.stat_weights,
+            include_pet=request.include_pet,
+            include_accessory=request.include_accessory
         )
         
         # Save to database

@@ -16,6 +16,7 @@ class Item(Base):
     is_epic = Column(Boolean, default=False, index=True)
     is_relic = Column(Boolean, default=False, index=True)
     has_gem_slot = Column(Boolean, default=False)
+    blocks_second_weapon = Column(Boolean, default=False)  # True para armas 2H
     source_type = Column(String, index=True)  # 'harvest', 'recipe', 'drop', 'special'
     difficulty = Column(Float, default=0.0, index=True)
     manual_drop_difficulty = Column(Float, nullable=True)

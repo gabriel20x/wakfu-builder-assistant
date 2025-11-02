@@ -31,7 +31,9 @@ SLOTS = [
 def solve_build(
     db: Session,
     level_max: int,
-    stat_weights: Dict[str, float]
+    stat_weights: Dict[str, float],
+    include_pet: bool = True,
+    include_accessory: bool = True
 ) -> Dict:
     """
     Solve for three builds: easy, medium, hard
@@ -40,10 +42,22 @@ def solve_build(
     Each containing: items, total_stats, total_difficulty, build_type
     """
     # Fetch all eligible items
-    items = db.query(Item).filter(
+    query = db.query(Item).filter(
         Item.level <= level_max,
         Item.slot.isnot(None)
-    ).all()
+    )
+    
+    # Filter out PET and ACCESSORY if not included
+    excluded_slots = []
+    if not include_pet:
+        excluded_slots.append("PET")
+    if not include_accessory:
+        excluded_slots.append("ACCESSORY")
+    
+    if excluded_slots:
+        query = query.filter(~Item.slot.in_(excluded_slots))
+    
+    items = query.all()
     
     logger.info(f"Solving with {len(items)} items, max level {level_max}")
     
@@ -52,21 +66,24 @@ def solve_build(
         items, stat_weights, level_max,
         difficulty_max=settings.EASY_DIFFICULTY_MAX,
         lambda_weight=settings.EASY_LAMBDA,
-        build_type="easy"
+        build_type="easy",
+        db=db
     )
     
     medium_build = _solve_single_build(
         items, stat_weights, level_max,
         difficulty_max=settings.MEDIUM_DIFFICULTY_MAX,
         lambda_weight=settings.MEDIUM_LAMBDA,
-        build_type="medium"
+        build_type="medium",
+        db=db
     )
     
     hard_build = _solve_single_build(
         items, stat_weights, level_max,
         difficulty_max=settings.HARD_DIFFICULTY_MAX,
         lambda_weight=settings.HARD_LAMBDA,
-        build_type="hard"
+        build_type="hard",
+        db=db
     )
     
     return {
@@ -81,7 +98,8 @@ def _solve_single_build(
     level_max: int,
     difficulty_max: float,
     lambda_weight: float,
-    build_type: str
+    build_type: str,
+    db: Session = None
 ) -> Dict:
     """
     Solve for a single build using linear programming
@@ -151,22 +169,37 @@ def _solve_single_build(
         prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
     
     # Constraint: Two-handed weapons block SECOND_WEAPON slot
-    # Check raw_data for disabledSlots containing SECOND_WEAPON
+    # Detect 2H weapons from raw_data
     two_handed_weapons = []
     for item in items:
-        if item.slot == "FIRST_WEAPON":
-            # Check if it's a 2H weapon from raw_data
-            raw_data = item.raw_data or {}
-            definition = raw_data.get('definition', {})
+        if item.slot == "FIRST_WEAPON" and item.raw_data:
+            # Check equipment type for disabled positions
+            definition = item.raw_data.get('definition', {})
             item_def = definition.get('item', {})
-            base_params = item_def.get('baseParameters', {})
+            item_type_id = item_def.get('baseParameters', {}).get('itemTypeId')
             
-            # Look for equipment type definition
-            # 2H weapons typically have properties or disabled slots
-            if isinstance(item.raw_data, dict):
-                # This is a simplified check - in production would need equipment type data
-                # For now, we'll skip this constraint as we don't have equipment type info loaded
-                pass
+            # Load equipment types if we have db access
+            if db and item_type_id:
+                # Check item_type_id for 2H weapons
+                # Common 2H weapon types: 519, 520 (two-handed swords, axes, etc.)
+                # For now, we'll use a simpler heuristic: check if AP cost >= 5 (most 2H weapons)
+                # or check raw_data for specific patterns
+                try:
+                    ap_cost = item_def.get('useParameters', {}).get('useCostAp', 0)
+                    # Most 2H weapons cost 4-6 AP to use
+                    if ap_cost >= 4:
+                        two_handed_weapons.append(item)
+                except:
+                    pass
+    
+    second_weapons = [item for item in items if item.slot == "SECOND_WEAPON"]
+    
+    if two_handed_weapons and second_weapons:
+        for two_hand in two_handed_weapons:
+            for second_weapon in second_weapons:
+                # Can't have 2H weapon and second weapon at same time
+                prob += (item_vars[two_hand.item_id] + item_vars[second_weapon.item_id] <= 1), \
+                        f"no_2h_with_second_{two_hand.item_id}_{second_weapon.item_id}"
     
     # Constraint: Average difficulty <= threshold (for easy/medium)
     if difficulty_max < 100.0:
