@@ -64,5 +64,32 @@ export const presetsAPI = {
   },
 }
 
+export const damageAPI = {
+  // Estimate damage for a build at different resistance levels
+  estimateDamage(buildStats, options = {}) {
+    return api.post('/damage/estimate', {
+      build_stats: buildStats,
+      base_spell_damage: options.baseSpellDamage || 100.0,
+      resistance_presets: options.resistancePresets || [0, 100, 200, 300, 400, 500],
+      include_critical: options.includeCritical !== false,
+      is_melee: options.isMelee !== false  // Default to melee
+    })
+  },
+
+  // Calculate damage with custom enemy resistances
+  calculateWithCustomResistances(buildStats, enemyResistances, baseSpellDamage = 100.0) {
+    return api.post('/damage/custom-resistances', {
+      build_stats: buildStats,
+      enemy_resistances: enemyResistances,
+      base_spell_damage: baseSpellDamage
+    })
+  },
+
+  // Calculate damage with detailed parameters
+  calculateDetailed(params) {
+    return api.post('/damage/calculate', params)
+  },
+}
+
 export default api
 

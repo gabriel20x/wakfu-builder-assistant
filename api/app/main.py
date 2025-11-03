@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.core.config import settings
 from app.db.database import engine, Base
-from app.routers import solver, items, gamedata, presets
+from app.routers import solver, items, gamedata, presets, damage_calculator
 
 # Create database tables
 Base.metadata.create_all(bind=engine)
@@ -27,6 +27,7 @@ app.include_router(solver.router, prefix="/build", tags=["solver"])
 app.include_router(items.router, prefix="/items", tags=["items"])
 app.include_router(gamedata.router, prefix="/gamedata", tags=["gamedata"])
 app.include_router(presets.router, prefix="/presets", tags=["presets"])
+app.include_router(damage_calculator.router, prefix="/damage", tags=["damage"])
 
 @app.get("/")
 async def root():

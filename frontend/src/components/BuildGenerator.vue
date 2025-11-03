@@ -252,6 +252,11 @@
         
         <div class="panel-content">
           <BuildStatSheet v-if="currentBuildStats" :stats="currentBuildStats" />
+          
+          <!-- Damage Estimator -->
+          <div class="damage-section">
+            <DamageEstimator v-if="currentBuildStats" :build-stats="currentBuildStats" />
+          </div>
         </div>
       </div>
     </div>
@@ -268,6 +273,7 @@ import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
 import ClassPresetSelector from './ClassPresetSelector.vue'
+import DamageEstimator from './DamageEstimator.vue'
 
 const toast = useToast()
 
@@ -545,6 +551,12 @@ const generateBuilds = async () => {
 .stats-panel {
   .panel-content {
     padding: 1rem;
+    
+    .damage-section {
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 }
 
