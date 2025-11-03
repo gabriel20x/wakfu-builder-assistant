@@ -132,6 +132,13 @@
             </div>
           </div>
 
+          <!-- Quick Start - Presets -->
+          <div class="config-section">
+            <ClassPresetSelector 
+              @preset-applied="onPresetApplied"
+            />
+          </div>
+
           <!-- Preferencias de Elementos -->
           <div class="config-section">
             <ElementPreferences 
@@ -252,6 +259,7 @@ import BuildResult from './BuildResult.vue'
 import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
+import ClassPresetSelector from './ClassPresetSelector.vue'
 
 const toast = useToast()
 
@@ -377,6 +385,34 @@ const selectAllStats = () => {
 const clearAllStats = () => {
   allStats.value.forEach(stat => {
     stat.enabled = false
+  })
+}
+
+// Apply preset from ClassPresetSelector
+const onPresetApplied = (preset) => {
+  const { weights, damagePreferences: dmgPrefs, resistancePreferences: resPrefs, className, roleName } = preset
+  
+  // Apply stat weights
+  allStats.value.forEach(stat => {
+    if (weights[stat.key]) {
+      stat.enabled = true
+      stat.weight = weights[stat.key]
+    } else {
+      stat.enabled = false
+      stat.weight = 1.0
+    }
+  })
+  
+  // Apply element preferences
+  damagePreferences.value = dmgPrefs
+  resistancePreferences.value = resPrefs
+  
+  // Show success message
+  toast.add({
+    severity: 'success',
+    summary: 'Preset Aplicado',
+    detail: `${className} - ${roleName}`,
+    life: 3000
   })
 }
 

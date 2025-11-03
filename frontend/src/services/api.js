@@ -36,5 +36,33 @@ export const builderAPI = {
   },
 }
 
+export const presetsAPI = {
+  // Get all available classes
+  getClasses() {
+    return api.get('/presets/classes')
+  },
+
+  // Get roles for a specific class
+  getClassRoles(className) {
+    return api.get(`/presets/classes/${className}/roles`)
+  },
+
+  // Get preset for a class and role
+  getClassPreset(className, role = null) {
+    const params = role ? `?role=${role}` : ''
+    return api.get(`/presets/classes/${className}/preset${params}`)
+  },
+
+  // Get base role templates
+  getRoleTemplates() {
+    return api.get('/presets/roles')
+  },
+
+  // Get complete class details
+  getClassDetails(className) {
+    return api.get(`/presets/classes/${className}`)
+  },
+}
+
 export default api
 
