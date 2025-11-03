@@ -53,19 +53,25 @@ def solve_build(
     if resistance_preferences is None:
         resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
     
-    # ✅ OPTIMIZATION: Only consider items within 25 levels of target
-    # This significantly reduces computation time for high-level builds
+    # ✅ OPTIMIZATION: Optimized level range
+    # Standard items: [level_max - 10, level_max]
+    # High rarity (Legendario/Reliquia/Épico): [level_max - 10, level_max + 10]
+    # Reason: Legendarios are often 5-6 levels ABOVE their Mítico versions
     # EXCEPTION: PET slot (always level 0) is included without level restriction
-    level_min = max(1, level_max - 25)
+    level_min = max(1, level_max - 10)  # ✅ CHANGED: 25 → 10 (more focused)
+    level_max_high_rarity = level_max + 10  # ✅ NEW: Allow +10 levels for rare items
     
     # Fetch all eligible items
-    # Include items in level range OR pets (which are always level 0)
+    # Include items in level range OR high rarity extended range OR pets
     # Exclude Inusual (rarity 2) items EXCEPT for PET slot
     query = db.query(Item).filter(
         Item.slot.isnot(None)
     ).filter(
         (
-            (Item.level <= level_max) & (Item.level >= level_min)  # Normal items in range
+            (Item.level <= level_max) & (Item.level >= level_min)  # Normal items
+        ) | (
+            (Item.level <= level_max_high_rarity) & (Item.level >= level_min) & 
+            (Item.rarity.in_([5, 6, 7]))  # Legendario/Reliquia/Épico: extended range
         ) | (
             Item.slot == "PET"  # OR pets (always level 0)
         )
@@ -177,11 +183,24 @@ def _solve_single_build(
             stat_score += stat_value * weight
         
         # ✅ IMPROVED: Add rarity bonus for HARD builds
-        # This makes HARD prefer higher rarity items when stats are similar
+        # This makes HARD prefer higher rarity items (Legendario > Mítico)
         rarity_bonus = 0.0
         if build_type == "hard":
-            # Bonus: Legendario(5)=2.5, Reliquia(5)=2.5, Épico(7)=3.5, Mítico(4)=2.0
-            rarity_bonus = item.rarity * 1.0  # Moderate bonus to prefer higher rarity
+            # Exponential bonus to strongly prefer higher rarities:
+            # Mítico (4): baseline (0)
+            # Legendario (5): +50 (strongly prefer over Mítico)
+            # Reliquia (6): +60
+            # Épico (7): +70
+            rarity_bonuses = {
+                1: 0,   # Común
+                2: 0,   # Poco común
+                3: 0,   # Raro
+                4: 0,   # Mítico (baseline)
+                5: 50,  # Legendario (strong preference)
+                6: 60,  # Reliquia
+                7: 70   # Épico
+            }
+            rarity_bonus = rarity_bonuses.get(item.rarity, 0)
         
         # Combine with difficulty penalty
         item_score = stat_score - lambda_weight * item.difficulty + rarity_bonus
@@ -221,10 +240,18 @@ def _solve_single_build(
     if epic_vars:
         prob += lpSum(epic_vars) <= settings.MAX_EPIC_ITEMS, "max_epic"
     
-    # Constraint: Max 1 relic
+    # Constraint: Max 1 relic (rarity 6)
     relic_vars = [item_vars[item.item_id] for item in items if item.is_relic]
     if relic_vars:
         prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
+    
+    # ✅ NEW: Constraint for Legendarios (rarity 5)
+    # MEDIUM: Max 1 Legendario to differentiate from HARD
+    # HARD: No limit (can use multiple Legendarios)
+    if build_type == "medium":
+        legendary_vars = [item_vars[item.item_id] for item in items if item.rarity == 5]
+        if legendary_vars:
+            prob += lpSum(legendary_vars) <= 1, "max_legendary_medium"
     
     # Constraint: MEDIUM build must have at least 1 Epic OR 1 Relic
     if build_type == "medium":

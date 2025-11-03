@@ -490,8 +490,8 @@ def main():
                 
                 # Determine flags
                 properties = item_def.get("baseParameters", {}).get("properties", [])
-                is_epic = 21 in properties  # EPIC property ID
-                is_relic = rarity == 5
+                is_epic = 21 in properties  # EPIC property ID (rarity 7)
+                is_relic = rarity == 6  # ✅ FIXED - Reliquia es rarity 6, no 5
                 has_gem_slot = False
                 
                 # ✅ IMPROVED: Detect 2H weapons using equipmentItemTypes.json
