@@ -168,11 +168,11 @@ def _solve_single_build(
     Solve for a single build using linear programming
     
     Build types:
-    - EASY: Max rarity = Mítico (4). Excluye Legendarios/Épicos/Reliquias
-    - MEDIUM: Requiere al menos 1 Épico O 1 Reliquia. Max 1 Legendario
-    - HARD_EPIC: Max Legendarios + 1 Épico (sin Reliquia)
-    - HARD_RELIC: Max Legendarios + 1 Reliquia (sin Épico)
-    - FULL: Max Legendarios + 1 Épico + 1 Reliquia (sin restricciones)
+    - EASY: Solo Raros (3). Excluye Míticos, Legendarios, Épicos y Reliquias
+    - MEDIUM: Míticos (4) + Legendarios (5). NO Épicos ni Reliquias. Max 1 Legendario
+    - HARD_EPIC: Max Legendarios + REQUIRE 1 Épico (NO Reliquias)
+    - HARD_RELIC: Max Legendarios + REQUIRE 1 Reliquia (NO Épicos)
+    - FULL: Max Legendarios + REQUIRE 1 Épico + 1 Reliquia
     """
     # Filter items by build type rarity restrictions
     if build_type == "easy":
@@ -260,50 +260,58 @@ def _solve_single_build(
                             f"no_duplicate_ring_{left_item.item_id}"
     
     # Constraint: Epic and Relic management based on build type
-    epic_vars = [item_vars[item.item_id] for item in items if item.is_epic]
-    relic_vars = [item_vars[item.item_id] for item in items if item.is_relic]
+    epic_items = [item for item in items if item.is_epic]
+    relic_items = [item for item in items if item.is_relic]
     
     if build_type == "hard_epic":
-        # HARD_EPIC: REQUIRE 1 Epic, NO Relics
-        if epic_vars:
-            prob += lpSum(epic_vars) == 1, "require_epic"  # ✅ REQUIRE (not just allow)
-        if relic_vars:
-            prob += lpSum(relic_vars) == 0, "no_relic_in_hard_epic"
+        # HARD_EPIC: REQUIRE exactly 1 Epic, FORBID all Relics
+        if epic_items:
+            epic_vars = [item_vars[item.item_id] for item in epic_items]
+            prob += lpSum(epic_vars) == 1, "require_one_epic"
+        if relic_items:
+            # Forbid each relic individually
+            for relic_item in relic_items:
+                prob += item_vars[relic_item.item_id] == 0, f"forbid_relic_{relic_item.item_id}"
     
     elif build_type == "hard_relic":
-        # HARD_RELIC: REQUIRE 1 Relic, NO Epics
-        if relic_vars:
-            prob += lpSum(relic_vars) == 1, "require_relic"  # ✅ REQUIRE (not just allow)
-        if epic_vars:
-            prob += lpSum(epic_vars) == 0, "no_epic_in_hard_relic"
+        # HARD_RELIC: REQUIRE exactly 1 Relic, FORBID all Epics
+        if relic_items:
+            relic_vars = [item_vars[item.item_id] for item in relic_items]
+            prob += lpSum(relic_vars) == 1, "require_one_relic"
+        if epic_items:
+            # Forbid each epic individually
+            for epic_item in epic_items:
+                prob += item_vars[epic_item.item_id] == 0, f"forbid_epic_{epic_item.item_id}"
     
     elif build_type == "full":
-        # FULL: REQUIRE both 1 Epic AND 1 Relic
-        if epic_vars:
-            prob += lpSum(epic_vars) == 1, "require_epic"  # ✅ REQUIRE
-        if relic_vars:
-            prob += lpSum(relic_vars) == 1, "require_relic"  # ✅ REQUIRE
+        # FULL: REQUIRE exactly 1 Epic AND exactly 1 Relic
+        if epic_items:
+            epic_vars = [item_vars[item.item_id] for item in epic_items]
+            prob += lpSum(epic_vars) == 1, "require_one_epic"
+        if relic_items:
+            relic_vars = [item_vars[item.item_id] for item in relic_items]
+            prob += lpSum(relic_vars) == 1, "require_one_relic"
+    
+    elif build_type == "medium":
+        # MEDIUM: NO Epics, NO Relics (only Raros, Míticos, Legendarios)
+        if epic_items:
+            for epic_item in epic_items:
+                prob += item_vars[epic_item.item_id] == 0, f"forbid_epic_{epic_item.item_id}_medium"
+        if relic_items:
+            for relic_item in relic_items:
+                prob += item_vars[relic_item.item_id] == 0, f"forbid_relic_{relic_item.item_id}_medium"
     
     else:
-        # EASY and MEDIUM: Standard constraints (max, not require)
-        if epic_vars:
-            prob += lpSum(epic_vars) <= settings.MAX_EPIC_ITEMS, "max_epic"
-        if relic_vars:
-            prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
+        # EASY: Already filtered by rarity in items list, no Epic/Relic constraints needed
+        pass
     
-    # ✅ NEW: Constraint for Legendarios (rarity 5)
+    # ✅ Constraint for Legendarios (rarity 5)
     # MEDIUM: Max 1 Legendario to differentiate from HARD
-    # HARD: No limit (can use multiple Legendarios)
+    # HARD variants: No limit on Legendarios
     if build_type == "medium":
         legendary_vars = [item_vars[item.item_id] for item in items if item.rarity == 5]
         if legendary_vars:
-            prob += lpSum(legendary_vars) <= 1, "max_legendary_medium"
-    
-    # Constraint: MEDIUM build must have at least 1 Epic OR 1 Relic
-    if build_type == "medium":
-        if epic_vars or relic_vars:
-            prob += lpSum(epic_vars + relic_vars) >= 1, "require_epic_or_relic"
-            logger.info(f"Build MEDIUM: Requiring at least 1 Epic or Relic")
+            prob += lpSum(legendary_vars) <= 1, "max_one_legendary_medium"
     
     # ✅ IMPROVED: Constraint - Two-handed weapons block SECOND_WEAPON slot
     # Use blocks_second_weapon field from database (detected during worker data load)

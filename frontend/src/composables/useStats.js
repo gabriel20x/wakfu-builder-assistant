@@ -113,10 +113,11 @@ export const RARITY_COLORS = {
   2: '#9E9E9E',     // Inusual - Gris claro
   3: '#4CAF50',     // Raro - Verde
   4: '#FF9800',     // Mítico - Naranja
-  5: '#E91E63',     // Reliquia - Fucsia/Rosa (Wakfu usa 5 para Relic)
+  5: '#E91E63',     // Reliquia - Fucsia/Rosa
   6: '#4FC3F7',     // Recuerdo (Souvenir) - Celeste/Azul claro
   7: '#FFD700',     // Legendario - Dorado/Amarillo
-  // Épico se identifica con is_epic flag, no con rarity number
+  // Épico se identifica con is_epic flag (color: #D946EF)
+  // Reliquia se identifica con is_relic flag (puede tener rarity 5 o 6)
 }
 
 export const RARITY_NAMES = {
@@ -128,7 +129,8 @@ export const RARITY_NAMES = {
   5: 'Reliquia',
   6: 'Recuerdo',
   7: 'Legendario',
-  // Épico se muestra con flag especial
+  // Épico se muestra con flag is_epic
+  // Reliquia se muestra con flag is_relic (prioridad sobre rarity)
 }
 
 export function getStatLabel(statKey) {

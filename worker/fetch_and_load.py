@@ -153,17 +153,17 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             988: "Critical_Resistance",  # ✅ CORRECTED - Resistencia crítica (was Block)
             
             # Damage and healing
-            120: "Damage_Inflicted",
             122: "Healing_Mastery",
             1023: "Healing_Mastery",  # ✅ FIXED - Dominio cura (alternative Action ID)
             1058: "Heals_Performed",
             
             # Elemental Masteries
+            120: "Elemental_Mastery",  # ✅ FIXED - Dominio elemental (was Damage_Inflicted)
             130: "Fire_Mastery",
             131: "Water_Mastery",
             132: "Earth_Mastery",
             133: "Air_Mastery",
-            171: "Elemental_Mastery",
+            171: "Initiative",  # ✅ FIXED - Iniciativa (was Elemental_Mastery)
             1068: "Multi_Element_Mastery",  # ✅ CORRECTED - Dominio en N elementos (was Random_Elemental_Mastery)
             
             # Elemental Resistances
@@ -494,16 +494,16 @@ def main():
                 # JSON 2 = Raro (3)           ← Equipment skips "Poco común" (2)
                 # JSON 3 = Mítico (4)
                 # JSON 4 = Legendario (5)
-                # JSON 5 = Reliquia (6)
-                # JSON 6 = Recuerdo (6)       ← Renovated items, treated as Reliquia
+                # JSON 5 = Reliquia (6)       ← TRUE Relic
+                # JSON 6 = Recuerdo (6)       ← Renovated items (lvl 200), NOT true Relic
                 # JSON 7 = Épico (7)
                 rarity_map = {
                     1: 1,  # Común → Común
                     2: 3,  # Raro (equipment skips Poco común)
                     3: 4,  # Mítico
                     4: 5,  # Legendario
-                    5: 6,  # Reliquia
-                    6: 6,  # Recuerdo → Reliquia (renovated items)
+                    5: 6,  # Reliquia (true relic)
+                    6: 6,  # Recuerdo → Same display rarity but different source
                     7: 7   # Épico
                 }
                 rarity = rarity_map.get(rarity_raw, rarity_raw)
@@ -511,7 +511,9 @@ def main():
                 # Determine flags
                 properties = item_def.get("baseParameters", {}).get("properties", [])
                 is_epic = rarity == 7  # Épico
-                is_relic = rarity == 6  # Reliquia (includes Recuerdos)
+                # ✅ CRITICAL: Only JSON rarity 5 are TRUE Relics
+                # JSON rarity 6 (Recuerdos) are NOT counted as Relics for constraints
+                is_relic = (rarity_raw == 5)  # Only true Reliquias (JSON 5)
                 has_gem_slot = False
                 
                 # ✅ IMPROVED: Detect 2H weapons using equipmentItemTypes.json

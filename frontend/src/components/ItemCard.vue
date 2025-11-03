@@ -19,13 +19,12 @@
         <div class="item-tags">
           <span 
             class="tag rarity-tag" 
-            :class="item.is_epic ? 'rarity-epic' : `rarity-${item.rarity}`" 
+            :class="item.is_epic ? 'rarity-epic' : item.is_relic ? 'rarity-relic' : `rarity-${item.rarity}`" 
             :style="{ borderColor: rarityColor, color: rarityColor }"
           >
             {{ rarityName }}
           </span>
-          <span v-if="item.is_relic" class="tag special-tag">⚡ Única</span>
-          <span v-if="item.is_epic" class="tag special-tag">⚡ Única</span>
+          <span v-if="item.is_relic || item.is_epic" class="tag special-tag">⚡ Única</span>
           <span v-if="item.has_gem_slot" class="tag gem">💎 Gema</span>
         </div>
       </div>
@@ -68,9 +67,13 @@ const { getItemName } = useLanguage()
 const itemName = computed(() => getItemName(props.item))
 
 const rarityColor = computed(() => {
-  // Épicos se identifican con flag is_epic, no con rarity
+  // Épicos se identifican con flag is_epic
   if (props.item.is_epic) {
     return '#D946EF' // Épico - Fucsia/Rosa (tono más púrpura)
+  }
+  // Reliquias se identifican con flag is_relic (prioridad sobre rarity)
+  if (props.item.is_relic) {
+    return '#E91E63' // Reliquia - Fucsia/Rosa
   }
   return getRarityColor(props.item.rarity)
 })
@@ -79,6 +82,10 @@ const rarityName = computed(() => {
   // Épicos tienen su propio nombre
   if (props.item.is_epic) {
     return 'Épico'
+  }
+  // Reliquias tienen su propio nombre (prioridad sobre rarity)
+  if (props.item.is_relic) {
+    return 'Reliquia'
   }
   return getRarityName(props.item.rarity)
 })
@@ -311,6 +318,14 @@ const onImageError = (event) => {
     color: #E879F9;
     font-weight: 700;
     text-shadow: 0 0 8px rgba(217, 70, 239, 0.5);
+  }
+  
+  &.rarity-relic { // Reliquia (cuando is_relic=true)
+    background: rgba(233, 30, 99, 0.15);
+    border-color: #E91E63;
+    color: #F06292;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(233, 30, 99, 0.5);
   }
   
   &.gem {
