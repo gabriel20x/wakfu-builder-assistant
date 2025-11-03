@@ -222,8 +222,16 @@
               <BuildResult :build="builds.medium" difficulty="Medio" :show-stats="false" />
             </p-tabPanel>
             
-            <p-tabPanel header="Difícil">
-              <BuildResult :build="builds.hard" difficulty="Difícil" :show-stats="false" />
+            <p-tabPanel header="Difícil (Épico)">
+              <BuildResult :build="builds.hard_epic" difficulty="Difícil (Épico)" :show-stats="false" />
+            </p-tabPanel>
+            
+            <p-tabPanel header="Difícil (Reliquia)">
+              <BuildResult :build="builds.hard_relic" difficulty="Difícil (Reliquia)" :show-stats="false" />
+            </p-tabPanel>
+            
+            <p-tabPanel header="Completo">
+              <BuildResult :build="builds.full" difficulty="Completo" :show-stats="false" />
             </p-tabPanel>
           </p-tabView>
         </div>
@@ -232,7 +240,7 @@
           <i class="pi pi-info-circle"></i>
           <h3>¿Listo para comenzar?</h3>
           <p>Configura las prioridades de stats y haz clic en "Generar Builds"</p>
-          <p class="help-text">El sistema generará 3 builds optimizados con diferentes niveles de dificultad de obtención</p>
+          <p class="help-text">El sistema generará 5 builds optimizados con diferentes niveles de dificultad de obtención</p>
         </div>
       </div>
 
@@ -279,7 +287,7 @@ const resistancePreferences = ref(['Fire', 'Water', 'Earth', 'Air'])
 const currentBuildStats = computed(() => {
   if (!builds.value) return null
   
-  const buildTypes = ['easy', 'medium', 'hard']
+  const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
   const activeBuildType = buildTypes[activeTabIndex.value]
   
   return builds.value[activeBuildType]?.total_stats || null
@@ -448,7 +456,7 @@ const generateBuilds = async () => {
     toast.add({
       severity: 'success',
       summary: 'Builds Generados',
-      detail: `3 builds optimizados creados (${enabledCount} stats priorizados)`,
+      detail: `5 builds optimizados creados (${enabledCount} stats priorizados)`,
       life: 3000
     })
   } catch (err) {

@@ -54,8 +54,8 @@ const props = defineProps({
 
 const difficultyClass = computed(() => {
   const diff = props.build.total_difficulty || 0
-  if (diff < 3) return 'easy'
-  if (diff < 6) return 'medium'
+  if (diff < 40) return 'easy'
+  if (diff < 65) return 'medium'
   return 'hard'
 })
 </script>
