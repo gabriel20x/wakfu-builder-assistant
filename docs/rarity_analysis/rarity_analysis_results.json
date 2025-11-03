@@ -1,0 +1,413 @@
+{
+  "total_items": 8321,
+  "rarity_distribution": {
+    "1": 451,
+    "2": 1924,
+    "3": 3372,
+    "4": 2239,
+    "5": 98,
+    "7": 116,
+    "0": 17,
+    "6": 104
+  },
+  "multi_id_items": 0,
+  "multi_type_level_combos": 553,
+  "examples": [
+    {
+      "type_id": 134,
+      "level": 11,
+      "items": [
+        {
+          "item_id": 2026,
+          "rarity": 2
+        },
+        {
+          "item_id": 10816,
+          "rarity": 1
+        }
+      ]
+    },
+    {
+      "type_id": 189,
+      "level": 17,
+      "items": [
+        {
+          "item_id": 2090,
+          "rarity": 2
+        },
+        {
+          "item_id": 9254,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 537,
+      "level": 1,
+      "items": [
+        {
+          "item_id": 2292,
+          "rarity": 1
+        },
+        {
+          "item_id": 2293,
+          "rarity": 1
+        },
+        {
+          "item_id": 2408,
+          "rarity": 1
+        },
+        {
+          "item_id": 8051,
+          "rarity": 1
+        },
+        {
+          "item_id": 8052,
+          "rarity": 1
+        }
+      ]
+    },
+    {
+      "type_id": 134,
+      "level": 31,
+      "items": [
+        {
+          "item_id": 2297,
+          "rarity": 2
+        },
+        {
+          "item_id": 10273,
+          "rarity": 1
+        },
+        {
+          "item_id": 13838,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 132,
+      "level": 32,
+      "items": [
+        {
+          "item_id": 2300,
+          "rarity": 3
+        },
+        {
+          "item_id": 2301,
+          "rarity": 2
+        },
+        {
+          "item_id": 4207,
+          "rarity": 3
+        },
+        {
+          "item_id": 20395,
+          "rarity": 3
+        },
+        {
+          "item_id": 25119,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 119,
+      "level": 32,
+      "items": [
+        {
+          "item_id": 2313,
+          "rarity": 2
+        },
+        {
+          "item_id": 9303,
+          "rarity": 3
+        },
+        {
+          "item_id": 10936,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 114,
+      "level": 17,
+      "items": [
+        {
+          "item_id": 2676,
+          "rarity": 2
+        },
+        {
+          "item_id": 10265,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 223,
+      "level": 80,
+      "items": [
+        {
+          "item_id": 2869,
+          "rarity": 4
+        },
+        {
+          "item_id": 17745,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 132,
+      "level": 62,
+      "items": [
+        {
+          "item_id": 3608,
+          "rarity": 2
+        },
+        {
+          "item_id": 14861,
+          "rarity": 2
+        },
+        {
+          "item_id": 15029,
+          "rarity": 3
+        },
+        {
+          "item_id": 15584,
+          "rarity": 3
+        },
+        {
+          "item_id": 21133,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 119,
+      "level": 55,
+      "items": [
+        {
+          "item_id": 4141,
+          "rarity": 3
+        },
+        {
+          "item_id": 30400,
+          "rarity": 2
+        },
+        {
+          "item_id": 30420,
+          "rarity": 2
+        },
+        {
+          "item_id": 30905,
+          "rarity": 2
+        }
+      ]
+    },
+    {
+      "type_id": 134,
+      "level": 54,
+      "items": [
+        {
+          "item_id": 4220,
+          "rarity": 2
+        },
+        {
+          "item_id": 25252,
+          "rarity": 1
+        },
+        {
+          "item_id": 30891,
+          "rarity": 2
+        },
+        {
+          "item_id": 30914,
+          "rarity": 2
+        }
+      ]
+    },
+    {
+      "type_id": 115,
+      "level": 45,
+      "items": [
+        {
+          "item_id": 4615,
+          "rarity": 2
+        },
+        {
+          "item_id": 14716,
+          "rarity": 3
+        },
+        {
+          "item_id": 20790,
+          "rarity": 2
+        }
+      ]
+    },
+    {
+      "type_id": 103,
+      "level": 48,
+      "items": [
+        {
+          "item_id": 4988,
+          "rarity": 2
+        },
+        {
+          "item_id": 11010,
+          "rarity": 3
+        },
+        {
+          "item_id": 14042,
+          "rarity": 2
+        },
+        {
+          "item_id": 14592,
+          "rarity": 3
+        },
+        {
+          "item_id": 15153,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 110,
+      "level": 50,
+      "items": [
+        {
+          "item_id": 5580,
+          "rarity": 3
+        },
+        {
+          "item_id": 30227,
+          "rarity": 5
+        }
+      ]
+    },
+    {
+      "type_id": 132,
+      "level": 29,
+      "items": [
+        {
+          "item_id": 5963,
+          "rarity": 3
+        },
+        {
+          "item_id": 10764,
+          "rarity": 2
+        },
+        {
+          "item_id": 10783,
+          "rarity": 2
+        }
+      ]
+    },
+    {
+      "type_id": 133,
+      "level": 69,
+      "items": [
+        {
+          "item_id": 5971,
+          "rarity": 2
+        },
+        {
+          "item_id": 23542,
+          "rarity": 1
+        }
+      ]
+    },
+    {
+      "type_id": 134,
+      "level": 20,
+      "items": [
+        {
+          "item_id": 6584,
+          "rarity": 1
+        },
+        {
+          "item_id": 14907,
+          "rarity": 3
+        },
+        {
+          "item_id": 15738,
+          "rarity": 3
+        },
+        {
+          "item_id": 20373,
+          "rarity": 3
+        },
+        {
+          "item_id": 20393,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 138,
+      "level": 16,
+      "items": [
+        {
+          "item_id": 6586,
+          "rarity": 1
+        },
+        {
+          "item_id": 14832,
+          "rarity": 3
+        }
+      ]
+    },
+    {
+      "type_id": 136,
+      "level": 122,
+      "items": [
+        {
+          "item_id": 7573,
+          "rarity": 3
+        },
+        {
+          "item_id": 15952,
+          "rarity": 3
+        },
+        {
+          "item_id": 16048,
+          "rarity": 2
+        },
+        {
+          "item_id": 16110,
+          "rarity": 3
+        },
+        {
+          "item_id": 23144,
+          "rarity": 2
+        }
+      ]
+    },
+    {
+      "type_id": 134,
+      "level": 125,
+      "items": [
+        {
+          "item_id": 7574,
+          "rarity": 3
+        },
+        {
+          "item_id": 16965,
+          "rarity": 4
+        },
+        {
+          "item_id": 17544,
+          "rarity": 5
+        },
+        {
+          "item_id": 20990,
+          "rarity": 3
+        },
+        {
+          "item_id": 21492,
+          "rarity": 4
+        }
+      ]
+    }
+  ]
+}
