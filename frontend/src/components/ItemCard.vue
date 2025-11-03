@@ -88,11 +88,16 @@ const rarityGradient = computed(() => {
   return `linear-gradient(135deg, ${color}22 0%, ${color}11 100%)`
 })
 
-const itemImageUrl = computed(() => {
-  // Try to get image from WakfuAssets
-  // If not available, will fallback to placeholder in onImageError
-  return `https://tmktahu.github.io/WakfuAssets/items/${props.item.item_id}.png`
-})
+const imageSources = computed(() => [
+  // Try Zenith Wakfu first (webp format)
+  `https://zenithwakfu.com/images/items/${props.item.item_id}.webp`,
+  // Fallback to WakfuAssets (png format)
+  `https://tmktahu.github.io/WakfuAssets/items/${props.item.item_id}.png`,
+])
+
+const itemImageUrl = computed(() => imageSources.value[0])
+
+let currentSourceIndex = 0
 
 const difficultyClass = computed(() => {
   const diff = props.item.difficulty || 0
@@ -133,10 +138,37 @@ const formatSourceType = (sourceType) => {
 }
 
 const onImageError = (event) => {
-  // Fallback to a simple colored placeholder with first letter
-  const firstLetter = itemName.value.charAt(0).toUpperCase()
+  currentSourceIndex++
+  
+  // Try next source if available
+  if (currentSourceIndex < imageSources.value.length) {
+    event.target.src = imageSources.value[currentSourceIndex]
+    return
+  }
+  
+  // All sources failed - use slot-based icon placeholder
+  const slotIcons = {
+    'HEAD': '⛑️',
+    'NECK': '📿',
+    'CHEST': '👕',
+    'LEGS': '👖',
+    'BACK': '🎒',
+    'SHOULDERS': '🦾',
+    'BELT': '⚡',
+    'FIRST_WEAPON': '⚔️',
+    'SECOND_WEAPON': '🗡️',
+    'ACCESSORY': '💫',
+    'LEFT_HAND': '💍',
+    'RIGHT_HAND': '💍',
+    'PET': '🐾',
+    'MOUNT': '🐴'
+  }
+  
+  const icon = slotIcons[props.item.slot] || '⚡'
   const color = rarityColor.value.replace('#', '')
-  event.target.src = `https://via.placeholder.com/64/${color}/ffffff?text=${encodeURIComponent(firstLetter)}`
+  
+  // Create a better looking placeholder with emoji
+  event.target.src = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23${color}' opacity='0.2'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' font-size='32'%3E${icon}%3C/text%3E%3C/svg%3E`
 }
 </script>
 

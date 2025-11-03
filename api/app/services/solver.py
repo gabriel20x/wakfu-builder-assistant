@@ -60,6 +60,7 @@ def solve_build(
     
     # Fetch all eligible items
     # Include items in level range OR pets (which are always level 0)
+    # Exclude Inusual (rarity 2) items EXCEPT for PET slot
     query = db.query(Item).filter(
         Item.slot.isnot(None)
     ).filter(
@@ -68,6 +69,9 @@ def solve_build(
         ) | (
             Item.slot == "PET"  # OR pets (always level 0)
         )
+    ).filter(
+        # Exclude Inusual (rarity 2) unless it's a PET
+        (Item.rarity != 2) | (Item.slot == "PET")
     )
     
     # Filter out PET and ACCESSORY if not included
