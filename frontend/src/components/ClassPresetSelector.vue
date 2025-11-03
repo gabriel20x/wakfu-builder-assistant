@@ -6,20 +6,19 @@
     </div>
     <p class="help-text">Selecciona tu clase y rol para autoconfigurar los stats</p>
     
-    <div class="selectors-grid">
-      <!-- Class Selector -->
-      <div class="selector-group">
-        <label>Clase</label>
-        <p-dropdown
-          v-model="selectedClass"
-          :options="classes"
-          option-label="name"
-          option-value="id"
-          placeholder="Selecciona tu clase"
-          :loading="loadingClasses"
-          @change="onClassChange"
-          class="w-full"
-        >
+    <!-- Class Selector -->
+    <div class="selector-group">
+      <label>Clase</label>
+      <p-dropdown
+        v-model="selectedClass"
+        :options="classes"
+        option-label="name"
+        option-value="id"
+        placeholder="Selecciona tu clase"
+        :loading="loadingClasses"
+        @change="onClassChange"
+        class="w-full"
+      >
           <template #value="slotProps">
             <div v-if="slotProps.value" class="flex align-items-center">
               <img 
@@ -47,19 +46,19 @@
         </p-dropdown>
       </div>
 
-      <!-- Role Selector -->
-      <div class="selector-group">
-        <label>Rol / Build</label>
-        <p-dropdown
-          v-model="selectedRole"
-          :options="roles"
-          option-label="name"
-          option-value="id"
-          placeholder="Selecciona rol"
-          :disabled="!selectedClass"
-          :loading="loadingRoles"
-          class="w-full"
-        >
+    <!-- Role Selector -->
+    <div class="selector-group">
+      <label>Rol / Build</label>
+      <p-dropdown
+        v-model="selectedRole"
+        :options="roles"
+        option-label="name"
+        option-value="id"
+        placeholder="Selecciona rol"
+        :disabled="!selectedClass"
+        :loading="loadingRoles"
+        class="w-full"
+      >
           <template #value="slotProps">
             <div v-if="slotProps.value" class="flex align-items-center">
               <i :class="getRoleIcon(slotProps.value)" class="mr-2"></i>
@@ -89,7 +88,6 @@
           </template>
         </p-dropdown>
       </div>
-    </div>
 
     <!-- Apply Button -->
     <p-button
@@ -102,10 +100,10 @@
     />
 
     <!-- Preview Stats (opcional) -->
-    <div v-if="previewStats" class="preset-preview">
+    <div v-if="previewStats && Object.keys(previewStats).length > 0" class="preset-preview">
       <div class="preview-header">
         <i class="pi pi-eye"></i>
-        <span>Vista Previa de Stats</span>
+        <span>Stats Principales (Top 6)</span>
       </div>
       <div class="preview-stats">
         <div v-for="(weight, stat) in topStats" :key="stat" class="preview-stat">
@@ -292,7 +290,8 @@ const getElementEmoji = (element) => {
 }
 
 const onImageError = (event) => {
-  event.target.style.display = 'none'
+  // If class icon fails to load, show a generic icon
+  event.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23667eea" font-size="16" font-weight="bold"%3E⚔%3C/text%3E%3C/svg%3E'
 }
 
 // Load classes on mount
@@ -331,18 +330,9 @@ loadClasses()
   font-size: 0.875rem;
 }
 
-.selectors-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
+.selector-group {
   margin-bottom: 1rem;
   
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-}
-
-.selector-group {
   label {
     display: block;
     margin-bottom: 0.5rem;
@@ -367,12 +357,23 @@ loadClasses()
 .apply-button {
   width: 100%;
   font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
+  margin-top: 0.5rem;
   
   &:hover:not(:disabled) {
     background: linear-gradient(135deg, #7c8ff0 0%, #8c5bb2 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
   }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+  }
+  
+  transition: all 0.2s ease;
 }
 
 .preset-preview {
@@ -408,21 +409,30 @@ loadClasses()
 
 .preview-stat {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
 }
 
 .stat-name {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #a0a0a0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
 }
 
 .stat-bar {
   position: relative;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 4px;
+  width: 40px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .stat-bar-fill {
@@ -436,13 +446,13 @@ loadClasses()
 
 .stat-value {
   position: absolute;
-  right: 0.5rem;
+  right: 0.25rem;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 :deep(.p-dropdown) {
@@ -459,11 +469,20 @@ loadClasses()
 }
 
 :deep(.p-dropdown-panel) {
-  background: rgba(26, 35, 50, 0.95);
+  background: rgba(26, 35, 50, 0.98);
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  
+  .p-dropdown-items {
+    padding: 0.5rem;
+  }
   
   .p-dropdown-item {
     color: #e0e0e0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
     
     &:hover {
       background: rgba(92, 107, 192, 0.3);

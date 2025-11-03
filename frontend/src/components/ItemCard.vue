@@ -17,10 +17,16 @@
           <span v-if="item.slot" class="item-slot">{{ formatSlot(item.slot) }}</span>
         </div>
         <div class="item-tags">
-          <span class="tag rarity-tag" :class="`rarity-${item.rarity}`" :style="{ borderColor: rarityColor, color: rarityColor }">
+          <span 
+            class="tag rarity-tag" 
+            :class="item.is_epic ? 'rarity-epic' : `rarity-${item.rarity}`" 
+            :style="{ borderColor: rarityColor, color: rarityColor }"
+          >
             {{ rarityName }}
           </span>
-          <span v-if="item.has_gem_slot" class="tag gem">Gema</span>
+          <span v-if="item.is_relic" class="tag special-tag">⚡ Única</span>
+          <span v-if="item.is_epic" class="tag special-tag">⚡ Única</span>
+          <span v-if="item.has_gem_slot" class="tag gem">💎 Gema</span>
         </div>
       </div>
     </div>
@@ -61,9 +67,21 @@ const { getItemName } = useLanguage()
 
 const itemName = computed(() => getItemName(props.item))
 
-const rarityColor = computed(() => getRarityColor(props.item.rarity))
+const rarityColor = computed(() => {
+  // Épicos se identifican con flag is_epic, no con rarity
+  if (props.item.is_epic) {
+    return '#D946EF' // Épico - Fucsia/Rosa (tono más púrpura)
+  }
+  return getRarityColor(props.item.rarity)
+})
 
-const rarityName = computed(() => getRarityName(props.item.rarity))
+const rarityName = computed(() => {
+  // Épicos tienen su propio nombre
+  if (props.item.is_epic) {
+    return 'Épico'
+  }
+  return getRarityName(props.item.rarity)
+})
 
 const rarityGradient = computed(() => {
   const color = rarityColor.value
@@ -72,6 +90,7 @@ const rarityGradient = computed(() => {
 
 const itemImageUrl = computed(() => {
   // Try to get image from WakfuAssets
+  // If not available, will fallback to placeholder in onImageError
   return `https://tmktahu.github.io/WakfuAssets/items/${props.item.item_id}.png`
 })
 
@@ -96,7 +115,8 @@ const formatSlot = (slot) => {
     'ACCESSORY': 'Accesorio',
     'LEFT_HAND': 'Anillo',
     'RIGHT_HAND': 'Anillo',
-    'PET': 'Mascota'
+    'PET': 'Mascota',
+    'MOUNT': 'Montura'
   }
   return slotNames[slot] || slot
 }
@@ -113,8 +133,10 @@ const formatSourceType = (sourceType) => {
 }
 
 const onImageError = (event) => {
-  const shortName = itemName.value.substring(0, 2)
-  event.target.src = 'https://via.placeholder.com/64?text=' + encodeURIComponent(shortName)
+  // Fallback to a simple colored placeholder with first letter
+  const firstLetter = itemName.value.charAt(0).toUpperCase()
+  const color = rarityColor.value.replace('#', '')
+  event.target.src = `https://via.placeholder.com/64/${color}/ffffff?text=${encodeURIComponent(firstLetter)}`
 }
 </script>
 
@@ -201,32 +223,49 @@ const onImageError = (event) => {
     backdrop-filter: blur(4px);
   }
   
-  // Colores específicos por rareza
+  // Colores específicos por rareza (según tabla oficial de Wakfu)
+  &.rarity-0,
   &.rarity-1 { // Común - Gris
     background: rgba(128, 128, 128, 0.15);
     border-color: #808080;
     color: #b0b0b0;
   }
   
-  &.rarity-2 { // Poco común - Verde
+  &.rarity-2 { // Inusual - Gris claro
+    background: rgba(158, 158, 158, 0.15);
+    border-color: #9E9E9E;
+    color: #BDBDBD;
+  }
+  
+  &.rarity-3 { // Raro - Verde
     background: rgba(76, 175, 80, 0.15);
     border-color: #4CAF50;
     color: #66BB6A;
   }
   
-  &.rarity-3 { // Raro - Naranja
-    background: rgba(255, 165, 0, 0.15);
-    border-color: #FFA500;
+  &.rarity-4 { // Mítico - Naranja
+    background: rgba(255, 152, 0, 0.15);
+    border-color: #FF9800;
     color: #FFB74D;
   }
   
-  &.rarity-4 { // Mítico - Morado
-    background: rgba(156, 39, 176, 0.15);
-    border-color: #9C27B0;
-    color: #BA68C8;
+  &.rarity-5 { // Reliquia - Fucsia/Rosa
+    background: rgba(233, 30, 99, 0.15);
+    border-color: #E91E63;
+    color: #F06292;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(233, 30, 99, 0.5);
   }
   
-  &.rarity-5 { // Legendario - Amarillo
+  &.rarity-6 { // Recuerdo (Souvenir) - Celeste/Azul claro
+    background: rgba(79, 195, 247, 0.15);
+    border-color: #4FC3F7;
+    color: #81D4FA;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(79, 195, 247, 0.5);
+  }
+  
+  &.rarity-7 { // Legendario - Dorado/Amarillo
     background: rgba(255, 215, 0, 0.15);
     border-color: #FFD700;
     color: #FFD700;
@@ -234,26 +273,25 @@ const onImageError = (event) => {
     text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   }
   
-  &.rarity-6 { // Reliquia - Cyan
-    background: rgba(0, 188, 212, 0.15);
-    border-color: #00BCD4;
-    color: #4DD0E1;
+  &.rarity-epic { // Épico - Fucsia/Rosa (tono más púrpura)
+    background: rgba(217, 70, 239, 0.15);
+    border-color: #D946EF;
+    color: #E879F9;
     font-weight: 700;
-    text-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
-  }
-  
-  &.rarity-7 { // Épico - Rojo
-    background: rgba(255, 23, 68, 0.15);
-    border-color: #FF1744;
-    color: #FF5252;
-    font-weight: 700;
-    text-shadow: 0 0 8px rgba(255, 23, 68, 0.5);
+    text-shadow: 0 0 8px rgba(217, 70, 239, 0.5);
   }
   
   &.gem {
     background: rgba(156, 39, 176, 0.2);
     color: #9c27b0;
     border: 1px solid rgba(156, 39, 176, 0.4);
+  }
+  
+  &.special-tag {
+    background: rgba(255, 215, 0, 0.2);
+    color: #FFD700;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    font-size: 0.7rem;
   }
 }
 

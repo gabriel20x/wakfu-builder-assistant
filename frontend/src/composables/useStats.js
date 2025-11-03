@@ -108,23 +108,27 @@ export const DEFAULT_STAT_WEIGHTS = {
 }
 
 export const RARITY_COLORS = {
-  1: '#808080', // Common - Gray
-  2: '#4CAF50', // Uncommon - Green
-  3: '#FFA500', // Rare - Orange
-  4: '#9C27B0', // Mythic - Purple
-  5: '#FFD700', // Legendary - Gold (Legendario)
-  6: '#00BCD4', // Relic - Cyan (Reliquia)
-  7: '#FF1744', // Epic - Red (Épico)
+  0: '#808080',     // Sin rareza - Gris
+  1: '#808080',     // Común - Gris
+  2: '#9E9E9E',     // Inusual - Gris claro
+  3: '#4CAF50',     // Raro - Verde
+  4: '#FF9800',     // Mítico - Naranja
+  5: '#E91E63',     // Reliquia - Fucsia/Rosa (Wakfu usa 5 para Relic)
+  6: '#4FC3F7',     // Recuerdo (Souvenir) - Celeste/Azul claro
+  7: '#FFD700',     // Legendario - Dorado/Amarillo
+  // Épico se identifica con is_epic flag, no con rarity number
 }
 
 export const RARITY_NAMES = {
+  0: 'Común',
   1: 'Común',
-  2: 'Poco Común',
+  2: 'Inusual',
   3: 'Raro',
   4: 'Mítico',
-  5: 'Legendario',  // Amarillo (Gold #FFD700)
-  6: 'Reliquia',    // Cyan (#00BCD4)
-  7: 'Épico',       // Rojo (#FF1744)
+  5: 'Reliquia',
+  6: 'Recuerdo',
+  7: 'Legendario',
+  // Épico se muestra con flag especial
 }
 
 export function getStatLabel(statKey) {
