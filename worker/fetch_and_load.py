@@ -251,17 +251,17 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                 
                 # Handle contextual stats (depend on item type, slot, and value)
                 if stat_name == "Range_or_Elemental_Res":
-                    # ✅ FIXED - Incluir NECK (amuletos) para Range
-                    # Use slot to determine: weapons/head/neck = Range, other armors = Elemental_Resistance
-                    range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD", "NECK"]
+                    # ✅ FIXED - Incluir NECK y SHOULDERS para Range
+                    # Use slot to determine: weapons/head/neck/shoulders = Range, other armors = Elemental_Resistance
+                    range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD", "NECK", "SHOULDERS"]
                     if slot in range_slots:
                         stat_name = "Range"
                     else:
                         stat_name = "Elemental_Resistance"
                 
                 elif stat_name == "Heals_Received_or_Armor_Given":
-                    # ✅ FIXED - Contextual: En amuletos (NECK) es Armor_Given, en otros es Heals_Received
-                    if slot == "NECK":
+                    # ✅ FIXED - Contextual: En NECK y SHOULDERS es Armor_Given, en otros es Heals_Received
+                    if slot in ["NECK", "SHOULDERS"]:
                         stat_name = "Armor_Given"
                     else:
                         stat_name = "Heals_Received"
@@ -274,11 +274,20 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                         stat_name = "Lock"
                 
                 elif stat_name == "Dodge_or_Berserk":
-                    # ✅ IMPROVED: Use value to determine: low values (<50) = Dodge, high values = Berserk_Mastery
-                    if stat_value < 50:
-                        stat_name = "Dodge"
+                    # ✅ IMPROVED: Use value to determine with slot-specific thresholds
+                    # SHOULDERS and SECOND_WEAPON have higher Dodge values than other slots
+                    if slot in ["SHOULDERS", "SECOND_WEAPON"]:
+                        # In these slots, Dodge can go up to 200+
+                        if stat_value < 200:
+                            stat_name = "Dodge"
+                        else:
+                            stat_name = "Berserk_Mastery"
                     else:
-                        stat_name = "Berserk_Mastery"
+                        # Other slots: standard threshold
+                        if stat_value < 50:
+                            stat_name = "Dodge"
+                        else:
+                            stat_name = "Berserk_Mastery"
                         
                 elif stat_name == "Armor_or_Berserk":
                     # Use value to determine: low values (≤50) = Armor_Given %, high values = Berserk_Mastery

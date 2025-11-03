@@ -29,8 +29,8 @@ class Settings(BaseSettings):
     # Lambda weights for solver (balancing stats vs difficulty)
     # Escala: Raro(15) → Mítico(30, 2x) → Legendario(50, 4x) → Épico/Reliquia(65+)
     EASY_LAMBDA: float = 2.0  # Penaliza Míticos, prefiere Raros cuando sea posible
-    MEDIUM_LAMBDA: float = 0.8  # Acepta Legendarios si aportan valor significativo
-    HARD_LAMBDA: float = 0.1  # Casi sin penalización: puro stats
+    MEDIUM_LAMBDA: float = 0.3  # ✅ FIXED - Acepta Épicos/Reliquias si aportan valor (antes 0.8)
+    HARD_LAMBDA: float = 0.0  # ✅ FIXED - Sin penalización: puro stats (antes 0.1)
     
     class Config:
         env_file = ".env"

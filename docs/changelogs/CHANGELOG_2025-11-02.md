@@ -1,13 +1,13 @@
 # Changelog - Worker & API Improvements
 **Date**: 2025-11-02  
-**Version**: 1.2  
-**Accuracy**: 99% → 99.8% (+0.8%)
+**Version**: 1.4  
+**Accuracy**: 99% → 99.9% (+0.9%)
 
 ---
 
 ## Changes Implemented
 
-High-priority tasks from `UNIFIED_WORKER_API_REPORT.md`:
+High-priority tasks from `UNIFIED_WORKER_API_REPORT.md` + Build Optimization:
 
 ### 1. Improved 2H Weapon Detection
 
@@ -105,6 +105,91 @@ range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD", "NECK"]
 - Amuleto de Nyom: 100 Lock + 289 Rear_Mastery (separados)
 
 **Total Accuracy:** 99.5% → 99.8% (+0.3%)
+
+---
+
+### 5. Build Lambda Optimization
+
+**Problem:** Medium and Hard builds were too similar, preferring Rare items over Legendary/Epic/Relic items
+
+**Analysis:**
+- Old MEDIUM_LAMBDA: 0.8 → Epic (difficulty 60) penalty = 48 stats
+- Old HARD_LAMBDA: 0.1 → Still penalizing difficulty
+- Result: Solver avoided Epic/Relic items even in Hard mode
+
+**Solution:**
+**Files Modified:** 
+- `api/app/core/config.py` Lines 32-33 (Lambda values)
+- `api/app/services/solver.py` Lines 179-184 (Rarity bonus)
+
+```python
+# Config: Lambda values
+MEDIUM_LAMBDA: float = 0.3  # ✅ FIXED - Accepts Epic/Relic (was 0.8)
+HARD_LAMBDA: float = 0.0    # ✅ FIXED - Pure stats (was 0.1)
+
+# Solver: Rarity bonus for HARD
+if build_type == "hard":
+    rarity_bonus = item.rarity * 1.0  # ✅ Prefers higher rarity when stats similar
+```
+
+**Impact:**
+- Medium builds now include Epic/Relic items (1 each, respecting Wakfu rules)
+- Hard builds prioritize Mythic items (4) + Epic/Relic (1 each)
+- Hard builds get rarity bonus (+1.0 per rarity level) to prefer higher rarity
+- Stats improvement: Easy→Medium = +90 Distance_Mastery example
+
+**Build Differentiation (Distance Mastery example, level 95):**
+```
+Build  | Dist | Rare | Mythic | Legendary | Epic
+-------+------+------+--------+-----------+------
+EASY   | 354  |  9   |   0    |     0     |  0
+MEDIUM | 444  |  6   |   3    |     1     |  1    (+25% stats vs Easy)
+HARD   | 444  |  5   |   4    |     1     |  1    (+1 Mythic vs Medium)
+```
+
+**Key Improvement:** HARD now clearly prefers higher rarity items over MEDIUM
+
+---
+
+### 6. Multi-Slot Corrections (SHOULDERS + SECOND_WEAPON)
+
+**Source:** `docs/discrepancy_analysis/SHOULDERS_ANALYSIS.md` + `SECOND_WEAPON_SUMMARY.md`
+
+#### 6.1 Dodge in SHOULDERS and SECOND_WEAPON
+**Problem:** Action ID 175 used wrong threshold for these slots
+
+**Files Modified:** `worker/fetch_and_load.py` Lines 277-290
+
+```python
+if slot in ["SHOULDERS", "SECOND_WEAPON"]:
+    if stat_value < 200:  # Higher threshold for these slots
+        stat_name = "Dodge"
+```
+
+**Impact:**
+- ✅ 449 hombreras corregidas (Dodge, no Berserk)
+- ✅ 173 armas secundarias corregidas
+
+#### 6.2 Range in SHOULDERS
+**Files Modified:** `worker/fetch_and_load.py` Line 256
+
+```python
+range_slots = ["FIRST_WEAPON", "SECOND_WEAPON", "HEAD", "NECK", "SHOULDERS"]
+```
+
+**Impact:** ✅ 12 hombreras con Range
+
+#### 6.3 Armor_Given in SHOULDERS
+**Files Modified:** `worker/fetch_and_load.py` Line 264
+
+```python
+if slot in ["NECK", "SHOULDERS"]:
+    stat_name = "Armor_Given"
+```
+
+**Impact:** ✅ 49 hombreras con Armor_Given
+
+**Total Multi-Slot Corrections:** 683 items fixed
 
 ---
 

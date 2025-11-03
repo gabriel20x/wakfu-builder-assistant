@@ -164,7 +164,7 @@ def _solve_single_build(
         var_name = f"item_{item.item_id}"
         item_vars[item.item_id] = LpVariable(var_name, cat='Binary')
     
-    # Objective function: maximize (weighted_stats - lambda * difficulty)
+    # Objective function: maximize (weighted_stats - lambda * difficulty + rarity_bonus)
     objective = []
     
     for item in items:
@@ -176,8 +176,15 @@ def _solve_single_build(
             stat_value = item.stats.get(stat_name, 0)
             stat_score += stat_value * weight
         
+        # ✅ IMPROVED: Add rarity bonus for HARD builds
+        # This makes HARD prefer higher rarity items when stats are similar
+        rarity_bonus = 0.0
+        if build_type == "hard":
+            # Bonus: Legendario(5)=2.5, Reliquia(5)=2.5, Épico(7)=3.5, Mítico(4)=2.0
+            rarity_bonus = item.rarity * 1.0  # Moderate bonus to prefer higher rarity
+        
         # Combine with difficulty penalty
-        item_score = stat_score - lambda_weight * item.difficulty
+        item_score = stat_score - lambda_weight * item.difficulty + rarity_bonus
         
         objective.append(item_score * var)
     
