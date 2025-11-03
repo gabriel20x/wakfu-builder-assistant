@@ -30,12 +30,20 @@ class BuildResponse(BaseModel):
 class SolveResponse(BaseModel):
     easy: BuildResponse
     medium: BuildResponse
-    hard: BuildResponse
+    hard_epic: BuildResponse
+    hard_relic: BuildResponse
+    full: BuildResponse
 
 @router.post("/solve", response_model=SolveResponse)
 async def solve(request: SolveRequest, db: Session = Depends(get_db)):
     """
-    Generate three builds (easy, medium, hard) based on stat weights and level
+    Generate five builds (easy, medium, hard_epic, hard_relic, full) based on stat weights and level
+    
+    - easy: Only Rare items (accessible)
+    - medium: Mix of Mythic + 1 Legendary + 1 Epic/Relic
+    - hard_epic: Max Legendaries + 1 Epic (no Relic)
+    - hard_relic: Max Legendaries + 1 Relic (no Epic)
+    - full: Max Legendaries + 1 Epic + 1 Relic (best possible)
     """
     try:
         # Generate builds

@@ -486,12 +486,32 @@ def main():
                 
                 # Extract basic info
                 level = item_def.get("level", 0)
-                rarity = item_def.get("baseParameters", {}).get("rarity", 0)
+                rarity_raw = item_def.get("baseParameters", {}).get("rarity", 0)
+                
+                # ✅ CRITICAL FIX: Rarity mapping for equipment
+                # Wakfu's JSON rarity is offset from in-game display:
+                # JSON 1 = Común (1)
+                # JSON 2 = Raro (3)           ← Equipment skips "Poco común" (2)
+                # JSON 3 = Mítico (4)
+                # JSON 4 = Legendario (5)
+                # JSON 5 = Reliquia (6)
+                # JSON 6 = Recuerdo (6)       ← Renovated items, treated as Reliquia
+                # JSON 7 = Épico (7)
+                rarity_map = {
+                    1: 1,  # Común → Común
+                    2: 3,  # Raro (equipment skips Poco común)
+                    3: 4,  # Mítico
+                    4: 5,  # Legendario
+                    5: 6,  # Reliquia
+                    6: 6,  # Recuerdo → Reliquia (renovated items)
+                    7: 7   # Épico
+                }
+                rarity = rarity_map.get(rarity_raw, rarity_raw)
                 
                 # Determine flags
                 properties = item_def.get("baseParameters", {}).get("properties", [])
-                is_epic = 21 in properties  # EPIC property ID (rarity 7)
-                is_relic = rarity == 6  # ✅ FIXED - Reliquia es rarity 6, no 5
+                is_epic = rarity == 7  # Épico
+                is_relic = rarity == 6  # Reliquia (includes Recuerdos)
                 has_gem_slot = False
                 
                 # ✅ IMPROVED: Detect 2H weapons using equipmentItemTypes.json

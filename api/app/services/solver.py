@@ -42,9 +42,9 @@ def solve_build(
     resistance_preferences: List[str] = None
 ) -> Dict:
     """
-    Solve for three builds: easy, medium, hard
+    Solve for five builds: easy, medium, hard_epic, hard_relic, full
     
-    Returns dict with keys: easy, medium, hard
+    Returns dict with keys: easy, medium, hard_epic, hard_relic, full
     Each containing: items, total_stats, total_difficulty, build_type
     """
     # Default element preferences
@@ -115,11 +115,31 @@ def solve_build(
         resistance_preferences=resistance_preferences
     )
     
-    hard_build = _solve_single_build(
+    hard_epic_build = _solve_single_build(
         items, stat_weights, level_max,
         difficulty_max=settings.HARD_DIFFICULTY_MAX,
         lambda_weight=settings.HARD_LAMBDA,
-        build_type="hard",
+        build_type="hard_epic",
+        db=db,
+        damage_preferences=damage_preferences,
+        resistance_preferences=resistance_preferences
+    )
+    
+    hard_relic_build = _solve_single_build(
+        items, stat_weights, level_max,
+        difficulty_max=settings.HARD_DIFFICULTY_MAX,
+        lambda_weight=settings.HARD_LAMBDA,
+        build_type="hard_relic",
+        db=db,
+        damage_preferences=damage_preferences,
+        resistance_preferences=resistance_preferences
+    )
+    
+    full_build = _solve_single_build(
+        items, stat_weights, level_max,
+        difficulty_max=settings.HARD_DIFFICULTY_MAX,
+        lambda_weight=settings.HARD_LAMBDA,
+        build_type="full",
         db=db,
         damage_preferences=damage_preferences,
         resistance_preferences=resistance_preferences
@@ -128,7 +148,9 @@ def solve_build(
     return {
         "easy": easy_build,
         "medium": medium_build,
-        "hard": hard_build
+        "hard_epic": hard_epic_build,
+        "hard_relic": hard_relic_build,
+        "full": full_build
     }
 
 def _solve_single_build(
@@ -147,8 +169,10 @@ def _solve_single_build(
     
     Build types:
     - EASY: Max rarity = Mítico (4). Excluye Legendarios/Épicos/Reliquias
-    - MEDIUM: Requiere al menos 1 Épico O 1 Reliquia. Permite Legendarios
-    - HARD: Sin restricciones, completamente optimizado
+    - MEDIUM: Requiere al menos 1 Épico O 1 Reliquia. Max 1 Legendario
+    - HARD_EPIC: Max Legendarios + 1 Épico (sin Reliquia)
+    - HARD_RELIC: Max Legendarios + 1 Reliquia (sin Épico)
+    - FULL: Max Legendarios + 1 Épico + 1 Reliquia (sin restricciones)
     """
     # Filter items by build type rarity restrictions
     if build_type == "easy":
@@ -235,15 +259,37 @@ def _solve_single_build(
                     prob += (item_vars[left_item.item_id] + item_vars[right_item.item_id] <= 1), \
                             f"no_duplicate_ring_{left_item.item_id}"
     
-    # Constraint: Max 1 epic
+    # Constraint: Epic and Relic management based on build type
     epic_vars = [item_vars[item.item_id] for item in items if item.is_epic]
-    if epic_vars:
-        prob += lpSum(epic_vars) <= settings.MAX_EPIC_ITEMS, "max_epic"
-    
-    # Constraint: Max 1 relic (rarity 6)
     relic_vars = [item_vars[item.item_id] for item in items if item.is_relic]
-    if relic_vars:
-        prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
+    
+    if build_type == "hard_epic":
+        # HARD_EPIC: REQUIRE 1 Epic, NO Relics
+        if epic_vars:
+            prob += lpSum(epic_vars) == 1, "require_epic"  # ✅ REQUIRE (not just allow)
+        if relic_vars:
+            prob += lpSum(relic_vars) == 0, "no_relic_in_hard_epic"
+    
+    elif build_type == "hard_relic":
+        # HARD_RELIC: REQUIRE 1 Relic, NO Epics
+        if relic_vars:
+            prob += lpSum(relic_vars) == 1, "require_relic"  # ✅ REQUIRE (not just allow)
+        if epic_vars:
+            prob += lpSum(epic_vars) == 0, "no_epic_in_hard_relic"
+    
+    elif build_type == "full":
+        # FULL: REQUIRE both 1 Epic AND 1 Relic
+        if epic_vars:
+            prob += lpSum(epic_vars) == 1, "require_epic"  # ✅ REQUIRE
+        if relic_vars:
+            prob += lpSum(relic_vars) == 1, "require_relic"  # ✅ REQUIRE
+    
+    else:
+        # EASY and MEDIUM: Standard constraints (max, not require)
+        if epic_vars:
+            prob += lpSum(epic_vars) <= settings.MAX_EPIC_ITEMS, "max_epic"
+        if relic_vars:
+            prob += lpSum(relic_vars) <= settings.MAX_RELIC_ITEMS, "max_relic"
     
     # ✅ NEW: Constraint for Legendarios (rarity 5)
     # MEDIUM: Max 1 Legendario to differentiate from HARD

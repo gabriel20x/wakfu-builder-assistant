@@ -1,14 +1,50 @@
 # Changelog - Worker & API Improvements
 **Date**: 2025-11-02 to 2025-11-03  
-**Version**: 1.5  
+**Version**: 1.6  
 **Accuracy**: 99% → 99.9% (+0.9%)  
 **Performance**: +60% faster (optimized level range)
+**Critical Fix**: Rarity mapping corrected (Legendarios: 98 → 2,128)
 
 ---
 
 ## Changes Implemented
 
-High-priority tasks from `UNIFIED_WORKER_API_REPORT.md` + Build Optimization:
+High-priority tasks from `UNIFIED_WORKER_API_REPORT.md` + Build Optimization + Critical Rarity Fix:
+
+### 0. CRITICAL: Rarity Mapping Correction
+
+**Problem:** JSON rarity values were incorrectly mapped to in-game rarities
+
+**Discovery:** User verification showed that JSON rarity values are offset for equipment items
+
+**Files Modified:** `worker/fetch_and_load.py` Lines 489-515
+
+**Correct Mapping:**
+```python
+JSON rarity → In-Game rarity
+1 → Común (1)
+2 → Raro (3)           ← Equipment skips "Poco común" (2)
+3 → Mítico (4)
+4 → Legendario (5)     ← Was incorrectly mapped as "Mítico"
+5 → Reliquia (6)       ← Was incorrectly mapped as "Legendario"
+6 → Recuerdo (6)       ← Renovated items, treated as Reliquia
+7 → Épico (7)
+```
+
+**Impact:**
+- ✅ Legendarios: 98 → 2,128 (+2,030 items)
+- ✅ Reliquias: 98 → 202 (+104 Recuerdos)
+- ✅ Épicos: Correctly identified (116 items)
+- ✅ "La punzante" now correctly shows: Raro(121) → Mítico(124) → Legendario(125)
+
+**Build Improvement (level 170 example):**
+```
+Before: MEDIUM = HARD (both 956 Distance)
+After:  MEDIUM: 816 Distance (8 Míticos + 1 Legendario + 1 Reliquia)
+        HARD:  1050 Distance (11 Legendarios) ✅ +29% better
+```
+
+---
 
 ### 1. Improved 2H Weapon Detection
 
