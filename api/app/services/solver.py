@@ -178,26 +178,29 @@ def _solve_single_build(
     Solve for a single build using linear programming
     
     Build types (adaptive based on level):
-    - EASY (level < 80): Solo Raros (≤3). Excluye Míticos, Legendarios, Épicos y Reliquias
+    - EASY (level < 80): Común, Poco Común, Raro (≤3). Excluye Míticos, Legendarios, Épicos y Reliquias
     - EASY (level ≥ 80): Hasta Míticos (≤4). Excluye Legendarios, Épicos y Reliquias
     - MEDIUM (level < 80): Hasta Míticos (≤4). Excluye Legendarios, Épicos y Reliquias
     - MEDIUM (level ≥ 80): Míticos (4) + Legendarios (5). NO Épicos ni Reliquias. Max 1 Legendario
     - HARD_EPIC: Max Legendarios + REQUIRE 1 Épico (NO Reliquias)
     - HARD_RELIC: Max Legendarios + REQUIRE 1 Reliquia (NO Épicos)
     - FULL: Max Legendarios + REQUIRE 1 Épico + 1 Reliquia
+    
+    For low levels (< 80), EASY includes Common/Uncommon/Rare to ensure all slots have options
+    (especially rings which are scarce at low levels).
     """
     # Filter items by build type rarity restrictions (adaptive to level)
     if build_type == "easy":
         # ✅ ADAPTIVE: For low levels (< 80), Mythical items are hard to farm
-        # So EASY builds should only use Rare (≤3) for levels < 80
+        # So EASY builds should only use Common/Uncommon/Rare (≤3) for levels < 80
         if level_max < 80:
-            # Low level EASY: Solo Raros (rarity <= 3)
+            # Low level EASY: Común, Poco Común, Raro (rarity <= 3)
+            # No difficulty filter to ensure all slots have options (especially rings)
             items = [item for item in items 
                      if item.rarity <= 3 
                      and not item.is_epic 
-                     and not item.is_relic
-                     and item.difficulty <= 45.0]
-            logger.info(f"Build EASY (lvl<80): Filtering to rarity <= Raro. Items: {len(items)}")
+                     and not item.is_relic]
+            logger.info(f"Build EASY (lvl<80): Filtering to rarity <= Raro (includes Común). Items: {len(items)}")
         else:
             # High level EASY: Hasta Míticos (rarity <= 4)
             items = [item for item in items 
@@ -253,6 +256,11 @@ def _solve_single_build(
             stat_value = resolved_stats.get(stat_name, 0)
             stat_score += stat_value * weight
         
+        # ✅ NEW: Add bonus for filling slots (better to have something than nothing)
+        # This is especially important for EASY builds where low-stat items might be skipped
+        # Rings (LEFT_HAND) get extra bonus since they're often skipped due to low stats
+        slot_fill_bonus = 5.0 if item.slot == "LEFT_HAND" else 2.0
+        
         # ✅ IMPROVED: Add rarity bonus for HARD builds
         # This makes HARD prefer higher rarity items (Legendario > Mítico)
         rarity_bonus = 0.0
@@ -273,8 +281,8 @@ def _solve_single_build(
             }
             rarity_bonus = rarity_bonuses.get(item.rarity, 0)
         
-        # Combine with difficulty penalty
-        item_score = stat_score - lambda_weight * item.difficulty + rarity_bonus
+        # Combine: stat value - difficulty penalty + rarity bonus + slot fill incentive
+        item_score = stat_score - lambda_weight * item.difficulty + rarity_bonus + slot_fill_bonus
         
         objective.append(item_score * var)
     
