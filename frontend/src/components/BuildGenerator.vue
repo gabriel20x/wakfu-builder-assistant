@@ -251,7 +251,11 @@
         </div>
         
         <div class="panel-content">
-          <BuildStatSheet v-if="currentBuildStats" :stats="currentBuildStats" />
+          <BuildStatSheet 
+            v-if="currentBuildStats" 
+            :stats="currentBuildStats" 
+            :character-level="characterLevel"
+          />
           
           <!-- Damage Estimator -->
           <div class="damage-section">

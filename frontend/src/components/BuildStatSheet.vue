@@ -1,5 +1,17 @@
 <template>
   <div class="build-stat-sheet">
+    <!-- Toggle: Solo Equipo vs Con Stats Base -->
+    <div class="stats-toggle-container">
+      <div class="toggle-option" :class="{ active: !includeBaseStats }" @click="includeBaseStats = false">
+        <i class="pi pi-box"></i>
+        <span>Solo Equipo</span>
+      </div>
+      <div class="toggle-option" :class="{ active: includeBaseStats }" @click="includeBaseStats = true">
+        <i class="pi pi-user"></i>
+        <span>Con Stats Base</span>
+      </div>
+    </div>
+    
     <!-- Main Stats (HP, AP, MP, WP) -->
     <div class="flex justify-content-between w-full px-2 mb-3">
       <div class="main-stat-box">
@@ -7,7 +19,12 @@
           <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/health_points.png" />
           <span class="ml-1">PdV</span>
         </div>
-        <div class="stat-value py-1">{{ stats.HP || 0 }}</div>
+        <div class="stat-value py-1">
+          {{ displayStats.HP }}
+          <span v-if="includeBaseStats && baseStats.HP > 0" class="base-stat-indicator">
+            (+{{ baseStats.HP }})
+          </span>
+        </div>
       </div>
       
       <div class="main-stat-box">
@@ -15,7 +32,12 @@
           <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/action_points.png" />
           <span class="ml-1">PA</span>
         </div>
-        <div class="stat-value py-1">{{ stats.AP || 0 }}</div>
+        <div class="stat-value py-1">
+          {{ displayStats.AP }}
+          <span v-if="includeBaseStats && baseStats.AP > 0" class="base-stat-indicator">
+            (+{{ baseStats.AP }})
+          </span>
+        </div>
       </div>
       
       <div class="main-stat-box">
@@ -23,7 +45,12 @@
           <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/movement_points.png" />
           <span class="ml-1">PM</span>
         </div>
-        <div class="stat-value py-1">{{ stats.MP || 0 }}</div>
+        <div class="stat-value py-1">
+          {{ displayStats.MP }}
+          <span v-if="includeBaseStats && baseStats.MP > 0" class="base-stat-indicator">
+            (+{{ baseStats.MP }})
+          </span>
+        </div>
       </div>
       
       <div class="main-stat-box">
@@ -31,7 +58,12 @@
           <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/wakfu_points.png" />
           <span class="ml-1">PW</span>
         </div>
-        <div class="stat-value py-1">{{ stats.WP || 0 }}</div>
+        <div class="stat-value py-1">
+          {{ displayStats.WP }}
+          <span v-if="includeBaseStats && baseStats.WP > 0" class="base-stat-indicator">
+            (+{{ baseStats.WP }})
+          </span>
+        </div>
       </div>
     </div>
 
@@ -121,7 +153,12 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/critical_hit.png" />
               <span class="ml-1">Golpe crítico</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Critical_Hit || 0 }}%</span>
+              <span>
+                {{ displayStats.Critical_Hit || 0 }}%
+                <span v-if="includeBaseStats && baseStats.Critical_Hit > 0" class="base-stat-hint">
+                  (+{{ baseStats.Critical_Hit }}%)
+                </span>
+              </span>
             </div>
 
             <div class="stat-block pr-2">
@@ -288,13 +325,47 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 
 const props = defineProps({
   stats: {
     type: Object,
     required: true
+  },
+  characterLevel: {
+    type: Number,
+    default: 1
   }
+})
+
+// Toggle para mostrar stats base o no
+const includeBaseStats = ref(false)
+
+// Calcular stats base del personaje según nivel
+const baseStats = computed(() => {
+  const level = props.characterLevel
+  return {
+    HP: 60 + (level - 1) * 10,
+    AP: 6,
+    MP: 3,
+    WP: 6,
+    Critical_Hit: 3
+  }
+})
+
+// Stats a mostrar (equipo + base si está activado)
+const displayStats = computed(() => {
+  if (!includeBaseStats.value) {
+    return props.stats
+  }
+  
+  // Combinar stats del equipo con stats base
+  const combined = { ...props.stats }
+  Object.keys(baseStats.value).forEach(stat => {
+    combined[stat] = (combined[stat] || 0) + baseStats.value[stat]
+  })
+  
+  return combined
 })
 
 // Formula: ((100 * resistance) / (1000 + resistance))
@@ -310,6 +381,66 @@ const calcResistancePercentage = (resistance) => {
   width: 100%;
   padding: 0;
   background: transparent;
+}
+
+.stats-toggle-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(26, 35, 50, 0.6);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.toggle-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #a0a0a0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  
+  i {
+    font-size: 1rem;
+  }
+  
+  &:hover {
+    background: rgba(92, 107, 192, 0.2);
+    border-color: rgba(92, 107, 192, 0.3);
+    color: #e0e0e0;
+  }
+  
+  &.active {
+    background: rgba(92, 107, 192, 0.4);
+    border-color: rgba(92, 107, 192, 0.6);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(92, 107, 192, 0.3);
+  }
+}
+
+.base-stat-indicator {
+  display: block;
+  font-size: 0.65rem;
+  color: #9fa8da;
+  font-weight: 500;
+  margin-top: 0.125rem;
+}
+
+.base-stat-hint {
+  font-size: 0.7rem;
+  color: #9fa8da;
+  margin-left: 0.25rem;
+  font-weight: 500;
 }
 
 .main-stat-box {

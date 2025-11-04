@@ -211,3 +211,5 @@ Lo que viste en las screenshots era el **comportamiento correcto** del juego Wak
 
 
 
+
+
