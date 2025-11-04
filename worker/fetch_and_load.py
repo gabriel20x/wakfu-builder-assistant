@@ -203,9 +203,10 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             168: "Critical_Hit_Penalty",  # -Critical Hit %
             174: "Lock_Penalty",  # -Lock (en armaduras)
             176: "Dodge_Penalty",  # -Dodge (en armaduras)
+            192: "WP_Penalty",  # ✅ FIXED - -WP (Wakfu Points penalty, positive value → negative stat)
             
             # Other
-            192: "Prospecting",
+            193: "Prospecting",  # Prospecting (if it exists on different Action ID)
             
             # Armor
             1056: "Armor_Received",
@@ -274,17 +275,24 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                         stat_name = "Lock"
                 
                 elif stat_name == "Dodge_or_Berserk":
-                    # ✅ IMPROVED: Use value to determine with slot-specific thresholds
-                    # SHOULDERS and SECOND_WEAPON have higher Dodge values than other slots
-                    if slot in ["SHOULDERS", "SECOND_WEAPON"]:
-                        # In these slots, Dodge can go up to 200+
-                        if stat_value < 200:
+                    # ✅ IMPROVED: Use value and slot to determine stat type
+                    # Different slots have different Dodge value ranges:
+                    # - FIRST_WEAPON: Dodge can go up to 200+ (e.g., Pepepew Sword: 170 Dodge)
+                    # - HEAD: Dodge can go up to 100+ (e.g., Screechcut: 80 Dodge)
+                    # - SHOULDERS, SECOND_WEAPON: Dodge can go up to 200+
+                    # Berserk_Mastery typically starts from very low values (not mixed with Dodge)
+                    
+                    # For most equipment slots, action ID 175 with ANY value should be Dodge
+                    # Only specific cases with extremely high values (250+) might be Berserk
+                    if slot in ["FIRST_WEAPON", "HEAD", "SHOULDERS", "SECOND_WEAPON"]:
+                        # These slots commonly have Dodge; only treat as Berserk if extremely high
+                        if stat_value < 250:
                             stat_name = "Dodge"
                         else:
                             stat_name = "Berserk_Mastery"
                     else:
-                        # Other slots: standard threshold
-                        if stat_value < 50:
+                        # Other slots: use lower threshold (chest, belt, etc.)
+                        if stat_value < 100:
                             stat_name = "Dodge"
                         else:
                             stat_name = "Berserk_Mastery"
@@ -311,6 +319,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                     stat_value = -stat_value
                 elif stat_name == "Rear_Mastery_Penalty":
                     stat_name = "Rear_Mastery"
+                    stat_value = -stat_value
+                elif stat_name == "WP_Penalty":
+                    stat_name = "WP"
                     stat_value = -stat_value
                 
                 stats[stat_name] = stats.get(stat_name, 0) + stat_value

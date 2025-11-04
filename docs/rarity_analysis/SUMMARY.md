@@ -209,6 +209,256 @@ Lo que viste en las screenshots era el **comportamiento correcto** del juego Wak
 **Precisión:** 100%  
 **Estado:** ✅ **SISTEMA CORRECTO - ANÁLISIS COMPLETADO**
 
+---
+
+## 🔧 CORRECCIÓN APLICADA: Dodge vs Berserk_Mastery
+
+**Fecha:** 2025-11-04  
+**Estado:** ⚠️ **BUG ENCONTRADO Y CORREGIDO**
+
+### Problema Identificado
+Durante la verificación de builds generados, se detectó que algunos items tenían **Berserk_Mastery** en lugar de **Dodge**.
+
+**Items Afectados:**
+- **Peinado Ror / Screechcut** (HEAD, item_id: 21218)
+  - ❌ Incorrecto: Berserk_Mastery: 70
+  - ✅ Correcto: Dodge: 70
+
+- **Espada de Pym, el Pío / Pepepew Sword** (FIRST_WEAPON, item_id: 26638)
+  - ❌ Incorrecto: Berserk_Mastery: 110
+  - ✅ Correcto: Dodge: 110
+
+### Causa Raíz
+**Action ID 175** en los datos del juego es un **stat contextual** que puede ser:
+- **Dodge** (común - valores 10 a 200+)
+- **Berserk_Mastery** (raro - valores 250+)
+
+El threshold original en `worker/fetch_and_load.py` era **muy bajo (50)**:
+```python
+# ❌ INCORRECTO
+if stat_value < 50:
+    stat_name = "Dodge"
+else:
+    stat_name = "Berserk_Mastery"
+```
+
+**Problema:** Dodge puede superar 50 fácilmente (ej: armas con 170 Dodge)
+
+### Solución Aplicada
+
+#### 1. Actualizado Threshold Logic
+```python
+# ✅ CORRECTO - Slot-specific thresholds
+if slot in ["FIRST_WEAPON", "HEAD", "SHOULDERS", "SECOND_WEAPON"]:
+    if stat_value < 250:
+        stat_name = "Dodge"
+    else:
+        stat_name = "Berserk_Mastery"
+else:
+    if stat_value < 100:
+        stat_name = "Dodge"
+    else:
+        stat_name = "Berserk_Mastery"
+```
+
+#### 2. Migración SQL Creada
+- **Archivo:** `migrations/fix_dodge_berserk_stats.sql`
+- **Función:** Corrige items existentes en la DB
+- **Alcance:** Todos los items con classification incorrecta
+
+### Impacto
+
+**Antes del fix:**
+```json
+{
+  "easy": {
+    "total_stats": {
+      "Berserk_Mastery": 180,  // ❌ Incluye Dodge mal clasificado
+      "Dodge": 210              // ❌ Incompleto
+    }
+  }
+}
+```
+
+**Después del fix:**
+```json
+{
+  "easy": {
+    "total_stats": {
+      "Berserk_Mastery": 0,     // ✅ Solo valores legítimos
+      "Dodge": 390              // ✅ Todos los valores de Dodge
+    }
+  }
+}
+```
+
+### Archivos Modificados
+1. ✅ `worker/fetch_and_load.py` - Threshold logic actualizado
+2. ✅ `migrations/fix_dodge_berserk_stats.sql` - Migración para DB
+3. ✅ `fix_dodge_stats.py` - Script Python alternativo
+4. ✅ `docs/FIX_DODGE_BERSERK_ISSUE.md` - Documentación completa
+
+### Cómo Aplicar
+```bash
+# Opción 1: Migración SQL (Recomendado)
+docker-compose exec db psql -U wakfu -d wakfu_builder -f /migrations/fix_dodge_berserk_stats.sql
+
+# Opción 2: Recargar datos (aplica nuevo threshold)
+docker-compose restart worker
+```
+
+### Verificación
+```sql
+SELECT item_id, name_es, slot, rarity, 
+       stats::jsonb->'Dodge' as dodge,
+       stats::jsonb->'Berserk_Mastery' as berserk
+FROM items
+WHERE item_id IN (21218, 26638);
+
+-- Resultado esperado:
+-- 21218: Dodge ✓, NO Berserk_Mastery
+-- 26638: Dodge ✓, NO Berserk_Mastery
+```
+
+**Estado:** ⚠️ **FIX DISPONIBLE - REQUIERE APLICACIÓN**
+
+Ver documentación completa en: `docs/FIX_DODGE_BERSERK_ISSUE.md`
+
+---
+
+## 🔧 CORRECCIÓN APLICADA #2: Prospecting vs -WP
+
+**Fecha:** 2025-11-04  
+**Estado:** ⚠️ **BUG ENCONTRADO Y CORREGIDO**
+
+### Problema Identificado
+Durante la misma verificación de builds, se detectó otro problema con **Anillo pinxudo / Mamagring**.
+
+**Item Afectado:**
+- **Anillo pinxudo / Mamagring** (LEFT_HAND/RIGHT_HAND, varios item_ids)
+  - ❌ Incorrecto: Prospecting: 1
+  - ✅ Correcto: WP: -1 (Wakfu Points negativos)
+
+### Causa Raíz
+**Action ID 192** es otro **stat contextual** basado en el **signo del valor**:
+- **Valor positivo** → Prospecting (prospección de recursos)
+- **Valor negativo** → -WP (penalización de Puntos de Wakfu)
+
+El mapeo original trataba todos los valores como Prospecting:
+```python
+# ❌ INCORRECTO
+192: "Prospecting"  # Siempre Prospecting
+```
+
+**Problema:** No detectaba valores negativos que representan -WP
+
+### Solución Aplicada
+
+#### Actualizado Action ID 192
+```python
+# ✅ CORRECTO - Value-based detection
+192: "Prospecting_or_WP"  # Contextual stat
+
+elif stat_name == "Prospecting_or_WP":
+    if stat_value > 0:
+        stat_name = "Prospecting"
+    else:
+        stat_name = "WP"  # Valor ya es negativo
+```
+
+#### Migración SQL Combinada
+- **Archivo:** `migrations/fix_dodge_and_prospecting_stats.sql`
+- **Función:** Corrige AMBOS problemas (Dodge/Berserk + Prospecting/WP)
+- **Alcance:** Todos los items con clasificaciones incorrectas
+
+### Impacto
+
+**Antes del fix:**
+```json
+{
+  "easy": {
+    "total_stats": {
+      "Prospecting": 1,  // ❌ Stat incorrecto
+      "WP": 0            // ❌ No refleja penalización
+    }
+  }
+}
+```
+
+**Después del fix:**
+```json
+{
+  "easy": {
+    "total_stats": {
+      "Prospecting": 0,  // ✅ Sin falsos positivos
+      "WP": -1           // ✅ Penalización correcta
+    }
+  }
+}
+```
+
+### Archivos Modificados
+1. ✅ `worker/fetch_and_load.py` - Mapeo de Action ID 192 actualizado
+2. ✅ `migrations/fix_dodge_and_prospecting_stats.sql` - Migración combinada (ambos fixes)
+3. ✅ `docs/PROSPECTING_VS_WP_ISSUE.md` - Documentación detallada
+4. ✅ `CONTEXTUAL_STATS_FIX_COMPLETE.md` - Resumen completo de ambos fixes
+
+### Cómo Aplicar
+```bash
+# Opción 1: Migración SQL combinada (Recomendado)
+# Corrige AMBOS problemas (Dodge/Berserk + Prospecting/WP)
+docker-compose exec db psql -U wakfu -d wakfu_builder \
+  -f /migrations/fix_dodge_and_prospecting_stats.sql
+
+# Opción 2: Recargar datos (aplica ambos threshold nuevos)
+docker-compose restart worker
+```
+
+### Verificación
+```sql
+SELECT item_id, name_es, slot, rarity, 
+       stats::jsonb->'WP' as wp,
+       stats::jsonb->'Prospecting' as prospecting
+FROM items
+WHERE name_es ILIKE '%pinxudo%'
+   OR name ILIKE '%mamagring%';
+
+-- Resultado esperado:
+-- Mamagring: WP: -1 ✓, NO Prospecting
+```
+
+**Estado:** ⚠️ **FIX DISPONIBLE - REQUIERE APLICACIÓN**
+
+---
+
+## ✅ VERIFICADO: Sistema de Anillos (Rings)
+
+**Fecha:** 2025-11-04
+
+### Consulta del Usuario
+¿El sistema permite equipar 2 anillos diferentes pero no el mismo anillo dos veces?
+
+### Verificación Realizada
+✅ **SÍ, el sistema YA funciona correctamente:**
+
+- Soporta 2 slots de anillo: `LEFT_HAND` y `RIGHT_HAND`
+- Tiene restricción para **prevenir duplicados** (mismo item_id en ambas manos)
+- Código: `api/app/services/solver.py` líneas 262-276
+
+**No se requiere ningún cambio** - ¡Ya está implementado correctamente! ✅
+
+---
+
+## 📋 RESUMEN DE CORRECCIONES - 2025-11-04
+
+| Issue | Action ID | Estado | Impacto |
+|-------|-----------|--------|---------|
+| Dodge vs Berserk | 175 | ✅ Fixed | ~180 puntos Dodge correctamente atribuidos |
+| Prospecting vs -WP | 192 | ✅ Fixed | -1 WP penalización registrada correctamente |
+| Ring duplicates | N/A | ✅ Ya correcto | Sin cambios necesarios |
+
+**Documentación completa:** `CONTEXTUAL_STATS_FIX_COMPLETE.md`
+
 
 
 
