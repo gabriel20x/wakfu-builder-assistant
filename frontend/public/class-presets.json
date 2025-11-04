@@ -624,6 +624,353 @@
           }
         }
       ]
+    },
+    {
+      "id": "xelor",
+      "name": "Xelor",
+      "description": "DPS con mecánicas de reloj y desplazamiento temporal",
+      "primary_role": "dps_distance",
+      "roles": [
+        {
+          "id": "dps_distance",
+          "name": "DPS Distancia/Área",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water"],
+          "stat_priorities": {
+            "Distance_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "Fire_Mastery": 8,
+            "Water_Mastery": 8,
+            "MP": 7,
+            "HP": 5,
+            "Dodge": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "iop",
+      "name": "Iop",
+      "description": "DPS melé con sistema de combos",
+      "primary_role": "dps_melee",
+      "roles": [
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé (Combos)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Earth", "Air"],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 7,
+            "Earth_Mastery": 7,
+            "Rear_Mastery": 8,
+            "MP": 6,
+            "HP": 6,
+            "Lock": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "rogue",
+      "name": "Rogue",
+      "description": "DPS con bombas y multi-elemento",
+      "primary_role": "dps_setup",
+      "roles": [
+        {
+          "id": "dps_setup",
+          "name": "DPS Setup (Bombas)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Earth"],
+          "stat_priorities": {
+            "Distance_Mastery": 8,
+            "Melee_Mastery": 8,
+            "AP": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 7,
+            "Water_Mastery": 7,
+            "Earth_Mastery": 7,
+            "MP": 7,
+            "HP": 5,
+            "Dodge": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "sram",
+      "name": "Sram",
+      "description": "DPS melé con ataques de espalda",
+      "primary_role": "dps_melee",
+      "roles": [
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé (Espalda)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Air"],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "Rear_Mastery": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 7,
+            "Water_Mastery": 7,
+            "AP": 10,
+            "MP": 7,
+            "HP": 5,
+            "Lock": 6,
+            "Dodge": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "enutrof",
+      "name": "Enutrof",
+      "description": "DPS/Support con tesoros y alta movilidad",
+      "primary_role": "dps_melee",
+      "roles": [
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé (Tesoros)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Earth", "Water", "Fire"],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "AP": 10,
+            "MP": 9,
+            "Earth_Mastery": 8,
+            "Water_Mastery": 7,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "HP": 6,
+            "Prospecting": 6,
+            "Elemental_Resistance": 5
+          }
+        },
+        {
+          "id": "support",
+          "name": "Support (Boosts)",
+          "is_primary": false,
+          "level_range": [20, 245],
+          "elements": ["Earth", "Water"],
+          "stat_priorities": {
+            "HP": 9,
+            "AP": 10,
+            "MP": 10,
+            "Control": 8,
+            "Elemental_Mastery": 7,
+            "Wisdom": 6,
+            "Prospecting": 6,
+            "Elemental_Resistance": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ecaflip",
+      "name": "Ecaflip",
+      "description": "DPS con cartas de tarot y suerte",
+      "primary_role": "dps_hybrid",
+      "roles": [
+        {
+          "id": "dps_hybrid",
+          "name": "DPS Híbrido (Tarot)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Earth", "Air"],
+          "stat_priorities": {
+            "Distance_Mastery": 8,
+            "Melee_Mastery": 8,
+            "Critical_Hit": 10,
+            "Critical_Mastery": 9,
+            "AP": 10,
+            "MP": 7,
+            "Elemental_Mastery": 8,
+            "HP": 6,
+            "Dodge": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "zobal",
+      "name": "Zobal",
+      "description": "Support/DPS con máscaras y doble",
+      "primary_role": "support",
+      "roles": [
+        {
+          "id": "support",
+          "name": "Support (Máscaras)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Water", "Air", "Earth"],
+          "stat_priorities": {
+            "HP": 9,
+            "AP": 10,
+            "MP": 8,
+            "Control": 9,
+            "Elemental_Mastery": 8,
+            "Armor_Given": 8,
+            "Armor_Received": 7,
+            "Healing_Mastery": 6,
+            "Elemental_Resistance": 6,
+            "Dodge": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "eliotrope",
+      "name": "Eliotrope",
+      "description": "DPS a distancia con portales",
+      "primary_role": "dps_distance",
+      "roles": [
+        {
+          "id": "dps_distance",
+          "name": "DPS Distancia (Portales)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Air"],
+          "stat_priorities": {
+            "Distance_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 8,
+            "Water_Mastery": 8,
+            "Air_Mastery": 8,
+            "MP": 7,
+            "HP": 5,
+            "Dodge": 7,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "huppermage",
+      "name": "Huppermage",
+      "description": "DPS multi-elemento con corazón de luz",
+      "primary_role": "dps_distance",
+      "roles": [
+        {
+          "id": "dps_distance",
+          "name": "DPS Multi-Elemento",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Earth", "Air"],
+          "stat_priorities": {
+            "Distance_Mastery": 9,
+            "Elemental_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "Fire_Mastery": 7,
+            "Water_Mastery": 7,
+            "Earth_Mastery": 7,
+            "Air_Mastery": 7,
+            "MP": 7,
+            "HP": 6,
+            "Dodge": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "sadida",
+      "name": "Sadida",
+      "description": "Support/DPS con muñecos y árboles",
+      "primary_role": "support",
+      "roles": [
+        {
+          "id": "support",
+          "name": "Support (Muñecos)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Earth", "Water", "Air"],
+          "stat_priorities": {
+            "HP": 8,
+            "Control": 10,
+            "Healing_Mastery": 8,
+            "Earth_Mastery": 8,
+            "Water_Mastery": 7,
+            "AP": 9,
+            "MP": 7,
+            "Armor_Given": 7,
+            "Elemental_Resistance": 6,
+            "Dodge": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "foggernaut",
+      "name": "Foggernaut",
+      "description": "DPS/Tank con armas a distancia",
+      "primary_role": "dps_distance",
+      "roles": [
+        {
+          "id": "dps_distance",
+          "name": "DPS Distancia (Stasis)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water"],
+          "stat_priorities": {
+            "Distance_Mastery": 10,
+            "Fire_Mastery": 9,
+            "Water_Mastery": 9,
+            "AP": 10,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "MP": 6,
+            "HP": 6,
+            "Dodge": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "masqueraider",
+      "name": "Masqueraider",
+      "description": "DPS con máscaras y alta movilidad",
+      "primary_role": "dps_melee",
+      "roles": [
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé (Máscaras)",
+          "is_primary": true,
+          "level_range": [20, 245],
+          "elements": ["Fire", "Water", "Air"],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 8,
+            "Water_Mastery": 8,
+            "AP": 10,
+            "MP": 7,
+            "HP": 6,
+            "Lock": 6,
+            "Dodge": 6
+          }
+        }
+      ]
     }
   ],
   "role_templates": {
@@ -715,10 +1062,10 @@
     }
   },
   "metadata": {
-    "version": "1.7.0",
-    "last_updated": "2025-11-03",
+    "version": "1.8.0",
+    "last_updated": "2025-11-04",
     "source": "Extracted from community guides and Wakfu Builder tutorials",
-    "total_classes": 9,
-    "total_roles": 19
+    "total_classes": 18,
+    "total_roles": 26
   }
 }

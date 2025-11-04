@@ -2,19 +2,19 @@
   <div class="class-preset-selector">
     <div class="selector-header">
       <i class="pi pi-star-fill"></i>
-      <span>Quick Start - Presets por Clase</span>
+      <span>{{ t('quickStart.title') }}</span>
     </div>
-    <p class="help-text">Selecciona tu clase y rol para autoconfigurar los stats</p>
+    <p class="help-text">{{ t('quickStart.help') }}</p>
     
     <!-- Class Selector -->
     <div class="selector-group">
-      <label>Clase</label>
+      <label>{{ t('quickStart.class') }}</label>
       <p-dropdown
         v-model="selectedClass"
         :options="classes"
         option-label="name"
         option-value="id"
-        placeholder="Selecciona tu clase"
+        :placeholder="t('quickStart.selectClass')"
         :loading="loadingClasses"
         @change="onClassChange"
         class="w-full"
@@ -48,13 +48,13 @@
 
     <!-- Role Selector -->
     <div class="selector-group">
-      <label>Rol / Build</label>
+      <label>{{ t('quickStart.role') }}</label>
       <p-dropdown
         v-model="selectedRole"
         :options="roles"
         option-label="name"
         option-value="id"
-        placeholder="Selecciona rol"
+        :placeholder="t('quickStart.selectRole')"
         :disabled="!selectedClass"
         :loading="loadingRoles"
         class="w-full"
@@ -68,42 +68,26 @@
           </template>
           
           <template #option="slotProps">
-            <div class="flex flex-column">
-              <div class="flex align-items-center mb-1">
-                <i :class="getRoleIcon(slotProps.option.id)" class="mr-2"></i>
-                <span class="font-semibold">{{ slotProps.option.name }}</span>
-                <p-tag v-if="slotProps.option.is_primary" value="Principal" severity="success" class="ml-2" />
-              </div>
-              <small class="text-sm opacity-70">{{ slotProps.option.description }}</small>
-              <div v-if="slotProps.option.elements.length" class="flex gap-1 mt-1">
-                <p-tag 
+            <div class="flex align-items-center">
+              <i :class="getRoleIcon(slotProps.option.id)" class="mr-2"></i>
+              <span class="font-semibold">{{ slotProps.option.name }}</span>
+              <div v-if="slotProps.option.elements && slotProps.option.elements.length" class="flex gap-1 ml-auto">
+                <span
                   v-for="element in slotProps.option.elements" 
                   :key="element"
-                  :value="getElementEmoji(element)"
-                  severity="secondary"
-                  class="element-tag"
-                />
+                  class="element-emoji"
+                >{{ getElementEmoji(element) }}</span>
               </div>
             </div>
           </template>
         </p-dropdown>
       </div>
 
-    <!-- Apply Button -->
-    <p-button
-      :label="loadingPreset ? 'Aplicando...' : 'Aplicar Preset'"
-      icon="pi pi-check"
-      :disabled="!selectedClass || !selectedRole"
-      :loading="loadingPreset"
-      @click="applyPreset"
-      class="apply-button"
-    />
-
     <!-- Preview Stats (opcional) -->
     <div v-if="previewStats && Object.keys(previewStats).length > 0" class="preset-preview">
       <div class="preview-header">
         <i class="pi pi-eye"></i>
-        <span>Stats Principales (Top 6)</span>
+        <span>{{ t('quickStart.previewTitle') }}</span>
       </div>
       <div class="preview-stats">
         <div v-for="(weight, stat) in topStats" :key="stat" class="preview-stat">
@@ -122,9 +106,11 @@
 import { ref, computed, watch } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { getStatLabel } from '../composables/useStats'
+import { useI18n } from '../composables/useI18n'
 
 const emit = defineEmits(['preset-applied'])
 const toast = useToast()
+const { t } = useI18n()
 
 const selectedClass = ref(null)
 const selectedRole = ref(null)
@@ -163,8 +149,8 @@ const loadClasses = async () => {
     console.error('Error loading class presets:', error)
     toast.add({
       severity: 'error',
-      summary: 'Error',
-      detail: 'No se pudieron cargar las clases',
+      summary: t('toast.error'),
+      detail: t('toast.presetError'),
       life: 3000
     })
   } finally {
@@ -209,10 +195,12 @@ const onClassChange = async () => {
   }
 }
 
-// Watch role changes to update preview
+// Watch role changes to update preview AND auto-apply
 watch(selectedRole, (newRole) => {
   if (newRole && selectedClass.value) {
     loadPreview()
+    // Auto-apply preset when role changes
+    applyPreset()
   }
 })
 
@@ -275,16 +263,16 @@ const applyPreset = () => {
     
     toast.add({
       severity: 'success',
-      summary: 'Preset Aplicado',
+      summary: t('toast.presetApplied'),
       detail: `${classData.name} - ${roleData.name}`,
-      life: 5000
+      life: 3000
     })
   } catch (error) {
     console.error('Error applying preset:', error)
     toast.add({
       severity: 'error',
-      summary: 'Error',
-      detail: 'No se pudo aplicar el preset',
+      summary: t('toast.error'),
+      detail: t('toast.presetError'),
       life: 3000
     })
   } finally {
@@ -394,26 +382,9 @@ loadClasses()
   padding: 0.15rem 0.4rem;
 }
 
-.apply-button {
-  width: 100%;
-  font-weight: 600;
+.element-emoji {
   font-size: 1rem;
-  padding: 0.75rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  margin-top: 0.5rem;
-  
-  &:hover:not(:disabled) {
-    background: linear-gradient(135deg, #7c8ff0 0%, #8c5bb2 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-  }
-  
-  &:active:not(:disabled) {
-    transform: translateY(0);
-  }
-  
-  transition: all 0.2s ease;
+  margin: 0 0.125rem;
 }
 
 .preset-preview {

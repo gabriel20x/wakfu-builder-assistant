@@ -4,12 +4,12 @@
     <div class="header">
       <div class="header-content">
         <div>
-          <h1>Wakfu Builder Assistant</h1>
-          <p>Generate optimized equipment builds for your character</p>
+          <h1>{{ t('app.title') }}</h1>
+          <p>{{ t('app.subtitle') }}</p>
         </div>
         
         <div class="language-selector">
-          <label for="language">{{ currentLanguage === 'es' ? 'Idioma' : currentLanguage === 'fr' ? 'Langue' : 'Language' }}:</label>
+          <label for="language">{{ t('language') }}:</label>
           <p-dropdown 
             id="language"
             v-model="currentLanguage" 
@@ -31,9 +31,11 @@
 
 <script setup>
 import { useLanguage } from './composables/useLanguage'
+import { useI18n } from './composables/useI18n'
 import BuildGenerator from './components/BuildGenerator.vue'
 
 const { currentLanguage, setLanguage, languageOptions } = useLanguage()
+const { t } = useI18n()
 
 const onLanguageChange = (event) => {
   setLanguage(event.value)

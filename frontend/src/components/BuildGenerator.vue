@@ -4,38 +4,54 @@
       <!-- Configuration Panel -->
       <div class="config-panel">
         <div class="panel-header">
-          <h2>Configuración del Build</h2>
+          <div class="header-title">
+            <h2>{{ t('config.title') }}</h2>
+          </div>
+          <p-button 
+            :label="isLoading ? t('config.generating') : t('config.generateButton')"
+            :disabled="isLoading || enabledStatsCount === 0"
+            :loading="isLoading"
+            icon="pi pi-sparkles"
+            class="generate-button-header"
+            @click="generateBuilds"
+            size="small"
+          />
         </div>
         
         <div class="panel-content">
-          <!-- Character Level -->
+          <!-- Quick Start - Presets (MOVIDO AL INICIO) -->
           <div class="config-section">
-            <label>Nivel Máximo del Personaje</label>
-            <div class="level-input-group">
+            <ClassPresetSelector 
+              @preset-applied="onPresetApplied"
+            />
+          </div>
+
+          <!-- Character Level (COMPACTO) -->
+          <div class="config-section compact-level">
+            <label>{{ t('config.characterLevel') }}</label>
+            <div class="level-compact-group">
               <p-inputNumber 
                 v-model="characterLevel" 
                 :min="1" 
                 :max="245"
-                :step="10"
+                :step="1"
                 :allow-empty="false"
                 show-buttons
                 button-layout="horizontal"
                 decrement-button-icon="pi pi-minus"
                 increment-button-icon="pi pi-plus"
-                class="level-input"
+                class="level-input-compact"
               />
-              <div class="level-quick-buttons">
-                <p-button 
-                  v-for="quickLevel in [50, 100, 150, 200, 230, 245]" 
-                  :key="quickLevel"
-                  :label="quickLevel.toString()"
-                  size="small"
-                  :severity="characterLevel === quickLevel ? 'primary' : 'secondary'"
-                  :outlined="characterLevel !== quickLevel"
-                  @click="characterLevel = quickLevel"
-                  class="quick-level-btn"
-                />
-              </div>
+              <p-button 
+                v-for="quickLevel in [100, 150, 200, 230]" 
+                :key="quickLevel"
+                :label="quickLevel.toString()"
+                size="small"
+                :severity="characterLevel === quickLevel ? 'primary' : 'secondary'"
+                :outlined="characterLevel !== quickLevel"
+                @click="characterLevel = quickLevel"
+                class="quick-level-btn-compact"
+              />
             </div>
           </div>
 
@@ -44,21 +60,21 @@
             <div class="section-header-with-actions">
               <div>
                 <h3>
-                  Prioridad de Stats 
+                  {{ t('config.statPriority') }}
                   <span class="stat-counter">{{ enabledStatsCount }} / {{ totalStatsCount }}</span>
                 </h3>
-                <p class="help-text">Marca los stats que quieres priorizar</p>
+                <p class="help-text">{{ t('config.statPriorityHelp') }}</p>
               </div>
               <div class="quick-actions">
                 <p-button 
-                  label="Todos" 
+                  :label="t('config.selectAll')" 
                   size="small"
                   severity="secondary"
                   text
                   @click="selectAllStats"
                 />
                 <p-button 
-                  label="Ninguno" 
+                  :label="t('config.selectNone')" 
                   size="small"
                   severity="secondary"
                   text
@@ -71,7 +87,7 @@
             <div class="stat-category">
               <div class="category-header" @click="toggleCategory('main')">
                 <i class="pi pi-star-fill category-icon"></i>
-                <span>Características</span>
+                <span>{{ t('stats.main') }}</span>
                 <i class="pi" :class="categories.main ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
               </div>
               <div v-show="categories.main" class="category-content">
@@ -87,7 +103,7 @@
             <div class="stat-category">
               <div class="category-header" @click="toggleCategory('masteries')">
                 <i class="pi pi-bolt category-icon"></i>
-                <span>Dominios y Resistencias</span>
+                <span>{{ t('stats.masteries') }}</span>
                 <i class="pi" :class="categories.masteries ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
               </div>
               <div v-show="categories.masteries" class="category-content">
@@ -103,7 +119,7 @@
             <div class="stat-category">
               <div class="category-header" @click="toggleCategory('combat')">
                 <i class="pi pi-shield category-icon"></i>
-                <span>Combate</span>
+                <span>{{ t('stats.combat') }}</span>
                 <i class="pi" :class="categories.combat ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
               </div>
               <div v-show="categories.combat" class="category-content">
@@ -119,7 +135,7 @@
             <div class="stat-category">
               <div class="category-header" @click="toggleCategory('secondary')">
                 <i class="pi pi-chart-bar category-icon"></i>
-                <span>Secundarias</span>
+                <span>{{ t('stats.secondary') }}</span>
                 <i class="pi" :class="categories.secondary ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
               </div>
               <div v-show="categories.secondary" class="category-content">
@@ -132,13 +148,6 @@
             </div>
           </div>
 
-          <!-- Quick Start - Presets -->
-          <div class="config-section">
-            <ClassPresetSelector 
-              @preset-applied="onPresetApplied"
-            />
-          </div>
-
           <!-- Preferencias de Elementos -->
           <div class="config-section">
             <ElementPreferences 
@@ -149,8 +158,8 @@
 
           <!-- Opciones Avanzadas -->
           <div class="config-section">
-            <h3>Opciones Avanzadas</h3>
-            <p class="help-text">Items difíciles de conseguir</p>
+            <h3>{{ t('config.advancedOptions') }}</h3>
+            <p class="help-text">{{ t('config.advancedHelp') }}</p>
             
             <div class="advanced-options">
               <div class="option-item">
@@ -161,8 +170,8 @@
                 />
                 <label for="include-pet" class="option-label">
                   <span class="option-icon">🐾</span>
-                  <span>Incluir Mascotas</span>
-                  <span class="option-hint">(pueden ser difíciles de conseguir)</span>
+                  <span>{{ t('config.includePet') }}</span>
+                  <span class="option-hint">{{ t('config.includePetHint') }}</span>
                 </label>
               </div>
               
@@ -174,23 +183,11 @@
                 />
                 <label for="include-accessory" class="option-label">
                   <span class="option-icon">⭐</span>
-                  <span>Incluir Emblemas</span>
-                  <span class="option-hint">(pueden ser difíciles de conseguir)</span>
+                  <span>{{ t('config.includeEmblem') }}</span>
+                  <span class="option-hint">{{ t('config.includeEmblemHint') }}</span>
                 </label>
               </div>
             </div>
-          </div>
-
-          <!-- Generate Button -->
-          <div class="config-section">
-            <p-button 
-              :label="isLoading ? 'Generando...' : 'Generar Builds'"
-              :disabled="isLoading"
-              :loading="isLoading"
-              icon="pi pi-sparkles"
-              class="generate-button"
-              @click="generateBuilds"
-            />
           </div>
 
           <!-- Error Display -->
@@ -204,50 +201,50 @@
       <!-- Results Panel - Items -->
       <div class="results-panel">
         <div class="panel-header">
-          <h2>Items de la Build</h2>
+          <h2>{{ t('results.title') }}</h2>
         </div>
         
         <div v-if="isLoading" class="loading-state">
           <p-progressSpinner />
-          <p>Generando builds optimizados...</p>
+          <p>{{ t('results.loading') }}</p>
         </div>
 
         <div v-else-if="builds" class="builds-container">
           <p-tabView class="builds-tabview" v-model:activeIndex="activeTabIndex">
-            <p-tabPanel header="Fácil">
-              <BuildResult :build="builds.easy" difficulty="Fácil" :show-stats="false" />
+            <p-tabPanel :header="t('builds.easy')">
+              <BuildResult :build="builds.easy" :difficulty="t('builds.easy')" :show-stats="false" />
             </p-tabPanel>
             
-            <p-tabPanel header="Medio">
-              <BuildResult :build="builds.medium" difficulty="Medio" :show-stats="false" />
+            <p-tabPanel :header="t('builds.medium')">
+              <BuildResult :build="builds.medium" :difficulty="t('builds.medium')" :show-stats="false" />
             </p-tabPanel>
             
-            <p-tabPanel header="Difícil (Épico)">
-              <BuildResult :build="builds.hard_epic" difficulty="Difícil (Épico)" :show-stats="false" />
+            <p-tabPanel :header="t('builds.hardEpic')">
+              <BuildResult :build="builds.hard_epic" :difficulty="t('builds.hardEpic')" :show-stats="false" />
             </p-tabPanel>
             
-            <p-tabPanel header="Difícil (Reliquia)">
-              <BuildResult :build="builds.hard_relic" difficulty="Difícil (Reliquia)" :show-stats="false" />
+            <p-tabPanel :header="t('builds.hardRelic')">
+              <BuildResult :build="builds.hard_relic" :difficulty="t('builds.hardRelic')" :show-stats="false" />
             </p-tabPanel>
             
-            <p-tabPanel header="Completo">
-              <BuildResult :build="builds.full" difficulty="Completo" :show-stats="false" />
+            <p-tabPanel :header="t('builds.full')">
+              <BuildResult :build="builds.full" :difficulty="t('builds.full')" :show-stats="false" />
             </p-tabPanel>
           </p-tabView>
         </div>
 
         <div v-else class="empty-state">
           <i class="pi pi-info-circle"></i>
-          <h3>¿Listo para comenzar?</h3>
-          <p>Configura las prioridades de stats y haz clic en "Generar Builds"</p>
-          <p class="help-text">El sistema generará 5 builds optimizados con diferentes niveles de dificultad de obtención</p>
+          <h3>{{ t('results.emptyTitle') }}</h3>
+          <p>{{ t('results.emptyText') }}</p>
+          <p class="help-text">{{ t('results.emptyHelp') }}</p>
         </div>
       </div>
 
       <!-- Stats Panel -->
       <div v-if="builds" class="stats-panel">
         <div class="panel-header">
-          <h2>Stats Totales</h2>
+          <h2>{{ t('statsPanel.title') }}</h2>
         </div>
         
         <div class="panel-content">
@@ -272,6 +269,7 @@ import { ref, computed, reactive } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
 import { STAT_NAMES } from '../composables/useStats'
+import { useI18n } from '../composables/useI18n'
 import BuildResult from './BuildResult.vue'
 import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
@@ -280,6 +278,7 @@ import ClassPresetSelector from './ClassPresetSelector.vue'
 import DamageEstimator from './DamageEstimator.vue'
 
 const toast = useToast()
+const { t } = useI18n()
 
 const characterLevel = ref(230)
 const includePet = ref(true)
@@ -428,7 +427,7 @@ const onPresetApplied = (preset) => {
   // Show success message
   toast.add({
     severity: 'success',
-    summary: 'Preset Aplicado',
+    summary: t('toast.presetApplied'),
     detail: `${className} - ${roleName}`,
     life: 3000
   })
@@ -441,8 +440,8 @@ const generateBuilds = async () => {
   if (enabledCount === 0) {
     toast.add({
       severity: 'warn',
-      summary: 'No hay stats seleccionados',
-      detail: 'Por favor marca al menos un stat para priorizar',
+      summary: t('toast.noStatsSelected'),
+      detail: t('toast.noStatsSelectedDetail'),
       life: 3000
     })
     return
@@ -465,16 +464,16 @@ const generateBuilds = async () => {
     
     toast.add({
       severity: 'success',
-      summary: 'Builds Generados',
-      detail: `5 builds optimizados creados (${enabledCount} stats priorizados)`,
+      summary: t('toast.buildsGenerated'),
+      detail: `5 ${t('toast.buildsGeneratedDetail')} (${enabledCount} ${t('toast.statsSelected')})`,
       life: 3000
     })
   } catch (err) {
-    error.value = err.response?.data?.detail || 'Error al generar builds. Por favor intenta de nuevo.'
+    error.value = err.response?.data?.detail || t('toast.errorGenerating')
     
     toast.add({
       severity: 'error',
-      summary: 'Error',
+      summary: t('toast.error'),
       detail: error.value,
       life: 5000
     })
@@ -567,12 +566,37 @@ const generateBuilds = async () => {
 .panel-header {
   background: rgba(92, 107, 192, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  
+  .header-title h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #fff;
+  }
   
   h2 {
     margin: 0;
     font-size: 1.5rem;
     color: #fff;
+  }
+}
+
+.generate-button-header {
+  flex-shrink: 0;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  
+  &:hover:not(:disabled) {
+    background: linear-gradient(135deg, #7c8ff0 0%, #8c5bb2 100%);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
   }
 }
 
@@ -637,6 +661,59 @@ const generateBuilds = async () => {
     @media (max-width: 1400px) {
       flex-direction: column;
     }
+  }
+}
+
+.compact-level {
+  margin-bottom: 1.5rem !important;
+}
+
+.level-compact-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  
+  .level-input-compact {
+    flex-shrink: 0;
+    
+    :deep(.p-inputnumber) {
+      width: auto;
+    }
+    
+    :deep(.p-inputnumber-input) {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e0e0e0;
+      padding: 0.5rem 0.75rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+      width: 70px;
+      
+      &:focus {
+        border-color: rgba(92, 107, 192, 0.5);
+        box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
+      }
+    }
+    
+    :deep(.p-inputnumber-button) {
+      background: rgba(92, 107, 192, 0.4);
+      border: 1px solid rgba(92, 107, 192, 0.5);
+      color: #fff;
+      width: 2.5rem;
+      
+      &:hover {
+        background: rgba(92, 107, 192, 0.6);
+        border-color: rgba(92, 107, 192, 0.7);
+      }
+    }
+  }
+  
+  .quick-level-btn-compact {
+    min-width: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
   }
 }
 

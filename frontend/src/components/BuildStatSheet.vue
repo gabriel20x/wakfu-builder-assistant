@@ -4,11 +4,11 @@
     <div class="stats-toggle-container">
       <div class="toggle-option" :class="{ active: !includeBaseStats }" @click="includeBaseStats = false">
         <i class="pi pi-box"></i>
-        <span>Solo Equipo</span>
+        <span>{{ t('statsPanel.equipmentOnly') }}</span>
       </div>
       <div class="toggle-option" :class="{ active: includeBaseStats }" @click="includeBaseStats = true">
         <i class="pi pi-user"></i>
-        <span>Con Stats Base</span>
+        <span>{{ t('statsPanel.withBase') }}</span>
       </div>
     </div>
     
@@ -326,6 +326,9 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   stats: {

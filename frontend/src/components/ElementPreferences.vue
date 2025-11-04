@@ -1,14 +1,14 @@
 <template>
   <div class="element-preferences">
-    <h3>Preferencias de Elementos</h3>
-    <p class="help-text">Ordena los elementos por prioridad para stats aleatorios</p>
+    <h3>{{ t('elements.title') }}</h3>
+    <p class="help-text">{{ t('elements.damageHelp') }}</p>
     
     <div class="preference-sections">
       <!-- Daños Elementales -->
       <div class="preference-section">
         <div class="section-header">
           <span class="section-icon">⚔️</span>
-          <span>Daños Elementales</span>
+          <span>{{ t('elements.damagePrefs') }}</span>
         </div>
         <div class="draggable-list">
           <div 
@@ -32,7 +32,7 @@
       <div class="preference-section">
         <div class="section-header">
           <span class="section-icon">🛡️</span>
-          <span>Resistencias Elementales</span>
+          <span>{{ t('elements.resistancePrefs') }}</span>
         </div>
         <div class="draggable-list">
           <div 
@@ -68,6 +68,9 @@
 
 <script setup>
 import { ref, watch } from 'vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   damagePreferences: {
