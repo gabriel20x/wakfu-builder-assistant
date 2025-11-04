@@ -121,7 +121,6 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { useToast } from 'primevue/usetoast'
-import { presetsAPI } from '../services/api'
 import { getStatLabel } from '../composables/useStats'
 
 const emit = defineEmits(['preset-applied'])
@@ -132,6 +131,7 @@ const selectedRole = ref(null)
 const classes = ref([])
 const roles = ref([])
 const previewStats = ref(null)
+const classPresetsData = ref(null)
 
 const loadingClasses = ref(false)
 const loadingRoles = ref(false)
@@ -148,13 +148,19 @@ const topStats = computed(() => {
   return Object.fromEntries(sorted)
 })
 
-// Load classes on mount
+// Load classes from local JSON file
 const loadClasses = async () => {
   loadingClasses.value = true
   try {
-    const response = await presetsAPI.getClasses()
-    classes.value = response.data
+    const response = await fetch('/class-presets.json')
+    classPresetsData.value = await response.json()
+    classes.value = classPresetsData.value.classes.map(cls => ({
+      id: cls.id,
+      name: cls.name,
+      description: cls.description
+    }))
   } catch (error) {
+    console.error('Error loading class presets:', error)
     toast.add({
       severity: 'error',
       summary: 'Error',
@@ -168,7 +174,7 @@ const loadClasses = async () => {
 
 // Load roles when class changes
 const onClassChange = async () => {
-  if (!selectedClass.value) {
+  if (!selectedClass.value || !classPresetsData.value) {
     roles.value = []
     selectedRole.value = null
     previewStats.value = null
@@ -177,18 +183,21 @@ const onClassChange = async () => {
   
   loadingRoles.value = true
   try {
-    const response = await presetsAPI.getClassRoles(selectedClass.value)
-    roles.value = response.data
-    
-    // Auto-select primary role
-    const primaryRole = roles.value.find(r => r.is_primary)
-    selectedRole.value = primaryRole?.id || roles.value[0]?.id || null
-    
-    // Load preview if role selected
-    if (selectedRole.value) {
-      await loadPreview()
+    const classData = classPresetsData.value.classes.find(c => c.id === selectedClass.value)
+    if (classData) {
+      roles.value = classData.roles
+      
+      // Auto-select primary role
+      const primaryRole = roles.value.find(r => r.is_primary)
+      selectedRole.value = primaryRole?.id || roles.value[0]?.id || null
+      
+      // Load preview if role selected
+      if (selectedRole.value) {
+        loadPreview()
+      }
     }
   } catch (error) {
+    console.error('Error loading roles:', error)
     toast.add({
       severity: 'error',
       summary: 'Error',
@@ -201,46 +210,77 @@ const onClassChange = async () => {
 }
 
 // Watch role changes to update preview
-watch(selectedRole, async (newRole) => {
+watch(selectedRole, (newRole) => {
   if (newRole && selectedClass.value) {
-    await loadPreview()
+    loadPreview()
   }
 })
 
-// Load preview stats
-const loadPreview = async () => {
-  try {
-    const response = await presetsAPI.getClassPreset(selectedClass.value, selectedRole.value)
-    previewStats.value = response.data.weights
-  } catch (error) {
-    console.error('Error loading preview:', error)
+// Load preview stats from local data
+const loadPreview = () => {
+  if (!classPresetsData.value || !selectedClass.value || !selectedRole.value) return
+  
+  const classData = classPresetsData.value.classes.find(c => c.id === selectedClass.value)
+  if (classData) {
+    const roleData = classData.roles.find(r => r.id === selectedRole.value)
+    if (roleData) {
+      previewStats.value = roleData.stat_priorities
+    }
   }
 }
 
-// Apply the preset
-const applyPreset = async () => {
-  if (!selectedClass.value || !selectedRole.value) return
+// Apply the preset from local data
+const applyPreset = () => {
+  if (!selectedClass.value || !selectedRole.value || !classPresetsData.value) return
   
   loadingPreset.value = true
   try {
-    const response = await presetsAPI.getClassPreset(selectedClass.value, selectedRole.value)
-    const preset = response.data
+    const classData = classPresetsData.value.classes.find(c => c.id === selectedClass.value)
+    if (!classData) throw new Error('Class not found')
+    
+    const roleData = classData.roles.find(r => r.id === selectedRole.value)
+    if (!roleData) throw new Error('Role not found')
+    
+    // Build damage and resistance preferences from role elements
+    // ✅ FIX: Always include all 4 elements, but prioritize role elements first
+    const allElements = ['Fire', 'Water', 'Earth', 'Air']
+    const damagePrefs = []
+    
+    // Add role elements first (priority)
+    if (roleData.elements && roleData.elements.length > 0) {
+      roleData.elements.forEach(elem => {
+        if (!damagePrefs.includes(elem)) {
+          damagePrefs.push(elem)
+        }
+      })
+    }
+    
+    // Complete with remaining elements
+    allElements.forEach(elem => {
+      if (!damagePrefs.includes(elem)) {
+        damagePrefs.push(elem)
+      }
+    })
+    
+    const resistancePrefs = ['Fire', 'Water', 'Earth', 'Air']
     
     emit('preset-applied', {
-      weights: preset.weights,
-      damagePreferences: preset.damage_preferences,
-      resistancePreferences: preset.resistance_preferences,
-      className: getClassName(selectedClass.value),
-      roleName: getRoleName(selectedRole.value)
+      weights: roleData.stat_priorities,
+      damagePreferences: damagePrefs,
+      resistancePreferences: resistancePrefs,
+      className: classData.name,
+      roleName: roleData.name,
+      roleData: roleData // Pass full role data for reference
     })
     
     toast.add({
       severity: 'success',
       summary: 'Preset Aplicado',
-      detail: `${getClassName(selectedClass.value)} - ${getRoleName(selectedRole.value)}`,
-      life: 3000
+      detail: `${classData.name} - ${roleData.name}`,
+      life: 5000
     })
   } catch (error) {
+    console.error('Error applying preset:', error)
     toast.add({
       severity: 'error',
       summary: 'Error',

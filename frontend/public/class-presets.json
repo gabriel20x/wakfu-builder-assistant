@@ -1,0 +1,724 @@
+{
+  "classes": [
+    {
+      "id": "cra",
+      "name": "Cra (Arquero)",
+      "description": "Clase a distancia basada en precisión y posicionamiento estratégico",
+      "primary_role": "dps_distance",
+      "roles": [
+        {
+          "id": "dps_distance_explo",
+          "name": "DPS Distancia (Explosivo)",
+          "description": "Build explosivo centrado en 2x Flèche Explosive por turno con gestión de Precisión y Affûtage",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Earth"
+          ],
+          "stat_priorities": {
+            "Distance_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "WP": 8,
+            "Fire_Mastery": 7,
+            "Earth_Mastery": 7,
+            "Dodge": 7,
+            "Damage_Inflicted": 7,
+            "Range": 6,
+            "MP": 6,
+            "Elemental_Resistance": 5,
+            "HP": 4
+          },
+          "recommended_passives": [
+            "Parti Prix (CRÍTICO: +2 AP al alcanzar 100 Affûtage con Tir Précis activo)",
+            "Esprit Affûté (+5 Affûtage al usar sorts bajo Tir Précis)",
+            "Evasión (esquiva bonus)"
+          ],
+          "recommended_stats_distribution": {
+            "major_1": "AP (CRÍTICO: meta = 14 PA)",
+            "major_2": "PM (1-2 puntos)",
+            "major_3": "Resistencia Elemental o WP",
+            "force": "Maestría Distancia (prioridad máxima)",
+            "intelligence": "Maestría Elemental (Fire/Earth)",
+            "agility": "Esquiva (supervivencia)",
+            "luck": "Golpe Crítico → Maestría Crítica"
+          },
+          "gameplay_notes": [
+            "META: 14 AP total for optimal rotation",
+            "INSAISSABLE: End turn >3 cells away = +30%/40%/50% damage",
+            "PRECISION: Spells generate precision (2AP=20, 3AP=30, 5AP=50, 5AP+1WP=60)",
+            "FLÈCHE EXPLOSIVE: Requires 90 Precision under Tir Précis",
+            "AFFÛTAGE: Every 100 = 1 Pointe Affûtée + 1 WP + 1 free beacon",
+            "POINTE AFFÛTÉE: Stackable 40%/80%/120% damage on next spell",
+            "PARTI PRIX: +2 AP when reaching 100 Affûtage IF Tir Précis active (critical for combo)",
+            "DÉBALISAGE: Remove beacon = +40 Precision + 40 Affûtage (1 AP)",
+            "STANDARD ROTATION: 2 Beacons → TP on → 2x Explo → TP off → Unbind x2",
+            "WP ECONOMY: 4 WP per rotation (activating/deactivating TP costs 2 WP each)",
+            "ADVANCED COMBO: Beacon + Retrait Balisé = 2 AP teleport + 40 Precision/Affûtage"
+          ]
+        },
+        {
+          "id": "dps_distance_farm_fire",
+          "name": "DPS Distancia (Farm Fire T1)",
+          "description": "Mono-fire farm build with T1 burst, 100% crit chance, 36k+ damage",
+          "is_primary": false,
+          "level_range": [
+            100,
+            245
+          ],
+          "elements": [
+            "Fire"
+          ],
+          "stat_priorities": {
+            "Fire_Mastery": 10,
+            "Distance_Mastery": 10,
+            "AP": 10,
+            "Critical_Hit": 10,
+            "Critical_Mastery": 9,
+            "Damage_Inflicted": 8,
+            "WP": 7,
+            "Range": 7,
+            "HP": 5,
+            "Elemental_Resistance": 5,
+            "MP": 5,
+            "Dodge": 4
+          },
+          "recommended_passives": [
+            "L'Art d'Ebalisage (free beacons, critical for farm efficiency)",
+            "Esprit Affûté (+5 Affûtage, enables T1 Pointe Affûtée)",
+            "Parti Prix (+2 AP when reaching 100 Affûtage with TP active)"
+          ],
+          "recommended_stats_distribution": {
+            "major_1": "AP (CRITICAL: need 14 PA total)",
+            "major_2": "Range (better positioning)",
+            "major_3": "Damage_Inflicted or Elemental_Resistance",
+            "force": "Fire Mastery (MAX priority for mono-fire)",
+            "intelligence": "Distance Mastery",
+            "agility": "Dodge",
+            "luck": "Critical Hit (100% T1) → Critical Mastery"
+          },
+          "gameplay_notes": [
+            "GOAL: 100% critical hit T1 for one-shot farm",
+            "MONO-FIRE: All damage is fire, build around fire mastery and burns",
+            "14 AP META: Plastron +AP, Relic +AP, Epic +AP, Camak +AP, Cape +AP, Sublim Force Vitale",
+            "5-7 WP: T1 uses 5 WP, T2+ uses 7 WP",
+            "T1 ROTATION: 2 Beacons → Enflammée + Immolation (beacon damage) → Tir Précis → 2x Explo → 36k dmg",
+            "SUBLIMATIONS: Brûlures (100 dmg/turn), Stupéfaction x2, Force Vitale (+AP), Flux Vital (crit), Retour AP",
+            "PASSIVES: L'Art d'Ebalisage + Esprit Affûté + Parti Prix = ultra efficient T1",
+            "POINTE AFFÛTÉE: +40% on 1st Explo, +40% on 2nd Explo (from Esprit Affûté)",
+            "FARM STRATEGY: Kill all mobs T1, move to next pack"
+          ]
+        },
+        {
+          "id": "dps_distance_boss_killer",
+          "name": "DPS Distancia (Boss Killer)",
+          "description": "Single-target Earth/Air burst for boss fights, 300k+ damage every 2 turns",
+          "is_primary": false,
+          "level_range": [
+            150,
+            245
+          ],
+          "elements": [
+            "Earth",
+            "Air"
+          ],
+          "stat_priorities": {
+            "Distance_Mastery": 10,
+            "AP": 10,
+            "Earth_Mastery": 9,
+            "Air_Mastery": 9,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Damage_Inflicted": 8,
+            "Range": 8,
+            "WP": 7,
+            "HP": 5,
+            "Elemental_Resistance": 5,
+            "MP": 6,
+            "Dodge": 6
+          },
+          "recommended_passives": [
+            "Balise Discrète (beacons push enemies, free placement tool)",
+            "Débalisage Gratuit (free unbind = free beacon placement every turn)",
+            "Parti Prix (+2 AP when reaching 100 Affûtage with TP)",
+            "Esprit Affûté (+5 Affûtage under TP)"
+          ],
+          "recommended_stats_distribution": {
+            "major_1": "AP (14 PA minimum, 15 PA ideal)",
+            "major_2": "MP (mobility for >5 cell range)",
+            "major_3": "Damage_Inflicted",
+            "force": "Distance Mastery (priority 1)",
+            "intelligence": "Elemental Mastery (Earth/Air)",
+            "agility": "Dodge → Force of Will (20 points)",
+            "luck": "Critical Hit → Critical Mastery"
+          },
+          "gameplay_notes": [
+            "ROLE: Boss killer, single-target only, ultra mobile",
+            "14 PA MINIMUM (15 PA ideal for full combo)",
+            "RANGE: Must be >5 cells IN LINE with boss for max damage",
+            "BALISES: Used for PLACEMENT/SUPPORT (push enemies), NOT for damage",
+            "NO FRIENDLY FIRE: Earth/Air single-target avoids hurting allies",
+            "T1 SETUP: Eclaireur (+20% dmg next turn) → 2 Beacons → Flèche Cribblante (6 AP) → Spells to reach 90 Precision → Unbind x2",
+            "T2 BURST: 2 Beacons → Place & Unbind (+80 Precision) → Tir Précis → Flèche Cribblante → Flèche Destruction → Flèche Statique → Flèche Chercheuse → 300k+ damage",
+            "T3 SETUP: 2 Beacons → Stack precision → Unbind x2 (6 PM for repositioning)",
+            "T4 BURST: Repeat T2 rotation",
+            "PARTI PRIX: Activate TP BEFORE unbinding to get +2 AP instead of +2 WP",
+            "MOBILITY: Double unbind gives 6 PM for ultra repositioning",
+            "INSAISSABLE: ALWAYS end >3 cells away or lose 30-50% damage and precision/affûtage bonus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sacrieur",
+      "name": "Sacrieur",
+      "description": "Tanque/DPS melé que juega con bajos HP para máximo daño",
+      "primary_role": "dps_melee_berserker",
+      "roles": [
+        {
+          "id": "dps_melee_berserker",
+          "name": "DPS Melé (Berserker)",
+          "description": "Build de alto daño jugando a 20% HP con máxima furia (+50% daños)",
+          "is_primary": true,
+          "level_range": [
+            20,
+            70
+          ],
+          "elements": [
+            "Fire",
+            "Water",
+            "Earth",
+            "Air"
+          ],
+          "stat_priorities": {
+            "HP": 10,
+            "Elemental_Mastery": 9,
+            "Fire_Resistance": 10,
+            "Water_Resistance": 10,
+            "Earth_Resistance": 10,
+            "Air_Resistance": 10,
+            "AP": 10,
+            "MP": 7,
+            "Melee_Mastery": 8,
+            "Rear_Mastery": 8,
+            "Berserk_Mastery": 9,
+            "Critical_Hit": 6,
+            "Critical_Mastery": 5,
+            "Armor_Received": 8
+          },
+          "recommended_passives": [
+            "Sang Tatoué (CRÍTICO: +800% nivel en HP)",
+            "Refus de la Mort (+50 resistencias al <20% HP)",
+            "Mobilité (PM por movimiento)",
+            "Soin Unique (primer soin monocible duplicado)"
+          ],
+          "recommended_stats_distribution": {
+            "major_1": "AP (1 punto) o Resistencia Elemental",
+            "major_2": "PM",
+            "major_3": "Resistencia Elemental (5 puntos = +25 en todas)",
+            "force": "Maestría Elemental",
+            "intelligence": "HP → Maestría Elemental al llegar a 40",
+            "agility": "Esquiva (prioritario early game)",
+            "luck": "Golpe Crítico → Maestría Berserker"
+          },
+          "gameplay_notes": [
+            "MECÁNICA CORE: Jauge de Fureur = +50% daños a 20% HP",
+            "HP Base: 200% nivel (sin pasivo), 1000% con Sang Tatoué",
+            "Armor máximo = 50% de tus HP (por eso HP es crítico)",
+            "Armure Sanguine y Refus de la Mort dan % HP, no fijo",
+            "RESISTANCES SON CRÍTICAS: Con poco HP, necesitas reducir daño recibido",
+            "Combo estándar T1: Punition (fija a 20% HP) → Cent% (infliges 1% más) → Procuras Refus de la Mort → Armure Sanguine",
+            "Tapar en la ESPALDA es +25% daños finales (crítico en melé)",
+            "Mobility tools: Assaut, Attirance, Transposition",
+            "Regenerar WP: Recibir 1 daño o perder 20% HP con sorts propios"
+          ]
+        },
+        {
+          "id": "dps_melee_flamme",
+          "name": "DPS Melé (Enflammé)",
+          "description": "Build de fuego jugando con sangre ardiente",
+          "is_primary": false,
+          "level_range": [
+            70,
+            245
+          ],
+          "elements": [
+            "Fire"
+          ],
+          "stat_priorities": {
+            "HP": 10,
+            "Fire_Mastery": 10,
+            "Fire_Resistance": 10,
+            "Water_Resistance": 8,
+            "Earth_Resistance": 8,
+            "Air_Resistance": 8,
+            "AP": 10,
+            "Melee_Mastery": 9,
+            "Rear_Mastery": 8,
+            "Berserk_Mastery": 9,
+            "Armor_Received": 8
+          }
+        },
+        {
+          "id": "tank",
+          "name": "Tank (Armure Brûlante)",
+          "description": "Build de tanque con armadura ardiente y alto HP",
+          "is_primary": false,
+          "level_range": [
+            70,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Earth"
+          ],
+          "stat_priorities": {
+            "HP": 10,
+            "Block": 9,
+            "Lock": 9,
+            "Fire_Resistance": 10,
+            "Water_Resistance": 10,
+            "Earth_Resistance": 10,
+            "Air_Resistance": 10,
+            "Armor_Received": 10,
+            "Armor_Given": 8,
+            "AP": 8,
+            "MP": 4,
+            "Melee_Mastery": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "eniripsa",
+      "name": "Eniripsa",
+      "description": "Healer/Support con capacidad de DPS al convertir soin en daños",
+      "primary_role": "healer",
+      "roles": [
+        {
+          "id": "healer",
+          "name": "Healer (Principal)",
+          "description": "Build de soin con capacidad de DPS usando Contre Nature",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Water"
+          ],
+          "stat_priorities": {
+            "Healing_Mastery": 10,
+            "HP": 8,
+            "AP": 10,
+            "WP": 8,
+            "Fire_Mastery": 7,
+            "Water_Mastery": 7,
+            "Elemental_Mastery": 8,
+            "MP": 7,
+            "Dodge": 6,
+            "Fire_Resistance": 6,
+            "Water_Resistance": 6,
+            "Earth_Resistance": 6,
+            "Air_Resistance": 6,
+            "Heals_Performed": 9,
+            "Damage_Inflicted": 6
+          },
+          "recommended_passives": [
+            "Soin Unique (CORE: primer soin monocible duplicado, -30% otros soins)",
+            "Super Lapino (lapino mejorado con transpos y soin)",
+            "Marquage Précis (ganar Propagateur al trigger marcas)"
+          ],
+          "recommended_stats_distribution": {
+            "major_1": "AP (crítico para combos)",
+            "major_2": "PM",
+            "major_3": "Resistencia Elemental",
+            "force": "Maestría Soin",
+            "intelligence": "Maestría Elemental",
+            "agility": "Esquiva",
+            "luck": "Golpe Crítico (opcional)"
+          },
+          "gameplay_notes": [
+            "MECÁNICA CORE: Propagateur = daño adicional acumulado por cada soin realizado",
+            "MECÁNICA CORE 2: Contre Nature convierte Bonus Soin Réalisé → Daños Infligidos y Maestría Soin → Maestría Elemental",
+            "Grâce: +10% Soin Réalisé por turno (max 50%), usar Contre Nature para convertir a daños",
+            "WP Regen: +1 por turno, +3 si >80% HP (mantener HP alto es clave)",
+            "Combo Propagateur: Mot Soignant (T1) → soin doble por Soin Unique → stack Propagateur → Sort de daño con boost",
+            "Fiole Infectée = vol de vie 100% → no cuenta como soin → funciona bajo Contre Nature",
+            "Explosion (3 PA): Marca de Sade que explota al morir + genera Propagateur con Marquage Précis",
+            "Super Lapino: Transpos + soin 100% HP del lapino (539 PV típico) → NO afectado por malus Contre Nature",
+            "Feu Gardien: Marketing que activa soin automático al pasar <50% HP",
+            "DÉFAZAGE (1 PA): INVULNERABILIDAD total por 1 turno a costo de -100 PA → usar en fin de turno para tanquear",
+            "Stratégie: Alternar entre mode soin (stack Propagateur) y Contre Nature (consume Propagateur con daños boosteados)"
+          ]
+        },
+        {
+          "id": "dps_poison",
+          "name": "DPS (Poison Mortel)",
+          "description": "Build de daño basado en venenos y DoTs",
+          "is_primary": false,
+          "level_range": [
+            100,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Earth"
+          ],
+          "stat_priorities": {
+            "Fire_Mastery": 10,
+            "Earth_Mastery": 10,
+            "Elemental_Mastery": 9,
+            "Damage_Inflicted": 10,
+            "HP": 7,
+            "AP": 10,
+            "WP": 8,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "Elemental_Resistance": 5
+          }
+        },
+        {
+          "id": "support",
+          "name": "Support (Full Boosts)",
+          "description": "Build de soporte con buffs y heals para team",
+          "is_primary": false,
+          "level_range": [
+            100,
+            245
+          ],
+          "elements": [
+            "Water",
+            "Air"
+          ],
+          "stat_priorities": {
+            "Healing_Mastery": 10,
+            "Heals_Performed": 10,
+            "HP": 9,
+            "AP": 10,
+            "WP": 9,
+            "Elemental_Resistance": 8,
+            "MP": 7,
+            "Dodge": 7,
+            "Control": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "feca",
+      "name": "Feca",
+      "description": "Tank/Support especializado en glifos y protección",
+      "primary_role": "tank",
+      "roles": [
+        {
+          "id": "tank",
+          "name": "Tank (Principal)",
+          "description": "Build de tanque con glifos y alto bloqueo",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Earth",
+            "Water"
+          ],
+          "stat_priorities": {
+            "HP": 10,
+            "Block": 10,
+            "Lock": 10,
+            "Armor_Received": 10,
+            "Fire_Resistance": 9,
+            "Water_Resistance": 9,
+            "Earth_Resistance": 9,
+            "Air_Resistance": 9,
+            "AP": 8,
+            "MP": 5,
+            "Dodge": 4,
+            "Armor_Given": 8,
+            "Control": 7
+          }
+        }
+      ]
+    },
+    {
+      "id": "osamodas",
+      "name": "Osamodas",
+      "description": "Invocador versátil con múltiples summons y roles",
+      "primary_role": "support",
+      "roles": [
+        {
+          "id": "support",
+          "name": "Support (Principal)",
+          "description": "Build de support con invocaciones y control",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Water",
+            "Air",
+            "Fire"
+          ],
+          "stat_priorities": {
+            "HP": 8,
+            "Control": 10,
+            "Healing_Mastery": 7,
+            "Elemental_Mastery": 8,
+            "AP": 9,
+            "MP": 7,
+            "WP": 7,
+            "Fire_Resistance": 6,
+            "Water_Resistance": 6,
+            "Earth_Resistance": 6,
+            "Air_Resistance": 6,
+            "Wisdom": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "ouginak",
+      "name": "Ouginak",
+      "description": "DPS melé con transformación de lobo y alto burst",
+      "primary_role": "dps_melee",
+      "roles": [
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé (Principal)",
+          "description": "Build de melé con transformación y burst damage",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Earth",
+            "Air"
+          ],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "Rear_Mastery": 9,
+            "Critical_Hit": 9,
+            "Critical_Mastery": 8,
+            "Fire_Mastery": 7,
+            "Earth_Mastery": 7,
+            "Air_Mastery": 7,
+            "AP": 10,
+            "MP": 7,
+            "HP": 6,
+            "Lock": 7,
+            "Fire_Resistance": 5,
+            "Water_Resistance": 5,
+            "Earth_Resistance": 5,
+            "Air_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "pandawa",
+      "name": "Pandawa",
+      "description": "Tank/DPS con mecánicas de barrel y posicionamiento",
+      "primary_role": "tank",
+      "roles": [
+        {
+          "id": "tank",
+          "name": "Tank (Principal)",
+          "description": "Build de tanque con posicionamiento de barril",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Water",
+            "Earth"
+          ],
+          "stat_priorities": {
+            "HP": 10,
+            "Block": 9,
+            "Lock": 10,
+            "Water_Mastery": 8,
+            "Earth_Mastery": 8,
+            "Armor_Received": 9,
+            "Fire_Resistance": 8,
+            "Water_Resistance": 8,
+            "Earth_Resistance": 8,
+            "Air_Resistance": 8,
+            "AP": 9,
+            "MP": 6,
+            "Rear_Mastery": 6
+          }
+        },
+        {
+          "id": "dps_melee",
+          "name": "DPS Melé",
+          "description": "Build de DPS con posicionamiento y espalda",
+          "is_primary": false,
+          "level_range": [
+            100,
+            245
+          ],
+          "elements": [
+            "Water",
+            "Fire"
+          ],
+          "stat_priorities": {
+            "Melee_Mastery": 10,
+            "Rear_Mastery": 10,
+            "Water_Mastery": 9,
+            "Fire_Mastery": 9,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "AP": 10,
+            "MP": 7,
+            "HP": 6,
+            "Lock": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "steamer",
+      "name": "Steamer",
+      "description": "DPS a distancia/melé con turretas",
+      "primary_role": "dps_hybrid",
+      "roles": [
+        {
+          "id": "dps_hybrid",
+          "name": "DPS Híbrido (Principal)",
+          "description": "Build híbrido con turretas y posicionamiento",
+          "is_primary": true,
+          "level_range": [
+            20,
+            245
+          ],
+          "elements": [
+            "Fire",
+            "Air"
+          ],
+          "stat_priorities": {
+            "Distance_Mastery": 9,
+            "Melee_Mastery": 7,
+            "Fire_Mastery": 9,
+            "Air_Mastery": 9,
+            "Critical_Hit": 8,
+            "Critical_Mastery": 7,
+            "AP": 10,
+            "MP": 7,
+            "HP": 6,
+            "Control": 8,
+            "Dodge": 6,
+            "Elemental_Resistance": 5
+          }
+        }
+      ]
+    }
+  ],
+  "role_templates": {
+    "dps_distance": {
+      "name": "DPS Distancia",
+      "icon": "pi pi-arrow-up-right",
+      "base_stats": {
+        "Distance_Mastery": 10,
+        "Critical_Hit": 8,
+        "Critical_Mastery": 7,
+        "AP": 10,
+        "MP": 6,
+        "HP": 4,
+        "Dodge": 7,
+        "Range": 6
+      }
+    },
+    "dps_melee": {
+      "name": "DPS Melé",
+      "icon": "pi pi-bolt",
+      "base_stats": {
+        "Melee_Mastery": 10,
+        "Rear_Mastery": 9,
+        "Critical_Hit": 9,
+        "Critical_Mastery": 8,
+        "AP": 10,
+        "MP": 7,
+        "HP": 6,
+        "Lock": 6
+      }
+    },
+    "tank": {
+      "name": "Tank",
+      "icon": "pi pi-shield",
+      "base_stats": {
+        "HP": 10,
+        "Block": 10,
+        "Lock": 10,
+        "Armor_Received": 10,
+        "Fire_Resistance": 8,
+        "Water_Resistance": 8,
+        "Earth_Resistance": 8,
+        "Air_Resistance": 8,
+        "AP": 8
+      }
+    },
+    "healer": {
+      "name": "Healer",
+      "icon": "pi pi-heart-fill",
+      "base_stats": {
+        "Healing_Mastery": 10,
+        "Heals_Performed": 9,
+        "HP": 8,
+        "AP": 10,
+        "WP": 8,
+        "Elemental_Resistance": 7,
+        "MP": 7,
+        "Dodge": 6
+      }
+    },
+    "support": {
+      "name": "Support",
+      "icon": "pi pi-users",
+      "base_stats": {
+        "HP": 8,
+        "Control": 10,
+        "Healing_Mastery": 7,
+        "AP": 9,
+        "WP": 7,
+        "MP": 7,
+        "Elemental_Resistance": 6,
+        "Wisdom": 6
+      }
+    },
+    "berserker": {
+      "name": "Berserker",
+      "icon": "pi pi-star-fill",
+      "base_stats": {
+        "HP": 10,
+        "Berserk_Mastery": 10,
+        "Melee_Mastery": 9,
+        "Rear_Mastery": 8,
+        "AP": 10,
+        "Fire_Resistance": 10,
+        "Water_Resistance": 10,
+        "Earth_Resistance": 10,
+        "Air_Resistance": 10
+      }
+    }
+  },
+  "metadata": {
+    "version": "1.7.0",
+    "last_updated": "2025-11-03",
+    "source": "Extracted from community guides and Wakfu Builder tutorials",
+    "total_classes": 9,
+    "total_roles": 19
+  }
+}

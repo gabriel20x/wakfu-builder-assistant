@@ -41,6 +41,42 @@ GLOBAL_MASTERY_STATS = ['Elemental_Mastery']
 GLOBAL_RESISTANCE_STATS = ['Elemental_Resistance']
 
 
+def infer_element_preferences_from_weights(stat_weights: Dict[str, float]) -> List[str]:
+    """
+    Infer user's element preferences from stat_weights.
+    
+    Returns ordered list based on weights:
+    - Elements with weight > 0 first (ordered by weight descending)
+    - Then remaining elements
+    
+    Example:
+        stat_weights = {"Fire_Mastery": 7, "Earth_Mastery": 7, "HP": 4}
+        → Returns: ['Fire', 'Earth', 'Water', 'Air']
+    """
+    all_elements = ['Fire', 'Water', 'Earth', 'Air']
+    
+    # Collect elements with weights
+    element_weights = {}
+    for element in all_elements:
+        mastery_key = f"{element}_Mastery"
+        if mastery_key in stat_weights and stat_weights[mastery_key] > 0:
+            element_weights[element] = stat_weights[mastery_key]
+    
+    # Sort by weight (descending), then alphabetically
+    sorted_elements = sorted(
+        element_weights.items(),
+        key=lambda x: (-x[1], x[0])
+    )
+    
+    # Build preference list: weighted elements first, then others
+    preferences = [elem for elem, _ in sorted_elements]
+    for elem in all_elements:
+        if elem not in preferences:
+            preferences.append(elem)
+    
+    return preferences
+
+
 def resolve_element_stats(
     stats: Dict[str, float],
     damage_preferences: List[str],
@@ -59,14 +95,30 @@ def resolve_element_stats(
     """
     resolved_stats = stats.copy()
     
+    # ✅ FIX: Complete preferences with missing elements if needed
+    # This ensures Multi_Element_Mastery_3 and _4 don't lose stats
+    all_elements = ['Fire', 'Water', 'Earth', 'Air']
+    
+    # Complete damage_preferences if it's shorter than 4
+    complete_damage_prefs = damage_preferences.copy() if damage_preferences else []
+    for elem in all_elements:
+        if elem not in complete_damage_prefs:
+            complete_damage_prefs.append(elem)
+    
+    # Complete resistance_preferences if it's shorter than 4
+    complete_resistance_prefs = resistance_preferences.copy() if resistance_preferences else []
+    for elem in all_elements:
+        if elem not in complete_resistance_prefs:
+            complete_resistance_prefs.append(elem)
+    
     # Process random mastery stats
     for random_stat, num_elements in RANDOM_MASTERY_STATS.items():
         if random_stat in resolved_stats:
             value = resolved_stats.pop(random_stat)
             
-            # Apply to the first N preferred elements
-            for i in range(min(num_elements, len(damage_preferences))):
-                element = damage_preferences[i]
+            # Apply to the first N preferred elements (now guaranteed to have enough)
+            for i in range(num_elements):
+                element = complete_damage_prefs[i]
                 stat_key = f"{element}_Mastery"
                 resolved_stats[stat_key] = resolved_stats.get(stat_key, 0) + value
                 
@@ -77,9 +129,9 @@ def resolve_element_stats(
         if random_stat in resolved_stats:
             value = resolved_stats.pop(random_stat)
             
-            # Apply to the first N preferred elements
-            for i in range(min(num_elements, len(resistance_preferences))):
-                element = resistance_preferences[i]
+            # Apply to the first N preferred elements (now guaranteed to have enough)
+            for i in range(num_elements):
+                element = complete_resistance_prefs[i]
                 stat_key = f"{element}_Resistance"
                 resolved_stats[stat_key] = resolved_stats.get(stat_key, 0) + value
                 
@@ -90,8 +142,8 @@ def resolve_element_stats(
         if global_stat in resolved_stats:
             value = resolved_stats[global_stat]
             
-            # Apply to all elements in preference order
-            for element in damage_preferences:
+            # Apply to all elements in preference order (use complete list)
+            for element in complete_damage_prefs:
                 stat_key = f"{element}_Mastery"
                 resolved_stats[stat_key] = resolved_stats.get(stat_key, 0) + value
                 
@@ -102,8 +154,8 @@ def resolve_element_stats(
         if global_stat in resolved_stats:
             value = resolved_stats[global_stat]
             
-            # Apply to all elements in preference order
-            for element in resistance_preferences:
+            # Apply to all elements in preference order (use complete list)
+            for element in complete_resistance_prefs:
                 stat_key = f"{element}_Resistance"
                 resolved_stats[stat_key] = resolved_stats.get(stat_key, 0) + value
                 

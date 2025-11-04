@@ -20,7 +20,11 @@ from app.core.config import settings
 from pulp import LpProblem, LpMaximize, LpVariable, lpSum, LpStatus, value
 import logging
 from typing import Dict, List
-from app.services.element_resolver import resolve_build_stats
+from app.services.element_resolver import (
+    resolve_build_stats, 
+    resolve_element_stats,
+    infer_element_preferences_from_weights
+)
 
 logger = logging.getLogger(__name__)
 
@@ -47,10 +51,12 @@ def solve_build(
     Returns dict with keys: easy, medium, hard_epic, hard_relic, full
     Each containing: items, total_stats, total_difficulty, build_type
     """
-    # Default element preferences
-    if damage_preferences is None:
-        damage_preferences = ['Fire', 'Water', 'Earth', 'Air']
-    if resistance_preferences is None:
+    # ✅ IMPROVED: Auto-detect element preferences from stat_weights
+    if damage_preferences is None or len(damage_preferences) == 0:
+        damage_preferences = infer_element_preferences_from_weights(stat_weights)
+        logger.info(f"Auto-detected damage preferences from weights: {damage_preferences}")
+    
+    if resistance_preferences is None or len(resistance_preferences) == 0:
         resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
     
     # ✅ OPTIMIZATION: Optimized level range
@@ -200,10 +206,18 @@ def _solve_single_build(
     for item in items:
         var = item_vars[item.item_id]
         
-        # Calculate item score from stats
+        # ✅ FIX: Resolve Multi_Element_Mastery stats BEFORE scoring
+        # Items with Multi_Element_Mastery_X need to be resolved based on user preferences
+        resolved_stats = resolve_element_stats(
+            item.stats.copy(),
+            damage_preferences or ['Fire', 'Water', 'Earth', 'Air'],
+            resistance_preferences or ['Fire', 'Water', 'Earth', 'Air']
+        )
+        
+        # Calculate item score from resolved stats
         stat_score = 0.0
         for stat_name, weight in stat_weights.items():
-            stat_value = item.stats.get(stat_name, 0)
+            stat_value = resolved_stats.get(stat_name, 0)
             stat_score += stat_value * weight
         
         # ✅ IMPROVED: Add rarity bonus for HARD builds

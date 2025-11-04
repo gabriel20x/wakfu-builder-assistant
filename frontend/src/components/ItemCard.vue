@@ -69,11 +69,15 @@ const itemName = computed(() => getItemName(props.item))
 const rarityColor = computed(() => {
   // Épicos se identifican con flag is_epic
   if (props.item.is_epic) {
-    return '#D946EF' // Épico - Fucsia/Rosa (tono más púrpura)
+    return '#D946EF' // Épico - Púrpura
   }
   // Reliquias se identifican con flag is_relic (prioridad sobre rarity)
   if (props.item.is_relic) {
-    return '#E91E63' // Reliquia - Fucsia/Rosa
+    return '#E91E63' // Reliquia - Fucsia
+  }
+  // ✅ Recuerdos (rarity 6 pero NO is_relic)
+  if (props.item.rarity === 6 && !props.item.is_relic) {
+    return '#87CEFA' // Recuerdo - Celeste/Azul claro (PVP items)
   }
   return getRarityColor(props.item.rarity)
 })
@@ -86,6 +90,10 @@ const rarityName = computed(() => {
   // Reliquias tienen su propio nombre (prioridad sobre rarity)
   if (props.item.is_relic) {
     return 'Reliquia'
+  }
+  // ✅ FIX: Recuerdos (rarity 6 pero NO is_relic)
+  if (props.item.rarity === 6 && !props.item.is_relic) {
+    return 'Recuerdo'
   }
   return getRarityName(props.item.rarity)
 })

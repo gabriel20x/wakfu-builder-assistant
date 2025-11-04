@@ -114,10 +114,11 @@ export const RARITY_COLORS = {
   3: '#4CAF50',     // Raro - Verde
   4: '#FF9800',     // Mítico - Naranja
   5: '#FFD700',     // ✅ Legendario - Dorado (backend v1.7 mapping)
-  6: '#E91E63',     // Reliquia/Recuerdo - Fucsia (ver flags is_relic)
+  6: '#87CEFA',     // ✅ Recuerdo - Celeste/Azul claro (PVP items, lvl 200+)
   7: '#D946EF',     // ✅ Épico - Púrpura (backend v1.7 mapping)
   // Épicos siempre tienen is_epic = true
-  // Reliquias (rarity 6 + is_relic = true) vs Recuerdos (rarity 6 + is_relic = false)
+  // Reliquias (rarity 6 + is_relic = true) usan #E91E63 (Fucsia) overridden en ItemCard.vue
+  // Recuerdos (rarity 6 + is_relic = false) usan #87CEFA (Celeste)
 }
 
 export const RARITY_NAMES = {
@@ -126,10 +127,11 @@ export const RARITY_NAMES = {
   // 2: No existe en equipment
   3: 'Raro',
   4: 'Mítico',
-  5: 'Legendario',  // ✅ FIXED - Backend v1.7 mapping (era "Reliquia")
-  6: 'Reliquia',    // Default para rarity 6, sobrescrito por flags
-  7: 'Épico',       // ✅ FIXED - Backend v1.7 mapping (era "Legendario")
+  5: 'Legendario',  // ✅ FIXED - Backend v1.7 mapping
+  6: 'Recuerdo',    // ✅ FIXED - Default for rarity 6 (Souvenir items lvl 200+)
+  7: 'Épico',       // ✅ FIXED - Backend v1.7 mapping
   // ItemCard.vue usa is_epic e is_relic para sobrescribir nombres
+  // Rarity 6 + is_relic = true → "Reliquia" (overridden in ItemCard.vue)
 }
 
 export function getStatLabel(statKey) {
