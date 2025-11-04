@@ -368,11 +368,111 @@ const displayStats = computed(() => {
   return combined
 })
 
-// Formula: ((100 * resistance) / (1000 + resistance))
+// Tabla de conversión Flat Resistance -> % Resistance (Wakfu oficial)
+// Basado en la tabla de conversión del juego (update 1.68+, cap 90%)
+const resistanceTable = [
+  { percent: 0, min: 0, max: 4 },
+  { percent: 1, min: 5, max: 9 },
+  { percent: 2, min: 10, max: 13 },
+  { percent: 3, min: 14, max: 18 },
+  { percent: 4, min: 19, max: 22 },
+  { percent: 5, min: 23, max: 27 },
+  { percent: 6, min: 28, max: 32 },
+  { percent: 7, min: 33, max: 37 },
+  { percent: 8, min: 38, max: 42 },
+  { percent: 9, min: 43, max: 47 },
+  { percent: 10, min: 48, max: 52 },
+  { percent: 11, min: 53, max: 57 },
+  { percent: 12, min: 58, max: 62 },
+  { percent: 13, min: 63, max: 67 },
+  { percent: 14, min: 68, max: 72 },
+  { percent: 15, min: 73, max: 78 },
+  { percent: 16, min: 79, max: 83 },
+  { percent: 17, min: 84, max: 88 },
+  { percent: 18, min: 89, max: 94 },
+  { percent: 19, min: 95, max: 100 },
+  { percent: 20, min: 101, max: 105 },
+  { percent: 21, min: 106, max: 111 },
+  { percent: 22, min: 112, max: 117 },
+  { percent: 23, min: 118, max: 122 },
+  { percent: 24, min: 123, max: 128 },
+  { percent: 25, min: 129, max: 134 },
+  { percent: 26, min: 135, max: 141 },
+  { percent: 27, min: 142, max: 147 },
+  { percent: 28, min: 148, max: 153 },
+  { percent: 29, min: 154, max: 159 },
+  { percent: 30, min: 160, max: 166 },
+  { percent: 31, min: 167, max: 172 },
+  { percent: 32, min: 173, max: 179 },
+  { percent: 33, min: 180, max: 186 },
+  { percent: 34, min: 187, max: 193 },
+  { percent: 35, min: 194, max: 200 },
+  { percent: 36, min: 201, max: 207 },
+  { percent: 37, min: 208, max: 214 },
+  { percent: 38, min: 215, max: 221 },
+  { percent: 39, min: 222, max: 228 },
+  { percent: 40, min: 229, max: 236 },
+  { percent: 41, min: 237, max: 244 },
+  { percent: 42, min: 245, max: 251 },
+  { percent: 43, min: 252, max: 259 },
+  { percent: 44, min: 260, max: 267 },
+  { percent: 45, min: 268, max: 276 },
+  { percent: 46, min: 277, max: 284 },
+  { percent: 47, min: 285, max: 293 },
+  { percent: 48, min: 294, max: 301 },
+  { percent: 49, min: 302, max: 310 },
+  { percent: 50, min: 311, max: 319 },
+  { percent: 51, min: 320, max: 328 },
+  { percent: 52, min: 329, max: 338 },
+  { percent: 53, min: 339, max: 347 },
+  { percent: 54, min: 348, max: 357 },
+  { percent: 55, min: 358, max: 367 },
+  { percent: 56, min: 368, max: 378 },
+  { percent: 57, min: 379, max: 388 },
+  { percent: 58, min: 389, max: 399 },
+  { percent: 59, min: 400, max: 410 },
+  { percent: 60, min: 411, max: 421 },
+  { percent: 61, min: 422, max: 433 },
+  { percent: 62, min: 434, max: 445 },
+  { percent: 63, min: 446, max: 457 },
+  { percent: 64, min: 458, max: 470 },
+  { percent: 65, min: 471, max: 483 },
+  { percent: 66, min: 484, max: 496 },
+  { percent: 67, min: 497, max: 510 },
+  { percent: 68, min: 511, max: 524 },
+  { percent: 69, min: 525, max: 539 },
+  { percent: 70, min: 540, max: 554 },
+  { percent: 71, min: 555, max: 570 },
+  { percent: 72, min: 571, max: 586 },
+  { percent: 73, min: 587, max: 603 },
+  { percent: 74, min: 604, max: 621 },
+  { percent: 75, min: 622, max: 639 },
+  { percent: 76, min: 640, max: 658 },
+  { percent: 77, min: 659, max: 678 },
+  { percent: 78, min: 679, max: 699 },
+  { percent: 79, min: 700, max: 721 },
+  { percent: 80, min: 722, max: 744 },
+  { percent: 81, min: 745, max: 768 },
+  { percent: 82, min: 769, max: 794 },
+  { percent: 83, min: 795, max: 821 },
+  { percent: 84, min: 822, max: 850 },
+  { percent: 85, min: 851, max: 881 },
+  { percent: 86, min: 882, max: 914 },
+  { percent: 87, min: 915, max: 950 },
+  { percent: 88, min: 951, max: 989 },
+  { percent: 89, min: 990, max: 1031 },
+  { percent: 90, min: 1032, max: Infinity }, // Cap at 90% (update 1.68)
+]
+
 const calcResistancePercentage = (resistance) => {
   if (!resistance || resistance <= 0) return 0
-  const percentage = (100 * resistance) / (1000 + resistance)
-  return percentage.toFixed(1)
+  
+  // Buscar en la tabla
+  const entry = resistanceTable.find(
+    row => resistance >= row.min && resistance <= row.max
+  )
+  
+  return entry ? entry.percent : 90 // Cap at 90%
 }
 </script>
 
