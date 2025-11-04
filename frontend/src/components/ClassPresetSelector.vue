@@ -318,7 +318,23 @@ const getElementEmoji = (element) => {
 }
 
 const onImageError = (event) => {
-  // If class icon fails to load, show a generic icon
+  // Try alternative spellings for class names
+  const classId = event.target.alt
+  const alternativeUrls = {
+    'sacrieur': 'https://tmktahu.github.io/WakfuAssets/classes/sacrier.png',
+    'enutrof': 'https://tmktahu.github.io/WakfuAssets/classes/enutrof.png',
+    'zobal': 'https://tmktahu.github.io/WakfuAssets/classes/masqueraider.png',
+    'steamer': 'https://tmktahu.github.io/WakfuAssets/classes/foggernaut.png'
+  }
+  
+  // If there's an alternative URL, try it
+  if (alternativeUrls[classId] && !event.target.dataset.triedAlternative) {
+    event.target.dataset.triedAlternative = 'true'
+    event.target.src = alternativeUrls[classId]
+    return
+  }
+  
+  // Otherwise, show a generic icon
   event.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23667eea" font-size="16" font-weight="bold"%3E⚔%3C/text%3E%3C/svg%3E'
 }
 

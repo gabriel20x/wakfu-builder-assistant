@@ -19,40 +19,38 @@
         </div>
         
         <div class="panel-content">
-          <!-- Quick Start - Presets (MOVIDO AL INICIO) -->
+          <!-- Character Level (AL INICIO - DROPDOWN) -->
+          <div class="config-section level-section-top">
+            <label>{{ t('config.characterLevel') }}</label>
+            <p-dropdown
+              v-model="characterLevel"
+              :options="levelOptions"
+              option-label="label"
+              option-value="value"
+              placeholder="Select level"
+              class="level-dropdown"
+            >
+              <template #value="slotProps">
+                <div v-if="slotProps.value" class="flex align-items-center">
+                  <i class="pi pi-star-fill mr-2" style="color: #ffd700;"></i>
+                  <span class="font-semibold">Nivel {{ slotProps.value }}</span>
+                </div>
+                <span v-else>{{ slotProps.placeholder }}</span>
+              </template>
+              <template #option="slotProps">
+                <div class="flex align-items-center">
+                  <i class="pi pi-star mr-2" style="color: #9fa8da;"></i>
+                  <span>Nivel {{ slotProps.option.value }}</span>
+                </div>
+              </template>
+            </p-dropdown>
+          </div>
+          
+          <!-- Quick Start - Presets -->
           <div class="config-section">
             <ClassPresetSelector 
               @preset-applied="onPresetApplied"
             />
-          </div>
-
-          <!-- Character Level (COMPACTO) -->
-          <div class="config-section compact-level">
-            <label>{{ t('config.characterLevel') }}</label>
-            <div class="level-compact-group">
-              <p-inputNumber 
-                v-model="characterLevel" 
-                :min="1" 
-                :max="245"
-                :step="1"
-                :allow-empty="false"
-                show-buttons
-                button-layout="horizontal"
-                decrement-button-icon="pi pi-minus"
-                increment-button-icon="pi pi-plus"
-                class="level-input-compact"
-              />
-              <p-button 
-                v-for="quickLevel in [100, 150, 200, 230]" 
-                :key="quickLevel"
-                :label="quickLevel.toString()"
-                size="small"
-                :severity="characterLevel === quickLevel ? 'primary' : 'secondary'"
-                :outlined="characterLevel !== quickLevel"
-                @click="characterLevel = quickLevel"
-                class="quick-level-btn-compact"
-              />
-            </div>
           </div>
 
           <!-- Stat Weights -->
@@ -287,6 +285,25 @@ const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
 const activeTabIndex = ref(0)
+
+// Level options for dropdown
+const levelOptions = [
+  { label: 'Nivel 20', value: 20 },
+  { label: 'Nivel 35', value: 35 },
+  { label: 'Nivel 50', value: 50 },
+  { label: 'Nivel 65', value: 65 },
+  { label: 'Nivel 80', value: 80 },
+  { label: 'Nivel 95', value: 95 },
+  { label: 'Nivel 110', value: 110 },
+  { label: 'Nivel 125', value: 125 },
+  { label: 'Nivel 140', value: 140 },
+  { label: 'Nivel 155', value: 155 },
+  { label: 'Nivel 170', value: 170 },
+  { label: 'Nivel 185', value: 185 },
+  { label: 'Nivel 200', value: 200 },
+  { label: 'Nivel 215', value: 215 },
+  { label: 'Nivel 230', value: 230 }
+]
 
 // Element preferences
 const damagePreferences = ref(['Fire', 'Water', 'Earth', 'Air'])
@@ -664,56 +681,32 @@ const generateBuilds = async () => {
   }
 }
 
-.compact-level {
+.level-section-top {
   margin-bottom: 1.5rem !important;
+  
+  label {
+    margin-bottom: 0.75rem !important;
+    font-size: 0.95rem !important;
+  }
 }
 
-.level-compact-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+.level-dropdown {
+  width: 100%;
   
-  .level-input-compact {
-    flex-shrink: 0;
+  :deep(.p-dropdown) {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 215, 0, 0.3);
     
-    :deep(.p-inputnumber) {
-      width: auto;
+    &:hover {
+      border-color: rgba(255, 215, 0, 0.5);
     }
     
-    :deep(.p-inputnumber-input) {
-      background: rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #e0e0e0;
-      padding: 0.5rem 0.75rem;
-      text-align: center;
-      font-size: 1.1rem;
+    .p-dropdown-label {
+      color: #ffd700;
       font-weight: 700;
-      width: 70px;
-      
-      &:focus {
-        border-color: rgba(92, 107, 192, 0.5);
-        box-shadow: 0 0 0 3px rgba(92, 107, 192, 0.2);
-      }
+      font-size: 1.1rem;
+      padding: 0.75rem 1rem;
     }
-    
-    :deep(.p-inputnumber-button) {
-      background: rgba(92, 107, 192, 0.4);
-      border: 1px solid rgba(92, 107, 192, 0.5);
-      color: #fff;
-      width: 2.5rem;
-      
-      &:hover {
-        background: rgba(92, 107, 192, 0.6);
-        border-color: rgba(92, 107, 192, 0.7);
-      }
-    }
-  }
-  
-  .quick-level-btn-compact {
-    min-width: 50px;
-    font-weight: 600;
-    font-size: 0.85rem;
   }
 }
 

@@ -177,23 +177,52 @@ def _solve_single_build(
     """
     Solve for a single build using linear programming
     
-    Build types:
-    - EASY: Solo Raros (3). Excluye Míticos, Legendarios, Épicos y Reliquias
-    - MEDIUM: Míticos (4) + Legendarios (5). NO Épicos ni Reliquias. Max 1 Legendario
+    Build types (adaptive based on level):
+    - EASY (level < 80): Solo Raros (≤3). Excluye Míticos, Legendarios, Épicos y Reliquias
+    - EASY (level ≥ 80): Hasta Míticos (≤4). Excluye Legendarios, Épicos y Reliquias
+    - MEDIUM (level < 80): Hasta Míticos (≤4). Excluye Legendarios, Épicos y Reliquias
+    - MEDIUM (level ≥ 80): Míticos (4) + Legendarios (5). NO Épicos ni Reliquias. Max 1 Legendario
     - HARD_EPIC: Max Legendarios + REQUIRE 1 Épico (NO Reliquias)
     - HARD_RELIC: Max Legendarios + REQUIRE 1 Reliquia (NO Épicos)
     - FULL: Max Legendarios + REQUIRE 1 Épico + 1 Reliquia
     """
-    # Filter items by build type rarity restrictions
+    # Filter items by build type rarity restrictions (adaptive to level)
     if build_type == "easy":
-        # EASY: Solo hasta Mítico (rarity <= 4), excluye Épicos y Reliquias
-        # También excluye items individuales muy difíciles (difficulty > 48)
-        items = [item for item in items 
-                 if item.rarity <= 4 
-                 and not item.is_epic 
-                 and not item.is_relic
-                 and item.difficulty <= 48.0]
-        logger.info(f"Build EASY: Filtering to rarity <= Mítico, difficulty <= 48. Items: {len(items)}")
+        # ✅ ADAPTIVE: For low levels (< 80), Mythical items are hard to farm
+        # So EASY builds should only use Rare (≤3) for levels < 80
+        if level_max < 80:
+            # Low level EASY: Solo Raros (rarity <= 3)
+            items = [item for item in items 
+                     if item.rarity <= 3 
+                     and not item.is_epic 
+                     and not item.is_relic
+                     and item.difficulty <= 45.0]
+            logger.info(f"Build EASY (lvl<80): Filtering to rarity <= Raro. Items: {len(items)}")
+        else:
+            # High level EASY: Hasta Míticos (rarity <= 4)
+            items = [item for item in items 
+                     if item.rarity <= 4 
+                     and not item.is_epic 
+                     and not item.is_relic
+                     and item.difficulty <= 48.0]
+            logger.info(f"Build EASY (lvl≥80): Filtering to rarity <= Mítico, difficulty <= 48. Items: {len(items)}")
+    
+    elif build_type == "medium":
+        # ✅ ADAPTIVE: For low levels (< 80), Legendaries are too hard to get
+        # MEDIUM should only allow Mythical (≤4) for levels < 80
+        if level_max < 80:
+            # Low level MEDIUM: Hasta Míticos (rarity <= 4), NO Legendarios
+            items = [item for item in items 
+                     if item.rarity <= 4 
+                     and not item.is_epic 
+                     and not item.is_relic]
+            logger.info(f"Build MEDIUM (lvl<80): Filtering to rarity <= Mítico. Items: {len(items)}")
+        else:
+            # High level MEDIUM: Allows up to 1 Legendary (constraint added later)
+            items = [item for item in items 
+                     if not item.is_epic 
+                     and not item.is_relic]
+            logger.info(f"Build MEDIUM (lvl≥80): Allows Legendaries (max 1). Items: {len(items)}")
     
     # Create problem
     prob = LpProblem(f"WakfuBuild_{build_type}", LpMaximize)
