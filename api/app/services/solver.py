@@ -70,6 +70,7 @@ def solve_build(
     # Fetch all eligible items
     # Include items in level range OR high rarity extended range OR pets
     # Exclude Inusual (rarity 2) items EXCEPT for PET slot
+    # ✅ Exclude Recuerdos (rarity 6 + is_relic = false) - PVP items
     query = db.query(Item).filter(
         Item.slot.isnot(None)
     ).filter(
@@ -84,6 +85,9 @@ def solve_build(
     ).filter(
         # Exclude Inusual (rarity 2) unless it's a PET
         (Item.rarity != 2) | (Item.slot == "PET")
+    ).filter(
+        # ✅ Exclude Recuerdos (rarity 6 + is_relic = false) - PVP items
+        ~((Item.rarity == 6) & (Item.is_relic == False))
     )
     
     # Filter out PET and ACCESSORY if not included
