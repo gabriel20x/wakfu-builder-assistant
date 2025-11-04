@@ -30,36 +30,24 @@ Corrige AMBOS problemas en la base de datos existente.
 
 ## 🎯 Lo que necesitas hacer AHORA
 
-### Paso 1: Aplicar la Migración a la Base de Datos
+### Paso 1: FIXES YA APLICADOS ✅
 
-Elige UNA de estas opciones:
+**Todos los fixes ya fueron aplicados mediante:**
 
-#### Opción A: Migración Directa (Recomendado - Rápido)
 ```bash
-# Copia el archivo de migración al contenedor
-docker cp migrations/fix_dodge_and_prospecting_stats.sql wakfu-builder-assistant-db-1:/tmp/
+# Worker reconstruido con código actualizado
+docker-compose build --no-cache worker
 
-# Ejecuta la migración
-docker-compose exec db psql -U wakfu -d wakfu_builder -f /tmp/fix_dodge_and_prospecting_stats.sql
+# Datos recargados con thresholds correctos
+docker-compose exec db psql -U wakfu -d wakfu_builder -c \
+  "DELETE FROM gamedata_versions WHERE version_string = '1.90.1.43';"
+docker-compose up -d worker
 
-# Reinicia la API para limpiar cache
+# API reiniciada
 docker-compose restart api
 ```
 
-**Tiempo:** ~1 segundo  
-**Efecto:** Corrige solo los items afectados en la DB
-
-#### Opción B: Recargar Todos los Datos (Más lento pero completo)
-```bash
-# Reinicia el worker para recargar todos los datos
-docker-compose restart worker
-
-# Espera a que termine (checa logs)
-docker-compose logs -f worker
-```
-
-**Tiempo:** ~5-10 minutos  
-**Efecto:** Recarga todo desde cero con los nuevos thresholds
+**Estado:** ✅ **COMPLETADO - Sistema listo para usar**
 
 ---
 

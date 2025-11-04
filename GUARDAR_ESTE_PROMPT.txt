@@ -1,0 +1,211 @@
+═══════════════════════════════════════════════════════════════════════════════
+  PROMPT PARA AGENTE AI - DEBUGGING WAKFU BUILDER STATS
+═══════════════════════════════════════════════════════════════════════════════
+
+[COPIAR TODO LO DE ABAJO Y PEGAR EN NUEVO CHAT]
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Soy desarrollador del proyecto Wakfu Builder Assistant. Necesito tu ayuda para 
+investigar y corregir problemas con stats de items.
+
+CONTEXTO DEL SISTEMA:
+────────────────────
+- Proyecto: Wakfu Builder (generador de builds óptimos para el juego Wakfu)
+- Stack: Python FastAPI (backend), Vue 3 (frontend), PostgreSQL (database)
+- Docker: worker, api, db, frontend (4 contenedores)
+
+ARQUITECTURA:
+────────────
+Game Data (items.json) → Worker (normalización) → Database → Solver → Frontend
+      ↓                        ↓                     ↓
+  Action IDs            Mapeo a Stats         stats::jsonb
+  (ej: 175, 192)       (ej: Dodge, WP)
+
+ARCHIVOS CLAVE:
+──────────────
+- worker/fetch_and_load.py (líneas 139-330): Mapeo de Action IDs a stats
+- api/app/services/solver.py (líneas 200-310): Constraints del solver
+- Database tabla items: columnas stats (JSON) y raw_data (JSON original)
+
+PROBLEMA REPORTADO:
+──────────────────
+[Aquí pego mi problema específico]
+
+Ejemplo:
+"El item 'Anillo X' muestra 'Prospecting: 1' en builds, pero en el juego 
+muestra '-1 PM máx.'. Item ID: 12345"
+
+[Adjunto screenshots del juego]
+[Adjunto JSON del build generado]
+
+PROCESO QUE DEBES SEGUIR:
+────────────────────────
+
+1. INVESTIGAR EN DATABASE:
+   ```bash
+   # Ver stats actuales
+   docker-compose exec db psql -U wakfu -d wakfu_builder -c "
+   SELECT item_id, name_es, slot, stats 
+   FROM items WHERE item_id = <ID>;
+   "
+   
+   # Ver raw_data (Action IDs originales)
+   docker-compose exec db psql -U wakfu -d wakfu_builder -c "
+   SELECT raw_data::jsonb->'definition'->'equipEffects' 
+   FROM items WHERE item_id = <ID>;
+   "
+   ```
+
+2. ANALIZAR WORKER CODE:
+   - Buscar Action ID en stat_map (worker/fetch_and_load.py)
+   - Revisar lógica contextual (if/else con thresholds)
+   - Identificar el patrón:
+     * Contextual: depende de valor o slot
+     * Penalty: valor positivo → stat negativo
+     * Missing: Action ID no mapeado
+
+3. IDENTIFICAR PATRONES:
+   
+   PATRONES CONOCIDOS:
+   
+   A) Stats Contextuales (dependen de valor/slot):
+      - Action 175: Dodge (< 250) vs Berserk_Mastery (>= 250)
+      - Action 1055: Armor_Given (≤ 50) vs Berserk_Mastery (> 50)
+      - Action 160: Range (armas) vs Elemental_Resistance (armaduras)
+   
+   B) Penalties (valor positivo en datos → stat negativo):
+      - Action 21: HP_Penalty → -HP
+      - Action 57: MP_Penalty → -MP
+      - Action 192: WP_Penalty → -WP
+      - Action 174: Lock_Penalty → -Lock
+      - Action 176: Dodge_Penalty → -Dodge
+   
+   C) Multi-param:
+      - Action 1068: Multi_Element_Mastery (params[2] = num elementos)
+      - Action 1069: Random_Elemental_Resistance (params[2] = num elementos)
+
+4. APLICAR FIX en worker/fetch_and_load.py:
+   
+   Para nuevo Action ID:
+   ```python
+   stat_map = {
+       <N>: "New_Stat_Name",  # Descripción
+       ...
+   }
+   ```
+   
+   Para penalty:
+   ```python
+   elif stat_name == "New_Stat_Penalty":
+       stat_name = "New_Stat"
+       stat_value = -stat_value
+   ```
+   
+   Para threshold contextual:
+   ```python
+   elif stat_name == "StatA_or_StatB":
+       if <CONDICION>:
+           stat_name = "StatA"
+       else:
+           stat_name = "StatB"
+   ```
+
+5. REBUILD Y RELOAD (CRÍTICO - Sin cache!):
+   ```bash
+   # Rebuild worker SIN CACHE
+   docker-compose build --no-cache worker
+   
+   # Limpiar DB version
+   docker-compose exec db psql -U wakfu -d wakfu_builder -c \
+     "DELETE FROM gamedata_versions WHERE version_string = '1.90.1.43';"
+   
+   # Start worker
+   docker-compose up -d worker
+   
+   # Esperar a que termine (ver logs)
+   docker-compose logs -f worker
+   # (Ctrl+C cuando veas "Game data loading complete!")
+   
+   # Reiniciar API
+   docker-compose restart api
+   ```
+
+6. VERIFICAR:
+   ```bash
+   # Verificar stats en DB
+   docker-compose exec db psql -U wakfu -d wakfu_builder -c "
+   SELECT item_id, name_es, 
+          stats::jsonb->'<STAT_CORREGIDO>' as new_stat,
+          stats::jsonb->'<STAT_VIEJO>' as old_stat
+   FROM items WHERE item_id IN (<IDS>);
+   "
+   ```
+   
+   Esperado:
+   - new_stat tiene el valor correcto
+   - old_stat es null (ya no existe)
+
+7. DOCUMENTAR:
+   - Crear docs/FIX_<NOMBRE_PROBLEMA>.md
+   - Actualizar docs/rarity_analysis/SUMMARY.md
+   - Crear resumen ejecutivo
+   - Limpiar archivos temporales
+
+IMPORTANTE - NO HACER:
+─────────────────────
+❌ Rebuild worker sin --no-cache (usará código viejo)
+❌ Olvidar borrar gamedata_versions (no recargará datos)
+❌ Olvidar reiniciar API (servirá datos cacheados)
+❌ Asumir patrones sin verificar raw_data
+
+IMPORTANTE - SÍ HACER:
+────────────────────
+✅ Verificar raw_data antes de asumir
+✅ Probar con múltiples rarezas del mismo item
+✅ Escuchar insights del usuario sobre patrones del juego
+✅ Documentar el proceso y solución
+✅ Limpiar archivos temporales al finalizar
+
+CASOS EXITOSOS PREVIOS:
+──────────────────────
+1. Dodge vs Berserk (Action 175): Threshold 50→250
+2. Prospecting vs -WP (Action 192): Agregado WP_Penalty
+3. MP Penalty (Action 57): Agregado MP_Penalty
+4. Sistema de 2 Anillos: LEFT_HAND permite 2 items
+
+DOCUMENTACIÓN DE REFERENCIA:
+───────────────────────────
+- docs/METODOLOGIA_DEBUGGING_STATS.md (proceso técnico completo)
+- PROMPT_PARA_AGENTE_AI.md (este documento con más detalles)
+- docs/RING_SYSTEM.md (sistema de anillos)
+- TODOS_LOS_FIXES_APLICADOS.md (resumen de todos los fixes)
+
+═══════════════════════════════════════════════════════════════════════════════
+  FIN DEL PROMPT - Copia desde arriba de esta línea
+═══════════════════════════════════════════════════════════════════════════════
+
+INSTRUCCIONES PARA USAR ESTE PROMPT:
+────────────────────────────────────
+1. Abre un nuevo chat con el agente AI
+2. Copia TODO el contenido entre las líneas de ═══
+3. Pégalo en el chat
+4. Reemplaza [Aquí pego mi problema específico] con tu problema real
+5. Adjunta screenshots del juego
+6. Adjunta JSON del build
+7. El agente seguirá el proceso sistemático
+
+TIEMPO ESTIMADO:
+───────────────
+- Investigación: 10-20 minutos
+- Aplicación del fix: 5-10 minutos  
+- Rebuild y reload: 5-10 minutos
+- Verificación: 5 minutos
+- Total: 25-45 minutos
+
+TASA DE ÉXITO:
+─────────────
+4/4 casos resueltos exitosamente (100%)
+
+Última actualización: 2025-11-04
+

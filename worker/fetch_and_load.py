@@ -141,6 +141,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             20: "HP",
             31: "AP",
             41: "MP",
+            57: "MP_Penalty",  # ✅ FIXED - -MP (Movement Points penalty, e.g., Sello fulgurante)
             1020: "WP",
             191: "WP",  # ✅ CORRECTED - Wakfu Points (alternative)
             
@@ -322,6 +323,9 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                     stat_value = -stat_value
                 elif stat_name == "WP_Penalty":
                     stat_name = "WP"
+                    stat_value = -stat_value
+                elif stat_name == "MP_Penalty":
+                    stat_name = "MP"
                     stat_value = -stat_value
                 
                 stats[stat_name] = stats.get(stat_name, 0) + stat_value
