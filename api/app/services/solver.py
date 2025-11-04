@@ -259,23 +259,30 @@ def _solve_single_build(
         slots_used[item.slot].append(item_vars[item.item_id])
     
     for slot, vars_in_slot in slots_used.items():
-        if slot not in ["LEFT_HAND", "RIGHT_HAND"]:
-            prob += lpSum(vars_in_slot) <= 1, f"max_one_{slot}"
+        if slot == "LEFT_HAND":
+            # ✅ RINGS: Allow up to 2 rings in LEFT_HAND slot
+            prob += lpSum(vars_in_slot) <= 2, f"max_two_rings"
         else:
-            # Rings can have 1 per hand, but total 2
+            # All other slots: max 1 item
             prob += lpSum(vars_in_slot) <= 1, f"max_one_{slot}"
     
-    # Constraint: Rings cannot be duplicated (same item_id in both hands)
-    if "LEFT_HAND" in slots_used and "RIGHT_HAND" in slots_used:
-        left_items = [item for item in items if item.slot == "LEFT_HAND"]
-        right_items = [item for item in items if item.slot == "RIGHT_HAND"]
+    # Constraint: Rings cannot be duplicated (same item_id OR same base name)
+    # This prevents equipping the same ring twice, even with different rarities
+    if "LEFT_HAND" in slots_used:
+        ring_items = [item for item in items if item.slot == "LEFT_HAND"]
         
-        for left_item in left_items:
-            for right_item in right_items:
-                if left_item.item_id == right_item.item_id:
-                    # Can't equip same ring in both hands
-                    prob += (item_vars[left_item.item_id] + item_vars[right_item.item_id] <= 1), \
-                            f"no_duplicate_ring_{left_item.item_id}"
+        # For each pair of rings, ensure they can't both be selected if they're the same
+        for i, ring1 in enumerate(ring_items):
+            for ring2 in ring_items[i+1:]:
+                # Check if same item_id OR same base name (different rarities)
+                # Use name_es as primary, fallback to name_en/name
+                name1 = ring1.name_es or ring1.name_en or ring1.name
+                name2 = ring2.name_es or ring2.name_en or ring2.name
+                
+                if ring1.item_id == ring2.item_id or name1 == name2:
+                    # Can't equip both rings if they're the same (same item or same base name)
+                    prob += (item_vars[ring1.item_id] + item_vars[ring2.item_id] <= 1), \
+                            f"no_duplicate_ring_{ring1.item_id}_{ring2.item_id}"
     
     # Constraint: Epic and Relic management based on build type
     epic_items = [item for item in items if item.is_epic]
