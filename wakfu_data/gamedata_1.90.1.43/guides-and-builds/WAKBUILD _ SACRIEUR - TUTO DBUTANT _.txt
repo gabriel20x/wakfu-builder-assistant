@@ -1,0 +1,319 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Et bonjour à tous, aujourd'hui, bienvenue dans ce petit tutoriel spécial pour le sacréeur pour débutant. Ici je vous présente un deck et quelques tits de astuce pour votre level 20 à 70. Levége 70 on va débloquer un passif qui va complètement changer notre gameplay. En attendant vous avez 70 levé à faire, on va essayer de pas trop mourir pendant ces premiers niveaux. Le sacréur est par essence une classe qui va jouer avec très peu de PV pour enfilter des gars. Plus votre vie descendra en combat, plus votre joge de fureur va augmenter. La joge de fureur sera au max quand vous êtes à 20% de vos PV. Et vous permettra ainsi de monter jusqu'à plus 50% sur tous vos dégâts. Ça va être évidemment la mécanique principale de sa crieur. Il va falloir réussir à faire ces combat avec très peu de PV comme ça. Pour ça on va avoir trois outils de survie qui vont être intéressants. La première sera évidemment que le sacréur aura plus de PV que les autres classes. Votre mécanique de classe va vous le rappeler. Vous avez sur sa crieur abonus naturel de 200% de votre niveau en PV. Par exemple moi ici de votre 5 anges, j'ai donc 100 PV en plus que les autres classes. En plus de ça, on va rapidement se mettre le passif sans tatoué, qui va nous permettre d'obtenir 800% de nos niveaux en plus en PV. Au level 50 par exemple, là où toutes les autres classes du jeu ont 1000 PV, j'en aurais 1500. On a un malus sur nos sortes de déplacement, mais on va complètement la sumer ici et jouer autour. Deuxième mécanique de survie avec un sacréur, on a évidemment les points d'armure. Par exemple, si je lance armure sanguine, c'est un sort qui me donne de l'armure et qui permet de générer du coup une barre verte, c'est des PV supplémentaires par de sumés PV. Ici on peut voir que j'en ai 2504. À noter que sur Wakfu, votre armure ne peut pas dépasser 50% de vos PV. Si vous avez par exemple 2 000 PV, vous ne pouvez pas dépasser de 1000 points d'armure. Ça va donc être super important sur un sacréur d'avoir le maximum de PV de base. Plus vous aurez de PV, plus vous aurez potentiellement d'armure. Il existe deux types de façon de gagner de l'armure différente dans le jeu. La première, c'est l'armure fixe que vous obtenez par exemple avec le sort comme Pierre Ocheu ou Colonel, ça vous donnera un montant d'armure fixe. C'est pas forcément celui qui va le plus nous intéresser. On va plutôt s'intéresser à la deuxième catégorie, les sortes comme armure sanguine ou bien le passif refus de la mort, qui vont nous donner de l'armure en pourcentage de nos PV. Ça va donc être évidemment bien plus intéressant sur tous ces appris le temps d'avoir pas mal de PV. Notre but donc va être de jouer avec le maximum de PV possible et de générer de l'armure surtout avec les sortes qui viennent de l'armure en PV pourcent. Enfin, votre troisième couche de défense principale, ça va être vos résistants célémentaires. Les résistants célémentaires, si en sacrif vont évidemment être super importantes, on a peu de PV, on va avoir un peu d'armure et à falloir prendre le moins de dégâts possible là-dessus. Le passif refus de la mort par exemple, va vous accorder à bonus de 50 résistants célémentaires. Pour pouvoir le proc, il va juste falloir passer sous les 20% des PV. Par exemple, quand je fais punition, je me fixe à 20% de l'EPV. Et si je me mets 100% en plus, je passe en dessous les 20%, je procre le passif et mes résistances passent à 38 à 42%. Ne négliger surtout pas ces résistances est son ultra importante. Maintenant qu'on a la base défensive de notre personnage, avant d'attaquer la partie offensive avec nos sortes, on peut prendre une minute d'huile fait pour parler des sortes de mobilité placement. Le sacris, c'est une classe au corps à corps. Ça va donc être super important de maîtriser tous vos outils pour vous déplacer sur la map, pour pouvoir rejoindre un ami au corps à corps, pour pouvoir taper dans son dos, etc. D'ailleurs, vu que vous êtes un personnage mêlé, taper dans nos vêtres super important pour vous. Autant sur les classes distances, c'est un peu du bonus généralement. Autant sur les classes mêlées, il va falloir taper dans le dos. Le dos, c'est un bonus de 25% de dégâts finaux en plus. C'est donc vraiment super important et essayer toujours au maximum de taper dans le dos des ennemis. Pour ça, dans le kit, je vous conseille de mettre Asso, attirance et transposition. Ces trois outils qui sont super intéressants pour ça. Asso, ça se dis que vous utiliserez souvent le plus. Il vous suffira de vous aligner avec un ennemi, de lancer Asso dessus, vous le transposez et vous récupirez que simplement le dos en vous approchant. Ça, ça va être dans le meilleur des cas, d'un monstre qui est déjà apporté. Si le monstre n'est pas apporté, vous pouvez rajouter évidemment, bien sûr, attirance. Attirance ne coûte pas de paix, il ne coûte juste des points de voie que vous. Il est donc vraiment cool pour ça. Vous pouvez avancer, faire une attirance, suivi d'un Asso. Vous pouvez également faire l'inverse avec par exemple un Asso, suivi d'une attirance, si vous avez pas les PM. Et enfin, on a transposition qui va être très utile pour les cas où un monstre est assez loin. Par exemple ici je peux transposer un de mes alliés et je vais chercher le dos directement manuellement. Vous pouvez également très bien combiner toutes ces techniques, mais attention, ça va commencer à vous coûter cher en point de voie que vous. Par exemple ici j'avance, je transpose un allié, j'asso le mobe et je la tire. Avec cette grosse mobilité, vous aurez dans le monde de quoi faire dans toutes les situations. J'en profite au passage pour vous rappeler quelque chose de super important sur WokeFo. Quand vous observez un sort, c'est important de noter que toutes les lignes du sort se font chacune dans l'ordre. Par exemple Asso échange de position, puis infligé des gars. Ce qui me permet donc d'avoir les des gars d'Asso qui sont considérés comme des des gars de dos. Là où par exemple un sort comme projection va taper avant de me téléporter de d'autre côté. Je vais donc avoir des des gars de face avant d'arriver dans le dos. C'est un info qui se vaut pour toutes les classes du jeu et tous les sortes du jeu. Quand vous avez donc un doute sur certains effets, vous avez juste à lire une par une les lignes d'un sort dans l'ordre. Pour ce qui est de la mobilité d'ailleurs, je vous conseille de jouer le passif mobilité. Le passif mobilité va procre à chaque fois que vous utilisez Asso, que vous utilisez Transposition ou bien même que vous utilisez Démence. On servirait à principalement de Démence pour créer des autres, mais vu que c'est un sort de mobilité, il va également vous donner un PM. Le malice d'omobilité c'est qu'on aura plus de tackles, pas trop grave sur le League game, tant que vous pouvez esquiver pour facilement prendre un dégât côté ou un dégât d'eau. Ce sera beaucoup plus intéressant pour l'instant que de chercher à tackler des mob, etc. Vous avez donc un présent, vos couches défensives, vous avez un présent vos moyens de vous placer par rapport à un monstre. Il faut maintenant taper. Taper très fort avec un sacre à un Orlige game, c'est pas forcément facile, parce que, défensivement, vous n'avez pas d'en plus des couches de fou. Il y a donc vous devez avoir bien jugé entre vos dégats et votre survie. Ici, dans le deck pour taper, on utilisera principalement deux sortes, punitions et 100%. C'est globalement vos sortes qui vont infliger le plus de dégât. Pour notre survie, on va utiliser Fracas, on va utiliser Colonnade et on va utiliser Armurs en Guin. Il y a donc simplement falloir adapter ses sortes par rapport au combat. Punitions, c'est un sort exceptionnel qui coûte seulement des points de voie coups, donc qui ne consommera pas vos paies, qui va fixer vos PV à 20% des débuts du combat, avant d'infiger des dégats. vos dégats seront donc infligés avec le bonus de 50% des gats de sacreur, ce qui va leur permettre d'infiger des dégats de fou. Par exemple, je prends un monstre, je prends son dos, hop en dégâteau, je m'approche et si je fais punitions, IBS ma vie et il est infligé des gats, j'ai 688 dégats gratuit en paie. Je suis fixé à présent en plus à 100 de fureurs, j'ai donc 50% de dégats pour tout mon tour. Cela dit, une fois qu'on a cet étape, on n'a pas encore prox qui n'autre pas s'il refus de la mort. Pour avoir refus de la mort, il faut passer sous les 20%. Donc le fait d'être à 20% ne marche pas. Il va donc faire leur s'infliger au moins un pourcent de dégats supplémentaires pour pouvoir bénéficier du bonus, c'est-à-dire les 20% de paie et max en armure et les 50 résistants célémentaires. À ce moment-là, mon combat va donc ressembler à on a saut, on va dans le dos, on punition, et une fois que la punition est faite, on va mettre 100%. 100% c'est un sort qui t'a très fort, mais qui en contrepartie, vous n'infligera pas des dégats. Donc à partir de là, je m'infligge un pourcent de dégâteau plus, hop ! Je procre énormément d'armures, parce que du coup c'est mon passif refus de la mort. Je gagne des résistants, mais maintenant il faut que j'arrive à survivre avec ça. Je vous conseille donc d'être tour 1 de proc armures sanguin, comme ça c'est fait, on récupère encore un peu plus d'armures. Et avec les 4 pairs restants, on peut jouer safe et mettre une fracasse. Ce sera un sort qui fait beaucoup de dégats et qui en plus vous permet d'avoir de l'armure. Ce qui nous permet donc de finir notre tour 1, en ayant infligé 1400 dégats, en étant monté à 38% de résistants pour tant qu'il tourne des adversaires et en ayant 733 d'armures en plus par dessus mais 244 pv restants. Ce sera donc largement assez tranquille pour pouvoir survivre un tour complet de plus. On peut également parler de la régène des points de work-fou parce que punitions coupent 3 points de work-fou et tous vos sortes de placements vous en coûten 1. Il faut savoir que sur sa crieure, en reclique sur un mécanique, pour récupérer des points de work-fou, vous pouvez récupérer plus de partout, tout simplement en subissant au moins 1 dégats d'un ennemi ou bien en vous retirant 20% des PV avec vos propres sortes. Que ce soit punitions, 100% etc. Normalement vous allez le proc tout le temps sans m'amie réfléchir, ce qui nous permettra d'avoir largement assez de points de work-fou tous les deux tours pour pouvoir remettre une punition. Pour la suite du combat, il va simplement falloir improviser par rapport à là où vous en êtes par rapport à vos PV. En commençant vos nouveaux tours, vous aurez deux possibilités. Soit vous êtes en mode sacréure normale. Ça veut dire que vous n'avez pas encore proche l'effet mort en sourci qui vous empêche de repasser au-dessus de vos PV Max mais qui vous donne de l'armure. Soit du coup, vous pouvez reprocher cet état en remanto au-dessus de 20% PV puis en descendant. Par exemple ici, je vais faire une souris sans géner qui est un sort de vol de vie. Je remonte au-dessus des 20% et je vais chercher à redessendre en dessous de 20% 1, 2, hop, je repasse et de souverte pour 100% et je repasse un mot de reçu de la mort ce qui me permet de récupérer des résistances et de reprendre de l'armure. On peut finir nos pares en remettant par exemple un sort de vol de vie. Ça nous permet d'un fait des dégâts corrects de récupérer une résistance, de récupérer de l'armure, etc. Si vous souhaitez jouer un peu plus la sécurité au niveau de vos PV, vous pouvez très bien passer par du foule vol de vie avant d'avoir à l'état qui proche justement qu'il va bloquer vos PV. On va donc commencer par exemple avec une souris sans géner, une souris sans géner avec les super restants par exemple pour permettre un fracasse et une dément sans oeuf. Ça nous permettra dans le tour de re gagner un peu d'armure, un peu de PV, mais du coup dans cette situation, on ne récupère pas notre bonus de résistance. A vous donc de voir dans cette différence, lesquels vous préférez. Et globalement ensuite c'est une rautat du couture de tour, décor récupère punition et ben on va refaire ton eau qu'on boit un, on remet la punition. La punition est pro qui faut qu'on descend notre souverte pour 100% en même titre claque. On proque notre état, on proque une résistance, on est bloqué à 20%, ici nous reste 7 pH, peut pas l'enobleter, une grosse claque et 2 vol de vie avec 4 pH. Les vols de vie, vous me bloquez à 20%, mais ça m'a repermi quand même de mettre beaucoup de dégâts, tout en général, beaucoup d'armures et de générer mes résistances. Tout ça c'est des petits combos dans le cas de burst de mob imparins. Vous aurez également sur le sacreur des sortes de zone assez intéressants avec notamment des mances écolonades. Des mances auparimètes de regrouper les mob autour de vous quand ils sont séparés un petit peu et que vous voulez créer des zones, tandis que colonades va au permettre de générer de l'armure facilement en eau religaïe. Plus tard vous jouez avec sans brûlant, mais pour l'instant sans brûlant, on va vous infiger tellement de dégâts que vous risquez plus de mourir quelque chose qu'on le reprendra un peu plus tard. En attendant on peut par exemple très bien juste venir se placer, on peut passer par un peu avec punition, hop, souler 20%, on groupe tout le monde autour de nous, et en met par exemple une colonade. Colonade va nous donner de l'armure pour chaque mance autour de nous, mais comme vous voyez c'est de l'armure fixe, et l'armure fixe sur un sacreur bon bah c'est pas terrible. 123 d'armures fixes comme ça sur une fin de tour, on a dit un phygème assez peu de dégâts, c'est pas non plus la gigafoldie, on n'a pas eu le résistance, on n'a plus de PV, on n'a pas d'armure, je vous déconseille quand même généralement de jouer zonne en orlé game, je ne serai pas à le truc qui vous fera sur lui le mieux. Après vous pouvez très bien le faire, sans jouer punition et donc garder tout vos PV, mais c'est quand même un peu louches de jouer un sacre avec beaucoup de PV. Si vous voulez une classe, mets les quittats peu courts à court et quittats par avec tous ces PV, y'a plein d'autres classes qui sont cool pour ça, vous pouvez jouer un IO, un ouginac, un tram, bref si vous avez pris sa créeur, il va falloir accéter de jouer avec le feu, et il faut descendre vos PV si vous voulez vraiment profiter de votre classe. On peut finir ce petit tuto avec l'explication des deux chatiments sacriers. En en a deux chatiments osés et chatiments sanguin, en orlé game en vrai, je vous l'ai conseillé pas spécialement. Chatements osés, le principe est assez simple, à chaque fois que le sacré subit des dégâts, il va augmenter ces dégâts infligés et perdre des résistances élémentaires. Par exemple, vous activez le chatiment et imaginons que vous mettez vos dégâts avec vos 100%, 1, 2, 3. Là j'ai pris trois fois l'état de chatiment, et donc passer d'un niveau 1 ou niveau 4. Je vais gagner des dégâts petit à petit ici, j'ai eu plus de 8 % de dégâts infligés, mais en contre parti, je vais perdre des résistances. À ce stade du jeu, il va comme fort l'or que vous prenez beaucoup de coups pour voir une réelle différence dans vos dégâts. Et en contre parti, les baisse de résistance vont vous faire vraiment mal. A moins que vous ayez un fait cas ou un enniedeur votre team qui va compenser la perte de résistance, je vous déconseille en général, vous en servir. Pour ce qui est du chatiment sanguin, ça peut être un peu plus utile. C'est ce qu'on va appeler de chatiments défensifs. C'est un chatiment qui a quatre effets différents. Il n'est pas spécialement intuitif à comprendre, mais déjà, en gros deux bases, quand vous l'avez, vous perdez 15 % de dégâts. Ceux-quà même assez chants en orlé game, vous n'avez pas besoin de perdre ton dégâts pour des mécaniques défensives. Cependant, en échange, vous allez pouvoir réduire de 30 % les dégâts que vous subissez. Par exemple, au lieu de subir à moins 1000, vous allez subir à moins 700. Cela dit, les 300 dégâts que vous avez empêché de prendre, vous avez quand même emprendre une partie à un moment. À savoir que, à la fin de votre tour, vous allez reprendre la moitié des dégâts stockés, par exemple ici 150 dégâts en plus. Et si vous désappliquiez cœur sanguin, que ce soit pour le retirer ou pour appliquer un autre chatiment, vous allez reprendre encore la moitié des dégâts stockés. Vous allez donc pas vraiment une réduction effective de 30 %. On va plutôt être autour des 10 à 15 % de réduction. En échange du coup, 2, moins 15 % des dégâts infligés. Ce n'est pas forcément le truc que le plus voir sur votre velle, surtout que ça coûte en plus des paieurs. Je vous conseille donc du coup pour l'instant, on est en haut le game de pas forcément les jouer ni l'un ni l'autre. On les revérera un peu plus tard, pour les tutos des sacriens un peu plus haut le velle. Pour ce qui est des statistiques que je vous conseille sur un sacrier, vous allez tout mettre en résistance dès le début évidemment, puis tout dans les paies réé. Dans la force, on met tout en maitrisme élai, et une fois qu'on sera à 40, on pourra tout mettre soit dans les pb sur dans la maitrisme élémentaire. Dans la jl, t pour l'instant, fous les skives. Ça peut être intéressant plus tard de passer en tackles skis histoire d'avoir un peu des deux. Dans la chance, on mettra tout dans les coups critiques, puis on passera tout dans la maitrisme Berserk. Si ça vous intéresse pas du tout d'ailleurs de jouer dans les coups critiques, vous pouvez directement dévoter le game tout mettre dans la maitrisme Berserk. Et enfin, dans les points majeurs, ce qui nous intéresse c'est le PA, le PM évidemment. La résistance élémentaire sera vraiment fondamentale sur un sacréur. Je pourrais presque me tater d'ailleurs à vous conseiller de le mettre en premier point. Cinq autres résistance élémentaire, en hurly sur un sacré, vous verrez vraiment la différence. Dans vos combos, faut que vous voyez si le PA vous est vraiment utile. Si vous voyez que vous avez déjà des items épicouroliques qui donnent un PSplemantaire, hésitez pas à investir directement dans le point de résistance. Bref, ce sera tout pour ce petit du tout, débutant sur le sacréur, j'espère que ça vous aura permis d'avoir les bases de la classe. J'espère que c'était assez clair, mais on se retrouve bientôt pour d'autres petites assuts et tutoriels. Dissilla, amusez-vous bien, des bisous.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+And hello everyone, today welcome to this special little tutorial for the sacred for beginners. Here I present to you a deck and some tips for your level 20 to 70. Levége 70 we will unlock a passive which will completely change our gameplay. In the meantime you have 70 tricks to do, we will try not to die too much during these first levels. The Sacred is in essence a class that will play with very little HP to sneak up on guys. The lower your life goes in combat, the more your fury rating will increase. Fury boost will be at max when you are at 20% of your HP. And will allow you to increase up to 50% on all your damage. This is obviously going to be the main mechanic of his screamer. We will have to succeed in doing these fights with very little HP like that. For this we will have three survival tools which will be interesting. The first will obviously be that the sacred will have more PV than the other classes. Your class mechanic will remind you of this. You have a natural bonus of 200% of your HP level on his screamer. For example me here from your 5 angels, I therefore have 100 more PV than the other classes. In addition to that, we will quickly put on the passive without tattooed, which will allow us to obtain 800% of our levels more in PV. At level 50 for example, where all the other classes in the game have 1000 HP, I would have 1500. We have a penalty on our types of movement, but we are going to completely subdue it here and play around it. Second survival mechanic with a sacred, we obviously have the armor points. For example, if I cast blood armor, it's a spell that gives me armor and which allows me to generate a green bar, which is additional PV per PV sum. Here we can see that I have 2504. Note that on Wakfu, your armor cannot exceed 50% of your HP. For example, if you have 2000 HP, you cannot exceed 1000 armor points. So it's going to be super important on a sacred to have the maximum base PV. The more HP you have, the more armor you potentially will have. There are two types of ways to gain different armor in the game. The first is the fixed armor that you obtain for example with the spell like Pierre Ocheu or Colonel, this will give you a fixed amount of armor. It's not necessarily the one that will interest us the most. We will instead be interested in the second category, types like blood armor or the death refusal passive, which will give us armor as a percentage of our HP. So it's obviously going to be much more interesting based on all this learning while you have a lot of PV. Our goal will therefore be to play with the maximum possible PV and to generate armor, especially with the kinds that come from armor in PV percent. Finally, your third layer of main defense will be your elemental resistance. The elemental resistances, if in sacrifice are obviously going to be super important, we have little PV, we are going to have a little armor and we have to take as little damage as possible on that. The death refusal passive, for example, will grant you a bonus of 50 elemental resistance. To be able to proc it, you will just have to go below 20% of your HP. For example, when I do punishment, I set myself at 20% of the EPV. And if I put myself at 100% more, I go below 20%, I procreate the passive and my resistances go to 38 to 42%. Above all, do not neglect these resistances as they are extremely important. Now that we have the defensive base of our character, before attacking the offensive part with our types, we can take a minute of oil to talk about types of mobility placement. Sacris is a melee class. So it's going to be super important to master all your tools to move around the map, to be able to join a friend in melee, to be able to tap their back, etc. Besides, since you are a mixed character, typing in our clothes is super important for you. As for distance classes, it's generally a bit of a bonus. As for mixed classes, we're going to have to pat ourselves on the back. The back is a bonus of 25% more final damage. So it's really super important and always try as much as possible to pat your enemies on the back. For that, in the kit, I advise you to put Asso, attraction and transposition. These three tools are super interesting for that. Asso, it is said that you will often use the most. All you have to do is line up with an enemy, throw Asso on it, you transpose it and you simply recover the back as you approach. This is going to be in the best case scenario, a monster that has already been brought. If the monster is not brought, you can obviously, of course, add attraction. Attraction doesn't cost peace, it just costs you lane points. So he's really cool for that. You can move forward, do an attraction, followed by an Asso. You can also do the opposite with for example an Asso, followed by an attraction, if you don't have the MP. And finally, we have transposition which will be very useful for cases where a monster is quite far away. For example here I can transpose one of my allies and I will search for the back directly manually. You can also combine all of these techniques very well, but be careful, it will start to cost you a lot in terms of your route. For example here I move forward, I transpose an ally, I associate the mobe and I shoot it. With this great mobility, you will have something in the world to do in all situations. I would like to take this opportunity to remind you of something super important about WokeFo. When you observe a spell, it is important to note that all the lines of the spell are done in order. For example Asso exchanges positions, then inflicts guys. Which therefore allows me to have the guys from Asso who are considered to be back guys. Where for example a spell like projection will hit before teleporting me to the other side. So I'm going to have guys from the front before arriving in the back. This is information that applies to all classes in the game and all types of the game. So when you have doubts about certain effects, you just have to read the lines of a spell one by one in order. As for mobility, I advise you to play the mobility passive. The mobility passive will procreate every time you use Asso, use Transpose, or even use Dementia. It would mainly be used for Insanity to create others, but since it's a mobility spell, it will also give you MP. The trick of mobility is that we will have more tackles, not too serious in the League game, as long as you can dodge to easily take side damage or water damage. This will be much more interesting for now than trying to tackle mobs, etc. So you have a present, your defensive layers, you have a present, your means of positioning yourself in relation to a monster. Now you have to type. Hitting very hard with a coronation in an Orlige game is not necessarily easy, because, defensively, you don't have the added layers of crazy. There is therefore you must have judged well between your damage and your survival. Here, in the typing deck, we will mainly use two kinds, punishment and 100%. Overall, it's your types that will inflict the most damage. For our survival, we will use Fracas, we will use Colonnade and we will use Armors en Guin. You simply have to adapt your spells to the combat. Punishments, this is an exceptional spell which only costs hit track points, therefore which will not consume your pay, which will set your PV at 20% at the start of the fight, before inflicting damage. your damage will therefore be inflicted with the bonus of 50% of the sacrer's damage, which will allow them to inflict madman damage. For example, I take a monster, I take its back, hop in damage, I approach and if I do punishments, IBS my life and it is inflicted with damage, I have 688 free damage in pay. I am now set to 100 fury, so I have 50% damage for my entire turn. That said, once we have this stage, we do not yet have a proxy who does not otherwise refuse death. To have refused death, you must go below 20%. So being at 20% doesn't work. He will therefore make them inflict at least one percent additional damage to be able to benefit from the bonus, that is to say the 20% pay and max armor and the 50 elemental resistance. At that point, my fight will look like we jump, we go to the back, we punish, and once the punishment is done, we will put in 100%. 100% it's a spell that makes you very strong, but which in return will not inflict damage on you. So from there, I inflict one percent more damage on myself, presto! I procreate a lot of armor, because it's my passive refusal of death. I'm winning resistance, but now I have to survive with this. So I advise you to be turn 1 of blood armor proc, like that it's done, we recover a little more armor. And with the 4 remaining peers, we can play safe and cause a smash. It will be a spell that does a lot of damage and also allows you to have armor. Which therefore allows us to finish our turn 1, having inflicted 1400 damage, being up to 38% resistant for as long as it turns opponents and having 733 more armor on top but 244 hp remaining. It will therefore be more than calm enough to be able to survive one more complete lap. We can also talk about the regeneration of work-fou points because punishments cut 3 work-fou points and all your types of placements cost you 1. You should know that on your screamer, by clicking on a mechanic, to recover work-fou points, you can recover more from everywhere, quite simply by suffering at least 1 damage from an enemy or by removing 20% ​​of your HP with your own types. Whether punishments, 100% etc. Normally you proc it all the time without thinking, which will allow us to have more than enough work-crazy points every two turns to be able to impose a punishment. For the rest of the fight, you will simply have to improvise based on where you are in relation to your HP. When starting your new turns, you will have two options. Either you are in normal sacred mode. This means that you are not yet close to the death effect which prevents you from going above your Max HP but which gives you armor. Either way, you can reproach this state by remanto above 20% PV then going down. For example here, I'm going to make a mouse without generating which is a lifesteal spell. I go back above 20% and I'm going to try to go back below 20% 1, 2, hop, I go back and open for 100% and I go back through a death receipt word which allows me to recover resistances and regain armor. We can finish our games by, for example, handing over a life stealing spell. This allows us to actually do correct damage, recover resistance, recover armor, etc. If you want to play it a little more safe in terms of your PV, you can very well go through the life theft crowd before having the state which is close to precisely that it will block your PV. We will therefore start for example with a mouse without generating, a mouse without generating with the remaining supers for example to allow a smash and a madness without an egg. This will allow us in the turn to gain a little armor, a little PV, but suddenly in this situation, we do not recover our resistance bonus. It's up to you to see in this difference which ones you prefer. And overall then it's a rautat of the seam of turn, decor recovers punishment and well we're going to redo your water which we drink one, we put back the punishment. The punishment is pro who must lower our open for 100% at the same time slap. We provoke our state, we provoke a resistance, we are stuck at 20%, here we have 7 pH left, we cannot ennoble it, a big slap and 2 steal of life with 4 pH. Life steals, you block me at 20%, but that still allowed me to deal a lot of damage, in general, a lot of armor and to generate my resistances. All these are small combos in the case of imparins mob bursts. You will also have some pretty interesting areas on the sacreur, notably with ecolonade mances. Auparimetes allows you to group the mobs around you when they are separated a little bit and you want to create zones, while colonades will allow you to easily generate armor in religious water. Later you play with it without burning, but for the moment without burning, we will inflict so much damage on you that you are more likely to die something that we will take it back a little later. In the meantime, we can, for example, just come and take our place, we can go through a bit of punishment, hop, raise 20%, we group everyone around us, and put on a colonade, for example. Colonade will give us armor for each mance around us, but as you see it's fixed armor, and the fixed armor on a sacrer well it's not great. 123 of fixed armor like that at the end of the turn, we said a phygeme with relatively little damage, it's not gigafoldie either, we didn't have the resistance, we no longer have PV, we don't have any armor, I still generally advise you not to play zone in orlé game, I won't be at the thing that will do you best on him. Afterwards you can do it very well, without playing punishment and therefore keeping all your VPs, but it is still a bit dodgy to play a coronation with a lot of VPs. If you want a class, put the short quits to short and quits by with all these PV, there are plenty of other classes that are cool for that, you can play an IO, an ouginac, a tram, in short if you took its creator, you will have to agree to play with fire, and you have to lower your PV if you really want to take advantage of your class. We can finish this little tutorial with the explanation of the two sacral punishments. There are two daring punishments and blood punishments, in orlé game in real life, I recommended it to you not particularly. Daring Chatements, the principle is quite simple, each time the sacred suffers damage, it will increase the damage inflicted and lose elemental resistances. For example, you activate punishment and imagine that you put your damage with your 100%, 1, 2, 3. There I took the state of punishment three times, and therefore go from level 1 or level 4. I will gain damage little by little here, I had more than 8% damage inflicted, but on the other hand, I will lose resistances. At this point in the game it's going to be as strong as you take a lot of hits to see a real difference in your damage. And on the other hand, the drop in resistance will really hurt you. Unless you have a case or a problem with your team that will compensate for the loss of resistance, I generally advise against using it. As for blood punishment, that might be a little more useful. This is what we call defensive punishment. It is a punishment that has four different effects. It's not particularly intuitive to understand, but already, roughly two bases, when you have it, you lose 15% damage. These are even enough chants in orlé game, you do not need to lose your damage for defensive mechanics. However, in exchange, you will be able to reduce the damage you suffer by 30%. For example, instead of suffering at minus 1000, you will suffer at minus 700. That said, the 300 damage that you prevented from taking, you still took a game at one point. Please note that, at the end of your turn, you will take back half of the stored damage, for example here 150 more damage. And if you unapplied blood core, whether to remove it or to apply another punishment, you will regain half of the stored damage. So you're not really going to get an effective 30% reduction. We will rather be around 10 to 15% reduction. In exchange for the hit, 2, minus 15% of the damage dealt. This isn't necessarily the thing you'll see most on your bike, especially since it costs more than the payers. So I advise you for the moment, we are at the top of the game not necessarily to play either one or the other. We'll see them again a little later, for the sacrian tutorials a little higher up. As for the statistics that I recommend to you on a sacrier, you are going to put everything in resistance from the start obviously, then everything in the paychecks. In the force, we put everything in basic mastery, and once we are at 40, we can put everything either in the pb or in elementary mastery. In the jl, t for the moment, screw the skives. It might be interesting later to switch to ski tackles just to have a bit of both. If we're lucky, we'll put everything into critical hits, then we'll move everything into Berserk mastery. If you are not at all interested in playing in critical hits, you can directly devour the game and put everything into Berserk mastery. And finally, in the major points, what interests us is the PA, the PM obviously. Elemental resistance will be really fundamental on a sacred. I could almost dare to advise you to put it first. Five more elemental resistance, in hurly on a sacred, you will really see the difference. In your combos, you need to see if the AP is really useful to you. If you see that you already have epicourolic items that give a sufficient PS, do not hesitate to invest directly in the resistance point. In short, that will be all for this little one at all, beginner on the sacred, I hope that this will have allowed you to have the basics of the class. I hope that was clear enough, but we'll see you soon for other little tips and tutorials. Dissilla, have fun, kisses..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 5.16s]  Et bonjour à tous, aujourd'hui, bienvenue dans ce petit tutoriel spécial pour le sacréeur pour débutant.
+[5.16s - 9.00s]  Ici je vous présente un deck et quelques tits de astuce pour votre level 20 à 70.
+[9.00s - 11.76s]  Levége 70 on va débloquer un passif qui va complètement changer notre gameplay.
+[11.76s - 15.60s]  En attendant vous avez 70 levé à faire, on va essayer de pas trop mourir pendant ces premiers niveaux.
+[15.60s - 19.76s]  Le sacréur est par essence une classe qui va jouer avec très peu de PV pour enfilter des gars.
+[19.76s - 23.24s]  Plus votre vie descendra en combat, plus votre joge de fureur va augmenter.
+[23.24s - 26.48s]  La joge de fureur sera au max quand vous êtes à 20% de vos PV.
+[26.56s - 31.20s]  Et vous permettra ainsi de monter jusqu'à plus 50% sur tous vos dégâts.
+[31.20s - 33.72s]  Ça va être évidemment la mécanique principale de sa crieur.
+[33.72s - 36.64s]  Il va falloir réussir à faire ces combat avec très peu de PV comme ça.
+[36.64s - 39.40s]  Pour ça on va avoir trois outils de survie qui vont être intéressants.
+[39.40s - 43.16s]  La première sera évidemment que le sacréur aura plus de PV que les autres classes.
+[43.16s - 45.56s]  Votre mécanique de classe va vous le rappeler.
+[45.56s - 49.12s]  Vous avez sur sa crieur abonus naturel de 200% de votre niveau en PV.
+[49.12s - 52.48s]  Par exemple moi ici de votre 5 anges, j'ai donc 100 PV en plus que les autres classes.
+[52.48s - 55.84s]  En plus de ça, on va rapidement se mettre le passif sans tatoué,
+[55.88s - 59.20s]  qui va nous permettre d'obtenir 800% de nos niveaux en plus en PV.
+[59.20s - 63.04s]  Au level 50 par exemple, là où toutes les autres classes du jeu ont 1000 PV, j'en aurais 1500.
+[63.04s - 67.60s]  On a un malus sur nos sortes de déplacement, mais on va complètement la sumer ici et jouer autour.
+[67.60s - 72.48s]  Deuxième mécanique de survie avec un sacréur, on a évidemment les points d'armure.
+[72.48s - 75.68s]  Par exemple, si je lance armure sanguine, c'est un sort qui me donne de l'armure
+[75.68s - 80.12s]  et qui permet de générer du coup une barre verte, c'est des PV supplémentaires par de sumés PV.
+[80.12s - 82.16s]  Ici on peut voir que j'en ai 2504.
+[82.16s - 85.72s]  À noter que sur Wakfu, votre armure ne peut pas dépasser 50% de vos PV.
+[85.76s - 88.96s]  Si vous avez par exemple 2 000 PV, vous ne pouvez pas dépasser de 1000 points d'armure.
+[88.96s - 92.80s]  Ça va donc être super important sur un sacréur d'avoir le maximum de PV de base.
+[92.80s - 95.44s]  Plus vous aurez de PV, plus vous aurez potentiellement d'armure.
+[95.44s - 98.28s]  Il existe deux types de façon de gagner de l'armure différente dans le jeu.
+[98.28s - 102.68s]  La première, c'est l'armure fixe que vous obtenez par exemple avec le sort comme Pierre Ocheu ou Colonel,
+[102.68s - 104.64s]  ça vous donnera un montant d'armure fixe.
+[104.64s - 106.76s]  C'est pas forcément celui qui va le plus nous intéresser.
+[106.76s - 110.52s]  On va plutôt s'intéresser à la deuxième catégorie, les sortes comme armure sanguine
+[110.52s - 114.80s]  ou bien le passif refus de la mort, qui vont nous donner de l'armure en pourcentage de nos PV.
+[114.84s - 118.44s]  Ça va donc être évidemment bien plus intéressant sur tous ces appris le temps d'avoir pas mal de PV.
+[118.44s - 121.00s]  Notre but donc va être de jouer avec le maximum de PV possible
+[121.00s - 124.36s]  et de générer de l'armure surtout avec les sortes qui viennent de l'armure en PV pourcent.
+[124.36s - 129.16s]  Enfin, votre troisième couche de défense principale, ça va être vos résistants célémentaires.
+[129.16s - 132.32s]  Les résistants célémentaires, si en sacrif vont évidemment être super importantes,
+[132.32s - 136.24s]  on a peu de PV, on va avoir un peu d'armure et à falloir prendre le moins de dégâts possible là-dessus.
+[136.24s - 137.80s]  Le passif refus de la mort par exemple,
+[137.80s - 140.64s]  va vous accorder à bonus de 50 résistants célémentaires.
+[140.64s - 143.88s]  Pour pouvoir le proc, il va juste falloir passer sous les 20% des PV.
+[143.92s - 147.32s]  Par exemple, quand je fais punition, je me fixe à 20% de l'EPV.
+[147.32s - 150.68s]  Et si je me mets 100% en plus, je passe en dessous les 20%,
+[150.68s - 154.28s]  je procre le passif et mes résistances passent à 38 à 42%.
+[154.28s - 157.00s]  Ne négliger surtout pas ces résistances est son ultra importante.
+[157.00s - 159.04s]  Maintenant qu'on a la base défensive de notre personnage,
+[159.04s - 161.00s]  avant d'attaquer la partie offensive avec nos sortes,
+[161.00s - 164.44s]  on peut prendre une minute d'huile fait pour parler des sortes de mobilité placement.
+[164.44s - 165.72s]  Le sacris, c'est une classe au corps à corps.
+[165.72s - 169.12s]  Ça va donc être super important de maîtriser tous vos outils pour vous déplacer sur la map,
+[169.12s - 171.96s]  pour pouvoir rejoindre un ami au corps à corps, pour pouvoir taper dans son dos, etc.
+[172.00s - 174.24s]  D'ailleurs, vu que vous êtes un personnage mêlé, taper dans nos vêtres
+[174.24s - 175.52s]  super important pour vous.
+[175.52s - 178.16s]  Autant sur les classes distances, c'est un peu du bonus généralement.
+[178.16s - 180.16s]  Autant sur les classes mêlées, il va falloir taper dans le dos.
+[180.16s - 183.60s]  Le dos, c'est un bonus de 25% de dégâts finaux en plus.
+[183.60s - 187.56s]  C'est donc vraiment super important et essayer toujours au maximum de taper dans le dos des ennemis.
+[187.56s - 191.44s]  Pour ça, dans le kit, je vous conseille de mettre Asso, attirance et transposition.
+[191.44s - 193.60s]  Ces trois outils qui sont super intéressants pour ça.
+[193.60s - 195.68s]  Asso, ça se dis que vous utiliserez souvent le plus.
+[195.68s - 198.56s]  Il vous suffira de vous aligner avec un ennemi,
+[198.56s - 199.84s]  de lancer Asso dessus,
+[199.88s - 203.16s]  vous le transposez et vous récupirez que simplement le dos en vous approchant.
+[203.16s - 205.60s]  Ça, ça va être dans le meilleur des cas, d'un monstre qui est déjà apporté.
+[205.60s - 209.28s]  Si le monstre n'est pas apporté, vous pouvez rajouter évidemment, bien sûr,
+[209.28s - 210.52s]  attirance.
+[210.52s - 212.40s]  Attirance ne coûte pas de paix, il ne coûte juste des points de voie que vous.
+[212.40s - 213.52s]  Il est donc vraiment cool pour ça.
+[213.52s - 217.96s]  Vous pouvez avancer, faire une attirance, suivi d'un Asso.
+[217.96s - 222.56s]  Vous pouvez également faire l'inverse avec par exemple un Asso, suivi d'une attirance,
+[222.56s - 223.68s]  si vous avez pas les PM.
+[223.68s - 227.68s]  Et enfin, on a transposition qui va être très utile pour les cas où un monstre est assez loin.
+[227.72s - 232.68s]  Par exemple ici je peux transposer un de mes alliés et je vais chercher le dos directement manuellement.
+[232.68s - 234.76s]  Vous pouvez également très bien combiner toutes ces techniques,
+[234.76s - 237.16s]  mais attention, ça va commencer à vous coûter cher en point de voie que vous.
+[237.16s - 242.92s]  Par exemple ici j'avance, je transpose un allié, j'asso le mobe et je la tire.
+[244.92s - 247.76s]  Avec cette grosse mobilité, vous aurez dans le monde de quoi faire dans toutes les situations.
+[247.76s - 250.36s]  J'en profite au passage pour vous rappeler quelque chose de super important sur WokeFo.
+[250.36s - 254.60s]  Quand vous observez un sort, c'est important de noter que toutes les lignes du sort se font chacune dans l'ordre.
+[254.64s - 257.96s]  Par exemple Asso échange de position, puis infligé des gars.
+[257.96s - 261.00s]  Ce qui me permet donc d'avoir les des gars d'Asso qui sont considérés comme des des gars de dos.
+[261.00s - 264.96s]  Là où par exemple un sort comme projection va taper avant de me téléporter de d'autre côté.
+[264.96s - 267.44s]  Je vais donc avoir des des gars de face avant d'arriver dans le dos.
+[267.44s - 270.32s]  C'est un info qui se vaut pour toutes les classes du jeu et tous les sortes du jeu.
+[270.32s - 274.20s]  Quand vous avez donc un doute sur certains effets, vous avez juste à lire une par une les lignes d'un sort dans l'ordre.
+[274.20s - 277.52s]  Pour ce qui est de la mobilité d'ailleurs, je vous conseille de jouer le passif mobilité.
+[277.52s - 280.48s]  Le passif mobilité va procre à chaque fois que vous utilisez Asso,
+[280.48s - 283.36s]  que vous utilisez Transposition ou bien même que vous utilisez Démence.
+[283.40s - 286.76s]  On servirait à principalement de Démence pour créer des autres, mais vu que c'est un sort de mobilité,
+[286.76s - 288.40s]  il va également vous donner un PM.
+[288.40s - 290.20s]  Le malice d'omobilité c'est qu'on aura plus de tackles,
+[290.20s - 291.24s]  pas trop grave sur le League game,
+[291.24s - 294.12s]  tant que vous pouvez esquiver pour facilement prendre un dégât côté ou un dégât d'eau.
+[294.12s - 297.56s]  Ce sera beaucoup plus intéressant pour l'instant que de chercher à tackler des mob, etc.
+[297.56s - 299.68s]  Vous avez donc un présent, vos couches défensives,
+[299.68s - 302.32s]  vous avez un présent vos moyens de vous placer par rapport à un monstre.
+[302.32s - 303.44s]  Il faut maintenant taper.
+[303.44s - 306.16s]  Taper très fort avec un sacre à un Orlige game, c'est pas forcément facile,
+[306.16s - 308.12s]  parce que, défensivement, vous n'avez pas d'en plus des couches de fou.
+[308.12s - 310.80s]  Il y a donc vous devez avoir bien jugé entre vos dégats et votre survie.
+[310.80s - 313.80s]  Ici, dans le deck pour taper, on utilisera principalement deux sortes,
+[313.80s - 315.40s]  punitions et 100%.
+[315.40s - 317.60s]  C'est globalement vos sortes qui vont infliger le plus de dégât.
+[317.60s - 319.36s]  Pour notre survie, on va utiliser Fracas,
+[319.36s - 321.96s]  on va utiliser Colonnade et on va utiliser Armurs en Guin.
+[321.96s - 324.20s]  Il y a donc simplement falloir adapter ses sortes par rapport au combat.
+[324.20s - 326.88s]  Punitions, c'est un sort exceptionnel qui coûte seulement des points de voie coups,
+[326.88s - 328.16s]  donc qui ne consommera pas vos paies,
+[328.16s - 330.88s]  qui va fixer vos PV à 20% des débuts du combat,
+[330.88s - 331.96s]  avant d'infiger des dégats.
+[331.96s - 335.28s]  vos dégats seront donc infligés avec le bonus de 50% des gats de sacreur,
+[335.28s - 337.40s]  ce qui va leur permettre d'infiger des dégats de fou.
+[337.40s - 341.56s]  Par exemple, je prends un monstre, je prends son dos, hop en dégâteau,
+[341.56s - 343.76s]  je m'approche et si je fais punitions,
+[343.76s - 348.32s]  IBS ma vie et il est infligé des gats, j'ai 688 dégats gratuit en paie.
+[348.32s - 350.48s]  Je suis fixé à présent en plus à 100 de fureurs,
+[350.48s - 352.28s]  j'ai donc 50% de dégats pour tout mon tour.
+[352.28s - 353.80s]  Cela dit, une fois qu'on a cet étape,
+[353.80s - 356.44s]  on n'a pas encore prox qui n'autre pas s'il refus de la mort.
+[356.48s - 359.04s]  Pour avoir refus de la mort, il faut passer sous les 20%.
+[359.04s - 360.84s]  Donc le fait d'être à 20% ne marche pas.
+[360.84s - 363.08s]  Il va donc faire leur s'infliger au moins un pourcent de dégats supplémentaires
+[363.08s - 364.92s]  pour pouvoir bénéficier du bonus,
+[364.92s - 366.68s]  c'est-à-dire les 20% de paie et max en armure
+[366.68s - 368.44s]  et les 50 résistants célémentaires.
+[368.44s - 370.28s]  À ce moment-là, mon combat va donc ressembler à
+[370.28s - 373.68s]  on a saut, on va dans le dos, on punition,
+[373.68s - 376.28s]  et une fois que la punition est faite, on va mettre 100%.
+[376.28s - 377.84s]  100% c'est un sort qui t'a très fort,
+[377.84s - 379.68s]  mais qui en contrepartie, vous n'infligera pas des dégats.
+[379.68s - 382.68s]  Donc à partir de là, je m'infligge un pourcent de dégâteau plus, hop !
+[382.68s - 383.96s]  Je procre énormément d'armures,
+[383.96s - 385.72s]  parce que du coup c'est mon passif refus de la mort.
+[385.72s - 387.36s]  Je gagne des résistants,
+[387.36s - 388.80s]  mais maintenant il faut que j'arrive à survivre avec ça.
+[388.80s - 391.96s]  Je vous conseille donc d'être tour 1 de proc armures sanguin,
+[391.96s - 394.28s]  comme ça c'est fait, on récupère encore un peu plus d'armures.
+[394.28s - 397.48s]  Et avec les 4 pairs restants, on peut jouer safe et mettre une fracasse.
+[397.48s - 399.36s]  Ce sera un sort qui fait beaucoup de dégats
+[399.36s - 401.56s]  et qui en plus vous permet d'avoir de l'armure.
+[401.56s - 403.52s]  Ce qui nous permet donc de finir notre tour 1,
+[403.52s - 405.56s]  en ayant infligé 1400 dégats,
+[405.56s - 407.48s]  en étant monté à 38% de résistants
+[407.48s - 408.68s]  pour tant qu'il tourne des adversaires
+[408.68s - 412.52s]  et en ayant 733 d'armures en plus par dessus mais 244 pv restants.
+[412.68s - 415.64s]  Ce sera donc largement assez tranquille pour pouvoir survivre un tour complet de plus.
+[415.64s - 417.64s]  On peut également parler de la régène des points de work-fou
+[417.64s - 419.24s]  parce que punitions coupent 3 points de work-fou
+[419.24s - 420.72s]  et tous vos sortes de placements vous en coûten 1.
+[420.72s - 423.60s]  Il faut savoir que sur sa crieure, en reclique sur un mécanique,
+[423.60s - 424.96s]  pour récupérer des points de work-fou,
+[424.96s - 427.00s]  vous pouvez récupérer plus de partout,
+[427.00s - 429.36s]  tout simplement en subissant au moins 1 dégats d'un ennemi
+[429.36s - 432.20s]  ou bien en vous retirant 20% des PV avec vos propres sortes.
+[432.20s - 434.56s]  Que ce soit punitions, 100% etc.
+[434.56s - 437.00s]  Normalement vous allez le proc tout le temps sans m'amie réfléchir,
+[437.00s - 439.40s]  ce qui nous permettra d'avoir largement assez de points de work-fou
+[439.40s - 441.48s]  tous les deux tours pour pouvoir remettre une punition.
+[442.44s - 444.80s]  Pour la suite du combat, il va simplement falloir improviser par rapport à là
+[444.80s - 446.04s]  où vous en êtes par rapport à vos PV.
+[446.04s - 448.24s]  En commençant vos nouveaux tours, vous aurez deux possibilités.
+[448.24s - 449.76s]  Soit vous êtes en mode sacréure normale.
+[449.76s - 452.24s]  Ça veut dire que vous n'avez pas encore proche l'effet mort en sourci
+[452.24s - 454.88s]  qui vous empêche de repasser au-dessus de vos PV Max mais qui vous donne de l'armure.
+[454.88s - 457.72s]  Soit du coup, vous pouvez reprocher cet état en remanto au-dessus de 20% PV
+[457.72s - 458.68s]  puis en descendant.
+[458.68s - 461.32s]  Par exemple ici, je vais faire une souris sans géner qui est un sort de vol de vie.
+[461.32s - 467.24s]  Je remonte au-dessus des 20% et je vais chercher à redessendre en dessous de 20% 1, 2,
+[467.24s - 469.24s]  hop, je repasse et de souverte pour 100%
+[469.32s - 472.16s]  et je repasse un mot de reçu de la mort ce qui me permet de récupérer des résistances
+[472.16s - 473.44s]  et de reprendre de l'armure.
+[473.44s - 476.32s]  On peut finir nos pares en remettant par exemple un sort de vol de vie.
+[476.32s - 478.88s]  Ça nous permet d'un fait des dégâts corrects de récupérer une résistance,
+[478.88s - 480.28s]  de récupérer de l'armure, etc.
+[480.28s - 483.36s]  Si vous souhaitez jouer un peu plus la sécurité au niveau de vos PV,
+[483.36s - 485.72s]  vous pouvez très bien passer par du foule vol de vie avant d'avoir à l'état
+[485.72s - 487.40s]  qui proche justement qu'il va bloquer vos PV.
+[487.40s - 490.32s]  On va donc commencer par exemple avec une souris sans géner,
+[490.32s - 495.40s]  une souris sans géner avec les super restants par exemple pour permettre un fracasse
+[495.40s - 497.64s]  et une dément sans oeuf.
+[497.64s - 500.56s]  Ça nous permettra dans le tour de re gagner un peu d'armure, un peu de PV,
+[500.56s - 504.08s]  mais du coup dans cette situation, on ne récupère pas notre bonus de résistance.
+[504.08s - 506.80s]  A vous donc de voir dans cette différence, lesquels vous préférez.
+[506.80s - 509.00s]  Et globalement ensuite c'est une rautat du couture de tour,
+[509.00s - 511.32s]  décor récupère punition et ben on va refaire ton eau qu'on boit un,
+[511.32s - 512.72s]  on remet la punition.
+[512.72s - 516.20s]  La punition est pro qui faut qu'on descend notre souverte pour 100% en même titre claque.
+[516.20s - 519.00s]  On proque notre état, on proque une résistance, on est bloqué à 20%,
+[519.00s - 520.80s]  ici nous reste 7 pH, peut pas l'enobleter,
+[520.80s - 523.60s]  une grosse claque et 2 vol de vie avec 4 pH.
+[523.60s - 525.28s]  Les vols de vie, vous me bloquez à 20%,
+[525.36s - 527.20s]  mais ça m'a repermi quand même de mettre beaucoup de dégâts,
+[527.20s - 529.96s]  tout en général, beaucoup d'armures et de générer mes résistances.
+[529.96s - 532.64s]  Tout ça c'est des petits combos dans le cas de burst de mob imparins.
+[532.64s - 535.12s]  Vous aurez également sur le sacreur des sortes de zone assez intéressants
+[535.12s - 537.28s]  avec notamment des mances écolonades.
+[537.28s - 539.84s]  Des mances auparimètes de regrouper les mob autour de vous
+[539.84s - 541.96s]  quand ils sont séparés un petit peu et que vous voulez créer des zones,
+[541.96s - 545.00s]  tandis que colonades va au permettre de générer de l'armure facilement en eau religaïe.
+[545.00s - 547.00s]  Plus tard vous jouez avec sans brûlant, mais pour l'instant sans brûlant,
+[547.00s - 549.80s]  on va vous infiger tellement de dégâts que vous risquez plus de mourir quelque chose
+[549.80s - 551.12s]  qu'on le reprendra un peu plus tard.
+[551.12s - 554.24s]  En attendant on peut par exemple très bien juste venir se placer,
+[554.24s - 557.72s]  on peut passer par un peu avec punition, hop, souler 20%,
+[557.72s - 560.44s]  on groupe tout le monde autour de nous,
+[560.44s - 563.68s]  et en met par exemple une colonade.
+[563.68s - 565.76s]  Colonade va nous donner de l'armure pour chaque mance autour de nous,
+[565.76s - 567.28s]  mais comme vous voyez c'est de l'armure fixe,
+[567.28s - 569.80s]  et l'armure fixe sur un sacreur bon bah c'est pas terrible.
+[569.80s - 572.00s]  123 d'armures fixes comme ça sur une fin de tour,
+[572.00s - 574.16s]  on a dit un phygème assez peu de dégâts,
+[574.16s - 575.72s]  c'est pas non plus la gigafoldie,
+[575.72s - 577.08s]  on n'a pas eu le résistance,
+[577.08s - 578.52s]  on n'a plus de PV, on n'a pas d'armure,
+[578.56s - 581.40s]  je vous déconseille quand même généralement de jouer zonne en orlé game,
+[581.40s - 583.72s]  je ne serai pas à le truc qui vous fera sur lui le mieux.
+[583.72s - 585.12s]  Après vous pouvez très bien le faire,
+[585.12s - 587.00s]  sans jouer punition et donc garder tout vos PV,
+[587.00s - 589.16s]  mais c'est quand même un peu louches de jouer un sacre avec beaucoup de PV.
+[589.16s - 590.04s]  Si vous voulez une classe,
+[590.04s - 592.56s]  mets les quittats peu courts à court et quittats par avec tous ces PV,
+[592.56s - 594.16s]  y'a plein d'autres classes qui sont cool pour ça,
+[594.16s - 596.04s]  vous pouvez jouer un IO, un ouginac, un tram,
+[596.04s - 597.20s]  bref si vous avez pris sa créeur,
+[597.20s - 598.44s]  il va falloir accéter de jouer avec le feu,
+[598.44s - 601.00s]  et il faut descendre vos PV si vous voulez vraiment profiter de votre classe.
+[601.00s - 605.28s]  On peut finir ce petit tuto avec l'explication des deux chatiments sacriers.
+[605.40s - 607.64s]  En en a deux chatiments osés et chatiments sanguin,
+[607.64s - 610.20s]  en orlé game en vrai, je vous l'ai conseillé pas spécialement.
+[610.20s - 612.12s]  Chatements osés, le principe est assez simple,
+[612.12s - 613.88s]  à chaque fois que le sacré subit des dégâts,
+[613.88s - 616.64s]  il va augmenter ces dégâts infligés et perdre des résistances élémentaires.
+[616.64s - 618.56s]  Par exemple, vous activez le chatiment
+[618.56s - 621.56s]  et imaginons que vous mettez vos dégâts avec vos 100%,
+[621.56s - 623.44s]  1, 2, 3.
+[623.44s - 626.20s]  Là j'ai pris trois fois l'état de chatiment,
+[626.20s - 627.76s]  et donc passer d'un niveau 1 ou niveau 4.
+[627.76s - 629.24s]  Je vais gagner des dégâts petit à petit ici,
+[629.24s - 631.04s]  j'ai eu plus de 8 % de dégâts infligés,
+[631.04s - 633.40s]  mais en contre parti, je vais perdre des résistances.
+[633.44s - 635.56s]  À ce stade du jeu, il va comme fort l'or que vous prenez beaucoup de coups
+[635.56s - 637.28s]  pour voir une réelle différence dans vos dégâts.
+[637.28s - 640.08s]  Et en contre parti, les baisse de résistance vont vous faire vraiment mal.
+[640.08s - 641.80s]  A moins que vous ayez un fait cas ou un enniedeur votre team
+[641.80s - 643.40s]  qui va compenser la perte de résistance,
+[643.40s - 645.12s]  je vous déconseille en général, vous en servir.
+[645.12s - 647.76s]  Pour ce qui est du chatiment sanguin, ça peut être un peu plus utile.
+[647.76s - 649.52s]  C'est ce qu'on va appeler de chatiments défensifs.
+[649.52s - 651.72s]  C'est un chatiment qui a quatre effets différents.
+[651.72s - 653.68s]  Il n'est pas spécialement intuitif à comprendre,
+[653.68s - 654.88s]  mais déjà, en gros deux bases,
+[654.88s - 656.56s]  quand vous l'avez, vous perdez 15 % de dégâts.
+[656.56s - 657.88s]  Ceux-quà même assez chants en orlé game,
+[657.88s - 660.28s]  vous n'avez pas besoin de perdre ton dégâts pour des mécaniques défensives.
+[660.28s - 664.16s]  Cependant, en échange, vous allez pouvoir réduire de 30 % les dégâts que vous subissez.
+[664.16s - 667.68s]  Par exemple, au lieu de subir à moins 1000, vous allez subir à moins 700.
+[667.68s - 669.68s]  Cela dit, les 300 dégâts que vous avez empêché de prendre,
+[669.68s - 671.28s]  vous avez quand même emprendre une partie à un moment.
+[671.28s - 672.68s]  À savoir que, à la fin de votre tour,
+[672.68s - 674.88s]  vous allez reprendre la moitié des dégâts stockés,
+[674.88s - 676.88s]  par exemple ici 150 dégâts en plus.
+[676.88s - 678.52s]  Et si vous désappliquiez cœur sanguin,
+[678.52s - 680.68s]  que ce soit pour le retirer ou pour appliquer un autre chatiment,
+[680.68s - 683.28s]  vous allez reprendre encore la moitié des dégâts stockés.
+[683.28s - 685.68s]  Vous allez donc pas vraiment une réduction effective de 30 %.
+[685.88s - 688.88s]  On va plutôt être autour des 10 à 15 % de réduction.
+[688.88s - 691.28s]  En échange du coup, 2, moins 15 % des dégâts infligés.
+[691.28s - 692.68s]  Ce n'est pas forcément le truc que le plus voir sur votre velle,
+[692.68s - 694.08s]  surtout que ça coûte en plus des paieurs.
+[694.08s - 695.28s]  Je vous conseille donc du coup pour l'instant,
+[695.28s - 697.28s]  on est en haut le game de pas forcément les jouer ni l'un ni l'autre.
+[697.28s - 698.48s]  On les revérera un peu plus tard,
+[698.48s - 700.28s]  pour les tutos des sacriens un peu plus haut le velle.
+[700.28s - 703.08s]  Pour ce qui est des statistiques que je vous conseille sur un sacrier,
+[703.08s - 704.88s]  vous allez tout mettre en résistance dès le début évidemment,
+[704.88s - 706.08s]  puis tout dans les paies réé.
+[706.08s - 707.88s]  Dans la force, on met tout en maitrisme élai,
+[707.88s - 709.08s]  et une fois qu'on sera à 40,
+[709.08s - 711.48s]  on pourra tout mettre soit dans les pb sur dans la maitrisme élémentaire.
+[711.48s - 713.48s]  Dans la jl, t pour l'instant, fous les skives.
+[713.48s - 716.08s]  Ça peut être intéressant plus tard de passer en tackles skis
+[716.08s - 717.08s]  histoire d'avoir un peu des deux.
+[717.08s - 719.08s]  Dans la chance, on mettra tout dans les coups critiques,
+[719.08s - 721.08s]  puis on passera tout dans la maitrisme Berserk.
+[721.08s - 723.08s]  Si ça vous intéresse pas du tout d'ailleurs de jouer dans les coups critiques,
+[723.08s - 726.08s]  vous pouvez directement dévoter le game tout mettre dans la maitrisme Berserk.
+[726.08s - 727.48s]  Et enfin, dans les points majeurs,
+[727.48s - 729.88s]  ce qui nous intéresse c'est le PA, le PM évidemment.
+[729.88s - 732.48s]  La résistance élémentaire sera vraiment fondamentale sur un sacréur.
+[732.48s - 735.28s]  Je pourrais presque me tater d'ailleurs à vous conseiller de le mettre en premier point.
+[735.28s - 737.68s]  Cinq autres résistance élémentaire, en hurly sur un sacré,
+[737.68s - 739.08s]  vous verrez vraiment la différence.
+[739.08s - 741.48s]  Dans vos combos, faut que vous voyez si le PA vous est vraiment utile.
+[741.48s - 743.28s]  Si vous voyez que vous avez déjà des items épicouroliques
+[743.28s - 744.28s]  qui donnent un PSplemantaire,
+[744.28s - 746.88s]  hésitez pas à investir directement dans le point de résistance.
+[746.88s - 748.28s]  Bref, ce sera tout pour ce petit du tout,
+[748.28s - 749.28s]  débutant sur le sacréur,
+[749.28s - 751.08s]  j'espère que ça vous aura permis d'avoir les bases de la classe.
+[751.08s - 752.08s]  J'espère que c'était assez clair,
+[752.08s - 754.48s]  mais on se retrouve bientôt pour d'autres petites assuts et tutoriels.
+[754.48s - 756.88s]  Dissilla, amusez-vous bien, des bisous.

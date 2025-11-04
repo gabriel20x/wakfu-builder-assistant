@@ -1,0 +1,488 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Et bonjour à tous, bienvenue aujourd'hui pour le tutoriel du Steamur pour débutant. Je vais vous faire toute l'explication avec un Stealth tout pourri level 50. J'ai pas mis de fabriquer, j'ai pas mis de monture, j'ai pas mis de subgémation. C'est un Stealth que vous aurez rapidement d'élever votre aventure. Ça vous donner un peu une idée de dégâts. Évidemment, dès lors des games, pensez-vous intéresser à l'enchantement. Je vous remets dans l'escription le lien du tuto qui tourne 4 minutes. Ça vous changera la vie si vous ne vous y êtes pas encore intéressés. Bref, on va attaquer tout de suite parce qu'il y a pas mal de choses à voir. Je vais essayer de faire dans l'ordre. Et j'espère que ce sera assez clair avec les dé mots au fur et à mesure. Première chose importante à noter sur le Steamur. La moitié de vos points de work-foot vont être convertis en point de stasis. Donc par exemple, si vous avez un Stealth à 8 points de work-foot, vous aurez 4 points de work-foot et 4 points de stasis. Grosomodo pour résumer, vos points de work-foot vont servir à poser des rails pour vous déplacer avec votre Steamur sur le terrain. Tendis que les points de stasis vont être là pour faire le maximum de dégâts. On va donc j'ongler entre ces deux valeurs et par exemple quand vous êtes en combat, vous avez votre joge de point de stasis qui est à gauche et votre joge de point de work-foot du coup à droite. On va commencer avec la mécanique des rails des micro-bots. C'est votre premier sort en barre 3. Un micro-bots a coûté 1 PA 1 point de work-foot et ça pose un petit robot au sol. Vous allez pouvoir aligner ces robots pour créer des rails pour votre Steamur et pour tous vos alliés. Comme ça par exemple, hop ! Vous avez le droit de poser deux micro-bots par tour maximum. Il peut mettre et se passer jusqu'à 6 cases. L'intérêt des micro-bots c'est que pour votre Steamur et pour toute votre équipe, vous déplacer dessus ne vous consommera que 1PM pour faire 3 cases. Ça donc permettra d'être très mobile pendant tout notre combat. De façon générale, vous allez souvent em poser deux partout, en tout cas les deux trois premiers tours. Ça va donc ressembler globalement à ce genre de trucs. Vous en mettez 1 à 3 cases, 1 à 3 cases. Vous avez déjà votre tour 1 qui est cet up avec vos micro-bots. Et à partir du T2, on peut former des carrés en pourmettre 1 ici. Hop ! 1 ici. Et vous allez du coup vous pouvez vous déplacer librement sur le terrain pendant tout le combat. Je vous conseille de toujours les ajouter en bloc carrés par exemple. On peut en mettre 1 ici et 1 ici. Rapidement, en trois tours vous aurez le terrain qui sera complètement cadrier pour pouvoir vous balader dessus. Ça va nous permettre dès leur League game même avec 4PM par exemple d'aller jusque là. Hop hop hop hop hop hop hop hop. On va donc pouvoir placer librement nos jeux Tourel, notre jeu de dégâts etc. Ça, ça va être pour l'utilisation de vos points de voie que vous. Maintenant, passons au point de stasis. La mécanique principale de dépenses de points de stasis de votre Steamur, ça va être en ensemble sur Steamurateur qui vous coûte un point de stasis. Dès que vous aurez activer Steamurateur, vous gagnerait 50% des gains flichés et surtout tous vos dégâts deviendront éléments stasis. En fin de tour, cela dit, vous perdrez encore un point de stasis. Vous en avez donc 2 qui partent dès le terrain et vous allez gagner un niveau de Steamurateur supplémentaire. Les niveaux de Steamurateur vont donc évoluer tout seul pendant le combat jusqu'à 3 niveaux. Il y a un niveau 1, un niveau 2, un niveau 3. Plus les tables à évoluer, plus vous allez avoir des bonus jusqu'à 2pa en plus gratuitement. Et en revanche, vous perdrez de plus en plus de points de stasis. Pour faire plus simple, quand vous lancé un combat, vous lancé directement Steamurateur, ça vous coûte un point de stasis. Vous passez en état Steamurateur. À la fin de votre tour, vous allez perdre un point de stasis supplémentaire et Steamurateur va passer de niveau 2. Là, j'ai mon état Steamurateur niveau 2. J'ai déjà gagné un paie à bonus en plus de mes 50 % de dégâts et en plus de mes dégâts en des lémences stasis. Mais à la fin de mon tour, je vais perdre 2 points de stasis. J'en ai plus que 1, je vais donc perdre Steamurateur à ce moment-là. Évidemment, notre objectif, cela va être de jamais le perdre, on va y revenir après. Avant cela, parlons vite fait de l'éléments stasis. L'éléments stasis, c'est la particularité du Steamur, c'est un outil surpuissant. Cela va vous permettre de transformer tous vos soeurs élémentaires en élément stasis. L'éléments stasis, il y aura toujours cherché votre meilleur maîtrise. Donc par exemple, moi ici, la maîtrise feu. Et il y aura toujours taper sur la faible est la plus base d'amonstru. Là, sur un monstre, à résistance équivalente, c'est pas très parlant. Mais en combat, si vous avez des monstres avec 20, 30 % des cartes de différence, vous pourrez donc très bien en lancer un sort haut, taper avec votre maîtrise feu sur la faible est par exemple R d'amonstru. Ici, par exemple, quand je lance un sort à 3 Pao, mon sort de base, il fait 106 et 6 de lance en étant Steamurateur. Il va prendre ma maîtrise feu et il va taper 188. Cela va donc vraiment décuper vos dégâts et évidemment, cela va être super important de transformer tout le temps. Pour être en stimulateur tout le temps, il va donc falloir qu'on génère un maximum de points de stasis partout. Éteur donné que Steamurateur niveau 3 va nous coûter 3 points de stasis partout, il va donc falloir qu'on en génère au moins 3. Pour générer des points de stasis sur le steamur, cela que va intervenir là, tout réel. Votre tourrel vous l'invouquez à chaque fois qu'elle va toucher un ennemi elle va vous redonner des points de stasis. Une tourrel peut avoir jusqu'à 4 niveaux. Quand vous l'invouquez, elle est niveau 1 et à chaque fois que vous l'évoluez, elle prendra un niveau. Par exemple ici, je l'évolue directement dans le même tour. Cela allume une petite zone dessus, elle est niveau 2. Le tour d'après, je peux relancer, tourrel dessus, épasse niveau 3 et le tour d'après, je relance au tourl頭 dessus, épasse niveau 4. Si une tourrel niveau 2 touchant ennemi, elle vous redonne 2 points de stasis. Si une tourrel niveau 4 touchant ennemi, elle vous redonnera 4 points de stasis. Si une tourrel niveau 4 touchent 2 ennemi, elle vous redonnera donc 8 points de stasis. Cela va donc devenir très rapidement très efficace. À savoir que poser une tourrel sur le terrain vous coûte de PA, mais évoluer une tourrel ne vous coûte aucun PA, ça vous coûte 2 mais ça vous en rend 2. Notre route à base donc pour l'instant, ça va être de mettre un micro bot, un micro bot. D'activer directement ce timéra tort, ce serait dommage de passer à côté, de poser une tourrel et de l'évoluer parce que l'évolution est gratuit. Normalement, vous n'aurez jamais une tourrel niveau 1 sur le terrain, elle sera toujours minimum niveau 2, donc vous aurez toujours au moins 2 points de stasis partout de rendu. Une fois que cela s'est effectué pour qu'une tourreltape il va falloir l'activer. La tourrel est peut taper dans 3 éléments différents, feu, terre ou haut, en fonction de l'aliment qu'elle a, elle fera des choses différentes, mais ici on va s'intéresser que à l'élément haut, ça nous permet de gagner en compréhension. Pour que votre tourrel soit haut, c'est simple, il suit de faire un sort haut dans le tour, par exemple ici je mets une petite attaque haut, ma tourrel passe haut, on voit un logo dessus, et du coup à la fin de mon tour, la tourrel va attaquer. La tourrel haut, quels sont ces spécificités, elle ne peut taper que en ligne, par contre elle a une portée infinie. Des 3 éléments de tourrel, c'est celle qui infiche de plus de dégâts. Elle va donc être super intéressante pour ajouter des gros dégâts à nos tours steamurs, et évidemment plus une tourrel et au niveau plus gagnera de dégâts, elle gagne 100% de ces dégâts par évolution. Une tourrel ovelle 1 qui envoie 200 dégâts pour donc monter jusqu'à 800. Je vous conseille d'ailleurs de mettre exclusivement des sortes haut dans votre deck, comme ça vous serez sûrs à 100% que votre tourrel sera toujours haut. Les autres sortes ici de toute façon, ne nous intéresseront pas. Ça va donc nous donner si on analyse, hop, on met un rail, un rail, on pose notre tourrel en ligne d'un ennemi toujours, t'es un, on l'évolue directement, on passe estimérateur et on lance un sort haut pour activer je veux que là on est bon, on garde pas pour la suite, on peut se décaler de 1 pm pour aller là si on veut en retourner même là, on a beaucoup de paie. J'ai donc mon estimérateur niveau 1 et ma tourrel activer niveau 2. Quand je passe mon tour, ma tourrel tap, elle me redonne 2 points de stasis, je passe estimérateur niveau 2, et à ce moment là, j'ai déjà 3 points de stasis. Je vais donc pas perdre cette fois mon estimérateur au niveau 2, je peux très bien aller proche de ma tourrel, l'évoluer, je vais en profiter par exemple pour replacer 2 micro-bots, commencez mon tour. Avec vos 9 pairs, vous enferrez ce que vous voulez, vous pouvez vous replacer, etc. Ma tourrel est niveau 3, quand elle va taper, elle va me rendre 3 points de stasis, je peux donc passer mon tour et je passe de 3 à 4. Je vais pouvoir monter ma tourrel niveau 4, et là on consombre quasiment plus rien, je suis à 4, Jean-Père 3, Jean-Gaim III et je suis à 4. Remarque importante, depuis la refonte du steamur, il est à présent possible de la replacer très facilement tous les tours en échange de niveau d'évolution. C'est-à-dire que là par exemple, imaginant qu'il y a plus d'adversaire et que le prochain il est là-bas, je peux très bien me caler ici, déplacer ma tourrel en la remettant en ligne, par exemple ici, et perdre un niveau, mais vu que je peux réméliorer dans le même tour, je lui redonne directement son niveau. Vous perdez donc seulement 2 pa à la déplacer et vous ne pourrez pas l'évoluer, mais ça vous permet ainsi chaque tour de leur place ou vous avez envie. Tourre d'après par un peu, j'ai envie de la replacer ici, je la remplace l'évolue, ça me coûte seulement 2 pa et on est bon. À savoir que ça rend les 2 pa les plus worses de votre tour, la tourrelera je tellement dégâque, vraiment, c'est pas cher payé, soyez pas radins à dépenser vos pa pour remplacer votre tourrel, c'est trop important. Il faut qu'elle tape tous les tours, sinon vous allez perdre estimérateur. Votre priorité numéro 1, c'est donc toujours, toujours, de mettre une tourrel en face d'analymi pour la fin de tour. Ça risque d'être assez rapidement catastrophique, si votre tourrel touche personne, que vous perdez estimérateur, vous avez plus de points de stasis, estimérateur, vous pouvez pas le relancer, erreur et heure grossière et erreur. On va se rajouter à présent un élément supplémentaire du kit steamur, le canonier, la moto. La moto du steamur, qu'elle est l'intérêt. Canonier possède 5 effets différents. Au niveau des bonus, vous allez gagner gratuitement 2 pa et 3 pa et 50 % de dégâts directs. Ça, c'est de la frappe atomique. En revanche, au niveau des malus, vos soins alimentaires ne pourront plus lancer qu'en ligne. Ça tombe bien, vous avez déjà des sortes qui se lancent en ligne. Deuxième inconvénient, vous allez pouvoir vous déplacer seulement sur vos rails micro-bots. D'où le fait que c'est intéressant d'être un T2 de placé énormément de rails sur le terrain. Et en donné que vous avez gagné des pèmes supplémentaires, dans tous les cas, vous allez pouvoir vous déplacer de façon très très libre. Aucun soucis, une fois que la moto est activée. La moto sera se pendant très sensible au tackle, évidemment, je vous conseille donc, de mettre directement de reprim passive, un petit passif, hop, evasion, pour gagner un maximum d'esquive. N'esquive, vous en aurez beaucoup besoin sur le steamur. Donc, mettez le passif esquive et mettez tous vos enchantements d'anaux en esquive. L'enchantement verre, vous vous souvenez. L'intérêt également du bonus de dégâts indirects du canonier, c'est que votre tourelle qu'on étapes c'est du dégâts indirects. Votre tourelle, c'est ce qui va rajouter le plus du dégâts dans votre toure steamur. Vous êtes là pour jouer autour d'elle. Ça va donc être important d'activer canonier dès le début. Pour ça, on va simplifier la vie et on va également rajouter le passif à l'IAG Léger. A l'IAG GG, vous perdez un pème. Ce n'est pas grave, on venait de vous en offrir à deux. Et en contrepartie, vous allez pouvoir poser deux microbots de plus sur le terrain, qui va vraiment vous permettre avec votre moto d'être ultra souple. Vous allez par exemple pouvoir placer ce genre de setup tranquillement pour en mettre à la, à la, on va dessus, disons qu'on active notre moto. Hop, dès le tour de, on peut déjà placer des hop. Hop. Hop. Ça, là, on a les 6 de base et en bois pouvoir en rajouter de, on peut donc placer par exemple 1 ici et 1 ici. Ce qu'on nous permette de faire des gros trajets tranquilles, et de vous balader un peu partout sur la map. À noter qu'il est tout à fait possible de retirer un microbote en cliquant dessus et d'aller empoiser un autre tout simplement. Donc ça, vous risquez de le faire au moins une fois partout. Dans tous les cas, vous aurez les points de voie pour le faire, pas de problème, parce que vos points de voie pour pouvoir être écoppérés par rapport à vos oveurs de points de stasis. Si vous avez une tour elle qui vous rend 8 points de stasis, alors que vous pouvez en avoir 4 maximums et vous rendra 4 points de voie en échange. Vous aurez donc rapidement dans tous les cas pas de problème de point de voie. À ce moment-là, donc, on a fini enfin de présenter le setup du tour 1. On se pose 2 petits microbots. On pose notre tourl en ligne d'un adversaire. On l'évolue, on passe timorateur, on passe canonnier et on met une attaque haut dans le tour pour activer la tourlée. Normalement, vous suivez jusque-là et ça ne permet à notre tourlée directement d'un付 kG 1, 315 dégâts dès le début du combat. Les tours d'après hop, on repose à microbots. On évolue notre tourl, on se décale, on pose un autre pour préparer le terrain. On a 9 percs, on va pouvoir utiliser comme on veut. En attendant, on sait que notre tourl a leur voix déjà du 689 dégâts. Je peux très bien, à ce moment-là, si je souhaite, par exemple, replacer ma tourl, la réévoluer, remettre par exemple des microbots sur la map et continuer à placer mon jeu, toujours en plaçant en ligne par rapport à un adversaire. Ça, ça va renouveler la base de votre gameplay en steamur. Mais jusqu'à un autre surpétisé de nos sort, on va donc s'intéresser à la fameuse voix au steamur. Le principe de la voix au steamur, c'est qu'il va générer de la suppression et chaque sort peut consommer de la suppression pour avoir un effet annex. Il sera s'intéresser qu'à deux effets, les autres nous intéressons pas beaucoup. Quand vous affrontez des monstres basiques, on va se baser sur la suppression d'écum, car nous permettent de re gagner trois paix et donc de rendre le sort gratuit. Et quand on affrontera un boss, on lui calera 10 solutions. 10 solutions activées sur cette suppression, nous donnera un dégâts de poison supplémentaire et qui dit des gâts de poison, dit dégâts indirects, 10 plus 50% de dégâts grâce notre canonnier. Pour sauver la suppression, on le donne plus simple, vous prenez votre fiche d'état et c'est celui au go-là qui vous donnera votre niveau de suppression. Par exemple, ici je suis niveau 1, je mets en ligne d'un adversaire, je mets un petit flip-bust, je monte niveau 2. Et une fois niveau 2, je sais que ma prochaine attaque aura un effet supplémentaire. Si je mets par exemple hécum, ça va être un sort trop bas, qui va me rendre trop bas, ça fait donc un sort gratuit. Et ensuite, aussi que le recommence, je mets un flip-bust, un flip-bust, et un niveau 2, hécum, remboursé. Hop ! Ça nous permet de faire beaucoup de combos d'organiser trois à siper à partout avec ça. Ça va être super pratique pour clean pas mal de mob en orligay. Dissolution quant à lui, vous utiliserz plutôt contre les boss. Dans ce cas là, il sera bien plus intéressant au niveau des dégâts qui va caler par rapport à au fait de rien étroper à donc on met un état niveau 1, un état niveau 2. Je vous conseille de mettre toujours les daves avec flip-bust. C'est vraiment le sort pratique, passe partout, pas de ligne de vue, grosse portée. Il vous prendra vraiment pas du tout la tête. Et derrière une fois que vous êtes niveau 2, vous choisissez toujours. Est-ce qu'on met tes hécumes ou une dissolution ? Ici, je mets une dissolution par exemple sur le mob. Salut, calme de poison plus 360 dégâts de base. Tu peux revenir ici et voluer ma tourale pour la bête niveau 4. Et là, on va avoir un dégâtre Tourl, niveau max, sous-stimérateur, sous-canonier avec le poison de fin de tour. Et ça va de donner... Bam, 629, plus 492 dégâts bonus de fin de tour. On continue à s'accrocher parce qu'il nous reste encore deux éléments de gameplay qu'on va pouvoir rajouter aux kits, histoire d'encore plus monter tout ça. Le premier élément, ça va être sur tension. Sur tension, c'est un sort à 3p à 2 points de stasis. Il va un fils de très gros dégâts et surtout il va poser un malus sur l'ennemi, le malus sur tension. Qui fraque, notre ship subira encore plus de dégâts de tour. Faudra faire ce pendant attention parce que vu qu'il coûte des points de stasis, ce serait bête de lancer et de perdre sa tourale. La règle à retenir elle est donc très simple. Tant que vous voyez que vous avez au moins 3 points de stasis d'ispo, vous pouvez le lancer. Par exemple ici, j'ai 4, je pose une sur tension. Je mets 338 dégâts, je pose le malus sur tension, qui fait que l'adversaire prendra 30% de dégâts de plus. Il me reste de points de stasis, mais ma tourelle va taper et va m'en rendre 4. Je vais remonter à 6 et mon stimerateur va m'en prendre 3 et je vais redescendre. Donc ici, je suis à 3 et je suis à 3. Tant que ma tourelle a infligé 900 dégâts. Et donc tant que vous avez 3, pour d'après, vous pouvez reposer une sur tension 450-3 dégâts, la tourelle tape en plus, 1205. On va monter à des valeurs de dégâts qui sont hallucinantes. Si je tombe à 2 PS, j'évite de lancer parce que si vous de lancer à 2 PS, vous tombez à 0, vous avez plus de stimerateur, vous avez tout perdu, c'est flopesque. On retient donc sur tension meilleur sort du kit, mais il vous faut 3 points de stasis minimum avant de lancer. Et évidemment, il faut une tourelle en ligne oublier pas ça. Et enfin, on peut finir par le 5-gral-stimer, la bête ultime, le combo parfait, on va jouer autour également dans busquad. Encore un sort qui coûte des points de stasis, donc attention. Alors le premier effet va pas du tout nous intéresser, il est vraiment flopesque. Nous ce qui va nous intéresser, c'est le second effet. Si on lance en busquad et la case n'est pas libre, on arrive donc ici. Notre tourelle va échanger de position avec une siube jusqu'à 7 cas max et elle va s'activer instantanément. Là, vous pouvez vous dire, je ne vois pas trop l'intérêt d'actimaturelle tout de suite, dont tout le cas s'actifent déjà en fin de tour. Les deux sont cumulables. Vous avez pouvoir taper pendant votre tour avec votre tourelle et à la fin de votre tour. Par exemple ici, je calme sur attention sur l'adversaire. Ça lui permet de prendre 30 % des cas de plus sur les deux attaques de tourelle. Bam, déjà je balance ça. Une fois que c'est fait, je peux pas par exemple décider de reposer ma tourelle ici en ligne d'adversaire. On l'a réévolue. Et une fois qu'elle en ligne avec un adversaire, on fait une obusquate sur l'adversaire et là on a un soib de position. La tourelle qu'il t'ape directement moins 900. Il me reste 4 paires sur pression niveau 2, on peut placer un poison en plus. Et enfin, le tour de ma tourelle va retaper une fois. Je vais me mettre en dégâts d'eau. Et on a 1.027 et 452 dégâts supplémentaires. Donc là on a des tours qui deviennent vraiment hallucinants à base de 2.700 dégâts. On est en plus de ça très mobile. On peut se calmer à l'autre bout de la map. On peut replacer notre tourelle. On peut tout aligner. C'est surpuissant et plus le combat avance, plus la classe est de virklotement débile. C'est un régal à jouer. Vous aimez également dans le deck courant ? Courant va être cool parce qu'il pousse de une case. Ça peut permettre de faire pas mal de microplacement, de bouger des entités qui sont sur vos rayes et tout. Gardez le toujours dans un coin. Attention cela dit d'éviter d'utiliser le niveau 2 de suppression sur courant parce que ça a poussé 4 caspes plutôt que de 1. Dernière info, intéressant de t'inoté quand même. Et toujours la position de votre steamur par rapport à un adversaire qui considère si vous tapez dans le dos sur le côté ou quoi. Même si votre tourelle tape dans le dos, si votre steamur est lié sur le côté, vous aura des dégâts côtés. Il a falloir que votre steamur se situe dans le dos pour que votre tourelle qu'on étappe à l'impérit des dégâts d'eau. Gardez-le dans un coin de tête et essayez toujours de venir votre tour si possible avec un steamur dans le dos des adversaires que vous tapez. Je ne l'ai pas précisé également mais c'est vraiment important. Évidemment que le combo en buscat qui fait tapé de fois la tourelle va être exceptionnel avec le combo de surtention qui augmente les dégâts subis. Mais comme je vous dis de t'aleurs pour pouvoir lancer sur tension, il faut toujours un stock de 3 points de séries minimum. Si vous rajoutez en buscat, vous rajoutez donc un PS et le combo sera l'ensable à présentement vous avez 4 PS de disponible. Tant que vous n'avez pas 4 PS de générer sur votre steamur pendant vos combats, ne faites pas le combo en buscat sur tension parce que vous allez tomber assez. Ça, donc je vous recommande fortement de jouer un item point de voie dans votre stuff. Ici par exemple moi j'ai bien un problème de la canopée niveau 50. C'est un problème qui vous donne un point de voie et qui va vous permettre du coup dès les débuts de combat d'être à 4 points de stasis et 3 points de voie. Tant que vous n'avez pas au moins 7 points de voie sur votre steamur, sinon vous ne pourrez pas obtenir ce combo. Ça va donc être vraiment important à aller chercher rapidement. Enfin au niveau des stats que je vous conseille pour jouer sur ce steamur, mettez tout dans résistances alimentaires puis en PV, tout dans la maîtrise d'issances, on va vraiment taper que en distance ici. Dans l'esquive pour la gilité, les coûts critiques en chance et le majeur, le paya fera toujours plaisir évidemment. Derrière on cherche à le PM, les points de voie et la résistance alimentaire. Plus vous aurez de point de voie plus vous pourrez lancer vos gros combos. Donc, n'hésitez pas à investir dedans, ça va être vraiment important pour avoir des gros TD, T3 Exposifs. Dans tous les cas, votre tour 1 en steamur, il sera toujours un peu mid. On est surtout là pour cet up, mais à partir du tour 2, ça commence à envoyer des grosses patates. Les possibilités de votre steamur sont vraiment infinives, vous allez pouvoir faire un paquet de trucs cool. Par exemple ici, je peux très bien me faire un combo de fou. Je vais me chercher 20 ici. Je calme une surtention sur lui. Il prendra plus de dégâts. J'encore 4 PS, je peux aller calmer une surtention sur lui. Vous pouvez me décider de soit ma tournelle avec mon panda. On va être la tournelle entre les deux. J'ai un proche tout réel directement sur les deux cibles en ligne. Et en passant mon tour, j'ai un deuxième proche sur les deux cibles. Vous pouvez avoir un contrôle de map phénoménal, mais des 2500 dégâts sur deux modes partout. Vous placez en plus et tout, il y a des trucs trop cool à faire. Bref, j'espère que cette explication vous aura servi. C'est assez dense, le steamur, il y a beaucoup de mécaniques. Mais si vous prenez le temps de bien les comprendre une par une, vous allez seulement qu'il fait chaque combat, va avoir moins être interne jeu. Vous allez vraiment bien vous amuser, et la classe n'a techniquement aucune faible espératrice particulière. Si vous le souhaitez, vous pouvez rajouter blindage renforcé dans le deck. Ça peut être intéressant de gagner. Ça va vous empeller son tournel, mais les trois pioes non modifiables du sort derrière, ça peut être embêtant. A vous de voir si vous habituez un peu de tournel, si ça vous intéresse ou pas. Moi, je sais que, en début de combat, pour placer la tournelle, ça me dérange pas. Pour l'évoluer, ça ne me dérange pas non plus. Mais parfois, pour la replacer dans le combat, pour qu'un retard des adversaires est tout, c'est un peu embêtant. Donc, à vous de voir, le passif est quand même intéressant. Le reste, c'est du football qui n'est pas dessus. Il faut mieux jouer sans passif, que ce force-à-mettre dépassif, est de se retrouver avec un gameplay louch. Alliage légé et évasion sont déjà très très très bons. Bref, on se retrouve très bientôt pour des prochains tutos. Entraînez-vous bien sur votre streamer-d'ici là. Dès bisous.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+And hello everyone, welcome today for the Steamur tutorial for beginners. I'm going to do the whole explanation for you with a crappy level 50 Stealth. I didn't put any crafting, I didn't put any mounts, I didn't put any subgemation. It's a Stealth that you'll quickly elevate on your adventure. That gives you a bit of an idea of ​​the damage. Obviously, during the games, think you are interested in enchantment. I'll give you the link to the tutorial in the text which lasts 4 minutes. It will change your life if you haven't looked into it yet. In short, we're going to attack straight away because there are quite a few things to see. I'll try to do it in order. And I hope it will be clear enough with the word dice as we go along. First important thing to note about the Steamur. Half of your work-foot points will be converted into stasis points. So for example, if you have a Stealth with 8 work-foot points, you will have 4 work-foot points and 4 stasis points. Grosomodo to summarize, your work-foot points will be used to lay rails to move with your Steamur on the ground. While the stasis points will be there to do maximum damage. We are therefore going to balance between these two values ​​and for example when you are in combat, you have your stasis point range which is on the left and your work-foot point range which is therefore on the right. We will start with the mechanics of the micro-bot rails. This is your first spell in bar 3. A micro-bot cost 1 AP 1 work-foot point and it places a small robot on the ground. You will be able to align these robots to create rails for your Steamur and for all your allies. Like this for example, hop! You have the right to place two micro-bots per turn maximum. It can put and pass up to 6 boxes. The advantage of micro-bots is that for your Steamur and for your entire team, moving on them will only consume 1PM to cover 3 spaces. This will allow us to be very mobile throughout our fight. Generally speaking, you will often put two everywhere, at least the first two or three rounds. So it's going to generally look like this kind of thing. You put 1 to 3 boxes, 1 to 3 boxes. You already have your turn 1 which is this up with your micro-bots. And from T2, we can form squares to put 1 here. Hop! 1 here. And you will suddenly be able to move freely on the ground throughout the fight. I advise you to always add them in square blocks for example. We can put 1 here and 1 here. Quickly, in three turns you will have the land which will be completely framed so that you can walk around on it. This will allow us from their League game even with 4PM for example to go that far. Hop hop hop hop hop hop hop hop. We will therefore be able to freely place our Turel games, our damage game, etc. This, this is going to be for using your lane points that you. Now let's move on to the stasis point. The main mechanic for spending stasis points on your Steamur will be overall on Steamurateur which costs you a stasis point. As soon as you activate Steamurateur, you will gain 50% of the profits taken and above all all your damage will become stasis elements. At the end of the turn, however, you will lose another stasis point. So you have 2 who leave the field and you will gain an additional Steamurator level. The levels of Steamurateur will therefore evolve on their own during the fight up to 3 levels. There is a level 1, a level 2, a level 3. The more tables you evolve, the more bonuses you will have up to 2pa more for free. And on the other hand, you will lose more and more stasis points. To put it simply, when you start a fight, you launch Steamurator directly, it costs you a stasis point. You enter the Steamer state. At the end of your turn, you will lose an additional stasis point and Steamurateur will go level 2. There, I have my Steamurateur state level 2. I have already gained a bonus pay in addition to my 50% damage and in addition to my damage in stasis lemences. But at the end of my turn, I will lose 2 stasis points. I only have 1 left, so I'll lose Steamurateur at that point. Obviously, our objective is going to be to never lose him, we will come back to that later. Before that, let's quickly talk about the stasis elements. The stasis element is the particularity of the Steamur, it is a powerful tool. This will allow you to transform all your elemental sisters into stasis elements. The stasis elements, there will always be sought your best mastery. So for example, me here, firebending. And there will always be tapping on the weakest is the most base of amonstru. There, on a monster, with equivalent resistance, it's not very telling. But in combat, if you have monsters with 20, 30% card difference, you can very well cast a high spell, tapping with your fire mastery on the low one is for example R of amonstru. Here, for example, when I cast a 3 Pao spell, my basic spell, it does 106 and 6 cast while being Steamurateur. He's going to take my fire mastery and he's going to hit 188. So that's really going to increase your damage and obviously it's going to be super important to transform all the time. To be a stimulator all the time, we will therefore have to generate a maximum of stasis points everywhere. Given that Steamurator level 3 will cost us 3 stasis points everywhere, we will therefore have to generate at least 3. To generate stasis points on the steamer, this will happen there, quite real. You summon your turret each time it hits an enemy, it will give you stasis points. A tower can have up to 4 levels. When you summon her, she is level 1 and each time you evolve her, she will gain a level. For example here, I evolve it directly in the same turn. This lights up a small area on it, it is level 2. The next turn, I can relaunch, turret on it, exceeds level 3 and the next turn, I relaunch on the turret above, exceeds level 4. If a level 2 turret hits the enemy, it gives you 2 stasis points. If a level 4 turret hits an enemy, it will give you 4 stasis points. If a level 4 turret hits 2 enemies, it will give you 8 stasis points. This will therefore become very effective very quickly. Namely that placing a turret on the ground costs you AP, but evolving a turret does not cost you any AP, it costs you 2 but it gives you 2. Our basic route so for the moment, it will be to place a micro bot, a micro bot. To directly activate this wrong timera, it would be a shame to miss it, place a turret and evolve it because evolution is free. Normally, you will never have a level 1 turret on the field, it will always be at least level 2, so you will always have at least 2 stasis points everywhere you render. Once this has been done, for a tourreltape you will have to activate it. The turret can type in 3 different elements, fire, earth or high, depending on the food it has, it will do different things, but here we are only going to be interested in the high element, it allows us to gain understanding. For your turret to be high, it's simple, you just have to do a high spell in the turn, for example here I put a small high attack, my turret goes high, we see a logo on it, and suddenly at the end of my turn, the turret will attack. The high turret, what are these specificities, it can only type in line, on the other hand it has an infinite range. Of the 3 turret elements, it is the one that deals the most damage. It will therefore be super interesting to add big damage to our steam towers, and obviously the more a turret and the more damage it will gain, it gains 100% of this damage per evolution. An ovelle 1 turret which deals 200 damage to go up to 800. I also advise you to put exclusively high sorts in your deck, that way you will be 100% sure that your turrel will always be high. The other kinds here won't interest us anyway. So that will give us if we analyze, hop, we put a rail, a rail, we place our turret in line with an enemy always, you are one, we evolve it directly, we pass estimator and we cast a high spell to activate I want that there we are good, we don't keep for the rest, we can shift 1 pm to go there if we want to go back even there, we have a lot of pay. So I have my estimator level 1 and my turret activate level 2. When I pass my turn, my turret tap, it gives me 2 stasis points, I pass estimator level 2, and at that moment, I already have 3 stasis points. So I'm not going to lose my estimator at level 2 this time, I can very well go close to my turret, evolve it, I'm going to take advantage of this for example to replace 2 micro-bots, start my turn. With your 9 peers, you can lock in what you want, you can replace yourself, etc. My turret is level 3, when it hits, it will give me 3 stasis points, so I can skip my turn and I go from 3 to 4. I will be able to raise my turret to level 4, and there we consume almost nothing, I am at 4, Jean-Père 3, Jean-Gaim III and I am at 4. Important note, since the redesign of the steamer, it is now possible to very easily replace all the towers in exchange for levels of evolution. That is to say that here for example, imagining that there are more opponents and that the next one is over there, I can very well settle here, move my turret by putting it back online, for example here, and lose a level, but since I can improve in the same turn, I directly restore its level. You therefore only lose 2 AP moving it and you will not be able to evolve it, but it allows you each turn to place it wherever you want. Tourre after a little, I want to put it back here, I replace it evolves, it only costs me 2 sp and we're good. Namely that it makes the 2 APs the worst on your tower, the tower is so ruined, really, it's not expensive to pay, don't be stingy to spend your AP to replace your tower, it's too important. It must hit every round, otherwise you will lose the estimator. Your number 1 priority is therefore always, always, to put a turret in front of analymi for the end of the turn. It risks being catastrophic quite quickly, if your turret hits anyone, you lose estimator, you have more stasis points, estimator, you cannot restart it, error and gross time and error. We will now add an additional element of the steamer kit, the gunner, the motorcycle. The steamboat's motorbike, what's the point? Canonier has 5 different effects. In terms of bonuses, you will gain 2 AP and 3 AP for free and 50% direct damage. That's an atomic strike. On the other hand, in terms of penalties, your food care can only be launched online. That’s good, you already have varieties launching online. Second disadvantage, you will only be able to move on your micro-bot rails. Hence the fact that it is interesting to be a T2 with a lot of rails placed on the ground. And given that you have gained additional pemes, in any case, you will be able to move around very, very freely. No worries, once the bike is activated. The bike will be very sensitive to tackle, obviously, so I advise you to directly put passive reprim, a small passive, hop, evasion, to gain maximum dodge. Don't dodge, you'll need it a lot on the steamer. So put the dodge passive on and put all your anal enchantments on dodge. The glass enchantment, you remember. Another benefit of the gunner's indirect damage bonus is that your turret that you step on causes indirect damage. Your turret is what will add the most damage to your steam tower. You are there to play around it. So it's going to be important to activate cannonier from the start. To do this, we are going to simplify life and we are also going to add liabilities to IAG Léger. At IAG GG, you lose a peme. It doesn't matter, we just offered you two. And in return, you will be able to place two more microbots on the ground, which will really allow you to be ultra flexible with your motorcycle. For example, you will be able to place this type of setup quietly to put it there, we go to it, let's say we activate our motorcycle. Hop, from the turn, we can already place hops. Hop. Hop. Here, we have the basic 6 and we can add more, so we can place for example 1 here and 1 here. This allows us to make long, leisurely journeys, and to wander almost everywhere on the map. Note that it is entirely possible to remove a microbot by clicking on it and simply poison another. So you are likely to do this at least once everywhere. In any case, you will have the track points to do it, no problem, because your track points can be scooped up in relation to your stasis point oveurs. If you have a tower it gives you 8 stasis points, while you can have a maximum of 4 and will give you 4 track points in exchange. You will therefore quickly have no track point problem in any case. At this point, therefore, we have finally finished presenting the setup for round 1. We pose 2 small microbots. We place our tower in an opponent's line. We evolve it, we pass timorator, we pass gunner and we put an attack high in the turn to activate the turret. Normally, you follow until then and that only allows our tour directly from a 付 kG 1, 315 damage from the start of the fight. The rounds after hop, we rest at microbots. We evolve our tower, we shift, we place another to prepare the ground. We have 9 drills, we can use them as we want. In the meantime, we know that our tourl already has their voice of 689 damage. I can very well, at that moment, if I wish, for example, to replace my tower, to re-evolve it, for example to put microbots back on the map and to continue to place my game, always placing it in line with an opponent. This will renew the basis of your steamer gameplay. But until another one of our fates, we will therefore be interested in the famous voice on the steamer. The principle of the steamer voice is that it will generate suppression and each spell can consume suppression to have an additional effect. He will only be interested in two effects, the others we are not very interested in. When you face basic monsters, we will rely on the removal of scum, because it allows us to gain three peaces and therefore make the spell free. And when we face a boss, we will give him 10 solutions. 10 solutions activated on this suppression, will give us additional poison damage and who says poison damage, says indirect damage, 10 plus 50% damage thanks to our gunner. To save the deletion, we make it simpler, you take your status sheet and it is the one at the go-there which will give you your deletion level. For example, here I am level 1, I put an opponent online, I perform a little flip-bust, I go up to level 2. And once level 2, I know that my next attack will have an additional effect. If I put for example hecum, it will be too low a spell, which will make me too low, so it will be a free spell. And then, also that it starts again, I put a flip-bust, a flip-bust, and a level 2, hecum, refunded. Hop! It allows us to do a lot of combos to organize three to sip everywhere with this. It's going to be super practical for cleaning up a lot of mobs in Orligay. Dissolution, you will rather use it against bosses. In this case, it will be much more interesting in terms of the damage which will stall compared to the fact of not losing anything, so we put a level 1 state, a level 2 state. I advise you to always put the daves with flip-bust. It's really a practical spell, goes everywhere, no line of sight, big range. It really won't bother you at all. And once you are level 2, you always choose. Do we put your hecuma or a solution? Here, I put a dissolution for example on the mob. Hi, Poison Calm plus 360 base damage. You can come back here and evolve my tower for the level 4 beast. And there, we will have a damage Tourl, max level, sub-stimulator, sub-cannonier with the end-of-turn poison. And that's going to give... Bam, 629, plus 492 end-of-turn bonus damage. We continue to hold on because we still have two gameplay elements left that we will be able to add to the kits, just to build it all up even more. The first element is going to be on tension. On voltage, it is a 3p spell with 2 stasis points. It will cause very high damage and above all it will impose a penalty on the enemy, the voltage penalty. Who smashes, our ship will suffer even more tower damage. You will have to do this carefully because since it costs stasis points, it would be stupid to launch and lose your tower. The rule to remember is therefore very simple. As long as you see that you have at least 3 ispo stasis points, you can cast it. For example here, I have 4, I put an overvoltage. I put 338 damage, I put the penalty on tension, which means that the opponent will take 30% more damage. I have stasis points left, but my turret will hit and give me 4 back. I'll go back up to 6 and my stimer will take 3 from me and I'll go back down. So here I'm at 3 and I'm at 3. As long as my turret has dealt 900 damage. And so as long as you have 3, for after, you can rest an overvoltage 450-3 damage, the turret hits in addition, 1205. We will go up to damage values ​​which are incredible. If I fall to 2 PS, I avoid throwing because if you throw at 2 PS, you fall to 0, you have no more timer, you have lost everything, it's a flop. We therefore retain on tension the best spell of the kit, but you need 3 stasis points minimum before launching. And obviously, you need an online turret, don't forget that. And finally, we can finish with the 5-gral-stimer, the ultimate beast, the perfect combo, we will also play around it in busquad. Another spell that costs stasis points, so be careful. So the first effect won't interest us at all, it's really floppy. What will interest us is the second effect. If we throw in busquad and the square is not free, we arrive here. Our turret will exchange positions with a siube up to 7 cases max and it will activate instantly. There, you can say to yourself, I don't really see the point of actimaturelle right away, as everything is already activated at the end of the turn. The two are cumulative. You can tap during your turn with your turret and at the end of your turn. For example here, I calm down by paying attention to the opponent. This allows him to take 30% more cases on the two turret attacks. Bam, I'm already throwing that out. Once this is done, I cannot, for example, decide to rest my turret here in the opponent's line. We re-evolved it. And once she is in line with an opponent, we make an attack on the opponent and there we have a positional position. The turret that he hits you directly minus 900. I have 4 pairs left on level 2 pressure, we can place an additional poison. And finally, the turn of my turret will retype once. I'm going to get into water damage. And we have 1,027 and 452 additional damage. So here we have tricks that become truly amazing based on 2,700 damage. We are also very mobile. We can calm down at the other end of the map. We can replace our turret. We can align everything. It's overpowering and the more the fight progresses, the more stupid the class becomes. It's a delight to play. Do you also like the current deck? Current is going to be cool because it pushes one space. This can allow you to do a lot of micro-placement, move entities that are on your lines and everything. Always keep it in a corner. Be careful though to avoid using level 2 of suppression on current because it pushed 4 caspes rather than 1. Last info, interesting to note anyway. And always the position of your steamer in relation to an opponent which considers if you pat on the back on the side or what. Even if your turret hits the back, if your steamer is linked to the side, you will take side damage. Your steamer had to be located in the back so that your turret was protected from water damage. Keep it in the back of your mind and always try to come your turn if possible with a steamer behind the backs of the opponents you hit. I didn't specify this as well but it's really important. Obviously the buscat combo which hits the turret many times is going to be exceptional with the surge combo which increases the damage suffered. But as I tell you, to be able to throw on tension, you always need a stock of 3 series points minimum. If you add in buscat, you therefore add a PS and the combo will be the sand at present you have 4 PS available. As long as you don't have 4 HP to generate on your steamer during your fights, don't do the buscat combo on tension because you will fall quite a bit. That, so I strongly recommend that you play a lane point item in your stuff. Here, for example, I have a problem with the level 50 canopy. It's a problem which gives you a track point and which will therefore allow you from the start of the fight to be at 4 stasis points and 3 track points. Until you have at least 7 lane points on your steamer, otherwise you won't be able to get this combo. So it’s going to be really important to get it quickly. Finally, in terms of the stats that I advise you to play on this steamer, put everything in food resistance then in PV, everything in control of issances, we are really going to only focus on distance here. In dodging for gility, critical costs in luck and the major, the paya will always be happy obviously. Behind we look at the PM, the track points and the food resistance. The more lane points you have, the more you can launch your big combos. So, don't hesitate to invest in it, it's going to be really important to have big TDs, T3 Exhibitions. In any case, your turn 1 in steamer will always be a little mid. We are mainly here for this up, but from round 2, it starts to send big potatoes. The possibilities of your steamer are truly endless, you will be able to do a lot of cool things. For example here, I can very well make a crazy combo. I'll get myself 20 here. I calm a surge on him. He will take more damage. I still have 4 PS, I can go calm a surge on him. You can decide for me to be my spinner with my panda. We're going to be the bridge between the two. I have a very real close directly on the two targets online. And by passing my turn, I have a close second on both targets. You can have phenomenal map control, but 2500 damage on two modes everywhere. You place more and everything, there are some really cool things to do. In short, I hope this explanation has been useful to you. It's quite dense, the steamer, there are a lot of mechanics. But if you take the time to understand them one by one, you're just going to have less of an internal game than he does every fight. You're going to have a really good time, and the class technically doesn't have any particular weak points. If you wish, you can add reinforced armor to the deck. It might be interesting to win. It'll impregnate you with his tournel, but the three non-modifiable points of the spell behind it can be annoying. It's up to you to see if you're used to a bit of tournel, if you're interested or not. Me, I know that, at the start of the fight, to place the turret, it doesn't bother me. To evolve it, that doesn't bother me either. But sometimes, to put her back in the fight, so that a delay from the opponents is everything, it's a bit annoying. So, it's up to you, the passive is still interesting. The rest is football which is not on it. It is better to play without passive, as this force-to-put passive, is to end up with dodgy gameplay. Light alloy and escape are already very very very good. In short, we'll see you very soon for future tutorials. Practice well on your streamer - until then. From kisses..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 3.80s]  Et bonjour à tous, bienvenue aujourd'hui pour le tutoriel du Steamur pour débutant.
+[3.80s - 7.56s]  Je vais vous faire toute l'explication avec un Stealth tout pourri level 50.
+[7.56s - 10.64s]  J'ai pas mis de fabriquer, j'ai pas mis de monture, j'ai pas mis de subgémation.
+[10.64s - 12.84s]  C'est un Stealth que vous aurez rapidement d'élever votre aventure.
+[12.84s - 14.16s]  Ça vous donner un peu une idée de dégâts.
+[14.16s - 16.92s]  Évidemment, dès lors des games, pensez-vous intéresser à l'enchantement.
+[16.92s - 19.36s]  Je vous remets dans l'escription le lien du tuto qui tourne 4 minutes.
+[19.36s - 21.56s]  Ça vous changera la vie si vous ne vous y êtes pas encore intéressés.
+[21.56s - 23.60s]  Bref, on va attaquer tout de suite parce qu'il y a pas mal de choses à voir.
+[23.60s - 24.56s]  Je vais essayer de faire dans l'ordre.
+[24.56s - 27.24s]  Et j'espère que ce sera assez clair avec les dé mots au fur et à mesure.
+[27.24s - 29.20s]  Première chose importante à noter sur le Steamur.
+[29.20s - 32.32s]  La moitié de vos points de work-foot vont être convertis en point de stasis.
+[32.32s - 34.80s]  Donc par exemple, si vous avez un Stealth à 8 points de work-foot,
+[34.80s - 37.32s]  vous aurez 4 points de work-foot et 4 points de stasis.
+[37.32s - 40.16s]  Grosomodo pour résumer, vos points de work-foot vont servir à poser des rails
+[40.16s - 41.80s]  pour vous déplacer avec votre Steamur sur le terrain.
+[41.80s - 44.64s]  Tendis que les points de stasis vont être là pour faire le maximum de dégâts.
+[44.64s - 47.96s]  On va donc j'ongler entre ces deux valeurs et par exemple quand vous êtes en combat,
+[47.96s - 52.04s]  vous avez votre joge de point de stasis qui est à gauche et votre joge de point de work-foot du coup à droite.
+[52.12s - 54.96s]  On va commencer avec la mécanique des rails des micro-bots.
+[54.96s - 56.64s]  C'est votre premier sort en barre 3.
+[56.64s - 61.24s]  Un micro-bots a coûté 1 PA 1 point de work-foot et ça pose un petit robot au sol.
+[61.24s - 65.20s]  Vous allez pouvoir aligner ces robots pour créer des rails pour votre Steamur et pour tous vos alliés.
+[65.20s - 66.52s]  Comme ça par exemple, hop !
+[66.52s - 69.12s]  Vous avez le droit de poser deux micro-bots par tour maximum.
+[69.12s - 70.76s]  Il peut mettre et se passer jusqu'à 6 cases.
+[70.76s - 73.84s]  L'intérêt des micro-bots c'est que pour votre Steamur et pour toute votre équipe,
+[73.84s - 77.36s]  vous déplacer dessus ne vous consommera que 1PM pour faire 3 cases.
+[77.36s - 80.48s]  Ça donc permettra d'être très mobile pendant tout notre combat.
+[80.60s - 84.20s]  De façon générale, vous allez souvent em poser deux partout, en tout cas les deux trois premiers tours.
+[84.20s - 86.08s]  Ça va donc ressembler globalement à ce genre de trucs.
+[86.08s - 88.56s]  Vous en mettez 1 à 3 cases, 1 à 3 cases.
+[88.56s - 91.08s]  Vous avez déjà votre tour 1 qui est cet up avec vos micro-bots.
+[91.08s - 94.32s]  Et à partir du T2, on peut former des carrés en pourmettre 1 ici.
+[94.32s - 95.32s]  Hop !
+[95.32s - 96.72s]  1 ici.
+[96.72s - 100.12s]  Et vous allez du coup vous pouvez vous déplacer librement sur le terrain pendant tout le combat.
+[100.12s - 103.32s]  Je vous conseille de toujours les ajouter en bloc carrés par exemple.
+[103.32s - 106.60s]  On peut en mettre 1 ici et 1 ici.
+[106.72s - 110.88s]  Rapidement, en trois tours vous aurez le terrain qui sera complètement cadrier pour pouvoir vous balader dessus.
+[110.88s - 114.44s]  Ça va nous permettre dès leur League game même avec 4PM par exemple d'aller jusque là.
+[114.44s - 115.64s]  Hop hop hop hop hop hop hop hop.
+[115.64s - 118.96s]  On va donc pouvoir placer librement nos jeux Tourel, notre jeu de dégâts etc.
+[118.96s - 121.40s]  Ça, ça va être pour l'utilisation de vos points de voie que vous.
+[121.40s - 123.04s]  Maintenant, passons au point de stasis.
+[123.04s - 126.32s]  La mécanique principale de dépenses de points de stasis de votre Steamur,
+[126.32s - 129.76s]  ça va être en ensemble sur Steamurateur qui vous coûte un point de stasis.
+[129.76s - 133.08s]  Dès que vous aurez activer Steamurateur, vous gagnerait 50% des gains flichés
+[133.08s - 135.28s]  et surtout tous vos dégâts deviendront éléments stasis.
+[135.32s - 138.24s]  En fin de tour, cela dit, vous perdrez encore un point de stasis.
+[138.24s - 143.24s]  Vous en avez donc 2 qui partent dès le terrain et vous allez gagner un niveau de Steamurateur supplémentaire.
+[143.24s - 146.32s]  Les niveaux de Steamurateur vont donc évoluer tout seul pendant le combat jusqu'à 3 niveaux.
+[146.32s - 148.24s]  Il y a un niveau 1, un niveau 2, un niveau 3.
+[148.24s - 151.88s]  Plus les tables à évoluer, plus vous allez avoir des bonus jusqu'à 2pa en plus gratuitement.
+[151.88s - 154.20s]  Et en revanche, vous perdrez de plus en plus de points de stasis.
+[154.20s - 156.52s]  Pour faire plus simple, quand vous lancé un combat,
+[156.52s - 160.00s]  vous lancé directement Steamurateur, ça vous coûte un point de stasis.
+[160.00s - 161.72s]  Vous passez en état Steamurateur.
+[161.72s - 164.20s]  À la fin de votre tour, vous allez perdre un point de stasis supplémentaire
+[164.24s - 165.88s]  et Steamurateur va passer de niveau 2.
+[165.88s - 167.84s]  Là, j'ai mon état Steamurateur niveau 2.
+[167.84s - 170.80s]  J'ai déjà gagné un paie à bonus en plus de mes 50 % de dégâts
+[170.80s - 172.80s]  et en plus de mes dégâts en des lémences stasis.
+[172.80s - 175.12s]  Mais à la fin de mon tour, je vais perdre 2 points de stasis.
+[175.12s - 177.60s]  J'en ai plus que 1, je vais donc perdre Steamurateur à ce moment-là.
+[177.60s - 180.20s]  Évidemment, notre objectif, cela va être de jamais le perdre, on va y revenir après.
+[180.20s - 182.40s]  Avant cela, parlons vite fait de l'éléments stasis.
+[182.40s - 186.28s]  L'éléments stasis, c'est la particularité du Steamur, c'est un outil surpuissant.
+[186.28s - 189.40s]  Cela va vous permettre de transformer tous vos soeurs élémentaires en élément stasis.
+[189.44s - 192.16s]  L'éléments stasis, il y aura toujours cherché votre meilleur maîtrise.
+[192.16s - 193.76s]  Donc par exemple, moi ici, la maîtrise feu.
+[193.76s - 196.52s]  Et il y aura toujours taper sur la faible est la plus base d'amonstru.
+[196.52s - 198.96s]  Là, sur un monstre, à résistance équivalente, c'est pas très parlant.
+[198.96s - 202.16s]  Mais en combat, si vous avez des monstres avec 20, 30 % des cartes de différence,
+[202.16s - 204.16s]  vous pourrez donc très bien en lancer un sort haut,
+[204.16s - 207.80s]  taper avec votre maîtrise feu sur la faible est par exemple R d'amonstru.
+[207.80s - 210.60s]  Ici, par exemple, quand je lance un sort à 3 Pao,
+[210.60s - 216.24s]  mon sort de base, il fait 106 et 6 de lance en étant Steamurateur.
+[216.24s - 218.68s]  Il va prendre ma maîtrise feu et il va taper
+[218.72s - 220.08s]  188.
+[220.08s - 221.84s]  Cela va donc vraiment décuper vos dégâts
+[221.84s - 224.92s]  et évidemment, cela va être super important de transformer tout le temps.
+[224.92s - 227.40s]  Pour être en stimulateur tout le temps, il va donc falloir qu'on génère
+[227.40s - 228.92s]  un maximum de points de stasis partout.
+[228.92s - 232.56s]  Éteur donné que Steamurateur niveau 3 va nous coûter 3 points de stasis partout,
+[232.56s - 234.40s]  il va donc falloir qu'on en génère au moins 3.
+[234.40s - 236.12s]  Pour générer des points de stasis sur le steamur,
+[236.12s - 237.92s]  cela que va intervenir là, tout réel.
+[237.92s - 240.76s]  Votre tourrel vous l'invouquez à chaque fois qu'elle va toucher un ennemi
+[240.76s - 242.68s]  elle va vous redonner des points de stasis.
+[242.68s - 244.16s]  Une tourrel peut avoir jusqu'à 4 niveaux.
+[244.16s - 246.60s]  Quand vous l'invouquez, elle est niveau 1 et à chaque fois que vous l'évoluez,
+[246.64s - 247.44s]  elle prendra un niveau.
+[247.44s - 250.48s]  Par exemple ici, je l'évolue directement dans le même tour.
+[250.48s - 253.04s]  Cela allume une petite zone dessus, elle est niveau 2.
+[253.04s - 255.24s]  Le tour d'après, je peux relancer, tourrel dessus,
+[255.24s - 257.72s]  épasse niveau 3 et le tour d'après, je relance au tourl頭 dessus,
+[257.72s - 258.92s]  épasse niveau 4.
+[258.92s - 261.40s]  Si une tourrel niveau 2 touchant ennemi,
+[261.40s - 262.88s]  elle vous redonne 2 points de stasis.
+[262.88s - 264.48s]  Si une tourrel niveau 4 touchant ennemi,
+[264.48s - 265.96s]  elle vous redonnera 4 points de stasis.
+[265.96s - 268.20s]  Si une tourrel niveau 4 touchent 2 ennemi,
+[268.20s - 270.00s]  elle vous redonnera donc 8 points de stasis.
+[270.00s - 272.16s]  Cela va donc devenir très rapidement très efficace.
+[272.16s - 274.84s]  À savoir que poser une tourrel sur le terrain vous coûte de PA,
+[274.88s - 277.00s]  mais évoluer une tourrel ne vous coûte aucun PA,
+[277.00s - 278.56s]  ça vous coûte 2 mais ça vous en rend 2.
+[278.56s - 280.24s]  Notre route à base donc pour l'instant,
+[280.24s - 283.20s]  ça va être de mettre un micro bot, un micro bot.
+[283.20s - 284.76s]  D'activer directement ce timéra tort,
+[284.76s - 286.16s]  ce serait dommage de passer à côté,
+[286.16s - 288.52s]  de poser une tourrel et de l'évoluer
+[288.52s - 290.40s]  parce que l'évolution est gratuit.
+[290.40s - 292.84s]  Normalement, vous n'aurez jamais une tourrel niveau 1 sur le terrain,
+[292.84s - 294.28s]  elle sera toujours minimum niveau 2,
+[294.28s - 296.56s]  donc vous aurez toujours au moins 2 points de stasis
+[296.56s - 297.52s]  partout de rendu.
+[297.52s - 299.64s]  Une fois que cela s'est effectué pour qu'une tourreltape
+[299.64s - 300.64s]  il va falloir l'activer.
+[300.64s - 302.68s]  La tourrel est peut taper dans 3 éléments différents,
+[302.68s - 303.72s]  feu, terre ou haut,
+[303.80s - 304.80s]  en fonction de l'aliment qu'elle a,
+[304.80s - 305.96s]  elle fera des choses différentes,
+[305.96s - 308.12s]  mais ici on va s'intéresser que à l'élément haut,
+[308.12s - 309.92s]  ça nous permet de gagner en compréhension.
+[309.92s - 311.56s]  Pour que votre tourrel soit haut, c'est simple,
+[311.56s - 313.32s]  il suit de faire un sort haut dans le tour,
+[313.32s - 315.24s]  par exemple ici je mets une petite attaque haut,
+[315.24s - 317.24s]  ma tourrel passe haut, on voit un logo dessus,
+[317.24s - 319.64s]  et du coup à la fin de mon tour, la tourrel va attaquer.
+[319.64s - 321.44s]  La tourrel haut, quels sont ces spécificités,
+[321.44s - 322.96s]  elle ne peut taper que en ligne,
+[322.96s - 324.40s]  par contre elle a une portée infinie.
+[324.40s - 327.24s]  Des 3 éléments de tourrel, c'est celle qui infiche de plus de dégâts.
+[327.24s - 329.88s]  Elle va donc être super intéressante pour ajouter des gros dégâts
+[329.88s - 330.72s]  à nos tours steamurs,
+[330.76s - 332.76s]  et évidemment plus une tourrel et au niveau
+[332.76s - 333.84s]  plus gagnera de dégâts,
+[333.84s - 336.36s]  elle gagne 100% de ces dégâts par évolution.
+[336.36s - 338.36s]  Une tourrel ovelle 1 qui envoie 200 dégâts
+[338.36s - 340.00s]  pour donc monter jusqu'à 800.
+[340.00s - 341.80s]  Je vous conseille d'ailleurs de mettre exclusivement
+[341.80s - 342.96s]  des sortes haut dans votre deck,
+[342.96s - 345.28s]  comme ça vous serez sûrs à 100% que votre tourrel sera toujours haut.
+[345.28s - 346.56s]  Les autres sortes ici de toute façon,
+[346.56s - 347.80s]  ne nous intéresseront pas.
+[347.80s - 349.32s]  Ça va donc nous donner si on analyse,
+[349.32s - 352.80s]  hop, on met un rail, un rail,
+[352.80s - 355.12s]  on pose notre tourrel en ligne d'un ennemi toujours,
+[355.12s - 357.44s]  t'es un, on l'évolue directement,
+[357.44s - 360.64s]  on passe estimérateur et on lance un sort haut pour activer
+[360.92s - 362.56s]  je veux que là on est bon, on garde pas pour la suite,
+[362.56s - 364.08s]  on peut se décaler de 1 pm pour aller là
+[364.08s - 365.32s]  si on veut en retourner même là,
+[365.32s - 366.24s]  on a beaucoup de paie.
+[366.24s - 369.68s]  J'ai donc mon estimérateur niveau 1 et ma tourrel activer niveau 2.
+[369.68s - 371.56s]  Quand je passe mon tour, ma tourrel tap,
+[371.56s - 373.44s]  elle me redonne 2 points de stasis,
+[373.44s - 375.04s]  je passe estimérateur niveau 2,
+[375.04s - 376.76s]  et à ce moment là, j'ai déjà 3 points de stasis.
+[376.76s - 379.20s]  Je vais donc pas perdre cette fois mon estimérateur au niveau 2,
+[379.20s - 381.00s]  je peux très bien aller proche de ma tourrel,
+[381.00s - 382.44s]  l'évoluer,
+[382.44s - 385.84s]  je vais en profiter par exemple pour replacer 2 micro-bots,
+[385.84s - 387.76s]  commencez mon tour.
+[387.76s - 389.40s]  Avec vos 9 pairs, vous enferrez ce que vous voulez,
+[389.44s - 391.08s]  vous pouvez vous replacer, etc.
+[391.08s - 392.16s]  Ma tourrel est niveau 3,
+[392.16s - 394.12s]  quand elle va taper, elle va me rendre 3 points de stasis,
+[394.12s - 396.72s]  je peux donc passer mon tour et je passe de 3 à 4.
+[396.72s - 399.64s]  Je vais pouvoir monter ma tourrel niveau 4,
+[400.76s - 403.08s]  et là on consombre quasiment plus rien, je suis à 4,
+[403.08s - 405.08s]  Jean-Père 3, Jean-Gaim III et je suis à 4.
+[405.08s - 406.00s]  Remarque importante,
+[406.00s - 407.44s]  depuis la refonte du steamur,
+[407.44s - 409.80s]  il est à présent possible de la replacer très facilement
+[409.80s - 411.72s]  tous les tours en échange de niveau d'évolution.
+[411.72s - 412.60s]  C'est-à-dire que là par exemple,
+[412.60s - 413.68s]  imaginant qu'il y a plus d'adversaire
+[413.68s - 415.28s]  et que le prochain il est là-bas,
+[415.28s - 417.16s]  je peux très bien me caler ici,
+[417.16s - 418.80s]  déplacer ma tourrel en la remettant en ligne,
+[418.84s - 419.84s]  par exemple ici,
+[420.32s - 421.32s]  et perdre un niveau,
+[421.32s - 423.04s]  mais vu que je peux réméliorer dans le même tour,
+[423.04s - 424.44s]  je lui redonne directement son niveau.
+[424.44s - 426.44s]  Vous perdez donc seulement 2 pa à la déplacer
+[426.44s - 427.52s]  et vous ne pourrez pas l'évoluer,
+[427.52s - 429.60s]  mais ça vous permet ainsi chaque tour de leur place
+[429.60s - 430.64s]  ou vous avez envie.
+[430.64s - 432.48s]  Tourre d'après par un peu, j'ai envie de la replacer ici,
+[432.48s - 433.52s]  je la remplace l'évolue,
+[433.52s - 435.60s]  ça me coûte seulement 2 pa et on est bon.
+[435.60s - 437.88s]  À savoir que ça rend les 2 pa les plus worses de votre tour,
+[437.88s - 439.28s]  la tourrelera je tellement dégâque,
+[439.28s - 440.56s]  vraiment, c'est pas cher payé,
+[440.56s - 443.08s]  soyez pas radins à dépenser vos pa pour remplacer votre tourrel,
+[443.08s - 444.12s]  c'est trop important.
+[444.12s - 445.52s]  Il faut qu'elle tape tous les tours,
+[445.52s - 446.84s]  sinon vous allez perdre estimérateur.
+[446.84s - 448.00s]  Votre priorité numéro 1,
+[448.00s - 449.28s]  c'est donc toujours, toujours,
+[449.28s - 451.68s]  de mettre une tourrel en face d'analymi pour la fin de tour.
+[451.68s - 453.32s]  Ça risque d'être assez rapidement catastrophique,
+[453.32s - 454.40s]  si votre tourrel touche personne,
+[454.40s - 455.60s]  que vous perdez estimérateur,
+[455.60s - 456.68s]  vous avez plus de points de stasis,
+[456.68s - 458.12s]  estimérateur, vous pouvez pas le relancer,
+[458.12s - 459.88s]  erreur et heure grossière et erreur.
+[459.88s - 460.92s]  On va se rajouter à présent
+[460.92s - 462.92s]  un élément supplémentaire du kit steamur,
+[462.92s - 465.44s]  le canonier, la moto.
+[465.44s - 467.00s]  La moto du steamur, qu'elle est l'intérêt.
+[467.00s - 469.40s]  Canonier possède 5 effets différents.
+[469.40s - 470.20s]  Au niveau des bonus,
+[470.20s - 474.72s]  vous allez gagner gratuitement 2 pa et 3 pa et 50 % de dégâts directs.
+[474.76s - 476.32s]  Ça, c'est de la frappe atomique.
+[476.32s - 477.80s]  En revanche, au niveau des malus,
+[477.80s - 479.84s]  vos soins alimentaires ne pourront plus lancer qu'en ligne.
+[479.84s - 480.56s]  Ça tombe bien,
+[480.56s - 482.20s]  vous avez déjà des sortes qui se lancent en ligne.
+[482.20s - 483.20s]  Deuxième inconvénient,
+[483.20s - 486.04s]  vous allez pouvoir vous déplacer seulement sur vos rails micro-bots.
+[486.04s - 487.32s]  D'où le fait que c'est intéressant
+[487.32s - 490.08s]  d'être un T2 de placé énormément de rails sur le terrain.
+[490.08s - 491.76s]  Et en donné que vous avez gagné des pèmes supplémentaires,
+[491.76s - 492.28s]  dans tous les cas,
+[492.28s - 495.04s]  vous allez pouvoir vous déplacer de façon très très libre.
+[495.04s - 497.60s]  Aucun soucis, une fois que la moto est activée.
+[497.60s - 499.92s]  La moto sera se pendant très sensible au tackle,
+[499.92s - 501.48s]  évidemment, je vous conseille donc,
+[501.48s - 503.24s]  de mettre directement de reprim passive,
+[503.28s - 505.12s]  un petit passif, hop, evasion,
+[505.12s - 506.92s]  pour gagner un maximum d'esquive.
+[506.92s - 508.64s]  N'esquive, vous en aurez beaucoup besoin sur le steamur.
+[508.64s - 509.84s]  Donc, mettez le passif esquive
+[509.84s - 511.96s]  et mettez tous vos enchantements d'anaux en esquive.
+[511.96s - 513.56s]  L'enchantement verre, vous vous souvenez.
+[513.56s - 516.12s]  L'intérêt également du bonus de dégâts indirects du canonier,
+[516.12s - 517.32s]  c'est que votre tourelle qu'on étapes
+[517.32s - 518.56s]  c'est du dégâts indirects.
+[518.56s - 520.56s]  Votre tourelle, c'est ce qui va rajouter le plus du dégâts
+[520.56s - 521.48s]  dans votre toure steamur.
+[521.48s - 522.80s]  Vous êtes là pour jouer autour d'elle.
+[522.80s - 525.04s]  Ça va donc être important d'activer canonier dès le début.
+[525.04s - 526.16s]  Pour ça, on va simplifier la vie
+[526.16s - 528.32s]  et on va également rajouter le passif à l'IAG Léger.
+[528.32s - 529.96s]  A l'IAG GG, vous perdez un pème.
+[529.96s - 531.36s]  Ce n'est pas grave, on venait de vous en offrir à deux.
+[531.36s - 534.04s]  Et en contrepartie, vous allez pouvoir poser deux microbots de plus sur le terrain,
+[534.04s - 536.68s]  qui va vraiment vous permettre avec votre moto d'être ultra souple.
+[536.68s - 539.28s]  Vous allez par exemple pouvoir placer ce genre de setup tranquillement
+[539.28s - 542.36s]  pour en mettre à la, à la, on va dessus,
+[542.36s - 544.24s]  disons qu'on active notre moto.
+[544.24s - 547.40s]  Hop, dès le tour de, on peut déjà placer des hop.
+[548.24s - 549.24s]  Hop.
+[550.24s - 550.84s]  Hop.
+[550.84s - 552.96s]  Ça, là, on a les 6 de base
+[552.96s - 554.64s]  et en bois pouvoir en rajouter de,
+[554.72s - 558.32s]  on peut donc placer par exemple 1 ici et 1 ici.
+[559.52s - 562.12s]  Ce qu'on nous permette de faire des gros trajets tranquilles,
+[562.12s - 563.92s]  et de vous balader un peu partout sur la map.
+[563.92s - 567.48s]  À noter qu'il est tout à fait possible de retirer un microbote en cliquant dessus
+[567.48s - 569.52s]  et d'aller empoiser un autre tout simplement.
+[570.84s - 572.76s]  Donc ça, vous risquez de le faire au moins une fois partout.
+[572.76s - 574.56s]  Dans tous les cas, vous aurez les points de voie pour le faire,
+[574.56s - 577.04s]  pas de problème, parce que vos points de voie pour pouvoir être écoppérés
+[577.04s - 579.12s]  par rapport à vos oveurs de points de stasis.
+[579.12s - 581.04s]  Si vous avez une tour elle qui vous rend 8 points de stasis,
+[581.04s - 582.44s]  alors que vous pouvez en avoir 4 maximums
+[582.44s - 584.00s]  et vous rendra 4 points de voie en échange.
+[584.08s - 585.20s]  Vous aurez donc rapidement dans tous les cas
+[585.20s - 586.28s]  pas de problème de point de voie.
+[586.28s - 589.64s]  À ce moment-là, donc, on a fini enfin de présenter le setup du tour 1.
+[589.64s - 592.72s]  On se pose 2 petits microbots.
+[592.72s - 595.36s]  On pose notre tourl en ligne d'un adversaire.
+[595.36s - 598.92s]  On l'évolue, on passe timorateur, on passe canonnier
+[598.92s - 601.60s]  et on met une attaque haut dans le tour pour activer la tourlée.
+[602.80s - 605.68s]  Normalement, vous suivez jusque-là et ça ne permet à notre tourlée directement
+[605.68s - 608.16s]  d'un付 kG 1, 315 dégâts dès le début du combat.
+[608.16s - 611.20s]  Les tours d'après hop, on repose à microbots.
+[611.24s - 615.64s]  On évolue notre tourl, on se décale, on pose un autre pour préparer le terrain.
+[615.64s - 617.48s]  On a 9 percs, on va pouvoir utiliser comme on veut.
+[617.48s - 621.76s]  En attendant, on sait que notre tourl a leur voix déjà du 689 dégâts.
+[621.76s - 623.76s]  Je peux très bien, à ce moment-là, si je souhaite, par exemple,
+[623.76s - 628.80s]  replacer ma tourl, la réévoluer, remettre par exemple des microbots
+[628.80s - 632.32s]  sur la map et continuer à placer mon jeu,
+[632.32s - 635.04s]  toujours en plaçant en ligne par rapport à un adversaire.
+[635.04s - 637.44s]  Ça, ça va renouveler la base de votre gameplay en steamur.
+[637.44s - 638.92s]  Mais jusqu'à un autre surpétisé de nos sort,
+[638.92s - 641.80s]  on va donc s'intéresser à la fameuse voix au steamur.
+[641.80s - 645.04s]  Le principe de la voix au steamur, c'est qu'il va générer de la suppression
+[645.04s - 648.52s]  et chaque sort peut consommer de la suppression pour avoir un effet annex.
+[648.52s - 651.16s]  Il sera s'intéresser qu'à deux effets, les autres nous intéressons pas beaucoup.
+[651.16s - 652.44s]  Quand vous affrontez des monstres basiques,
+[652.44s - 654.36s]  on va se baser sur la suppression d'écum,
+[654.36s - 656.96s]  car nous permettent de re gagner trois paix et donc de rendre le sort gratuit.
+[656.96s - 659.76s]  Et quand on affrontera un boss, on lui calera 10 solutions.
+[659.76s - 661.60s]  10 solutions activées sur cette suppression,
+[661.60s - 663.80s]  nous donnera un dégâts de poison supplémentaire
+[663.80s - 666.04s]  et qui dit des gâts de poison, dit dégâts indirects,
+[666.04s - 668.40s]  10 plus 50% de dégâts grâce notre canonnier.
+[668.44s - 670.08s]  Pour sauver la suppression, on le donne plus simple,
+[670.08s - 672.28s]  vous prenez votre fiche d'état et c'est celui au go-là
+[672.28s - 673.88s]  qui vous donnera votre niveau de suppression.
+[673.88s - 676.48s]  Par exemple, ici je suis niveau 1, je mets en ligne d'un adversaire,
+[676.48s - 679.52s]  je mets un petit flip-bust, je monte niveau 2.
+[679.52s - 682.20s]  Et une fois niveau 2, je sais que ma prochaine attaque aura un effet supplémentaire.
+[682.20s - 684.16s]  Si je mets par exemple hécum, ça va être un sort trop bas,
+[684.16s - 686.64s]  qui va me rendre trop bas, ça fait donc un sort gratuit.
+[686.64s - 689.04s]  Et ensuite, aussi que le recommence, je mets un flip-bust,
+[689.04s - 691.72s]  un flip-bust, et un niveau 2, hécum, remboursé.
+[691.72s - 692.52s]  Hop !
+[692.52s - 695.64s]  Ça nous permet de faire beaucoup de combos d'organiser trois à siper à partout avec ça.
+[695.68s - 698.72s]  Ça va être super pratique pour clean pas mal de mob en orligay.
+[698.72s - 701.00s]  Dissolution quant à lui, vous utiliserz plutôt contre les boss.
+[701.00s - 703.24s]  Dans ce cas là, il sera bien plus intéressant au niveau des dégâts
+[703.24s - 707.08s]  qui va caler par rapport à au fait de rien étroper à donc on met un état niveau 1, un état niveau 2.
+[707.08s - 708.76s]  Je vous conseille de mettre toujours les daves avec flip-bust.
+[708.76s - 712.08s]  C'est vraiment le sort pratique, passe partout, pas de ligne de vue, grosse portée.
+[712.08s - 713.80s]  Il vous prendra vraiment pas du tout la tête.
+[713.80s - 715.60s]  Et derrière une fois que vous êtes niveau 2, vous choisissez toujours.
+[715.60s - 717.36s]  Est-ce qu'on met tes hécumes ou une dissolution ?
+[717.36s - 719.28s]  Ici, je mets une dissolution par exemple sur le mob.
+[719.28s - 722.08s]  Salut, calme de poison plus 360 dégâts de base.
+[722.16s - 724.32s]  Tu peux revenir ici et voluer ma tourale pour la bête niveau 4.
+[724.32s - 729.80s]  Et là, on va avoir un dégâtre Tourl, niveau max, sous-stimérateur, sous-canonier avec le poison de fin de tour.
+[729.80s - 731.00s]  Et ça va de donner...
+[731.00s - 734.80s]  Bam, 629, plus 492 dégâts bonus de fin de tour.
+[734.80s - 737.68s]  On continue à s'accrocher parce qu'il nous reste encore deux éléments de gameplay
+[737.68s - 740.68s]  qu'on va pouvoir rajouter aux kits, histoire d'encore plus monter tout ça.
+[740.68s - 742.84s]  Le premier élément, ça va être sur tension.
+[742.84s - 745.20s]  Sur tension, c'est un sort à 3p à 2 points de stasis.
+[745.20s - 749.28s]  Il va un fils de très gros dégâts et surtout il va poser un malus sur l'ennemi, le malus sur tension.
+[749.28s - 752.04s]  Qui fraque, notre ship subira encore plus de dégâts de tour.
+[752.04s - 755.04s]  Faudra faire ce pendant attention parce que vu qu'il coûte des points de stasis,
+[755.04s - 756.92s]  ce serait bête de lancer et de perdre sa tourale.
+[756.92s - 758.44s]  La règle à retenir elle est donc très simple.
+[758.44s - 761.88s]  Tant que vous voyez que vous avez au moins 3 points de stasis d'ispo, vous pouvez le lancer.
+[761.88s - 765.24s]  Par exemple ici, j'ai 4, je pose une sur tension.
+[765.24s - 768.20s]  Je mets 338 dégâts, je pose le malus sur tension,
+[768.20s - 770.48s]  qui fait que l'adversaire prendra 30% de dégâts de plus.
+[770.48s - 773.64s]  Il me reste de points de stasis, mais ma tourelle va taper et va m'en rendre 4.
+[773.64s - 776.48s]  Je vais remonter à 6 et mon stimerateur va m'en prendre 3 et je vais redescendre.
+[776.52s - 778.68s]  Donc ici, je suis à 3 et je suis à 3.
+[778.68s - 780.68s]  Tant que ma tourelle a infligé 900 dégâts.
+[780.68s - 783.68s]  Et donc tant que vous avez 3, pour d'après, vous pouvez reposer une sur tension
+[783.68s - 787.36s]  450-3 dégâts, la tourelle tape en plus, 1205.
+[787.36s - 789.68s]  On va monter à des valeurs de dégâts qui sont hallucinantes.
+[789.68s - 793.28s]  Si je tombe à 2 PS, j'évite de lancer parce que si vous de lancer à 2 PS,
+[793.28s - 797.00s]  vous tombez à 0, vous avez plus de stimerateur, vous avez tout perdu, c'est flopesque.
+[797.00s - 799.28s]  On retient donc sur tension meilleur sort du kit,
+[799.28s - 802.12s]  mais il vous faut 3 points de stasis minimum avant de lancer.
+[802.12s - 803.88s]  Et évidemment, il faut une tourelle en ligne oublier pas ça.
+[804.08s - 806.88s]  Et enfin, on peut finir par le 5-gral-stimer,
+[806.88s - 810.88s]  la bête ultime, le combo parfait, on va jouer autour également dans busquad.
+[810.88s - 813.08s]  Encore un sort qui coûte des points de stasis, donc attention.
+[813.08s - 816.08s]  Alors le premier effet va pas du tout nous intéresser, il est vraiment flopesque.
+[816.08s - 818.48s]  Nous ce qui va nous intéresser, c'est le second effet.
+[818.48s - 821.68s]  Si on lance en busquad et la case n'est pas libre, on arrive donc ici.
+[821.68s - 824.68s]  Notre tourelle va échanger de position avec une siube jusqu'à 7 cas max
+[824.68s - 826.68s]  et elle va s'activer instantanément.
+[826.68s - 829.68s]  Là, vous pouvez vous dire, je ne vois pas trop l'intérêt d'actimaturelle tout de suite,
+[829.68s - 831.08s]  dont tout le cas s'actifent déjà en fin de tour.
+[831.08s - 832.88s]  Les deux sont cumulables.
+[832.88s - 836.08s]  Vous avez pouvoir taper pendant votre tour avec votre tourelle et à la fin de votre tour.
+[836.08s - 838.48s]  Par exemple ici, je calme sur attention sur l'adversaire.
+[838.48s - 841.88s]  Ça lui permet de prendre 30 % des cas de plus sur les deux attaques de tourelle.
+[841.88s - 843.88s]  Bam, déjà je balance ça.
+[843.88s - 847.68s]  Une fois que c'est fait, je peux pas par exemple décider de reposer ma tourelle ici en ligne d'adversaire.
+[847.68s - 849.08s]  On l'a réévolue.
+[849.08s - 851.08s]  Et une fois qu'elle en ligne avec un adversaire,
+[851.08s - 854.48s]  on fait une obusquate sur l'adversaire et là on a un soib de position.
+[854.48s - 856.88s]  La tourelle qu'il t'ape directement moins 900.
+[856.88s - 860.68s]  Il me reste 4 paires sur pression niveau 2, on peut placer un poison en plus.
+[860.88s - 862.88s]  Et enfin, le tour de ma tourelle va retaper une fois.
+[862.88s - 864.28s]  Je vais me mettre en dégâts d'eau.
+[864.28s - 867.48s]  Et on a 1.027 et 452 dégâts supplémentaires.
+[867.48s - 871.68s]  Donc là on a des tours qui deviennent vraiment hallucinants à base de 2.700 dégâts.
+[871.68s - 873.28s]  On est en plus de ça très mobile.
+[873.28s - 874.48s]  On peut se calmer à l'autre bout de la map.
+[874.48s - 875.68s]  On peut replacer notre tourelle.
+[875.68s - 876.68s]  On peut tout aligner.
+[876.68s - 880.28s]  C'est surpuissant et plus le combat avance, plus la classe est de virklotement débile.
+[880.28s - 881.68s]  C'est un régal à jouer.
+[881.68s - 883.28s]  Vous aimez également dans le deck courant ?
+[883.28s - 885.28s]  Courant va être cool parce qu'il pousse de une case.
+[885.28s - 888.68s]  Ça peut permettre de faire pas mal de microplacement, de bouger des entités qui sont sur vos rayes et tout.
+[888.88s - 890.08s]  Gardez le toujours dans un coin.
+[890.08s - 893.48s]  Attention cela dit d'éviter d'utiliser le niveau 2 de suppression sur courant
+[893.48s - 895.28s]  parce que ça a poussé 4 caspes plutôt que de 1.
+[895.28s - 897.08s]  Dernière info, intéressant de t'inoté quand même.
+[897.08s - 899.68s]  Et toujours la position de votre steamur par rapport à un adversaire
+[899.68s - 901.88s]  qui considère si vous tapez dans le dos sur le côté ou quoi.
+[901.88s - 905.88s]  Même si votre tourelle tape dans le dos, si votre steamur est lié sur le côté, vous aura des dégâts côtés.
+[905.88s - 908.08s]  Il a falloir que votre steamur se situe dans le dos
+[908.08s - 910.28s]  pour que votre tourelle qu'on étappe à l'impérit des dégâts d'eau.
+[910.28s - 912.68s]  Gardez-le dans un coin de tête et essayez toujours de venir votre tour si possible
+[912.68s - 914.88s]  avec un steamur dans le dos des adversaires que vous tapez.
+[915.08s - 916.68s]  Je ne l'ai pas précisé également mais c'est vraiment important.
+[916.68s - 920.08s]  Évidemment que le combo en buscat qui fait tapé de fois la tourelle va être exceptionnel
+[920.08s - 922.28s]  avec le combo de surtention qui augmente les dégâts subis.
+[922.28s - 923.88s]  Mais comme je vous dis de t'aleurs pour pouvoir lancer sur tension,
+[923.88s - 926.08s]  il faut toujours un stock de 3 points de séries minimum.
+[926.08s - 928.68s]  Si vous rajoutez en buscat, vous rajoutez donc un PS
+[928.68s - 931.88s]  et le combo sera l'ensable à présentement vous avez 4 PS de disponible.
+[931.88s - 934.88s]  Tant que vous n'avez pas 4 PS de générer sur votre steamur pendant vos combats,
+[934.88s - 937.88s]  ne faites pas le combo en buscat sur tension parce que vous allez tomber assez.
+[937.88s - 941.08s]  Ça, donc je vous recommande fortement de jouer un item point de voie dans votre stuff.
+[941.08s - 943.48s]  Ici par exemple moi j'ai bien un problème de la canopée niveau 50.
+[943.68s - 945.88s]  C'est un problème qui vous donne un point de voie et qui va vous permettre
+[945.88s - 949.28s]  du coup dès les débuts de combat d'être à 4 points de stasis et 3 points de voie.
+[949.28s - 951.88s]  Tant que vous n'avez pas au moins 7 points de voie sur votre steamur,
+[951.88s - 953.68s]  sinon vous ne pourrez pas obtenir ce combo.
+[953.68s - 955.88s]  Ça va donc être vraiment important à aller chercher rapidement.
+[955.88s - 958.28s]  Enfin au niveau des stats que je vous conseille pour jouer sur ce steamur,
+[958.28s - 960.28s]  mettez tout dans résistances alimentaires puis en PV,
+[960.28s - 962.88s]  tout dans la maîtrise d'issances, on va vraiment taper que en distance ici.
+[962.88s - 965.88s]  Dans l'esquive pour la gilité, les coûts critiques en chance
+[965.88s - 968.68s]  et le majeur, le paya fera toujours plaisir évidemment.
+[968.68s - 972.48s]  Derrière on cherche à le PM, les points de voie et la résistance alimentaire.
+[972.48s - 974.88s]  Plus vous aurez de point de voie plus vous pourrez lancer vos gros combos.
+[974.88s - 976.88s]  Donc, n'hésitez pas à investir dedans, ça va être vraiment important
+[976.88s - 978.68s]  pour avoir des gros TD, T3 Exposifs.
+[978.68s - 981.08s]  Dans tous les cas, votre tour 1 en steamur, il sera toujours un peu mid.
+[981.08s - 983.28s]  On est surtout là pour cet up, mais à partir du tour 2,
+[983.28s - 984.88s]  ça commence à envoyer des grosses patates.
+[984.88s - 986.88s]  Les possibilités de votre steamur sont vraiment infinives,
+[986.88s - 988.48s]  vous allez pouvoir faire un paquet de trucs cool.
+[988.48s - 991.48s]  Par exemple ici, je peux très bien me faire un combo de fou.
+[991.48s - 993.28s]  Je vais me chercher 20 ici.
+[993.28s - 995.28s]  Je calme une surtention sur lui.
+[995.28s - 996.28s]  Il prendra plus de dégâts.
+[996.28s - 998.88s]  J'encore 4 PS, je peux aller calmer une surtention sur lui.
+[998.88s - 1001.08s]  Vous pouvez me décider de soit ma tournelle avec mon panda.
+[1001.08s - 1002.68s]  On va être la tournelle entre les deux.
+[1002.68s - 1005.28s]  J'ai un proche tout réel directement sur les deux cibles en ligne.
+[1005.28s - 1007.88s]  Et en passant mon tour, j'ai un deuxième proche sur les deux cibles.
+[1007.88s - 1009.88s]  Vous pouvez avoir un contrôle de map phénoménal,
+[1009.88s - 1012.68s]  mais des 2500 dégâts sur deux modes partout.
+[1012.68s - 1015.28s]  Vous placez en plus et tout, il y a des trucs trop cool à faire.
+[1015.28s - 1017.08s]  Bref, j'espère que cette explication vous aura servi.
+[1017.08s - 1019.28s]  C'est assez dense, le steamur, il y a beaucoup de mécaniques.
+[1019.28s - 1021.48s]  Mais si vous prenez le temps de bien les comprendre une par une,
+[1021.48s - 1023.08s]  vous allez seulement qu'il fait chaque combat,
+[1023.08s - 1024.08s]  va avoir moins être interne jeu.
+[1024.08s - 1025.48s]  Vous allez vraiment bien vous amuser,
+[1025.48s - 1027.68s]  et la classe n'a techniquement aucune faible espératrice particulière.
+[1027.68s - 1030.08s]  Si vous le souhaitez, vous pouvez rajouter blindage renforcé dans le deck.
+[1030.08s - 1031.08s]  Ça peut être intéressant de gagner.
+[1031.08s - 1032.28s]  Ça va vous empeller son tournel,
+[1032.28s - 1034.28s]  mais les trois pioes non modifiables du sort derrière,
+[1034.28s - 1035.08s]  ça peut être embêtant.
+[1035.08s - 1036.68s]  A vous de voir si vous habituez un peu de tournel,
+[1036.68s - 1037.68s]  si ça vous intéresse ou pas.
+[1037.68s - 1038.68s]  Moi, je sais que, en début de combat,
+[1038.68s - 1040.08s]  pour placer la tournelle, ça me dérange pas.
+[1040.08s - 1041.68s]  Pour l'évoluer, ça ne me dérange pas non plus.
+[1041.68s - 1043.48s]  Mais parfois, pour la replacer dans le combat,
+[1043.48s - 1044.88s]  pour qu'un retard des adversaires est tout,
+[1044.88s - 1045.88s]  c'est un peu embêtant.
+[1045.88s - 1048.08s]  Donc, à vous de voir, le passif est quand même intéressant.
+[1048.08s - 1050.08s]  Le reste, c'est du football qui n'est pas dessus.
+[1050.08s - 1051.28s]  Il faut mieux jouer sans passif,
+[1051.28s - 1052.68s]  que ce force-à-mettre dépassif,
+[1052.68s - 1054.08s]  est de se retrouver avec un gameplay louch.
+[1054.08s - 1056.68s]  Alliage légé et évasion sont déjà très très très bons.
+[1056.68s - 1058.68s]  Bref, on se retrouve très bientôt pour des prochains tutos.
+[1058.68s - 1060.28s]  Entraînez-vous bien sur votre streamer-d'ici là.
+[1060.28s - 1061.28s]  Dès bisous.

@@ -1,0 +1,351 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Newtom monde. Aujourd'hui on va répondre à une question qui revient souvent sur Twitch. Comment bien choisir cette sim sur Vakfu ? On commencerait par le cas d'une team de 6, que l'on appliquerait la même logique à un team de 3. C'est souvent les mêmes questions qui reviennent. Est-ce que le panda est obligatoire ? Est-ce qu'il faut pouvoir taper dans tous les éléments ? Est-ce qu'on peut jouer plusieurs fois la même classe ? Ou est-ce que ma compo est visable ? Pour ces questions, j'en vais répondre. Non, non, oui et oui. Effectivement, un panda s'applace super bien. Mais parfois ce sera le zobal qui sera plus efficace. T'appets dans tous les éléments finalement, ça ne sert que dans très peu de danger. Certains classes deviennent vite mon bonnes quand tu les joues en plusieurs exemplaires. C'est le cas des invocateurs comme le salzobal ou le satedar. Ça sert à cause de la limitation sur les invocations. En revanche, le Yop lui n'a pas ce problème. Des jeunes ne dépend pas des invocations et en plus il n'y a pas de relance global sur Vakfu. En résumé, si ta team est équilibré, alors elle est viable. Et par aviat, j'entends que tu pourras faire quasiment tout le jeu, même en stade est 5 ou plus. Maintenant, il y a une question qui revient souvent sur Vakfu. C'est quoi la meilleure compôt ? Et bien, il n'y en a pas. Dans certains dongeons, c'est le panda qui brille, dans d'autres celles zobales. Parfois le fait qu'elle est goûtière, parfois c'est le cimetre. Pour résumer, une compôte viable performe radan, 95% des dongeons. Mais il y aura toujours, si tu fixes un dongeons particulier, une meilleure compôte latienne. Finalement, tu devrais juste faire une compôte qui est liée. Avant qu'on soit une team de 6 sur Vakfu, tu dois te poser la question suivante. Comment est-ce que tu veux te support, et comment est-ce que tu veux te dépêter ? Un dépêter, c'est un rox. C'est quelqu'un qui veut faire des dégâts. Et un support, c'est n'importe quel autre person qui ne va pas taper. Son but principal, ce sera soit soigné, soit placé, soit protégé, peu importe. Alors, pour répondre à cette question, déjà tout se fait. Les décompôts très efficaces avec un seul dépêter et certains dongeons THL ont été réussis avec au moins 5 dpT. Ce qu'il faut savoir sur Vakfu, c'est que pour ta team fonctionne, il faut que tes dépêtés soient bien stuffes. Et un seul dépêter, ça coûte cher. Donc plus t'en a, plus ça va te coûter cher. Du coup, je te conseille de limiter dans le nombre de dépêtés et d'en avoir que 2 ou 3. Personnellement, je le plus souvent en 2 dpT, et pas pour l'aspect économique. Parce qu'en plus de cet avantage, c'était compôts qui sont très efficaces. Après, je peux comprendre que t'aime pas trop ça. Tu préfères taper taper tapé. Dans ce cas là, je te considère avoir 3 dpT, 3 supports, ce sera un bon équilibre quand même. En tout cas, ce qu'il faut retenir, c'est que t'as pas besoin d'avoir plein de dépêtés pour faire un super score. L'idée de me manquer que 2 c'est justement de créer les conditions parfaites. Tu bousses ta frontée dpT, tu plas super bien les mobs, et derrière tu les tombes super vite. Ok, maintenant qu'on a posé les bases, on va maintenant passer à du concret. Comment qu'on soit à une bonne scene de 6 avec 2 dpT ? Première question classique, est-ce qu'on joue mes les plus distances, double distance ou double mêlée ? Pour le combo, mes les plus distances, c'est le plus polyvalon. Tu peux littéralement faire tous les dangers du jeu, sans exception. Au niveau du double distance, c'est quasi mon pareille. Tu passeras à 99% du contenu sans soucis. Les mécaniques qui désarantage les distances sont vraiment traires. Si tu joues au double mêlée, c'est un petit peu différent. Tu pourras néanmoins faire au moins à 95% du jeu. Il n'y a qu'une petite poignée des donjons qui vont punir le double mêlée. En bref, rete-en juste une chose. Le plus important, c'est d'avoir au moins 1 dpTzone pour ne pas que les combattraines. Même si tu es une juste de mobs à la fois, c'est déjà un énorme gain de temps. Ensuite, par l'on des supports, ce sont eux qui vont chouchouter nos deux dpT. On va les glacer sous plusieurs roules, le soin, l'armure, le retrait résistant, ce placement, mais aussi le bouss déil, le bouss PAPM et le retrait PAM. Ces roules ne se valent pas. Les indispensables, ce sont le soin, l'armure, le rail-raise et le placement. Un mob qui a perdu 200 résistances, reçoit 56% des gaz supplémentaires. C'est à ne surtout pas négligé. Le placement, c'est là que les non seulement pour certaines mécaniques de donjon à un niveau, mais aussi pour créer des zones efficaces pour les dpT et donc finales et combattrent beaucoup plus vite. Le bouss déil, c'est présent dans la plupart des classes supports, donc tu n'as pas vraiment besoin de choisir tes classes en fonction. Par contre, le bouss PAPM c'est plus niche, mais ça reste qu'un optionnel, ni près de pas trop attention. En revanche, le rail-PAM bien que je le considère optionnel, en piste d'exemple je ne joue quasiment jamais que du rail-PAM, je trouve que c'est ultra fort. Pouvoir immobiliser un ou deux mobs ou même le bouss à certains tours clés, ça facilite vraiment le combat. Si jamais ça t'intéresse de jeux des classes qui a en son capable, regarde du côté de l'ennu, du sade, de l'oport, de l'oginac ou même encore du fake-in. Au final, à démarche les plutôt simples. Tu choisis deux dpT qui te plaissent vraiment, t'essets d'en avoir au moins un qui-zone et quatre supports complémentaires qui couvent les rolls essentiels. Les synergies dans Wapfu, c'est souvent de la micro-optimisation, ne cherchent pas la compôtre parfaite, cherchent une composition équilibrée et agréable à jouer. Parce que ce qui fait la différence, ce n'est pas d'avoir les classes qui sont de bonne sur le papier, mais plutôt d'avoir une team que tu maîtrises et que tu aimes jouer. On commence par les dpT. Je les ai classés en fonction de si ça a des pétés mêlés, distance ou polyvalents. Pour moi le panda, elle fait cas, c'est pas vraiment des dpT, même si le fait cas on peut le jouer glif et tu es quelques mobs, ça ne la astrape si optique ça. Les nines non plus d'ailleurs, c'est pas un dpT que je conseille, c'est pas très fort, par contre c'est quand même jouable, donc je l'ai mis dans la catégorie distance. Le Zobal va taper très fort en mêlés à l'aide de collision, donc si la cible n'est pas stabilisée, c'est malheureusement souvent le cas en très haut niveau et c'est pour ça qu'on le joue plutôt en support. Aussi, j'ai tenu à mettre l'eau sa modacée et l'éliotrop dans les deux catégories mêlés et distances parce que ce sont vraiment un mode mêlée et un mode distance. Pour les perso-poli-valances, ce sont des perso-que sont vraiment pour les valances un du même combat qui peuvent taper de loin, comme de proche. Comme je le disais tout à l'heure, c'est important d'avoir même si ce n'est pas obligatoire au moins à dpTZone. Je vous ai donc classifié les dpT en fonction de si peuftapé sur une grande zone ou au contraire sur une petite zone. Le dpTZone, c'est souvent celui qu'on appelle le dpT principal. Les supports jouent autour de lui. Les mobs seront placés pour lui, et les boost seront pour lui, et ça lui permettra de tuer les mobs très rapidement. Par exemple, on peut citer l'éliotrop, qu'il y a une très bonne zone en mêlée au tour de deux. Si jamais tu place correctement les mobs, il va quasiment tous les tuer. Par contre, c'est toujours jeudi distance, les leotrop sera plutôt faible en zone et sera plutôt un personnage monossible. Le roublard et le steamer sont aussi très bons en zone, mais leurs mécaniques sont assez complexes à comprendre et à maîtriser surtout. Ce sera du coup beaucoup plus difficile à mettre en place plutôt qu'un crau ou qu'un yop. Je ne les conseille que si vous êtes vraiment attiré par la classe. Le sédita c'est vraiment un carapart. Pour zonner des mobs, tu vas devoir mettre des poisons et donc les mobs vont mettre plusieurs tours à mourir. Cependant, si t'as du ralp APM, tu vas pouvoir utiliser son vent en poisonner pour faire encore plus de proches de poison et là ce sera encore plus efficace. Cependant, c'est vraiment une team particulière pour un gameplay particulier, renseigne-toi avant de te lancer là-dedans. En bref, test un peu toutes les classes et choisissez les deux que tu préfères. Essayez d'en avoir au moins une des deux qui zônes. Par exemple, si tu as choisi les lieux trop pécras, ne jouez pas les deux distances mono, je vous plutôt, soit le grand zone, soit les lieux mes lesones pour jouer avec le crâme au nocil. On va ensuite parler des supports. J'éclasse les chacclasses selon son efficacité dans les roules les plus importants. Le soin à l'armure, le retrase distance et le placement. Notez que je n'ai pas mis d'ordre au sein de chaque catégorie. Pour les soigneurs, par exemple, les plus efficaces seront lennies et nécaflipes. Ce qui ne veut pas dire que les classes en dessous sont trop faibles ou nuls, mais jusqu'à ce qui peut être moins. Elle compense d'un moins souvent avec beaucoup d'autres outils. Par exemple, le zobal peut placer, le sable de l'aspe de placer et à l'raise, le peur et les lieux peuvent tpt, etc. En ce qui concerne le don d'armure, le fait qu'à et le steamur sont clairement les meilleurs, mais on peut essayer les chercher du côté du zobal ou du sadi-da qui offre si un très bon chile. Dans le tirbon, sachez que l'osage-chile est énormément à banniveau, sûrement beaucoup plus que le steamur elle fait qu'à d'ailleurs, mais beaucoup moins interchelle, c'est pour ça qu'il est que dans le tirbon. Les lieux tropes, par exemple, aussi peu chiles, mais ça demande à gameplay assez atypique, puisque ça demande d'avoir beaucoup de points de vie et donc tout de jouer tant que sur les yotropes. J'insiste sur ce point, mais n'y le steamur ni le fait qu'à son obligatoire. Tu peux très bien te contenter d'un chile un peu moins bon ou de combiner deux classes moyennes afin d'avoir un chile de tout à fait connecte. Du côté du retrait des résistances, là aussi deux classes se démarquent. Les lieux trops fait l'osamodace. Si vous avez l'une de ces deux classes, vous pourrez facilement ralérer de son résistance de mobs. Les classes juste en dessous aussi pourront ralérer de mobs, cependant ce sera dans des conditions un peu plus difficiles. Et plus vous allez en dessous moins ce sera efficace, par exemple, aux oeufs à celles du coup de beaucoup trop cher, le steamur c'est un ral de 150 sur une cible pendant deux tours, et enfin l'énisse un ralresse qui se stacque sur plusieurs tours donc plutôt contre un boss. On passe maintenant à la tirer ce déplaçeur. Comme tu le vois, le pendant n'est pas le seul très bon placer. Le sebal vient clairement le concurrencer et même parfois le surpasser, et ce surtout sur des petites mobs. En plus, il peut tout en les plaçant retirer des résistances et même donner le dos. En bref c'est un vrai couteau suisse. Le sacré en lui, c'est sans doute le meilleur pour rassembler un pack de momme. Le souci, c'est qu'il ne donne pas le dos, et qu'à part de placement il n'apporte pas vraiment grand chose. Parmi les plaçers optis, on retrouve aussi le parmage et les lieux tropes. M'attends si on se sent des gameplays vraiment exotiques et pas forcément simple à maîtriser. Le fait qu'il y a lui, un placement très précis et souvent sous-estimeux. Et enfin, je vous citais le Xéleur dans une catégorie un peu à pas. Son placement peut être fort, mais il dépend de beaucoup de conditions et de nombre de beaucoup plus efforts que d'autres pour ne pas forcément avoir un meilleur résultat. Maintenant que tu as vu un peu les forces de chaque classe, tu vas pouvoir composer ta table de cis. Choisis d'abord deux d'épéter favoris. Par exemple, Yopcra ou ou Xéle, puis complète avec quatre super équilibrés. Un bon moyen de le faire, c'est d'en prendre un par rôle important. Un pour le soin, un pour la mure, un pour le retrait résistance, et enfin un pour le placement. Et si tu n'es un Nilfekan, il est Timmer, c'est pas grave, tu peux par exemple combiner deux perso moyens dont d'armure, par exemple, le s'adider et le s'affraient un très bon travail. Et maintenant, comment à cliquer tout ça pour former une team 3-3, 3 supports, 3 dpT ? En fait, le principe est le même, simplement, moins tu as de support plus de vêtres de polyvalon, et plus tu as dpT, inversement, plus de vêtres indépendants et polyvalon. Donc, par exemple, ce que je vous propose, c'est de prendre sa dida au s'asobale. On vérifie qu'on a bien tous les rôles nécessaires, on a le s'adida pour lui, l'osamonas pour le ralraise, le placement à l'armure pourront tous les deux être réalisés, via l'osamonas et le samanas. Donc, là, Tim, est très bien nippo-support. Au niveau des pétés, on a leop, ah, il est plutôt dépendant des supports. À côté de ça, on a leop, leop est un peu plus indépendant parce qu'il va pouvoir aller chercher le dos tout seul, il va pouvoir se régénérer et être un peu plus tranquille. Et à côté de ça, un neuf par match, pourquoi pas, on peut délicathe tu pourras replacer le jeu, ou même soigner tes avions. Donc, d'obalement, au niveau de support, tu choisies ce que tu veux. Tu as juste avéré effecté à bien les rôles essentiels, et pour les dpt, évident de prendre 3 dpt dépendant, par exemple, si tu prends un éliotrop, mais les zones et le steamer qui dépendent tous les deux fortement du placement, ça reste que d'être plus compliqué. Et si tu ne comptes pas jouer le team de 6, ce que je ne conseille d'ailleurs pas si tu débute toi que fous, tu n'as pas attendu pour rien, je te donne comment raisonner pour faire la même chose avec ta team de 3. Dans ce cas là, tu as le choix entre deux choses, soit deux supports et un dpt, ou un support et deux dpt. Dans le deuxième cas, tu vas plutôt avoir besoin d'un support très polyvalent, mais aussi de dpt plutôt autonome et polyvalent. Par exemple, prenons une coupons moyenne, si tu choisis fait qu'il y a un SRAMIOP, oui, ça fonctionnera très bien sur une grosse partie du jeu, mais elle n'a niéretre réassistance ni soin, donc tu te mets des bâtrons dans les rôles, surtout à THL. Si tu tombes avec un co-équipier qui n'en a pas non plus, alors ça reste que t'es vraiment compliqué. Je te conseille dans ce cas là plutôt une team comme Féka et Kaïop, tu gagnes du soin du placement de l'armure et du rôtre réassistance, tout en gardant un bon dpt. Un autre exemple c'est le steamur lennu et les lieaux. Là c'est un peu plus atypique mais ça marche très bien. Le steamur peut s'occuper du chilé du placement, les nus tapent tout en retirant d'un résistance et les lieaux peut soigner ou taper fort selon la situation. Maintenant tu sais comment composer une bonne team de 6, mais ça ne s'arrête pas là, il faut aussi savoir comment la faire fonctionner. Et ça, je te parlerai dans une prochaine vidéo. N'hésitez pas à poser tes questions en commentaire ou à proposer des sujets que tu aimerais que je traite. A bientôt !
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+Newton world. Today we are going to answer a question that often comes up on Twitch. How to choose the right sim on Vakfu? We would start with the case of a team of 6, which we would apply the same logic to a team of 3. It is often the same questions that come up. Is the panda obligatory? Do you need to be able to type in all elements? Can we play the same class several times? Or is my composition visible? For these questions, I will answer them. No, no, yes and yes. Indeed, a panda fits very well. But sometimes it will be the zobal which will be more effective. You bait in all the elements ultimately, it is only useful in very little danger. Some classes quickly become good when you play them in multiple copies. This is the case for summoners like the salzobal or the satedar. This is useful because of the limitation on summons. On the other hand, the Yop does not have this problem. Young people do not depend on summons and in addition there is no global revival on Vakfu. In summary, if your team is balanced, then it is viable. And by aviat, I mean that you will be able to do almost the entire game, even in stage 5 or higher. Now, there is a question that comes up a lot about Vakfu. What is the best composition? Well, there isn't one. In some dungeons, it's the panda that shines, in others the zobal ones. Sometimes the fact that she is a taster, sometimes it is the scimitar. To summarize, a viable composite performs radan, 95% of the dungeons. But there will always be, if you fix a particular dungeon, a better Latian compote. Finally, you should just make a compote that is linked. Before we are a team of 6 on Vakfu, you need to ask yourself the following question. How do you want to support yourself, and how do you want to cope? A skinner is a rox. This is someone who wants to do damage. And support is any other person who is not going to type. Its main goal will be either treated, placed, protected, whatever. So, to answer this question, everything is already done. Very effective decompositions with a single debark and some THL dungeons were successful with at least 5 dpT. What you need to know about Vakfu is that for your team to work, your soldiers must be good stuff. And just one stripping is expensive. So the more you have, the more it will cost you. So, I advise you to limit the number of deposits and to only have 2 or 3. Personally, I most often use 2 dpT, and not for the economic aspect. Because in addition to this advantage, it was compounds that are very effective. Afterwards, I can understand that you don't really like it. You prefer to type, type, type. In this case, I consider you to have 3 dpT, 3 supports, it will be a good balance all the same. In any case, what you need to remember is that you don't need to have lots of players to get a great score. The idea of ​​missing me only 2 is precisely to create the perfect conditions. You push your dpT front, you place the mobs really well, and behind you you fall them really quickly. Ok, now that we have laid the foundations, we will now move on to concrete matters. How can we be at a good scene of 6 with 2 dpT? First classic question, do we play my longest distances, double distance or double scrum? For the combo, my longest distances, it is the most versatile. You can literally do every hazard in the game, no exceptions. In terms of double distance, he's almost my equal. You will get through 99% of the content without problems. The mechanics that disrupt distances are really lame. If you play double scrum, it's a little bit different. However, you will be able to complete at least 95% of the game. There are only a small handful of dungeons that will punish double melee. In short, just remember one thing. The most important thing is to have at least 1 dpTzone so you don't just have to fight. Even if you have just a few mobs at a time, it's already a huge time saver. Then, through one of the supports, they are the ones who will pamper our two dpTs. We are going to glaze them under several rolls, the care, the armor, the resistant withdrawal, this placement, but also the deil bouss, the PAPM bouss and the PAM withdrawal. These wheels are not worth it. The essentials are healing, armor, rail-raise and placement. A mob that has lost 200 resistances receives 56% additional gas. This is definitely not to be neglected. Placement is where not only for certain dungeon mechanics at a level, but also to create effective areas for dpT and therefore final and fight much faster. The good news is that it's present in most support classes, so you don't really need to choose your classes accordingly. On the other hand, the PAPM bouss is more niche, but it remains only optional, not too careful. On the other hand, the rail-PAM although I consider it optional, on the example track I almost never play anything but the rail-PAM, I find that it is ultra strong. Being able to immobilize one or two mobs or even the boss in certain key turns really makes the fight easier. If you are ever interested in class games that have what they can, look at ennu, sade, oport, oginac or even fake-in. In the end, the process is rather simple. You choose two dpTs that you really like, you make sure to have at least one that is suitable and four complementary supports that cover the essential rolls. The synergies in Wapfu are often micro-optimization, not looking for the perfect composition, looking for a balanced and pleasant composition to play. Because what makes the difference is not having classes that are good on paper, but rather having a team that you master and that you enjoy playing. We start with the dpTs. I classified them according to whether it has mixed, distance or versatile farts. For me the panda, it's case, it's not really dpT, even if it's case we can play it glif and you are a few mobs, it doesn't grab it so optically that. The nines either, it's not a dpT that I recommend, it's not very strong, on the other hand it's still playable, so I put it in the distance category. The Zobal will hit very hard in melee using collision, so if the target is not stabilized, this is unfortunately often the case at very high level and that is why we play it more in support. Also, I wanted to put modaceous water and eliotrop in the two melee and distance categories because they are really a melee mode and a distance mode. For the poli-valances, these are the characters who are really for the valances one of the same fight who can hit from far away, as well as up close. As I said earlier, it's important to have even if it's not obligatory at least at dpTZone. I have therefore classified the dpTs according to whether they are populated over a large area or on the contrary over a small area. The dpTZone is often called the main dpT. The supports play around him. The mobs will be placed for him, and the boosts will be for him, and this will allow him to kill the mobs very quickly. For example, we can cite the eliotrop, that there is a very good melee zone on turn two. If you place the mobs correctly, he will almost kill them all. On the other hand, it's still Thursday distance, the leotrop will be rather weak in area and will rather be a single-mount character. The rogue and the steamer are also very good in zone, but their mechanics are quite complex to understand and especially to master. It will therefore be much more difficult to put in place rather than a crunch or a yop. I only recommend them if you are really attracted to the class. The Sédita is really a carapart. To zone mobs, you will have to put poisons and therefore the mobs will take several turns to die. However, if you have APM ralp, you will be able to use its wind in poison to make even more poison close and then it will be even more effective. However, it's really a special team for a particular gameplay, find out before you jump into it. In short, test all the classes a bit and choose the two that you prefer. Try to have at least one of the two zones. For example, if you have chosen the places that are too dark, do not play the two mono distances, I would rather, either the big zone, or the places my lesones to play with the black to the nocil. We will then talk about the supports. I rank each class according to its effectiveness in the most important rolls. Armor healing, distance tracking and placement. Note that I have not put an order within each category. For healers, for example, the most effective will be lennies and necaflipes. Which is not to say that the classes below are too weak or rubbish, but as far as that can be less. She compensates for less often with many other tools. For example, the zobal can place, the sand of the aspe to place and at ease, the fear and the places can tpt, etc. Regarding the gift of armor, the fact that and the steamur are clearly the best, but we can try to look for them on the side of the zobal or the sadi-da which offers a very good chile. In the tirbon, know that the osage-chile is enormously small, certainly much more than the steamer it does elsewhere, but much less interchelle, that's why it is only in the tirbon. The trope locations, for example, are also not very cool, but they require quite atypical gameplay, since it requires having a lot of life points and therefore everything to play as long as on the yotropes. I insist on this point, but neither the steamer nor the fact is obligatory. You can very well settle for a slightly less good chile or combine two average classes in order to have a completely connected chile. On the side of removing resistance, here too two classes stand out. The places too make the osamodace. If you have one of these two classes, you will easily be able to complain about its mob resistance. Classes just below will also be able to spawn mobs, however this will be in slightly more difficult conditions. And the lower you go the less effective it will be, for example, with eggs and those that are much too expensive, the steamer is a ral of 150 on a target for two turns, and finally the enisse is a ralresse which is stacked over several turns so rather against a boss. We now move on to pulling this mover. As you see, the pendant is not the only very good place. The sebal clearly competes with it and sometimes even surpasses it, especially on small mobs. In addition, while placing them, it can remove resistance and even give the back. In short, it's a real Swiss army knife. The sacred in him is undoubtedly the best for gathering a pack of momme. The problem is that he doesn't give his back, and apart from placement he doesn't really bring much. Among the opti placements, we also find parmage and trope places. Wait for me if it feels really exotic gameplay and not necessarily easy to master. The fact that there is him, a very precise and often underestimated placement. And finally, I mentioned the Xéleur in a somewhat step-by-step category. Its placement can be strong, but it depends on many conditions and a lot more effort than others to not necessarily have a better result. Now that you have seen a little of the strengths of each class, you will be able to compose your cis table. First choose two favorite spellings. For example, Yopcra or or Xélé, then complete with four super balanced. A good way to do this is to take one per important role. One for healing, one for ripening, one for removing resistance, and finally one for placement. And if you're not a Nilfekan, he's Timmer, it doesn't matter, you can for example combine two average characters including armor, for example, the s'adider and the s'affront a very good job. And now, how to click all this to form a 3-3 team, 3 supports, 3 dpT? In fact, the principle is the same, simply, the less support you have, the more polyvalon clothing, and the more dpT you have, conversely, the more independent and polyvalon clothing. So, for example, what I suggest to you is to take your dida to the asobale. We check that we have all the necessary roles, we have the s'adida for him, the osamonas for the ralraise, the placement in the armor can both be achieved, via the osamonas and the samanas. So, there, Tim, is very Japanese-supportive. In terms of farts, we have leop, ah, he is rather dependent on the supports. Besides that, we have Leop, Leop is a little more independent because he will be able to get the back on his own, he will be able to regenerate and be a little more peaceful. And besides that, a nine per match, why not, we can delicately you can replace the game, or even heal your planes. So, basically, at the support level, you choose what you want. You just proved to have performed the essential roles well, and for the dpts, it's obvious to take 3 dependent dpts, for example, if you take an eliotrop, but the zones and the steamer which both strongly depend on the placement, it remains only to be more complicated. And if you don't plan to play the team of 6, which I don't recommend if you're just starting out, you didn't wait for nothing, I'll give you how to think about doing the same thing with your team of 3. In this case, you have the choice between two things, either two supports and a dpt, or one support and two dpts. In the second case, you will need very versatile support, but also a rather autonomous and versatile DPT. For example, let's take an average coupon, if you choose that there is a SRAMIOP, yes, it will work very well for a large part of the game, but it does not have any re-assistance or healing, so you are putting yourself in trouble in the roles, especially in THL. If you end up with a teammate who doesn't have one either, then you're still really complicated. In this case, I recommend a team like Féka and Kaïop, you gain from taking care of the placement of the armor and your own re-assistance, while keeping a good deposit. Another example is the steamer lennu and les lieaux. This is a little more unusual but it works very well. The steamer can take care of the chile of the placement, the nudes tap while removing a resistance and the lieaux can heal or hit hard depending on the situation. Now you know how to put together a good team of 6, but it doesn't stop there, you also need to know how to make it work. And I'll talk to you about that in a future video. Don't hesitate to ask your questions in the comments or suggest topics that you would like me to cover. See you soon !.
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 5.00s]  Newtom monde.
+[5.00s - 8.34s]  Aujourd'hui on va répondre à une question qui revient souvent sur Twitch.
+[8.34s - 11.00s]  Comment bien choisir cette sim sur Vakfu ?
+[11.00s - 13.20s]  On commencerait par le cas d'une team de 6,
+[13.20s - 16.00s]  que l'on appliquerait la même logique à un team de 3.
+[16.00s - 18.10s]  C'est souvent les mêmes questions qui reviennent.
+[18.10s - 19.80s]  Est-ce que le panda est obligatoire ?
+[19.80s - 22.10s]  Est-ce qu'il faut pouvoir taper dans tous les éléments ?
+[22.10s - 24.00s]  Est-ce qu'on peut jouer plusieurs fois la même classe ?
+[24.00s - 26.00s]  Ou est-ce que ma compo est visable ?
+[26.00s - 27.50s]  Pour ces questions, j'en vais répondre.
+[27.50s - 29.50s]  Non, non, oui et oui.
+[29.60s - 32.00s]  Effectivement, un panda s'applace super bien.
+[32.00s - 34.50s]  Mais parfois ce sera le zobal qui sera plus efficace.
+[34.50s - 36.00s]  T'appets dans tous les éléments finalement,
+[36.00s - 38.00s]  ça ne sert que dans très peu de danger.
+[38.00s - 40.00s]  Certains classes deviennent vite mon bonnes quand tu les joues
+[40.00s - 41.50s]  en plusieurs exemplaires.
+[41.50s - 44.00s]  C'est le cas des invocateurs comme le salzobal ou le satedar.
+[44.00s - 46.50s]  Ça sert à cause de la limitation sur les invocations.
+[46.50s - 49.00s]  En revanche, le Yop lui n'a pas ce problème.
+[49.00s - 50.50s]  Des jeunes ne dépend pas des invocations
+[50.50s - 53.00s]  et en plus il n'y a pas de relance global sur Vakfu.
+[53.00s - 54.00s]  En résumé,
+[54.00s - 56.50s]  si ta team est équilibré, alors elle est viable.
+[56.50s - 59.00s]  Et par aviat, j'entends que tu pourras faire quasiment tout le jeu,
+[59.00s - 61.00s]  même en stade est 5 ou plus.
+[61.00s - 63.50s]  Maintenant, il y a une question qui revient souvent sur Vakfu.
+[63.50s - 65.00s]  C'est quoi la meilleure compôt ?
+[65.00s - 67.00s]  Et bien, il n'y en a pas.
+[67.00s - 69.00s]  Dans certains dongeons, c'est le panda qui brille,
+[69.00s - 70.00s]  dans d'autres celles zobales.
+[70.00s - 71.00s]  Parfois le fait qu'elle est goûtière,
+[71.00s - 72.50s]  parfois c'est le cimetre.
+[72.50s - 73.50s]  Pour résumer,
+[73.50s - 75.00s]  une compôte viable performe radan,
+[75.00s - 77.00s]  95% des dongeons.
+[77.00s - 78.00s]  Mais il y aura toujours,
+[78.00s - 79.50s]  si tu fixes un dongeons particulier,
+[79.50s - 81.50s]  une meilleure compôte latienne.
+[81.50s - 82.50s]  Finalement,
+[82.50s - 85.00s]  tu devrais juste faire une compôte qui est liée.
+[85.00s - 87.00s]  Avant qu'on soit une team de 6 sur Vakfu,
+[87.00s - 88.50s]  tu dois te poser la question suivante.
+[88.50s - 90.00s]  Comment est-ce que tu veux te support,
+[90.00s - 92.00s]  et comment est-ce que tu veux te dépêter ?
+[92.00s - 93.00s]  Un dépêter, c'est un rox.
+[93.00s - 95.00s]  C'est quelqu'un qui veut faire des dégâts.
+[95.00s - 97.50s]  Et un support, c'est n'importe quel autre person qui ne va pas taper.
+[97.50s - 99.50s]  Son but principal, ce sera soit soigné,
+[99.50s - 103.00s]  soit placé, soit protégé, peu importe.
+[103.00s - 105.00s]  Alors, pour répondre à cette question,
+[105.00s - 107.00s]  déjà tout se fait.
+[107.00s - 109.50s]  Les décompôts très efficaces avec un seul dépêter
+[109.50s - 111.50s]  et certains dongeons THL ont été réussis
+[111.50s - 113.50s]  avec au moins 5 dpT.
+[113.50s - 115.00s]  Ce qu'il faut savoir sur Vakfu,
+[115.00s - 116.00s]  c'est que pour ta team fonctionne,
+[116.00s - 118.00s]  il faut que tes dépêtés soient bien stuffes.
+[118.50s - 120.50s]  Et un seul dépêter, ça coûte cher.
+[120.50s - 122.50s]  Donc plus t'en a, plus ça va te coûter cher.
+[122.50s - 125.00s]  Du coup, je te conseille de limiter dans le nombre de dépêtés
+[125.00s - 127.00s]  et d'en avoir que 2 ou 3.
+[127.00s - 130.00s]  Personnellement, je le plus souvent en 2 dpT,
+[130.00s - 131.50s]  et pas pour l'aspect économique.
+[131.50s - 133.00s]  Parce qu'en plus de cet avantage,
+[133.00s - 135.00s]  c'était compôts qui sont très efficaces.
+[135.00s - 137.00s]  Après, je peux comprendre que t'aime pas trop ça.
+[137.00s - 139.00s]  Tu préfères taper taper tapé.
+[139.00s - 141.00s]  Dans ce cas là, je te considère avoir 3 dpT,
+[141.00s - 143.00s]  3 supports, ce sera un bon équilibre quand même.
+[143.00s - 145.00s]  En tout cas, ce qu'il faut retenir,
+[145.00s - 146.50s]  c'est que t'as pas besoin d'avoir plein de dépêtés
+[146.50s - 147.50s]  pour faire un super score.
+[148.00s - 150.50s]  L'idée de me manquer que 2 c'est justement de créer les conditions parfaites.
+[150.50s - 152.00s]  Tu bousses ta frontée dpT,
+[152.00s - 153.50s]  tu plas super bien les mobs,
+[153.50s - 155.00s]  et derrière tu les tombes super vite.
+[155.00s - 157.50s]  Ok, maintenant qu'on a posé les bases,
+[157.50s - 159.00s]  on va maintenant passer à du concret.
+[159.00s - 162.00s]  Comment qu'on soit à une bonne scene de 6 avec 2 dpT ?
+[162.00s - 164.00s]  Première question classique,
+[164.00s - 165.50s]  est-ce qu'on joue mes les plus distances,
+[165.50s - 168.00s]  double distance ou double mêlée ?
+[168.00s - 169.50s]  Pour le combo,
+[169.50s - 172.00s]  mes les plus distances, c'est le plus polyvalon.
+[172.00s - 174.50s]  Tu peux littéralement faire tous les dangers du jeu,
+[174.50s - 176.00s]  sans exception.
+[176.50s - 179.00s]  Au niveau du double distance, c'est quasi mon pareille.
+[179.00s - 182.00s]  Tu passeras à 99% du contenu sans soucis.
+[182.00s - 186.00s]  Les mécaniques qui désarantage les distances sont vraiment traires.
+[187.00s - 189.50s]  Si tu joues au double mêlée, c'est un petit peu différent.
+[189.50s - 192.00s]  Tu pourras néanmoins faire au moins à 95% du jeu.
+[192.00s - 194.00s]  Il n'y a qu'une petite poignée des donjons
+[194.00s - 196.00s]  qui vont punir le double mêlée.
+[197.00s - 199.00s]  En bref, rete-en juste une chose.
+[199.00s - 201.50s]  Le plus important, c'est d'avoir au moins 1 dpTzone
+[201.50s - 203.00s]  pour ne pas que les combattraines.
+[203.00s - 205.00s]  Même si tu es une juste de mobs à la fois,
+[205.00s - 207.00s]  c'est déjà un énorme gain de temps.
+[208.00s - 209.50s]  Ensuite, par l'on des supports,
+[209.50s - 211.50s]  ce sont eux qui vont chouchouter nos deux dpT.
+[211.50s - 214.00s]  On va les glacer sous plusieurs roules, le soin,
+[214.00s - 216.00s]  l'armure, le retrait résistant, ce placement,
+[216.00s - 219.50s]  mais aussi le bouss déil, le bouss PAPM et le retrait PAM.
+[219.50s - 221.50s]  Ces roules ne se valent pas.
+[221.50s - 224.50s]  Les indispensables, ce sont le soin, l'armure, le rail-raise
+[224.50s - 226.50s]  et le placement.
+[226.50s - 228.00s]  Un mob qui a perdu 200 résistances,
+[228.00s - 230.50s]  reçoit 56% des gaz supplémentaires.
+[230.50s - 232.50s]  C'est à ne surtout pas négligé.
+[233.00s - 235.00s]  Le placement, c'est là que les non seulement
+[235.00s - 237.00s]  pour certaines mécaniques de donjon à un niveau,
+[237.00s - 240.00s]  mais aussi pour créer des zones efficaces pour les dpT
+[240.00s - 242.00s]  et donc finales et combattrent beaucoup plus vite.
+[244.00s - 246.00s]  Le bouss déil, c'est présent dans la plupart des classes supports,
+[246.00s - 249.00s]  donc tu n'as pas vraiment besoin de choisir tes classes en fonction.
+[250.00s - 252.00s]  Par contre, le bouss PAPM c'est plus niche,
+[252.00s - 253.50s]  mais ça reste qu'un optionnel,
+[253.50s - 255.00s]  ni près de pas trop attention.
+[256.00s - 259.00s]  En revanche, le rail-PAM bien que je le considère optionnel,
+[259.00s - 262.00s]  en piste d'exemple je ne joue quasiment jamais que du rail-PAM,
+[262.50s - 264.50s]  je trouve que c'est ultra fort.
+[264.50s - 268.50s]  Pouvoir immobiliser un ou deux mobs ou même le bouss à certains tours clés,
+[268.50s - 271.50s]  ça facilite vraiment le combat.
+[271.50s - 274.50s]  Si jamais ça t'intéresse de jeux des classes qui a en son capable,
+[274.50s - 277.50s]  regarde du côté de l'ennu, du sade, de l'oport, de l'oginac
+[277.50s - 279.50s]  ou même encore du fake-in.
+[279.50s - 282.00s]  Au final, à démarche les plutôt simples.
+[282.00s - 284.00s]  Tu choisis deux dpT qui te plaissent vraiment,
+[284.00s - 286.00s]  t'essets d'en avoir au moins un qui-zone
+[286.00s - 289.50s]  et quatre supports complémentaires qui couvent les rolls essentiels.
+[290.00s - 291.50s]  Les synergies dans Wapfu,
+[291.50s - 293.00s]  c'est souvent de la micro-optimisation,
+[293.00s - 294.50s]  ne cherchent pas la compôtre parfaite,
+[294.50s - 297.50s]  cherchent une composition équilibrée et agréable à jouer.
+[297.50s - 299.50s]  Parce que ce qui fait la différence,
+[299.50s - 301.50s]  ce n'est pas d'avoir les classes qui sont de bonne sur le papier,
+[301.50s - 304.50s]  mais plutôt d'avoir une team que tu maîtrises et que tu aimes jouer.
+[305.50s - 306.50s]  On commence par les dpT.
+[306.50s - 309.50s]  Je les ai classés en fonction de si ça a des pétés mêlés,
+[309.50s - 311.50s]  distance ou polyvalents.
+[312.50s - 314.50s]  Pour moi le panda, elle fait cas, c'est pas vraiment des dpT,
+[314.50s - 316.50s]  même si le fait cas on peut le jouer glif
+[316.50s - 318.50s]  et tu es quelques mobs,
+[318.50s - 320.50s]  ça ne la astrape si optique ça.
+[321.50s - 322.50s]  Les nines non plus d'ailleurs,
+[322.50s - 324.50s]  c'est pas un dpT que je conseille,
+[324.50s - 325.50s]  c'est pas très fort,
+[325.50s - 326.50s]  par contre c'est quand même jouable,
+[326.50s - 328.50s]  donc je l'ai mis dans la catégorie distance.
+[328.50s - 331.50s]  Le Zobal va taper très fort en mêlés à l'aide de collision,
+[331.50s - 333.50s]  donc si la cible n'est pas stabilisée,
+[333.50s - 336.50s]  c'est malheureusement souvent le cas en très haut niveau
+[336.50s - 339.50s]  et c'est pour ça qu'on le joue plutôt en support.
+[339.50s - 341.50s]  Aussi, j'ai tenu à mettre l'eau sa modacée
+[341.50s - 344.50s]  et l'éliotrop dans les deux catégories mêlés et distances
+[344.50s - 347.50s]  parce que ce sont vraiment un mode mêlée et un mode distance.
+[348.50s - 349.50s]  Pour les perso-poli-valances,
+[349.50s - 351.50s]  ce sont des perso-que sont vraiment pour les valances
+[351.50s - 354.50s]  un du même combat qui peuvent taper de loin,
+[354.50s - 355.50s]  comme de proche.
+[356.50s - 357.50s]  Comme je le disais tout à l'heure,
+[357.50s - 360.50s]  c'est important d'avoir même si ce n'est pas obligatoire
+[360.50s - 361.50s]  au moins à dpTZone.
+[362.50s - 364.50s]  Je vous ai donc classifié les dpT en fonction de si peuftapé
+[364.50s - 367.50s]  sur une grande zone ou au contraire sur une petite zone.
+[368.50s - 370.50s]  Le dpTZone, c'est souvent celui qu'on appelle
+[370.50s - 372.50s]  le dpT principal.
+[372.50s - 374.50s]  Les supports jouent autour de lui.
+[374.50s - 376.50s]  Les mobs seront placés pour lui,
+[376.50s - 378.50s]  et les boost seront pour lui,
+[378.50s - 380.50s]  et ça lui permettra de tuer les mobs très rapidement.
+[382.50s - 384.50s]  Par exemple, on peut citer l'éliotrop,
+[384.50s - 387.50s]  qu'il y a une très bonne zone en mêlée au tour de deux.
+[387.50s - 389.50s]  Si jamais tu place correctement les mobs,
+[389.50s - 391.50s]  il va quasiment tous les tuer.
+[391.50s - 393.50s]  Par contre, c'est toujours jeudi distance,
+[393.50s - 395.50s]  les leotrop sera plutôt faible en zone
+[395.50s - 397.50s]  et sera plutôt un personnage monossible.
+[398.50s - 400.50s]  Le roublard et le steamer sont aussi très bons en zone,
+[400.50s - 403.50s]  mais leurs mécaniques sont assez complexes à comprendre
+[403.50s - 405.50s]  et à maîtriser surtout.
+[405.50s - 407.50s]  Ce sera du coup beaucoup plus difficile à mettre en place
+[407.50s - 409.50s]  plutôt qu'un crau ou qu'un yop.
+[409.50s - 412.50s]  Je ne les conseille que si vous êtes vraiment attiré par la classe.
+[412.50s - 414.50s]  Le sédita c'est vraiment un carapart.
+[414.50s - 417.50s]  Pour zonner des mobs, tu vas devoir mettre des poisons
+[417.50s - 419.50s]  et donc les mobs vont mettre plusieurs tours à mourir.
+[419.50s - 421.50s]  Cependant, si t'as du ralp APM,
+[421.50s - 423.50s]  tu vas pouvoir utiliser son vent en poisonner
+[423.50s - 425.50s]  pour faire encore plus de proches de poison
+[425.50s - 427.50s]  et là ce sera encore plus efficace.
+[427.50s - 430.50s]  Cependant, c'est vraiment une team particulière
+[430.50s - 432.50s]  pour un gameplay particulier,
+[432.50s - 434.50s]  renseigne-toi avant de te lancer là-dedans.
+[434.50s - 436.50s]  En bref, test un peu toutes les classes
+[436.50s - 437.50s]  et choisissez les deux que tu préfères.
+[437.50s - 440.50s]  Essayez d'en avoir au moins une des deux qui zônes.
+[440.50s - 442.50s]  Par exemple, si tu as choisi les lieux trop pécras,
+[442.50s - 444.50s]  ne jouez pas les deux distances mono,
+[444.50s - 446.50s]  je vous plutôt, soit le grand zone,
+[446.50s - 448.50s]  soit les lieux mes lesones
+[448.50s - 450.50s]  pour jouer avec le crâme au nocil.
+[450.50s - 452.50s]  On va ensuite parler des supports.
+[452.50s - 454.50s]  J'éclasse les chacclasses
+[454.50s - 456.50s]  selon son efficacité dans les roules les plus importants.
+[456.50s - 458.50s]  Le soin à l'armure, le retrase distance
+[458.50s - 460.50s]  et le placement.
+[460.50s - 463.50s]  Notez que je n'ai pas mis d'ordre au sein de chaque catégorie.
+[464.50s - 466.50s]  Pour les soigneurs, par exemple,
+[466.50s - 468.50s]  les plus efficaces seront lennies et nécaflipes.
+[468.50s - 470.50s]  Ce qui ne veut pas dire que les classes en dessous
+[470.50s - 472.50s]  sont trop faibles ou nuls,
+[472.50s - 474.50s]  mais jusqu'à ce qui peut être moins.
+[474.50s - 477.50s]  Elle compense d'un moins souvent avec beaucoup d'autres outils.
+[477.50s - 479.50s]  Par exemple, le zobal peut placer,
+[479.50s - 481.50s]  le sable de l'aspe de placer et à l'raise,
+[481.50s - 484.50s]  le peur et les lieux peuvent tpt, etc.
+[484.50s - 486.50s]  En ce qui concerne le don d'armure,
+[486.50s - 489.50s]  le fait qu'à et le steamur sont clairement les meilleurs,
+[489.50s - 491.50s]  mais on peut essayer les chercher du côté du zobal
+[491.50s - 494.50s]  ou du sadi-da qui offre si un très bon chile.
+[494.50s - 498.50s]  Dans le tirbon, sachez que l'osage-chile est énormément à banniveau,
+[498.50s - 501.50s]  sûrement beaucoup plus que le steamur elle fait qu'à d'ailleurs,
+[501.50s - 502.50s]  mais beaucoup moins interchelle,
+[502.50s - 504.50s]  c'est pour ça qu'il est que dans le tirbon.
+[504.50s - 506.50s]  Les lieux tropes, par exemple, aussi peu chiles,
+[506.50s - 508.50s]  mais ça demande à gameplay assez atypique,
+[508.50s - 510.50s]  puisque ça demande d'avoir beaucoup de points de vie
+[510.50s - 513.50s]  et donc tout de jouer tant que sur les yotropes.
+[513.50s - 515.50s]  J'insiste sur ce point,
+[515.50s - 517.50s]  mais n'y le steamur ni le fait qu'à son obligatoire.
+[517.50s - 520.50s]  Tu peux très bien te contenter d'un chile un peu moins bon
+[520.50s - 522.50s]  ou de combiner deux classes moyennes
+[522.50s - 524.50s]  afin d'avoir un chile de tout à fait connecte.
+[524.50s - 526.50s]  Du côté du retrait des résistances,
+[526.50s - 528.50s]  là aussi deux classes se démarquent.
+[528.50s - 530.50s]  Les lieux trops fait l'osamodace.
+[530.50s - 532.50s]  Si vous avez l'une de ces deux classes,
+[532.50s - 535.50s]  vous pourrez facilement ralérer de son résistance de mobs.
+[535.50s - 539.50s]  Les classes juste en dessous aussi pourront ralérer de mobs,
+[539.50s - 543.50s]  cependant ce sera dans des conditions un peu plus difficiles.
+[543.50s - 546.50s]  Et plus vous allez en dessous moins ce sera efficace,
+[546.50s - 549.50s]  par exemple, aux oeufs à celles du coup de beaucoup trop cher,
+[549.50s - 553.50s]  le steamur c'est un ral de 150 sur une cible pendant deux tours,
+[553.50s - 556.50s]  et enfin l'énisse un ralresse qui se stacque sur plusieurs tours
+[556.50s - 558.50s]  donc plutôt contre un boss.
+[558.50s - 560.50s]  On passe maintenant à la tirer ce déplaçeur.
+[560.50s - 563.50s]  Comme tu le vois, le pendant n'est pas le seul très bon placer.
+[563.50s - 566.50s]  Le sebal vient clairement le concurrencer et même parfois le surpasser,
+[566.50s - 568.50s]  et ce surtout sur des petites mobs.
+[568.50s - 572.50s]  En plus, il peut tout en les plaçant retirer des résistances
+[572.50s - 573.50s]  et même donner le dos.
+[573.50s - 575.50s]  En bref c'est un vrai couteau suisse.
+[575.50s - 578.50s]  Le sacré en lui, c'est sans doute le meilleur
+[578.50s - 580.50s]  pour rassembler un pack de momme.
+[580.50s - 582.50s]  Le souci, c'est qu'il ne donne pas le dos,
+[582.50s - 585.50s]  et qu'à part de placement il n'apporte pas vraiment grand chose.
+[585.50s - 589.50s]  Parmi les plaçers optis, on retrouve aussi le parmage et les lieux tropes.
+[589.50s - 592.50s]  M'attends si on se sent des gameplays vraiment exotiques
+[592.50s - 594.50s]  et pas forcément simple à maîtriser.
+[594.50s - 598.50s]  Le fait qu'il y a lui, un placement très précis et souvent sous-estimeux.
+[598.50s - 602.50s]  Et enfin, je vous citais le Xéleur dans une catégorie un peu à pas.
+[602.50s - 604.50s]  Son placement peut être fort,
+[604.50s - 607.50s]  mais il dépend de beaucoup de conditions et de nombre de beaucoup plus efforts que d'autres
+[607.50s - 610.50s]  pour ne pas forcément avoir un meilleur résultat.
+[610.50s - 613.50s]  Maintenant que tu as vu un peu les forces de chaque classe,
+[613.50s - 615.50s]  tu vas pouvoir composer ta table de cis.
+[615.50s - 617.50s]  Choisis d'abord deux d'épéter favoris.
+[617.50s - 620.50s]  Par exemple, Yopcra ou ou Xéle,
+[620.50s - 622.50s]  puis complète avec quatre super équilibrés.
+[622.50s - 625.50s]  Un bon moyen de le faire, c'est d'en prendre un par rôle important.
+[625.50s - 629.50s]  Un pour le soin, un pour la mure, un pour le retrait résistance,
+[629.50s - 631.50s]  et enfin un pour le placement.
+[631.50s - 634.50s]  Et si tu n'es un Nilfekan, il est Timmer,
+[634.50s - 638.50s]  c'est pas grave, tu peux par exemple combiner deux perso moyens dont d'armure,
+[638.50s - 642.50s]  par exemple, le s'adider et le s'affraient un très bon travail.
+[642.50s - 647.50s]  Et maintenant, comment à cliquer tout ça pour former une team 3-3, 3 supports, 3 dpT ?
+[647.50s - 650.50s]  En fait, le principe est le même, simplement,
+[650.50s - 653.50s]  moins tu as de support plus de vêtres de polyvalon,
+[653.50s - 657.50s]  et plus tu as dpT, inversement, plus de vêtres indépendants et polyvalon.
+[657.50s - 659.50s]  Donc, par exemple, ce que je vous propose,
+[659.50s - 662.50s]  c'est de prendre sa dida au s'asobale.
+[662.50s - 665.50s]  On vérifie qu'on a bien tous les rôles nécessaires,
+[665.50s - 667.50s]  on a le s'adida pour lui,
+[667.50s - 669.50s]  l'osamonas pour le ralraise,
+[669.50s - 672.50s]  le placement à l'armure pourront tous les deux être réalisés,
+[672.50s - 674.50s]  via l'osamonas et le samanas.
+[674.50s - 676.50s]  Donc, là, Tim, est très bien nippo-support.
+[676.50s - 678.50s]  Au niveau des pétés, on a leop,
+[678.50s - 680.50s]  ah, il est plutôt dépendant des supports.
+[680.50s - 683.50s]  À côté de ça, on a leop, leop est un peu plus indépendant
+[683.50s - 685.50s]  parce qu'il va pouvoir aller chercher le dos tout seul,
+[685.50s - 688.50s]  il va pouvoir se régénérer et être un peu plus tranquille.
+[688.50s - 690.50s]  Et à côté de ça, un neuf par match, pourquoi pas,
+[690.50s - 692.50s]  on peut délicathe tu pourras replacer le jeu,
+[692.50s - 694.50s]  ou même soigner tes avions.
+[694.50s - 697.50s]  Donc, d'obalement, au niveau de support, tu choisies ce que tu veux.
+[697.50s - 699.50s]  Tu as juste avéré effecté à bien les rôles essentiels,
+[699.50s - 703.50s]  et pour les dpt, évident de prendre 3 dpt dépendant,
+[703.50s - 705.50s]  par exemple, si tu prends un éliotrop,
+[705.50s - 708.50s]  mais les zones et le steamer qui dépendent tous les deux fortement du placement,
+[708.50s - 710.50s]  ça reste que d'être plus compliqué.
+[710.50s - 712.50s]  Et si tu ne comptes pas jouer le team de 6,
+[712.50s - 715.50s]  ce que je ne conseille d'ailleurs pas si tu débute toi que fous,
+[715.50s - 716.50s]  tu n'as pas attendu pour rien,
+[716.50s - 719.50s]  je te donne comment raisonner pour faire la même chose avec ta team de 3.
+[720.50s - 722.50s]  Dans ce cas là, tu as le choix entre deux choses,
+[722.50s - 724.50s]  soit deux supports et un dpt,
+[724.50s - 726.50s]  ou un support et deux dpt.
+[726.50s - 729.50s]  Dans le deuxième cas, tu vas plutôt avoir besoin d'un support très polyvalent,
+[729.50s - 732.50s]  mais aussi de dpt plutôt autonome et polyvalent.
+[732.50s - 734.50s]  Par exemple, prenons une coupons moyenne,
+[734.50s - 736.50s]  si tu choisis fait qu'il y a un SRAMIOP,
+[736.50s - 739.50s]  oui, ça fonctionnera très bien sur une grosse partie du jeu,
+[739.50s - 742.50s]  mais elle n'a niéretre réassistance ni soin,
+[742.50s - 744.50s]  donc tu te mets des bâtrons dans les rôles, surtout à THL.
+[744.50s - 747.50s]  Si tu tombes avec un co-équipier qui n'en a pas non plus,
+[747.50s - 749.50s]  alors ça reste que t'es vraiment compliqué.
+[749.50s - 752.50s]  Je te conseille dans ce cas là plutôt une team comme Féka et Kaïop,
+[752.50s - 756.50s]  tu gagnes du soin du placement de l'armure et du rôtre réassistance,
+[756.50s - 758.50s]  tout en gardant un bon dpt.
+[758.50s - 761.50s]  Un autre exemple c'est le steamur lennu et les lieaux.
+[761.50s - 763.50s]  Là c'est un peu plus atypique mais ça marche très bien.
+[763.50s - 766.50s]  Le steamur peut s'occuper du chilé du placement,
+[766.50s - 768.50s]  les nus tapent tout en retirant d'un résistance
+[768.50s - 772.50s]  et les lieaux peut soigner ou taper fort selon la situation.
+[772.50s - 775.50s]  Maintenant tu sais comment composer une bonne team de 6,
+[775.50s - 776.50s]  mais ça ne s'arrête pas là,
+[776.50s - 778.50s]  il faut aussi savoir comment la faire fonctionner.
+[778.50s - 780.50s]  Et ça, je te parlerai dans une prochaine vidéo.
+[780.50s - 782.50s]  N'hésitez pas à poser tes questions en commentaire
+[782.50s - 785.50s]  ou à proposer des sujets que tu aimerais que je traite.
+[785.50s - 786.50s]  A bientôt !

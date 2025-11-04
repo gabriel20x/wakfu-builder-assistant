@@ -1,0 +1,250 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Et bonjour à tous, aujourd'hui on va s'attaquer à un mode plutôt original et qu'on voit pas souvent mais qui est vraiment très efficace également, ce sera l'enniripça R, gros burst dégâts poison tout ça tout ça. Intérêt de ce type d'enniripça, il sera ultra polivalent pour par exemple faire des brèches. Il y aura énormément de voiles de vie de regeneration, il se remettra full life tous les tours. Il y aura des dégâts directs sympathiques mais c'est pas forcément ce qu'on va chercher. Ici on va surtout chercher à optimiser du poison, à fond, à fond, à fond. On va pouvoir en cumuler énormément notre objectif c'est de prendre un boss et de l'obliterer. Le combo fonctionnera à partir du LVL95 en vie. C'est là que vous débloquez les pacifs qu'il faut, dont notamment paradoxe contre naturelle dont vous aurez besoin. En gros tout le déque, on va le baser sur secret de fabrication qui va transformer le propagateur en un poison qui dure deux tours. L'objectif ça va donc être de faire un max de propagateurs, poser un poison sur un ennemi et le réappliquer en permanence, sac tour, chaque tour, pour pouvoir remonter le plus haut possible. On met soit unique dans le déque qui va nous permettre de doubler le propagateur sur le premier sac qu'on va faire dans le tour. Pancion c'est le passif ultime de l'énérity, qui lui permet de jamais être fous le vie grâce aux dégâts subis quand il fait des soins. Ce qui lui permettra de s'autospoigner en permanence pour générer du propagateur. Il est obligatoire. Et super la pine de pareille c'est complètement bonus. Je vais vous montrer de toute façon à quoi ça peut servir. Le principe du déque il est ultra simple, vous commencez par une file infectée pour faire deux vols de vie. Que vous avez un vol de vie plus le soin du passif que je vous ai montré, ça fait déjà monter le propagateur à plus 160. Vous appliquez le propagateur avec vivification ou avec collimateur. Ici par habitudes j'utilise souvent vivification. Hop on calme du coup un poison de 160 dégâts le velle de 100. Et dans le même tour on se soigne hop on va soigner deux fois avec mon soignant. On va remonter de nouveau le propagateur à plus 160 et on réappelique avec vivification. Ce qui fait qu'on applique 320 dégâts de poison sur notre cible. On passe notre tour la cible et prend bas le gros poison à 34 000. Et du coup c'est applicable pendant deux tours. Tour d'après la même chose en met une file infectée ou en appliques avec vivification. On se soigne une ou deux fois, un, deux et en remettification et en réappelique. Et là on commence à avoir 320 stack plus 400 de stack. On passe notre tour et le mob bam il prend un 43 plus il est à 67 000 dégâts de poison. Sachant qu'on n'est pas sous contraignature. Quand vous êtes contre un combat de boss, vous faites exactement la même chose. Hop un vol de vie, on applique, on se soigne, on applique, on met 400 plus 400. Si vous avez de votre dernier tour, vous faites un contre nature. Ça vous permet de gagner encore un peu de dégâts. Par rapport au passif 30 % qu'on a mis. Vous allez sur le côté par exemple pour prendre des dégâts côté ou dans le dos. Vous passez votre tour et vous avez un gros 110 000 dégâts de poison qui pop. C'est absolument énorme parce qu'on va pouvoir appliquer très simplement comme je disais 800 dégâts de poison partout. 800 dégâts brut c'est vraiment énorme. A titre de comparaison par exemple, un tour complet dégâts flip en brut. On tourne entre 500 et 600 dégâts brut complets dans le tour. Donc là, on a déjà 800 avec les poisons. On va appliquer une fure l'infectée qui va être 160 de plus. On va mettre deux vivifications à 54 et 54. On est donc à peu près à 1.060 dégâts infligés brut. Il y a vraiment moyen de faire monter ça très très haut. Surtout que c'est de l'indirect, donc vous pouvez pimper bien surtout ça avec des états échauffés de vos supports. Que ce soit un zobal, un sram, un osaboda, ce n'importe quoi qui va mettre entre 20 et 50 % des gaspelments échauffés tout simplement en mettant échaudés sur la cible. C'est vraiment, vraiment bien. Il y en a moyen de faire des trucs très cool. Je vais vous montrer également vous allez voir la régène du build au niveau du soin que ça fait en un tour chaque tour. C'est vraiment, vraiment conséquent. J'en vais me laisser me casser la gueule. Alors on va essayer de descendre bien bas. Regardez ma vie. Juste, je fais mon tour classique. Une fure l'infectée, une vivif. Je mets deux mots soignants, une vivif. Et je suis déjà quasiment foule-life. T'en as bien appliqué complètement mon poison. Je passe mon tour, la cible est prendre. Je suis foule-life parce qu'en plus, il y a du vol de vie. Et il tourne d'après, on est reparti. Hop, hop, c'est simple. On se prend pas la tête. On se soigne avec deux mots soignants, ça va toujours le coup. Parce que dites-vous que chaque mots soignant, c'est pas des dégâts que vous infligiez. C'est quand même si pire qui ne sont pas pour des dégâts. Sauf que la chafure que vous soignez, du coup, vous prenez un maximum de soins un boost PO. Et vous gagnez surtout 80 de propagateurs. Donc, ce comme si vous metiez un poison à 80 en vous soignant. Peu vous réappliquer, juste après, avec une vivif. On stack un max, on passe notre tour, et on sera toujours foule-life. Ce qui faut faire attention avec ce deck, c'est que votre résistance soin va monter assez vite. Pour ça, on a la marque plus efficace qui est très pratique. Vous la mettez sur vous quand vous êtes trop élevés. Un lapino à votre corps. Vous passez votre tour, la marque proche, et vous récupérez moins 30 % de résistance. Vous repartez complètement à 0. Pour proche la marque, unete, il vous suffit de passer votre tour à côté d'un allié. Donc votre lapino est votre meilleur ami pour ça. Vous retirez 30 % de résistance soin, vous vous donnez un PM en plus. Vous vous soignez au passage en zone. Le saurait exceptionnel pour seulement 3 paires. Dans le deck, je vous ai mis également torpeurs qui va être pratique en tout début de combat. Normalement, vous en servirait plus après. Le principe de torpeurs, il coûte cher 5 paires, mais ça va surtout être de vous casser la gueule parce qu'il faut proche des soins pour pouvoir monter. Vous commencez votre combat avec un torpeur. Ça vous permet de vous casser la gueule. Et à partir de là, vous pouvez faire votre combo, fuir l'infecter, on applique, etc. Quand vous avez besoin de faire ça autour, du coup, vous avez pas un tour exceptionnel. Avec 4 paires, vous ne verrez pas grand chose. Donc quand vous avez 4 paires, n'hésitez pas à vous mettre tout simplement en jouvant. Ça vous fera un perso pour plus tard tout en de permane gagner des PM. Et n'hésitez pas à poser justement votre lapino qui va être un super lapino directement avec le passif qu'on a mis. Intérêt du super lapino, vous avez le sort numéro 3, qui est super cool, parce que c'est votre très nirif ça, qui est un fichier des gars. Vous cassez la gueule à votre nirif ça une fois, c'est pas grave. Vous allez gagner 80 propagateurs, juste en faisant ça. Vous allez sur une cible, vous retapez et vous reprenez 80 propagateurs. Ça vous permet d'avoir 160 de propagateurs qui est préparé, juste en ayant joué votre lapino, en étant full life, et en passant votre tour de teçon, il disparaît avec le passif. Vous commencez donc directement votre tour, vous voyez ici avec 200 propagateurs, vous l'appliquez directement à 200, vous reprenez 160, vous réappliquiez 160, vous reprenez encore 30, 80, vous réappliquiez, et vous pouvez vraiment appliquer énormément de 446. Si vous avez plus de pehab, vous pouvez encore monter plus haut. Vous allez vraiment pouvoir faire monter ce poison à une valeur exceptionnelle. Le reste du kit, il a ses sames, je peux vous proposer, des phases exceptionnelles, vous pouvez être en tour complet, vous deziter des phases quand vous avez besoin d'être un vignérable. L'in-d'amitié, quand vous êtes en timme, toujours un vignérable, vous mettez ça sur un perso mêlé, un sacréur, un oujidac, ça fait toujours plaisir. Et à côté, j'ai mis un petit anatomie, si vous êtes par exemple en breche, un mob et full life, vous n'avez pas besoin d'appliquer beaucoup de poison sur une cible, je demande bien précise, vous calmez des anatomie pour vos bâtes, ça va quand même faire des dégâts assez sympathiques, normalement dans ce kit, vous avez pas mal de dégâts à air. Donc voilà, dans un cours, je ne m'en servais vraiment pas beaucoup, mais ça peut vous dépater. Ce deck, comme je vous disais, il sera vraiment cool pour former des breches, par exemple en solo, parce que la régime de PV est exceptionnelle. Il sera également très bon en PVP. C'est un deck énormément joué sur le serveur monoconte par les enys PVP, le fait de pouvoir taper aussi fort sous poison, en vous mettant invulnerable, bon, ça fait de l'enniré, et ça, la classe top 1 PVP actuellement, si jamais ça vous intéresse. Et enfin, quand vous êtes en groupe, en danger, et tout, cette enerie, ça peut tout à fait se jouer, en prenant par exemple le rôle de s'occuper d'un boss. Il va sur un boss dès le tour 1, il sera d'occuper T2, T3, à lui tout seul, là-même, il va complètement faire fondre le boss tout en se régénérant à fond, il faudra juste faire attention, qui se face pas à Wanchot à un moment. Mais du coup, il peut complètement s'occuper de ce rôle pendant que tout le reste de votre équipe s'occupe de fumer tous les autres mobs de la sable. T'avra un perceux original, cool et simple à jouer. N'hésitez pas à me dire ce que vous en pensez dans les commentaires. Je vous propose comme d'un dans la description, les aptitudes que je vous conseille de monter, le code deck que je veux directement si vous voulez le copier coller, et la liste de toutes les sublémations qui vont super bien marcher sur ce type d'analypissage. Je vous conseille un build full mono-élément air dans tous les cas. De toute façon, vous t'appelez sur les éléments lumirs, donc vous pouvez un peu adapter ça comme vous voulez. Mais c'est vrai que torpeur et anatomie sont rigolo juste pour former des mobs ou taper directement si vous avez besoin de finir un moboquard. Donc j'aime bien juste utiliser pour ça. Il n'y a pas bien sûr quand même à mettre aussi psychose dans le deck qui est toujours bien pour nerf un boss si vous avez trois paie à qui traînent, ça fera toujours du bien au reste de votre équipe. Ce sera tout pour aujourd'hui. On se retrouve bientôt pour un prochain deck. J'espère que celui-ci vous aura plu. Amusez-vous bien sur le jeu, et n'hésitez pas à vous abonner. Ça fait toujours plaisir. Merci beaucoup.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+And hello everyone, today we are going to tackle a rather original mode that we don't see often but which is also really very effective, it will be the enniripça R, big burst damage poison all that. Interest in this type of enniripça, it will be ultra versatile for, for example, making breaches. There will be a lot of regeneration life veils, he will recover to full life every turn. There will be some nice direct damage but that's not necessarily what we're looking for. Here we are mainly going to seek to optimize the poison, thoroughly, thoroughly, thoroughly. We will be able to accumulate a lot of them, our objective is to take a boss and obliterate it. The combo will work from LVL95 alive. This is where you unlock the pacives you need, including the counter-natural paradox that you will need. Basically the whole deque, we will base it on a trade secret which will transform the propagator into a poison which lasts two turns. The objective will therefore be to make as many propagators as possible, place a poison on an enemy and reapply it constantly, every turn, to be able to go back as high as possible. We put either unique in the dice which will allow us to double the propagator on the first bag we will make in the round. Pancion is Enerity's ultimate passive, which allows him to never lose his life thanks to the damage suffered when he heals. This will allow it to permanently self-spoil to generate propagator. It is obligatory. And great, the same thing is a complete bonus. I'll show you anyway what it can be used for. The principle of the dice is ultra simple, you start with an infected line to make two flights of life. That you have a lifesteal plus the healing of the passive that I showed you, that already raises the propagator to plus 160. You apply the propagator with vivification or with collimator. Here by habit I often use vivification. Hop we calm down a poison of 160 damage the level of 100. And in the same turn we heal hop we will heal twice with my caregiver. We will raise the propagator again to plus 160 and we will call again with vigor. Which means we apply 320 poison damage to our target. We spend our turn on the target and take the big poison low at 34,000. And therefore it is applicable for two turns. Tour according to the same thing puts an infected file or applied with vivification. We treat ourselves once or twice, once, twice and in rescheduling and re-calling. And there we start to have 320 stacks plus 400 stacks. We pass our turn and the mob bam takes a 43 plus it is at 67,000 poison damage. Knowing that we are not under constraint. When you're up against a boss fight, you do the exact same thing. Hop a steal of life, we apply, we heal, we apply, we put 400 plus 400. If you have your last turn, you do something unnatural. This allows you to gain a little more damage. Compared to the 30% liability that we put. You go to the side for example to take damage from the side or from the back. You pass your turn and you have a big 110,000 poison damage popping. It's absolutely huge because we'll be able to very simply apply, as I said, 800 poison damage everywhere. 800 raw damage is really huge. For comparison, for example, a full turn flip damage in raw. We shoot between 500 and 600 full gross damage in the turn. So there we already have 800 with the poisons. We are going to apply a fury to the infected which will be 160 more. We are going to put two vivifications at 54 and 54. We are therefore at approximately 1,060 gross damage inflicted. There is really a way to raise this very, very high. Especially since it's indirect, so you can pimp it out a lot, especially with heated states of your supports. Whether it's a zobal, a sram, an osaboda, anything that will put between 20 and 50% of the heated waste simply by putting it on the target. It's really, really good. There are ways to do very cool things. I will also show you you will see the regen of the build in terms of the healing it does in one turn each turn. It's really, really significant. I'm going to let it get to me. So we're going to try to go very low. Look at my life. Just doing my classic trick. A fury infected it, a lively one. I put two caring words, one lively. And I'm already almost a crowd-lifer. You have applied my poison completely. I pass my turn, the target is taken. I am crowd-life because in addition, there is life theft. And it turns after, we left. Hop, hop, it’s simple. We don't worry. We treat ourselves with two caring words, it always works. Because you say that each healing word is not damage that you inflict. It's still so much worse that it's not for damage. Except that the scar that you are treating, therefore, you take maximum care and an PO boost. And you especially gain 80 propagators. So, it's as if you put a poison at 80 while treating yourself. You can reapply, just after, with a brightener. We stack as much as possible, we pass our turn, and we will always be crowd-life. What you need to be careful with this deck is that your healing resistance will increase quite quickly. For that, we have the most effective brand which is very practical. You put it on yourself when you're too high. A rabbit to your body. You pass your turn, the mark is close, and you recover minus 30% resistance. You start completely from 0. To get close to the mark, all you have to do is spend your turn next to an ally. So your rabbit is your best friend for that. You remove 30% of healing resistance, you give yourself one more MP. You heal yourself when passing through the zone. Would be exceptional for only 3 pairs. In the deck, I also put torpors which will be practical at the very start of the fight. Normally you would use more later. The principle of torpor, it is expensive for 5 pairs, but it will mainly be a pain for you because you need close care to be able to go up. You begin your fight in a torpor. It allows you to break your face. And from there you can do your combo, flee infect it, apply it, etc. When you need to do that around, suddenly you don't have a great ride. With 4 pairs, you won't see much. So when you have 4 pairs, don't hesitate to just play around. This will give you a character for later while permanently gaining MP. And don't hesitate to pose your rabbit who will be a super rabbit directly with the passive that we put. Super bunny interest, you have spell number 3, which is super cool, because it's your very nirif that, which is a guys file. You beat your shit up once, it doesn't matter. You will gain 80 spreaders, just by doing this. You go to a target, you hit again and you get 80 spreaders again. This allows you to have 160 propagators which are prepared, just by having played your rabbit, by being full life, and by passing your teçon turn, it disappears with the passive. So you start your turn right away, you see here with 200 spreaders, you apply it straight to 200, you take 160 again, you reapply 160, you take another 30, 80, you reapply, and you can really apply a lot of 446. If you have more pehab, you can go even higher. You will really be able to increase this poison to an exceptional value. The rest of the kit, it has its same, I can offer you, exceptional phases, you can be in complete turn, you deziter phases when you need to be a winemaker. The in-friendship, when you are in timme, always a winemaker, you put that on a mixed person, a sacreder, an oujidac, it is always pleasant. And next to it, I put a little anatomy, if you are for example in breach, a mob and full life, you don't need to apply a lot of poison on a target, I'm asking very precisely, you calm anatomy for your packs, it will still do quite nice damage, normally in this kit, you have a lot of air damage. So there you have it, in a class, I really didn't use it much, but it may disappoint you. This deck, as I told you, will be really cool for forming breaches, for example solo, because the HP level is exceptional. He will also be very good in PVP. It's a deck played a lot on the monoconte server by PVP enys, the fact of being able to hit so hard under poison, making you invulnerable, well, that's crazy, and that's the top 1 PVP class currently, if you're ever interested. And finally, when you're in a group, in danger, and everything, this enerie can definitely be played out, for example by taking on the role of taking care of a boss. He will attack a boss from turn 1, he will occupy T2, T3, all by himself, there, he will completely melt the boss while regenerating thoroughly, you will just have to be careful, who is not facing Wanchot at one point. But as a result, he can completely take care of this role while the rest of your team takes care of smoking all the other sand mobs. You will have an original drill, cool and easy to play. Please let me know what you think in the comments. I offer you, as in the description, the skills that I advise you to use, the code deck that I want directly if you want to copy and paste it, and the list of all the sublemations that will work really well on this type of analysis. I recommend a full single-element air build in all cases. Anyway, you're calling on the lumir elements, so you can adapt this a bit however you want. But it's true that torpor and anatomy are fun just to form mobs or hit directly if you need to finish a moboquard. So I like to just use for that. There is of course no point in putting also psychosis in the deck which is always good for nerfing a boss if you have three pays lying around, it will always do good for the rest of your team. That will be all for today. We'll see you soon for the next deck. I hope you liked this one. Have fun playing the game, and don't hesitate to subscribe. It's always a pleasure. Thank you so much..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 4.42s]  Et bonjour à tous, aujourd'hui on va s'attaquer à un mode plutôt original et qu'on
+[4.42s - 7.52s]  voit pas souvent mais qui est vraiment très efficace également, ce sera l'enniripça
+[7.52s - 9.80s]  R, gros burst dégâts poison tout ça tout ça.
+[9.80s - 14.46s]  Intérêt de ce type d'enniripça, il sera ultra polivalent pour par exemple faire des
+[14.46s - 15.46s]  brèches.
+[15.46s - 18.80s]  Il y aura énormément de voiles de vie de regeneration, il se remettra full life tous les
+[18.80s - 19.80s]  tours.
+[19.80s - 22.04s]  Il y aura des dégâts directs sympathiques mais c'est pas forcément ce qu'on va chercher.
+[22.04s - 26.12s]  Ici on va surtout chercher à optimiser du poison, à fond, à fond, à fond.
+[26.12s - 30.64s]  On va pouvoir en cumuler énormément notre objectif c'est de prendre un boss et de l'obliterer.
+[30.64s - 33.28s]  Le combo fonctionnera à partir du LVL95 en vie.
+[33.28s - 36.78s]  C'est là que vous débloquez les pacifs qu'il faut, dont notamment paradoxe contre naturelle
+[36.78s - 37.78s]  dont vous aurez besoin.
+[37.78s - 40.72s]  En gros tout le déque, on va le baser sur secret de fabrication qui va transformer le
+[40.72s - 42.96s]  propagateur en un poison qui dure deux tours.
+[42.96s - 47.00s]  L'objectif ça va donc être de faire un max de propagateurs, poser un poison sur un
+[47.00s - 50.64s]  ennemi et le réappliquer en permanence, sac tour, chaque tour, pour pouvoir remonter
+[50.64s - 51.64s]  le plus haut possible.
+[51.64s - 54.88s]  On met soit unique dans le déque qui va nous permettre de doubler le propagateur sur le
+[54.88s - 56.20s]  premier sac qu'on va faire dans le tour.
+[56.20s - 59.68s]  Pancion c'est le passif ultime de l'énérity, qui lui permet de jamais être fous
+[59.68s - 61.56s]  le vie grâce aux dégâts subis quand il fait des soins.
+[61.56s - 64.92s]  Ce qui lui permettra de s'autospoigner en permanence pour générer du propagateur.
+[64.92s - 65.92s]  Il est obligatoire.
+[65.92s - 68.52s]  Et super la pine de pareille c'est complètement bonus.
+[68.52s - 70.52s]  Je vais vous montrer de toute façon à quoi ça peut servir.
+[70.52s - 74.48s]  Le principe du déque il est ultra simple, vous commencez par une file infectée pour faire
+[74.48s - 75.48s]  deux vols de vie.
+[75.48s - 78.64s]  Que vous avez un vol de vie plus le soin du passif que je vous ai montré, ça fait déjà
+[78.64s - 80.44s]  monter le propagateur à plus 160.
+[80.44s - 83.68s]  Vous appliquez le propagateur avec vivification ou avec collimateur.
+[83.84s - 85.84s]  Ici par habitudes j'utilise souvent vivification.
+[85.84s - 90.60s]  Hop on calme du coup un poison de 160 dégâts le velle de 100.
+[90.60s - 94.08s]  Et dans le même tour on se soigne hop on va soigner deux fois avec mon soignant.
+[94.08s - 98.00s]  On va remonter de nouveau le propagateur à plus 160 et on réappelique avec vivification.
+[98.00s - 102.12s]  Ce qui fait qu'on applique 320 dégâts de poison sur notre cible.
+[102.12s - 105.76s]  On passe notre tour la cible et prend bas le gros poison à 34 000.
+[105.76s - 107.80s]  Et du coup c'est applicable pendant deux tours.
+[107.80s - 111.84s]  Tour d'après la même chose en met une file infectée ou en appliques avec vivification.
+[112.28s - 117.88s]  On se soigne une ou deux fois, un, deux et en remettification et en réappelique.
+[117.88s - 120.56s]  Et là on commence à avoir 320 stack plus 400 de stack.
+[120.56s - 126.64s]  On passe notre tour et le mob bam il prend un 43 plus il est à 67 000 dégâts de poison.
+[126.64s - 128.20s]  Sachant qu'on n'est pas sous contraignature.
+[128.20s - 130.56s]  Quand vous êtes contre un combat de boss, vous faites exactement la même chose.
+[130.56s - 139.52s]  Hop un vol de vie, on applique, on se soigne, on applique, on met 400 plus 400.
+[139.56s - 142.20s]  Si vous avez de votre dernier tour, vous faites un contre nature.
+[142.20s - 143.72s]  Ça vous permet de gagner encore un peu de dégâts.
+[143.72s - 145.60s]  Par rapport au passif 30 % qu'on a mis.
+[145.60s - 148.16s]  Vous allez sur le côté par exemple pour prendre des dégâts côté ou dans le dos.
+[148.16s - 153.24s]  Vous passez votre tour et vous avez un gros 110 000 dégâts de poison qui pop.
+[153.24s - 156.32s]  C'est absolument énorme parce qu'on va pouvoir appliquer très simplement
+[156.32s - 159.24s]  comme je disais 800 dégâts de poison partout.
+[159.24s - 161.04s]  800 dégâts brut c'est vraiment énorme.
+[161.04s - 164.64s]  A titre de comparaison par exemple, un tour complet dégâts flip en brut.
+[164.64s - 167.60s]  On tourne entre 500 et 600 dégâts brut complets dans le tour.
+[167.64s - 169.76s]  Donc là, on a déjà 800 avec les poisons.
+[169.76s - 172.64s]  On va appliquer une fure l'infectée qui va être 160 de plus.
+[172.64s - 175.20s]  On va mettre deux vivifications à 54 et 54.
+[175.20s - 178.56s]  On est donc à peu près à 1.060 dégâts infligés brut.
+[178.56s - 180.80s]  Il y a vraiment moyen de faire monter ça très très haut.
+[180.80s - 183.56s]  Surtout que c'est de l'indirect, donc vous pouvez pimper bien surtout ça
+[183.56s - 185.36s]  avec des états échauffés de vos supports.
+[185.36s - 190.56s]  Que ce soit un zobal, un sram, un osaboda, ce n'importe quoi qui va mettre entre 20 et 50 %
+[190.56s - 193.24s]  des gaspelments échauffés tout simplement en mettant échaudés sur la cible.
+[193.24s - 195.16s]  C'est vraiment, vraiment bien.
+[195.16s - 196.76s]  Il y en a moyen de faire des trucs très cool.
+[196.80s - 199.92s]  Je vais vous montrer également vous allez voir la régène du build au niveau du soin
+[199.92s - 201.24s]  que ça fait en un tour chaque tour.
+[201.24s - 202.80s]  C'est vraiment, vraiment conséquent.
+[202.80s - 205.12s]  J'en vais me laisser me casser la gueule.
+[205.12s - 207.00s]  Alors on va essayer de descendre bien bas.
+[207.00s - 208.60s]  Regardez ma vie.
+[208.60s - 209.88s]  Juste, je fais mon tour classique.
+[209.88s - 213.44s]  Une fure l'infectée, une vivif.
+[213.44s - 216.40s]  Je mets deux mots soignants, une vivif.
+[216.40s - 217.96s]  Et je suis déjà quasiment foule-life.
+[217.96s - 219.52s]  T'en as bien appliqué complètement mon poison.
+[219.52s - 220.60s]  Je passe mon tour, la cible est prendre.
+[220.60s - 223.32s]  Je suis foule-life parce qu'en plus, il y a du vol de vie.
+[223.32s - 224.88s]  Et il tourne d'après, on est reparti.
+[224.88s - 226.16s]  Hop, hop, c'est simple.
+[226.20s - 227.36s]  On se prend pas la tête.
+[227.36s - 229.52s]  On se soigne avec deux mots soignants, ça va toujours le coup.
+[229.52s - 230.68s]  Parce que dites-vous que chaque mots soignant,
+[230.68s - 231.64s]  c'est pas des dégâts que vous infligiez.
+[231.64s - 234.16s]  C'est quand même si pire qui ne sont pas pour des dégâts.
+[234.16s - 235.32s]  Sauf que la chafure que vous soignez,
+[235.32s - 237.72s]  du coup, vous prenez un maximum de soins un boost PO.
+[237.72s - 239.80s]  Et vous gagnez surtout 80 de propagateurs.
+[239.80s - 242.48s]  Donc, ce comme si vous metiez un poison à 80 en vous soignant.
+[242.48s - 244.88s]  Peu vous réappliquer, juste après, avec une vivif.
+[244.88s - 248.12s]  On stack un max, on passe notre tour, et on sera toujours foule-life.
+[248.12s - 249.72s]  Ce qui faut faire attention avec ce deck,
+[249.72s - 252.56s]  c'est que votre résistance soin va monter assez vite.
+[252.60s - 254.84s]  Pour ça, on a la marque plus efficace qui est très pratique.
+[254.84s - 256.76s]  Vous la mettez sur vous quand vous êtes trop élevés.
+[256.76s - 258.04s]  Un lapino à votre corps.
+[258.04s - 260.44s]  Vous passez votre tour, la marque proche,
+[260.44s - 262.76s]  et vous récupérez moins 30 % de résistance.
+[262.76s - 264.44s]  Vous repartez complètement à 0.
+[264.44s - 265.36s]  Pour proche la marque, unete,
+[265.36s - 267.68s]  il vous suffit de passer votre tour à côté d'un allié.
+[267.68s - 269.52s]  Donc votre lapino est votre meilleur ami pour ça.
+[269.52s - 271.08s]  Vous retirez 30 % de résistance soin,
+[271.08s - 272.32s]  vous vous donnez un PM en plus.
+[272.32s - 273.64s]  Vous vous soignez au passage en zone.
+[273.64s - 275.44s]  Le saurait exceptionnel pour seulement 3 paires.
+[275.44s - 277.52s]  Dans le deck, je vous ai mis également torpeurs
+[277.52s - 279.36s]  qui va être pratique en tout début de combat.
+[279.36s - 280.80s]  Normalement, vous en servirait plus après.
+[280.88s - 281.84s]  Le principe de torpeurs,
+[281.84s - 283.00s]  il coûte cher 5 paires,
+[283.00s - 284.24s]  mais ça va surtout être de vous casser la gueule
+[284.24s - 286.40s]  parce qu'il faut proche des soins pour pouvoir monter.
+[286.40s - 288.32s]  Vous commencez votre combat avec un torpeur.
+[288.32s - 289.52s]  Ça vous permet de vous casser la gueule.
+[289.52s - 291.16s]  Et à partir de là, vous pouvez faire votre combo,
+[291.16s - 292.24s]  fuir l'infecter,
+[292.24s - 294.56s]  on applique, etc.
+[294.56s - 295.64s]  Quand vous avez besoin de faire ça autour,
+[295.64s - 296.88s]  du coup, vous avez pas un tour exceptionnel.
+[296.88s - 298.12s]  Avec 4 paires, vous ne verrez pas grand chose.
+[298.12s - 299.08s]  Donc quand vous avez 4 paires,
+[299.08s - 301.44s]  n'hésitez pas à vous mettre tout simplement en jouvant.
+[301.44s - 302.72s]  Ça vous fera un perso pour plus tard
+[302.72s - 304.08s]  tout en de permane gagner des PM.
+[304.08s - 306.04s]  Et n'hésitez pas à poser justement votre lapino
+[306.16s - 307.32s]  qui va être un super lapino directement
+[307.32s - 308.20s]  avec le passif qu'on a mis.
+[308.20s - 310.08s]  Intérêt du super lapino,
+[310.08s - 312.52s]  vous avez le sort numéro 3,
+[312.52s - 313.16s]  qui est super cool,
+[313.16s - 314.28s]  parce que c'est votre très nirif ça,
+[314.28s - 315.08s]  qui est un fichier des gars.
+[315.08s - 316.68s]  Vous cassez la gueule à votre nirif ça une fois,
+[316.68s - 317.76s]  c'est pas grave.
+[317.76s - 320.16s]  Vous allez gagner 80 propagateurs, juste en faisant ça.
+[320.16s - 322.12s]  Vous allez sur une cible, vous retapez
+[322.12s - 324.04s]  et vous reprenez 80 propagateurs.
+[324.04s - 326.20s]  Ça vous permet d'avoir 160 de propagateurs
+[326.20s - 326.96s]  qui est préparé,
+[326.96s - 328.36s]  juste en ayant joué votre lapino,
+[328.36s - 329.24s]  en étant full life,
+[329.24s - 330.08s]  et en passant votre tour de teçon,
+[330.08s - 330.96s]  il disparaît avec le passif.
+[330.96s - 332.36s]  Vous commencez donc directement votre tour,
+[332.36s - 333.80s]  vous voyez ici avec 200 propagateurs,
+[333.80s - 335.72s]  vous l'appliquez directement à 200,
+[335.72s - 337.28s]  vous reprenez 160,
+[337.28s - 338.84s]  vous réappliquiez 160,
+[338.84s - 340.64s]  vous reprenez encore 30,
+[340.64s - 342.28s]  80, vous réappliquiez,
+[342.28s - 344.84s]  et vous pouvez vraiment appliquer énormément de 446.
+[344.84s - 345.72s]  Si vous avez plus de pehab,
+[345.72s - 346.84s]  vous pouvez encore monter plus haut.
+[346.84s - 348.04s]  Vous allez vraiment pouvoir faire monter
+[348.04s - 349.88s]  ce poison à une valeur exceptionnelle.
+[349.88s - 351.12s]  Le reste du kit, il a ses sames,
+[351.12s - 352.20s]  je peux vous proposer,
+[352.20s - 353.52s]  des phases exceptionnelles,
+[353.52s - 354.36s]  vous pouvez être en tour complet,
+[354.36s - 355.12s]  vous deziter des phases
+[355.12s - 356.40s]  quand vous avez besoin d'être un vignérable.
+[356.40s - 357.68s]  L'in-d'amitié, quand vous êtes en timme,
+[357.68s - 358.32s]  toujours un vignérable,
+[358.32s - 359.28s]  vous mettez ça sur un perso mêlé,
+[359.28s - 360.28s]  un sacréur, un oujidac,
+[360.28s - 361.28s]  ça fait toujours plaisir.
+[361.28s - 362.80s]  Et à côté, j'ai mis un petit anatomie,
+[362.80s - 363.80s]  si vous êtes par exemple en breche,
+[363.80s - 364.80s]  un mob et full life,
+[364.80s - 366.36s]  vous n'avez pas besoin d'appliquer beaucoup de poison
+[366.36s - 368.36s]  sur une cible, je demande bien précise,
+[368.36s - 370.08s]  vous calmez des anatomie pour vos bâtes,
+[370.08s - 371.60s]  ça va quand même faire des dégâts assez sympathiques,
+[371.60s - 372.12s]  normalement dans ce kit,
+[372.12s - 373.12s]  vous avez pas mal de dégâts à air.
+[373.12s - 374.12s]  Donc voilà, dans un cours,
+[374.12s - 375.00s]  je ne m'en servais vraiment pas beaucoup,
+[375.00s - 375.80s]  mais ça peut vous dépater.
+[375.80s - 376.88s]  Ce deck, comme je vous disais,
+[376.88s - 378.64s]  il sera vraiment cool pour former des breches,
+[378.64s - 379.44s]  par exemple en solo,
+[379.44s - 381.44s]  parce que la régime de PV est exceptionnelle.
+[381.44s - 383.80s]  Il sera également très bon en PVP.
+[383.88s - 385.40s]  C'est un deck énormément joué
+[385.40s - 387.44s]  sur le serveur monoconte par les enys PVP,
+[387.44s - 389.72s]  le fait de pouvoir taper aussi fort sous poison,
+[389.72s - 390.80s]  en vous mettant invulnerable,
+[390.80s - 391.80s]  bon, ça fait de l'enniré,
+[391.80s - 394.28s]  et ça, la classe top 1 PVP actuellement,
+[394.28s - 395.52s]  si jamais ça vous intéresse.
+[395.52s - 397.24s]  Et enfin, quand vous êtes en groupe,
+[397.24s - 397.92s]  en danger, et tout,
+[397.92s - 399.68s]  cette enerie, ça peut tout à fait se jouer,
+[399.68s - 401.76s]  en prenant par exemple le rôle de s'occuper d'un boss.
+[401.76s - 403.12s]  Il va sur un boss dès le tour 1,
+[403.12s - 404.40s]  il sera d'occuper T2, T3,
+[404.40s - 405.12s]  à lui tout seul,
+[405.12s - 406.72s]  là-même, il va complètement faire fondre le boss
+[406.72s - 407.76s]  tout en se régénérant à fond,
+[407.76s - 408.52s]  il faudra juste faire attention,
+[408.52s - 409.64s]  qui se face pas à Wanchot à un moment.
+[409.64s - 411.24s]  Mais du coup, il peut complètement s'occuper de ce rôle
+[411.24s - 412.32s]  pendant que tout le reste de votre équipe
+[412.32s - 414.28s]  s'occupe de fumer tous les autres mobs de la sable.
+[414.28s - 416.28s]  T'avra un perceux original, cool et simple à jouer.
+[416.28s - 417.64s]  N'hésitez pas à me dire ce que vous en pensez
+[417.64s - 418.44s]  dans les commentaires.
+[418.44s - 420.04s]  Je vous propose comme d'un dans la description,
+[420.04s - 421.64s]  les aptitudes que je vous conseille de monter,
+[421.64s - 423.00s]  le code deck que je veux directement
+[423.00s - 423.96s]  si vous voulez le copier coller,
+[423.96s - 425.56s]  et la liste de toutes les sublémations
+[425.56s - 427.72s]  qui vont super bien marcher sur ce type d'analypissage.
+[427.72s - 429.80s]  Je vous conseille un build full mono-élément
+[429.80s - 430.72s]  air dans tous les cas.
+[430.72s - 432.16s]  De toute façon, vous t'appelez sur les éléments lumirs,
+[432.16s - 433.68s]  donc vous pouvez un peu adapter ça comme vous voulez.
+[433.68s - 436.64s]  Mais c'est vrai que torpeur et anatomie sont rigolo
+[436.64s - 438.40s]  juste pour former des mobs ou taper directement
+[438.40s - 439.60s]  si vous avez besoin de finir un moboquard.
+[439.60s - 440.72s]  Donc j'aime bien juste utiliser pour ça.
+[440.72s - 442.48s]  Il n'y a pas bien sûr quand même à mettre aussi psychose
+[442.48s - 444.40s]  dans le deck qui est toujours bien pour nerf un boss
+[444.40s - 445.60s]  si vous avez trois paie à qui traînent,
+[445.60s - 447.76s]  ça fera toujours du bien au reste de votre équipe.
+[447.76s - 448.56s]  Ce sera tout pour aujourd'hui.
+[448.56s - 450.16s]  On se retrouve bientôt pour un prochain deck.
+[450.16s - 451.60s]  J'espère que celui-ci vous aura plu.
+[451.60s - 452.64s]  Amusez-vous bien sur le jeu,
+[452.64s - 453.92s]  et n'hésitez pas à vous abonner.
+[453.92s - 455.12s]  Ça fait toujours plaisir.
+[455.12s - 456.00s]  Merci beaucoup.

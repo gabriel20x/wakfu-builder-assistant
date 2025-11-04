@@ -1,0 +1,325 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Bonjour à tous, aujourd'hui petit tutoriel pour les débutants sur le CRA. On va revenir sur les trois mécaniques de la classe, je voulais vous les présenter en image, et je vous montrerai des mots de ce coup vous pouvez faire entre votre niveau 20 et votre niveau 80. J'ai un petit stève sans sublimation, le VEL 50 en DPA. C'est un stuff accessible à tous en quelques heures de jeu. Je vous présente donc quelques petits combos pour être tranquilles durant tous vos treuels. Quand vous survoler les mécaniques de la classe, vous tombez sur pas mal de choses, je vais vous résumer tout ça rapidement. Première mécanique du CRA quand vous lancez un combat, vous avez un état insaisisable. Vous avez donc des vôts de premier tour de jeu plus 30 % de dégâts. C'est un bonus que plein d'autres classes n'ont pas, ce cas d'eau profitez-en. Cette mécanique insaisisable est va évoluer, vous avez 30 % puis après, ça va monter à 40 % et autour 3, vous avez 50 %. Vous allez gagner 10 % de dégâts en plus, limités à 50 %. Et pour ça, il vous suffit de filir votre tour à plus de 3 peaux d'un ennemi. Donc jusqu'à ici, je vais pouvoir le proc. Ce moment où vous appuyez sur pas ce tour que votre effet est décidée ou pas. Ça va donc être super important de ne jamais se placer en fin de tour à côté d'un an de mi. Si vous le faites, au lieu de gagner 10 %, vous perdrez 10 %. Votre 30 % peut devenir 20 % puis 10 % puis 0 %. Gardez le don bien en tête, c'est important. Deuxième mécanique du CRA exactement la même chose. Tant que vous êtes insaisisable et que vous finissez votre tour à plus de 3, 15 d'an d'an de mi. Quand vous passez votre tour, donc il y a votre bouteau de dégâts qui augmentent. On est à 40 %. Mais vous avez gagné en plus de la précision et de la futage. Donc précision niveau 40 et affutage niveau 40. Au bout de deux tours d'affilée, vous en gagnera 50 d'un coup. Et après, ce sera toujours 50, 50, 50, etc. On va revenir dessus juste après, je vais d'abord vous expliquer à quoi sert la précision et la futage. En gros, tous les sortes du CRA, ils ont deux effets. Un effet de base et un effet tir précis. L'effet de base se celui que vous avez juste quand vous lancé votre sort sur un an de mi. Et les faits tir précis, c'est celui que vous obtenez quand vous vous activez tir précis et que vous lancé votre sort. Cependant, l'effet du sort, une fois qu'il est dansé sous tir précis, il est pas automatique. Il va demander justement de la précision. Par exemple, flèche explosif, consomme 90 de précision, flèche dimolation, consomme 30, flèche enflammée, consomme 60, etc. Vous avez donc plein d'effets sur tous les sortes. Ici, on va se concentrer seulement sur la précision de flèche explosif. C'est le sort qui a au permis de nettoyer tous les mob de leur league game tranquillement. Pour gagner de la précision, la règle est très simple. Quand vous lancé un sort à 2pa, vous gagnez 20 précisions, un sort à 3pa, 30 de précision, un sort à 4pa, 40 de précision. Il faut savoir que vos points de voie de voie de voie quant également pour la précision. Par exemple, un sort à 5pa à 1 point de voie de voie, vous donnera 60 de précisions. Il existe dans le jeu 3 moyens pour gagner de la précision. Le premier, c'est tout simplement de lancer des sorts dans le vent ou sur un ennemis. Ça va abandonner 40. La deuxième façon, c'est comment l'a vu tout à l'heure, est suffit de passer vos tours à plus de 3 cases d'anemis pour en gagner 40 ou 50. Et enfin, la troisième façon de gagner de la précision, c'est qu'un avain de balise sur le terrain, on va revenir dessus. Au moment où vous lancez débalisage dessus, vous gagnez 40 également supplémentaires. Vous pouvez à tout moment surveiller la vous-en-être dans votre précision avec vos états en haut à droite. Par exemple, si je prends un ennm, je lui mets un sort à 4pa, je peux voir là-haut, précision, je suis à 40. Moi, ce qui m'intéresse, c'est la flèche explosive. Il va donc faire l'or que je cherche à obtenir au moins 90 de précision pour avoir les faits boucher. Là, je sais que j'ai 40, je sais qu'en passant mon tour, je obtenir 40, je peux très bien par exemple ce tour-là, juste faire une deuxième flèche, je stack de la précision, je stack de la précision. Généralement, tout re-1, vous allez seulement gratter à maximum de précision et on va consommer 2, 3, 4, etc. Donc là, je suis à 100 de précision, en passant mon tour, j'ai droit au plus 40 qu'on a vu de fin de tour et avec 140 de précision, je vais pouvoir par exemple avoir mon explosif boucher. Pour ça, je clique sur Tirepressie avant, toujours, je lâche mon explosif pour avoir l'effet à mediorer et il faut bien penser à recliquer sur Tirepressie pour le désactiver. Ça va permettre, justement, avec la fin de votre tour de générer la présision pour votre prochaine flèche. Là, par exemple, j'avais pas assez de précision pour avoir une autre explosive, plutôt que de mettre une explosive dans le vent et de rien gagner autant utiliser d'autres sorts qui vont permettre de regenerer de la précision. Je remonte à 90, je passe mon tour, j'ai 140, je cram sur Tirepressie, je mets l'explosif boucher, j'ai 50, je pourrais pas faire une deuxième, je redéz active et je regretne j'en regarde la précision avec d'autres sorts. Voilà pour la mécanique globale de la précision, j'espère que c'est assez clair. Troisième mécanique du crâce va être la plus compliquée à comprendre, mais une fois que vous l'avez serranné, ça va rouler tout seul. Vous voulez peut-être remarquer, mais la précision n'a jamais jamais tout seul. La plupart du temps quand vous gagnez de la précision, vous gagnez également de la futage. Quand vous l'ensez un sort à 2p à vous gagner 20 à futage, un sort à 4p à 40 à futage, etc, c'est le même système que pour la précision. La même chose pour que vous passez votre tour à distance, vous avez 40 de précision, mais vous avez également 40 à futage. Et également pareil pour le déballage, quand vous venez de baliser et que vous l'enlevez, vous gagnez 40 de précision et 40 à futage. La précision qu'on a vu tout à l'heure, c'est une valeur qui peut m'auter jusqu'à 300, vous ne pouvez pas aller au-dessus, il y a un moment de pouvoir penser à la dépenser. Pour la futage, c'est un tout petit peu différent, vous ne pouvez pas dépasser 100. Tous les 100 d'affûtage atteints, vous allez obtenir 3 bonus sur même temps. Le premier bonus, vous allez tout simplement récupérer 1 point de voie que vous. C'est comme ça que le cycle des point de voie que vous va se faire sur le cra, il va falloir penser à gagner un maximum d'affûtage pour, à chaque fois, tous les 100 récupérer 1 point de voie que vous devez. Deuxième mécanique débloqué quand vous êtes à 100 d'affûtage, vous gagnez une balise gratuite. De base sur votre cra, les balises couent 2 paires. Quand je pose une balise à côté d'un mob, ça m'a coûté 2 paires. Mais si j'attends les 100 d'affûtage, donc la preuve que je prends 40, ici je mets ça, je prends 40 et ici, j'arrive à 100. Hop, j'arrive à 100 d'affûtage. Mon affûtage, comme vous l'avez vu dans mes états en haut, il a disparu et à la place, j'ai eu 1 point à futé. En même temps que mes points à futé, j'ai obtenu 1 balise à futé. Et donc, ma prochaine balise coûte 0 paires, ce qui me permet du coup de la poser directement ou je veux pendant mon tour. Les points à futé, vous pouvez en stacquer jusqu'à 3 en même temps, ce qui va donc vous permettre de mettre de côté des balises gratuite et surtout de faire évoluer la mécanique de point à futé. Comme vous voyez, ma point à futé actuellement, elle est à 40 % de la gamme flichée au prochain sort de dommage. Le petit tips à savoir sur le cra, c'est que la point à futé, vous pouvez également la stacquer. Mais si j'en ai 3, ça ne fera pas 3 fois 40 % de la gamme flichée au prochain sort de dommage, mais ça va s'aditionner. Par exemple, ici, si je regagne 100 d'affûtage, 100 dépenser la point à futé, donc on est en sorte d'essor de vendre, par exemple, pour l'ensemble des balises ou quoi, on va obtenir une deuxième. Et à partir du 2 pointe, c'est plus 40 % de la gamme flichée, mais 80 % de la gamme flichée au prochain sort de dommage et à savoir que vous avez 80 % sur le prochain sort de dommage, donc par exemple, il m'a appelé à chaque explorer ici, mais le prochain sort, vous avez encore une pointe, et la prochaine pointe sera 40 %. Vous allez donc pouvoir, par exemple, en stacquer 3, y avoir 120 %, 80 %, 40 % en stacquer 2, pour avoir 80 %, 40 % etc. Ça, c'est le côté un peu triqué de la classe qui vous fera pas mal, tu aurais crafter poach pour voir comment vous pouvez améliorer au mieux possible vos combos par rapport à vos PA, vos combos, etc. Et enfin, dernière mécanique du cra, c'est les balises. Les balises, c'est un concept assez simple, et vraiment efficace, vous en avez 3. Le balise de destruction, balise d'alignement et balise de contacts. La balise de contact, c'est très simple, quand vous tapez dessus, par exemple, à un sort de zone, elle va répliquer ces dégâts tout autour d'elle. Donc, les 4 casques qui sont contactotes de la balise de contact. La balise de destruction, quant à elle, c'est une zone flèche explose. Tous les sortes que je mette dessus, vont se répliquer en zone de 2 tout autour, sur les cases 1 et 2. La balise d'alignement, quant à elle, va taper sur les lignes. Je crois que c'est 5. 4 ou 5 lignes sur les côté seulement. Je vous en prie, si je vais ici, et que je mets un sort dessus, hop. Je vais avoir des sorts en ligne. C'est une ligne, je vais lui, c'est 4 ou 5. 1, 2, 3, 4, c'est 4 lignes de 4 sur les côtés. Ça va donc être à vous de placer ces balises efficacements pour maximiser à fond vos zones. Par exemple, quand vous avez de sacs à pas d'autre comme ça, le mieux, ça va être par exemple de poser une balise de destruction. On peut faire une contact entre les 2, et par exemple, une alignement ici. Et avec votre flèche explosie, vous choperrez les 2. Vous aurez 1 dégâts explos sur lui, 1 dégâts explos sur lui. La balise de contact, qu'il va prendre, et qu'il va impiter chez les 2, et la balise de alignement qui va taper des deux. Si je fais de par exemple une balise comme ça, tout, tout, tout, tout, tout, tout, tout, tout, tout, que j'ai trois lignes sur chaque mobe. Autre exemple, vous pouvez très bien, par exemple, poser une balise de zone ici, et une balise d'alignement ici. Ça marche à rave aussi. Vous avez 2 pays au minimum, un positif entre chaque balise. Donc, vous devez jouer un peu autour de ça, quand vous posez vos balises. Toutes l'optimisation de vos tours et surtout de vos flèches exposives va dépendre de ça. Cependant, faites attention, les dégâts de vos balises, et même de vos sortes, tapent vos aliais. Faites gaffe, ça peut très vite tuer tout le monde. Si vous avez compris ça, vous avez toutes les bases du crap, comprendre la suite. Je vous donne ici un petit combo qui est super efficace en DPA, justement, pour vous amuser avec toutes ces mécaniques en même temps, du Lv1, au Lv80. Ce que je vous conseille, personnellement, comme je vous disais, c'est autour un, d'essayer de gratter un maximum de précision. On veut quand même taper un petit peu, donc par exemple, on va poser une balise de zone ici. On va mettre une flèche explosive qui sera boostée, mais on aura les dégâts de base plus les dégâts de la balise. Il nous reste trois paies, on met un petit sort à la flèche dimolation. Donc je vous flèche XPLO et flèche dimolation en zone. Donc on approche deux fois la zone de la balise, plus une zone XPLO, plus une flèche. On a quand même un petit 560 dégâts et on déballise en fin de taux pour acupérer 40 précisions, 40 affutages. Ce qui fait que, au début de notre tour de 2, je suis à 160 de précisions, 60 d'affutages, et j'ai une pointe à futée. J'ai une balise gratos, mais on va pouvoir utiliser tir précis, pendant ce tour-là, pour arriver directement, poque. À 2 pointes à futée, donc pointe à futon niveau 2, 2 balises gratuite et 160 de précisions à utiliser. Comment est-ce que ça se fait que, en zone sur précision, je gagne de la futage, ma balise, etc. C'est parce que je vous conseille de mettre dans le passif esprit à futé. C'est un des pré-upressifs que vous allez obtenir. Il est super pratique, il vous donne 5 autres affutages au moment où vous l'ensez de chercher précision. Ça fait passer votre niveau marque de précision à 200, mais c'est pas du tout un problème, vu qu'on va la dépenser tout le temps. Si on reprend donc, là où on en était à notre tour 2, on va pouvoir essayer d'optimiser au marque, ça avec nos deux balises. Je peux mettre par exemple une contact ici, hop, une petite balise de destru ici. J'ai 160 de précisions, je pourrais donc faire cul seul et explorer. Je suis déjà soutien précis, j'ai donc juste à mettre une flèche d'explos qui aura le foot bonus, double balise, plus l'ai fait soutien précis du 49 d'hommage. Avec mes 70 de précisions restantes, je pourrais pas lancer une deuxième, il vaut mieux donc que je désactive tout de suite. Et que je place, par exemple, ma deuxième explode qui va elle me générer de la précision au lieu de m'en consommer. Ça me fait du coup un excellent tour de dégâts full zone. Et pour la suite du combat, il va falloir imporviser un peu. Par exemple, là, je suis au début tout re-3. Je vois que j'ai combien ? J'ai 80 de la futage, j'ai 180 de précisions. Donc j'ai assez de précisions pour pouvoir refaire deux explosives et j'ai une balise gratuite. Je peux donc très bien repasser en mode à futage. Je ne peux pas de serre ici une troisième balise. Là, c'est rare, ça n'a pas bougé. De toute façon, général, les bobos ont bougé à l'air et vous remettez une balise ailleurs. Mais dans notre cas, on peut reposer une troisième balise, chercher la zone et ici avoir une double zone de triple-explosive sous balise et le tout qui proche... Pah, pah, pah, pah, pah. Et là, on est vraiment au max de chez max. On a notre prime et on pense, bien sûr, à désactiver après. Bon, de façon générale, c'est rare que un bob aille exactement là où était vos balises, qu'ils n'y a pas de tuyets, etc. Donc en général, vous allez plutôt débaliser une ou deux balises dans vos tours, ce qui va vous permettre de remonter dans beaucoup de stats, la chamboneté à 130 de précisions. J'ai une pointe à futée niveau 2, j'ai trois balises à futées. On peut imaginer que ma balise ici n'est pas présente, mais je vais pouvoir quand même tire précis. L'isant qu'il y a une balise, je vais mettre une contact ici, je mets une là, du coup je ne vais pas forcer avec celle-là. Mais avec centrares de précisions, je peux remettre une explosive ici. Je peux reprendre une petite zone ici. Je pense à redésactiver derrière et je vais enchaîner comme ça. En tant que je recrave, vous avez une chose à faire qui est fondamental dans tous les cas à chaque tour, c'est de surveiller tous vos états tout le temps. C'est une des classes plus dépendantes de ces états. Prenez donc l'habitude de tout le temps jeter un œil. Combien de balises gratuites vous avez, à combien de précisions vous êtes, votre pointe futée à quel niveau est ce qu'elle est, même si ça c'est un peu bonus et dans tout le cas vous aurez un peu de mal à contrôler et pareil pour votre joge d'affûtage. En tant que débutant, je vous conseille de surveiller seulement deux valeurs, les plus importantes, est-ce que vous avez des balises gratuites et si oui, combien? Et est-ce que vous avez assez précisions pour une explosive ou deux explosives? Si vous pensez à ces deux facteurs et que vous pensez bien à tire précis avant et après vos flèches explosives, vous aurez une excellente base dans tout le cas pour manier le gras jusqu'au vel de ce 45 plus tard. Autre conseil, éviter de trop dépenser roulade, roulette coûte très cher et très efficace, mais écoute super cher point de� que fou et ça risque de vous bloquer pas mal dans vos combos. Je vous conseille plutôt de passer par retrait de baliser, qui permet de faire des mouss, récoulent de téléportation près d'une balise pour seulement deux paies. Hop, vous pouvez vous déplacer, récupérer les balises. Ça vous fera un maximum de stats, là je fais la soirée, je suis à 190 de précisions ou double pointe à futée. Et vous pouvez faire plein de choses encore après à ce moment-là. Mais oui, bref, passé, quand même plutôt par retrait de baliser, que par roulade. Et entre et souple, jeû que les balises sont gratuites à plupart du temps, ça vous coûte seulement deux paies pour vous téléporter à 6 cases. Regardez également un flash de reculpe, fait un peu de placement, c'est pratique quand même. Et le reste, ça roule tout seul, juste avec les sorlats, pas besoin de trop s'embêter. Le troisième emplacement de passif, si vous l'avez, vous pouvez mettre juste de l'esquive, c'est gratuit, vous mettez un petit évasion. Le reste, vous ne deurez pas besoin de nouveaux passifs, jusqu'à au moins partie de prix niveau 70. Mais pour ça, je vous conseille plutôt de regarder la vidéo du CRA Explos qui est sur la chaîne. Pour les aptitudes que je vous conseille de poser sur ce CRA, mettez tout en résistance élémentaire, puis commencez à mettre les PV, vous pouvez fou le fou le PV, tout dans la maîtrise distance évidemment. De l'esquive, ça fait toujours plaisir, des coups critiques dans la chance, et le majeur un petit PA pour avoir le maximum de combos. Avec ça, vous êtes parti pour avoir un early game, super simple, à base de grosses flash exposives et de balises, ça va rouler tout seul, et si vous atteignez le VL110-120, je vous rédirai vers les tutos un peu plus achèles justement du CRA Thère Destruction ou du CRA Flash Explos. Les deux vidéos sont retrouvables en un clic juste au-dessus de ma tête. N'hésitez pas à vous abonner, se vous plaisir, à la chaine du commentaire, et on se retrouve très bientôt pour un prochain tuto.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+Hello everyone, today a little tutorial for beginners on CRA. We are going to come back to the three mechanics of the class, I wanted to present them to you in pictures, and I will show you words of this move you can do between your level 20 and your level 80. I have a little stève without sublimation, the VEL 50 in DPA. It's something accessible to everyone in a few hours of play. So I present to you some small combos to give you peace of mind during all your treuels. When you skim through the mechanics of the class, you come across a lot of things, I'll summarize it all for you quickly. First mechanic of the ARC when you start a fight, you have an elusive state. So you have first turn bonuses plus 30% damage. This is a bonus that many other classes do not have, this case of water take advantage of it. This elusive mechanic will evolve, you have 30% then after, it will go up to 40% and around 3, you have 50%. You will gain 10% more damage, limited to 50%. And to do that, you just need to sneak your turn more than 3 skins away from an enemy. So until here, I will be able to proc it. This moment when you press not this turn your effect is decided or not. So it's going to be super important to never place yourself at the end of the round next to a half year old. If you do this, instead of gaining 10%, you will lose 10%. Your 30% can become 20% then 10% then 0%. Keep the donation in mind, it's important. Second ARC mechanic exactly the same thing. As long as you are elusive and end your turn more than 3.15 years from half. When you pass your turn, your damage increases. We are at 40%. But you have also gained precision and cleverness. So precision level 40 and sharpening level 40. After two turns in a row, you will gain 50 at once. And then it will always be 50, 50, 50, etc. We'll come back to this right after, I'll first explain to you what precision and precision are used for. Basically, all kinds of CRA, they have two effects. A basic effect and a precise shot effect. The basic effect is the one you have just when you cast your spell on a mid year. And Precise Shot facts are the ones you get when you activate Precise Shot and cast your spell. However, the effect of the spell, once it is danced under precise fire, is not automatic. He is going to ask for precision. For example, explosive arrow, consumes 90 accuracy, dimulation arrow, consumes 30, flaming arrow, consumes 60, etc. So you have lots of effects on all kinds. Here, we will only focus on explosive arrow accuracy. This is the spell that allowed them to quietly clean up all the mobs in their league game. To gain precision, the rule is very simple. When you cast a spell at 2pa, you gain 20 precision, a spell at 3pa, 30 precision, a spell at 4pa, 40 precision. You should know that your track track track points also for accuracy. For example, a 5pa spell at 1 channel point will give you 60 precision. There are 3 ways in the game to gain precision. The first is simply to cast spells in the wind or at an enemy. It will give up 40. The second way, as we saw earlier, is to simply spend your turns more than 3 anemis squares away to gain 40 or 50. And finally, the third way to gain precision is to have a beacon on the field, we will come back to this. The moment you cast unmark on it, you gain an additional 40 as well. You can monitor your accuracy at any time with your statuses at the top right. For example, if I take an ennm, I put a spell on it at 4pa, I can see up there, precision, I'm at 40. What interests me is the explosive arrow. So it's going to do the gold that I'm looking to get at least 90 accuracy to have the butcher facts. There, I know that I have 40, I know that by passing my turn, I get 40, I can very well for example this turn, just make a second arrow, I stack precision, I stack precision. Generally, any re-1, you will only scrape at maximum precision and we will consume 2, 3, 4, etc. So there, I am at 100 precision, by passing my turn, I am entitled to the most 40 that we saw at the end of the turn and with 140 precision, I will be able for example to have my butcher explosive. To do this, I click on Tirepressie before, always, I release my explosive to have the effect to be improved and you have to remember to click on Tirepressie again to deactivate it. This will allow, precisely, at the end of your turn to generate the pressure for your next arrow. There, for example, I didn't have enough precision to have another explosive, rather than putting an explosive in the wind and not gaining anything, I might as well use other spells which will allow me to regenerate precision. I go back to 90, I pass my turn, I have 140, I cram on Tirepressie, I put the butcher explosive, I have 50, I couldn't do a second, I activate again and I regret I look at the precision with other spells. That's it for the overall precision mechanics, I hope it's clear enough. Third mechanic of the trick is going to be the most complicated to understand, but once you get it down, it will work itself. You may want to notice, but precision never stands alone. Most of the time when you gain accuracy, you also gain smartness. When you think of a 2p spell to gain you 20 to futage, a 4p spell to 40 to futage, etc., it's the same system as for precision. The same thing for you to spend your turn at range, you have 40 accuracy, but you also have 40 futage. And also the same for unboxing, when you just mark up and remove it, you gain 40 accuracy and 40 futage. The precision that we saw earlier is a value that can go up to 300, you cannot go above it, there is a moment to think about spending it. For sharpening, it's a little bit different, you cannot exceed 100. Every 100 sharpening reached, you will obtain 3 bonuses at the same time. The first bonus, you will simply recover 1 lane point that you. This is how the cycle of track points that you will do on the cra, you will have to think about gaining as much sharpening as possible to, each time, every 100 recover 1 track point that you need. Second mechanic unlocked when you are at 100 sharpening, you earn a free beacon. Basic on your cra, the tags cost 2 pairs. When I place a beacon next to a mob, it cost me 2 pairs. But if I wait for the 100 sharpening, so the proof that I take 40, here I put that, I take 40 and here, I arrive at 100. Hop, I arrive at 100 sharpening. My sharpening, as you saw in my states at the top, it disappeared and instead I had 1 point to smart. Along with my smart points, I obtained 1 smart beacon. And so, my next beacon costs 0 pairs, which allows me to place it directly wherever I want during my turn. Smart points, you can stack up to 3 at the same time, which will allow you to set aside free tags and above all to develop the smart point mechanics. As you see, my smart point currently, it is at 40% of the range shown for the next damage spell. The little tip to know about the cra is that the smart point, you can also stack it. But if I have 3, it won't be 3 times 40% of the range reflected in the next damage spell, but it will add up. For example, here, if I regain 100 sharpening, 100 spend the point at smart, so we are in a kind of boom to sell, for example, for all the tags or what, we will get a second. And from the 2 tip, it's no longer 40% of the flashed range, but 80% of the flashed range on the next damage spell and knowing that you have 80% on the next damage spell, so for example, he called me on each explorer here, but the next spell, you still have a tip, and the next tip will be 40%. You will therefore be able, for example, to stack 3, to have 120%, 80%, 40%, to stack 2, to have 80%, 40% etc. This is the somewhat tricked side of the class which will do you a lot of harm, you would have crafter poach to see how you can improve your combos as best as possible in relation to your AP, your combos, etc. And finally, the last mechanic of the cra is the beacons. Tags are a fairly simple concept, and really effective, you have 3 of them. The destruction tag, alignment tag and contacts tag. The contact tag is very simple, when you tap on it, for example, with an area spell, it will replicate this damage all around it. So, the 4 helmets which are contactotes from the contact tag. The destruction beacon, for its part, is an exploding arrow zone. All the kinds that I put on it will replicate in zone 2 all around, on squares 1 and 2. The alignment tag, for its part, will hit the lines. I think it's 5. 4 or 5 lines on the sides only. Please, if I go here, and I put a spell on it, boom. I'm going to have online spells. It's a line, I'll go to him, it's 4 or 5. 1, 2, 3, 4, it's 4 lines of 4 on the sides. It will therefore be up to you to place these markers effectively to fully maximize your areas. For example, when you have bags like that, the best thing would be to place a destruction beacon. We can make a contact between the two, and for example, an alignment here. And with your exploded arrow, you will catch both. You will have 1 explosion damage on him, 1 explosion damage on him. The contact tag, which he will take, and which he will hit on both, and the alignment tag which will hit both. If I make for example a tag like this, all, all, all, all, all, all, all, all, all, that I have three lines on each mobe. Another example, you can very well, for example, place an area tag here, and an alignment tag here. It works great too. You have at least 2 countries, one positive between each tag. So, you have to play around with that a little bit, when you put your tags down. All the optimization of your towers and especially your exposure arrows will depend on this. However, be careful, the damage from your tags, and even your spells, hits your aliases. Be careful, it can kill everyone very quickly. If you understand that, you have all the basics of crap, understand the rest. I'm giving you here a little combo that is super effective in DPA, precisely, to have fun with all these mechanics at the same time, from Lv1, to Lv80. What I advise you, personally, as I told you, is to try to achieve maximum precision. We still want to type a little bit, so for example, we're going to place a zone tag here. We will put an explosive arrow which will be boosted, but we will have the base damage plus the damage of the beacon. We have three paychecks left, we put a little spell on the dimulation arrow. So I give you XPLO arrow and dimulation arrow in zone. So we approach the beacon zone twice, plus an XPLO zone, plus an arrow. We still have a small 560 damage and we unpack at the end of the rate to acquire 40 precisions, 40 sharpenings. Which means that, at the start of our round of 2, I am at 160 precision, 60 sharpening, and I have a smart tip. I have a free beacon, but we will be able to use precise fire, during this turn, to arrive directly, epoch. With 2 smart tips, so level 2 futon tip, 2 free beacons and 160 precisions to use. How is it that, in a precision zone, I gain futage, my beacon, etc.? This is because I advise you to put in the passive mind to smart. This is one of the pre-pressures you're going to get. It is super practical, it gives you 5 other sharpenings when you want to look for precision. This raises your accuracy mark level to 200, but that's not a problem at all, since you'll be spending it all the time. If we start again, where we left off in our turn 2, we will be able to try to optimize at the mark, this with our two tags. For example, I can put a contact here, hop, a little destruct tag here. I have 160 accuracy, so I could go alone and explore. I am already precise support, so I just have to put an explosive arrow which will have the bonus foot, double tag, plus I did precise support of the 49 of homage. With my 70 precision remaining, I won't be able to launch a second one, so it's better that I deactivate it straight away. And that I place, for example, my second explode which will generate precision for me instead of consuming it. This gives me an excellent full zone damage trick. And for the rest of the fight, we will have to improvise a little. For example, here, I am at the beginning all re-3. I see how much do I have? I have 80 futage, I have 180 precision. So I have enough precision to be able to make two explosives again and I have a free tag. So I can very easily go back to futage mode. I can't squeeze a third tag here. There, it's rare, it hasn't changed. In any case, general, the ailments have moved in the air and you put a beacon elsewhere. But in our case, we can place a third beacon, search the zone and here have a double triple-explosive zone under beacon and everything close... Pah, pah, pah, pah, pah. And there, we are really at the max at max. We have our bonus and we think, of course, of deactivating afterwards. Well, generally speaking, it's rare that a bob goes exactly where your markers were, that there are no pipes, etc. So in general, you will rather unmark one or two beacons in your towers, which will allow you to go back in many stats, chamboneté to 130 precision. I have a level 2 smart tip, I have three smart beacons. We can imagine that my tag here is not present, but I will still be able to shoot accurately. Knowing that there is a tag, I'm going to put a contact here, I'll put one there, so I'm not going to force it with that one. But with more details, I can put an explosive back here. I can take back a small area here. I'm thinking of re-deactivating it behind and I'm going to continue like that. As a replay, you have one thing to do that is fundamental in every case every turn, and that is to monitor all your states all the time. It is one of the most dependent classes of these states. So make it a habit to take a look all the time. How many free tags you have, how much precision you are at, your smart tip at what level it is, even if that is a bit of a bonus and in any case you will have a little difficulty in controlling and the same for your sharpening jog. As a beginner, I advise you to monitor only two values, the most important, do you have free tags and if so, how many? And do you have enough details for one explosive or two explosives? If you think about these two factors and think carefully about shooting accurately before and after your explosive arrows, you will have an excellent foundation in any case to handle the fat up to the vel of this 45 later. Another piece of advice, avoid spending too much on roulette, roulette is very expensive and very effective, but listen super expensive point of crazy and it risks blocking you a lot in your combos. I advise you instead to go through beacon removal, which allows you to make foams, resulting from teleportation near a beacon for only two pay. Hop, you can move, collect the beacons. This will give you maximum stats, here I'm having the evening, I'm at 190 precision or double tip smart. And you can still do a lot of things afterwards at that point. But yes, in short, passed, still more by removing the marker, than by rolling. And between and flexible, although the beacons are free most of the time, it only costs you two paychecks to teleport 6 squares. Also look at a reversing flash, do a little placement, it's still practical. And the rest works on its own, just with the sorlats, no need to bother too much. The third passive slot, if you have it, you can just put evasion, it's free, you put a little evasion. The rest, you won't need new passives, until at least part of price level 70. But for that, I advise you to watch the CRA Explos video which is on the channel. For the skills that I advise you to put on this CRA, put everything in elemental resistance, then start to add the HP, you can increase the HP, everything in distance control obviously. Dodging is always fun, critical hits are lucky, and the middle finger a little AP to have the maximum number of combos. With that, you are left with a super simple early game, based on big flash exposives and beacons, it will run on its own, and if you reach VL110-120, I will direct you to the slightly more advanced tutorials of CRA Thère Destruction or CRA Flash Explos. Both videos can be found in one click just above my head. Don't hesitate to subscribe, if you like, to the comment channel, and we'll see you very soon for a next tutorial..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 4.54s]  Bonjour à tous, aujourd'hui petit tutoriel pour les débutants sur le CRA.
+[4.54s - 7.40s]  On va revenir sur les trois mécaniques de la classe, je voulais vous les présenter en image,
+[7.40s - 10.96s]  et je vous montrerai des mots de ce coup vous pouvez faire entre votre niveau 20 et votre niveau 80.
+[10.96s - 13.50s]  J'ai un petit stève sans sublimation, le VEL 50 en DPA.
+[13.50s - 15.56s]  C'est un stuff accessible à tous en quelques heures de jeu.
+[15.56s - 18.96s]  Je vous présente donc quelques petits combos pour être tranquilles durant tous vos treuels.
+[18.96s - 23.00s]  Quand vous survoler les mécaniques de la classe, vous tombez sur pas mal de choses,
+[23.00s - 24.66s]  je vais vous résumer tout ça rapidement.
+[24.66s - 29.00s]  Première mécanique du CRA quand vous lancez un combat, vous avez un état insaisisable.
+[29.10s - 32.42s]  Vous avez donc des vôts de premier tour de jeu plus 30 % de dégâts.
+[32.42s - 35.26s]  C'est un bonus que plein d'autres classes n'ont pas, ce cas d'eau profitez-en.
+[35.26s - 38.72s]  Cette mécanique insaisisable est va évoluer, vous avez 30 % puis après,
+[38.72s - 42.76s]  ça va monter à 40 % et autour 3, vous avez 50 %.
+[42.76s - 46.80s]  Vous allez gagner 10 % de dégâts en plus, limités à 50 %.
+[46.80s - 50.02s]  Et pour ça, il vous suffit de filir votre tour à plus de 3 peaux d'un ennemi.
+[50.02s - 52.28s]  Donc jusqu'à ici, je vais pouvoir le proc.
+[52.28s - 55.52s]  Ce moment où vous appuyez sur pas ce tour que votre effet est décidée ou pas.
+[55.60s - 59.20s]  Ça va donc être super important de ne jamais se placer en fin de tour à côté d'un an de mi.
+[59.20s - 62.16s]  Si vous le faites, au lieu de gagner 10 %, vous perdrez 10 %.
+[62.16s - 65.20s]  Votre 30 % peut devenir 20 % puis 10 % puis 0 %.
+[65.20s - 67.16s]  Gardez le don bien en tête, c'est important.
+[67.16s - 69.84s]  Deuxième mécanique du CRA exactement la même chose.
+[69.84s - 73.40s]  Tant que vous êtes insaisisable et que vous finissez votre tour à plus de 3, 15 d'an d'an de mi.
+[73.40s - 76.68s]  Quand vous passez votre tour, donc il y a votre bouteau de dégâts qui augmentent.
+[76.68s - 78.12s]  On est à 40 %.
+[78.12s - 81.84s]  Mais vous avez gagné en plus de la précision et de la futage.
+[81.84s - 85.16s]  Donc précision niveau 40 et affutage niveau 40.
+[85.16s - 88.32s]  Au bout de deux tours d'affilée, vous en gagnera 50 d'un coup.
+[88.32s - 91.24s]  Et après, ce sera toujours 50, 50, 50, etc.
+[91.24s - 96.32s]  On va revenir dessus juste après, je vais d'abord vous expliquer à quoi sert la précision et la futage.
+[96.32s - 98.96s]  En gros, tous les sortes du CRA, ils ont deux effets.
+[98.96s - 101.28s]  Un effet de base et un effet tir précis.
+[101.28s - 105.48s]  L'effet de base se celui que vous avez juste quand vous lancé votre sort sur un an de mi.
+[105.48s - 110.28s]  Et les faits tir précis, c'est celui que vous obtenez quand vous vous activez tir précis et que vous lancé votre sort.
+[110.28s - 113.88s]  Cependant, l'effet du sort, une fois qu'il est dansé sous tir précis, il est pas automatique.
+[113.88s - 116.24s]  Il va demander justement de la précision.
+[116.24s - 120.80s]  Par exemple, flèche explosif, consomme 90 de précision, flèche dimolation, consomme 30,
+[120.80s - 123.20s]  flèche enflammée, consomme 60, etc.
+[123.20s - 125.04s]  Vous avez donc plein d'effets sur tous les sortes.
+[125.04s - 128.88s]  Ici, on va se concentrer seulement sur la précision de flèche explosif.
+[128.88s - 132.16s]  C'est le sort qui a au permis de nettoyer tous les mob de leur league game tranquillement.
+[132.16s - 134.52s]  Pour gagner de la précision, la règle est très simple.
+[134.52s - 137.04s]  Quand vous lancé un sort à 2pa, vous gagnez 20 précisions,
+[137.04s - 141.28s]  un sort à 3pa, 30 de précision, un sort à 4pa, 40 de précision.
+[141.40s - 144.08s]  Il faut savoir que vos points de voie de voie de voie quant également pour la précision.
+[144.08s - 148.36s]  Par exemple, un sort à 5pa à 1 point de voie de voie, vous donnera 60 de précisions.
+[148.36s - 150.96s]  Il existe dans le jeu 3 moyens pour gagner de la précision.
+[150.96s - 154.84s]  Le premier, c'est tout simplement de lancer des sorts dans le vent ou sur un ennemis.
+[154.84s - 156.28s]  Ça va abandonner 40.
+[156.28s - 158.16s]  La deuxième façon, c'est comment l'a vu tout à l'heure,
+[158.16s - 160.60s]  est suffit de passer vos tours à plus de 3 cases d'anemis
+[160.60s - 162.76s]  pour en gagner 40 ou 50.
+[162.76s - 165.12s]  Et enfin, la troisième façon de gagner de la précision,
+[165.12s - 167.28s]  c'est qu'un avain de balise sur le terrain, on va revenir dessus.
+[167.28s - 169.08s]  Au moment où vous lancez débalisage dessus,
+[169.08s - 171.24s]  vous gagnez 40 également supplémentaires.
+[171.28s - 174.40s]  Vous pouvez à tout moment surveiller la vous-en-être dans votre précision avec vos
+[174.40s - 175.60s]  états en haut à droite.
+[175.60s - 179.92s]  Par exemple, si je prends un ennm, je lui mets un sort à 4pa, je peux voir là-haut,
+[179.92s - 181.48s]  précision, je suis à 40.
+[181.48s - 183.24s]  Moi, ce qui m'intéresse, c'est la flèche explosive.
+[183.24s - 186.40s]  Il va donc faire l'or que je cherche à obtenir au moins 90 de précision pour avoir
+[186.40s - 187.40s]  les faits boucher.
+[187.40s - 190.68s]  Là, je sais que j'ai 40, je sais qu'en passant mon tour, je obtenir 40, je peux très
+[190.68s - 194.36s]  bien par exemple ce tour-là, juste faire une deuxième flèche, je stack de la précision,
+[194.36s - 195.36s]  je stack de la précision.
+[195.36s - 198.52s]  Généralement, tout re-1, vous allez seulement gratter à maximum de précision et on va
+[198.52s - 200.20s]  consommer 2, 3, 4, etc.
+[200.20s - 204.04s]  Donc là, je suis à 100 de précision, en passant mon tour, j'ai droit au plus 40 qu'on
+[204.04s - 208.64s]  a vu de fin de tour et avec 140 de précision, je vais pouvoir par exemple avoir mon explosif
+[208.64s - 209.64s]  boucher.
+[209.64s - 214.80s]  Pour ça, je clique sur Tirepressie avant, toujours, je lâche mon explosif pour avoir l'effet
+[214.80s - 219.20s]  à mediorer et il faut bien penser à recliquer sur Tirepressie pour le désactiver.
+[219.20s - 222.04s]  Ça va permettre, justement, avec la fin de votre tour de générer la présision pour
+[222.04s - 223.04s]  votre prochaine flèche.
+[223.04s - 226.24s]  Là, par exemple, j'avais pas assez de précision pour avoir une autre explosive, plutôt que
+[226.24s - 229.08s]  de mettre une explosive dans le vent et de rien gagner autant utiliser d'autres sorts
+[229.08s - 230.56s]  qui vont permettre de regenerer de la précision.
+[230.56s - 236.12s]  Je remonte à 90, je passe mon tour, j'ai 140, je cram sur Tirepressie, je mets l'explosif
+[236.12s - 242.04s]  boucher, j'ai 50, je pourrais pas faire une deuxième, je redéz active et je regretne
+[242.04s - 243.64s]  j'en regarde la précision avec d'autres sorts.
+[243.64s - 246.60s]  Voilà pour la mécanique globale de la précision, j'espère que c'est assez clair.
+[246.60s - 248.88s]  Troisième mécanique du crâce va être la plus compliquée à comprendre, mais une fois que
+[248.88s - 250.28s]  vous l'avez serranné, ça va rouler tout seul.
+[250.28s - 252.80s]  Vous voulez peut-être remarquer, mais la précision n'a jamais jamais tout seul.
+[252.88s - 255.64s]  La plupart du temps quand vous gagnez de la précision, vous gagnez également de la futage.
+[255.64s - 259.44s]  Quand vous l'ensez un sort à 2p à vous gagner 20 à futage, un sort à 4p à 40 à futage,
+[259.44s - 261.64s]  etc, c'est le même système que pour la précision.
+[261.64s - 265.20s]  La même chose pour que vous passez votre tour à distance, vous avez 40 de précision,
+[265.20s - 266.72s]  mais vous avez également 40 à futage.
+[266.72s - 270.36s]  Et également pareil pour le déballage, quand vous venez de baliser et que vous l'enlevez,
+[270.36s - 272.72s]  vous gagnez 40 de précision et 40 à futage.
+[272.72s - 275.88s]  La précision qu'on a vu tout à l'heure, c'est une valeur qui peut m'auter jusqu'à 300,
+[275.88s - 278.40s]  vous ne pouvez pas aller au-dessus, il y a un moment de pouvoir penser à la dépenser.
+[278.48s - 281.88s]  Pour la futage, c'est un tout petit peu différent, vous ne pouvez pas dépasser 100.
+[281.88s - 285.08s]  Tous les 100 d'affûtage atteints, vous allez obtenir 3 bonus sur même temps.
+[285.08s - 287.88s]  Le premier bonus, vous allez tout simplement récupérer 1 point de voie que vous.
+[287.88s - 290.20s]  C'est comme ça que le cycle des point de voie que vous va se faire sur le cra,
+[290.20s - 293.08s]  il va falloir penser à gagner un maximum d'affûtage pour, à chaque fois,
+[293.08s - 294.60s]  tous les 100 récupérer 1 point de voie que vous devez.
+[294.60s - 298.68s]  Deuxième mécanique débloqué quand vous êtes à 100 d'affûtage, vous gagnez une balise gratuite.
+[298.68s - 300.76s]  De base sur votre cra, les balises couent 2 paires.
+[300.76s - 303.24s]  Quand je pose une balise à côté d'un mob, ça m'a coûté 2 paires.
+[303.32s - 305.84s]  Mais si j'attends les 100 d'affûtage,
+[305.84s - 310.28s]  donc la preuve que je prends 40, ici je mets ça, je prends 40 et ici, j'arrive à 100.
+[310.28s - 312.08s]  Hop, j'arrive à 100 d'affûtage.
+[312.08s - 316.56s]  Mon affûtage, comme vous l'avez vu dans mes états en haut, il a disparu et à la place, j'ai eu 1 point à futé.
+[316.56s - 319.36s]  En même temps que mes points à futé, j'ai obtenu 1 balise à futé.
+[319.36s - 323.00s]  Et donc, ma prochaine balise coûte 0 paires, ce qui me permet du coup de la poser directement
+[323.00s - 324.32s]  ou je veux pendant mon tour.
+[324.32s - 327.16s]  Les points à futé, vous pouvez en stacquer jusqu'à 3 en même temps,
+[327.16s - 329.52s]  ce qui va donc vous permettre de mettre de côté des balises gratuite
+[329.52s - 331.72s]  et surtout de faire évoluer la mécanique de point à futé.
+[331.84s - 336.12s]  Comme vous voyez, ma point à futé actuellement, elle est à 40 % de la gamme flichée au prochain sort de dommage.
+[336.12s - 340.24s]  Le petit tips à savoir sur le cra, c'est que la point à futé, vous pouvez également la stacquer.
+[340.24s - 344.48s]  Mais si j'en ai 3, ça ne fera pas 3 fois 40 % de la gamme flichée au prochain sort de dommage,
+[344.48s - 345.88s]  mais ça va s'aditionner.
+[345.88s - 348.96s]  Par exemple, ici, si je regagne 100 d'affûtage,
+[348.96s - 351.84s]  100 dépenser la point à futé, donc on est en sorte d'essor de vendre, par exemple,
+[351.84s - 355.36s]  pour l'ensemble des balises ou quoi, on va obtenir une deuxième.
+[355.36s - 360.40s]  Et à partir du 2 pointe, c'est plus 40 % de la gamme flichée, mais 80 % de la gamme flichée au prochain sort de dommage
+[360.44s - 363.60s]  et à savoir que vous avez 80 % sur le prochain sort de dommage, donc par exemple,
+[363.60s - 366.76s]  il m'a appelé à chaque explorer ici, mais le prochain sort, vous avez encore une pointe,
+[366.76s - 368.32s]  et la prochaine pointe sera 40 %.
+[368.32s - 373.40s]  Vous allez donc pouvoir, par exemple, en stacquer 3, y avoir 120 %, 80 %, 40 % en stacquer 2,
+[373.40s - 375.48s]  pour avoir 80 %, 40 % etc.
+[375.48s - 377.48s]  Ça, c'est le côté un peu triqué de la classe qui vous fera pas mal,
+[377.48s - 380.24s]  tu aurais crafter poach pour voir comment vous pouvez améliorer au mieux possible
+[380.24s - 382.40s]  vos combos par rapport à vos PA, vos combos, etc.
+[382.40s - 385.80s]  Et enfin, dernière mécanique du cra, c'est les balises.
+[385.80s - 388.76s]  Les balises, c'est un concept assez simple, et vraiment efficace, vous en avez 3.
+[388.80s - 392.48s]  Le balise de destruction, balise d'alignement et balise de contacts.
+[392.48s - 395.08s]  La balise de contact, c'est très simple, quand vous tapez dessus, par exemple,
+[395.08s - 398.12s]  à un sort de zone, elle va répliquer ces dégâts tout autour d'elle.
+[398.12s - 401.16s]  Donc, les 4 casques qui sont contactotes de la balise de contact.
+[401.16s - 404.60s]  La balise de destruction, quant à elle, c'est une zone flèche explose.
+[404.60s - 409.12s]  Tous les sortes que je mette dessus, vont se répliquer en zone de 2 tout autour, sur les cases 1 et 2.
+[409.12s - 411.68s]  La balise d'alignement, quant à elle, va taper sur les lignes.
+[411.68s - 413.16s]  Je crois que c'est 5.
+[413.16s - 415.44s]  4 ou 5 lignes sur les côté seulement.
+[415.44s - 418.32s]  Je vous en prie, si je vais ici, et que je mets un sort dessus, hop.
+[418.40s - 419.40s]  Je vais avoir des sorts en ligne.
+[419.40s - 421.76s]  C'est une ligne, je vais lui, c'est 4 ou 5.
+[421.76s - 424.36s]  1, 2, 3, 4, c'est 4 lignes de 4 sur les côtés.
+[424.36s - 429.32s]  Ça va donc être à vous de placer ces balises efficacements pour maximiser à fond vos zones.
+[429.32s - 432.36s]  Par exemple, quand vous avez de sacs à pas d'autre comme ça,
+[432.36s - 435.88s]  le mieux, ça va être par exemple de poser une balise de destruction.
+[435.88s - 439.56s]  On peut faire une contact entre les 2, et par exemple, une alignement ici.
+[439.56s - 441.80s]  Et avec votre flèche explosie, vous choperrez les 2.
+[441.80s - 444.60s]  Vous aurez 1 dégâts explos sur lui, 1 dégâts explos sur lui.
+[444.68s - 446.80s]  La balise de contact, qu'il va prendre, et qu'il va impiter chez les 2,
+[446.80s - 448.64s]  et la balise de alignement qui va taper des deux.
+[448.64s - 450.20s]  Si je fais de par exemple une balise comme ça,
+[450.20s - 451.40s]  tout, tout, tout, tout, tout, tout, tout, tout, tout,
+[451.40s - 452.80s]  que j'ai trois lignes sur chaque mobe.
+[452.80s - 454.52s]  Autre exemple, vous pouvez très bien, par exemple,
+[454.52s - 458.08s]  poser une balise de zone ici, et une balise d'alignement ici.
+[458.08s - 459.04s]  Ça marche à rave aussi.
+[459.04s - 461.28s]  Vous avez 2 pays au minimum, un positif entre chaque balise.
+[461.28s - 464.44s]  Donc, vous devez jouer un peu autour de ça, quand vous posez vos balises.
+[465.56s - 469.52s]  Toutes l'optimisation de vos tours et surtout de vos flèches exposives va dépendre de ça.
+[469.52s - 471.68s]  Cependant, faites attention, les dégâts de vos balises,
+[471.72s - 473.96s]  et même de vos sortes, tapent vos aliais.
+[473.96s - 475.64s]  Faites gaffe, ça peut très vite tuer tout le monde.
+[475.64s - 478.36s]  Si vous avez compris ça, vous avez toutes les bases du crap,
+[478.36s - 479.44s]  comprendre la suite.
+[479.44s - 482.36s]  Je vous donne ici un petit combo qui est super efficace en DPA,
+[482.36s - 484.76s]  justement, pour vous amuser avec toutes ces mécaniques en même temps,
+[484.76s - 486.56s]  du Lv1, au Lv80.
+[486.56s - 488.72s]  Ce que je vous conseille, personnellement, comme je vous disais,
+[488.72s - 491.92s]  c'est autour un, d'essayer de gratter un maximum de précision.
+[491.92s - 493.40s]  On veut quand même taper un petit peu, donc par exemple,
+[493.40s - 495.72s]  on va poser une balise de zone ici.
+[495.72s - 497.68s]  On va mettre une flèche explosive qui sera boostée,
+[497.68s - 499.92s]  mais on aura les dégâts de base plus les dégâts de la balise.
+[500.04s - 502.08s]  Il nous reste trois paies, on met un petit sort
+[502.08s - 503.40s]  à la flèche dimolation.
+[503.40s - 506.04s]  Donc je vous flèche XPLO et flèche dimolation en zone.
+[506.04s - 507.96s]  Donc on approche deux fois la zone de la balise,
+[507.96s - 509.76s]  plus une zone XPLO, plus une flèche.
+[509.76s - 512.64s]  On a quand même un petit 560 dégâts et on déballise en fin de taux
+[512.64s - 514.92s]  pour acupérer 40 précisions, 40 affutages.
+[514.92s - 516.28s]  Ce qui fait que, au début de notre tour de 2,
+[516.28s - 519.52s]  je suis à 160 de précisions, 60 d'affutages,
+[519.52s - 520.96s]  et j'ai une pointe à futée.
+[520.96s - 522.32s]  J'ai une balise gratos,
+[522.32s - 524.28s]  mais on va pouvoir utiliser tir précis,
+[524.28s - 525.76s]  pendant ce tour-là, pour arriver directement,
+[525.76s - 526.48s]  poque.
+[526.48s - 528.80s]  À 2 pointes à futée, donc pointe à futon niveau 2,
+[528.84s - 531.60s]  2 balises gratuite et 160 de précisions à utiliser.
+[531.60s - 533.20s]  Comment est-ce que ça se fait que, en zone sur précision,
+[533.20s - 535.08s]  je gagne de la futage, ma balise, etc.
+[535.08s - 537.08s]  C'est parce que je vous conseille de mettre dans le passif
+[537.08s - 538.08s]  esprit à futé.
+[538.08s - 539.92s]  C'est un des pré-upressifs que vous allez obtenir.
+[539.92s - 542.08s]  Il est super pratique, il vous donne 5 autres affutages
+[542.08s - 543.60s]  au moment où vous l'ensez de chercher précision.
+[543.60s - 545.32s]  Ça fait passer votre niveau marque de précision à 200,
+[545.32s - 546.20s]  mais c'est pas du tout un problème,
+[546.20s - 547.48s]  vu qu'on va la dépenser tout le temps.
+[547.48s - 550.16s]  Si on reprend donc, là où on en était à notre tour 2,
+[550.16s - 551.76s]  on va pouvoir essayer d'optimiser au marque,
+[551.76s - 552.76s]  ça avec nos deux balises.
+[552.76s - 555.28s]  Je peux mettre par exemple une contact ici, hop,
+[555.32s - 557.52s]  une petite balise de destru ici.
+[557.52s - 560.00s]  J'ai 160 de précisions, je pourrais donc faire cul seul
+[560.00s - 560.84s]  et explorer.
+[560.84s - 561.96s]  Je suis déjà soutien précis,
+[561.96s - 564.08s]  j'ai donc juste à mettre une flèche d'explos
+[564.08s - 566.80s]  qui aura le foot bonus, double balise,
+[566.80s - 569.40s]  plus l'ai fait soutien précis du 49 d'hommage.
+[569.40s - 571.04s]  Avec mes 70 de précisions restantes,
+[571.04s - 572.04s]  je pourrais pas lancer une deuxième,
+[572.04s - 574.64s]  il vaut mieux donc que je désactive tout de suite.
+[574.64s - 576.56s]  Et que je place, par exemple, ma deuxième explode
+[576.56s - 579.84s]  qui va elle me générer de la précision au lieu de m'en consommer.
+[579.84s - 582.52s]  Ça me fait du coup un excellent tour de dégâts full zone.
+[582.52s - 583.52s]  Et pour la suite du combat,
+[583.56s - 585.32s]  il va falloir imporviser un peu.
+[585.32s - 587.40s]  Par exemple, là, je suis au début tout re-3.
+[587.40s - 588.20s]  Je vois que j'ai combien ?
+[588.20s - 590.68s]  J'ai 80 de la futage, j'ai 180 de précisions.
+[590.68s - 592.92s]  Donc j'ai assez de précisions pour pouvoir refaire
+[592.92s - 596.20s]  deux explosives et j'ai une balise gratuite.
+[596.20s - 598.92s]  Je peux donc très bien repasser en mode à futage.
+[598.92s - 601.32s]  Je ne peux pas de serre ici une troisième balise.
+[601.32s - 602.92s]  Là, c'est rare, ça n'a pas bougé.
+[602.92s - 604.48s]  De toute façon, général, les bobos ont bougé à l'air
+[604.48s - 605.80s]  et vous remettez une balise ailleurs.
+[605.80s - 609.16s]  Mais dans notre cas, on peut reposer une troisième balise,
+[609.16s - 611.68s]  chercher la zone et ici avoir une double zone
+[611.68s - 614.76s]  de triple-explosive sous balise et le tout qui proche...
+[614.76s - 615.76s]  Pah, pah, pah, pah, pah.
+[615.76s - 617.88s]  Et là, on est vraiment au max de chez max.
+[617.88s - 621.24s]  On a notre prime et on pense, bien sûr, à désactiver après.
+[621.24s - 623.44s]  Bon, de façon générale, c'est rare que un bob aille
+[623.44s - 625.88s]  exactement là où était vos balises, qu'ils n'y a pas de tuyets, etc.
+[625.88s - 628.72s]  Donc en général, vous allez plutôt débaliser une ou deux balises
+[628.72s - 630.72s]  dans vos tours, ce qui va vous permettre de remonter
+[630.72s - 633.44s]  dans beaucoup de stats, la chamboneté à 130 de précisions.
+[633.44s - 636.04s]  J'ai une pointe à futée niveau 2, j'ai trois balises à futées.
+[636.04s - 638.28s]  On peut imaginer que ma balise ici n'est pas présente,
+[638.28s - 640.64s]  mais je vais pouvoir quand même tire précis.
+[640.68s - 643.20s]  L'isant qu'il y a une balise, je vais mettre une contact ici,
+[643.20s - 645.44s]  je mets une là, du coup je ne vais pas forcer avec celle-là.
+[645.44s - 648.80s]  Mais avec centrares de précisions, je peux remettre une explosive ici.
+[648.80s - 651.00s]  Je peux reprendre une petite zone ici.
+[651.00s - 654.08s]  Je pense à redésactiver derrière et je vais enchaîner comme ça.
+[654.08s - 656.32s]  En tant que je recrave, vous avez une chose à faire qui est fondamental
+[656.32s - 657.72s]  dans tous les cas à chaque tour,
+[657.72s - 659.92s]  c'est de surveiller tous vos états tout le temps.
+[659.92s - 662.20s]  C'est une des classes plus dépendantes de ces états.
+[662.20s - 664.24s]  Prenez donc l'habitude de tout le temps jeter un œil.
+[664.24s - 665.60s]  Combien de balises gratuites vous avez,
+[665.60s - 667.12s]  à combien de précisions vous êtes,
+[667.12s - 669.24s]  votre pointe futée à quel niveau est ce qu'elle est,
+[669.32s - 672.12s]  même si ça c'est un peu bonus et dans tout le cas vous aurez un peu de mal à contrôler
+[672.12s - 674.28s]  et pareil pour votre joge d'affûtage.
+[674.28s - 676.92s]  En tant que débutant, je vous conseille de surveiller seulement deux valeurs,
+[676.92s - 677.96s]  les plus importantes,
+[677.96s - 680.60s]  est-ce que vous avez des balises gratuites et si oui, combien?
+[680.60s - 684.12s]  Et est-ce que vous avez assez précisions pour une explosive ou deux explosives?
+[684.12s - 686.44s]  Si vous pensez à ces deux facteurs et que vous pensez bien
+[686.44s - 688.84s]  à tire précis avant et après vos flèches explosives,
+[688.84s - 691.48s]  vous aurez une excellente base dans tout le cas pour manier le gras
+[691.48s - 692.88s]  jusqu'au vel de ce 45 plus tard.
+[692.88s - 696.52s]  Autre conseil, éviter de trop dépenser roulade,
+[696.52s - 698.44s]  roulette coûte très cher et très efficace,
+[698.44s - 701.48s]  mais écoute super cher point de� que fou et ça risque de vous bloquer pas mal dans vos combos.
+[701.48s - 703.96s]  Je vous conseille plutôt de passer par retrait de baliser,
+[703.96s - 705.00s]  qui permet de faire des mouss,
+[705.00s - 707.80s]  récoulent de téléportation près d'une balise pour seulement deux paies.
+[707.80s - 711.24s]  Hop, vous pouvez vous déplacer, récupérer les balises.
+[711.24s - 714.12s]  Ça vous fera un maximum de stats,
+[714.12s - 717.56s]  là je fais la soirée, je suis à 190 de précisions ou double pointe à futée.
+[717.56s - 720.04s]  Et vous pouvez faire plein de choses encore après à ce moment-là.
+[720.04s - 723.80s]  Mais oui, bref, passé, quand même plutôt par retrait de baliser, que par roulade.
+[723.80s - 724.68s]  Et entre et souple,
+[724.68s - 726.44s]  jeû que les balises sont gratuites à plupart du temps,
+[726.44s - 728.92s]  ça vous coûte seulement deux paies pour vous téléporter à 6 cases.
+[728.92s - 729.96s]  Regardez également un flash de reculpe,
+[729.96s - 731.32s]  fait un peu de placement, c'est pratique quand même.
+[731.32s - 733.40s]  Et le reste, ça roule tout seul, juste avec les sorlats,
+[733.40s - 734.60s]  pas besoin de trop s'embêter.
+[734.60s - 736.28s]  Le troisième emplacement de passif, si vous l'avez,
+[736.28s - 737.56s]  vous pouvez mettre juste de l'esquive, c'est gratuit,
+[737.56s - 738.44s]  vous mettez un petit évasion.
+[738.44s - 740.12s]  Le reste, vous ne deurez pas besoin de nouveaux passifs,
+[740.12s - 743.08s]  jusqu'à au moins partie de prix niveau 70.
+[743.08s - 745.08s]  Mais pour ça, je vous conseille plutôt de regarder la vidéo
+[745.08s - 746.68s]  du CRA Explos qui est sur la chaîne.
+[746.68s - 749.72s]  Pour les aptitudes que je vous conseille de poser sur ce CRA,
+[749.72s - 751.16s]  mettez tout en résistance élémentaire,
+[751.16s - 753.64s]  puis commencez à mettre les PV, vous pouvez fou le fou le PV,
+[753.64s - 755.88s]  tout dans la maîtrise distance évidemment.
+[755.88s - 758.28s]  De l'esquive, ça fait toujours plaisir,
+[758.28s - 759.96s]  des coups critiques dans la chance,
+[759.96s - 763.08s]  et le majeur un petit PA pour avoir le maximum de combos.
+[763.08s - 765.08s]  Avec ça, vous êtes parti pour avoir un early game,
+[765.08s - 767.88s]  super simple, à base de grosses flash exposives et de balises,
+[767.88s - 768.92s]  ça va rouler tout seul,
+[768.92s - 771.08s]  et si vous atteignez le VL110-120,
+[771.08s - 773.40s]  je vous rédirai vers les tutos un peu plus achèles justement
+[773.40s - 775.80s]  du CRA Thère Destruction ou du CRA Flash Explos.
+[775.80s - 779.08s]  Les deux vidéos sont retrouvables en un clic juste au-dessus de ma tête.
+[779.16s - 780.84s]  N'hésitez pas à vous abonner, se vous plaisir,
+[780.84s - 781.72s]  à la chaine du commentaire,
+[781.72s - 784.12s]  et on se retrouve très bientôt pour un prochain tuto.

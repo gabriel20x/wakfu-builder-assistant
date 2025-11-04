@@ -1,0 +1,291 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Bonjour à tous, le CRA a été reward qui a quelques jours, c'est donc l'occasion de vous présenter un nouveau tuto autour du CRA. On va faire quelque chose de très simple qui tend autour de la flèche explosive évidemment. Et je vais vous montrer vous expliquez rapidement comment on peut envoyer des grosses patates sans apprésent de plus être complètement à cours de point de voie. Vous allez voir que ça va être assez simple à franchement où on a compris la petite mécanique de base de la classe. Deux trois choses rapidement à expliquer avant de vous montrer tout ça. Principe de base du CRA à chaque fois que vous lancez un sort, vous gagnez de la précision par rapport au cours paia du sort. Si vous lancez un sort à 2 paia, vous gagnez 20 précisions, un sort à 3 paia, 32 précisions, un sort à 5 pa, 50 précisions. Et les point de voie comptent également un sort à 5 pa, un point de voie que vous donnera 60 de précisions. Chaque sort donc donne de la précision quand il est lancé de façon normale, classique. Et une fois en jeu, à partir du moment où vous activez tir précis, vous activerait l'effet de précision de chacun des sortes. Chaque sort dispose d'une ligne qui consommera de la précision pour effectuer des effets supplémentaires. Dans ce décon, on va pas se faire chier, la précision va utiliser pour une seule utilisation. La flèche explosive, soutien précis, dommage augmenté, en zone, c'est tout ce qu'on veut. Notre principe ici, ça va être de mettre deux flèches explosives, bousstées sous précisions partout. Il va donc réussir à falloir mettre 180 de précisions partout de côté pour pouvoir la consommer en deux explosives. Mais vous allez voir que ça se fait assez facilement au final, en jouant notamment par rapport au passif d'Ebalisage. Quand vous posez une balise sur le terrain et que vous l'a débalisez pour un PA, vous gagnez 40 de précisions et 40 d'affûtage. Si vous le faites sur deux balises partout, vous gagnez donc 80 de précisions. À côté de ça, sur le crac, on a une deuxième mécanique. Si le crac termine son tour avec aucun admis à 3PO au moins, plus d'invaux d'un saisisable, bon ça c'est juste des dégâts qu'on va commencer, quand on commence le combat, on sera à 30% et tant qu'on reste loin des admis, on m'entra à 40% puis 50% de dégâts infigés avec un PM2PO. Ça c'est complètement bonus et vous le obtiendrez naturellement en toi-même en flûlant un peu le combat. Nous ce qu'on veut ici, c'est l'affûtage de la précision augmentée de 30 niveaux. Ça va donc être super important avec votre crac de toujours finir loin des amis. Avec ces deux mécaniques et la possibilité à présent du coup d'activer et de désactiver sur précisions dans le même tour, on va pouvoir du coup facilement contrôler notre génération et notre consommation de précisions pour avoir nos deux flesches explosives niveau max. La boucle de gameplay du crac est donc assez facile à comprendre, c'est par exemple j'en j'en joute une flesche explosive et un sort à 3PO. Je monte à 90 de précisions, j'actifes tir précis, je peux consommer ma précision par exemple sur une flesche explosive et du coup, ma flesche explosive a l'effet précision augmentée. Une fois que j'ai terminé mes flesches explosives, je recoupe mon tir précis et je continue mon tour avec ce que j'ai à faire. Ici le tir précisant on va toujours utiliser comme ça. Vous faites toujours un tir précis avant que vous fêche explode et vous le coupez après vos flesches explode. Il faudra donc toujours réserver 4 points de voie pour ça à part d'ours pour activer flesche explode, flesche explode désactiver. Mais vous allez voir que la génération de point de voie n'est pas un problème. En tout cas elle ne les plus, merci Wakfu pour le taf sur la classe. Pour régénérer à présent les points de voie sur le crac, c'est très naturel. Le fonctionnement ne doit pas changer par rapport à avance si vous connaissiez. Si vous ne savez pas encore comment ça marche, c'est très simple. C'est exactement le même principe que pour la précision, sauf que ça ne peut pas dépasser sans. Si par exemple vous générerez 200 de précisions et d'affûtage, vous aurez votre précision qui est à 200 pour être consommer sur des effets. Mais votre affûtage à chaque fois qu'il dépasse sans, ça devient une pointe à futée. Une pointe à futée permet au crac d'un fichier plus de dégâts sur sa prochaine attaque, de récupérer directement un point de voie et en plus d'avoir une balise gratuite. Donc ça c'est une nouveauté de la mise à jour, à présent les balises coûte 2 pa. Par exemple si je pose ma première balise T1, ça me coûte 2 pa. Mais à présentement où j'ai généré plus de 100 d'affûtage, j'ai une pointe à futée et du coup 20 d'affûtage et si on aillé 120. Et du coup j'ai obtenu une deuxième balise gratuite que je dirais quand je veux. C'est une excellente mécanique pour éviter justement de trop bourriné T1 et pourtant d'avoir un gameplay très souple après T2, T3, T4, T5. Vous allez voir que la rota elle est vraiment cool. Bref, fin des explications, passons aux rothas, ce qui vous intéresse, qu'est ce que vous allez faire pendant vos tours de jeu. Vous allez voir que c'est très simple et très efficace. Je vous propose deux façons de faire des rothas dans le deck. La première façon c'est la plus agressive, celle qui permet de taper chaque tour à T1, T2, T3, T4, T5, T6, etc. Juste avant d'attaquer les petits rothas, il faut que je vous parle d'un passif que j'aime beaucoup. On va parler de parti prix. Parti prix est un accent passif qui va vous permettre de gagner de pa ou de pa, selon les situations. Il peut paraître un peu au tout que au début, une fois partout à l'application de pointe à futée, tire précis de pa et de pa, sinon moi de pa plus de pa. Je peux vous le décrire un peu autrement, en gros. À chaque fois que vous atteignez sans d'affutage ou que vous dépassez sans d'affutage. Si vous avez déjà activé T3, vous allez gagner de pa, sinon vous allez gagner de pa. Des monstration très simple, si par exemple je fais une fèche explosive dans le vent, hop, je gagne 60 d'affutage. En relanceant une deuxième, je vais passer à 120. Si j'actifes pas T3, je vais gagner de pa et si j'actifes T3, je vais gagner de pa. J'en par exemple ici, je fais T3 et du coup en faisant ma deuxième fèche explose, je dépassent les sans de précision, les sans d'affutage, donc j'arrive à 120. Mais je vais que j'étais sous T3, j'ai gagné 2 pa. À moyen, mes mots techniques très simples, c'est de surveiller tout en haut de barre d'affutage. Par exemple, là, je vois que je suis à 70, je sais qu'il va pouvoir que j'active mon T3, à partir du moment où je vais dépasser. Donc si je comptais lancer un sort à 3 pa ou plus, j'actifes T3 pour pas perdre 2 pa. Et sinon, rien ne m'obligera à le faire. Bref, ceci expliquez et on va pouvoir passer à la vraie ruta avec des mobes. Première pâterne. Ça va être la ruta, la boucle un peu, où je tape chaque tour. Ça, c'est un gameplay, c'est celui que, même moi, je joue de généralement le plus. Ça m'embête un peu autour 1 de faire 0 dégare que du setup. Mais du coup, ici, le pâterne va être extrêmement simple. Dès le début, même si il y a coup de 2 pa, on va se poser 2 balises directement dans le dat. On lance une fèche exploseuse, ça nous permet d'avoir 2 bons dégâts dès le début. Et là, je préparerai directement une deuxième fèche exploseuse. Mais étant donné que je vais dépasser les sans d'affutage, j'actifie précis juste pour pas perdre 2 pa. Et je peux le lancer. Il me reste 3 pa, après ça, je désactive mon tir précis toujours après mes deux balises. Je vais déballiser mes deux balises et j'ai fini mon tour 1. Ça nous permet d'avoir des théens un peu sympathiques pour cliquer quelques mobes des fins en général. Ce n'est pas des dégâts de fou, mais c'est toujours ça de prix. Et à partir de là, vous allez voir que ça va rouler tout seul. Parce que là, au début de nos tours 2, on est déjà, justement, à 180 de précisions avec les méganes que je vous expliquais au début de la vidéo. On a deux balises affutées qui sont gratuits. Donc les deux prochaines, déjà maintenant, sont gratuits. Et on a une pointe affûtée qui est prête. A partir de là, la rôta est très simple et vous allez pouvoir répéter la même tout le temps. On pose, par exemple, une balise entre les mobes. On pourrait péter le même pattern. On active précis ensuite. On met une explode. Une explode. On n'a plus de précision, donc autant désactiver maintenant. Donc on désactive après les explos. Ici moi, avec les pères aggés, je peux mettre une flèche persente en plus, qui t'apprèrent les deux avec le rebond. Et je récupère mes deux balises. C'est important, toujours, de récupérer les deux balises, parce que ça vous permet de générer la fetaie de la précision qui vous faudra pour le tour d'après. Donc pensez-y, en vrai, c'est souple. Ça évite de l'estréné de toutes sur le terrain. Ça vous permettrait générer vos points de walkthrough, récupérer tout ce qu'il vous faut en niveau stat. Et le tour d'après, on a une boucle qui est exactement la même. On peut baliser, baliser, tir précis, explode, explode. On désactive tir précis, tu vois, on n'a plus de précision. Et on en re-génère avec du coup flèche persente pour débaliser avec l'épée à restant. Donc garder toujours deux pères. Le plus important, bon, là, j'indère qu'un spére. Pas qu'un spére de votre côté. Le plus important, à garder en tête, c'est du coup de faire vos deux balises, votre tir précis, vos deux explode. Deux désactifs de tir précis. Et après, en fonction des pères qui vous restent. Et bah, vous faites en fonction, quoi. Faut toujours garder deux pères pour les deux débalisages. Si vous avez 14 pères, mettez plutôt, genre par exemple, deux flèches d'immolation en zone. Si vous avez que trois pères restants, mon bras sera pas terrible. Donc essayer d'avoir quand même un dec 14 pères de base. Mais de mon côté, j'ai juste du coup, j'ai juste à faire ça. Et je peux récupérer. Et comme vous le voyez, les points de walkthrough, ça attient vraiment les bien. J'en relâche pour encore continuer encore un tour. Hop hop hop, on active, on tap, on tap, on désactive. Et on percente. Et tout au 5 de face, on a quasiment tuer les deux pouces. Je vais en les attuuer. Si je fais ça en plus, peut-être, est-ce que ça passe ? Non, mais presque. C'est 5 de face avec un petit crat de 130. On élimine les deux pouces de face. En finit le combat à 3 points de walkthrough, sachant que j'ai commencé avec très peu de points de poids dans tous les cas. Je peux être au gourmand au niveau des reboulades. Mais je suis sur un deck 7 points de walkthrough. Donc vous pouvez vraiment faire beaucoup plus. Ici, de mon côté, par exemple, je suis parti chercher... Je ne vais pas mid point de walkthrough, j'ai mis des dégain infligés. Donc si vous voyez que vous avez bien fait un petit troll de temps en temps, un petit point de walkthrough, ça fait toujours plaisir. Ça, c'est pour la première rôta facile que vous permet d'être à 180 de précision chaque tour. Pendant 6 tours d'affilée, en change de très peu de points de walkthrough, ça va permettre de brûler facilement chaque tour. Vous avez le tour 1 qui est un peu moyen. Mais dans tous les cas, maintenant, le crat le tour 1 sera moyen. C'est du tour de cet up. Comme t'es 6, vous avez une bouc quasiment fini. C'est super efficace et super facile à jouer. Je propose une deuxième rôta sur le crat qui peut être super intéressant dans le problème de cas. Ici, on va vraiment faire un tout petit thé qui va nous juste nous permettre de cet up, le T2 et le T3. Et derrière, on va se faire un T2, T3, de fou fiorieux. On pourra continuer comme la première des mots, T4, T5, etc. Mais à partir du T4, on n'aura plus le proc d'influence du walkthrough. Tout le but de ce qu'on peut ouvrir maintenant, c'est de pouvoir procre la sublite infligou à un foie pour pendant 3 tours d'affilée. Soit plus 20% en concrétique gratuit, c'est super fort sur ce genre de crat, donc il ne faut pas le négliger. Pour procre cette rôta, le principe va être très simple. On va commencer tranquillement avec une balise et une retraite balisée. Ça, c'est un combo gardé dans un coin de tête tout le temps. Je souhaite T2, T3, T4. Le nouveau combo avec les balises que vous ne parlez pas de point de walkthrough est super intéressant, parce que ça permet d'avoir une TP qui coûte seulement 2 PA. Vous utilisez un débalisage derrière et ça vous permet pour seulement 3 PA. De débalisage et de balises, de gagner 40 précisions, 40 affutages. Ça vous donne plus que le lancer un sera 3 PA. C'est super intéressant pour monter la juche d'affutage à 40 dès le début du combat en vous replacant. Et ici, on va juste taper pour arriver à 90. Donc là, il faut que je utilise 5 PA. Donc on va faire 1, 2, 1, 3. En montant 90, parce que je sais que ma prochaine flèche va me faire perdre 2 PA avec partie prix le passif. Donc à ce moment-là, avec 5 PA, le mieux, ça va être une flèche explosive qui va me donner 60 de précisions que vous avez écouté un point de walkthrough en plus. Et étant donné que je vais t'apprecher par le prochain tour, je peux déjà activer mon tir précis maintenant. Ce sera fait et ça me permet de gagner mon bonus du coup que j'ai dans le petit passif ici. Les 5 affutages en plus qui me permettent pour le T2 d'avoir mes 2 points à futé, mes 2 ballistes, tout ce qu'il faut. Donc là, au début du T2, j'ai mai eu 8 points de walkthrough. Je prends mon infel walkthrough. J'ai deux ballistes gratos directement que je peux mettre du coup au setup par rapport à un MOB. Je suis déjà se tir précis, donc je fais mes 2 explosives. Après mes 2 explosives, on connaît le principe. On désactive directement. Et de mon côté, j'ai mes 7 pés à pour faire ma fleiche perçante et mes 2 déballisages pour recettager le tour d'après. Donc ça permet de faire vraiment un énorme tour. Là, les dégâts s'arrégolent 0, 0, 0. Et sachant que pour le tour d'après, je suis encore full setup. Je recommence mon tour 8 points de walkthrough. Niveau max, infel walkthrough qui proc etc. On peut reposer directement nos deux ballistes par rapport à un des plus-suites sur précis. On tire précis au juste avant les explos. On met nos deux explosives. On rend désactive tire précis. Dans tous les cas, ça n'a rien à pas de précision. Et on va chercher à en régénérer avec la fleiche perçante pour refaire un double déballisage derrière. Si vraiment vous comptez final combat, t'es 3, pas besoin de déballiser. Vous mettez une petite fiche d'immolation en plus. Et là, le début du tour 4, du coup, on retombe à 7 points de walkthrough. Mais en général, avec ce genre de gros setup, t'es 3, le combat est terminé. On a infigé ici 550 000 dégâts en deux tours. Bon, ça se passera bien, normalement, pour vos combats. Donc, l'endet sur un stuf de 130, même pas optimisé pour un crach. Je suis en 79% c'est le stuf. J'ai pris des pièces et qu'à flip qui traînait. C'est pas un stuf crach. Mais ça fait quand même le taf de fou. Bref, ça c'est un autre combat qui peut être vachement intéressant. Mais il nécessite, je crois, je ne sais pas vérifier. Mais je pense que les 15 pairs sont nécessaires pour celui-là au complet. Pour la génération d'affectage et précision, qu'il faut pour les trois tours. Bref, voilà, tout simplement un crach simple facile à jouer. Les sublimations que je vous conseille pour jouer, ce crach apparaissent directement à l'écran dès maintenant. Je vous mets également dans la description les stats que je vous conseille de mettre pour vos caractéristiques. Et voilà, écoutez, reste plus que vous aurez musée à ce pas de débalise des explos avec votre crach. C'est très simple, très efficace. Ça fait le café. Il y a beaucoup, beaucoup de gens qui ont repris le crach depuis cette mise à jour. Ça, avec la consommation de point de recours, est devenu beaucoup plus intelligent et intéressante. Qu'il faudra faire le plus attention, c'est vraiment roule-là dans les deux point de recours où vous vous cassez pas mal de choses. Donc attention avec roule-là. Et en vrai, je vous conseille plutôt de passer toujours par balise plus sur la traite balisée. Il y a trois tours d'orcharge. Mais ça fait quand même plaisir. Et à côté de ça, je vous ai mis une petite fiche de recul qui permet toujours de dépagner des situations, une frappe incisive, toujours cool pour pouvoir stable quelqu'un vous a envie de stable. Et un petit aute de top pour donner de la PO à vos alliés si vous avez envie. N'hésitez pas à vous abonner. Pour plus de tuto, il n'en aura beaucoup pendant le mois de mai et on se retrouve très bientôt dans notre tée. Bisous.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+Hello everyone, the CRA was rewarded a few days ago, so this is the opportunity to present to you a new tutorial around the CRA. We're going to do something very simple which tends around the explosive arrow obviously. And I'm going to show you quickly explain how we can send big potatoes without having to completely run out of track points. You will see that it will be quite simple if you understand the basic mechanics of the class. Two or three things to quickly explain before showing you all this. Basic Principle of CRA Each time you cast a spell, you gain accuracy in relation to the spell's paia rate. If you cast a 2 paia spell, you gain 20 precision, a 3 paia spell, 32 precision, a 5 pa spell, 50 precision. And the track points also include a spell at 5 AP, a track point that will give you 60 precision. Each spell therefore gives precision when it is cast in a normal, classic way. And once in play, from the moment you activate precise shooting, you would activate the precision effect of each type. Each spell has a line that will consume accuracy to perform additional effects. In this decon, we're not going to worry, the precision is going to be used for a single use. The explosive arrow, precise support, increased damage, in zone, that's all we want. Our principle here will be to put two explosive arrows, shot with precision everywhere. It will therefore be necessary to put 180 of precision aside everywhere to be able to consume it in two explosives. But you will see that it is done quite easily in the end, particularly by playing with the Ebalisage passive. When you place a beacon on the ground and unmark it for an AP, you gain 40 precision and 40 sharpening. If you do it on two tags everywhere, you gain 80 precision. Besides that, on the crack, we have a second mechanism. If the crack ends its turn with none admitted to at least 3PO, no more invalids of a seizable, well that's just damage that we will start, when we start the fight, we will be at 30% and as long as we stay away from the admitted, we enter at 40% then 50% damage infringed with a PM2PO. That's a complete bonus and you'll get it naturally in yourself by skipping the fight a bit. What we want here is precision sharpening increased by 30 levels. So it's going to be super important with your crush to always end up far from friends. With these two mechanics and the possibility now of activating and deactivating on precisions in the same turn, we will be able to easily control our generation and our consumption of precisions to have our two explosive arrows max level. The crack gameplay loop is therefore quite easy to understand, for example I add an explosive arrow and a 3PO spell. I go up to 90 precision, I activate precise shooting, I can consume my precision for example on an explosive arrow and as a result, my explosive arrow has the increased precision effect. Once I finish my explosive arrows, I cross-check my precise shot and continue my turn with what I have to do. Here the precise shot we will always use like this. You always make a precise shot before you explode and you cut it after your explode arrows. You will therefore always have to reserve 4 lane points for this apart from bear to activate Flesche Explode, Flesche Explode deactivate. But you will see that way point generation is not a problem. In any case she doesn't anymore, thank you Wakfu for the work on the class. To now regenerate the track points on the crack, it's very natural. The operation should not change compared to advance if you knew. If you don't know how it works yet, it's very simple. It's exactly the same principle as for precision, except that it cannot exceed without. If for example you generate 200 of precision and sharpening, you will have your precision which is at 200 to be consumed on effects. But your sharpening every time it exceeds without, it becomes a smart point. A smart tip allows the cracker of a file to do more damage on his next attack, to directly recover a lane point and in addition to having a free beacon. So that's new in the update, now the beacons cost 2 sp. For example, if I install my first T1 beacon, it costs me 2 pa. But at present where I have generated more than 100 of sharpening, I have a smart tip and suddenly 20 of sharpening and if we go 120. And suddenly I obtained a second free tag that I will say whenever I want. This is an excellent mechanic to avoid being too congested in T1 and yet have very flexible gameplay after T2, T3, T4, T5. You will see that the rota is really cool. Anyway, end of explanations, let's move on to the rothas, what interests you, what you are going to do during your turns. You will see that it is very simple and very effective. I offer you two ways to make rothas in the deck. The first way is the most aggressive, the one which allows you to hit each turn at T1, T2, T3, T4, T5, T6, etc. Just before attacking the little rothas, I have to tell you about a passive that I really like. We're going to talk about price. Party price is a passive accent that will allow you to win by pa or pa, depending on the situation. It may seem a bit at all that at the beginning, once everywhere at the tip to smart application, draws precise of pa and of pa, otherwise me of pa more of pa. I can describe it to you a little differently, basically. Every time you reach without sharpening or exceed without sharpening. If you have already activated T3, you will gain AP, otherwise you will gain AP. Very simple demonstrations, if for example I make an explosive arrow in the wind, presto, I gain 60 sharpening. By rerolling a second, I will go to 120. If I do not activate T3, I will gain pa and if I activate T3, I will win pa. For example here, I do T3 and suddenly by doing my second arrow explodes, I exceed the without precision, the without sharpening, so I arrive at 120. But I know that I was under T3, I gained 2 pa. In medium, my very simple technical words, it is to monitor the very top of the sharpening bar. For example, here, I see that I am at 70, I know that I will be able to activate my T3, from the moment I go over. So if I was planning to cast a spell at 3 pa or more, I activate T3 so as not to lose 2 pa. And if not, nothing will force me to do it. In short, explain this and we will be able to move on to the real route with mobes. First dough. It's going to be the ruta, the loop a bit, where I hit each lap. That's a gameplay, it's the one that, even I, I generally play the most. It annoys me a little around 1 to do 0 degar than the setup. But suddenly, here, the dough will be extremely simple. From the start, even if there is a 2 step gap, we will place 2 beacons directly in the dat. We launch an exploding dart, this allows us to have 2 good damage from the start. And there, I will directly prepare a second explosive dart. But given that I am going to exceed the sharpening, I activate precise just so as not to lose 2 pa. And I can throw it. I have 3 sp left, after that, I deactivate my precise shooting always after my two beacons. I'm going to unwrap my two tags and I've finished my turn 1. This allows us to have some nice people to click a few mobes at the ends in general. It's not crazy damage, but it's still that much. And from there, you will see that it will run on its own. Because there, at the start of our rounds 2, we are already, precisely, at 180 precision with the meganes that I explained to you at the beginning of the video. We have two sharp beacons which are free. So the next two, already now, are free. And we have a sharp point ready. From there, the rota is very simple and you will be able to repeat the same one all the time. For example, we place a beacon between the mobes. We could do the same pattern. We then activate precise. We put an explode. An explode. We no longer have any precision, so we might as well deactivate it now. So we deactivate after the explosions. Here I, with the fathers aggés, I can put a persistent arrow in addition, which will teach you both with the rebound. And I get my two tags back. It is important, always, to recover the two markers, because it allows you to generate the precision feat that you will need for the next round. So think about it, in reality, it's flexible. This avoids everyone on the field being overwhelmed. This would allow you to generate your walkthrough points, recover everything you need in stat level. And the next round, we have a loop which is exactly the same. We can mark, mark, precise shot, explode, explode. We deactivate precise shooting, you see, we no longer have precision. And we re-generate it with the Persian arrow to clear it with the remaining sword. So always keep two fathers. Most importantly, well, here, I only hope. Not just a hope on your side. The most important thing to keep in mind is to make your two markers, your precise shot, your two explodes. Two precise fire disables. And then, depending on the fathers you have left. Well, you do it accordingly. You must always keep two fathers for the two unmarkings. If you have 14 fathers, put, like for example, two immolation arrows in the zone. If you only have three dads left, my arm won't be great. So try to still have a dec 14 basic fathers. But for my part, I just, I just have to do this. And I can recover. And as you see, the walkthrough points are really good. I release some to continue one more lap. Hop hop hop, we activate, we tap, we tap, we deactivate. And we break through. And at the very 5th front, we almost killed both thumbs. I'm going to fix them. If I do this in addition, maybe, will it work? No, but almost. It's 5 from the front with a small crate of 130. We eliminate the two inches from the front. The fight ends with 3 walkthrough points, knowing that I started with very few weight points in any case. I can be greedy when it comes to rebouldements. But I'm on a 7 point walkthrough deck. So you can really do a lot more. Here, for my part, for example, I went looking for... I'm not going mid point walkthrough, I put inflicted quickdraws. So if you see that you've done a little trolling from time to time, a little walkthrough point, that's always nice. This is for the first easy rota that allows you to be 180 degrees of precision each turn. For 6 turns in a row, in exchange for very few walkthrough points, this will allow you to easily burn each turn. You have round 1 which is a bit average. But in any case, now the crat turn 1 will be average. It's this up's turn. As there are 6 of you, you have an almost finished goat. It's super effective and super easy to play. I propose a second rota on the crat which can be super interesting in the case problem. Here, we are really going to make a very small tea which will just allow us to have this up, T2 and T3. And behind that, we're going to have a crazy T2, T3. We can continue like the first of the words, T4, T5, etc. But from T4, we will no longer have the walkthrough influence proc. The whole purpose of what we can open now is to be able to procreate the sublite inflicted on a liver for 3 turns in a row. Or more than 20% in free concrete, it's super strong on this kind of crat, so it should not be neglected. To make this rota, the principle will be very simple. We will start slowly with a beacon and a marked retreat. That's a combo kept in the back of your mind all the time. I want T2, T3, T4. The new combo with the beacons that you don't talk about as a walkthrough point is super interesting, because it allows you to have a TP that only costs 2 AP. You use a clearing behind and that allows you for only 3 AP. Unmarking and beacons, gain 40 precisions, 40 sharpenings. That gives you more than rolling one will be 3 AP. It's super interesting to raise the sharpening pole to 40 from the start of the fight by repositioning yourself. And here, we're just going to tap to get to 90. So here, I have to use 5 AP. So we're going to do 1, 2, 1, 3. Going up to 90, because I know that my next arrow will make me lose 2 AP with the price of the passive. So at that moment, with 5 AP, the best, it will be an explosive arrow which will give me 60 precision that you listened to one more walkthrough point. And since I'm going to approach you next turn, I can already activate my precise shot now. This will be done and it allows me to earn my bonus from the small passive here. The 5 additional sharpenings which allow me for the T2 to have my 2 smart points, my 2 ballistas, everything I need. So there, at the start of T2, I may have had 8 walkthrough points. I take my infel walkthrough. I have two free ballistas directly that I can put in the setup compared to a MOB. I'm already shooting accurately, so I'm doing my 2 explosives. After my 2 explosives, we know the principle. We deactivate directly. And for my part, I have my 7 swords to make my piercing arrow and my 2 unpackings to recast the next turn. So it really allows you to do a huge tour. There, the damage is adjusted to 0, 0, 0. And knowing that for the next round, I am still in full setup. I start my turn again with 8 walkthrough points. Max level, infel walkthrough which proc etc. We can directly place our two ballistas in relation to one of the plus-suites on precise. We shoot precisely just before the explosions. We set our two explosives. We make it disabled, shoots precisely. In any case, it has nothing to do with precision. And we will try to regenerate some with the piercing arrow to do a double unpacking behind. If you really count the final fight, there are 3 of you, no need to unpack. You put a little extra immolation form. And there, the start of round 4, suddenly, we fall back to 7 walkthrough points. But in general, with this kind of big setup, there are 3 of you, the fight is over. We dealt 550,000 damage here in two turns. Well, things will normally go well for your fights. So, the debt on a stuf of 130, not even optimized for a spit. I'm at 79%, that's the stuff. I took some coins and flipped them lying around. It's not bad stuff. But it still does crazy work. In short, that's another fight that can be really interesting. But it requires, I believe, I don't know how to check. But I think all 15 peers are needed for this one in full. For the generation of assignment and precision, it is necessary for the three rounds. In short, there it is, simply a simple spit easy to play. The sublimations that I recommend for you to play, this spit appear directly on the screen now. I also put in the description the stats that I advise you to put for your characteristics. And there you have it, listen, what remains is that you will have museum at this step of unmarking the explosions with your spit. It's very simple, very effective. It makes coffee. There are many, many people who have picked up the spit since this update. This, with the consumption of recourse points, has become much more intelligent and interesting. What you will have to be most careful about is that it is really rolling in the two points of recourse where you will break a lot of things. So be careful with rolling there. And in reality, I advise you to always use the tag plus on the marked traffic. There are three orload towers. But it's still nice. And besides that, I have given you a little step-back sheet which always allows you to get out of situations, an incisive strike, always cool to be able to be stable, someone wants you to be stable. And a little top aut to give PO to your allies if you want. Don't hesitate to subscribe. For more tutorials, there won't be many during the month of May and we'll see you very soon in our tee. Kisses..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 6.52s]  Bonjour à tous, le CRA a été reward qui a quelques jours, c'est donc l'occasion de vous présenter un nouveau tuto autour du CRA.
+[6.52s - 10.00s]  On va faire quelque chose de très simple qui tend autour de la flèche explosive évidemment.
+[10.00s - 16.44s]  Et je vais vous montrer vous expliquez rapidement comment on peut envoyer des grosses patates sans apprésent de plus être complètement à cours de point de voie.
+[16.44s - 20.64s]  Vous allez voir que ça va être assez simple à franchement où on a compris la petite mécanique de base de la classe.
+[20.64s - 23.96s]  Deux trois choses rapidement à expliquer avant de vous montrer tout ça.
+[23.96s - 29.20s]  Principe de base du CRA à chaque fois que vous lancez un sort, vous gagnez de la précision par rapport au cours paia du sort.
+[29.20s - 35.32s]  Si vous lancez un sort à 2 paia, vous gagnez 20 précisions, un sort à 3 paia, 32 précisions, un sort à 5 pa, 50 précisions.
+[35.32s - 39.88s]  Et les point de voie comptent également un sort à 5 pa, un point de voie que vous donnera 60 de précisions.
+[39.88s - 43.48s]  Chaque sort donc donne de la précision quand il est lancé de façon normale, classique.
+[43.48s - 49.20s]  Et une fois en jeu, à partir du moment où vous activez tir précis, vous activerait l'effet de précision de chacun des sortes.
+[49.24s - 54.20s]  Chaque sort dispose d'une ligne qui consommera de la précision pour effectuer des effets supplémentaires.
+[54.20s - 57.64s]  Dans ce décon, on va pas se faire chier, la précision va utiliser pour une seule utilisation.
+[57.64s - 62.08s]  La flèche explosive, soutien précis, dommage augmenté, en zone, c'est tout ce qu'on veut.
+[62.08s - 66.76s]  Notre principe ici, ça va être de mettre deux flèches explosives, bousstées sous précisions partout.
+[66.76s - 71.60s]  Il va donc réussir à falloir mettre 180 de précisions partout de côté pour pouvoir la consommer en deux explosives.
+[71.60s - 76.80s]  Mais vous allez voir que ça se fait assez facilement au final, en jouant notamment par rapport au passif d'Ebalisage.
+[76.80s - 80.32s]  Quand vous posez une balise sur le terrain et que vous l'a débalisez pour un PA,
+[80.32s - 83.72s]  vous gagnez 40 de précisions et 40 d'affûtage.
+[83.72s - 86.56s]  Si vous le faites sur deux balises partout, vous gagnez donc 80 de précisions.
+[86.56s - 88.96s]  À côté de ça, sur le crac, on a une deuxième mécanique.
+[88.96s - 92.56s]  Si le crac termine son tour avec aucun admis à 3PO au moins,
+[92.56s - 95.72s]  plus d'invaux d'un saisisable, bon ça c'est juste des dégâts qu'on va commencer,
+[95.72s - 103.52s]  quand on commence le combat, on sera à 30% et tant qu'on reste loin des admis, on m'entra à 40% puis 50% de dégâts infigés avec un PM2PO.
+[103.56s - 106.56s]  Ça c'est complètement bonus et vous le obtiendrez naturellement en toi-même en flûlant un peu le combat.
+[106.56s - 110.12s]  Nous ce qu'on veut ici, c'est l'affûtage de la précision augmentée de 30 niveaux.
+[110.12s - 113.16s]  Ça va donc être super important avec votre crac de toujours finir loin des amis.
+[113.16s - 117.64s]  Avec ces deux mécaniques et la possibilité à présent du coup d'activer et de désactiver sur précisions dans le même tour,
+[117.64s - 124.48s]  on va pouvoir du coup facilement contrôler notre génération et notre consommation de précisions pour avoir nos deux flesches explosives niveau max.
+[124.48s - 130.68s]  La boucle de gameplay du crac est donc assez facile à comprendre, c'est par exemple j'en j'en joute une flesche explosive et un sort à 3PO.
+[130.68s - 136.88s]  Je monte à 90 de précisions, j'actifes tir précis, je peux consommer ma précision par exemple sur une flesche explosive et du coup,
+[136.88s - 139.48s]  ma flesche explosive a l'effet précision augmentée.
+[139.48s - 145.60s]  Une fois que j'ai terminé mes flesches explosives, je recoupe mon tir précis et je continue mon tour avec ce que j'ai à faire.
+[145.60s - 147.68s]  Ici le tir précisant on va toujours utiliser comme ça.
+[147.68s - 151.60s]  Vous faites toujours un tir précis avant que vous fêche explode et vous le coupez après vos flesches explode.
+[151.60s - 157.08s]  Il faudra donc toujours réserver 4 points de voie pour ça à part d'ours pour activer flesche explode, flesche explode désactiver.
+[157.08s - 160.24s]  Mais vous allez voir que la génération de point de voie n'est pas un problème.
+[160.28s - 163.80s]  En tout cas elle ne les plus, merci Wakfu pour le taf sur la classe.
+[163.80s - 166.40s]  Pour régénérer à présent les points de voie sur le crac, c'est très naturel.
+[166.40s - 168.64s]  Le fonctionnement ne doit pas changer par rapport à avance si vous connaissiez.
+[168.64s - 170.72s]  Si vous ne savez pas encore comment ça marche, c'est très simple.
+[170.72s - 174.32s]  C'est exactement le même principe que pour la précision, sauf que ça ne peut pas dépasser sans.
+[174.32s - 179.60s]  Si par exemple vous générerez 200 de précisions et d'affûtage, vous aurez votre précision qui est à 200 pour être consommer sur des effets.
+[179.60s - 183.28s]  Mais votre affûtage à chaque fois qu'il dépasse sans, ça devient une pointe à futée.
+[183.28s - 186.28s]  Une pointe à futée permet au crac d'un fichier plus de dégâts sur sa prochaine attaque,
+[186.28s - 189.72s]  de récupérer directement un point de voie et en plus d'avoir une balise gratuite.
+[189.72s - 193.04s]  Donc ça c'est une nouveauté de la mise à jour, à présent les balises coûte 2 pa.
+[193.04s - 195.60s]  Par exemple si je pose ma première balise T1, ça me coûte 2 pa.
+[195.60s - 203.40s]  Mais à présentement où j'ai généré plus de 100 d'affûtage, j'ai une pointe à futée et du coup 20 d'affûtage et si on aillé 120.
+[203.40s - 207.24s]  Et du coup j'ai obtenu une deuxième balise gratuite que je dirais quand je veux.
+[207.24s - 213.16s]  C'est une excellente mécanique pour éviter justement de trop bourriné T1 et pourtant d'avoir un gameplay très souple après T2, T3, T4, T5.
+[213.16s - 214.92s]  Vous allez voir que la rota elle est vraiment cool.
+[214.96s - 220.00s]  Bref, fin des explications, passons aux rothas, ce qui vous intéresse, qu'est ce que vous allez faire pendant vos tours de jeu.
+[220.00s - 221.80s]  Vous allez voir que c'est très simple et très efficace.
+[221.80s - 224.72s]  Je vous propose deux façons de faire des rothas dans le deck.
+[224.72s - 230.68s]  La première façon c'est la plus agressive, celle qui permet de taper chaque tour à T1, T2, T3, T4, T5, T6, etc.
+[230.68s - 234.56s]  Juste avant d'attaquer les petits rothas, il faut que je vous parle d'un passif que j'aime beaucoup.
+[234.56s - 236.56s]  On va parler de parti prix.
+[236.56s - 240.60s]  Parti prix est un accent passif qui va vous permettre de gagner de pa ou de pa, selon les situations.
+[240.60s - 244.60s]  Il peut paraître un peu au tout que au début, une fois partout à l'application de pointe à futée,
+[244.60s - 247.28s]  tire précis de pa et de pa, sinon moi de pa plus de pa.
+[247.28s - 249.24s]  Je peux vous le décrire un peu autrement, en gros.
+[249.24s - 252.60s]  À chaque fois que vous atteignez sans d'affutage ou que vous dépassez sans d'affutage.
+[252.60s - 255.72s]  Si vous avez déjà activé T3, vous allez gagner de pa, sinon vous allez gagner de pa.
+[255.72s - 259.20s]  Des monstration très simple, si par exemple je fais une fèche explosive dans le vent,
+[259.20s - 261.88s]  hop, je gagne 60 d'affutage.
+[261.88s - 264.00s]  En relanceant une deuxième, je vais passer à 120.
+[264.00s - 268.28s]  Si j'actifes pas T3, je vais gagner de pa et si j'actifes T3, je vais gagner de pa.
+[268.32s - 272.20s]  J'en par exemple ici, je fais T3 et du coup en faisant ma deuxième fèche explose,
+[272.20s - 275.60s]  je dépassent les sans de précision, les sans d'affutage, donc j'arrive à 120.
+[275.60s - 277.84s]  Mais je vais que j'étais sous T3, j'ai gagné 2 pa.
+[277.84s - 281.52s]  À moyen, mes mots techniques très simples, c'est de surveiller tout en haut de barre d'affutage.
+[281.52s - 285.28s]  Par exemple, là, je vois que je suis à 70, je sais qu'il va pouvoir que j'active mon T3,
+[285.28s - 286.60s]  à partir du moment où je vais dépasser.
+[286.60s - 290.60s]  Donc si je comptais lancer un sort à 3 pa ou plus, j'actifes T3 pour pas perdre 2 pa.
+[290.60s - 292.56s]  Et sinon, rien ne m'obligera à le faire.
+[292.56s - 297.36s]  Bref, ceci expliquez et on va pouvoir passer à la vraie ruta avec des mobes.
+[297.44s - 298.36s]  Première pâterne.
+[298.36s - 302.44s]  Ça va être la ruta, la boucle un peu, où je tape chaque tour.
+[302.44s - 305.32s]  Ça, c'est un gameplay, c'est celui que, même moi, je joue de généralement le plus.
+[305.32s - 307.76s]  Ça m'embête un peu autour 1 de faire 0 dégare que du setup.
+[307.76s - 310.88s]  Mais du coup, ici, le pâterne va être extrêmement simple.
+[310.88s - 315.56s]  Dès le début, même si il y a coup de 2 pa, on va se poser 2 balises directement dans le dat.
+[315.56s - 319.00s]  On lance une fèche exploseuse, ça nous permet d'avoir 2 bons dégâts dès le début.
+[319.00s - 321.40s]  Et là, je préparerai directement une deuxième fèche exploseuse.
+[321.40s - 325.16s]  Mais étant donné que je vais dépasser les sans d'affutage, j'actifie précis juste pour pas perdre 2 pa.
+[325.16s - 326.40s]  Et je peux le lancer.
+[327.84s - 332.52s]  Il me reste 3 pa, après ça, je désactive mon tir précis toujours après mes deux balises.
+[332.52s - 336.44s]  Je vais déballiser mes deux balises et j'ai fini mon tour 1.
+[336.44s - 340.32s]  Ça nous permet d'avoir des théens un peu sympathiques pour cliquer quelques mobes des fins en général.
+[340.32s - 342.60s]  Ce n'est pas des dégâts de fou, mais c'est toujours ça de prix.
+[342.60s - 344.84s]  Et à partir de là, vous allez voir que ça va rouler tout seul.
+[344.84s - 349.96s]  Parce que là, au début de nos tours 2, on est déjà, justement, à 180 de précisions avec les méganes
+[349.96s - 352.08s]  que je vous expliquais au début de la vidéo.
+[352.08s - 353.92s]  On a deux balises affutées qui sont gratuits.
+[353.92s - 356.24s]  Donc les deux prochaines, déjà maintenant, sont gratuits.
+[356.28s - 357.96s]  Et on a une pointe affûtée qui est prête.
+[357.96s - 361.52s]  A partir de là, la rôta est très simple et vous allez pouvoir répéter la même tout le temps.
+[361.52s - 363.48s]  On pose, par exemple, une balise entre les mobes.
+[363.48s - 365.44s]  On pourrait péter le même pattern.
+[365.44s - 367.88s]  On active précis ensuite.
+[367.88s - 370.00s]  On met une explode.
+[370.00s - 371.04s]  Une explode.
+[371.04s - 373.32s]  On n'a plus de précision, donc autant désactiver maintenant.
+[373.32s - 375.16s]  Donc on désactive après les explos.
+[375.16s - 378.00s]  Ici moi, avec les pères aggés, je peux mettre une flèche persente en plus,
+[378.00s - 379.88s]  qui t'apprèrent les deux avec le rebond.
+[379.88s - 382.24s]  Et je récupère mes deux balises.
+[382.24s - 383.76s]  C'est important, toujours, de récupérer les deux balises,
+[383.80s - 385.92s]  parce que ça vous permet de générer la fetaie de la précision
+[385.92s - 387.56s]  qui vous faudra pour le tour d'après.
+[387.56s - 389.12s]  Donc pensez-y, en vrai, c'est souple.
+[389.12s - 390.72s]  Ça évite de l'estréné de toutes sur le terrain.
+[390.72s - 392.48s]  Ça vous permettrait générer vos points de walkthrough,
+[392.48s - 394.16s]  récupérer tout ce qu'il vous faut en niveau stat.
+[394.16s - 397.08s]  Et le tour d'après, on a une boucle qui est exactement la même.
+[397.08s - 399.32s]  On peut baliser, baliser,
+[399.32s - 400.52s]  tir précis,
+[400.52s - 401.28s]  explode,
+[401.28s - 402.08s]  explode.
+[402.08s - 404.36s]  On désactive tir précis, tu vois, on n'a plus de précision.
+[404.36s - 407.64s]  Et on en re-génère avec du coup flèche persente
+[407.64s - 410.72s]  pour débaliser avec l'épée à restant.
+[410.72s - 411.88s]  Donc garder toujours deux pères.
+[411.88s - 413.32s]  Le plus important, bon, là, j'indère qu'un spére.
+[413.80s - 415.00s]  Pas qu'un spére de votre côté.
+[415.00s - 416.60s]  Le plus important, à garder en tête, c'est du coup
+[416.60s - 419.08s]  de faire vos deux balises, votre tir précis,
+[419.08s - 420.84s]  vos deux explode.
+[420.84s - 422.12s]  Deux désactifs de tir précis.
+[422.12s - 423.64s]  Et après, en fonction des pères qui vous restent.
+[423.64s - 425.60s]  Et bah, vous faites en fonction, quoi.
+[425.60s - 428.24s]  Faut toujours garder deux pères pour les deux débalisages.
+[428.24s - 429.72s]  Si vous avez 14 pères, mettez plutôt,
+[429.72s - 431.64s]  genre par exemple, deux flèches d'immolation en zone.
+[431.64s - 432.64s]  Si vous avez que trois pères restants,
+[432.64s - 433.92s]  mon bras sera pas terrible.
+[433.92s - 435.88s]  Donc essayer d'avoir quand même un dec 14 pères de base.
+[435.88s - 437.64s]  Mais de mon côté, j'ai juste du coup, j'ai juste à faire ça.
+[437.64s - 438.48s]  Et je peux récupérer.
+[438.48s - 439.68s]  Et comme vous le voyez, les points de walkthrough,
+[439.68s - 441.48s]  ça attient vraiment les bien.
+[441.48s - 443.20s]  J'en relâche pour encore continuer encore un tour.
+[443.20s - 447.72s]  Hop hop hop, on active, on tap, on tap, on désactive.
+[447.72s - 450.40s]  Et on percente.
+[450.40s - 453.36s]  Et tout au 5 de face, on a quasiment tuer les deux pouces.
+[453.36s - 454.04s]  Je vais en les attuuer.
+[454.04s - 457.72s]  Si je fais ça en plus, peut-être, est-ce que ça passe ?
+[457.72s - 458.80s]  Non, mais presque.
+[458.80s - 461.16s]  C'est 5 de face avec un petit crat de 130.
+[461.16s - 463.92s]  On élimine les deux pouces de face.
+[463.92s - 465.68s]  En finit le combat à 3 points de walkthrough,
+[465.68s - 468.28s]  sachant que j'ai commencé avec très peu de points de poids dans tous les cas.
+[468.32s - 470.80s]  Je peux être au gourmand au niveau des reboulades.
+[470.80s - 472.32s]  Mais je suis sur un deck 7 points de walkthrough.
+[472.32s - 473.88s]  Donc vous pouvez vraiment faire beaucoup plus.
+[473.88s - 476.16s]  Ici, de mon côté, par exemple, je suis parti chercher...
+[476.16s - 478.16s]  Je ne vais pas mid point de walkthrough, j'ai mis des dégain infligés.
+[478.16s - 480.88s]  Donc si vous voyez que vous avez bien fait un petit troll de temps en temps,
+[480.88s - 482.60s]  un petit point de walkthrough, ça fait toujours plaisir.
+[482.60s - 483.76s]  Ça, c'est pour la première rôta facile
+[483.76s - 486.08s]  que vous permet d'être à 180 de précision chaque tour.
+[486.08s - 488.40s]  Pendant 6 tours d'affilée, en change de très peu de points de walkthrough,
+[488.40s - 490.68s]  ça va permettre de brûler facilement chaque tour.
+[490.68s - 492.32s]  Vous avez le tour 1 qui est un peu moyen.
+[492.32s - 495.00s]  Mais dans tous les cas, maintenant, le crat le tour 1 sera moyen.
+[495.00s - 495.92s]  C'est du tour de cet up.
+[498.36s - 500.08s]  Comme t'es 6, vous avez une bouc quasiment fini.
+[500.08s - 502.32s]  C'est super efficace et super facile à jouer.
+[502.32s - 503.68s]  Je propose une deuxième rôta sur le crat
+[503.68s - 505.44s]  qui peut être super intéressant dans le problème de cas.
+[505.44s - 507.08s]  Ici, on va vraiment faire un tout petit thé
+[507.08s - 509.52s]  qui va nous juste nous permettre de cet up, le T2 et le T3.
+[509.52s - 511.96s]  Et derrière, on va se faire un T2, T3, de fou fiorieux.
+[511.96s - 514.88s]  On pourra continuer comme la première des mots, T4, T5, etc.
+[514.88s - 518.00s]  Mais à partir du T4, on n'aura plus le proc d'influence du walkthrough.
+[518.00s - 519.88s]  Tout le but de ce qu'on peut ouvrir maintenant,
+[519.88s - 523.08s]  c'est de pouvoir procre la sublite infligou à un foie pour pendant 3 tours d'affilée.
+[523.16s - 525.24s]  Soit plus 20% en concrétique gratuit,
+[525.24s - 528.84s]  c'est super fort sur ce genre de crat, donc il ne faut pas le négliger.
+[528.84s - 531.32s]  Pour procre cette rôta, le principe va être très simple.
+[531.32s - 534.60s]  On va commencer tranquillement avec une balise et une retraite balisée.
+[534.60s - 536.44s]  Ça, c'est un combo gardé dans un coin de tête tout le temps.
+[536.44s - 538.24s]  Je souhaite T2, T3, T4.
+[538.24s - 540.96s]  Le nouveau combo avec les balises que vous ne parlez pas de point de walkthrough
+[540.96s - 542.12s]  est super intéressant,
+[542.12s - 544.92s]  parce que ça permet d'avoir une TP qui coûte seulement 2 PA.
+[544.92s - 546.20s]  Vous utilisez un débalisage derrière
+[546.20s - 547.76s]  et ça vous permet pour seulement 3 PA.
+[547.76s - 550.52s]  De débalisage et de balises, de gagner 40 précisions, 40 affutages.
+[550.52s - 552.64s]  Ça vous donne plus que le lancer un sera 3 PA.
+[552.68s - 554.80s]  C'est super intéressant pour monter la juche d'affutage
+[554.80s - 557.04s]  à 40 dès le début du combat en vous replacant.
+[557.04s - 559.28s]  Et ici, on va juste taper pour arriver à 90.
+[559.28s - 560.48s]  Donc là, il faut que je utilise 5 PA.
+[560.48s - 562.28s]  Donc on va faire 1, 2, 1, 3.
+[563.28s - 565.68s]  En montant 90, parce que je sais que ma prochaine flèche
+[565.68s - 567.80s]  va me faire perdre 2 PA avec partie prix le passif.
+[567.80s - 570.52s]  Donc à ce moment-là, avec 5 PA, le mieux, ça va être une flèche explosive
+[570.52s - 573.04s]  qui va me donner 60 de précisions que vous avez écouté un point de walkthrough en plus.
+[573.52s - 575.60s]  Et étant donné que je vais t'apprecher par le prochain tour,
+[575.60s - 578.12s]  je peux déjà activer mon tir précis maintenant.
+[578.12s - 581.40s]  Ce sera fait et ça me permet de gagner mon bonus du coup
+[582.08s - 583.68s]  que j'ai dans le petit passif ici.
+[584.04s - 588.04s]  Les 5 affutages en plus qui me permettent
+[588.04s - 591.28s]  pour le T2 d'avoir mes 2 points à futé, mes 2 ballistes, tout ce qu'il faut.
+[591.28s - 593.92s]  Donc là, au début du T2, j'ai mai eu 8 points de walkthrough.
+[593.92s - 596.88s]  Je prends mon infel walkthrough.
+[596.88s - 600.44s]  J'ai deux ballistes gratos directement que je peux mettre du coup au setup
+[600.44s - 601.60s]  par rapport à un MOB.
+[601.60s - 604.48s]  Je suis déjà se tir précis, donc je fais mes 2 explosives.
+[604.48s - 606.88s]  Après mes 2 explosives, on connaît le principe.
+[606.88s - 608.56s]  On désactive directement.
+[608.68s - 611.64s]  Et de mon côté, j'ai mes 7 pés à pour faire ma fleiche perçante
+[611.64s - 614.24s]  et mes 2 déballisages pour recettager le tour d'après.
+[615.04s - 617.44s]  Donc ça permet de faire vraiment un énorme tour.
+[617.44s - 619.64s]  Là, les dégâts s'arrégolent 0, 0, 0.
+[619.64s - 622.48s]  Et sachant que pour le tour d'après, je suis encore full setup.
+[622.48s - 624.44s]  Je recommence mon tour 8 points de walkthrough.
+[624.44s - 627.32s]  Niveau max, infel walkthrough qui proc etc.
+[627.32s - 631.08s]  On peut reposer directement nos deux ballistes par rapport à un des plus-suites sur précis.
+[631.08s - 633.60s]  On tire précis au juste avant les explos.
+[633.60s - 635.08s]  On met nos deux explosives.
+[635.08s - 636.92s]  On rend désactive tire précis.
+[637.36s - 639.20s]  Dans tous les cas, ça n'a rien à pas de précision.
+[639.20s - 642.08s]  Et on va chercher à en régénérer avec la fleiche perçante
+[642.08s - 645.44s]  pour refaire un double déballisage derrière.
+[645.44s - 646.52s]  Si vraiment vous comptez final combat,
+[646.52s - 647.84s]  t'es 3, pas besoin de déballiser.
+[647.84s - 650.00s]  Vous mettez une petite fiche d'immolation en plus.
+[650.00s - 651.48s]  Et là, le début du tour 4,
+[651.48s - 653.20s]  du coup, on retombe à 7 points de walkthrough.
+[653.20s - 656.36s]  Mais en général, avec ce genre de gros setup, t'es 3, le combat est terminé.
+[656.36s - 659.32s]  On a infigé ici 550 000 dégâts en deux tours.
+[659.32s - 661.64s]  Bon, ça se passera bien, normalement, pour vos combats.
+[661.64s - 664.00s]  Donc, l'endet sur un stuf de 130, même pas optimisé pour un crach.
+[664.00s - 666.40s]  Je suis en 79% c'est le stuf.
+[666.44s - 668.00s]  J'ai pris des pièces et qu'à flip qui traînait.
+[668.00s - 669.32s]  C'est pas un stuf crach.
+[669.32s - 670.92s]  Mais ça fait quand même le taf de fou.
+[670.92s - 673.00s]  Bref, ça c'est un autre combat qui peut être vachement intéressant.
+[673.00s - 674.52s]  Mais il nécessite, je crois, je ne sais pas vérifier.
+[674.52s - 676.76s]  Mais je pense que les 15 pairs sont nécessaires pour celui-là au complet.
+[676.76s - 678.32s]  Pour la génération d'affectage et précision,
+[678.32s - 679.20s]  qu'il faut pour les trois tours.
+[679.20s - 682.36s]  Bref, voilà, tout simplement un crach simple facile à jouer.
+[682.36s - 684.32s]  Les sublimations que je vous conseille pour jouer,
+[684.32s - 686.84s]  ce crach apparaissent directement à l'écran dès maintenant.
+[686.84s - 688.96s]  Je vous mets également dans la description
+[688.96s - 692.04s]  les stats que je vous conseille de mettre pour vos caractéristiques.
+[692.04s - 693.84s]  Et voilà, écoutez, reste plus que vous aurez musée
+[693.84s - 696.24s]  à ce pas de débalise des explos avec votre crach.
+[696.24s - 697.68s]  C'est très simple, très efficace.
+[697.68s - 698.60s]  Ça fait le café.
+[698.60s - 700.96s]  Il y a beaucoup, beaucoup de gens qui ont repris le crach
+[700.96s - 702.20s]  depuis cette mise à jour.
+[702.20s - 703.20s]  Ça, avec la consommation de point de recours,
+[703.20s - 705.00s]  est devenu beaucoup plus intelligent et intéressante.
+[705.00s - 706.12s]  Qu'il faudra faire le plus attention,
+[706.12s - 707.76s]  c'est vraiment roule-là dans les deux point de recours
+[707.76s - 709.40s]  où vous vous cassez pas mal de choses.
+[709.40s - 710.76s]  Donc attention avec roule-là.
+[710.76s - 713.04s]  Et en vrai, je vous conseille plutôt de passer toujours par balise
+[713.04s - 713.96s]  plus sur la traite balisée.
+[713.96s - 714.80s]  Il y a trois tours d'orcharge.
+[714.80s - 715.96s]  Mais ça fait quand même plaisir.
+[715.96s - 718.12s]  Et à côté de ça, je vous ai mis une petite fiche de recul
+[718.12s - 719.64s]  qui permet toujours de dépagner des situations,
+[719.64s - 721.76s]  une frappe incisive, toujours cool pour pouvoir stable
+[721.76s - 723.00s]  quelqu'un vous a envie de stable.
+[723.00s - 725.28s]  Et un petit aute de top pour donner de la PO à vos alliés
+[725.28s - 726.48s]  si vous avez envie.
+[726.48s - 727.60s]  N'hésitez pas à vous abonner.
+[727.60s - 729.56s]  Pour plus de tuto, il n'en aura beaucoup pendant le mois de mai
+[729.56s - 731.56s]  et on se retrouve très bientôt dans notre tée.
+[731.56s - 732.56s]  Bisous.

@@ -1,0 +1,325 @@
+============================================================
+ORIGINAL TRANSCRIPTION (FRENCH)
+============================================================
+
+ Et bonjour à tous, bienvenue dans cette petite présentation d'un deck qui vous permettra de passer l'Eurligame de l'Eni-Rypsa. L'Eni-Rypsa sera évidemment une classe basée sur le soin principalement. Cela dit au début du jeu, on va pouvoir profiter quand même de tous ces outils offensive et on va chercher comme toutes les classes à un petit jour le maximum de dégâts. Des adversaires qui sont morts, des adversaires dont on n'a pas besoin de soigner les dégâts qui vont faire. Ça va donc nous permettre de faire une petite passe sur tous les sortes un peu offensive qui sont cools de l'Eni-Rypsa et tout présentaire va me temps un peu tous les mécaniques qui ravitent autour. Les tests ici se font avec un petit stuff level 50, il y a des petits enchantements, mais il n'y a pas de sublimation comme d'habitude. C'est des stuff que vous pouvez récupérer facilement dès vos premières heures sur le jeu. On va donc attaquer directement avec les trois sortes principaux de dégâts de l'Eni-Rypsa que vous allez retrouver sur la voie de l'élément R. En premier lieu, anatomique sera souvent le sort que vous lancez dès le début sur un mob parce qu'il y a un effet boosté sur les mob qui ont plus de 80% de leur PV. Ce sera donc votre meilleur sort pour en t'amé tous les combat. Après un anatomie, le sort qui nous intéresse sera le plus sera torpeur. Un sort qui va impliger normalement de gaz si cette fois-ci c'est vos très nirips à plus de 80% de ces PV. Dans ce cas là, vous allez en fliger en de très gros dégâts et vous en infliger un peu également au passage. Si à ce moment-là, vous n'avez pas les 80% de PV, vous pouvez passer par anatomie et fiorl infecté. Fiorl infecté, ce sera un sort qui proche en deux temps. En premier temps, vous allez en fliger des dégâts avec 100% de vie voletue. Et en plus, de ça, vous appliquerez un poison sur l'adversaire qui fait qu'à la fin de son tour, il subirait à des dégâts supplémentaires encore une fois en vol de vie. C'est donc ici vos trois sortes principaux pour infiger des gros dégâts. À côté de ça, on va pouvoir rajouter des dégâts additionnels grâce à la mécanique de propagateurs. Propagateur, vous allez pouvoir le retrouver dans votre mécanique de classe, hop comme d'habitude. A chaque soin réalisé par votre nirips à, vous allez gagner du propagateur. Propagateur, il faut en sorte que leur de votre proche en sort de dommage mode possible, vous allez impiger des gaz supplémentaires. Ça va se stack assez facilement avec un nirips à y avoir donc pour remonter à des valeurs de dégâts super intéressantes. Pour ça, avec notre deck, on a de façon super intéressante d'aller les chercher. En premier lieu, on va se servir de simplement de mots soignants sur nous-mêmes. Ça nous permet de nous finir de gagner à importer et donc de gagner du propagateur. En combo avec mots soignants, on va jouer le passif soin unique. Ça nous permettra chaque tour lors du premier sort de soin monocible, ce qui sera donc mots soignant, d'avoir un soin supplémentaire. En contrepartie, il est donc pour chins sort de soin, on va en réduite 30%. Ce ne sera pas dramatique dans tous les cas ici, on ne fera pas beaucoup plus qu'un soin partout. Donc on accepte ce grossoin bonus qui va nous permettre du coup de proc qu'une deuxième fois propagateur. À noter cela dit, ça ne fonctionnera que si vous avez pas 100% de vos PV. Le principe, à donc tout ça, pour mon aide, par exemple, on débute tour de mettre un mots soignant sur votre nirips à, ça va permettre de vous soigner deux fois. Chaque soin donc va vous donner du propagateur en fonction de votre niveau. Ici, moi j'aurais plus 10 plus plus 10 et ces 20 propagateurs, je vous pourrais les consommer à mon prochain sort de dégâts. Par exemple, si je fais anatomie sur le mob, j'ai 222 dégâts du sort de base et mon propagateur qui a rajouté 127 dégâts. À chaque propagateur est relâché, il repart de 0 et c'est une bouc comme ça qui va tourner. Pour cet end-câque début de tour, si vous avez déjà perdu un peu de vie, à commencer vos tours par un mots soignant. Les dégâts de propagateurs, vous de simplement compenser le fait que vous avez pas mis de dégâts avec vos PAs, mais ça vous permettra du coup pour 3 PAs d'avoir 3 PAs de soin qui m'impinit d'arrêter la mécanique grâce à l'explossoin. Explossoin, vous de lancer sur un ennemi et ça va poser une marque et de saade. Le principe de marque et de saade, c'est que un monstreux qui a marque et de saade sur lui, au moment où il meurt, il va infiger des dégâts autour de lui. Ce n'est des dégâts sympas pour 3 PAs, c'est bonus, mais si ce n'est pas forcément l'effet principal qu'on va chercher, même si il est cool, il s'y en va juste chercher à le combiner avec le passif, marquage précis. Marquage précis, frais en sorte qu'à chaque fois qu'une marque est déclenché, on gagnera du propagateur. La meilleure utilisation du coup dans ce cas-là, ce serait de pouvoir finir les adversaires avec une explossoin, ça va vous faire toujours du propagateur gratuit. A vous de connaître vos dégâts par rapport à ce stuf, mais le top du top, c'est vraiment de réussir directement à finir un monstreux avec l'explossoin, plutôt que de jouer autour du principe de la marque, de son effet, etc. Maintenant qu'on a nos dégâts principaux sur la voix R et nos dégâts additionnels grâce à mosoignant et explossoin, on raconte comment on fonctionne les bousses de dégâts sur les néripses. Principe de base, hop, on reprend mécanique de classe. A chaque fin de tour, vous allez gagner 10 niveaux de bonus de grâce. Bonneuse de grâce est en tout simplement un bonus de son réalisé donc chaque tour qui passe, vous aurez 10% de son réalisé en plus cumulable jusqu'à 50%. Si je prends mes stades, par exemple, autour un, j'ai un bonus à 8% de son réalisé. Autour 2, j'ai 18, Autour 3, j'ai 28, Autour 4, j'ai 38, etc. Cela dit, ici, ce qui va nous intéresser, c'est pas spécialement les son réalisés. On reprend notre mécanique et on va grader le sort contre nature. Contre nature, c'est votre premier sort de bar3. Ecoute 2 point de voie que vous, il se lance que sur vous, et vous permettra de passer en contre nature. Quand vous passez en contre nature, tous vos bonus de son réalisé passent en dégâts infligés. Toutes vos teemétris soins passent en maîtrise élémentaire. En contrepartie, au lieu de gagner de la grâce à chaque tour, vous allez en perdre. L'idée vous l'aurez compris, c'est donc simplement de transformer ce bonus de son réalisé avec contre nature, hop, en bonus de gain infligé qui passe de 8 à 46%. En plus de ça, toute ma maîtrise soin est passée en maîtrise élémentaire. Et à partir de là, vous allez taper très très fort avec votre réinéripçage. Attention, cependant, chaque tour qui va passer, vous allez repérer 10%, 10%, 10%. Du coup, plus vous lancez récontre nature tard, plus vous aurez dégâts. Mais en général, nos oreilles-games ont vaut quand même taper assez rapidement. Je vous conseillerai donc en général de l'activer dès le tour 2, ça suffira largement. On verra par le site de toute façon un petit trotant un peu qui fonctionne bien. À côté de ça, on va pouvoir également le combiner avec Jouvantse. Jouvantse, c'est un sort à deux paix qui va nous donner trois joli bonus, dpm, des sons réalisés et de l'esquive. Les sons réalisés, deux jouvantes, ont bien sûr pouvoir être transformées en contre nature, donc 15% de dégâts. Jouvantse c'est vraiment un très très bon sort pour l'éniripçage, dès qu'il est disponible, vous le relancez. La classe ne va pas être immobile de base du coup le fait du pourgainier dpm et de l'esquive, ça va lui faire vraiment du bien. La base de notre combo comme vous l'avez vu de taleur et nous coûte quand même assez cher en la quand même, le contenu nature qui coûte 2 points de work-full, furent l'infectique qui coûte 2 points de work-full, ça va fondre relativement vite. Cela dit notre ennemi-ripp ça à un système d'origine qui est vraiment plutôt cool. On reprend les mécaniques de classe comme d'habitude. A chaque fan tour, vous gagnez dans tous les cas 1 points de work-full et vous gagnez plus 3, si vous avez plus de 80% de vos PV. L'idée donc, ça va quand même être de soigner un maximum pour essayer de procler le plus possible. Et pour ça, on va avoir 4 outils qui rentreront très bien dans le kit. En premier lieu, comme on venait de l'expliquer de taleur, on va passer par Mossoyen. Attention, si vous êtes en contenu nature, cela dit penser à désactiver avant de lancer si nous vous allez perdre vraiment beaucoup de soins. On désactive et on se lance Mossoyen sur nous. Hop, en ce sens de nous passer, je suis un premier récupéré du propagateur, ça devrait pas mal nous aider à atteindre les 80%. À côté de ça, votre outil le plus puissant, ça va être de passer par le passif super lapino que je trouve vraiment très très cool. Vous êtes vraiment pas obligé de le prendre celui-là, mais de façon générale, je trouve quand même pratique. Testez avec essence si vous voulez. Demain, côté, je l'aime bien. Il permet à notre avancation lapino de devenir directement un super lapino. Vous avez le lapino dans votre deuxième barre, des coups d'actes. Dès que vous cliquez dessus, hop, vous aurez un super lapino directement. Le super lapino, il a des outils vraiment qui sont super cool, mais ici on va surtout se passer sur nos 2e effets. C'est simplement une transposition qui va soigner des 100% des PV du lapino. Si mon lapino a 539 PV, je lance le sort sur mon ennil, je lui fais une transpos et je soigne de 539. C'est vraiment un soin qui est ultra bourreint. Et surtout du coup, c'est un soin qui est accumulable avec contre nature. Vous ne serez pas obligé de retirer votre mode offensive pour le poser ton élection sur ces PV. Et vu que c'est pas considéré comme un soin, il n'y va pas de problème du coup au niveau du malus de ce qu'on réalise de contre nature. Le super lapino, en plus de ça, il y a des outils qui sont très très très cool. Mais je n'ai par exemple que vous êtes face à un monstre qui est très fort record ou un boss ou quoi. Il n'y a pas utilisé les autres sortes du lapino, à ce moment-là. On a 8 PA et les sortes coupent très peu de PA. On peut donc, par exemple, ici, pousser le boss. On va leur repousser, soit vous allez faire beaucoup de placements, vous l'utilisez. On peut repousser encore une fois. Et derrière, on va pouvoir essayer, hop, de déloigner de le plus possible, ne trainerai pas tout en soignant. Ça va vous permettre de reprendre beaucoup de distance, tout en vous soignant énormément au passage. C'est surtout pour vos observations que vous allez voir que d'avoir un super lapino directement qui peut vous transposer. Ça peut être pratique très souvent. Mais comme je vous ai dit, je vous laisse tester un peu les deux pour voir si vous aimez bien. Troisième outil d'auto soin qui est très chouette, c'est évidemment furel infecté qu'on a déjà vu de tâleur qui faisait du vol de vie. Vu que c'est du vol de vie, c'est pas considéré comme un soin. Et vu que c'est pas considéré comme un soin, non malus, non, on n'aurait pas d'impact. On peut donc très bien également le jouer sous contre nature ce sort-là. Ça nous permet de mettre des bons dégâts du vol de vie et quand le mob y joue en plus, fin de tour du vol de vie. Ça, c'est vraiment un trait très consoin si vous avez beaucoup de maîtris offensive sur votre réunion. Attention, par contre, cela dit un 2.0 worth of le sort, il est gourmand, ça a vite partir. Et derrière outil de soin, ça va être feu gardien. Un petit sort de soin, vous pouvez lancer sur vous et qui en plus va appliquer une marketing. La marketing a un effet très sympathique. Si votre personnage tombe sous les 50% de PV, donc par contre, qui prend un gros coup ou quoi dans le tour, il va être directement soignant à ce moment-là. Ça vous fera un soin d'appos un sympathique, c'est toujours sa prix. Vu que c'est une marque de soin, il faudra pas honte la mettre si possible sans contre nature. Vous l'appliquez sur vous. Vous prenez du coup votre soin de base, ici je prends en plus de soin unique de mon passif. Et si pendant le combat un mob, vous me fais passer de 57% à en dessous, j'aurai une ligne de soin supplémentaire à ce moment-là. Qui dit ligne de soin supplémentaire, dit également, que je vais continuer à monter mon propagateur. De toute façon, votre but ça va être de jongler entre ces deux mécaniques. Soit vous êtes en contre nature et vous passez par du vol de vie. Soit vous êtes pas sous contre nature, vous allez certes perdre des dégâts, en échange, je vous aurai du coup du propagateur. Les propagateurs qui vont devenir du coup des dégâts par après. Ne jouez pas fous de contre nature ou fous de pas contre nature. Les deux états sont intéressants. Grobalement, dans l'idée de top du top, ce serait quand même que notre propagateur puisse être proche sous contre nature et soit de maximiser à fond. Dans une situation compliquée par exemple comme celle-là, quand vous étiez en train de vous battre sous contre nature, et que vous voulez un peu passer par un tour de soin, vous pouvez très bien par exemple maximiser le propagateur en repassant en mode soin. Vous faites votre soin unique, que permettra d'avoir les deux lignes de soin et de propagateur. Vous activez, je vous lance dans le tour, bon, mettez-le avant du coup le soin unique, ce sera mieux. Et vous mettez infogardien. Vous permettra d'avoir trois lignes de soin potentiel, d'avoir des PM pour fûrer un petit peu pendant un tour. Et du coup, le tour d'après, vous avez un propagateur qui est quand même bien stack. Vous pouvez donc dans ce cas-là remettre un soin unique, avant de passer en contre nature. Et là, votre prochaine attaque, elle aura énormément de dégâts ici, si je mets un torpeur. Mon propagateur, ça fait deux tours que je le monte. Et je gagne une ligne à 465 dégâts, qu'on pontera le tour de soin, que je vais ne me faire juste avant. Et donc, c'est sympa en possible, par exemple, d'interner des tours comme ça. Gardes à en tête que le propagateur, vous pouvez le stack en étant en mode nature et le destaque en étant en contre nature. C'est juste que du coup, faudra faire des tours fous le soin. Si vous souhaitez faire un tour fous le soin, ne t'en pas inquiétais de mourir au cas où, il ne faut pas oublier, bien sûr, le sort le plus important de l'ennirie, le sort le plus fort du kit, du levé 20 ou levé le 245, le sort n'a aucun sens, c'est des phases qui pour seulement 1 PA va au permettre de poser l'état défaser, sur un allié ou sur un ennemi. Défaser, c'est très simple. Vous perdez 100 PA, vous êtes invulnerable. Vous pouvez le mettre sur vous en fin de tour, vous pouvez le mettre sur un boss pour que ça le fasse pas se tour, vous pouvez vraiment pleins de choses avec, je vous conseille de mettre justement sur ces tours, vous êtes par exemple en train de vous fous le soigner. C'est littéralement un sort qui ne fait pas se tournant pour de quel entité, mais que si vous le lancez sur vous avec votre dernier PA, mais vous aurez juste perdu un PA, vous êtes invulnerable et vous pouvez rejouer le tour d'après. C'est vraiment super, super, super fort. Enfin, les deux derniers sortes du kit, lien d'amitié et réénisirection. Ça, c'est plutôt si vous jouez en team et que vous êtes pas tout seul. La réénisirection, c'est une résine, vous la lancez sur un Ali Kau, il revient la vie. Et, lien d'amitié, c'est un sort de boost. Vous le mettez sur un de vos alliés et à chaque coup, que cet allié va prendre pendant le combat, notre allié va gagner des dégain figé et des résistances alimentaires cumulables. Ça a vraiment monté à des valeurs complètement nourricentes de 40 % des gain figé 166 résistances alimentaires. C'est un boost que vous allez vous leur poser sur tous vos alliés, c'est vraiment qu'ils prennent beaucoup de coups comme des alliés au corps à corps. Par exemple, un nouginac ou un sacrueur va adorer ça. Il y a noté que plus votre allié prendra des gain et montra à l'état, plus votre aînirépsa de son côté gagnera des soins réalisés au passage. Soins réalisés qu'on pourrait être converti du coup en dégain figé. Une rotation complète aînirépsa, du coup, ça pourrait ressembler à quoi ? Ça va franchement dépendre de l'obtenir de vos PV pendant le combat. Mais ici, par exemple, t'es un bon, j'ai toute ma vie. Je passe en conten nature direct. Je commence par une anatomie directement parce que le mob est foulvie. Moi, je suis foulvie, je peux mettre une torpeur. Montez un et cet up. Vous cherchez en général quand même, j'ai l'air resté, ça, ils font vous éloignant. Ici, imaginez-nous, je vais aller encore encore, je peux prendre des dégards, histoire de simuler que des mob me ont attraper. J'ai 75% PV, ici, imaginez-nous que je continue à taper avec une feuille infectée. J'aurais récupéré du vol de vio-passage. Si je vois que la cible est presque morte, je lui mets une expo soin, je la tue avec, je gagne du propagateur. Et sinon, vous pouvez taper directement avec mon soignant torpeur en anatomie selon les conditions vous en êtes. Tour d'après, imaginez-nous, je me suis bien fait cassé la gueule. Je recule, j'enlève contenature, je relance maute-jouvance, vraiment dans la sauce, je me j'avocue un petit lapineau en plus, qui passe du coup directement en super lapineau. Je me déphase comme ça, je suis invulnérables, et mon super lapineau peut très bien mêloigner au bout d'engé avec une transpos. Et lors de mon tour, si vous n'avez pas toute votre vie, vous remettez à mon soignant, si vous n'avez pas besoin, on va sur le côté, on réactif contre nature. Les nérits ça à plus de 4% PV, on met une autre grosse ore, full boostée, beam-bim, et on peut remettre une feuille infectée par exemple, une expo soin, etc, et vous allez tourner comme ça. Il faudra donc toujours surveiller un peu au sein de ton niveau de vos PV, est-ce que vous cherchez pour pas gâter ou pas, est-ce que vous passez par le vol de vie ou pas, pensez quand même toujours avoir plus de 80% payé fin de tour, c'est toujours bien récupérer 3 points de coût partout, c'est vraiment confort pour pouvoir jongler, justement, entre l'affût infectée, entre défasage à 2 points de work-full et entre contre nature à 2 points de work-full. Enfin, en 3ème barre de soeur, vous avez réplution, un petit soin à 1 point de work-full, qui peut vous permettre de faire du microplacement. Ça peut toujours servir à faire des petits placements comme ça, vous éloigner, faire une zone, créer un truc, vous pouvez utiliser de 3 fois partout le sort, attention cela dit, toujours au point de work-full, ça parvit. C'est donc tout ce qu'il y a à savoir pour les néripses à bas, le veille est un peu offensive, la casse avait vraiment sympa à jouer, le kit tourne beaucoup en fonction de bas du combat, on a plein de petits outils très cool, qu'on soit seul ou en équipe, le kit pour un soigneur, il est vraiment fun à jouer, et ce n'est pas à me dire dans le commentaire, ce que vous en pensez. Bref, j'espère cette vidéo, vous aurez à savoir un peu plus sur les néripses, on se retrouve très bientôt pour d'autres tutos, des cilans n'hésitez pas à vous abonner, à mettre un petit commentaire, et on se revoit très bientôt, amusez-vous bien de bisous.
+
+============================================================
+ENGLISH TRANSLATION
+============================================================
+
+And hello everyone, welcome to this little presentation of a deck that will allow you to pass the Eni-Rypsa Eurligame. Eni-Rypsa will obviously be a class based mainly on healing. That said at the start of the game, we will still be able to take advantage of all these offensive tools and we will seek, like all classes, the maximum damage in one day. Opponents who are dead, opponents who do not need to be treated for the damage that will be done. So this will allow us to take a quick look at all the slightly offensive types that are cool about the Eni-Rypsa and everyone present will take a little look at all the mechanics that delight around. The tests here are done with a little level 50 stuff, there are small enchantments, but there is no sublimation as usual. These are things that you can easily recover from your first hours in the game. We will therefore attack directly with the three main types of damage from the Eni-Rypsa that you will find on the path to the R element. First of all, anatomical will often be the spell that you cast from the start on a mob because there is a boosted effect on mobs that have more than 80% of their PV. It will therefore be your best fate to enjoy all the fights. After an anatomy, the spell that interests us most will be torpor. A spell that will normally inflict gas if this time it is your very nirips to more than 80% of these PV. In this case, you will inflict very heavy damage and also inflict a little damage on yourself in the process. If at that time you do not have 80% HP, you can go through anatomy and infected fiorl. Fiorl infected, this will be a spell that closes in two stages. First, you will deal damage with 100% voluble health. And on top of that, you will apply a poison to the opponent which means that at the end of his turn, he would suffer additional damage once again while stealing life. So these are your three main types for dealing big damage. Besides that, we will be able to add additional damage thanks to the propagator mechanics. Propagator, you will be able to find it in your class mechanics, hop as usual. With each treatment carried out by your nirips, you will gain propagator. Propagator, you must ensure that your loved one comes out of possible damage, you will impose additional gases. It will stack quite easily with a nirips to be there so to go back to super interesting damage values. For that, with our deck, we have a super interesting way to go and find them. First of all, we will simply use caring words about ourselves. This allows us to end up gaining from importing and therefore gaining traction. In combo with healing words, we will play the unique healing passive. This will allow us each turn during the first single-target healing spell, which will therefore be healing words, to have additional healing. In return, it is therefore for chins care, we will reduce 30%. It won't be dramatic in all cases here, we won't do much more than treatment everywhere. So we accept this big bonus which will allow us to proc a second time propagator. Please note that this will only work if you do not have 100% of your HP. The principle, therefore, for all that, for my help, for example, we start by putting a healing word on your nirips, this will allow you to be treated twice. Each treatment will therefore give you propagator depending on your level. Here, I would have plus 10 plus plus 10 and these 20 propagators, I could consume them with my next damage spell. For example, if I do anatomy on the mob, I have 222 basic spell damage and my propagator which added 127 damage. Each time the propagator is released, it starts from 0 and a goat like that will spin. For this end of turn, if you have already lost a little life, start your turns with a healing word. The damage from propagators, you simply compensate for the fact that you have not put any damage with your APs, but this will allow you for 3 APs to have 3 APs of healing which allows me to stop the mechanics thanks to the explosion. Explosoin, you throw at an enemy and it will leave a mark and kill. The principle of mark and saade is that a monster who has mark and saade on him, the moment he dies, he will inflict damage around him. It's not nice damage for 3 APs, it's a bonus, but if it's not necessarily the main effect we're going to look for, even if it's cool, we're just going to try to combine it with the passive, precise marking. Precise, fresh marking so that each time a mark is triggered, we will gain propagator. The best use of the move in this case would be to be able to finish the opponents with an explosion, this will always give you a free spreader. It's up to you to know your damage in relation to this stuff, but the best of the best is really to succeed directly in finishing a monster with the explosive, rather than playing around the principle of the brand, its effect, etc. Now that we have our main damage on the R voice and our additional damage thanks to mohealing and explosoin, we talk about how we work the damage bumps on the neripses. Basic principle, presto, we resume class mechanics. At the end of each turn, you will gain 10 levels of grace bonus. Bonneuse de grace is quite simply a bonus of sound made so each turn that passes, you will have 10% more sound made cumulative up to 50%. If I take my stages, for example, around one, I have a bonus of 8% of its achieved. Around 2, I have 18, Around 3, I have 28, Around 4, I have 38, etc. That said, here, what will interest us is not particularly the sounds produced. We go back to our mechanics and we are going to grade the unnatural spell. Unnatural, this is your first bar3 spell. Listen to 2 point of path that you, it launches only on you, and will allow you to pass in unnatural way. When you go unnatural, all your bonuses from your achieved sound become damage inflicted. All your healing teemetrics become elemental mastery. On the other hand, instead of gaining grace each turn, you will lose it. The idea, as you will have understood, is simply to transform this unnatural sound bonus, presto, into an inflicted gain bonus which goes from 8 to 46%. On top of that, all my healing mastery has been upgraded to elemental mastery. And from there, you're going to hit very, very hard with your reinstatement. Be careful, however, each turn that passes, you will spot 10%, 10%, 10%. So, the later you cast unnatural, the more damage you will have. But in general, our ear-games were still worth typing quite quickly. I will therefore generally advise you to activate it from turn 2, that will be more than enough. We will see through the site anyway a little trotting that works well. Besides that, we will also be able to combine it with Jouvantse. Jouvantse is a two-peace spell that will give us three nice bonuses, dpm, sounds made and dodging. The sounds made, two playing, can of course be transformed into unnatural ones, therefore 15% damage. Jouvantse is really a very, very good spell for eniripping, as soon as it is available, you cast it again. The class is not going to be immobile at the base, so the fact of the dpm forgainier and dodging will do them really good. The basis of our combo as you have seen from Taleur and still costs us quite a lot anyway, the natural content which costs 2 work-full points, were the infectious which costs 2 work-full points, it will melt relatively quickly. That said our enemy-rips this to an original system that's actually pretty cool. We resume the class mechanics as usual. On each fan tour, you gain in any case 1 work-full point and you gain plus 3, if you have more than 80% of your PV. The idea therefore will still be to treat as much as possible to try to proclaim as much as possible. And for that, we will have 4 tools that will fit very well in the kit. First of all, as we had just explained to Taleur, we are going to go through Mossoyen. Be careful, if you are in natural content, this means remember to deactivate before launching if we are going to really lose a lot of care. We deactivate and launch Mossoyen on us. Hop, in this sense of passing us, I am a first recovered from the propagator, that should help us quite a bit to reach 80%. Besides that, your most powerful tool will be to go through the super rabbit passive which I find really very very cool. You really don't have to take this one, but generally speaking, I still find it practical. Test with gasoline if you want. Tomorrow, side, I like it. It allows our rabbit progress to directly become a super rabbit. You have the rabbit in your second bar, action moves. As soon as you click on it, presto, you will have a super rabbit directly. The super rabbit, he has some really cool tools, but here we're mainly going to focus on our second effects. It's simply a transposition that will heal 100% of the rabbit's HP. If my rabbit has 539 HP, I cast the spell on my ennil, I transpose it and I heal for 539. It's really a treatment that is extremely heavy. And above all, it is a treatment that can be combined with unnatural care. You will not be forced to remove your offensive mode to place your election on these VPs. And since it is not considered treatment, there is no problem in terms of the penalty for what we do unnaturally. The super rabbit, on top of that, there are tools that are very very very cool. But I do for example that you are facing a monster that is very strong record or a boss or something. Other types of rabbit were not used at that time. We have 8 AP and the sorts cut very little AP. So we can, for example, here, push the boss. We're going to push them back, or you're going to make a lot of investments, you use it. We can push back again. And behind, we will be able to try, hop, to get away from as much as possible, not to hang around while treating. This will allow you to regain a lot of distance, while taking care of yourself enormously in the process. It is especially for your observations that you will see that you have a super rabbit directly who can transpose you. This can be useful very often. But as I told you, I'll let you test both a little to see if you like them. Third self-care tool which is very nice, it is obviously infected furel that we have already seen from a stalker who was stealing life. Since it's lifestealing, it's not considered healing. And since it is not considered as treatment, no penalty, no, we would not have any impact. We can therefore also play it very well under unnatural spells. This allows us to apply good lifesteal damage and when the mob plays it in addition, end of lifesteal turn. This is really a very useful trait if you have a lot of offensive control over your meeting. Be careful, on the other hand, it says a 2.0 worth of the lot, it is greedy, it goes away quickly. And behind the healing tool, it’s going to be guardian fire. A small healing spell you can cast on yourself and which will also apply marketing. Marketing has a very nice effect. If your character falls below 50% HP, so on the other hand, who takes a big hit or something in the turn, he will be directly healing at that moment. It will give you a nice touch, that's always the price. Since it is a brand of care, you should not be ashamed to wear it if possible without being unnatural. You apply it to yourself. You therefore take your basic care, here I also take unique care of my passive. And if during the fight a mob, you take me from 57% to below, I will have an additional healing line at that time. Who says additional care line, also says that I will continue to mount my propagator. Either way, your goal will be to juggle between these two mechanics. Either you are unnatural and you are going through life theft. Either you are not unnatural, you will certainly lose damage, in exchange, I will get you the propagator. The propagators which will suddenly become damage afterwards. Don't play crazy unnatural or crazy not unnatural. Both states are interesting. Overall, in the top idea, it would still be that our propagator can be close under unnatural and is to maximize thoroughly. In a complicated situation for example like this, when you were fighting under unnatural, and you want to go through a healing turn, you can very well for example maximize the propagator by returning to healing mode. You make your unique care, which will allow you to have both lines of care and propagator. You activate, I'll start you on the trick, well, put it before the single treatment, it will be better. And you put infokeeper. Will allow you to have three lines of potential healing, to have MP to burn a little bit during a turn. And as a result, the next turn, you have a propagator who is still well stacked. In this case, you can therefore give a single treatment, before going unnatural. And there, your next attack, it will have a lot of damage here, if I put a torpor. I've been riding my propagator for two turns now. And I gain a line at 465 damage, which we will bridge the healing turn, which I will not do just before. And so, it's nice to be able, for example, to intern tricks like that. Keep in mind that the propagator, you can stack it while being in nature mode and unstack it while being in unnatural mode. It's just that you'll have to do some crazy tricks to take care of it. If you want to take a tour of the care, don't worry about dying just in case, you must not forget, of course, the most important spell of the ennirie, the strongest spell in the kit, of lifted 20 or lifted 245, the spell has no meaning, it is phases which for only 1 AP goes to allow you to place the undo state, on an ally or on an enemy. Undoing is very simple. You lose 100 AP, you are invulnerable. You can put it on you at the end of a turn, you can put it on a boss so that it doesn't turn, you can really do lots of things with it, I advise you to put it on these turns, for example you are in the process of healing it. It's literally a spell that doesn't turn for which entity, but if you cast it on you with your last AP, but you will have just lost one AP, you are invulnerable and you can replay the next turn. It's really super, super, super strong. Finally, the last two kinds of the kit, bond of friendship and re-envisioning. This is more if you play as a team and you are not alone. Rebirth is a resin, you throw it on an Ali Kau, it comes back to life. And, bond of friendship, it's a boost spell. You put it on one of your allies and with each hit that this ally takes during the fight, our ally will gain fixed draw and cumulative food resistance. It really rose to completely nourishing values ​​of 40% of the fixed gain 166 food resistance. It's a boost that you're going to give to all your allies, it's really that they take a lot of hits like melee allies. For example, a nouginac or a sacrueur will love it. It is noted that the more your ally takes gains and shows the state, the more your elder repsa on his side will gain healing done in the process. Care carried out that we could suddenly be converted into a fixed draw. A complete rotation would be like this, so what could that look like? It's really going to depend on getting it from your HP during the fight. But here, for example, you're a good one, I have my whole life. I switch to direct natural content. I start with an anatomy directly because the mob is foulvie. Me, I'm foulvie, I can put a torpor. Go up one and this up. You're looking in general anyway, I seem to have stayed, that, they're taking you away. Here, imagine us, I'm going to go even further, I can take turns, just to pretend that mobs have caught me. I have 75% HP, here, imagine me continuing to type with an infected leaf. I would have recovered from the vio-passage flight. If I see that the target is almost dead, I put a healing exposure on it, I kill it with it, I gain propagator. And otherwise, you can type directly with my torpor caregiver in anatomy depending on the conditions you are in. Next lap, imagine us, I got my face really beaten up. I step back, I remove content, I relaunch maute-jouvance, really in the sauce, I admit to myself a little rabbit in addition, which suddenly goes directly into super rabbit. I move out of phase like that, I'm invulnerable, and my super bunny can very well mix in at the end of an enge with a transpos. And during my turn, if you don't have your whole life, you hand over to my caregiver, if you don't need it, we go to the side, we react unnaturally. The nerits have more than 4% PV, we put another big ore, full boosted, beam-bim, and we can put back an infected leaf for example, a healing expo, etc., and you will turn like that. You will therefore always have to monitor a little within your level of your PV, are you looking for not to spoil or not, are you going through the theft of life or not, always remember to have more than 80% paid at the end of the turn, it is always good to recover 3 cost points everywhere, it is really comfortable to be able to juggle, precisely, between the infected hide, between undoing at 2 points of work-full and between unnatural at 2 points of work-full. Finally, in the 3rd sister bar, you have replution, a little treatment with 1 work-full point, which can allow you to do micro-placement. It can always be used to make small placements like that, move away, make an area, create something, you can use the spell 3 times everywhere, be careful that said, always at the point of work-full, it succeeds. So that's all there is to know for low neripses, the eve is a bit offensive, the break was really fun to play, the kit rotates a lot depending on the low of the fight, we have lots of very cool little tools, whether you're alone or in a team, the kit for a healer, it's really fun to play, and you don't have to tell me in the comment what you think about it. In short, I hope for this video, you will have to know a little more about neripses, we will meet again very soon for other tutorials, cilans do not hesitate to subscribe, to put a little comment, and we will see each other very soon, have fun kisses..
+
+============================================================
+TIMESTAMPED SEGMENTS
+============================================================
+
+[0.00s - 4.20s]  Et bonjour à tous, bienvenue dans cette petite présentation d'un deck qui vous permettra de passer
+[4.20s - 5.70s]  l'Eurligame de l'Eni-Rypsa.
+[5.70s - 8.60s]  L'Eni-Rypsa sera évidemment une classe basée sur le soin principalement.
+[8.60s - 12.02s]  Cela dit au début du jeu, on va pouvoir profiter quand même de tous ces outils offensive
+[12.02s - 14.68s]  et on va chercher comme toutes les classes à un petit jour le maximum de dégâts.
+[14.68s - 18.08s]  Des adversaires qui sont morts, des adversaires dont on n'a pas besoin de soigner les dégâts qui vont faire.
+[18.08s - 22.50s]  Ça va donc nous permettre de faire une petite passe sur tous les sortes un peu offensive qui sont cools de l'Eni-Rypsa
+[22.50s - 25.22s]  et tout présentaire va me temps un peu tous les mécaniques qui ravitent autour.
+[25.22s - 27.24s]  Les tests ici se font avec un petit stuff level 50,
+[27.24s - 29.84s]  il y a des petits enchantements, mais il n'y a pas de sublimation comme d'habitude.
+[29.84s - 32.80s]  C'est des stuff que vous pouvez récupérer facilement dès vos premières heures sur le jeu.
+[32.80s - 37.12s]  On va donc attaquer directement avec les trois sortes principaux de dégâts de l'Eni-Rypsa
+[37.12s - 39.42s]  que vous allez retrouver sur la voie de l'élément R.
+[39.42s - 43.22s]  En premier lieu, anatomique sera souvent le sort que vous lancez dès le début sur un mob
+[43.22s - 46.56s]  parce qu'il y a un effet boosté sur les mob qui ont plus de 80% de leur PV.
+[46.56s - 48.72s]  Ce sera donc votre meilleur sort pour en t'amé tous les combat.
+[50.22s - 53.30s]  Après un anatomie, le sort qui nous intéresse sera le plus sera torpeur.
+[53.30s - 56.00s]  Un sort qui va impliger normalement de gaz si cette fois-ci c'est vos très nirips à
+[56.00s - 57.32s]  plus de 80% de ces PV.
+[57.32s - 60.44s]  Dans ce cas là, vous allez en fliger en de très gros dégâts et vous en infliger un peu
+[60.44s - 61.44s]  également au passage.
+[61.44s - 65.94s]  Si à ce moment-là, vous n'avez pas les 80% de PV, vous pouvez passer par anatomie et fiorl
+[65.94s - 66.94s]  infecté.
+[66.94s - 68.80s]  Fiorl infecté, ce sera un sort qui proche en deux temps.
+[68.80s - 71.24s]  En premier temps, vous allez en fliger des dégâts avec 100% de vie voletue.
+[71.24s - 73.84s]  Et en plus, de ça, vous appliquerez un poison sur l'adversaire qui fait qu'à la fin
+[73.84s - 77.16s]  de son tour, il subirait à des dégâts supplémentaires encore une fois en vol de vie.
+[77.16s - 79.48s]  C'est donc ici vos trois sortes principaux pour infiger des gros dégâts.
+[79.64s - 82.66s]  À côté de ça, on va pouvoir rajouter des dégâts additionnels grâce à la mécanique
+[82.66s - 83.66s]  de propagateurs.
+[83.66s - 87.32s]  Propagateur, vous allez pouvoir le retrouver dans votre mécanique de classe, hop comme d'habitude.
+[87.32s - 90.40s]  A chaque soin réalisé par votre nirips à, vous allez gagner du propagateur.
+[90.40s - 93.22s]  Propagateur, il faut en sorte que leur de votre proche en sort de dommage mode possible,
+[93.22s - 94.72s]  vous allez impiger des gaz supplémentaires.
+[94.72s - 97.40s]  Ça va se stack assez facilement avec un nirips à y avoir donc pour remonter à des
+[97.40s - 98.80s]  valeurs de dégâts super intéressantes.
+[98.80s - 102.00s]  Pour ça, avec notre deck, on a de façon super intéressante d'aller les chercher.
+[102.00s - 104.80s]  En premier lieu, on va se servir de simplement de mots soignants sur nous-mêmes.
+[104.80s - 107.96s]  Ça nous permet de nous finir de gagner à importer et donc de gagner du propagateur.
+[108.04s - 110.44s]  En combo avec mots soignants, on va jouer le passif soin unique.
+[110.44s - 114.28s]  Ça nous permettra chaque tour lors du premier sort de soin monocible, ce qui sera donc
+[114.28s - 116.60s]  mots soignant, d'avoir un soin supplémentaire.
+[116.60s - 119.28s]  En contrepartie, il est donc pour chins sort de soin, on va en réduite 30%.
+[119.28s - 121.50s]  Ce ne sera pas dramatique dans tous les cas ici, on ne fera pas beaucoup plus qu'un
+[121.50s - 122.50s]  soin partout.
+[122.50s - 126.48s]  Donc on accepte ce grossoin bonus qui va nous permettre du coup de proc qu'une deuxième
+[126.48s - 127.48s]  fois propagateur.
+[127.48s - 130.88s]  À noter cela dit, ça ne fonctionnera que si vous avez pas 100% de vos PV.
+[130.88s - 133.46s]  Le principe, à donc tout ça, pour mon aide, par exemple, on débute tour de mettre un
+[133.46s - 136.32s]  mots soignant sur votre nirips à, ça va permettre de vous soigner deux fois.
+[136.36s - 138.72s]  Chaque soin donc va vous donner du propagateur en fonction de votre niveau.
+[138.72s - 142.18s]  Ici, moi j'aurais plus 10 plus plus 10 et ces 20 propagateurs, je vous pourrais les
+[142.18s - 143.80s]  consommer à mon prochain sort de dégâts.
+[143.80s - 147.74s]  Par exemple, si je fais anatomie sur le mob, j'ai 222 dégâts du sort de base et mon
+[147.74s - 149.56s]  propagateur qui a rajouté 127 dégâts.
+[149.56s - 153.16s]  À chaque propagateur est relâché, il repart de 0 et c'est une bouc comme ça qui va tourner.
+[153.16s - 155.86s]  Pour cet end-câque début de tour, si vous avez déjà perdu un peu de vie, à commencer
+[155.86s - 157.04s]  vos tours par un mots soignant.
+[157.04s - 159.58s]  Les dégâts de propagateurs, vous de simplement compenser le fait que vous avez pas mis de
+[159.58s - 163.00s]  dégâts avec vos PAs, mais ça vous permettra du coup pour 3 PAs d'avoir 3 PAs de soin
+[166.32s - 169.00s]  qui m'impinit d'arrêter la mécanique grâce à l'explossoin.
+[169.00s - 172.04s]  Explossoin, vous de lancer sur un ennemi et ça va poser une marque et de saade.
+[172.04s - 174.42s]  Le principe de marque et de saade, c'est que un monstreux qui a marque et de saade sur
+[174.42s - 177.40s]  lui, au moment où il meurt, il va infiger des dégâts autour de lui.
+[177.40s - 179.98s]  Ce n'est des dégâts sympas pour 3 PAs, c'est bonus, mais si ce n'est pas forcément
+[179.98s - 182.68s]  l'effet principal qu'on va chercher, même si il est cool, il s'y en va juste chercher
+[182.68s - 184.92s]  à le combiner avec le passif, marquage précis.
+[184.92s - 187.84s]  Marquage précis, frais en sorte qu'à chaque fois qu'une marque est déclenché, on gagnera
+[187.84s - 188.84s]  du propagateur.
+[188.84s - 192.04s]  La meilleure utilisation du coup dans ce cas-là, ce serait de pouvoir finir les adversaires
+[192.04s - 194.72s]  avec une explossoin, ça va vous faire toujours du propagateur gratuit.
+[194.72s - 197.76s]  A vous de connaître vos dégâts par rapport à ce stuf, mais le top du top, c'est vraiment
+[197.76s - 200.68s]  de réussir directement à finir un monstreux avec l'explossoin, plutôt que de jouer autour
+[200.68s - 202.52s]  du principe de la marque, de son effet, etc.
+[202.52s - 205.64s]  Maintenant qu'on a nos dégâts principaux sur la voix R et nos dégâts additionnels
+[205.64s - 209.36s]  grâce à mosoignant et explossoin, on raconte comment on fonctionne les bousses de dégâts
+[209.36s - 210.36s]  sur les néripses.
+[210.36s - 212.56s]  Principe de base, hop, on reprend mécanique de classe.
+[212.56s - 216.00s]  A chaque fin de tour, vous allez gagner 10 niveaux de bonus de grâce.
+[216.00s - 219.08s]  Bonneuse de grâce est en tout simplement un bonus de son réalisé donc chaque tour qui
+[219.08s - 222.08s]  passe, vous aurez 10% de son réalisé en plus cumulable jusqu'à 50%.
+[222.08s - 225.92s]  Si je prends mes stades, par exemple, autour un, j'ai un bonus à 8% de son réalisé.
+[225.92s - 230.48s]  Autour 2, j'ai 18, Autour 3, j'ai 28, Autour 4, j'ai 38, etc.
+[230.48s - 233.44s]  Cela dit, ici, ce qui va nous intéresser, c'est pas spécialement les son réalisés.
+[233.44s - 236.24s]  On reprend notre mécanique et on va grader le sort contre nature.
+[236.24s - 238.56s]  Contre nature, c'est votre premier sort de bar3.
+[238.56s - 242.88s]  Ecoute 2 point de voie que vous, il se lance que sur vous, et vous permettra de passer
+[242.88s - 243.88s]  en contre nature.
+[244.04s - 247.60s]  Quand vous passez en contre nature, tous vos bonus de son réalisé passent en dégâts
+[247.60s - 248.60s]  infligés.
+[248.60s - 250.60s]  Toutes vos teemétris soins passent en maîtrise élémentaire.
+[250.60s - 254.00s]  En contrepartie, au lieu de gagner de la grâce à chaque tour, vous allez en perdre.
+[254.00s - 257.40s]  L'idée vous l'aurez compris, c'est donc simplement de transformer ce bonus de son réalisé
+[257.40s - 261.32s]  avec contre nature, hop, en bonus de gain infligé qui passe de 8 à 46%.
+[261.32s - 263.84s]  En plus de ça, toute ma maîtrise soin est passée en maîtrise élémentaire.
+[263.84s - 266.40s]  Et à partir de là, vous allez taper très très fort avec votre réinéripçage.
+[266.40s - 270.96s]  Attention, cependant, chaque tour qui va passer, vous allez repérer 10%, 10%, 10%.
+[270.96s - 273.60s]  Du coup, plus vous lancez récontre nature tard, plus vous aurez dégâts.
+[273.64s - 275.64s]  Mais en général, nos oreilles-games ont vaut quand même taper assez rapidement.
+[275.64s - 278.64s]  Je vous conseillerai donc en général de l'activer dès le tour 2, ça suffira largement.
+[278.64s - 281.04s]  On verra par le site de toute façon un petit trotant un peu qui fonctionne bien.
+[281.04s - 284.12s]  À côté de ça, on va pouvoir également le combiner avec Jouvantse.
+[284.12s - 286.88s]  Jouvantse, c'est un sort à deux paix qui va nous donner trois joli bonus,
+[286.88s - 288.88s]  dpm, des sons réalisés et de l'esquive.
+[288.88s - 293.64s]  Les sons réalisés, deux jouvantes, ont bien sûr pouvoir être transformées en contre nature, donc 15% de dégâts.
+[293.64s - 297.88s]  Jouvantse c'est vraiment un très très bon sort pour l'éniripçage, dès qu'il est disponible, vous le relancez.
+[298.00s - 302.08s]  La classe ne va pas être immobile de base du coup le fait du pourgainier dpm et de l'esquive, ça va lui faire vraiment du bien.
+[302.08s - 304.56s]  La base de notre combo comme vous l'avez vu de taleur et nous coûte quand même assez cher en la quand même,
+[304.56s - 309.16s]  le contenu nature qui coûte 2 points de work-full, furent l'infectique qui coûte 2 points de work-full, ça va fondre relativement vite.
+[309.16s - 312.00s]  Cela dit notre ennemi-ripp ça à un système d'origine qui est vraiment plutôt cool.
+[312.00s - 313.88s]  On reprend les mécaniques de classe comme d'habitude.
+[313.88s - 319.08s]  A chaque fan tour, vous gagnez dans tous les cas 1 points de work-full et vous gagnez plus 3, si vous avez plus de 80% de vos PV.
+[319.08s - 322.56s]  L'idée donc, ça va quand même être de soigner un maximum pour essayer de procler le plus possible.
+[322.56s - 325.92s]  Et pour ça, on va avoir 4 outils qui rentreront très bien dans le kit.
+[325.92s - 328.76s]  En premier lieu, comme on venait de l'expliquer de taleur, on va passer par Mossoyen.
+[328.76s - 333.56s]  Attention, si vous êtes en contenu nature, cela dit penser à désactiver avant de lancer si nous vous allez perdre vraiment beaucoup de soins.
+[333.56s - 336.08s]  On désactive et on se lance Mossoyen sur nous.
+[336.08s - 340.72s]  Hop, en ce sens de nous passer, je suis un premier récupéré du propagateur, ça devrait pas mal nous aider à atteindre les 80%.
+[340.72s - 346.12s]  À côté de ça, votre outil le plus puissant, ça va être de passer par le passif super lapino que je trouve vraiment très très cool.
+[346.12s - 349.20s]  Vous êtes vraiment pas obligé de le prendre celui-là, mais de façon générale, je trouve quand même pratique.
+[349.24s - 350.80s]  Testez avec essence si vous voulez.
+[350.80s - 351.96s]  Demain, côté, je l'aime bien.
+[351.96s - 354.96s]  Il permet à notre avancation lapino de devenir directement un super lapino.
+[354.96s - 357.20s]  Vous avez le lapino dans votre deuxième barre, des coups d'actes.
+[357.20s - 360.48s]  Dès que vous cliquez dessus, hop, vous aurez un super lapino directement.
+[360.48s - 364.84s]  Le super lapino, il a des outils vraiment qui sont super cool, mais ici on va surtout se passer sur nos 2e effets.
+[364.84s - 369.40s]  C'est simplement une transposition qui va soigner des 100% des PV du lapino.
+[369.40s - 374.60s]  Si mon lapino a 539 PV, je lance le sort sur mon ennil, je lui fais une transpos et je soigne de 539.
+[374.60s - 376.36s]  C'est vraiment un soin qui est ultra bourreint.
+[376.36s - 378.76s]  Et surtout du coup, c'est un soin qui est accumulable avec contre nature.
+[378.80s - 382.32s]  Vous ne serez pas obligé de retirer votre mode offensive pour le poser ton élection sur ces PV.
+[382.32s - 386.64s]  Et vu que c'est pas considéré comme un soin, il n'y va pas de problème du coup au niveau du malus de ce qu'on réalise de contre nature.
+[386.64s - 389.40s]  Le super lapino, en plus de ça, il y a des outils qui sont très très très cool.
+[389.40s - 392.36s]  Mais je n'ai par exemple que vous êtes face à un monstre qui est très fort record ou un boss ou quoi.
+[392.36s - 394.40s]  Il n'y a pas utilisé les autres sortes du lapino, à ce moment-là.
+[394.40s - 396.76s]  On a 8 PA et les sortes coupent très peu de PA.
+[396.76s - 399.24s]  On peut donc, par exemple, ici, pousser le boss.
+[399.24s - 402.08s]  On va leur repousser, soit vous allez faire beaucoup de placements, vous l'utilisez.
+[402.08s - 403.64s]  On peut repousser encore une fois.
+[403.64s - 407.84s]  Et derrière, on va pouvoir essayer, hop, de déloigner de le plus possible, ne trainerai pas tout en soignant.
+[407.84s - 411.88s]  Ça va vous permettre de reprendre beaucoup de distance, tout en vous soignant énormément au passage.
+[411.88s - 415.72s]  C'est surtout pour vos observations que vous allez voir que d'avoir un super lapino directement qui peut vous transposer.
+[415.72s - 417.04s]  Ça peut être pratique très souvent.
+[417.04s - 419.40s]  Mais comme je vous ai dit, je vous laisse tester un peu les deux pour voir si vous aimez bien.
+[419.40s - 424.52s]  Troisième outil d'auto soin qui est très chouette, c'est évidemment furel infecté qu'on a déjà vu de tâleur qui faisait du vol de vie.
+[424.52s - 426.72s]  Vu que c'est du vol de vie, c'est pas considéré comme un soin.
+[426.72s - 429.20s]  Et vu que c'est pas considéré comme un soin, non malus, non, on n'aurait pas d'impact.
+[429.20s - 432.04s]  On peut donc très bien également le jouer sous contre nature ce sort-là.
+[432.04s - 437.48s]  Ça nous permet de mettre des bons dégâts du vol de vie et quand le mob y joue en plus, fin de tour du vol de vie.
+[437.48s - 441.20s]  Ça, c'est vraiment un trait très consoin si vous avez beaucoup de maîtris offensive sur votre réunion.
+[441.20s - 444.64s]  Attention, par contre, cela dit un 2.0 worth of le sort, il est gourmand, ça a vite partir.
+[444.64s - 447.24s]  Et derrière outil de soin, ça va être feu gardien.
+[447.24s - 451.36s]  Un petit sort de soin, vous pouvez lancer sur vous et qui en plus va appliquer une marketing.
+[451.36s - 453.12s]  La marketing a un effet très sympathique.
+[453.12s - 457.00s]  Si votre personnage tombe sous les 50% de PV, donc par contre, qui prend un gros coup ou quoi dans le tour,
+[457.00s - 458.48s]  il va être directement soignant à ce moment-là.
+[458.52s - 461.12s]  Ça vous fera un soin d'appos un sympathique, c'est toujours sa prix.
+[461.12s - 464.76s]  Vu que c'est une marque de soin, il faudra pas honte la mettre si possible sans contre nature.
+[464.76s - 466.12s]  Vous l'appliquez sur vous.
+[466.12s - 470.60s]  Vous prenez du coup votre soin de base, ici je prends en plus de soin unique de mon passif.
+[470.60s - 474.36s]  Et si pendant le combat un mob, vous me fais passer de 57% à en dessous,
+[474.36s - 476.08s]  j'aurai une ligne de soin supplémentaire à ce moment-là.
+[476.08s - 479.40s]  Qui dit ligne de soin supplémentaire, dit également, que je vais continuer à monter mon propagateur.
+[479.40s - 481.68s]  De toute façon, votre but ça va être de jongler entre ces deux mécaniques.
+[481.68s - 483.84s]  Soit vous êtes en contre nature et vous passez par du vol de vie.
+[483.84s - 486.36s]  Soit vous êtes pas sous contre nature, vous allez certes perdre des dégâts,
+[486.40s - 488.00s]  en échange, je vous aurai du coup du propagateur.
+[488.00s - 490.32s]  Les propagateurs qui vont devenir du coup des dégâts par après.
+[490.32s - 492.96s]  Ne jouez pas fous de contre nature ou fous de pas contre nature.
+[492.96s - 494.24s]  Les deux états sont intéressants.
+[494.24s - 497.16s]  Grobalement, dans l'idée de top du top, ce serait quand même que notre propagateur
+[497.16s - 499.80s]  puisse être proche sous contre nature et soit de maximiser à fond.
+[499.80s - 501.52s]  Dans une situation compliquée par exemple comme celle-là,
+[501.52s - 503.44s]  quand vous étiez en train de vous battre sous contre nature,
+[503.44s - 504.88s]  et que vous voulez un peu passer par un tour de soin,
+[504.88s - 508.28s]  vous pouvez très bien par exemple maximiser le propagateur en repassant en mode soin.
+[508.28s - 512.56s]  Vous faites votre soin unique, que permettra d'avoir les deux lignes de soin et de propagateur.
+[512.60s - 514.20s]  Vous activez, je vous lance dans le tour,
+[514.20s - 516.24s]  bon, mettez-le avant du coup le soin unique, ce sera mieux.
+[516.24s - 518.28s]  Et vous mettez infogardien.
+[518.28s - 520.44s]  Vous permettra d'avoir trois lignes de soin potentiel,
+[520.44s - 522.44s]  d'avoir des PM pour fûrer un petit peu pendant un tour.
+[522.44s - 525.12s]  Et du coup, le tour d'après, vous avez un propagateur qui est quand même bien stack.
+[525.12s - 528.04s]  Vous pouvez donc dans ce cas-là remettre un soin unique,
+[528.04s - 530.52s]  avant de passer en contre nature.
+[530.52s - 533.84s]  Et là, votre prochaine attaque, elle aura énormément de dégâts ici, si je mets un torpeur.
+[533.84s - 535.92s]  Mon propagateur, ça fait deux tours que je le monte.
+[535.92s - 538.28s]  Et je gagne une ligne à 465 dégâts,
+[538.28s - 540.44s]  qu'on pontera le tour de soin, que je vais ne me faire juste avant.
+[540.48s - 542.48s]  Et donc, c'est sympa en possible, par exemple, d'interner des tours comme ça.
+[542.48s - 545.64s]  Gardes à en tête que le propagateur, vous pouvez le stack en étant en mode nature
+[545.64s - 547.64s]  et le destaque en étant en contre nature.
+[547.64s - 549.36s]  C'est juste que du coup, faudra faire des tours fous le soin.
+[549.36s - 550.60s]  Si vous souhaitez faire un tour fous le soin,
+[550.60s - 552.12s]  ne t'en pas inquiétais de mourir au cas où,
+[552.12s - 553.12s]  il ne faut pas oublier, bien sûr,
+[553.12s - 554.68s]  le sort le plus important de l'ennirie,
+[554.68s - 556.04s]  le sort le plus fort du kit,
+[556.04s - 558.68s]  du levé 20 ou levé le 245, le sort n'a aucun sens,
+[558.68s - 562.36s]  c'est des phases qui pour seulement 1 PA va au permettre de poser l'état défaser,
+[562.36s - 564.00s]  sur un allié ou sur un ennemi.
+[564.00s - 565.12s]  Défaser, c'est très simple.
+[565.12s - 567.40s]  Vous perdez 100 PA, vous êtes invulnerable.
+[567.40s - 569.56s]  Vous pouvez le mettre sur vous en fin de tour,
+[569.56s - 571.76s]  vous pouvez le mettre sur un boss pour que ça le fasse pas se tour,
+[571.76s - 572.88s]  vous pouvez vraiment pleins de choses avec,
+[572.88s - 574.24s]  je vous conseille de mettre justement sur ces tours,
+[574.24s - 575.64s]  vous êtes par exemple en train de vous fous le soigner.
+[575.64s - 578.04s]  C'est littéralement un sort qui ne fait pas se tournant pour de quel entité,
+[578.04s - 580.20s]  mais que si vous le lancez sur vous avec votre dernier PA,
+[580.20s - 581.36s]  mais vous aurez juste perdu un PA,
+[581.36s - 583.28s]  vous êtes invulnerable et vous pouvez rejouer le tour d'après.
+[583.28s - 585.04s]  C'est vraiment super, super, super fort.
+[585.04s - 586.28s]  Enfin, les deux derniers sortes du kit,
+[586.28s - 588.28s]  lien d'amitié et réénisirection.
+[588.28s - 590.32s]  Ça, c'est plutôt si vous jouez en team et que vous êtes pas tout seul.
+[590.40s - 592.00s]  La réénisirection, c'est une résine,
+[592.00s - 594.36s]  vous la lancez sur un Ali Kau, il revient la vie.
+[594.36s - 596.28s]  Et, lien d'amitié, c'est un sort de boost.
+[596.28s - 598.20s]  Vous le mettez sur un de vos alliés et à chaque coup,
+[598.20s - 599.52s]  que cet allié va prendre pendant le combat,
+[599.52s - 601.12s]  notre allié va gagner des dégain figé
+[601.12s - 602.80s]  et des résistances alimentaires cumulables.
+[602.80s - 605.32s]  Ça a vraiment monté à des valeurs complètement nourricentes
+[605.32s - 608.04s]  de 40 % des gain figé 166 résistances alimentaires.
+[608.04s - 610.16s]  C'est un boost que vous allez vous leur poser sur tous vos alliés,
+[610.16s - 611.16s]  c'est vraiment qu'ils prennent beaucoup de coups
+[611.16s - 612.52s]  comme des alliés au corps à corps.
+[612.52s - 615.00s]  Par exemple, un nouginac ou un sacrueur va adorer ça.
+[615.00s - 617.24s]  Il y a noté que plus votre allié prendra des gain et montra à l'état,
+[617.24s - 619.00s]  plus votre aînirépsa de son côté gagnera
+[619.00s - 620.60s]  des soins réalisés au passage.
+[620.60s - 623.12s]  Soins réalisés qu'on pourrait être converti du coup en dégain figé.
+[623.12s - 624.60s]  Une rotation complète aînirépsa, du coup,
+[624.60s - 625.80s]  ça pourrait ressembler à quoi ?
+[625.80s - 628.88s]  Ça va franchement dépendre de l'obtenir de vos PV pendant le combat.
+[628.88s - 630.72s]  Mais ici, par exemple, t'es un bon, j'ai toute ma vie.
+[630.72s - 632.72s]  Je passe en conten nature direct.
+[632.72s - 634.28s]  Je commence par une anatomie directement
+[634.28s - 635.52s]  parce que le mob est foulvie.
+[635.52s - 638.48s]  Moi, je suis foulvie, je peux mettre une torpeur.
+[638.48s - 639.80s]  Montez un et cet up.
+[639.80s - 640.68s]  Vous cherchez en général quand même,
+[640.68s - 641.96s]  j'ai l'air resté, ça, ils font vous éloignant.
+[641.96s - 643.12s]  Ici, imaginez-nous, je vais aller encore encore,
+[643.12s - 643.96s]  je peux prendre des dégards,
+[643.96s - 645.92s]  histoire de simuler que des mob me ont attraper.
+[645.92s - 648.76s]  J'ai 75% PV, ici, imaginez-nous que je continue à taper
+[648.76s - 650.40s]  avec une feuille infectée.
+[650.40s - 652.04s]  J'aurais récupéré du vol de vio-passage.
+[652.04s - 653.48s]  Si je vois que la cible est presque morte,
+[653.48s - 654.28s]  je lui mets une expo soin,
+[654.28s - 656.08s]  je la tue avec, je gagne du propagateur.
+[656.08s - 657.80s]  Et sinon, vous pouvez taper directement avec mon soignant
+[657.80s - 659.88s]  torpeur en anatomie selon les conditions vous en êtes.
+[659.88s - 661.76s]  Tour d'après, imaginez-nous, je me suis bien fait cassé la gueule.
+[661.76s - 664.00s]  Je recule, j'enlève contenature,
+[664.00s - 665.64s]  je relance maute-jouvance,
+[670.68s - 671.52s]  vraiment dans la sauce,
+[671.52s - 673.44s]  je me j'avocue un petit lapineau en plus,
+[675.20s - 677.28s]  qui passe du coup directement en super lapineau.
+[677.28s - 679.20s]  Je me déphase comme ça, je suis invulnérables,
+[679.20s - 681.08s]  et mon super lapineau peut très bien mêloigner
+[681.08s - 683.08s]  au bout d'engé avec une transpos.
+[683.08s - 684.68s]  Et lors de mon tour, si vous n'avez pas toute votre vie,
+[684.68s - 685.48s]  vous remettez à mon soignant,
+[685.48s - 686.48s]  si vous n'avez pas besoin,
+[686.48s - 689.16s]  on va sur le côté, on réactif contre nature.
+[689.16s - 690.76s]  Les nérits ça à plus de 4% PV,
+[690.76s - 691.60s]  on met une autre grosse ore,
+[691.60s - 693.16s]  full boostée, beam-bim,
+[693.16s - 694.88s]  et on peut remettre une feuille infectée par exemple,
+[694.88s - 697.04s]  une expo soin, etc, et vous allez tourner comme ça.
+[697.04s - 698.16s]  Il faudra donc toujours surveiller un peu
+[698.16s - 699.36s]  au sein de ton niveau de vos PV,
+[699.36s - 700.92s]  est-ce que vous cherchez pour pas gâter ou pas,
+[700.92s - 702.56s]  est-ce que vous passez par le vol de vie ou pas,
+[702.56s - 704.68s]  pensez quand même toujours avoir plus de 80% payé fin de tour,
+[704.68s - 706.32s]  c'est toujours bien récupérer 3 points de coût partout,
+[706.32s - 707.64s]  c'est vraiment confort pour pouvoir jongler,
+[707.64s - 708.84s]  justement, entre l'affût infectée,
+[708.84s - 710.20s]  entre défasage à 2 points de work-full
+[710.20s - 711.96s]  et entre contre nature à 2 points de work-full.
+[711.96s - 713.08s]  Enfin, en 3ème barre de soeur,
+[713.08s - 714.44s]  vous avez réplution,
+[714.44s - 715.28s]  un petit soin à 1 point de work-full,
+[715.28s - 716.80s]  qui peut vous permettre de faire du microplacement.
+[716.80s - 718.92s]  Ça peut toujours servir à faire des petits placements comme ça,
+[718.92s - 720.24s]  vous éloigner, faire une zone,
+[720.24s - 721.00s]  créer un truc,
+[721.00s - 723.12s]  vous pouvez utiliser de 3 fois partout le sort,
+[723.12s - 724.16s]  attention cela dit,
+[724.16s - 725.80s]  toujours au point de work-full, ça parvit.
+[725.80s - 727.60s]  C'est donc tout ce qu'il y a à savoir pour les néripses à bas,
+[727.60s - 728.60s]  le veille est un peu offensive,
+[728.60s - 729.72s]  la casse avait vraiment sympa à jouer,
+[729.72s - 731.48s]  le kit tourne beaucoup en fonction de bas du combat,
+[731.48s - 732.52s]  on a plein de petits outils très cool,
+[732.52s - 733.72s]  qu'on soit seul ou en équipe,
+[733.72s - 735.28s]  le kit pour un soigneur, il est vraiment fun à jouer,
+[735.28s - 736.24s]  et ce n'est pas à me dire dans le commentaire,
+[736.24s - 737.04s]  ce que vous en pensez.
+[737.04s - 738.12s]  Bref, j'espère cette vidéo,
+[738.12s - 740.00s]  vous aurez à savoir un peu plus sur les néripses,
+[740.00s - 741.44s]  on se retrouve très bientôt pour d'autres tutos,
+[741.44s - 742.96s]  des cilans n'hésitez pas à vous abonner,
+[742.96s - 744.16s]  à mettre un petit commentaire,
+[744.16s - 745.48s]  et on se revoit très bientôt,
+[745.48s - 746.48s]  amusez-vous bien de bisous.
