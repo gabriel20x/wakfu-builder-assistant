@@ -256,6 +256,55 @@ def _solve_single_build(
             stat_value = resolved_stats.get(stat_name, 0)
             stat_score += stat_value * weight
         
+        # ✅ NEW: Item Power bonus (common formula in Wakfu builders)
+        # Peso del item = Dominios (elementales + secundarios que el usuario quiere) + 1.2 × Resistencias
+        # Dominios elementales: 1.5x si el usuario los pide, 0.5x si no
+        
+        # Dominios elementales con pesos según preferencias del usuario
+        total_mastery = 0.0
+        elemental_masteries = {
+            "Fire_Mastery": "Fire",
+            "Water_Mastery": "Water",
+            "Earth_Mastery": "Earth",
+            "Air_Mastery": "Air"
+        }
+        
+        for mastery_name, element in elemental_masteries.items():
+            mastery_value = resolved_stats.get(mastery_name, 0)
+            if mastery_value > 0:
+                # Check if user wants this element (in damage_preferences or stat_weights)
+                wants_element = (
+                    element in (damage_preferences or []) or
+                    mastery_name in stat_weights
+                )
+                multiplier = 1.5 if wants_element else 0.5
+                total_mastery += mastery_value * multiplier
+        
+        # Dominios secundarios (solo los que el usuario pide)
+        secondary_masteries = [
+            "Melee_Mastery", "Distance_Mastery", "Rear_Mastery", 
+            "Healing_Mastery", "Berserk_Mastery", "Critical_Mastery"
+        ]
+        for mastery_name in secondary_masteries:
+            if mastery_name in stat_weights:
+                total_mastery += resolved_stats.get(mastery_name, 0)
+        
+        # Resistencias (siempre se cuentan)
+        total_resistance = (
+            resolved_stats.get("Fire_Resistance", 0) +
+            resolved_stats.get("Water_Resistance", 0) +
+            resolved_stats.get("Earth_Resistance", 0) +
+            resolved_stats.get("Air_Resistance", 0) +
+            resolved_stats.get("Elemental_Resistance", 0)
+        )
+        
+        # Fórmula: Dominios + 1.2 × Resistencias
+        item_power = total_mastery + (1.2 * total_resistance)
+        
+        # Add small bonus (scaled down to not dominate user's stat_weights)
+        # Power bonus = item_power × 0.1 (subtle but noticeable)
+        power_bonus = item_power * 0.1
+        
         # ✅ NEW: Penalties for missing important stats
         # Items that normally have certain stats should be penalized heavily if they don't
         missing_stat_penalty = 0.0
