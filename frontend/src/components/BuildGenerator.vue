@@ -7,15 +7,26 @@
           <div class="header-title">
             <h2>{{ t('config.title') }}</h2>
           </div>
-          <p-button 
-            :label="isLoading ? t('config.generating') : t('config.generateButton')"
-            :disabled="isLoading || enabledStatsCount === 0"
-            :loading="isLoading"
-            icon="pi pi-sparkles"
-            class="generate-button-header"
-            @click="generateBuilds"
-            size="small"
-          />
+          <div class="header-actions">
+            <p-button 
+              :label="isLoading ? t('config.generating') : t('config.generateButton')"
+              :disabled="isLoading || enabledStatsCount === 0"
+              :loading="isLoading"
+              icon="pi pi-sparkles"
+              class="generate-button-header"
+              @click="generateBuilds"
+              size="small"
+            />
+            <p-button 
+              v-if="builds"
+              :label="t('builds.saveBuild')"
+              icon="pi pi-save"
+              class="save-button-header"
+              severity="secondary"
+              size="small"
+              @click="saveCurrentBuildWithName"
+            />
+          </div>
         </div>
         
         <div class="panel-content">
@@ -256,6 +267,11 @@
           <div class="damage-section">
             <DamageEstimator v-if="currentBuildStats" :build-stats="currentBuildStats" />
           </div>
+          
+          <!-- Build History/Saved -->
+          <div class="history-section">
+            <BuildHistory @load-build="loadBuild" />
+          </div>
         </div>
       </div>
     </div>
@@ -263,20 +279,29 @@
 </template>
 
 <script setup>
-import { ref, computed, reactive } from 'vue'
+import { ref, computed, reactive, onMounted, watch } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
 import { STAT_NAMES } from '../composables/useStats'
 import { useI18n } from '../composables/useI18n'
+import { useBuildPersistence } from '../composables/useBuildPersistence'
 import BuildResult from './BuildResult.vue'
 import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
 import ClassPresetSelector from './ClassPresetSelector.vue'
 import DamageEstimator from './DamageEstimator.vue'
+import BuildHistory from './BuildHistory.vue'
 
 const toast = useToast()
 const { t } = useI18n()
+const { 
+  saveCurrentBuild, 
+  saveCurrentConfig, 
+  getCurrentBuild, 
+  getCurrentConfig,
+  saveBuildWithName 
+} = useBuildPersistence()
 
 const emit = defineEmits(['edit-metadata'])
 
@@ -287,10 +312,63 @@ const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
 const activeTabIndex = ref(0)
+const showSaveBuildDialog = ref(false)
+const buildNameInput = ref('')
 
 const onEditMetadata = (item) => {
   emit('edit-metadata', item)
 }
+
+// Restore builds on mount
+onMounted(() => {
+  const savedBuild = getCurrentBuild()
+  const savedConfig = getCurrentConfig()
+  
+  if (savedBuild) {
+    console.log('Restoring saved build:', savedBuild)
+    builds.value = savedBuild.builds
+  }
+  
+  if (savedConfig) {
+    console.log('Restoring saved config:', savedConfig)
+    characterLevel.value = savedConfig.level_max || 230
+    includePet.value = savedConfig.include_pet !== false
+    includeAccessory.value = savedConfig.include_accessory !== false
+    
+    // Restore stat weights
+    if (savedConfig.stat_weights) {
+      Object.keys(savedConfig.stat_weights).forEach(stat => {
+        if (statWeights[stat] !== undefined) {
+          statWeights[stat].enabled = true
+          statWeights[stat].weight = savedConfig.stat_weights[stat]
+        }
+      })
+    }
+    
+    // Restore element preferences
+    if (savedConfig.damage_preferences) {
+      damagePreferences.value = savedConfig.damage_preferences
+    }
+    if (savedConfig.resistance_preferences) {
+      resistancePreferences.value = savedConfig.resistance_preferences
+    }
+  }
+})
+
+// Watch builds and save automatically
+watch(builds, (newBuilds) => {
+  if (newBuilds) {
+    const config = {
+      level_max: characterLevel.value,
+      stat_weights: activeStatWeights.value,
+      include_pet: includePet.value,
+      include_accessory: includeAccessory.value,
+      damage_preferences: damagePreferences.value,
+      resistance_preferences: resistancePreferences.value
+    }
+    saveCurrentBuild(newBuilds, config)
+  }
+}, { deep: true })
 
 // Level options for dropdown
 const levelOptions = [
@@ -504,6 +582,75 @@ const generateBuilds = async () => {
     isLoading.value = false
   }
 }
+
+const saveCurrentBuildWithName = () => {
+  const name = prompt(t('builds.enterBuildName'), `Build Niv. ${characterLevel.value}`)
+  
+  if (name && builds.value) {
+    const config = {
+      level_max: characterLevel.value,
+      stat_weights: activeStatWeights.value,
+      include_pet: includePet.value,
+      include_accessory: includeAccessory.value,
+      damage_preferences: damagePreferences.value,
+      resistance_preferences: resistancePreferences.value
+    }
+    
+    saveBuildWithName(builds.value, config, name)
+    
+    toast.add({
+      severity: 'success',
+      summary: t('builds.buildSaved'),
+      detail: name,
+      life: 3000
+    })
+  }
+}
+
+const loadBuild = (buildData) => {
+  console.log('Loading build:', buildData)
+  
+  // Restore builds
+  builds.value = buildData.builds
+  
+  // Restore config
+  const config = buildData.config
+  characterLevel.value = config.level_max || 230
+  includePet.value = config.include_pet !== false
+  includeAccessory.value = config.include_accessory !== false
+  
+  // Restore stat weights
+  if (config.stat_weights) {
+    // Reset all first
+    Object.values(statWeights).forEach(stat => {
+      stat.enabled = false
+      stat.weight = 1.0
+    })
+    
+    // Set from config
+    Object.entries(config.stat_weights).forEach(([stat, weight]) => {
+      if (statWeights[stat]) {
+        statWeights[stat].enabled = true
+        statWeights[stat].weight = weight
+      }
+    })
+  }
+  
+  // Restore element preferences
+  if (config.damage_preferences) {
+    damagePreferences.value = config.damage_preferences
+  }
+  if (config.resistance_preferences) {
+    resistancePreferences.value = config.resistance_preferences
+  }
+  
+  toast.add({
+    severity: 'info',
+    summary: t('builds.buildLoaded'),
+    detail: buildData.name || t('builds.historyBuild'),
+    life: 3000
+  })
+}
 </script>
 
 <style lang="scss" scoped>
@@ -606,6 +753,11 @@ const generateBuilds = async () => {
     font-size: 1.5rem;
     color: #fff;
   }
+  
+  .header-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
 }
 
 .generate-button-header {
@@ -621,6 +773,16 @@ const generateBuilds = async () => {
   &:disabled {
     opacity: 0.6;
   }
+}
+
+.save-button-header {
+  flex-shrink: 0;
+}
+
+.history-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .panel-content {

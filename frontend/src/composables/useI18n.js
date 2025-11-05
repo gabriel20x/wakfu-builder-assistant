@@ -71,6 +71,21 @@ const translations = {
     'builds.full': 'Completo',
     'builds.difficulty': 'Dificultad',
     
+    // Build Management
+    'builds.saveBuild': 'Guardar Build',
+    'builds.savedBuilds': 'Builds Guardadas',
+    'builds.history': 'Historial',
+    'builds.saved': 'Guardadas',
+    'builds.load': 'Cargar',
+    'builds.delete': 'Eliminar',
+    'builds.enterBuildName': 'Nombre para esta build',
+    'builds.buildSaved': 'Build Guardada',
+    'builds.buildLoaded': 'Build Cargada',
+    'builds.historyBuild': 'Build del historial',
+    'builds.noSavedBuilds': 'No hay builds guardadas',
+    'builds.noHistory': 'No hay historial de builds',
+    'builds.deleteConfirm': '¿Eliminar esta build?',
+    
     // Stats Panel
     'statsPanel.title': 'Stats Totales',
     'statsPanel.equipmentOnly': 'Solo Equipo',
@@ -93,6 +108,7 @@ const translations = {
     'metadata.totalItems': 'Items con Metadatos',
     'metadata.coverage': 'Cobertura de Metadatos',
     'metadata.editMetadata': 'Editar Metadatos',
+    'metadata.hasMetadata': 'Info',
     'metadata.withDropRate': 'Con Drop Rate',
     'metadata.withCraftable': 'Con Flag Crafteable',
     'metadata.withCorrection': 'Con Corrección de Origen',
@@ -268,6 +284,21 @@ const translations = {
     'builds.full': 'Complete',
     'builds.difficulty': 'Difficulty',
     
+    // Build Management
+    'builds.saveBuild': 'Save Build',
+    'builds.savedBuilds': 'Saved Builds',
+    'builds.history': 'History',
+    'builds.saved': 'Saved',
+    'builds.load': 'Load',
+    'builds.delete': 'Delete',
+    'builds.enterBuildName': 'Name for this build',
+    'builds.buildSaved': 'Build Saved',
+    'builds.buildLoaded': 'Build Loaded',
+    'builds.historyBuild': 'Build from history',
+    'builds.noSavedBuilds': 'No saved builds',
+    'builds.noHistory': 'No build history',
+    'builds.deleteConfirm': 'Delete this build?',
+    
     // Stats Panel
     'statsPanel.title': 'Total Stats',
     'statsPanel.equipmentOnly': 'Equipment Only',
@@ -290,6 +321,7 @@ const translations = {
     'metadata.totalItems': 'Items with Metadata',
     'metadata.coverage': 'Metadata Coverage',
     'metadata.editMetadata': 'Edit Metadata',
+    'metadata.hasMetadata': 'Info',
     'metadata.withDropRate': 'With Drop Rate',
     'metadata.withCraftable': 'With Craftable Flag',
     'metadata.withCorrection': 'With Source Correction',
@@ -465,6 +497,21 @@ const translations = {
     'builds.full': 'Complet',
     'builds.difficulty': 'Difficulté',
     
+    // Build Management
+    'builds.saveBuild': 'Sauvegarder Build',
+    'builds.savedBuilds': 'Builds Sauvegardées',
+    'builds.history': 'Historique',
+    'builds.saved': 'Sauvegardées',
+    'builds.load': 'Charger',
+    'builds.delete': 'Supprimer',
+    'builds.enterBuildName': 'Nom pour ce build',
+    'builds.buildSaved': 'Build Sauvegardé',
+    'builds.buildLoaded': 'Build Chargé',
+    'builds.historyBuild': 'Build de l\'historique',
+    'builds.noSavedBuilds': 'Aucun build sauvegardé',
+    'builds.noHistory': 'Aucun historique de builds',
+    'builds.deleteConfirm': 'Supprimer ce build?',
+    
     // Stats Panel
     'statsPanel.title': 'Stats Totales',
     'statsPanel.equipmentOnly': 'Équipement Seul',
@@ -487,6 +534,7 @@ const translations = {
     'metadata.totalItems': 'Items avec Métadonnées',
     'metadata.coverage': 'Couverture de Métadonnées',
     'metadata.editMetadata': 'Modifier les Métadonnées',
+    'metadata.hasMetadata': 'Info',
     'metadata.withDropRate': 'Avec Taux de Drop',
     'metadata.withCraftable': 'Avec Flag Craftable',
     'metadata.withCorrection': 'Avec Correction de Source',
