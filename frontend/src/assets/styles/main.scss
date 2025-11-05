@@ -7,11 +7,67 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+// Fix for layout shift on hover
+button,
+a,
+.p-button,
+.p-inputtext,
+.p-dropdown {
+  &:hover:not(:disabled) {
+    // Prevent layout shift by maintaining border width
+    box-sizing: border-box;
+  }
+}
+
+// Ensure transforms don't affect layout
+[class*="hover"]:hover,
+button:hover,
+a:hover {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+// Fix PrimeVue component border/outline issues
+:deep(.p-button),
+:deep(.p-dropdown),
+:deep(.p-inputtext),
+:deep(.p-checkbox),
+:deep(.p-dialog) {
+  // Ensure consistent border width
+  &:focus,
+  &:focus-visible {
+    outline-offset: 0;
+  }
+  
+  // Prevent outline from affecting layout
+  &:focus-visible {
+    outline: 2px solid transparent;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.5);
+  }
+}
+
+// Fix for elements that use transform
+.item-card,
+.build-card,
+[class*="-card"] {
+  // Prevent layout shift when using transform
+  &:hover {
+    will-change: transform;
+  }
 }
 
 // Color variables

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T04:54:56.889322",
+  "last_updated": "2025-11-05T05:34:01.446637",
   "description": "Manual metadata for items - Ultra simplified: only acquisition methods (booleans) and drop rates",
   "items": {
     "25974": {
@@ -195,6 +195,38 @@
         }
       },
       "added_date": "2025-11-05T04:54:56.889309"
+    },
+    "19125": {
+      "item_id": 19125,
+      "name": "Traditional Shoes",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            0.07
+          ]
+        },
+        "recipe": {
+          "enabled": true
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T05:34:01.446600"
     }
   }
 }

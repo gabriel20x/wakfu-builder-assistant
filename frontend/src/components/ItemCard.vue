@@ -329,12 +329,11 @@ const onImageError = (event) => {
   border: 2px solid;
   border-radius: 12px;
   overflow: visible;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: box-shadow 0.2s, border-color 0.2s;
   position: relative;
   
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(102, 126, 234, 0.3);
   }
 }
 

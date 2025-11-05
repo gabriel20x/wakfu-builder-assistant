@@ -82,6 +82,7 @@ export function saveBuildWithName(builds, config, name) {
       name: name || `Build ${new Date().toLocaleString()}`,
       builds,
       config,
+      saved_at: new Date().toISOString(),
       timestamp: new Date().toISOString()
     }
     
@@ -111,9 +112,35 @@ export function deleteSavedBuild(buildId) {
   }
 }
 
+// Rename a saved build
+export function renameSavedBuild(buildId, newName) {
+  try {
+    const build = savedBuilds.value.find(b => b.id === buildId)
+    if (build) {
+      build.name = newName
+      localStorage.setItem(STORAGE_KEYS.SAVED_BUILDS, JSON.stringify(savedBuilds.value))
+    }
+  } catch (error) {
+    console.error('Error renaming saved build:', error)
+  }
+}
+
 // Get saved builds
 export function getSavedBuilds() {
   return savedBuilds.value
+}
+
+// Aliases for BuildViewer compatibility
+export function getBuildHistory() {
+  return getSavedBuilds()
+}
+
+export function deleteBuildFromHistory(buildId) {
+  return deleteSavedBuild(buildId)
+}
+
+export function renameBuildInHistory(buildId, newName) {
+  return renameSavedBuild(buildId, newName)
 }
 
 // Clear all persisted data
@@ -145,7 +172,11 @@ export function useBuildPersistence() {
     getCurrentConfig,
     saveBuildWithName,
     deleteSavedBuild,
+    renameSavedBuild,
     getSavedBuilds,
+    getBuildHistory,
+    deleteBuildFromHistory,
+    renameBuildInHistory,
     clearAllPersistence
   }
 }

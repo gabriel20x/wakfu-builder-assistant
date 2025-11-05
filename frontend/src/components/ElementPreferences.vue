@@ -217,7 +217,7 @@ watch(() => props.resistancePreferences, (newVal) => {
   &:hover {
     background: rgba(26, 35, 50, 0.8);
     border-color: rgba(92, 107, 192, 0.5);
-    transform: translateX(4px);
+    box-shadow: 0 2px 8px rgba(92, 107, 192, 0.3);
   }
   
   &:active {

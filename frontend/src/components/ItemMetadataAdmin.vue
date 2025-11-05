@@ -722,8 +722,7 @@ export default {
 
 .item-card:hover {
   border-color: #667eea;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2), 0 0 0 1px rgba(102, 126, 234, 0.3);
 }
 
 .item-card.has-metadata {
@@ -733,8 +732,7 @@ export default {
 .item-card.selected {
   border-color: #667eea;
   background: rgba(102, 126, 234, 0.05);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3), 0 0 0 1px rgba(102, 126, 234, 0.4);
 }
 
 .item-header {

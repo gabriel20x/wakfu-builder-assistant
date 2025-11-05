@@ -103,21 +103,33 @@
 </template>
 
 <script setup>
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, defineExpose } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { getStatLabel } from '../composables/useStats'
 import { useI18n } from '../composables/useI18n'
 
-const emit = defineEmits(['preset-applied'])
+const props = defineProps({
+  modelValueClass: {
+    type: String,
+    default: null
+  },
+  modelValueRole: {
+    type: String,
+    default: null
+  }
+})
+
+const emit = defineEmits(['preset-applied', 'update:modelValueClass', 'update:modelValueRole'])
 const toast = useToast()
 const { t } = useI18n()
 
-const selectedClass = ref(null)
-const selectedRole = ref(null)
+const selectedClass = ref(props.modelValueClass)
+const selectedRole = ref(props.modelValueRole)
 const classes = ref([])
 const roles = ref([])
 const previewStats = ref(null)
 const classPresetsData = ref(null)
+const isRestoring = ref(false)
 
 const loadingClasses = ref(false)
 const loadingRoles = ref(false)
@@ -195,14 +207,6 @@ const onClassChange = async () => {
   }
 }
 
-// Watch role changes to update preview AND auto-apply
-watch(selectedRole, (newRole) => {
-  if (newRole && selectedClass.value) {
-    loadPreview()
-    // Auto-apply preset when role changes
-    applyPreset()
-  }
-})
 
 // Load preview stats from local data
 const loadPreview = () => {
@@ -338,8 +342,69 @@ const onImageError = (event) => {
   event.target.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"%3E%3Ctext x="50%25" y="50%25" text-anchor="middle" dy=".3em" fill="%23667eea" font-size="16" font-weight="bold"%3E⚔%3C/text%3E%3C/svg%3E'
 }
 
+// Watch selectedClass to emit changes and trigger role loading
+watch(selectedClass, (newClass) => {
+  emit('update:modelValueClass', newClass)
+  if (!isRestoring.value) {
+    onClassChange()
+  }
+})
+
+// Watch selectedRole to emit changes and apply preset
+watch(selectedRole, (newRole) => {
+  emit('update:modelValueRole', newRole)
+  if (newRole && selectedClass.value && !isRestoring.value) {
+    loadPreview()
+    applyPreset()
+  }
+})
+
+// Method to restore values without triggering auto-apply
+const restoreValues = async (className, roleName) => {
+  isRestoring.value = true
+  
+  console.log('Restoring class/role:', className, roleName)
+  
+  // Wait for classes to be loaded if needed
+  if (!classPresetsData.value) {
+    await loadClasses()
+  }
+  
+  // Find class by name
+  const classData = classPresetsData.value?.classes.find(c => c.name === className)
+  if (classData) {
+    selectedClass.value = classData.id
+    
+    // Load roles for this class
+    roles.value = classData.roles
+    
+    // Find role by name
+    const roleData = roles.value.find(r => r.name === roleName)
+    if (roleData) {
+      selectedRole.value = roleData.id
+      
+      // Load preview
+      if (roleData.stat_priorities) {
+        previewStats.value = roleData.stat_priorities
+      }
+    }
+  }
+  
+  // Small delay to ensure UI updates
+  setTimeout(() => {
+    isRestoring.value = false
+  }, 100)
+}
+
+// Expose method for parent component
+defineExpose({
+  restoreValues
+})
+
 // Load classes on mount
-loadClasses()
+onMounted(() => {
+  loadClasses()
+})
 </script>
 
 <style lang="scss" scoped>

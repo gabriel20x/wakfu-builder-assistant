@@ -68,8 +68,19 @@
           <!-- Quick Start - Presets -->
           <div class="config-section">
             <ClassPresetSelector 
+              ref="classPresetSelectorRef"
               @preset-applied="onPresetApplied"
             />
+            
+            <!-- Display selected class/role -->
+            <div v-if="selectedClass && selectedRole" class="preset-display">
+              <div class="preset-info">
+                <i class="pi pi-check-circle"></i>
+                <span class="preset-text">
+                  <strong>{{ selectedClass }}</strong> - {{ selectedRole }}
+                </span>
+              </div>
+            </div>
           </div>
 
           <!-- Stat Weights -->
@@ -322,60 +333,27 @@ const isLoading = ref(false)
 const error = ref(null)
 const activeTabIndex = ref(0)
 const showHistoryModal = ref(false)
+const selectedClass = ref(null)
+const selectedRole = ref(null)
+const classPresetSelectorRef = ref(null)
 
 const onEditMetadata = (item) => {
   emit('edit-metadata', item)
 }
 
-// Restore builds on mount
-onMounted(() => {
-  const savedBuild = getCurrentBuild()
-  const savedConfig = getCurrentConfig()
-  
-  if (savedBuild) {
-    console.log('Restoring saved build:', savedBuild)
-    builds.value = savedBuild.builds
-  }
-  
-  if (savedConfig) {
-    console.log('Restoring saved config:', savedConfig)
-    characterLevel.value = savedConfig.level_max || 230
-    includePet.value = savedConfig.include_pet !== false
-    includeAccessory.value = savedConfig.include_accessory !== false
-    
-    // Restore stat weights
-    if (savedConfig.stat_weights) {
-      Object.keys(savedConfig.stat_weights).forEach(stat => {
-        if (statWeights[stat] !== undefined) {
-          statWeights[stat].enabled = true
-          statWeights[stat].weight = savedConfig.stat_weights[stat]
-        }
-      })
-    }
-    
-    // Restore element preferences
-    if (savedConfig.damage_preferences) {
-      damagePreferences.value = savedConfig.damage_preferences
-    }
-    if (savedConfig.resistance_preferences) {
-      resistancePreferences.value = savedConfig.resistance_preferences
-    }
-  }
+// Restore builds on mount - DISABLED (now using BuildViewer)
+// BuildGenerator should start fresh, builds are managed in BuildViewer
+onMounted(async () => {
+  // No auto-restore, BuildGenerator starts clean
+  console.log('BuildGenerator mounted - starting fresh')
 })
 
-// Watch builds and save automatically
+// Watch builds and save automatically - DISABLED
+// Builds are now managed in BuildViewer, not auto-saved
+// Only manual saves via "Guardar Build" button
 watch(builds, (newBuilds) => {
-  if (newBuilds) {
-    const config = {
-      level_max: characterLevel.value,
-      stat_weights: activeStatWeights.value,
-      include_pet: includePet.value,
-      include_accessory: includeAccessory.value,
-      damage_preferences: damagePreferences.value,
-      resistance_preferences: resistancePreferences.value
-    }
-    saveCurrentBuild(newBuilds, config)
-  }
+  // Auto-save disabled - using manual save only
+  console.log('Build generated, use "Guardar Build" to save')
 }, { deep: true })
 
 // Level options for dropdown
@@ -533,6 +511,10 @@ const onPresetApplied = (preset) => {
   damagePreferences.value = dmgPrefs
   resistancePreferences.value = resPrefs
   
+  // Save class and role info
+  selectedClass.value = className
+  selectedRole.value = roleName
+  
   // Show success message
   toast.add({
     severity: 'success',
@@ -618,6 +600,9 @@ const saveCurrentBuildWithName = () => {
 const loadBuild = async (buildData) => {
   console.log('Loading build:', buildData)
   
+  // Close modal
+  showHistoryModal.value = false
+  
   // Restore builds
   builds.value = buildData.builds
   
@@ -627,21 +612,22 @@ const loadBuild = async (buildData) => {
   includePet.value = config.include_pet !== false
   includeAccessory.value = config.include_accessory !== false
   
-  // Restore stat weights - FIXED
+  // Restore stat weights using statGroups
   if (config.stat_weights) {
     console.log('Restoring stat weights:', config.stat_weights)
     
     // Reset all stats first
-    Object.keys(statWeights).forEach(stat => {
-      statWeights[stat].enabled = false
-      statWeights[stat].weight = 1.0
+    allStats.value.forEach(stat => {
+      stat.enabled = false
+      stat.weight = 1.0
     })
     
     // Apply saved weights
     Object.entries(config.stat_weights).forEach(([statName, weight]) => {
-      if (statWeights[statName]) {
-        statWeights[statName].enabled = true
-        statWeights[statName].weight = weight
+      const stat = allStats.value.find(s => s.key === statName)
+      if (stat) {
+        stat.enabled = true
+        stat.weight = weight
         console.log(`Restored ${statName}: enabled=true, weight=${weight}`)
       }
     })
@@ -653,6 +639,18 @@ const loadBuild = async (buildData) => {
   }
   if (config.resistance_preferences) {
     resistancePreferences.value = config.resistance_preferences
+  }
+  
+  // Restore class and role
+  if (config.selectedClass && config.selectedRole) {
+    selectedClass.value = config.selectedClass
+    selectedRole.value = config.selectedRole
+    console.log('Restored class:', config.selectedClass, 'role:', config.selectedRole)
+    
+    // Restore in ClassPresetSelector component
+    if (classPresetSelectorRef.value) {
+      await classPresetSelectorRef.value.restoreValues(config.selectedClass, config.selectedRole)
+    }
   }
   
   toast.add({
@@ -716,6 +714,11 @@ const refreshBuildItems = async (buildsData) => {
     // Don't show error to user, it's a background operation
   }
 }
+
+// Expose methods for parent component
+defineExpose({
+  loadBuild
+})
 </script>
 
 <style lang="scss" scoped>
@@ -1243,6 +1246,35 @@ const refreshBuildItems = async (buildsData) => {
         &:hover {
           background: rgba(92, 107, 192, 0.7);
         }
+      }
+    }
+  }
+}
+
+.preset-display {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(76, 175, 80, 0.15);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  border-radius: 8px;
+  
+  .preset-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    
+    i {
+      color: #4CAF50;
+      font-size: 1.2rem;
+    }
+    
+    .preset-text {
+      color: #e0e0e0;
+      font-size: 0.95rem;
+      
+      strong {
+        color: #fff;
+        font-weight: 600;
       }
     }
   }

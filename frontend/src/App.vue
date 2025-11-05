@@ -25,6 +25,12 @@
       <!-- Navigation Tabs -->
       <div class="nav-tabs">
         <button 
+          @click="currentView = 'mybuilds'" 
+          :class="['tab', { active: currentView === 'mybuilds' }]"
+        >
+          📚 {{ t('nav.myBuilds') }}
+        </button>
+        <button 
           @click="currentView = 'builder'" 
           :class="['tab', { active: currentView === 'builder' }]"
         >
@@ -40,8 +46,14 @@
     </div>
     
     <div class="main-container">
+      <BuildViewer 
+        v-if="currentView === 'mybuilds'"
+        @go-to-builder="handleGoToBuilder"
+        @load-build="handleLoadBuild"
+      />
       <BuildGenerator 
-        v-if="currentView === 'builder'" 
+        v-else-if="currentView === 'builder'" 
+        ref="buildGenerator"
         @edit-metadata="handleEditMetadata"
       />
       <ItemMetadataAdmin 
@@ -57,15 +69,19 @@
 import { ref } from 'vue'
 import { useLanguage } from './composables/useLanguage'
 import { useI18n } from './composables/useI18n'
+import { useToast } from 'primevue/usetoast'
+import BuildViewer from './components/BuildViewer.vue'
 import BuildGenerator from './components/BuildGenerator.vue'
 import ItemMetadataAdmin from './components/ItemMetadataAdmin.vue'
 
 const { currentLanguage, setLanguage, languageOptions } = useLanguage()
 const { t } = useI18n()
+const toast = useToast()
 
-const currentView = ref('builder')
+const currentView = ref('mybuilds') // Default to MyBuilds view
 const preselectedItem = ref(null)
 const metadataAdmin = ref(null)
+const buildGenerator = ref(null)
 
 const onLanguageChange = (event) => {
   setLanguage(event.value)
@@ -75,6 +91,32 @@ const handleEditMetadata = (item) => {
   console.log('Switching to metadata view for item:', item)
   preselectedItem.value = item
   currentView.value = 'metadata'
+}
+
+const handleGoToBuilder = () => {
+  currentView.value = 'builder'
+}
+
+const handleLoadBuild = async (buildData) => {
+  console.log('Loading build in builder:', buildData)
+  
+  // Switch to builder view
+  currentView.value = 'builder'
+  
+  // Wait for BuildGenerator to mount
+  await new Promise(resolve => setTimeout(resolve, 100))
+  
+  // Load the build
+  if (buildGenerator.value && buildGenerator.value.loadBuild) {
+    await buildGenerator.value.loadBuild(buildData)
+    
+    toast.add({
+      severity: 'success',
+      summary: t('toast.success'),
+      detail: t('myBuilds.loadedInBuilder'),
+      life: 3000
+    })
+  }
 }
 </script>
 

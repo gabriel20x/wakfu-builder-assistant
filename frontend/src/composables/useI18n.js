@@ -12,6 +12,7 @@ const translations = {
     'language': 'Idioma',
     
     // Navigation
+    'nav.myBuilds': 'Mis Builds',
     'nav.builder': 'Build Generator',
     'nav.metadata': 'Metadatos de Items',
     
@@ -87,6 +88,44 @@ const translations = {
     'builds.noSavedBuilds': 'No hay builds guardadas',
     'builds.noHistory': 'No hay historial de builds',
     'builds.deleteConfirm': '¿Eliminar esta build?',
+    
+    // My Builds View
+    'myBuilds.title': 'Mis Builds Guardadas',
+    'myBuilds.createNew': 'Crear Nueva',
+    'myBuilds.loading': 'Cargando builds...',
+    'myBuilds.noBuildsSaved': 'No tienes builds guardadas',
+    'myBuilds.startByCreating': 'Comienza creando tu primera build en el generador',
+    'myBuilds.goToBuilder': 'Ir al Generador',
+    'myBuilds.unnamedBuild': 'Build sin nombre',
+    'myBuilds.selectBuild': 'Selecciona una build',
+    'myBuilds.selectBuildDescription': 'Elige una build del sidebar para ver sus detalles',
+    'myBuilds.loadInBuilder': 'Cargar en Generador',
+    'myBuilds.rename': 'Renombrar',
+    'myBuilds.renameBuild': 'Renombrar Build',
+    'myBuilds.buildName': 'Nombre de la Build',
+    'myBuilds.enterBuildName': 'Ingresa un nombre',
+    'myBuilds.deleteBuild': 'Eliminar Build',
+    'myBuilds.deleteConfirmation': '¿Estás seguro de que quieres eliminar esta build?',
+    'myBuilds.buildDeleted': 'Build eliminada correctamente',
+    'myBuilds.buildRenamed': 'Build renombrada correctamente',
+    'myBuilds.loadedInBuilder': 'Build cargada en el generador',
+    'myBuilds.errorLoading': 'Error al cargar las builds',
+    'myBuilds.errorDeleting': 'Error al eliminar la build',
+    'myBuilds.errorRenaming': 'Error al renombrar la build',
+    'myBuilds.justNow': 'Ahora mismo',
+    'myBuilds.minutesAgo': 'hace {count} minutos',
+    'myBuilds.hoursAgo': 'hace {count} horas',
+    'myBuilds.daysAgo': 'hace {count} días',
+    
+    // Common
+    'common.cancel': 'Cancelar',
+    'common.save': 'Guardar',
+    'common.delete': 'Eliminar',
+    'common.edit': 'Editar',
+    'common.close': 'Cerrar',
+    'common.confirm': 'Confirmar',
+    'common.yes': 'Sí',
+    'common.no': 'No',
     
     // Stats Panel
     'statsPanel.title': 'Stats Totales',
@@ -651,9 +690,18 @@ const translations = {
 }
 
 export function useI18n() {
-  const t = (key) => {
+  const t = (key, params = {}) => {
     const lang = currentLanguage.value
-    return translations[lang]?.[key] || translations['en']?.[key] || key
+    let text = translations[lang]?.[key] || translations['en']?.[key] || key
+    
+    // Replace parameters like {count}, {name}, etc.
+    if (params && typeof text === 'string') {
+      Object.keys(params).forEach(param => {
+        text = text.replace(new RegExp(`\\{${param}\\}`, 'g'), params[param])
+      })
+    }
+    
+    return text
   }
   
   return { t }
