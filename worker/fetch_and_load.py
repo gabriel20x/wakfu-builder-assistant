@@ -28,6 +28,8 @@ logger = logging.getLogger(__name__)
 # Database setup
 DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://wakfu:wakfu123@db:5432/wakfu_builder")
 GAMEDATA_PATH = os.getenv("GAMEDATA_PATH", "/wakfu_data/gamedata_1.90.1.43")
+METADATA_PATH = os.getenv("METADATA_PATH", "/wakfu_data/item_metadata.json")
+FORCE_RELOAD = os.getenv("FORCE_RELOAD", "false").lower() == "true"
 
 Base = declarative_base()
 
@@ -115,6 +117,22 @@ def load_json(file_path: Path):
     except Exception as e:
         logger.error(f"Error loading {file_path}: {e}")
         return []
+
+def load_item_metadata():
+    """Load manual item metadata if available"""
+    if not os.path.exists(METADATA_PATH):
+        logger.info("No metadata file found, skipping metadata merge")
+        return {}
+    
+    try:
+        with open(METADATA_PATH, 'r', encoding='utf-8') as f:
+            metadata_file = json.load(f)
+            metadata_items = metadata_file.get("items", {})
+            logger.info(f"Loaded metadata for {len(metadata_items)} items")
+            return metadata_items
+    except Exception as e:
+        logger.error(f"Error loading metadata file: {e}")
+        return {}
 
 def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
     """Extract stats from item equipment effects"""
@@ -416,9 +434,12 @@ def main():
             GameDataVersion.version_string == "1.90.1.43"
         ).first()
         
-        if version and version.status == "completed":
-            logger.info("Data already loaded, skipping...")
+        if version and version.status == "completed" and not FORCE_RELOAD:
+            logger.info("Data already loaded, skipping... (Set FORCE_RELOAD=true to reload)")
             return
+        
+        if FORCE_RELOAD:
+            logger.info("FORCE_RELOAD enabled - cleaning and reloading all data...")
         
         # Create version entry
         if not version:
@@ -445,6 +466,9 @@ def main():
         collectible_resources = load_json(data_path / "collectibleResources.json")
         
         logger.info(f"Loaded {len(items_data)} items from JSON")
+        
+        # Load manual metadata
+        item_metadata = load_item_metadata()
         
         # Build lookup maps
         equipment_types_map = {
@@ -569,6 +593,29 @@ def main():
                 else:
                     source_type = "drop"
                 
+                # ✅ METADATA MERGE: Apply manual corrections/additions
+                metadata = item_metadata.get(str(item_id), {})
+                if metadata:
+                    # Determine corrected source type from acquisition methods
+                    acq_methods = metadata.get("acquisition_methods", {})
+                    if acq_methods:
+                        # Priority: recipe > fragments > drop
+                        if acq_methods.get("recipe", {}).get("enabled"):
+                            source_type = "recipe"
+                        elif acq_methods.get("fragments", {}).get("enabled"):
+                            source_type = "drop"  # Fragments is still a type of drop
+                        elif acq_methods.get("drop", {}).get("enabled"):
+                            source_type = "drop"
+                        elif acq_methods.get("crupier", {}).get("enabled"):
+                            source_type = "special"
+                        elif acq_methods.get("challenge_reward", {}).get("enabled"):
+                            source_type = "special"
+                        elif acq_methods.get("quest", {}).get("enabled"):
+                            source_type = "special"
+                        
+                        if source_type != (item_id in harvest_map and "harvest" or item_id in recipes_map and "recipe" or "drop"):
+                            logger.debug(f"Item {item_id}: Source type corrected to {source_type} based on acquisition methods")
+                
                 # Create item object for difficulty calculation
                 item = Item(
                     item_id=item_id,
@@ -590,6 +637,11 @@ def main():
                 
                 # Calculate difficulty
                 item.difficulty = calculate_difficulty(item, recipes_map, harvest_map)
+                
+                # ✅ METADATA MERGE: Override difficulty if manual override exists
+                if metadata.get("manual_difficulty_override") is not None:
+                    item.difficulty = metadata["manual_difficulty_override"]
+                    logger.debug(f"Item {item_id}: Difficulty overridden to {item.difficulty}")
                 
                 session.add(item)
                 loaded_count += 1

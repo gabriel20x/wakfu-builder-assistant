@@ -91,5 +91,47 @@ export const damageAPI = {
   },
 }
 
-export default api
+export const metadataAPI = {
+  // Get all metadata
+  getAllMetadata() {
+    return api.get('/item-metadata/all')
+  },
+
+  // Get metadata statistics
+  getMetadataStats() {
+    return api.get('/item-metadata/stats')
+  },
+
+  // Search items for metadata editing
+  searchItemsForMetadata(query) {
+    return api.get(`/item-metadata/search?query=${encodeURIComponent(query)}`)
+  },
+
+  // Get metadata for a specific item
+  getItemMetadata(itemId) {
+    return api.get(`/item-metadata/item/${itemId}`)
+  },
+
+  // Update/create metadata for an item
+  updateItemMetadata(itemId, metadata) {
+    return api.post(`/item-metadata/item/${itemId}`, metadata)
+  },
+
+  // Delete metadata for an item
+  deleteItemMetadata(itemId) {
+    return api.delete(`/item-metadata/item/${itemId}`)
+  },
+}
+
+export default {
+  ...builderAPI,
+  ...presetsAPI,
+  ...damageAPI,
+  ...metadataAPI,
+  // Keep the axios instance for custom calls
+  get: api.get.bind(api),
+  post: api.post.bind(api),
+  put: api.put.bind(api),
+  delete: api.delete.bind(api),
+}
 

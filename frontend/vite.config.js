@@ -16,7 +16,6 @@ export default defineConfig({
       '/api': {
         target: 'http://wakfu_api:8000',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
       },
     },
   },

@@ -1,0 +1,103 @@
+{
+  "version": "2.0.0",
+  "last_updated": "2025-11-05T04:28:14.358350",
+  "description": "Manual metadata for items - Ultra simplified: only acquisition methods (booleans) and drop rates",
+  "items": {
+    "25974": {
+      "item_id": 25974,
+      "name": "Hottomatic Boots",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            8
+          ]
+        },
+        "recipe": {
+          "enabled": false
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": true
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:26:00.939677"
+    },
+    "25975": {
+      "item_id": 25975,
+      "name": "Hottomatic Boots",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            2
+          ]
+        },
+        "recipe": {
+          "enabled": true
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:27:38.644519"
+    },
+    "25976": {
+      "item_id": 25976,
+      "name": "Hottomatic Boots",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            0.5
+          ]
+        },
+        "recipe": {
+          "enabled": true
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:28:14.358338"
+    }
+  }
+}
