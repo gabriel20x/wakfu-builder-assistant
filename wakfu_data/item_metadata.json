@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T04:40:05.187167",
+  "last_updated": "2025-11-05T04:50:26.578116",
   "description": "Manual metadata for items - Ultra simplified: only acquisition methods (booleans) and drop rates",
   "items": {
     "25974": {
@@ -128,6 +128,38 @@
         }
       },
       "added_date": "2025-11-05T04:40:05.187140"
+    },
+    "22377": {
+      "item_id": 22377,
+      "name": "Grim Ring",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            0.8
+          ]
+        },
+        "recipe": {
+          "enabled": true
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:50:26.578103"
     }
   }
 }
