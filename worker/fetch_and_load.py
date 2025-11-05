@@ -211,7 +211,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             
             # Armor
             1056: "Armor_Received",
-            26: "Armor_Received",  # Alternative
+            26: "Armor_or_Healing",  # ✅ FIXED - Contextual: Healing_Mastery en BACK, Armor_Received en otros
             
             # Force of Will
             177: "Force_Of_Will",
@@ -222,7 +222,7 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
             # Special effects (usually ignored for stats)
             304: None,  # State effects - skip
             400: None,  # Special mechanics - skip
-            168: "Indirect_Damage",
+            # 168: "Indirect_Damage",  # ❌ REMOVED - Duplicado! 168 es Critical_Hit_Penalty (línea 204)
             
             # Additional
             123: "Dodge",  # Alternative
@@ -304,6 +304,15 @@ def extract_equipment_stats(item_data: dict, slot: str = None) -> dict:
                         stat_name = "Armor_Given"
                     else:
                         stat_name = "Berserk_Mastery"
+                
+                elif stat_name == "Armor_or_Healing":
+                    # ✅ FIXED - Contextual: Healing_Mastery en capas (BACK), Armor_Received en otros
+                    # Las capas de Wakfu suelen tener Healing_Mastery (Dominio cura)
+                    # Otros items tienen Armor_Received (Armadura recibida)
+                    if slot == "BACK":
+                        stat_name = "Healing_Mastery"
+                    else:
+                        stat_name = "Armor_Received"
                 
                 # Handle penalties (make negative and change to base stat name)
                 if stat_name == "HP_Penalty":

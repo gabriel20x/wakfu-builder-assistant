@@ -77,6 +77,7 @@ PROCESO QUE DEBES SEGUIR:
    B) Penalties (valor positivo en datos → stat negativo):
       - Action 21: HP_Penalty → -HP
       - Action 57: MP_Penalty → -MP
+      - Action 168: Critical_Hit_Penalty → -Critical_Hit% (CUIDADO: puede estar duplicado!)
       - Action 192: WP_Penalty → -WP
       - Action 174: Lock_Penalty → -Lock
       - Action 176: Dodge_Penalty → -Dodge
@@ -170,9 +171,11 @@ IMPORTANTE - SÍ HACER:
 CASOS EXITOSOS PREVIOS:
 ──────────────────────
 1. Dodge vs Berserk (Action 175): Threshold 50→250
-2. Prospecting vs -WP (Action 192): Agregado WP_Penalty
+2. Prospecting vs -WP (Action 192): Era WP_Penalty no Prospecting
 3. MP Penalty (Action 57): Agregado MP_Penalty
-4. Sistema de 2 Anillos: LEFT_HAND permite 2 items
+4. Critical Hit Penalty (Action 168): Eliminado duplicado en stat_map
+5. Sistema de 2 Anillos: LEFT_HAND permite 2 items
+6. Penalties por stats faltantes: Solver penaliza items sin AP/MP importantes
 
 DOCUMENTACIÓN DE REFERENCIA:
 ───────────────────────────
@@ -205,7 +208,7 @@ TIEMPO ESTIMADO:
 
 TASA DE ÉXITO:
 ─────────────
-4/4 casos resueltos exitosamente (100%)
+6/6 casos resueltos exitosamente (100%)
 
 Última actualización: 2025-11-04
 

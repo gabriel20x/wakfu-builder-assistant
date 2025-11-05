@@ -256,6 +256,38 @@ def _solve_single_build(
             stat_value = resolved_stats.get(stat_name, 0)
             stat_score += stat_value * weight
         
+        # ✅ NEW: Penalties for missing important stats
+        # Items that normally have certain stats should be penalized heavily if they don't
+        missing_stat_penalty = 0.0
+        
+        # BACK (Capes) and NECK (Amulets) typically have AP
+        # Missing AP should be HEAVILY penalized
+        if item.slot in ["BACK", "NECK"]:
+            if "AP" in stat_weights and resolved_stats.get("AP", 0) <= 0:
+                # SEVERE Penalty: Item without AP when user wants AP
+                # Penalty = AP_weight × 100 (very high - strongly discourages items without AP)
+                # Example: AP weight 10 → penalty -1,000 points
+                missing_stat_penalty += stat_weights["AP"] * 100
+        
+        # CHEST (Breastplates) and LEGS (Boots) typically have MP
+        # Missing MP should be HEAVILY penalized
+        if item.slot in ["CHEST", "LEGS"]:
+            if "MP" in stat_weights and resolved_stats.get("MP", 0) <= 0:
+                # SEVERE Penalty: Item without MP when user wants MP
+                # Penalty = MP_weight × 100
+                # Example: MP weight 6 → penalty -600 points
+                missing_stat_penalty += stat_weights["MP"] * 100
+        
+        # Negative WP penalty (more severe at high levels)
+        if "WP" in stat_weights and stat_weights["WP"] > 0:
+            wp_value = resolved_stats.get("WP", 0)
+            if wp_value < 0:
+                # Penalty scales with level and user's WP weight
+                # At high levels (150+), -1 WP is more impactful
+                level_factor = min(level_max / 100.0, 2.0)  # 1.0 at lvl 100, 1.5 at lvl 150, 2.0 at lvl 200+
+                wp_penalty = abs(wp_value) * stat_weights["WP"] * level_factor * 100  # ✅ SEVERE: 100x multiplier
+                missing_stat_penalty += wp_penalty
+        
         # ✅ NEW: Add bonus for filling slots (better to have something than nothing)
         # This is especially important for EASY builds where low-stat items might be skipped
         # Rings (LEFT_HAND) get extra bonus since they're often skipped due to low stats
@@ -281,8 +313,8 @@ def _solve_single_build(
             }
             rarity_bonus = rarity_bonuses.get(item.rarity, 0)
         
-        # Combine: stat value - difficulty penalty + rarity bonus + slot fill incentive
-        item_score = stat_score - lambda_weight * item.difficulty + rarity_bonus + slot_fill_bonus
+        # Combine: stat value - difficulty penalty - missing stat penalty + rarity bonus + slot fill incentive
+        item_score = stat_score - lambda_weight * item.difficulty - missing_stat_penalty + rarity_bonus + slot_fill_bonus
         
         objective.append(item_score * var)
     
