@@ -250,94 +250,185 @@ def _solve_single_build(
             resistance_preferences or ['Fire', 'Water', 'Earth', 'Air']
         )
         
-        # Calculate item score from resolved stats
-        stat_score = 0.0
-        for stat_name, weight in stat_weights.items():
-            stat_value = resolved_stats.get(stat_name, 0)
-            stat_score += stat_value * weight
+        # ✅ SISTEMA DE SCORING REORGANIZADO
+        # FACTORES DE NORMALIZACIÓN basados en rareza/frecuencia en items:
+        # - Muy raros (1-2 por item): AP (100x), MP (80x), Range (60x)
+        # - Raros (2-5 por item): Critical_Hit (20x), WP (20x), Control (10x), Block (5x)
+        # - Poco comunes (10-50): Critical_Mastery (2x), Dodge (1x), Lock (1x)
+        # - Comunes (20-100): Masteries elementales/secundarios (1x)
+        # - Muy comunes (30-100): Resistencias (0.8x)
+        # - Extremadamente común (100-500): HP (0.1x)
         
-        # ✅ NEW: Item Power bonus (common formula in Wakfu builders)
-        # Peso del item = Dominios (elementales + secundarios que el usuario quiere) + 1.2 × Resistencias
-        # Dominios elementales: 1.5x si el usuario los pide, 0.5x si no
-        
-        # Dominios elementales con pesos según preferencias del usuario
-        total_mastery = 0.0
-        elemental_masteries = {
-            "Fire_Mastery": "Fire",
-            "Water_Mastery": "Water",
-            "Earth_Mastery": "Earth",
-            "Air_Mastery": "Air"
+        normalization_factors = {
+            # Muy raros
+            "AP": 100.0,
+            "MP": 80.0,
+            "Range": 60.0,
+            # Raros
+            "Critical_Hit": 20.0,
+            "WP": 20.0,
+            "Control": 10.0,
+            "Block": 5.0,
+            # Poco comunes
+            "Critical_Mastery": 2.0,
+            "Dodge": 1.0,
+            "Lock": 1.0,
+            # Masteries (comunes)
+            "Fire_Mastery": 1.0,
+            "Water_Mastery": 1.0,
+            "Earth_Mastery": 1.0,
+            "Air_Mastery": 1.0,
+            "Melee_Mastery": 1.0,
+            "Distance_Mastery": 1.0,
+            "Rear_Mastery": 1.0,
+            "Healing_Mastery": 1.0,
+            "Berserk_Mastery": 1.0,
+            # Resistencias (ajustadas según impacto)
+            "Fire_Resistance": 1.2,
+            "Water_Resistance": 1.2,
+            "Earth_Resistance": 1.2,
+            "Air_Resistance": 1.2,
+            "Elemental_Resistance": 1.5,  # Vale por los 4 elementos pero valores más bajos
+            "Critical_Resistance": 1.0,
+            "Rear_Resistance": 1.0,
+            # HP (extremadamente común)
+            "HP": 0.1,
+            # Otros
+            "Initiative": 0.5,
+            "Prospecting": 0.5,
+            "Wisdom": 0.5,
+            "Armor_Given": 0.8,
+            "Armor_Received": 0.8,
         }
         
-        for mastery_name, element in elemental_masteries.items():
-            mastery_value = resolved_stats.get(mastery_name, 0)
-            if mastery_value > 0:
-                # Check if user wants this element (in damage_preferences or stat_weights)
-                wants_element = (
-                    element in (damage_preferences or []) or
-                    mastery_name in stat_weights
-                )
-                multiplier = 1.5 if wants_element else 0.5
-                total_mastery += mastery_value * multiplier
+        stat_score = 0.0
+        bonus_score = 0.0
+        negative_penalty = 0.0
         
-        # Dominios secundarios (solo los que el usuario pide)
-        secondary_masteries = [
-            "Melee_Mastery", "Distance_Mastery", "Rear_Mastery", 
-            "Healing_Mastery", "Berserk_Mastery", "Critical_Mastery"
-        ]
-        for mastery_name in secondary_masteries:
-            if mastery_name in stat_weights:
-                total_mastery += resolved_stats.get(mastery_name, 0)
+        # Procesar cada stat del item
+        for stat_name, stat_value in resolved_stats.items():
+            # Saltar metadatos
+            if stat_name in ["is_epic", "is_relic", "difficulty"]:
+                continue
+            
+            # Obtener factor de normalización
+            norm_factor = normalization_factors.get(stat_name, 1.0)
+            
+            # ========== STATS NEGATIVOS (PENALTIES) ==========
+            if stat_value < 0:
+                # Los stats negativos SIEMPRE aplican penalty, independiente de si el usuario los pidió
+                abs_value = abs(stat_value)
+                
+                if stat_name in ["AP", "MP", "Range"]:
+                    # Stats críticos negativos: penalty extrema (50x)
+                    negative_penalty += abs_value * norm_factor * 50.0
+                elif stat_name == "WP":
+                    # WP negativo: penalty severa escalada por nivel (30x)
+                    level_factor = min(level_max / 100.0, 2.0)
+                    negative_penalty += abs_value * norm_factor * level_factor * 30.0
+                elif stat_name in ["Critical_Hit", "Control", "Block"]:
+                    # Stats importantes negativos: penalty alta (20x)
+                    negative_penalty += abs_value * norm_factor * 20.0
+                else:
+                    # Otros stats negativos: penalty moderada (10x)
+                    negative_penalty += abs_value * norm_factor * 10.0
+                continue
+            
+            # ========== STATS POSITIVOS ==========
+            if stat_value > 0:
+                # Si el usuario PIDIÓ este stat: peso_usuario × valor × factor_normalización
+                if stat_name in stat_weights:
+                    user_weight = stat_weights[stat_name]
+                    stat_score += stat_value * user_weight * norm_factor
+                else:
+                    # Si NO lo pidió: dar pequeño bonus (10% del valor normalizado)
+                    # EXCEPTO: dominios elementales/secundarios (no contar si no se piden)
+                    excluded_from_bonus = {"Fire_Mastery", "Water_Mastery", "Earth_Mastery", "Air_Mastery",
+                                          "Melee_Mastery", "Distance_Mastery", "Rear_Mastery", 
+                                          "Healing_Mastery", "Berserk_Mastery", "Critical_Mastery"}
+                    
+                    if stat_name not in excluded_from_bonus:
+                        # Stats con valores moderados dan pequeño bonus
+                        # HP incluido: 210 × 0.1 (norm) × 0.1 (bonus) = ~2 puntos OK
+                        bonus_score += stat_value * norm_factor * 0.1
         
-        # Resistencias (siempre se cuentan)
-        total_resistance = (
-            resolved_stats.get("Fire_Resistance", 0) +
-            resolved_stats.get("Water_Resistance", 0) +
-            resolved_stats.get("Earth_Resistance", 0) +
-            resolved_stats.get("Air_Resistance", 0) +
-            resolved_stats.get("Elemental_Resistance", 0)
-        )
+        # Bonus total por stats extra (no solicitados)
+        power_bonus = bonus_score
         
-        # Fórmula: Dominios + 1.2 × Resistencias
-        item_power = total_mastery + (1.2 * total_resistance)
-        
-        # Add small bonus (scaled down to not dominate user's stat_weights)
-        # Power bonus = item_power × 0.1 (subtle but noticeable)
-        power_bonus = item_power * 0.1
-        
-        # ✅ NEW: Penalties for missing important stats
-        # Items that normally have certain stats should be penalized heavily if they don't
+        # ✅ PENALTIES POR STATS FALTANTES (basado en análisis de data JSON)
+        # Slots que normalmente tienen AP: BACK, NECK, algunos FIRST_WEAPON
+        # Slots que normalmente tienen MP: CHEST, LEGS, algunos FIRST_WEAPON
         missing_stat_penalty = 0.0
         
         # BACK (Capes) and NECK (Amulets) typically have AP
-        # Missing AP should be HEAVILY penalized
+        # Compensación si tiene MP (alta) o Range (menor)
         if item.slot in ["BACK", "NECK"]:
-            if "AP" in stat_weights and resolved_stats.get("AP", 0) <= 0:
-                # SEVERE Penalty: Item without AP when user wants AP
-                # Penalty = AP_weight × 100 (very high - strongly discourages items without AP)
-                # Example: AP weight 10 → penalty -1,000 points
-                missing_stat_penalty += stat_weights["AP"] * 100
+            ap_value = resolved_stats.get("AP", 0)
+            mp_value = resolved_stats.get("MP", 0)
+            range_value = resolved_stats.get("Range", 0)
+            
+            if "AP" in stat_weights:
+                if ap_value <= 0:
+                    # Base penalty for missing AP (×200)
+                    base_ap_penalty = stat_weights["AP"] * 200
+                    total_compensation = 0.0
+                    
+                    # Compensación por MP (alta - 40% del base penalty max)
+                    if mp_value > 0 and "MP" in stat_weights:
+                        mp_compensation = min(mp_value * stat_weights["MP"] * 0.5, base_ap_penalty * 0.4)
+                        total_compensation += mp_compensation
+                    
+                    # Compensación por Range (menor - 20% del base penalty max)
+                    if range_value > 0 and "Range" in stat_weights:
+                        range_compensation = min(range_value * stat_weights["Range"] * 0.3, base_ap_penalty * 0.2)
+                        total_compensation += range_compensation
+                    
+                    # Aplicar penalty reducida por compensaciones
+                    if total_compensation > 0:
+                        missing_stat_penalty += base_ap_penalty - total_compensation
+                    elif mp_value > 0 or range_value > 0:
+                        # Tiene algo pero usuario no lo valora: penalty moderada (80%)
+                        missing_stat_penalty += base_ap_penalty * 0.8
+                    else:
+                        # No tiene nada: penalty completa
+                        missing_stat_penalty += base_ap_penalty
         
         # CHEST (Breastplates) and LEGS (Boots) typically have MP
-        # Missing MP should be HEAVILY penalized
+        # Compensación si tiene AP (alta) o Range (menor)
         if item.slot in ["CHEST", "LEGS"]:
-            if "MP" in stat_weights and resolved_stats.get("MP", 0) <= 0:
-                # SEVERE Penalty: Item without MP when user wants MP
-                # Penalty = MP_weight × 100
-                # Example: MP weight 6 → penalty -600 points
-                missing_stat_penalty += stat_weights["MP"] * 100
+            mp_value = resolved_stats.get("MP", 0)
+            ap_value = resolved_stats.get("AP", 0)
+            range_value = resolved_stats.get("Range", 0)
+            
+            if "MP" in stat_weights:
+                if mp_value <= 0:
+                    # Base penalty for missing MP (×200)
+                    base_mp_penalty = stat_weights["MP"] * 200
+                    total_compensation = 0.0
+                    
+                    # Compensación por AP (alta - 40% del base penalty max)
+                    if ap_value > 0 and "AP" in stat_weights:
+                        ap_compensation = min(ap_value * stat_weights["AP"] * 0.5, base_mp_penalty * 0.4)
+                        total_compensation += ap_compensation
+                    
+                    # Compensación por Range (menor - 20% del base penalty max)
+                    if range_value > 0 and "Range" in stat_weights:
+                        range_compensation = min(range_value * stat_weights["Range"] * 0.3, base_mp_penalty * 0.2)
+                        total_compensation += range_compensation
+                    
+                    # Aplicar penalty reducida por compensaciones
+                    if total_compensation > 0:
+                        missing_stat_penalty += base_mp_penalty - total_compensation
+                    elif ap_value > 0 or range_value > 0:
+                        # Tiene algo pero usuario no lo valora: penalty moderada (80%)
+                        missing_stat_penalty += base_mp_penalty * 0.8
+                    else:
+                        # No tiene nada: penalty completa
+                        missing_stat_penalty += base_mp_penalty
         
-        # Negative WP penalty (more severe at high levels)
-        if "WP" in stat_weights and stat_weights["WP"] > 0:
-            wp_value = resolved_stats.get("WP", 0)
-            if wp_value < 0:
-                # Penalty scales with level and user's WP weight
-                # At high levels (150+), -1 WP is more impactful
-                level_factor = min(level_max / 100.0, 2.0)  # 1.0 at lvl 100, 1.5 at lvl 150, 2.0 at lvl 200+
-                wp_penalty = abs(wp_value) * stat_weights["WP"] * level_factor * 100  # ✅ SEVERE: 100x multiplier
-                missing_stat_penalty += wp_penalty
+        # ✅ NOTE: Stats negativos (including WP) ya se manejan arriba en la sección de negative_penalty
         
-        # ✅ NEW: Add bonus for filling slots (better to have something than nothing)
+        # ✅ Add bonus for filling slots (better to have something than nothing)
         # This is especially important for EASY builds where low-stat items might be skipped
         # Rings (LEFT_HAND) get extra bonus since they're often skipped due to low stats
         slot_fill_bonus = 5.0 if item.slot == "LEFT_HAND" else 2.0
@@ -362,8 +453,15 @@ def _solve_single_build(
             }
             rarity_bonus = rarity_bonuses.get(item.rarity, 0)
         
-        # Combine: stat value - difficulty penalty - missing stat penalty + rarity bonus + slot fill incentive
-        item_score = stat_score - lambda_weight * item.difficulty - missing_stat_penalty + rarity_bonus + slot_fill_bonus
+        # ✅ SCORE FINAL COMBINADO:
+        # stat_score: Stats solicitados × peso_usuario × factor_normalización
+        # power_bonus: Stats NO solicitados × 0.1 (bonus pequeño)
+        # negative_penalty: Stats negativos con penalties proporcionales
+        # missing_stat_penalty: Falta de AP/MP en slots que normalmente los tienen
+        # difficulty_penalty: Penaliza dificultad de farmeo
+        # rarity_bonus: Bonus por rareza en builds HARD
+        # slot_fill_bonus: Incentivo para llenar slots
+        item_score = stat_score + power_bonus - negative_penalty - missing_stat_penalty - lambda_weight * item.difficulty + rarity_bonus + slot_fill_bonus
         
         objective.append(item_score * var)
     
