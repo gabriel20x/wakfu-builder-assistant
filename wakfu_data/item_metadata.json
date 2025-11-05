@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T04:50:26.578116",
+  "last_updated": "2025-11-05T04:54:56.889322",
   "description": "Manual metadata for items - Ultra simplified: only acquisition methods (booleans) and drop rates",
   "items": {
     "25974": {
@@ -160,6 +160,41 @@
         }
       },
       "added_date": "2025-11-05T04:50:26.578103"
+    },
+    "19146": {
+      "item_id": 19146,
+      "name": "Bygone Hand",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": true,
+          "drop_rates": [
+            0.1
+          ]
+        },
+        "recipe": {
+          "enabled": false
+        },
+        "fragments": {
+          "enabled": true,
+          "fragment_rates": [
+            10,
+            1
+          ]
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:54:56.889309"
     }
   }
 }

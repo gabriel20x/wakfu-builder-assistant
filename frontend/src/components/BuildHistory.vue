@@ -1,26 +1,18 @@
 <template>
-  <div class="build-history">
-    <div class="history-header">
-      <h3>{{ showSaved ? t('builds.savedBuilds') : t('builds.history') }}</h3>
-      <div class="header-actions">
-        <button 
-          @click="showSaved = false" 
-          :class="['tab-btn', { active: !showSaved }]"
-        >
-          🕐 {{ t('builds.history') }}
-        </button>
-        <button 
-          @click="showSaved = true" 
-          :class="['tab-btn', { active: showSaved }]"
-        >
-          ⭐ {{ t('builds.saved') }}
-        </button>
-      </div>
-    </div>
-
-    <div class="builds-list">
-      <!-- Saved Builds -->
-      <div v-if="showSaved">
+  <p-dialog 
+    v-model:visible="dialogVisible" 
+    modal
+    :header="t('builds.savedBuilds')" 
+    :style="{ width: '700px' }"
+    :closable="true"
+    :dismissableMask="true"
+    :blockScroll="true"
+    :draggable="false"
+    position="center"
+    appendTo="body"
+  >
+    <div class="build-history-modal">
+      <div class="builds-list">
         <div v-if="savedBuilds.length === 0" class="empty-state">
           <p>{{ t('builds.noSavedBuilds') }}</p>
         </div>
@@ -35,7 +27,7 @@
             <div class="build-level">Niv. {{ build.config.level_max }}</div>
           </div>
           <div class="build-actions">
-            <button @click="$emit('load-build', build)" class="btn-load" :title="t('builds.load')">
+            <button @click="loadAndClose(build)" class="btn-load" :title="t('builds.load')">
               📂
             </button>
             <button @click="deleteBuild(build.id)" class="btn-delete" :title="t('builds.delete')">
@@ -44,33 +36,8 @@
           </div>
         </div>
       </div>
-
-      <!-- History -->
-      <div v-else>
-        <div v-if="buildHistory.length === 0" class="empty-state">
-          <p>{{ t('builds.noHistory') }}</p>
-        </div>
-        <div 
-          v-for="build in buildHistory" 
-          :key="build.id"
-          class="build-item"
-        >
-          <div class="build-info">
-            <div class="build-date">{{ formatDate(build.timestamp) }}</div>
-            <div class="build-level">Niv. {{ build.config.level_max }}</div>
-            <div class="build-stats">
-              {{ getTopStats(build.config.stat_weights).join(', ') }}
-            </div>
-          </div>
-          <div class="build-actions">
-            <button @click="$emit('load-build', build)" class="btn-load" :title="t('builds.load')">
-              📂
-            </button>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
+  </p-dialog>
 </template>
 
 <script>
@@ -80,12 +47,21 @@ import { useBuildPersistence } from '../composables/useBuildPersistence';
 
 export default {
   name: 'BuildHistory',
-  emits: ['load-build'],
-  setup() {
+  props: {
+    visible: {
+      type: Boolean,
+      required: true
+    }
+  },
+  emits: ['update:visible', 'load-build'],
+  setup(props, { emit }) {
     const { t } = useI18n();
-    const { savedBuilds, buildHistory, deleteSavedBuild } = useBuildPersistence();
+    const { savedBuilds, deleteSavedBuild } = useBuildPersistence();
     
-    const showSaved = ref(false);
+    const dialogVisible = computed({
+      get: () => props.visible,
+      set: (value) => emit('update:visible', value)
+    });
 
     const formatDate = (timestamp) => {
       const date = new Date(timestamp);
@@ -98,81 +74,43 @@ export default {
       });
     };
 
-    const getTopStats = (statWeights) => {
-      if (!statWeights) return [];
-      return Object.entries(statWeights)
-        .sort(([,a], [,b]) => b - a)
-        .slice(0, 3)
-        .map(([stat]) => stat);
-    };
-
     const deleteBuild = (buildId) => {
       if (confirm(t('builds.deleteConfirm'))) {
         deleteSavedBuild(buildId);
       }
     };
 
+    const loadAndClose = (build) => {
+      emit('load-build', build);
+      emit('update:visible', false);
+    };
+
     return {
       t,
-      showSaved,
+      dialogVisible,
       savedBuilds,
-      buildHistory,
       formatDate,
-      getTopStats,
-      deleteBuild
+      deleteBuild,
+      loadAndClose
     };
   }
 };
 </script>
 
 <style scoped>
-.build-history {
-  background: rgba(26, 35, 50, 0.6);
-  border-radius: 12px;
-  padding: 1rem;
+:deep(.p-dialog) {
+  z-index: 10000 !important;
 }
 
-.history-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+:deep(.p-dialog-mask) {
+  z-index: 9999 !important;
+  background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
-.history-header h3 {
-  margin: 0;
-  color: #e0e0e0;
-  font-size: 1.1rem;
+.build-history-modal {
+  min-height: 400px;
 }
 
-.header-actions {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.tab-btn {
-  padding: 0.4rem 0.8rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  color: #a0a0a0;
-  cursor: pointer;
-  font-size: 0.85rem;
-  transition: all 0.3s;
-}
-
-.tab-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #e0e0e0;
-}
-
-.tab-btn.active {
-  background: rgba(102, 126, 234, 0.3);
-  border-color: #667eea;
-  color: #667eea;
-}
 
 .builds-list {
   max-height: 400px;
@@ -194,11 +132,11 @@ export default {
 }
 
 .build-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: white;
+  border: 2px solid #e0e0e0;
   border-radius: 8px;
-  padding: 0.75rem;
-  margin-bottom: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -206,12 +144,13 @@ export default {
 }
 
 .build-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(102, 126, 234, 0.5);
+  background: #f9f9f9;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
 }
 
 .build-item.saved {
-  border-left: 3px solid #667eea;
+  border-left: 4px solid #667eea;
 }
 
 .build-info {
@@ -220,9 +159,10 @@ export default {
 }
 
 .build-name {
-  font-weight: 600;
-  color: #e0e0e0;
-  margin-bottom: 0.25rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.35rem;
+  font-size: 1.05rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -230,22 +170,23 @@ export default {
 
 .build-date {
   font-size: 0.85rem;
-  color: #a0a0a0;
-  margin-bottom: 0.25rem;
+  color: #666;
+  margin-bottom: 0.35rem;
 }
 
 .build-level {
   display: inline-block;
-  padding: 0.15rem 0.4rem;
-  background: rgba(102, 126, 234, 0.3);
-  border-radius: 4px;
-  font-size: 0.8rem;
-  color: #667eea;
+  padding: 0.25rem 0.6rem;
+  background: #667eea;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  color: white;
   margin-right: 0.5rem;
+  font-weight: 600;
 }
 
 .build-stats {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: #888;
   display: inline;
 }
@@ -257,13 +198,13 @@ export default {
 
 .btn-load,
 .btn-delete {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  width: 32px;
-  height: 32px;
+  background: #f5f5f5;
+  border: 2px solid #e0e0e0;
+  width: 36px;
+  height: 36px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -271,22 +212,27 @@ export default {
 }
 
 .btn-load:hover {
-  background: rgba(76, 175, 80, 0.3);
+  background: #4caf50;
+  border-color: #4caf50;
+  transform: scale(1.05);
 }
 
 .btn-delete:hover {
-  background: rgba(244, 67, 54, 0.3);
+  background: #f44336;
+  border-color: #f44336;
+  transform: scale(1.05);
 }
 
 .empty-state {
   text-align: center;
-  padding: 2rem;
-  color: #666;
+  padding: 3rem;
+  color: #999;
 }
 
 .empty-state p {
   margin: 0;
   font-style: italic;
+  font-size: 1.05rem;
 }
 </style>
 

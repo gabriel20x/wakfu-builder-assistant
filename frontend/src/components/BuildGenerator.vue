@@ -4,10 +4,18 @@
       <!-- Configuration Panel -->
       <div class="config-panel">
         <div class="panel-header">
-          <div class="header-title">
+          <div class="header-row header-title-row">
             <h2>{{ t('config.title') }}</h2>
           </div>
-          <div class="header-actions">
+          <div class="header-row header-actions-row">
+            <p-button 
+              icon="pi pi-folder-open"
+              :label="t('builds.loadBuild')"
+              class="load-button-header"
+              severity="secondary"
+              size="small"
+              @click="showHistoryModal = true"
+            />
             <p-button 
               :label="isLoading ? t('config.generating') : t('config.generateButton')"
               :disabled="isLoading || enabledStatsCount === 0"
@@ -19,10 +27,10 @@
             />
             <p-button 
               v-if="builds"
-              :label="t('builds.saveBuild')"
               icon="pi pi-save"
+              :label="t('builds.saveBuild')"
               class="save-button-header"
-              severity="secondary"
+              severity="success"
               size="small"
               @click="saveCurrentBuildWithName"
             />
@@ -267,14 +275,15 @@
           <div class="damage-section">
             <DamageEstimator v-if="currentBuildStats" :build-stats="currentBuildStats" />
           </div>
-          
-          <!-- Build History/Saved -->
-          <div class="history-section">
-            <BuildHistory @load-build="loadBuild" />
-          </div>
         </div>
       </div>
     </div>
+    
+    <!-- Build History Modal -->
+    <BuildHistory 
+      v-model:visible="showHistoryModal" 
+      @load-build="loadBuild" 
+    />
   </div>
 </template>
 
@@ -312,8 +321,7 @@ const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
 const activeTabIndex = ref(0)
-const showSaveBuildDialog = ref(false)
-const buildNameInput = ref('')
+const showHistoryModal = ref(false)
 
 const onEditMetadata = (item) => {
   emit('edit-metadata', item)
@@ -607,7 +615,7 @@ const saveCurrentBuildWithName = () => {
   }
 }
 
-const loadBuild = (buildData) => {
+const loadBuild = async (buildData) => {
   console.log('Loading build:', buildData)
   
   // Restore builds
@@ -619,19 +627,22 @@ const loadBuild = (buildData) => {
   includePet.value = config.include_pet !== false
   includeAccessory.value = config.include_accessory !== false
   
-  // Restore stat weights
+  // Restore stat weights - FIXED
   if (config.stat_weights) {
-    // Reset all first
-    Object.values(statWeights).forEach(stat => {
-      stat.enabled = false
-      stat.weight = 1.0
+    console.log('Restoring stat weights:', config.stat_weights)
+    
+    // Reset all stats first
+    Object.keys(statWeights).forEach(stat => {
+      statWeights[stat].enabled = false
+      statWeights[stat].weight = 1.0
     })
     
-    // Set from config
-    Object.entries(config.stat_weights).forEach(([stat, weight]) => {
-      if (statWeights[stat]) {
-        statWeights[stat].enabled = true
-        statWeights[stat].weight = weight
+    // Apply saved weights
+    Object.entries(config.stat_weights).forEach(([statName, weight]) => {
+      if (statWeights[statName]) {
+        statWeights[statName].enabled = true
+        statWeights[statName].weight = weight
+        console.log(`Restored ${statName}: enabled=true, weight=${weight}`)
       }
     })
   }
@@ -650,6 +661,60 @@ const loadBuild = (buildData) => {
     detail: buildData.name || t('builds.historyBuild'),
     life: 3000
   })
+  
+  // Refresh items in the background with latest data from database
+  refreshBuildItems(buildData.builds)
+}
+
+const refreshBuildItems = async (buildsData) => {
+  try {
+    // Collect all item IDs from all build types
+    const itemIds = new Set()
+    const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+    
+    buildTypes.forEach(buildType => {
+      if (buildsData[buildType]?.items) {
+        buildsData[buildType].items.forEach(item => {
+          itemIds.add(item.item_id)
+        })
+      }
+    })
+    
+    if (itemIds.size === 0) {
+      return
+    }
+    
+    console.log(`Refreshing ${itemIds.size} items with latest data...`)
+    
+    // Call refresh endpoint
+    const response = await builderAPI.refreshItems(Array.from(itemIds))
+    const refreshedItems = response.data.items
+    
+    // Create a map of refreshed items by item_id
+    const itemsMap = new Map()
+    refreshedItems.forEach(item => {
+      itemsMap.set(item.item_id, item)
+    })
+    
+    // Update all builds with refreshed data
+    buildTypes.forEach(buildType => {
+      if (buildsData[buildType]?.items) {
+        buildsData[buildType].items = buildsData[buildType].items.map(item => {
+          const refreshedItem = itemsMap.get(item.item_id)
+          return refreshedItem || item // Use refreshed data if available, otherwise keep original
+        })
+      }
+    })
+    
+    // Trigger reactivity
+    builds.value = { ...buildsData }
+    
+    console.log('Items refreshed successfully with latest metadata')
+    
+  } catch (error) {
+    console.error('Error refreshing items:', error)
+    // Don't show error to user, it's a background operation
+  }
 }
 </script>
 
@@ -738,25 +803,34 @@ const loadBuild = (buildData) => {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1rem 1.5rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 1rem;
   
-  .header-title h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    color: #fff;
-  }
-  
-  h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #fff;
-  }
-  
-  .header-actions {
+  .header-row {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .header-title-row {
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 700;
+    }
+  }
+  
+  .header-actions-row {
+    justify-content: flex-end;
+    gap: 0.75rem;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      
+      :deep(.p-button) {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -775,14 +849,9 @@ const loadBuild = (buildData) => {
   }
 }
 
-.save-button-header {
+.save-button-header,
+.history-button-header {
   flex-shrink: 0;
-}
-
-.history-section {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .panel-content {

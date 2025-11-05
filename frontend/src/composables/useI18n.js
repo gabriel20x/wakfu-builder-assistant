@@ -73,6 +73,8 @@ const translations = {
     
     // Build Management
     'builds.saveBuild': 'Guardar Build',
+    'builds.loadBuild': 'Cargar Build',
+    'builds.manageBuilds': 'Gestionar Builds',
     'builds.savedBuilds': 'Builds Guardadas',
     'builds.history': 'Historial',
     'builds.saved': 'Guardadas',
@@ -286,6 +288,7 @@ const translations = {
     
     // Build Management
     'builds.saveBuild': 'Save Build',
+    'builds.manageBuilds': 'Manage Builds',
     'builds.savedBuilds': 'Saved Builds',
     'builds.history': 'History',
     'builds.saved': 'Saved',
@@ -499,6 +502,7 @@ const translations = {
     
     // Build Management
     'builds.saveBuild': 'Sauvegarder Build',
+    'builds.manageBuilds': 'Gérer les Builds',
     'builds.savedBuilds': 'Builds Sauvegardées',
     'builds.history': 'Historique',
     'builds.saved': 'Sauvegardées',

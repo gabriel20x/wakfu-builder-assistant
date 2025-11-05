@@ -20,6 +20,7 @@ import ProgressSpinner from 'primevue/progressspinner'
 import Toast from 'primevue/toast'
 import TabView from 'primevue/tabview'
 import TabPanel from 'primevue/tabpanel'
+import Dialog from 'primevue/dialog'
 
 // Global styles
 import './assets/styles/main.scss'
@@ -41,6 +42,7 @@ app.component('p-progressSpinner', ProgressSpinner)
 app.component('p-toast', Toast)
 app.component('p-tabView', TabView)
 app.component('p-tabPanel', TabPanel)
+app.component('p-dialog', Dialog)
 
 app.mount('#app')
 

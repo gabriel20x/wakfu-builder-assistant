@@ -18,6 +18,11 @@ export const builderAPI = {
     return api.get(`/build/history?limit=${limit}`)
   },
 
+  // Refresh items with latest data from database
+  refreshItems(itemIds) {
+    return api.post('/build/refresh-items', { item_ids: itemIds })
+  },
+
   // Get items with filters
   getItems(filters = {}) {
     const params = new URLSearchParams()

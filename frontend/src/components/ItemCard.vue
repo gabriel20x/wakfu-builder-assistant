@@ -36,7 +36,13 @@
           </span>
           <span v-if="item.is_relic || item.is_epic" class="tag special-tag">⚡ Única</span>
           <span v-if="item.has_gem_slot" class="tag gem">💎 Gema</span>
-          <span v-if="hasMetadata" class="tag metadata-tag" :title="metadataTooltip">
+          <span 
+            v-if="hasMetadata" 
+            class="tag metadata-tag"
+            @mouseenter="showMetadataPopover"
+            @mouseleave="hideMetadataPopover"
+            :ref="el => metadataTagRef = el"
+          >
             📊 {{ t('metadata.hasMetadata') }}
           </span>
         </div>
@@ -59,11 +65,56 @@
         </div>
       </div>
     </div>
+    
+    <!-- Popover con metadata usando Teleport -->
+    <Teleport to="body">
+      <div 
+        v-if="showPopover && hasMetadata" 
+        class="metadata-popover"
+        :style="popoverStyle"
+        @mouseenter="showMetadataPopover"
+        @mouseleave="hideMetadataPopover"
+      >
+        <div class="popover-header">
+          <strong>Métodos de Obtención</strong>
+        </div>
+        <div class="popover-grid">
+          <div v-if="metadataMethods.drop" class="popover-row">
+            <div class="popover-label">💀 {{ t('metadata.methodDrop') }}:</div>
+            <div class="popover-value">{{ metadataMethods.drop }}</div>
+          </div>
+          <div v-if="metadataMethods.recipe" class="popover-row">
+            <div class="popover-label">🔨 {{ t('metadata.methodRecipe') }}:</div>
+            <div class="popover-value">✓</div>
+          </div>
+          <div v-if="metadataMethods.fragments" class="popover-row">
+            <div class="popover-label">🔮 {{ t('metadata.methodFragments') }}:</div>
+            <div class="popover-value">{{ metadataMethods.fragments }}</div>
+          </div>
+          <div v-if="metadataMethods.crupier" class="popover-row">
+            <div class="popover-label">💰 {{ t('metadata.methodCrupier') }}:</div>
+            <div class="popover-value">✓</div>
+          </div>
+          <div v-if="metadataMethods.challenge_reward" class="popover-row">
+            <div class="popover-label">🏆 {{ t('metadata.methodChallengeReward') }}:</div>
+            <div class="popover-value">✓</div>
+          </div>
+          <div v-if="metadataMethods.quest" class="popover-row">
+            <div class="popover-label">📜 {{ t('metadata.methodQuest') }}:</div>
+            <div class="popover-value">✓</div>
+          </div>
+          <div v-if="metadataMethods.other" class="popover-row">
+            <div class="popover-label">➕ {{ t('metadata.methodOther') }}:</div>
+            <div class="popover-value">✓</div>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { getRarityColor, getRarityName } from '../composables/useStats'
 import { useLanguage } from '../composables/useLanguage'
 import { useI18n } from '../composables/useI18n'
@@ -93,37 +144,57 @@ const hasMetadata = computed(() => {
   return props.metadata && Object.keys(props.metadata).length > 0
 })
 
-const metadataTooltip = computed(() => {
-  if (!hasMetadata.value) return ''
+const metadataMethods = computed(() => {
+  if (!hasMetadata.value) return {}
   
   const methods = props.metadata.acquisition_methods || {}
-  const parts = []
+  const result = {}
   
   if (methods.drop?.enabled) {
     const rates = methods.drop.drop_rates || []
-    if (rates.length > 0) {
-      parts.push(`Drop: ${rates.join('%, ')}%`)
-    } else {
-      parts.push('Drop disponible')
-    }
+    result.drop = rates.length > 0 ? rates.join('%, ') + '%' : t('metadata.yes')
   }
   
-  if (methods.recipe?.enabled) parts.push('Crafteable')
+  if (methods.recipe?.enabled) {
+    result.recipe = true
+  }
+  
   if (methods.fragments?.enabled) {
     const rates = methods.fragments.fragment_rates || []
-    if (rates.length > 0) {
-      parts.push(`Fragmentos: ${rates.join('%, ')}%`)
-    } else {
-      parts.push('Fragmentos disponibles')
-    }
+    result.fragments = rates.length > 0 ? rates.join('%, ') + '%' : t('metadata.yes')
   }
-  if (methods.crupier?.enabled) parts.push('Crupier')
-  if (methods.challenge_reward?.enabled) parts.push('Reto')
-  if (methods.quest?.enabled) parts.push('Quest')
-  if (methods.other?.enabled) parts.push('Otro')
   
-  return parts.join(' | ')
+  if (methods.crupier?.enabled) result.crupier = true
+  if (methods.challenge_reward?.enabled) result.challenge_reward = true
+  if (methods.quest?.enabled) result.quest = true
+  if (methods.other?.enabled) result.other = true
+  
+  return result
 })
+
+const showPopover = ref(false)
+const metadataTagRef = ref(null)
+
+const popoverStyle = computed(() => {
+  if (!metadataTagRef.value) return {}
+  
+  const rect = metadataTagRef.value.getBoundingClientRect()
+  
+  return {
+    position: 'fixed',
+    top: `${rect.top - 8}px`,
+    left: `${rect.left + rect.width / 2}px`,
+    transform: 'translate(-50%, -100%)',
+  }
+})
+
+const showMetadataPopover = () => {
+  showPopover.value = true
+}
+
+const hideMetadataPopover = () => {
+  showPopover.value = false
+}
 
 const onEditMetadata = () => {
   emit('edit-metadata', props.item)
@@ -257,7 +328,7 @@ const onImageError = (event) => {
   background: rgba(26, 35, 50, 0.8);
   border: 2px solid;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   transition: transform 0.2s, box-shadow 0.2s;
   position: relative;
   
@@ -296,6 +367,8 @@ const onImageError = (event) => {
   display: flex;
   gap: 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
 }
 
 .item-image-wrapper {
@@ -444,12 +517,111 @@ const onImageError = (event) => {
     color: #4CAF50;
     border: 1px solid rgba(76, 175, 80, 0.4);
     font-size: 0.7rem;
-    cursor: help;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    
+    &:hover {
+      background: rgba(76, 175, 80, 0.3);
+      border-color: #4CAF50;
+      z-index: 1001;
+    }
   }
+}
+
+.metadata-popover {
+  position: fixed;
+  background: #424242;
+  border-radius: 8px;
+  padding: 0;
+  min-width: 300px;
+  max-width: 350px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  animation: popoverFadeIn 0.2s ease;
+  color: white;
+  font-size: 0.875rem;
+  overflow: hidden;
+  pointer-events: auto;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: #424242;
+  }
+}
+
+@keyframes popoverFadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -100%) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+
+.popover-header {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.9rem;
+  text-align: center;
+  
+  strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+}
+
+.popover-grid {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.popover-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  transition: background 0.2s;
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.popover-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.popover-value {
+  color: #4caf50;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .item-body {
   padding: 1rem;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
 }
 
 .item-footer {
@@ -501,4 +673,3 @@ const onImageError = (event) => {
   }
 }
 </style>
-

@@ -582,9 +582,19 @@ export default {
 
 .stats-panel {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .stats-panel {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-card.progress-card {
+    grid-column: 1;
+  }
 }
 
 .stat-card {
