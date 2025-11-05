@@ -40,8 +40,15 @@
     </div>
     
     <div class="main-container">
-      <BuildGenerator v-if="currentView === 'builder'" />
-      <ItemMetadataAdmin v-else-if="currentView === 'metadata'" />
+      <BuildGenerator 
+        v-if="currentView === 'builder'" 
+        @edit-metadata="handleEditMetadata"
+      />
+      <ItemMetadataAdmin 
+        v-else-if="currentView === 'metadata'" 
+        ref="metadataAdmin"
+        :preselected-item="preselectedItem"
+      />
     </div>
   </div>
 </template>
@@ -57,9 +64,17 @@ const { currentLanguage, setLanguage, languageOptions } = useLanguage()
 const { t } = useI18n()
 
 const currentView = ref('builder')
+const preselectedItem = ref(null)
+const metadataAdmin = ref(null)
 
 const onLanguageChange = (event) => {
   setLanguage(event.value)
+}
+
+const handleEditMetadata = (item) => {
+  console.log('Switching to metadata view for item:', item)
+  preselectedItem.value = item
+  currentView.value = 'metadata'
 }
 </script>
 

@@ -19,6 +19,8 @@ from app.db.models import Item
 from app.core.config import settings
 from pulp import LpProblem, LpMaximize, LpVariable, lpSum, LpStatus, value
 import logging
+import json
+import os
 from typing import Dict, List
 from app.services.element_resolver import (
     resolve_build_stats, 
@@ -598,8 +600,22 @@ def _solve_single_build(
     items_stats_list = []
     total_difficulty = 0.0
     
+    # Load metadata once for all items
+    metadata_map = {}
+    metadata_path = os.getenv("METADATA_PATH", "/wakfu_data/item_metadata.json")
+    try:
+        if os.path.exists(metadata_path):
+            with open(metadata_path, 'r', encoding='utf-8') as f:
+                metadata_file = json.load(f)
+                metadata_map = metadata_file.get("items", {})
+    except Exception as e:
+        logger.warning(f"Could not load metadata: {e}")
+    
     for item in items:
         if value(item_vars[item.item_id]) == 1:
+            # Get metadata for this item if available
+            item_metadata = metadata_map.get(str(item.item_id), {})
+            
             selected_items.append({
                 "item_id": item.item_id,
                 "name": item.name,
@@ -614,7 +630,8 @@ def _solve_single_build(
                 "difficulty": item.difficulty,
                 "stats": item.stats,
                 "source_type": item.source_type,
-                "has_gem_slot": item.has_gem_slot
+                "has_gem_slot": item.has_gem_slot,
+                "metadata": item_metadata if item_metadata else {}
             })
             
             # Collect stats for resolution

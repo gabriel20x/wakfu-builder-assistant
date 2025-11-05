@@ -1,5 +1,15 @@
 <template>
   <div class="item-card" :style="{ borderColor: rarityColor }">
+    <!-- Edit Metadata Button -->
+    <button 
+      v-if="showMetadataButton"
+      class="btn-edit-metadata" 
+      @click.stop="onEditMetadata"
+      :title="t('metadata.editMetadata')"
+    >
+      ⚙️
+    </button>
+
     <div class="item-header" :style="{ background: rarityGradient }">
       <div class="item-image-wrapper">
         <img 
@@ -26,6 +36,9 @@
           </span>
           <span v-if="item.is_relic || item.is_epic" class="tag special-tag">⚡ Única</span>
           <span v-if="item.has_gem_slot" class="tag gem">💎 Gema</span>
+          <span v-if="hasMetadata" class="tag metadata-tag" :title="metadataTooltip">
+            📊 {{ t('metadata.hasMetadata') }}
+          </span>
         </div>
       </div>
     </div>
@@ -53,16 +66,68 @@
 import { computed } from 'vue'
 import { getRarityColor, getRarityName } from '../composables/useStats'
 import { useLanguage } from '../composables/useLanguage'
+import { useI18n } from '../composables/useI18n'
 import ItemStatList from './ItemStatList.vue'
 
 const props = defineProps({
   item: {
     type: Object,
     required: true
+  },
+  metadata: {
+    type: Object,
+    default: null
+  },
+  showMetadataButton: {
+    type: Boolean,
+    default: false
   }
 })
 
+const emit = defineEmits(['edit-metadata'])
+
 const { getItemName } = useLanguage()
+const { t } = useI18n()
+
+const hasMetadata = computed(() => {
+  return props.metadata && Object.keys(props.metadata).length > 0
+})
+
+const metadataTooltip = computed(() => {
+  if (!hasMetadata.value) return ''
+  
+  const methods = props.metadata.acquisition_methods || {}
+  const parts = []
+  
+  if (methods.drop?.enabled) {
+    const rates = methods.drop.drop_rates || []
+    if (rates.length > 0) {
+      parts.push(`Drop: ${rates.join('%, ')}%`)
+    } else {
+      parts.push('Drop disponible')
+    }
+  }
+  
+  if (methods.recipe?.enabled) parts.push('Crafteable')
+  if (methods.fragments?.enabled) {
+    const rates = methods.fragments.fragment_rates || []
+    if (rates.length > 0) {
+      parts.push(`Fragmentos: ${rates.join('%, ')}%`)
+    } else {
+      parts.push('Fragmentos disponibles')
+    }
+  }
+  if (methods.crupier?.enabled) parts.push('Crupier')
+  if (methods.challenge_reward?.enabled) parts.push('Reto')
+  if (methods.quest?.enabled) parts.push('Quest')
+  if (methods.other?.enabled) parts.push('Otro')
+  
+  return parts.join(' | ')
+})
+
+const onEditMetadata = () => {
+  emit('edit-metadata', props.item)
+}
 
 const itemName = computed(() => getItemName(props.item))
 
@@ -194,10 +259,35 @@ const onImageError = (event) => {
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.2s, box-shadow 0.2s;
+  position: relative;
   
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.btn-edit-metadata {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(102, 126, 234, 0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    background: rgba(102, 126, 234, 1);
+    transform: scale(1.1);
   }
 }
 
@@ -347,6 +437,14 @@ const onImageError = (event) => {
     color: #FFD700;
     border: 1px solid rgba(255, 215, 0, 0.4);
     font-size: 0.7rem;
+  }
+  
+  &.metadata-tag {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid rgba(76, 175, 80, 0.4);
+    font-size: 0.7rem;
+    cursor: help;
   }
 }
 

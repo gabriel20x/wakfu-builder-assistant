@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "last_updated": "2025-11-05T04:28:14.358350",
+  "last_updated": "2025-11-05T04:40:05.187167",
   "description": "Manual metadata for items - Ultra simplified: only acquisition methods (booleans) and drop rates",
   "items": {
     "25974": {
@@ -98,6 +98,36 @@
         }
       },
       "added_date": "2025-11-05T04:28:14.358338"
+    },
+    "21215": {
+      "item_id": 21215,
+      "name": "Screeching Belt",
+      "acquisition_methods": {
+        "drop": {
+          "enabled": false,
+          "drop_rates": []
+        },
+        "recipe": {
+          "enabled": true
+        },
+        "fragments": {
+          "enabled": false,
+          "fragment_rates": []
+        },
+        "crupier": {
+          "enabled": false
+        },
+        "challenge_reward": {
+          "enabled": false
+        },
+        "quest": {
+          "enabled": false
+        },
+        "other": {
+          "enabled": false
+        }
+      },
+      "added_date": "2025-11-05T04:40:05.187140"
     }
   }
 }

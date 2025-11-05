@@ -7,25 +7,29 @@
 
     <!-- Statistics Panel -->
     <div class="stats-panel" v-if="stats">
-      <div class="stat-card">
-        <div class="stat-value">{{ stats.total_items_with_metadata }}</div>
-        <div class="stat-label">{{ t('metadata.totalItems') }}</div>
+      <div class="stat-card progress-card">
+        <div class="stat-value">{{ stats.total_items_with_metadata }} / {{ stats.total_items_in_game }}</div>
+        <div class="stat-label">{{ t('metadata.coverage') }}</div>
+        <div class="progress-bar">
+          <div class="progress-fill" :style="{ width: stats.coverage_percent + '%' }"></div>
+        </div>
+        <div class="progress-percent">{{ stats.coverage_percent }}%</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">{{ stats.items_with_drop_rate }}</div>
-        <div class="stat-label">{{ t('metadata.withDropRate') }}</div>
+        <div class="stat-value">{{ stats.items_with_drop || 0 }}</div>
+        <div class="stat-label">💀 {{ t('metadata.methodDrop') }}</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">{{ stats.items_with_craftable_flag }}</div>
-        <div class="stat-label">{{ t('metadata.withCraftable') }}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-value">{{ stats.items_with_source_correction }}</div>
-        <div class="stat-label">{{ t('metadata.withCorrection') }}</div>
+        <div class="stat-value">{{ stats.items_with_recipe || 0 }}</div>
+        <div class="stat-label">🔨 {{ t('metadata.methodRecipe') }}</div>
       </div>
       <div class="stat-card relic-highlight">
-        <div class="stat-value">{{ stats.items_with_relic_fragments || 0 }}</div>
-        <div class="stat-label">{{ t('metadata.withRelicFragments') }}</div>
+        <div class="stat-value">{{ stats.items_with_fragments || 0 }}</div>
+        <div class="stat-label">🔮 {{ t('metadata.methodFragments') }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">{{ stats.items_with_crupier || 0 }}</div>
+        <div class="stat-label">💰 {{ t('metadata.methodCrupier') }}</div>
       </div>
     </div>
 
@@ -252,7 +256,13 @@ import api from '../services/api';
 
 export default {
   name: 'ItemMetadataAdmin',
-  setup() {
+  props: {
+    preselectedItem: {
+      type: Object,
+      default: null
+    }
+  },
+  setup(props) {
     const { t } = useI18n();
     const { currentLanguage } = useLanguage();
     
@@ -510,8 +520,17 @@ export default {
       }
     };
 
-    onMounted(() => {
-      loadStats();
+    onMounted(async () => {
+      await loadStats();
+      
+      // Auto-select preselected item if provided
+      if (props.preselectedItem) {
+        console.log('Preselected item detected:', props.preselectedItem);
+        // Set as selected directly
+        selectItem(props.preselectedItem);
+        // Also add to search results for visibility
+        searchResults.value = [props.preselectedItem];
+      }
     });
 
     return {
@@ -580,6 +599,35 @@ export default {
 .stat-card.relic-highlight {
   background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
   border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.stat-card.progress-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  grid-column: 1 / -1;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+  transition: width 0.5s ease;
+  border-radius: 4px;
+}
+
+.progress-percent {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  opacity: 0.9;
 }
 
 .stat-value {

@@ -254,27 +254,34 @@ async def search_items(
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/stats")
-async def get_metadata_stats():
+async def get_metadata_stats(db: Session = Depends(get_db)):
     """Get statistics about metadata coverage"""
     try:
         metadata_file = read_metadata_file()
         items_with_metadata = len(metadata_file["items"])
         
+        # Count total items in database
+        total_items_in_game = db.query(Item).count()
+        
         # Count by metadata type
-        with_drop_rate = sum(1 for item in metadata_file["items"].values() if item.get("drop_rate_percent") is not None)
-        with_craftable = sum(1 for item in metadata_file["items"].values() if item.get("is_craftable") is not None)
-        with_source_correction = sum(1 for item in metadata_file["items"].values() if item.get("corrected_source_type") is not None)
-        with_relic_fragments = sum(1 for item in metadata_file["items"].values() if item.get("relic_fragment_info", {}).get("can_obtain_via_fragments") == True)
+        with_drop = sum(1 for item in metadata_file["items"].values() if item.get("acquisition_methods", {}).get("drop", {}).get("enabled"))
+        with_recipe = sum(1 for item in metadata_file["items"].values() if item.get("acquisition_methods", {}).get("recipe", {}).get("enabled"))
+        with_fragments = sum(1 for item in metadata_file["items"].values() if item.get("acquisition_methods", {}).get("fragments", {}).get("enabled"))
+        with_crupier = sum(1 for item in metadata_file["items"].values() if item.get("acquisition_methods", {}).get("crupier", {}).get("enabled"))
+        with_challenge = sum(1 for item in metadata_file["items"].values() if item.get("acquisition_methods", {}).get("challenge_reward", {}).get("enabled"))
         
         return ItemMetadataResponse(
             success=True,
             message="Statistics retrieved",
             data={
+                "total_items_in_game": total_items_in_game,
                 "total_items_with_metadata": items_with_metadata,
-                "items_with_drop_rate": with_drop_rate,
-                "items_with_craftable_flag": with_craftable,
-                "items_with_source_correction": with_source_correction,
-                "items_with_relic_fragments": with_relic_fragments,
+                "coverage_percent": round((items_with_metadata / total_items_in_game * 100), 2) if total_items_in_game > 0 else 0,
+                "items_with_drop": with_drop,
+                "items_with_recipe": with_recipe,
+                "items_with_fragments": with_fragments,
+                "items_with_crupier": with_crupier,
+                "items_with_challenge": with_challenge,
                 "last_updated": metadata_file.get("last_updated")
             }
         )

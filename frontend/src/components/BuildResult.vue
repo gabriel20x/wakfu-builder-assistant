@@ -22,6 +22,9 @@
             v-for="item in build.items" 
             :key="item.item_id"
             :item="item"
+            :metadata="item.metadata"
+            :show-metadata-button="true"
+            @edit-metadata="onEditMetadata"
           />
         </div>
         <div v-else class="no-items">
@@ -52,12 +55,18 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(['edit-metadata'])
+
 const difficultyClass = computed(() => {
   const diff = props.build.total_difficulty || 0
   if (diff < 40) return 'easy'
   if (diff < 65) return 'medium'
   return 'hard'
 })
+
+const onEditMetadata = (item) => {
+  emit('edit-metadata', item)
+}
 </script>
 
 <style lang="scss" scoped>

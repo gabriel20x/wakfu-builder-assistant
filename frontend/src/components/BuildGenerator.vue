@@ -210,23 +210,23 @@
         <div v-else-if="builds" class="builds-container">
           <p-tabView class="builds-tabview" v-model:activeIndex="activeTabIndex">
             <p-tabPanel :header="t('builds.easy')">
-              <BuildResult :build="builds.easy" :difficulty="t('builds.easy')" :show-stats="false" />
+              <BuildResult :build="builds.easy" :difficulty="t('builds.easy')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.medium')">
-              <BuildResult :build="builds.medium" :difficulty="t('builds.medium')" :show-stats="false" />
+              <BuildResult :build="builds.medium" :difficulty="t('builds.medium')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardEpic')">
-              <BuildResult :build="builds.hard_epic" :difficulty="t('builds.hardEpic')" :show-stats="false" />
+              <BuildResult :build="builds.hard_epic" :difficulty="t('builds.hardEpic')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardRelic')">
-              <BuildResult :build="builds.hard_relic" :difficulty="t('builds.hardRelic')" :show-stats="false" />
+              <BuildResult :build="builds.hard_relic" :difficulty="t('builds.hardRelic')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.full')">
-              <BuildResult :build="builds.full" :difficulty="t('builds.full')" :show-stats="false" />
+              <BuildResult :build="builds.full" :difficulty="t('builds.full')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
           </p-tabView>
         </div>
@@ -278,6 +278,8 @@ import DamageEstimator from './DamageEstimator.vue'
 const toast = useToast()
 const { t } = useI18n()
 
+const emit = defineEmits(['edit-metadata'])
+
 const characterLevel = ref(230)
 const includePet = ref(true)
 const includeAccessory = ref(true)
@@ -285,6 +287,10 @@ const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
 const activeTabIndex = ref(0)
+
+const onEditMetadata = (item) => {
+  emit('edit-metadata', item)
+}
 
 // Level options for dropdown
 const levelOptions = [
