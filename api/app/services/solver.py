@@ -15,7 +15,7 @@ Performance: Only considers items within 25 levels of target to reduce computati
 """
 
 from sqlalchemy.orm import Session
-from app.db.models import Item
+from app.db.models import Item, MonsterDrop
 from app.core.config import settings
 from pulp import LpProblem, LpMaximize, LpVariable, lpSum, LpStatus, value
 import logging
@@ -619,34 +619,55 @@ def _solve_single_build(
     except Exception as e:
         logger.warning(f"Could not load metadata: {e}")
     
-    for item in items:
-        if value(item_vars[item.item_id]) == 1:
-            # Get metadata for this item if available
-            item_metadata = metadata_map.get(str(item.item_id), {})
-            
-            selected_items.append({
-                "item_id": item.item_id,
-                "name": item.name,
-                "name_es": item.name_es,
-                "name_en": item.name_en,
-                "name_fr": item.name_fr,
-                "level": item.level,
-                "slot": item.slot,
-                "rarity": item.rarity,
-                "is_epic": item.is_epic,
-                "is_relic": item.is_relic,
-                "difficulty": item.difficulty,
-                "gfx_id": item.gfx_id,
-                "stats": item.stats,
-                "source_type": item.source_type,
-                "has_gem_slot": item.has_gem_slot,
-                "metadata": item_metadata if item_metadata else {}
+    selected_sql_items = [
+        item for item in items if value(item_vars[item.item_id]) == 1
+    ]
+    selected_ids = [item.item_id for item in selected_sql_items]
+    
+    # Preload drop sources for selected items
+    drop_map = {}
+    if db and selected_ids:
+        drop_rows = db.query(MonsterDrop).filter(
+            MonsterDrop.item_id.in_(selected_ids)
+        ).all()
+        
+        for drop in drop_rows:
+            drop_map.setdefault(drop.item_id, []).append({
+                "monster_id": drop.monster_id,
+                "monster_name": getattr(drop, "monster_name", None),
+                "drop_rate": drop.drop_rate,
+                "drop_rate_percent": drop.drop_rate_percent,
+                "image_url": f"https://vertylo.github.io/wakassets/monsters/{drop.monster_id}.png"
             })
-            
-            # Collect stats for resolution
-            items_stats_list.append(item.stats)
-            
-            total_difficulty += item.difficulty
+    
+    for item in selected_sql_items:
+        # Get metadata for this item if available
+        item_metadata = metadata_map.get(str(item.item_id), {})
+        
+        selected_items.append({
+            "item_id": item.item_id,
+            "name": item.name,
+            "name_es": item.name_es,
+            "name_en": item.name_en,
+            "name_fr": item.name_fr,
+            "level": item.level,
+            "slot": item.slot,
+            "rarity": item.rarity,
+            "is_epic": item.is_epic,
+            "is_relic": item.is_relic,
+            "difficulty": item.difficulty,
+            "gfx_id": item.gfx_id,
+            "stats": item.stats,
+            "source_type": item.source_type,
+            "has_gem_slot": item.has_gem_slot,
+            "metadata": item_metadata if item_metadata else {},
+            "drop_sources": drop_map.get(item.item_id, [])
+        })
+        
+        # Collect stats for resolution
+        items_stats_list.append(item.stats)
+        
+        total_difficulty += item.difficulty
     
     # Resolve elemental stats based on user preferences
     if damage_preferences is None:

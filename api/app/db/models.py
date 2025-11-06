@@ -63,3 +63,34 @@ class HarvestResource(Base):
     quantity = Column(Integer, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+class MonsterDrop(Base):
+    __tablename__ = "monster_drops"
+    
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    monster_id = Column(Integer, index=True, nullable=False)
+    item_id = Column(Integer, index=True, nullable=False)
+    drop_rate = Column(Float, nullable=False)  # 0-1 probability
+    drop_rate_percent = Column(Float, nullable=False)  # Original percent value (0-100)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class MonsterFamily(Base):
+    __tablename__ = "monster_families"
+    
+    family_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class Dungeon(Base):
+    __tablename__ = "dungeons"
+    
+    dungeon_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    level = Column(Integer, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+

@@ -78,6 +78,37 @@ class HarvestResource(Base):
     quantity = Column(Integer, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+class MonsterDrop(Base):
+    __tablename__ = "monster_drops"
+    
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    monster_id = Column(Integer, index=True, nullable=False)
+    item_id = Column(Integer, index=True, nullable=False)
+    drop_rate = Column(Float, nullable=False)  # 0-1 probability
+    drop_rate_percent = Column(Float, nullable=False)  # Original percent value (0-100)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class MonsterFamily(Base):
+    __tablename__ = "monster_families"
+    
+    family_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class Dungeon(Base):
+    __tablename__ = "dungeons"
+    
+    dungeon_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    level = Column(Integer, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
 class GameDataVersion(Base):
     __tablename__ = "gamedata_versions"
     
@@ -466,6 +497,11 @@ def main():
         harvest_loots = load_json(data_path / "harvestLoots.json")
         collectible_resources = load_json(data_path / "collectibleResources.json")
         
+        community_data_path = data_path / "community-data"
+        monster_drops_data = load_json(community_data_path / "monsterDrops.json")
+        monster_families_data = load_json(community_data_path / "monsterFamilies.json")
+        dungeons_data = load_json(community_data_path / "dungeons.json")
+        
         logger.info(f"Loaded {len(items_data)} items from JSON")
         
         # Load manual metadata
@@ -500,6 +536,9 @@ def main():
         session.query(Item).delete()
         session.query(Recipe).delete()
         session.query(HarvestResource).delete()
+        session.query(MonsterDrop).delete()
+        session.query(MonsterFamily).delete()
+        session.query(Dungeon).delete()
         session.commit()
         
         # Process items
@@ -708,6 +747,109 @@ def main():
         
         session.commit()
         logger.info(f"Loaded {len(harvest_map)} harvest resources")
+        
+        # Helper to safely access localized names
+        def get_localized_name(name_list, index):
+            if isinstance(name_list, list) and len(name_list) > index:
+                value = name_list[index]
+                return value if value else None
+            return None
+        
+        # Process monster families
+        if monster_families_data:
+            logger.info("Processing monster families...")
+            families_loaded = 0
+            for family in monster_families_data:
+                family_id = family.get("id")
+                names = family.get("name", [])
+                
+                if not family_id:
+                    continue
+                
+                monster_family = MonsterFamily(
+                    family_id=family_id,
+                    name_fr=get_localized_name(names, 0),
+                    name_en=get_localized_name(names, 1),
+                    name_es=get_localized_name(names, 2),
+                    name_pt=get_localized_name(names, 3)
+                )
+                session.add(monster_family)
+                families_loaded += 1
+            
+            session.commit()
+            logger.info(f"Loaded {families_loaded} monster families")
+        else:
+            logger.info("No monster families data found (community-data/monsterFamilies.json)")
+        
+        # Process dungeons
+        if dungeons_data:
+            logger.info("Processing dungeons...")
+            dungeons_loaded = 0
+            for dungeon in dungeons_data:
+                dungeon_id = dungeon.get("id")
+                names = dungeon.get("name", [])
+                level = dungeon.get("level")
+                
+                if not dungeon_id:
+                    continue
+                
+                dungeon_entry = Dungeon(
+                    dungeon_id=dungeon_id,
+                    name_fr=get_localized_name(names, 0),
+                    name_en=get_localized_name(names, 1),
+                    name_es=get_localized_name(names, 2),
+                    name_pt=get_localized_name(names, 3),
+                    level=level
+                )
+                session.add(dungeon_entry)
+                dungeons_loaded += 1
+            
+            session.commit()
+            logger.info(f"Loaded {dungeons_loaded} dungeons")
+        else:
+            logger.info("No dungeon data found (community-data/dungeons.json)")
+        
+        # Process monster drops
+        if monster_drops_data:
+            logger.info("Processing monster drops...")
+            drops_loaded = 0
+            
+            for entry in monster_drops_data:
+                monster_id = entry.get("id")
+                drops = entry.get("drops", [])
+                
+                if not monster_id or not isinstance(drops, list):
+                    continue
+                
+                for drop in drops:
+                    item_id = drop.get("itemId")
+                    rate_value = drop.get("rate")
+                    
+                    if not item_id or rate_value is None:
+                        continue
+                    
+                    try:
+                        rate_percent = float(rate_value)
+                    except (TypeError, ValueError):
+                        logger.debug(f"Skipping invalid drop rate '{rate_value}' for monster {monster_id}")
+                        continue
+                    
+                    drop_entry = MonsterDrop(
+                        monster_id=monster_id,
+                        item_id=item_id,
+                        drop_rate=rate_percent / 100.0,
+                        drop_rate_percent=rate_percent
+                    )
+                    session.add(drop_entry)
+                    drops_loaded += 1
+                    
+                    if drops_loaded % 500 == 0:
+                        session.commit()
+            
+            session.commit()
+            logger.info(f"Loaded {drops_loaded} monster drop records")
+        else:
+            logger.info("No monster drop data found (community-data/monsterDrops.json)")
         
         # Update version status
         version.status = "completed"

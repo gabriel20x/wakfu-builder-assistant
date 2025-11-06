@@ -3,9 +3,16 @@ from sqlalchemy.orm import Session
 from typing import Optional, List
 from pydantic import BaseModel
 from app.db.database import get_db
-from app.db.models import Item
+from app.db.models import Item, MonsterDrop
 
 router = APIRouter()
+
+class DropSourceResponse(BaseModel):
+    monster_id: int
+    monster_name: Optional[str] = None
+    drop_rate: float
+    drop_rate_percent: float
+    image_url: str
 
 class ItemResponse(BaseModel):
     item_id: int
@@ -24,6 +31,7 @@ class ItemResponse(BaseModel):
     manual_drop_difficulty: Optional[float]
     gfx_id: Optional[int] = None  # Graphics ID for item image
     stats: dict
+    drop_sources: Optional[List[DropSourceResponse]] = None
     
     class Config:
         from_attributes = True
@@ -44,7 +52,22 @@ async def get_item(item_id: int, db: Session = Depends(get_db)):
     item = db.query(Item).filter(Item.item_id == item_id).first()
     if not item:
         raise HTTPException(status_code=404, detail="Item not found")
-    return item
+    
+    drop_rows = db.query(MonsterDrop).filter(MonsterDrop.item_id == item_id).all()
+    drop_sources = [
+        DropSourceResponse(
+            monster_id=drop.monster_id,
+            monster_name=getattr(drop, "monster_name", None),
+            drop_rate=drop.drop_rate,
+            drop_rate_percent=drop.drop_rate_percent if drop.drop_rate_percent is not None else drop.drop_rate * 100.0,
+            image_url=f"https://vertylo.github.io/wakassets/monsters/{drop.monster_id}.png"
+        )
+        for drop in drop_rows
+    ]
+    
+    item_response = ItemResponse.from_orm(item)
+    item_response.drop_sources = drop_sources
+    return item_response
 
 @router.post("/{item_id}/difficulty")
 async def update_difficulty(

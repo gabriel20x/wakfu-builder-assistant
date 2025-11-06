@@ -207,6 +207,9 @@ const translations = {
     
     // Drop Method
     'metadata.dropSourcesList': 'Fuentes de Drop',
+    'metadata.dropSourcesDetected': 'Drops detectados automáticamente',
+    'metadata.monsterIdLabel': 'Monstruo',
+    'metadata.monsterIdFallback': 'Monstruo #{id}',
     'metadata.addRate': 'Agregar %',
     'metadata.fragmentRatePlaceholder': 'ej: 8.12',
     'metadata.notes': 'Notas Generales',
@@ -423,6 +426,9 @@ const translations = {
     
     // Drop Method
     'metadata.dropSourcesList': 'Drop Sources',
+    'metadata.dropSourcesDetected': 'Auto-detected Drops',
+    'metadata.monsterIdLabel': 'Monster',
+    'metadata.monsterIdFallback': 'Monster #{id}',
     'metadata.addRate': 'Add %',
     'metadata.fragmentRatePlaceholder': 'e.g: 8.12',
     'metadata.notes': 'General Notes',
@@ -639,6 +645,9 @@ const translations = {
     
     // Drop Method
     'metadata.dropSourcesList': 'Sources de Drop',
+    'metadata.dropSourcesDetected': 'Drops détectés automatiquement',
+    'metadata.monsterIdLabel': 'Monstre',
+    'metadata.monsterIdFallback': 'Monstre #{id}',
     'metadata.addRate': 'Ajouter %',
     'metadata.fragmentRatePlaceholder': 'ex: 8.12',
     'metadata.notes': 'Notes Générales',

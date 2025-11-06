@@ -47,7 +47,7 @@
           >
           <span v-if="item.has_gem_slot" class="tag gem">💎 Gema</span>
           <span
-            v-if="hasMetadata"
+            v-if="hasExtendedMetadata"
             class="tag metadata-tag"
             @mouseenter="showMetadataPopover"
             @mouseleave="hideMetadataPopover"
@@ -79,51 +79,88 @@
     <!-- Popover con metadata usando Teleport -->
     <Teleport to="body">
       <div
-        v-if="showPopover && hasMetadata"
+        v-if="showPopover && hasExtendedMetadata"
         class="metadata-popover"
         :style="popoverStyle"
         @mouseenter="showMetadataPopover"
         @mouseleave="hideMetadataPopover"
       >
-        <div class="popover-header">
-          <strong>Métodos de Obtención</strong>
+        <div v-if="hasManualMetadata" class="popover-section">
+          <div class="popover-header">
+            <strong>{{ t("metadata.acquisitionMethodsTitle") }}</strong>
+          </div>
+          <div class="popover-grid">
+            <div v-if="metadataMethods.drop" class="popover-row">
+              <div class="popover-label">💀 {{ t("metadata.methodDrop") }}:</div>
+              <div class="popover-value">{{ metadataMethods.drop }}</div>
+            </div>
+            <div v-if="metadataMethods.recipe" class="popover-row">
+              <div class="popover-label">
+                🔨 {{ t("metadata.methodRecipe") }}:
+              </div>
+              <div class="popover-value">✓</div>
+            </div>
+            <div v-if="metadataMethods.fragments" class="popover-row">
+              <div class="popover-label">
+                🔮 {{ t("metadata.methodFragments") }}:
+              </div>
+              <div class="popover-value">{{ metadataMethods.fragments }}</div>
+            </div>
+            <div v-if="metadataMethods.crupier" class="popover-row">
+              <div class="popover-label">
+                💰 {{ t("metadata.methodCrupier") }}:
+              </div>
+              <div class="popover-value">✓</div>
+            </div>
+            <div v-if="metadataMethods.challenge_reward" class="popover-row">
+              <div class="popover-label">
+                🏆 {{ t("metadata.methodChallengeReward") }}:
+              </div>
+              <div class="popover-value">✓</div>
+            </div>
+            <div v-if="metadataMethods.quest" class="popover-row">
+              <div class="popover-label">📜 {{ t("metadata.methodQuest") }}:</div>
+              <div class="popover-value">✓</div>
+            </div>
+            <div v-if="metadataMethods.other" class="popover-row">
+              <div class="popover-label">
+                ➕ {{ t("metadata.methodOther") }}:
+              </div>
+              <div class="popover-value">✓</div>
+            </div>
+          </div>
         </div>
-        <div class="popover-grid">
-          <div v-if="metadataMethods.drop" class="popover-row">
-            <div class="popover-label">💀 {{ t("metadata.methodDrop") }}:</div>
-            <div class="popover-value">{{ metadataMethods.drop }}</div>
+
+        <div v-if="hasDropSources" class="popover-section drop-section">
+          <div class="popover-header">
+            <strong>{{ t("metadata.dropSourcesDetected") }}</strong>
           </div>
-          <div v-if="metadataMethods.recipe" class="popover-row">
-            <div class="popover-label">
-              🔨 {{ t("metadata.methodRecipe") }}:
+          <div class="drop-list">
+            <div
+              v-for="drop in dropSources"
+              :key="drop.monsterId"
+              class="drop-entry"
+            >
+              <img
+                :src="drop.imageUrl"
+                :alt="`Monster ${drop.monsterId}`"
+                class="drop-monster-image"
+                @error="onMonsterImageError"
+              />
+              <div class="drop-info">
+                <div class="drop-monster-id">
+                  {{ drop.displayName }}
+                </div>
+                <div class="drop-chance">
+                  <span class="drop-rate-chip">
+                    {{ formatDropRate(drop.ratePercent) }}
+                  </span>
+                  <span class="drop-rate-note">
+                    {{ drop.rate.toFixed(4) }}
+                  </span>
+                </div>
+              </div>
             </div>
-            <div class="popover-value">✓</div>
-          </div>
-          <div v-if="metadataMethods.fragments" class="popover-row">
-            <div class="popover-label">
-              🔮 {{ t("metadata.methodFragments") }}:
-            </div>
-            <div class="popover-value">{{ metadataMethods.fragments }}</div>
-          </div>
-          <div v-if="metadataMethods.crupier" class="popover-row">
-            <div class="popover-label">
-              💰 {{ t("metadata.methodCrupier") }}:
-            </div>
-            <div class="popover-value">✓</div>
-          </div>
-          <div v-if="metadataMethods.challenge_reward" class="popover-row">
-            <div class="popover-label">
-              🏆 {{ t("metadata.methodChallengeReward") }}:
-            </div>
-            <div class="popover-value">✓</div>
-          </div>
-          <div v-if="metadataMethods.quest" class="popover-row">
-            <div class="popover-label">📜 {{ t("metadata.methodQuest") }}:</div>
-            <div class="popover-value">✓</div>
-          </div>
-          <div v-if="metadataMethods.other" class="popover-row">
-            <div class="popover-label">➕ {{ t("metadata.methodOther") }}:</div>
-            <div class="popover-value">✓</div>
           </div>
         </div>
       </div>
@@ -155,15 +192,62 @@ const props = defineProps({
 
 const emit = defineEmits(["edit-metadata"]);
 
-const { getItemName } = useLanguage();
+const { getItemName, currentLanguage } = useLanguage();
 const { t } = useI18n();
 
-const hasMetadata = computed(() => {
+const hasManualMetadata = computed(() => {
   return props.metadata && Object.keys(props.metadata).length > 0;
 });
 
+const resolveMonsterName = (monsterName, monsterId) => {
+  const lang = currentLanguage.value;
+
+  if (monsterName) {
+    if (typeof monsterName === "string") {
+      return monsterName;
+    }
+    if (typeof monsterName === "object") {
+      return (
+        monsterName[lang] ||
+        monsterName.en ||
+        monsterName.es ||
+        monsterName.fr ||
+        null
+      );
+    }
+  }
+
+  return t("metadata.monsterIdFallback", { id: monsterId });
+};
+
+const dropSources = computed(() => {
+  const sources = Array.isArray(props.item?.drop_sources)
+    ? props.item.drop_sources
+    : [];
+
+  return sources.map((drop) => {
+    const ratePercent =
+      drop.drop_rate_percent ?? (drop.drop_rate ?? 0) * 100;
+    return {
+      monsterId: drop.monster_id,
+      rate: drop.drop_rate ?? ratePercent / 100,
+      ratePercent,
+      imageUrl:
+        drop.image_url ||
+        `https://vertylo.github.io/wakassets/monsters/${drop.monster_id}.png`,
+      displayName: resolveMonsterName(drop.monster_name, drop.monster_id),
+    };
+  });
+});
+
+const hasDropSources = computed(() => dropSources.value.length > 0);
+
+const hasExtendedMetadata = computed(
+  () => hasManualMetadata.value || hasDropSources.value
+);
+
 const metadataMethods = computed(() => {
-  if (!hasMetadata.value) return {};
+  if (!hasManualMetadata.value) return {};
 
   const methods = props.metadata.acquisition_methods || {};
   const result = {};
@@ -214,6 +298,26 @@ const showMetadataPopover = () => {
 
 const hideMetadataPopover = () => {
   showPopover.value = false;
+};
+
+const formatDropRate = (value) => {
+  if (value === undefined || value === null || Number.isNaN(Number(value))) {
+    return "—";
+  }
+  const numeric = Number(value);
+  const decimals =
+    numeric >= 10
+      ? numeric % 1 === 0
+        ? 0
+        : 1
+      : numeric >= 1
+      ? 2
+      : 2;
+  return `${numeric.toFixed(decimals)}%`;
+};
+
+const onMonsterImageError = (event) => {
+  event.target.style.display = "none";
 };
 
 const onEditMetadata = () => {
@@ -613,6 +717,10 @@ const onImageError = (event) => {
   }
 }
 
+.popover-section + .popover-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .popover-header {
   background: rgba(255, 255, 255, 0.1);
   padding: 0.75rem 1rem;
@@ -631,6 +739,71 @@ const onImageError = (event) => {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+}
+
+.drop-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem 1rem;
+}
+
+.drop-entry {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  transition: background 0.2s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+.drop-monster-image {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.drop-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.drop-monster-id {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.85rem;
+}
+
+.drop-chance {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.drop-rate-chip {
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(76, 175, 80, 0.2);
+  color: #8bc34a;
+  border: 1px solid rgba(76, 175, 80, 0.35);
+  font-weight: 600;
+}
+
+.drop-rate-note {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 .popover-row {
