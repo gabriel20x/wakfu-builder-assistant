@@ -29,6 +29,8 @@ const translations = {
     'config.includePetHint': '(pueden ser difíciles de conseguir)',
     'config.includeEmblem': 'Incluir Emblemas',
     'config.includeEmblemHint': '(pueden ser difíciles de conseguir)',
+    'config.onlyDroppable': 'Solo Items Dropeables',
+    'config.onlyDroppableHint': '(solo items que se obtienen de monstruos)',
     'config.generateButton': 'Generar Builds',
     'config.generating': 'Generando...',
     
@@ -282,6 +284,8 @@ const translations = {
     'config.includePetHint': '(may be hard to obtain)',
     'config.includeEmblem': 'Include Emblems',
     'config.includeEmblemHint': '(may be hard to obtain)',
+    'config.onlyDroppable': 'Only Droppable Items',
+    'config.onlyDroppableHint': '(only items dropped by monsters)',
     'config.generateButton': 'Generate Builds',
     'config.generating': 'Generating...',
     
@@ -496,6 +500,8 @@ const translations = {
     'config.includePetHint': '(peuvent être difficiles à obtenir)',
     'config.includeEmblem': 'Inclure les Emblèmes',
     'config.includeEmblemHint': '(peuvent être difficiles à obtenir)',
+    'config.onlyDroppable': 'Seulement Items Dropables',
+    'config.onlyDroppableHint': '(seulement les items obtenus de monstres)',
     'config.generateButton': 'Générer Builds',
     'config.generating': 'Génération...',
     

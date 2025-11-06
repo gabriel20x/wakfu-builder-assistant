@@ -215,6 +215,19 @@
                   <span class="option-hint">{{ t('config.includeEmblemHint') }}</span>
                 </label>
               </div>
+              
+              <div class="option-item">
+                <p-checkbox 
+                  v-model="onlyDroppable" 
+                  :binary="true" 
+                  input-id="only-droppable"
+                />
+                <label for="only-droppable" class="option-label">
+                  <span class="option-icon">💀</span>
+                  <span>{{ t('config.onlyDroppable') }}</span>
+                  <span class="option-hint">{{ t('config.onlyDroppableHint') }}</span>
+                </label>
+              </div>
             </div>
           </div>
 
@@ -328,6 +341,7 @@ const emit = defineEmits(['edit-metadata'])
 const characterLevel = ref(230)
 const includePet = ref(true)
 const includeAccessory = ref(true)
+const onlyDroppable = ref(false)
 const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
@@ -547,6 +561,7 @@ const generateBuilds = async () => {
       stat_weights: activeStatWeights.value,
       include_pet: includePet.value,
       include_accessory: includeAccessory.value,
+      only_droppable: onlyDroppable.value,
       damage_preferences: damagePreferences.value,
       resistance_preferences: resistancePreferences.value
     })
@@ -582,6 +597,7 @@ const saveCurrentBuildWithName = () => {
       stat_weights: activeStatWeights.value,
       include_pet: includePet.value,
       include_accessory: includeAccessory.value,
+      only_droppable: onlyDroppable.value,
       damage_preferences: damagePreferences.value,
       resistance_preferences: resistancePreferences.value
     }
@@ -611,6 +627,7 @@ const loadBuild = async (buildData) => {
   characterLevel.value = config.level_max || 230
   includePet.value = config.include_pet !== false
   includeAccessory.value = config.include_accessory !== false
+  onlyDroppable.value = config.only_droppable === true
   
   // Restore stat weights using statGroups
   if (config.stat_weights) {

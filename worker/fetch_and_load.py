@@ -477,7 +477,7 @@ def main():
         
         recipes_map = {}
         for result in recipe_results:
-            result_id = result.get("itemId")
+            result_id = result.get("productedItemId")  # ✅ FIXED: Campo correcto es productedItemId
             recipe_id = result.get("recipeId")
             if result_id and recipe_id:
                 recipes_map[result_id] = recipe_id

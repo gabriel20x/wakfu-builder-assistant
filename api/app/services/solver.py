@@ -44,6 +44,7 @@ def solve_build(
     stat_weights: Dict[str, float],
     include_pet: bool = True,
     include_accessory: bool = True,
+    only_droppable: bool = False,
     damage_preferences: List[str] = None,
     resistance_preferences: List[str] = None
 ) -> Dict:
@@ -102,9 +103,16 @@ def solve_build(
     if excluded_slots:
         query = query.filter(~Item.slot.in_(excluded_slots))
     
+    # Filter for only droppable items if requested
+    if only_droppable:
+        query = query.filter(Item.source_type == "drop")
+    
     items = query.all()
     
-    logger.info(f"Solving with {len(items)} items (level {level_min}-{level_max} + PET)")
+    filter_info = f"level {level_min}-{level_max}"
+    if only_droppable:
+        filter_info += " (only droppable)"
+    logger.info(f"Solving with {len(items)} items ({filter_info})")
     
     # Generate each build type
     easy_build = _solve_single_build(

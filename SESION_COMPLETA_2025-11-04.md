@@ -242,3 +242,5 @@ Con estos scores, si existe una capa mejor con AP, debería ser seleccionada.
 **Total de cambios:** 8 fixes + 1 optimización  
 **Estado:** LISTO PARA PRODUCCIÓN ✅
 
+
+

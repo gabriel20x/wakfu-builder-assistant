@@ -22,6 +22,7 @@ class SolveRequest(BaseModel):
     }
     include_pet: bool = True  # Incluir mascotas (pueden ser difíciles de conseguir)
     include_accessory: bool = True  # Incluir emblemas (pueden ser difíciles de conseguir)
+    only_droppable: bool = False  # Solo items que se pueden obtener de drops de monstruos
     damage_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para daños elementales
     resistance_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para resistencias
 
@@ -57,6 +58,7 @@ async def solve(request: SolveRequest, db: Session = Depends(get_db)):
             stat_weights=request.stat_weights,
             include_pet=request.include_pet,
             include_accessory=request.include_accessory,
+            only_droppable=request.only_droppable,
             damage_preferences=request.damage_preferences,
             resistance_preferences=request.resistance_preferences
         )
