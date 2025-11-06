@@ -20,6 +20,7 @@ class Item(Base):
     source_type = Column(String, index=True)  # 'harvest', 'recipe', 'drop', 'special'
     difficulty = Column(Float, default=0.0, index=True)
     manual_drop_difficulty = Column(Float, nullable=True)
+    gfx_id = Column(Integer, nullable=True)  # Graphics ID for item image (from graphicParameters.gfxId)
     stats = Column(JSON, default=dict)  # {"HP": 100, "AP": 1, ...}
     raw_data = Column(JSON, default=dict)  # Original item data
     created_at = Column(DateTime(timezone=True), server_default=func.now())

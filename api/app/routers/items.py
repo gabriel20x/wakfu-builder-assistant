@@ -22,6 +22,7 @@ class ItemResponse(BaseModel):
     source_type: Optional[str]
     difficulty: float
     manual_drop_difficulty: Optional[float]
+    gfx_id: Optional[int] = None  # Graphics ID for item image
     stats: dict
     
     class Config:

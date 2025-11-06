@@ -52,6 +52,7 @@ class Item(Base):
     source_type = Column(String, index=True)
     difficulty = Column(Float, default=0.0, index=True)
     manual_drop_difficulty = Column(Float, nullable=True)
+    gfx_id = Column(Integer, nullable=True)  # Graphics ID for item image
     stats = Column(JSON, default=dict)
     raw_data = Column(JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
@@ -580,6 +581,10 @@ def main():
                 name_fr = title.get("fr", name_en)  # Fallback to English if no French
                 name = name_en  # Default to English
                 
+                # Extract graphics ID for item image
+                graphic_params = item_data.get("definition", {}).get("item", {}).get("graphicParameters", {})
+                gfx_id = graphic_params.get("gfxId")
+                
                 # Extract stats (pass slot for contextual mapping)
                 stats = extract_equipment_stats(item_data, slot)
                 
@@ -631,6 +636,7 @@ def main():
                     has_gem_slot=has_gem_slot,
                     blocks_second_weapon=blocks_second_weapon,
                     source_type=source_type,
+                    gfx_id=gfx_id,
                     stats=stats,
                     raw_data=item_data
                 )

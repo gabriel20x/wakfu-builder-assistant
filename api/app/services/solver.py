@@ -636,6 +636,7 @@ def _solve_single_build(
                 "is_epic": item.is_epic,
                 "is_relic": item.is_relic,
                 "difficulty": item.difficulty,
+                "gfx_id": item.gfx_id,
                 "stats": item.stats,
                 "source_type": item.source_type,
                 "has_gem_slot": item.has_gem_slot,
