@@ -59,14 +59,12 @@ def load_existing_metadata(metadata_path: Path) -> dict:
 def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
     """Sync metadata with database information"""
     
-    logger.info("Querying database for items with drop sources...")
+    logger.info("Querying database for all equipment items...")
     
-    # Query all items that have drop sources
-    items_with_drops = session.query(Item.item_id, Item.name, Item.source_type).filter(
-        Item.source_type == "drop"
-    ).all()
+    # Query ALL equipment items (not just drops)
+    all_items = session.query(Item.item_id, Item.name, Item.source_type).all()
     
-    logger.info(f"Found {len(items_with_drops)} items with drop source type")
+    logger.info(f"Found {len(all_items)} total equipment items")
     
     # Query all drop rates grouped by item
     drop_rates_query = session.query(
@@ -77,16 +75,26 @@ def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
     drop_rates_map = {item_id: rates for item_id, rates in drop_rates_query}
     logger.info(f"Found drop rates for {len(drop_rates_map)} items in monster_drops table")
     
-    # Query all items with recipes
-    items_with_recipes = session.query(Recipe.result_item_id).distinct().all()
-    recipe_items = {item_id for (item_id,) in items_with_recipes}
-    logger.info(f"Found {len(recipe_items)} items with recipes")
+    # Query all recipes with ingredient details
+    recipes_query = session.query(Recipe).all()
+    recipes_map = {}
+    for recipe in recipes_query:
+        recipes_map[recipe.result_item_id] = {
+            "recipe_id": recipe.recipe_id,
+            "ingredients": recipe.ingredients,  # Already a JSON with item_id and quantity
+            "craft_cost": recipe.craft_cost
+        }
+    logger.info(f"Found {len(recipes_map)} items with recipes")
     
     # Stats
     stats = {
         "total_items_processed": 0,
         "items_with_drops": 0,
         "items_with_recipes": 0,
+        "items_with_both": 0,
+        "items_with_drop_only": 0,
+        "items_with_recipe_only": 0,
+        "items_with_neither": 0,
         "items_updated": 0,
         "items_created": 0,
         "items_unchanged": 0
@@ -96,8 +104,8 @@ def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
     existing_items = existing_metadata.get("items", {})
     updated_items = {}
     
-    # Process all items with drop source type
-    for item_id, item_name, source_type in items_with_drops:
+    # Process all items
+    for item_id, item_name, source_type in all_items:
         stats["total_items_processed"] += 1
         item_id_str = str(item_id)
         
@@ -109,7 +117,7 @@ def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
         
         # Build acquisition methods
         has_drops = item_id in drop_rates_map
-        has_recipe = item_id in recipe_items
+        has_recipe = item_id in recipes_map
         
         drop_rates = []
         if has_drops:
@@ -118,38 +126,70 @@ def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
             rates = sorted(drop_rates_map[item_id], reverse=True)
             drop_rates = rates
         
+        recipe_info = {}
         if has_recipe:
             stats["items_with_recipes"] += 1
+            recipe_data = recipes_map[item_id]
+            recipe_info = {
+                "recipe_id": recipe_data["recipe_id"],
+                "ingredients": recipe_data["ingredients"],
+                "craft_cost": recipe_data["craft_cost"]
+            }
         
-        # Build new item metadata
+        # Count combinations
+        if has_drops and has_recipe:
+            stats["items_with_both"] += 1
+        elif has_drops:
+            stats["items_with_drop_only"] += 1
+        elif has_recipe:
+            stats["items_with_recipe_only"] += 1
+        else:
+            stats["items_with_neither"] += 1
+        
+        # Build new item metadata (only include enabled methods)
+        acquisition_methods = {}
+        
+        # Only add drop if it has drop rates
+        if has_drops:
+            acquisition_methods["drop"] = {
+                "enabled": True,
+                "drop_rates": drop_rates
+            }
+        
+        # Only add recipe if it exists
+        if has_recipe:
+            acquisition_methods["recipe"] = {
+                "enabled": True,
+                "recipe_id": recipe_info.get("recipe_id"),
+                "ingredients": recipe_info.get("ingredients", []),
+                "craft_cost": recipe_info.get("craft_cost", 1.0)
+            }
+        
+        # Preserve manual entries (fragments, crupier, etc.)
+        fragments_data = existing_item.get("acquisition_methods", {}).get("fragments", {})
+        if fragments_data.get("enabled"):
+            acquisition_methods["fragments"] = fragments_data
+        
+        crupier_enabled = existing_item.get("acquisition_methods", {}).get("crupier", {}).get("enabled", False)
+        if crupier_enabled:
+            acquisition_methods["crupier"] = {"enabled": True}
+        
+        challenge_enabled = existing_item.get("acquisition_methods", {}).get("challenge_reward", {}).get("enabled", False)
+        if challenge_enabled:
+            acquisition_methods["challenge_reward"] = {"enabled": True}
+        
+        quest_enabled = existing_item.get("acquisition_methods", {}).get("quest", {}).get("enabled", False)
+        if quest_enabled:
+            acquisition_methods["quest"] = {"enabled": True}
+        
+        other_enabled = existing_item.get("acquisition_methods", {}).get("other", {}).get("enabled", False)
+        if other_enabled:
+            acquisition_methods["other"] = {"enabled": True}
+        
         new_item = {
             "item_id": item_id,
             "name": item_name,
-            "acquisition_methods": {
-                "drop": {
-                    "enabled": has_drops,
-                    "drop_rates": drop_rates
-                },
-                "recipe": {
-                    "enabled": has_recipe
-                },
-                "fragments": {
-                    "enabled": existing_item.get("acquisition_methods", {}).get("fragments", {}).get("enabled", False),
-                    "fragment_rates": existing_item.get("acquisition_methods", {}).get("fragments", {}).get("fragment_rates", [])
-                },
-                "crupier": {
-                    "enabled": existing_item.get("acquisition_methods", {}).get("crupier", {}).get("enabled", False)
-                },
-                "challenge_reward": {
-                    "enabled": existing_item.get("acquisition_methods", {}).get("challenge_reward", {}).get("enabled", False)
-                },
-                "quest": {
-                    "enabled": existing_item.get("acquisition_methods", {}).get("quest", {}).get("enabled", False)
-                },
-                "other": {
-                    "enabled": existing_item.get("acquisition_methods", {}).get("other", {}).get("enabled", False)
-                }
-            }
+            "acquisition_methods": acquisition_methods
         }
         
         # Add timestamps
@@ -163,9 +203,13 @@ def sync_metadata_from_database(session, existing_metadata: dict) -> dict:
             old_drops = existing_item.get("acquisition_methods", {}).get("drop", {})
             old_recipe = existing_item.get("acquisition_methods", {}).get("recipe", {})
             
-            if (old_drops.get("enabled") != has_drops or 
-                old_drops.get("drop_rates") != drop_rates or
-                old_recipe.get("enabled") != has_recipe):
+            drops_changed = (old_drops.get("enabled") != has_drops or 
+                           old_drops.get("drop_rates") != drop_rates)
+            
+            recipe_changed = (old_recipe.get("enabled") != has_recipe or
+                            old_recipe.get("ingredients") != recipe_info.get("ingredients", []))
+            
+            if drops_changed or recipe_changed:
                 new_item["updated_date"] = datetime.now(timezone.utc).isoformat()
                 stats["items_updated"] += 1
             else:
@@ -290,6 +334,10 @@ def main():
         logger.info(f"Items unchanged: {stats['items_unchanged']}")
         logger.info(f"Items with drop rates: {stats['items_with_drops']}")
         logger.info(f"Items with recipes: {stats['items_with_recipes']}")
+        logger.info(f"Items with BOTH (drop + recipe): {stats['items_with_both']}")
+        logger.info(f"Items with ONLY drops: {stats['items_with_drop_only']}")
+        logger.info(f"Items with ONLY recipes: {stats['items_with_recipe_only']}")
+        logger.info(f"Items with NEITHER: {stats['items_with_neither']}")
         logger.info("")
         logger.info("COVERAGE REPORT")
         logger.info("=" * 80)
