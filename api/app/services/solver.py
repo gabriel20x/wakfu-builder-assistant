@@ -686,7 +686,7 @@ def _solve_single_build(
             
             # Build image URL
             gfx_id = monster.gfx_id if monster and monster.gfx_id else drop.monster_id
-            image_url = f"https://static.ankama.com/wakfu/portal/game/monster/{gfx_id}/image"
+            image_url = f"https://vertylo.github.io/wakassets/monsters/{gfx_id}.png"
             
             # Get preferred name (en > fr > es > pt)
             monster_name = None

@@ -1,0 +1,6050 @@
+[
+  {
+    "id": "5815",
+    "gfx_id": "1115705815",
+    "name": "Neo Prowling Spirit",
+    "family": "Neo Extras",
+    "level": "Lvl 12"
+  },
+  {
+    "id": "5822",
+    "gfx_id": "1115705822",
+    "name": "Vengeful Ghost",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5823",
+    "gfx_id": "1115705823",
+    "name": "Vengeful Ghost",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5816",
+    "gfx_id": "1115705816",
+    "name": "Neo Jonk",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5820",
+    "gfx_id": "1115705820",
+    "name": "Neo Monk",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5818",
+    "gfx_id": "1115705818",
+    "name": "Neo Hunter",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5817",
+    "gfx_id": "1115705817",
+    "name": "Neo Soldier",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5819",
+    "gfx_id": "1115705819",
+    "name": "Neo Lieutenant",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5821",
+    "gfx_id": "1115705821",
+    "name": "Vengeful Ghost",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5824",
+    "gfx_id": "1115705824",
+    "name": "Vengeful Ghost",
+    "family": "Neo Extras",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5793",
+    "gfx_id": "1115705793",
+    "name": "Neo Royal Moogrr",
+    "family": "Neo Bosses",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "5795",
+    "gfx_id": "1115705795",
+    "name": "Neo Royal Blibli",
+    "family": "Neo Bosses",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5797",
+    "gfx_id": "1115705797",
+    "name": "Neo Black Crow",
+    "family": "Neo Bosses",
+    "level": "Lvl 110"
+  },
+  {
+    "id": "5800",
+    "gfx_id": "1115705800",
+    "name": "Neo Soft Oak",
+    "family": "Neo Bosses",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "5791",
+    "gfx_id": "1115705791",
+    "name": "Neo Royal Gobball",
+    "family": "Neo Bosses",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "5792",
+    "gfx_id": "1115705792",
+    "name": "Neo Royal Piwi",
+    "family": "Neo Bosses",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "5794",
+    "gfx_id": "1115705794",
+    "name": "Neo Joel the Golem",
+    "family": "Neo Bosses",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "5796",
+    "gfx_id": "1115705796",
+    "name": "Neo Vampyro",
+    "family": "Neo Bosses",
+    "level": "Lvl 95"
+  },
+  {
+    "id": "5803",
+    "gfx_id": "1115705803",
+    "name": "Neo Wa Wabbit",
+    "family": "Neo Bosses",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5804",
+    "gfx_id": "1115705804",
+    "name": "Neo Remington Smisse",
+    "family": "Neo Bosses",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "5799",
+    "gfx_id": "1115705799",
+    "name": "Neo Kya, Missiz Freezz",
+    "family": "Neo Bosses",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "5806",
+    "gfx_id": "1115705806",
+    "name": "Neo Ogrest",
+    "family": "Neo Bosses",
+    "level": "Lvl 230"
+  },
+  {
+    "id": "5805",
+    "gfx_id": "1115705805",
+    "name": "Neo Pandora",
+    "family": "Neo Bosses",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "5716",
+    "gfx_id": "1115005716",
+    "name": "Frisco",
+    "family": "Nox Henchmen",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5718",
+    "gfx_id": "1115005718",
+    "name": "Nox",
+    "family": "Nox Henchmen",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5717",
+    "gfx_id": "1115005717",
+    "name": "Tartufo",
+    "family": "Nox Henchmen",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5715",
+    "gfx_id": "1115005715",
+    "name": "Marama",
+    "family": "Nox Henchmen",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5664",
+    "gfx_id": "1115005718",
+    "name": "Nox",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5755",
+    "gfx_id": "1114705663",
+    "name": "Bwork Swamps Golem",
+    "family": "Misty Isle",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5756",
+    "gfx_id": "1114705663",
+    "name": "Grambos' Desolation Golem",
+    "family": "Misty Isle",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5753",
+    "gfx_id": "1114705663",
+    "name": "Cosmo Canyon Golem",
+    "family": "Misty Isle",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5754",
+    "gfx_id": "1114705663",
+    "name": "Savannah Golem",
+    "family": "Misty Isle",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5663",
+    "gfx_id": "1114705663",
+    "name": "Primal Forest Golem",
+    "family": "Misty Isle",
+    "level": "Lvl 245"
+  },
+  {
+    "id": "5648",
+    "gfx_id": "1114205648",
+    "name": "Noxilt",
+    "family": "Nox Machines",
+    "level": "Lvl 233 - 237"
+  },
+  {
+    "id": "5649",
+    "gfx_id": "1114205649",
+    "name": "Noximpetus",
+    "family": "Nox Machines",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5650",
+    "gfx_id": "1114205650",
+    "name": "Protozetime",
+    "family": "Nox Machines",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5651",
+    "gfx_id": "1114205651",
+    "name": "Dominant Nox Machines",
+    "family": "Nox Machines",
+    "level": "Lvl 243 - 248"
+  },
+  {
+    "id": "5647",
+    "gfx_id": "1114205647",
+    "name": "Noxus IV",
+    "family": "Nox Machines",
+    "level": "Lvl 239 - 242"
+  },
+  {
+    "id": "5745",
+    "gfx_id": "189504394",
+    "name": "Noxine",
+    "family": "Nox Machines",
+    "level": "Lvl 1"
+  },
+  {
+    "id": "5642",
+    "gfx_id": "1114205642",
+    "name": "Big Mama Bwork",
+    "family": "Bworkana Clan",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5643",
+    "gfx_id": "1114205643",
+    "name": "Old Bwork Woman",
+    "family": "Bworkana Clan",
+    "level": "Lvl 233 - 237"
+  },
+  {
+    "id": "5641",
+    "gfx_id": "1114205641",
+    "name": "Mama Bwork",
+    "family": "Bworkana Clan",
+    "level": "Lvl 239 - 243"
+  },
+  {
+    "id": "5644",
+    "gfx_id": "1114205644",
+    "name": "War Chief Zulnara",
+    "family": "Bworkana Clan",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5645",
+    "gfx_id": "1114205645",
+    "name": "Dominant Bworkana Clan Member",
+    "family": "Bworkana Clan",
+    "level": "Lvl 243 - 248"
+  },
+  {
+    "id": "5637",
+    "gfx_id": "1114205637",
+    "name": "Marvelous Chimera",
+    "family": "Starvannahs",
+    "level": "Lvl 233 - 237"
+  },
+  {
+    "id": "5639",
+    "gfx_id": "1114205639",
+    "name": "Dominant Starvannah",
+    "family": "Starvannahs",
+    "level": "Lvl 243 - 248"
+  },
+  {
+    "id": "5635",
+    "gfx_id": "1114205635",
+    "name": "Moody Male",
+    "family": "Starvannahs",
+    "level": "Lvl 239 - 243"
+  },
+  {
+    "id": "5636",
+    "gfx_id": "1114205636",
+    "name": "Astrunk",
+    "family": "Starvannahs",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5638",
+    "gfx_id": "1114205638",
+    "name": "Timo the Possessed",
+    "family": "Starvannahs",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5630",
+    "gfx_id": "1114205630",
+    "name": "Terronite",
+    "family": "Primounts",
+    "level": "Lvl 233 - 237"
+  },
+  {
+    "id": "5631",
+    "gfx_id": "1114205631",
+    "name": "Rhinocerock",
+    "family": "Primounts",
+    "level": "Lvl 239 - 242"
+  },
+  {
+    "id": "5632",
+    "gfx_id": "1114205632",
+    "name": "Imagorila",
+    "family": "Primounts",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5629",
+    "gfx_id": "1114205629",
+    "name": "Teralonyx",
+    "family": "Primounts",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5633",
+    "gfx_id": "1114205633",
+    "name": "Dominant Primount",
+    "family": "Primounts",
+    "level": "Lvl 243 - 248"
+  },
+  {
+    "id": "5623",
+    "gfx_id": "1114205623",
+    "name": "Veloslayraptor",
+    "family": "Ferociraptors",
+    "level": "Lvl 233 - 237"
+  },
+  {
+    "id": "5624",
+    "gfx_id": "1114205624",
+    "name": "Nebuchadnesaurus",
+    "family": "Ferociraptors",
+    "level": "Lvl 235 - 239"
+  },
+  {
+    "id": "5625",
+    "gfx_id": "1114205625",
+    "name": "Swalodon",
+    "family": "Ferociraptors",
+    "level": "Lvl 239 - 243"
+  },
+  {
+    "id": "5626",
+    "gfx_id": "1114205626",
+    "name": "Dazzlosaurus",
+    "family": "Ferociraptors",
+    "level": "Lvl 248 - 253"
+  },
+  {
+    "id": "5627",
+    "gfx_id": "1114205627",
+    "name": "Denver",
+    "family": "Ferociraptors",
+    "level": "Lvl 243 - 248"
+  },
+  {
+    "id": "5589",
+    "gfx_id": "1113105589",
+    "name": "Toross Mordal",
+    "family": "Necroworld",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5476",
+    "gfx_id": "1111905476",
+    "name": "Scaravager",
+    "family": "Sandyoptera",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "5475",
+    "gfx_id": "1111905475",
+    "name": "Killer Mantis",
+    "family": "Sandyoptera",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "5477",
+    "gfx_id": "1111905477",
+    "name": "Looterbug",
+    "family": "Sandyoptera",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "5478",
+    "gfx_id": "1111905478",
+    "name": "Endopterygotic Bombyxolite",
+    "family": "Sandyoptera",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5479",
+    "gfx_id": "1111905479",
+    "name": "Dominant Scarazure",
+    "family": "Sandyoptera",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "5480",
+    "gfx_id": "1111905480",
+    "name": "Archeobombyx the Spicy",
+    "family": "Sandyoptera",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5473",
+    "gfx_id": "1111705473",
+    "name": "Ougyptian the Cursed",
+    "family": "Muvegitants",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "5468",
+    "gfx_id": "1111705468",
+    "name": "Leekult",
+    "family": "Muvegitants",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "5472",
+    "gfx_id": "1111705472",
+    "name": "Dominant Parasicawwot",
+    "family": "Muvegitants",
+    "level": "Lvl 138 - 143"
+  },
+  {
+    "id": "5544",
+    "gfx_id": "1111705544",
+    "name": "Bradish",
+    "family": "Muvegitants",
+    "level": "Lvl 124 - 128"
+  },
+  {
+    "id": "5469",
+    "gfx_id": "1111705469",
+    "name": "Mutakorn",
+    "family": "Muvegitants",
+    "level": "Lvl 132 - 136"
+  },
+  {
+    "id": "5470",
+    "gfx_id": "1111705470",
+    "name": "Megalunyin",
+    "family": "Muvegitants",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "5471",
+    "gfx_id": "1111705471",
+    "name": "Culinary Grand Master Zomkin",
+    "family": "Muvegitants",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "5474",
+    "gfx_id": "1111705474",
+    "name": "Zombie Cawwot",
+    "family": "Muvegitants",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "5543",
+    "gfx_id": "1111705543",
+    "name": "Kaviar the Eggplant",
+    "family": "Muvegitants",
+    "level": "Lvl 124 - 128"
+  },
+  {
+    "id": "5526",
+    "gfx_id": "100201136",
+    "name": "Celestial Gobball",
+    "family": "Embrysouls",
+    "level": "Lvl 8"
+  },
+  {
+    "id": "5527",
+    "gfx_id": "117402507",
+    "name": "Darth Wodent",
+    "family": "Embrysouls",
+    "level": "Lvl 8"
+  },
+  {
+    "id": "5465",
+    "gfx_id": "104000326",
+    "name": "Prancing Chimera",
+    "family": "",
+    "level": "Lvl 1"
+  },
+  {
+    "id": "5457",
+    "gfx_id": "100501620",
+    "name": "Gobgob",
+    "family": "",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "5456",
+    "gfx_id": "117402505",
+    "name": "Mama Wodent",
+    "family": "Embrysouls",
+    "level": "Lvl 4 - 8"
+  },
+  {
+    "id": "5525",
+    "gfx_id": "117402504",
+    "name": "Wodent",
+    "family": "Embrysouls",
+    "level": "Lvl 1"
+  },
+  {
+    "id": "5455",
+    "gfx_id": "117402504",
+    "name": "Wodent",
+    "family": "Embrysouls",
+    "level": "Lvl 2 - 6"
+  },
+  {
+    "id": "5447",
+    "gfx_id": "1111105447",
+    "name": "Ysorpel",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5453",
+    "gfx_id": "1111105453",
+    "name": "Chimera Ydalipe",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5445",
+    "gfx_id": "1111105445",
+    "name": "Lela",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5449",
+    "gfx_id": "1111105449",
+    "name": "Chimera Lela",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5450",
+    "gfx_id": "1111105450",
+    "name": "Cupboard",
+    "family": "Misses Ugly",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "5446",
+    "gfx_id": "1111105446",
+    "name": "Enca",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5451",
+    "gfx_id": "1111105451",
+    "name": "Chimera Enca",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5448",
+    "gfx_id": "1111105448",
+    "name": "Ydalipe",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5452",
+    "gfx_id": "1111105452",
+    "name": "Chimera Ysorpel",
+    "family": "Misses Ugly",
+    "level": "Lvl 68 - 71"
+  },
+  {
+    "id": "5481",
+    "gfx_id": "1111105445",
+    "name": "Lela",
+    "family": "Misses Ugly",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "5416",
+    "gfx_id": "183905357",
+    "name": "Cire Momore",
+    "family": "Ereboria",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "5418",
+    "gfx_id": "183905357",
+    "name": "Cire Momore",
+    "family": "Ereboria",
+    "level": "Lvl 228 - 233"
+  },
+  {
+    "id": "5417",
+    "gfx_id": "183905357",
+    "name": "Cire Momore",
+    "family": "Ereboria",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "5397",
+    "gfx_id": "1110605397",
+    "name": "Mechano",
+    "family": "Foggernauts",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5401",
+    "gfx_id": "1110605401",
+    "name": "Dominant Foggernaut",
+    "family": "Foggernauts",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5399",
+    "gfx_id": "1110605399",
+    "name": "Stasification Unit",
+    "family": "Foggernauts",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5400",
+    "gfx_id": "1110605400",
+    "name": "Sire Flexington",
+    "family": "Foggernauts",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5402",
+    "gfx_id": "1110605402",
+    "name": "Stork the Ingenious",
+    "family": "Foggernauts",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5398",
+    "gfx_id": "1110605398",
+    "name": "Elite Gunner",
+    "family": "Foggernauts",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5393",
+    "gfx_id": "1110405393",
+    "name": "Assassiren",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5391",
+    "gfx_id": "1110405391",
+    "name": "Jeeper Creeper",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5396",
+    "gfx_id": "1110405396",
+    "name": "Cire Momoriss",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5392",
+    "gfx_id": "1110405392",
+    "name": "Abyssal Slugger",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5394",
+    "gfx_id": "1110405394",
+    "name": "Raeliss",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5395",
+    "gfx_id": "1110405395",
+    "name": "Dominant Creeper",
+    "family": "Abyssal Creepers",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5389",
+    "gfx_id": "1110205389",
+    "name": "Dominant Bitter-Hammer",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 59 - 63"
+  },
+  {
+    "id": "5386",
+    "gfx_id": "1110205386",
+    "name": "Burrumbrilla",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 53 - 57"
+  },
+  {
+    "id": "5385",
+    "gfx_id": "1110205385",
+    "name": "Hemmyr",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 55 - 59"
+  },
+  {
+    "id": "5390",
+    "gfx_id": "1110205390",
+    "name": "Protogolem",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5387",
+    "gfx_id": "1110205387",
+    "name": "Axshield",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 59 - 63"
+  },
+  {
+    "id": "5388",
+    "gfx_id": "1110205388",
+    "name": "Joel the Golem",
+    "family": "Bitter-Hammers",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "5380",
+    "gfx_id": "1110005380",
+    "name": "Infernyob",
+    "family": "Deathburns",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "5382",
+    "gfx_id": "1110005382",
+    "name": "Hark Saniss, the Last Giant",
+    "family": "Deathburns",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "5384",
+    "gfx_id": "1110005384",
+    "name": "Protoskeleton",
+    "family": "Deathburns",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5379",
+    "gfx_id": "1110005379",
+    "name": "Burned Bwork",
+    "family": "Deathburns",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "5381",
+    "gfx_id": "1110005381",
+    "name": "Tombstomp",
+    "family": "Deathburns",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "5383",
+    "gfx_id": "1110005383",
+    "name": "Dominant Deathburn",
+    "family": "Deathburns",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "5373",
+    "gfx_id": "1109805373",
+    "name": "Sister of the Coast",
+    "family": "Octopus Crew",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "5376",
+    "gfx_id": "1109805376",
+    "name": "Pohl the Octopus",
+    "family": "Octopus Crew",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "5378",
+    "gfx_id": "1109805378",
+    "name": "Protoctopus",
+    "family": "Octopus Crew",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5375",
+    "gfx_id": "1109805375",
+    "name": "Ocean Brawler",
+    "family": "Octopus Crew",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "5374",
+    "gfx_id": "1109805374",
+    "name": "Asse Buccaneer",
+    "family": "Octopus Crew",
+    "level": "Lvl 38 - 42"
+  },
+  {
+    "id": "5377",
+    "gfx_id": "1109805377",
+    "name": "Clumsy Corsair",
+    "family": "Octopus Crew",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "5500",
+    "gfx_id": "109605000",
+    "name": "Tal Kasha",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 155"
+  },
+  {
+    "id": "5501",
+    "gfx_id": "109605001",
+    "name": "Sneerena",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 155"
+  },
+  {
+    "id": "5502",
+    "gfx_id": "109605002",
+    "name": "Elemental Pyramid",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 155"
+  },
+  {
+    "id": "5305",
+    "gfx_id": "1108305305",
+    "name": "Anathar",
+    "family": "Shustuft Crust",
+    "level": "Lvl 230"
+  },
+  {
+    "id": "3971",
+    "gfx_id": "181103971",
+    "name": "Nyl King",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3968",
+    "gfx_id": "181103968",
+    "name": "Nyl Hunter",
+    "family": "Moon Island",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "4352",
+    "gfx_id": "181104352",
+    "name": "Rick Croc",
+    "family": "Moon Island",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "3969",
+    "gfx_id": "181103969",
+    "name": "Nyl Ripper",
+    "family": "Moon Island",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "3970",
+    "gfx_id": "181103970",
+    "name": "Nyl Shaman",
+    "family": "Moon Island",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "3861",
+    "gfx_id": "179403861",
+    "name": "Pheromaniac",
+    "family": "Moon Island",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "3862",
+    "gfx_id": "179403862",
+    "name": "Dionatrap",
+    "family": "Moon Island",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "3863",
+    "gfx_id": "179403863",
+    "name": "Tropilian",
+    "family": "Moon Island",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "3866",
+    "gfx_id": "179403866",
+    "name": "Grozepin",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "4353",
+    "gfx_id": "179404353",
+    "name": "Toxik the Magik Plant",
+    "family": "Moon Island",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "4351",
+    "gfx_id": "179403979",
+    "name": "Kanniballshadow",
+    "family": "Moon Island",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "3855",
+    "gfx_id": "179403855",
+    "name": "Kanniball Lymi",
+    "family": "Moon Island",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "3857",
+    "gfx_id": "179403857",
+    "name": "Voodoo Kanniball",
+    "family": "Moon Island",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "3856",
+    "gfx_id": "179403856",
+    "name": "Kanniball Et",
+    "family": "Moon Island",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "3864",
+    "gfx_id": "179403864",
+    "name": "Kannilooni",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3865",
+    "gfx_id": "179403865",
+    "name": "Koko the Nutt",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3858",
+    "gfx_id": "179403858",
+    "name": "Psykoko",
+    "family": "Moon Island",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "3860",
+    "gfx_id": "179403860",
+    "name": "Kokoloss",
+    "family": "Moon Island",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "4354",
+    "gfx_id": "179404354",
+    "name": "Ken'Koko",
+    "family": "Moon Island",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "3859",
+    "gfx_id": "179403859",
+    "name": "Kokoleric",
+    "family": "Moon Island",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "5313",
+    "gfx_id": "127802785",
+    "name": "Shusnitch",
+    "family": "Shustuft Crust",
+    "level": "Lvl 10"
+  },
+  {
+    "id": "5302",
+    "gfx_id": "1108105302",
+    "name": "Glutonny",
+    "family": "Destroyers",
+    "level": "Lvl 228 - 232"
+  },
+  {
+    "id": "5300",
+    "gfx_id": "1108105300",
+    "name": "Master of Darkness",
+    "family": "Destroyers",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5301",
+    "gfx_id": "1108105301",
+    "name": "K'abah'al, Guardian of the Route of the Dead",
+    "family": "Destroyers",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5303",
+    "gfx_id": "1108105303",
+    "name": "Constant the Eternal",
+    "family": "Destroyers",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5298",
+    "gfx_id": "1108105298",
+    "name": "Greedo",
+    "family": "Destroyers",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5299",
+    "gfx_id": "1108105299",
+    "name": "Druidre",
+    "family": "Destroyers",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5297",
+    "gfx_id": "1107905297",
+    "name": "~`hd#@! the Misunderstood",
+    "family": "Streyes",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5295",
+    "gfx_id": "1107905295",
+    "name": "!@#dh`~",
+    "family": "Streyes",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5293",
+    "gfx_id": "1107905293",
+    "name": "Detrevni",
+    "family": "Streyes",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5294",
+    "gfx_id": "1107905294",
+    "name": "CeEvroaint",
+    "family": "Streyes",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5292",
+    "gfx_id": "1107905292",
+    "name": "Reman'haunt",
+    "family": "Streyes",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5296",
+    "gfx_id": "1107905296",
+    "name": "Dominant Streye",
+    "family": "Streyes",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5286",
+    "gfx_id": "1107705286",
+    "name": "Bloodcensor",
+    "family": "Horridemons",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5287",
+    "gfx_id": "1107705287",
+    "name": "Dismembering Raptor",
+    "family": "Horridemons",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5290",
+    "gfx_id": "1107705290",
+    "name": "Dominant Horridemon",
+    "family": "Horridemons",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5288",
+    "gfx_id": "1107705288",
+    "name": "Condemner",
+    "family": "Horridemons",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5289",
+    "gfx_id": "1107705289",
+    "name": "Crateros, Ending Executioner",
+    "family": "Horridemons",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5291",
+    "gfx_id": "1107705291",
+    "name": "Archibald the Frightful",
+    "family": "Horridemons",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5280",
+    "gfx_id": "1107505280",
+    "name": "Echivoidea",
+    "family": "Voidivions",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5285",
+    "gfx_id": "1107505285",
+    "name": "Ar'Manthe the Religious",
+    "family": "Voidivions",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5282",
+    "gfx_id": "1107505282",
+    "name": "Chrysavoid",
+    "family": "Voidivions",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5281",
+    "gfx_id": "1107505281",
+    "name": "Inanite",
+    "family": "Voidivions",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5284",
+    "gfx_id": "1107505284",
+    "name": "Dominant Voidivion",
+    "family": "Voidivions",
+    "level": "Lvl 222 - 226"
+  },
+  {
+    "id": "5283",
+    "gfx_id": "1107505283",
+    "name": "Ar'Nan, Omen of the Void",
+    "family": "Voidivions",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5274",
+    "gfx_id": "1107305274",
+    "name": "Meristenmity",
+    "family": "Phytomorphs",
+    "level": "Lvl 224 - 228"
+  },
+  {
+    "id": "5277",
+    "gfx_id": "1107305277",
+    "name": "Vaal'Enthia, Demon Queen",
+    "family": "Phytomorphs",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5279",
+    "gfx_id": "1107305279",
+    "name": "Viil the Incorruptible",
+    "family": "Phytomorphs",
+    "level": "Lvl 233 - 238"
+  },
+  {
+    "id": "5275",
+    "gfx_id": "1107305275",
+    "name": "Devilshroom",
+    "family": "Phytomorphs",
+    "level": "Lvl 220 - 224"
+  },
+  {
+    "id": "5276",
+    "gfx_id": "1107305276",
+    "name": "Virescent",
+    "family": "Phytomorphs",
+    "level": "Lvl 218 - 222"
+  },
+  {
+    "id": "5278",
+    "gfx_id": "1107305278",
+    "name": "Dominant Phytomorph",
+    "family": "Phytomorphs",
+    "level": "Lvl 228 - 233"
+  },
+  {
+    "id": "5245",
+    "gfx_id": "1106805245",
+    "name": "Gluguin",
+    "family": "Pingwins",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5248",
+    "gfx_id": "1106805248",
+    "name": "Dominant Pingwin",
+    "family": "Pingwins",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5244",
+    "gfx_id": "1106805244",
+    "name": "Lazeguin",
+    "family": "Pingwins",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5246",
+    "gfx_id": "1106805246",
+    "name": "Chocguin",
+    "family": "Pingwins",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5247",
+    "gfx_id": "1106805247",
+    "name": "Sumorse",
+    "family": "Pingwins",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5249",
+    "gfx_id": "1106805249",
+    "name": "Morsnivel the Tearful",
+    "family": "Pingwins",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5238",
+    "gfx_id": "1106705238",
+    "name": "Illursary",
+    "family": "Plantiguards",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5239",
+    "gfx_id": "1106705239",
+    "name": "Ursawollen",
+    "family": "Plantiguards",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5240",
+    "gfx_id": "1106705240",
+    "name": "Kung Fursa",
+    "family": "Plantiguards",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5241",
+    "gfx_id": "1106705241",
+    "name": "Bearkneck",
+    "family": "Plantiguards",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5242",
+    "gfx_id": "1106705242",
+    "name": "Dominant Plantiguard",
+    "family": "Plantiguards",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5243",
+    "gfx_id": "1106705243",
+    "name": "Scoobidursa the Gluttonursa",
+    "family": "Plantiguards",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5233",
+    "gfx_id": "1106605233",
+    "name": "Chamelehombre",
+    "family": "Scramshells",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5232",
+    "gfx_id": "1106605232",
+    "name": "Dragonorrhea",
+    "family": "Scramshells",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5235",
+    "gfx_id": "1106605235",
+    "name": "Tortumult",
+    "family": "Scramshells",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5236",
+    "gfx_id": "1106605236",
+    "name": "Dominant Scramshell",
+    "family": "Scramshells",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5237",
+    "gfx_id": "1106605237",
+    "name": "Torturpid the Vile",
+    "family": "Scramshells",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5234",
+    "gfx_id": "1106605234",
+    "name": "Torturbulent",
+    "family": "Scramshells",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5229",
+    "gfx_id": "193805229",
+    "name": "Agony, Livid Necromancer",
+    "family": "Mineral Tower",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5226",
+    "gfx_id": "193805226",
+    "name": "Jadarmed",
+    "family": "Mineral Tower",
+    "level": "Lvl 202 - 210"
+  },
+  {
+    "id": "5228",
+    "gfx_id": "193805228",
+    "name": "Agatank",
+    "family": "Mineral Tower",
+    "level": "Lvl 202 - 210"
+  },
+  {
+    "id": "5227",
+    "gfx_id": "193805227",
+    "name": "Emeraldin",
+    "family": "Mineral Tower",
+    "level": "Lvl 202 - 210"
+  },
+  {
+    "id": "5186",
+    "gfx_id": "1106205186",
+    "name": "Wolfix",
+    "family": "Osamosa",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5190",
+    "gfx_id": "1106205190",
+    "name": "Imbuffullo the Egotistical",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5187",
+    "gfx_id": "1106205187",
+    "name": "Prefoxterous",
+    "family": "Osamosa",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5185",
+    "gfx_id": "1106205185",
+    "name": "Tigray",
+    "family": "Osamosa",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5188",
+    "gfx_id": "1106205188",
+    "name": "Flamboyffalo",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5189",
+    "gfx_id": "1106205189",
+    "name": "Dominant Tundrazor",
+    "family": "Osamosa",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5180",
+    "gfx_id": "1106105180",
+    "name": "Pincision",
+    "family": "Osamosa",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5181",
+    "gfx_id": "1106105181",
+    "name": "Pinsular",
+    "family": "Osamosa",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5184",
+    "gfx_id": "1106105184",
+    "name": "Pinsurbordinate the Rebel",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5179",
+    "gfx_id": "1106105179",
+    "name": "Cwabplaner",
+    "family": "Osamosa",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5182",
+    "gfx_id": "1106105182",
+    "name": "Cerebratacean",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5183",
+    "gfx_id": "1106105183",
+    "name": "Dominant Crabstacean",
+    "family": "Osamosa",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5178",
+    "gfx_id": "1106005178",
+    "name": "Scorprank the Joker",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5173",
+    "gfx_id": "1106005173",
+    "name": "Castorbital",
+    "family": "Osamosa",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5175",
+    "gfx_id": "1106005175",
+    "name": "Carapudgeon",
+    "family": "Osamosa",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5176",
+    "gfx_id": "1106005176",
+    "name": "Stompion",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5177",
+    "gfx_id": "1106005177",
+    "name": "Dominant Sunsloth",
+    "family": "Osamosa",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5174",
+    "gfx_id": "1106005174",
+    "name": "Tattoorlwind",
+    "family": "Osamosa",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5167",
+    "gfx_id": "1105905167",
+    "name": "Antlerus",
+    "family": "Osamosa",
+    "level": "Lvl 209 - 213"
+  },
+  {
+    "id": "5168",
+    "gfx_id": "1105905168",
+    "name": "Uto-Pike",
+    "family": "Osamosa",
+    "level": "Lvl 203 - 207"
+  },
+  {
+    "id": "5172",
+    "gfx_id": "1105905172",
+    "name": "Vandalopia the Unseeing",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5170",
+    "gfx_id": "1105905170",
+    "name": "Hogincubus",
+    "family": "Osamosa",
+    "level": "Lvl 218 - 223"
+  },
+  {
+    "id": "5169",
+    "gfx_id": "1105905169",
+    "name": "Apessassin",
+    "family": "Osamosa",
+    "level": "Lvl 205 - 209"
+  },
+  {
+    "id": "5171",
+    "gfx_id": "1105905171",
+    "name": "Dominant Vandalophrenic",
+    "family": "Osamosa",
+    "level": "Lvl 213 - 218"
+  },
+  {
+    "id": "5165",
+    "gfx_id": "137201723",
+    "name": "Aguabrial",
+    "family": "Mount Zinit",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5055",
+    "gfx_id": "1103205055",
+    "name": "Tanuki-Chan Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 188 - 192"
+  },
+  {
+    "id": "5056",
+    "gfx_id": "1103205056",
+    "name": "Yokai Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 188 - 192"
+  },
+  {
+    "id": "5058",
+    "gfx_id": "1103205058",
+    "name": "Mighty Blighty the Blightopard Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5054",
+    "gfx_id": "1103205054",
+    "name": "Pandulum Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "5059",
+    "gfx_id": "1103205059",
+    "name": "Ghost Tanukouï San",
+    "family": "Pandalucia",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5057",
+    "gfx_id": "1103205057",
+    "name": "Dominant Pandala Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "5053",
+    "gfx_id": "1103205053",
+    "name": "Pandit Ghost",
+    "family": "Pandalucia",
+    "level": "Lvl 194 - 198"
+  },
+  {
+    "id": "5049",
+    "gfx_id": "1103105049",
+    "name": "Blightoxious",
+    "family": "Pandalucia",
+    "level": "Lvl 188 - 192"
+  },
+  {
+    "id": "5052",
+    "gfx_id": "1103105052",
+    "name": "Blightogre",
+    "family": "Pandalucia",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5048",
+    "gfx_id": "1103105048",
+    "name": "Blightobum",
+    "family": "Pandalucia",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "5050",
+    "gfx_id": "1103105050",
+    "name": "Blightoccult",
+    "family": "Pandalucia",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "5047",
+    "gfx_id": "1103105047",
+    "name": "Blightrocioius",
+    "family": "Pandalucia",
+    "level": "Lvl 194 - 198"
+  },
+  {
+    "id": "5051",
+    "gfx_id": "1103105051",
+    "name": "Blightomeric the Poet",
+    "family": "Pandalucia",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5042",
+    "gfx_id": "1103005042",
+    "name": "Pandit",
+    "family": "Pandalucia",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "5044",
+    "gfx_id": "1103005044",
+    "name": "Dominant Pandissident",
+    "family": "Pandalucia",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "5046",
+    "gfx_id": "1103005046",
+    "name": "Pandora",
+    "family": "Pandalucia",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "5041",
+    "gfx_id": "1103005041",
+    "name": "Pandikaze",
+    "family": "Pandalucia",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "5043",
+    "gfx_id": "1103005043",
+    "name": "Pandoo",
+    "family": "Pandalucia",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "5045",
+    "gfx_id": "1103005045",
+    "name": "Pandamik the Ill",
+    "family": "Pandalucia",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "5035",
+    "gfx_id": "1102905035",
+    "name": "Bulbiflor",
+    "family": "Pandalucia",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "5036",
+    "gfx_id": "1102905036",
+    "name": "Bulbush",
+    "family": "Pandalucia",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "5037",
+    "gfx_id": "1102905037",
+    "name": "Bulbamboo",
+    "family": "Pandalucia",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "5040",
+    "gfx_id": "1102905040",
+    "name": "Bulbrute",
+    "family": "Pandalucia",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5038",
+    "gfx_id": "1102905038",
+    "name": "Dominant Plantala",
+    "family": "Pandalucia",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "5039",
+    "gfx_id": "1102905039",
+    "name": "Saurbabul the Strange",
+    "family": "Pandalucia",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5138",
+    "gfx_id": "1104005138",
+    "name": "Dominant Bubourg",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "5137",
+    "gfx_id": "1104005137",
+    "name": "Bubotron Bubourg",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5136",
+    "gfx_id": "1104005136",
+    "name": "Noicebubourg",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "5139",
+    "gfx_id": "1104005139",
+    "name": "Superb Owl",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "5134",
+    "gfx_id": "1104005134",
+    "name": "Minibubourg",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "5135",
+    "gfx_id": "1104005135",
+    "name": "Bubourg Mage",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 194 - 198"
+  },
+  {
+    "id": "5128",
+    "gfx_id": "1103905128",
+    "name": "Baby Gerbean",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 173 - 177"
+  },
+  {
+    "id": "5130",
+    "gfx_id": "1103905130",
+    "name": "Grandpa Gerbean",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 179 - 183"
+  },
+  {
+    "id": "5131",
+    "gfx_id": "1103905131",
+    "name": "Mama Gerbean",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "5132",
+    "gfx_id": "1103905132",
+    "name": "Dominant Gerbean",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "5133",
+    "gfx_id": "1103905133",
+    "name": "Electric Pick-and-Chew",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "5129",
+    "gfx_id": "1103905129",
+    "name": "Gerbean",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 175 - 179"
+  },
+  {
+    "id": "5106",
+    "gfx_id": "1103805106",
+    "name": "Minor Arachnee",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 72"
+  },
+  {
+    "id": "5109",
+    "gfx_id": "1103805109",
+    "name": "Mahgik Trichnee the Magician",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5110",
+    "gfx_id": "103600280",
+    "name": "Small Arachnee",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 74"
+  },
+  {
+    "id": "5104",
+    "gfx_id": "1103805104",
+    "name": "Hairy Arachnee",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "5105",
+    "gfx_id": "1103805105",
+    "name": "Major Arachnee",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "5107",
+    "gfx_id": "1103805107",
+    "name": "Black Widow",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5108",
+    "gfx_id": "1103805108",
+    "name": "Dominant Arachnee",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 74"
+  },
+  {
+    "id": "5111",
+    "gfx_id": "105501433",
+    "name": "Boowolf",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "5113",
+    "gfx_id": "105501435",
+    "name": "Miliboowolf",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 68 - 72"
+  },
+  {
+    "id": "5114",
+    "gfx_id": "105501792",
+    "name": "Giant Moon",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5112",
+    "gfx_id": "105501434",
+    "name": "Boowolfine",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "5115",
+    "gfx_id": "105501456",
+    "name": "Moon",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 80"
+  },
+  {
+    "id": "5126",
+    "gfx_id": "10553373",
+    "name": "Grizzled Auburn Boowerewolf",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5127",
+    "gfx_id": "105502130",
+    "name": "Mulligan the Discarded",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "5155",
+    "gfx_id": "104702383",
+    "name": "Count Harebourg",
+    "family": "Sadida Kingdom",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5099",
+    "gfx_id": "1103305099",
+    "name": "Thirster",
+    "family": "Pandalucia",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5100",
+    "gfx_id": "1103305100",
+    "name": "Tanuki-Chan",
+    "family": "Pandalucia",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5101",
+    "gfx_id": "1103305101",
+    "name": "Yokai Firefoux",
+    "family": "Pandalucia",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "5102",
+    "gfx_id": "1103305102",
+    "name": "Tanukouï San",
+    "family": "Pandalucia",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "3893",
+    "gfx_id": "112903893",
+    "name": "Khan Karkass",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "4881",
+    "gfx_id": "104704881",
+    "name": "Mine Chafer Archer",
+    "family": "Chafers",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "4882",
+    "gfx_id": "104704882",
+    "name": "Elite Mine Chafer",
+    "family": "Chafers",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4883",
+    "gfx_id": "104704883",
+    "name": "Mine Chafer Lancer",
+    "family": "Chafers",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "5015",
+    "gfx_id": "129401464",
+    "name": "Energizing Cappuccino",
+    "family": "Hoodlums",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4768",
+    "gfx_id": "129401464",
+    "name": "Hoodlum Mage",
+    "family": "Hoodlums",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "5016",
+    "gfx_id": "10",
+    "name": "Dominant Hoodlum",
+    "family": "Hoodlums",
+    "level": "Lvl 168 - 173"
+  },
+  {
+    "id": "4767",
+    "gfx_id": "40",
+    "name": "Hoodlum Assassin",
+    "family": "Hoodlums",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "4769",
+    "gfx_id": "10",
+    "name": "Hoodlum Protector",
+    "family": "Hoodlums",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "4924",
+    "gfx_id": "129402228",
+    "name": "Hoodfella",
+    "family": "Hoodlums",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4878",
+    "gfx_id": "129004878",
+    "name": "Ancestral Mine Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "4880",
+    "gfx_id": "129004880",
+    "name": "Mine Crackrock",
+    "family": "Cracklers",
+    "level": "Lvl 38 - 42"
+  },
+  {
+    "id": "4879",
+    "gfx_id": "129004879",
+    "name": "Mine Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "5018",
+    "gfx_id": "120201407",
+    "name": "Dominant Rogue",
+    "family": "Rogues",
+    "level": "Lvl 168 - 173"
+  },
+  {
+    "id": "2013",
+    "gfx_id": "120201409",
+    "name": "Rouge Rogue",
+    "family": "Rogues",
+    "level": "Lvl 160 - 162"
+  },
+  {
+    "id": "2014",
+    "gfx_id": "120201407",
+    "name": "Rogue Rtist",
+    "family": "Rogues",
+    "level": "Lvl 164 - 168"
+  },
+  {
+    "id": "2015",
+    "gfx_id": "120201408",
+    "name": "Rogue Rob Ludgeon",
+    "family": "Rogues",
+    "level": "Lvl 158 - 162"
+  },
+  {
+    "id": "2018",
+    "gfx_id": "197902018",
+    "name": "Remington Smisse",
+    "family": "Rogues",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "2016",
+    "gfx_id": "122401234",
+    "name": "Tibia-Thrasher",
+    "family": "Rogues",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "5017",
+    "gfx_id": "197905017",
+    "name": "Rouflacket the Gentleman",
+    "family": "Rogues",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4843",
+    "gfx_id": "101601274",
+    "name": "Contaminated Plant",
+    "family": "Amakna",
+    "level": "Lvl 45"
+  },
+  {
+    "id": "4864",
+    "gfx_id": "166603293",
+    "name": "Brakmar Mercenary",
+    "family": "",
+    "level": "Lvl 3"
+  },
+  {
+    "id": "4863",
+    "gfx_id": "166603293",
+    "name": "Bonta Mercenary",
+    "family": "",
+    "level": "Lvl 3"
+  },
+  {
+    "id": "4746",
+    "gfx_id": "166603293",
+    "name": "Sufokia Mercenary",
+    "family": "",
+    "level": "Lvl 3"
+  },
+  {
+    "id": "4783",
+    "gfx_id": "166603293",
+    "name": "Amakna Mercenary",
+    "family": "",
+    "level": "Lvl 3"
+  },
+  {
+    "id": "4780",
+    "gfx_id": "195604780",
+    "name": "Blopgang Amadeus Blopzart",
+    "family": "Musical Blops",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "4781",
+    "gfx_id": "118800992",
+    "name": "Dominant Blop",
+    "family": "Musical Blops",
+    "level": "Lvl 152 - 157"
+  },
+  {
+    "id": "4782",
+    "gfx_id": "137201736",
+    "name": "Blopal the Resplendent",
+    "family": "Musical Blops",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "4777",
+    "gfx_id": "195604777",
+    "name": "Flute-Playing Blop",
+    "family": "Musical Blops",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "4778",
+    "gfx_id": "195604778",
+    "name": "Blop Dylan",
+    "family": "Musical Blops",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "4779",
+    "gfx_id": "195604779",
+    "name": "Drumble Blop",
+    "family": "Musical Blops",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "4795",
+    "gfx_id": "143604795",
+    "name": "Flying Spitter",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "4770",
+    "gfx_id": "143604770",
+    "name": "Shadofang",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "4791",
+    "gfx_id": "143604791",
+    "name": "Shadofang's Shadow",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "4796",
+    "gfx_id": "143604796",
+    "name": "Destroyer",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "4661",
+    "gfx_id": "193804661",
+    "name": "Jadarmed",
+    "family": "Mineral Tower",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4662",
+    "gfx_id": "193804662",
+    "name": "Emeraldin",
+    "family": "Mineral Tower",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4664",
+    "gfx_id": "193804664",
+    "name": "Crystal-Heart Agony",
+    "family": "Mineral Tower",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4663",
+    "gfx_id": "193804663",
+    "name": "Agatank",
+    "family": "Mineral Tower",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4648",
+    "gfx_id": "193804648",
+    "name": "Jadarmed",
+    "family": "Mineral Tower",
+    "level": "Lvl 37 - 45"
+  },
+  {
+    "id": "4650",
+    "gfx_id": "193804650",
+    "name": "Agatank",
+    "family": "Mineral Tower",
+    "level": "Lvl 37 - 45"
+  },
+  {
+    "id": "4649",
+    "gfx_id": "193804649",
+    "name": "Emeraldin",
+    "family": "Mineral Tower",
+    "level": "Lvl 37 - 45"
+  },
+  {
+    "id": "4651",
+    "gfx_id": "193804651",
+    "name": "Unearthed Agony",
+    "family": "Mineral Tower",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "4536",
+    "gfx_id": "120501767",
+    "name": "Elite Standard",
+    "family": "Riktus",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "4537",
+    "gfx_id": "120501769",
+    "name": "Magility",
+    "family": "Riktus",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "5012",
+    "gfx_id": "120501170",
+    "name": "Rictus the Expressive",
+    "family": "Riktus",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4534",
+    "gfx_id": "120501768",
+    "name": "Elite Shooter",
+    "family": "Riktus",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "4538",
+    "gfx_id": "120501771",
+    "name": "The Masked Riktus",
+    "family": "Riktus",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4535",
+    "gfx_id": "120501766",
+    "name": "Elite Sword",
+    "family": "Riktus",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "5011",
+    "gfx_id": "120501758",
+    "name": "Dominant Elite Riktus",
+    "family": "Riktus",
+    "level": "Lvl 157 - 165"
+  },
+  {
+    "id": "4539",
+    "gfx_id": "143604539",
+    "name": "Ogrest's Tear",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 0 - 1"
+  },
+  {
+    "id": "4378",
+    "gfx_id": "1300060",
+    "name": "Ogrest",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 230"
+  },
+  {
+    "id": "4326",
+    "gfx_id": "190004326",
+    "name": "Magmatic War'Hg",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4324",
+    "gfx_id": "190004324",
+    "name": "Bolrag of Dor'Mor",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4325",
+    "gfx_id": "190004325",
+    "name": "Gulnaz of Dor'Mor",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4327",
+    "gfx_id": "190004327",
+    "name": "Sor'Hon, Lord of the Flame",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4330",
+    "gfx_id": "190004330",
+    "name": "Sore'Hooman the Priest of the Flame",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4331",
+    "gfx_id": "190004331",
+    "name": "War'Hg, Guardian of Dor'Mor",
+    "family": "Mount Zinit",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "4316",
+    "gfx_id": "189004316",
+    "name": "Hot Rock",
+    "family": "Mount Zinit",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "4317",
+    "gfx_id": "189004317",
+    "name": "Cold Rock",
+    "family": "Mount Zinit",
+    "level": "Lvl 183 - 188"
+  },
+  {
+    "id": "4260",
+    "gfx_id": "189004260",
+    "name": "Ashdragon",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4259",
+    "gfx_id": "189004259",
+    "name": "Sulfury",
+    "family": "Mount Zinit",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "4261",
+    "gfx_id": "189004261",
+    "name": "Freonctuous the Gaspacho",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4257",
+    "gfx_id": "189004257",
+    "name": "Schisterical",
+    "family": "Mount Zinit",
+    "level": "Lvl 194 - 198"
+  },
+  {
+    "id": "4258",
+    "gfx_id": "189004258",
+    "name": "Ammaniac",
+    "family": "Mount Zinit",
+    "level": "Lvl 188 - 192"
+  },
+  {
+    "id": "4262",
+    "gfx_id": "189004262",
+    "name": "Schistophrenic",
+    "family": "Mount Zinit",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "4245",
+    "gfx_id": "140001808",
+    "name": "Mini Schnek",
+    "family": "Mount Zinit",
+    "level": "Lvl 81"
+  },
+  {
+    "id": "4250",
+    "gfx_id": "140001820",
+    "name": "Schnek Head",
+    "family": "Mount Zinit",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "4252",
+    "gfx_id": "140001824",
+    "name": "Schnek Prisoner",
+    "family": "Mount Zinit",
+    "level": "Lvl 45"
+  },
+  {
+    "id": "4249",
+    "gfx_id": "140001839",
+    "name": "Schnek Egg",
+    "family": "Mount Zinit",
+    "level": "Lvl 80"
+  },
+  {
+    "id": "4246",
+    "gfx_id": "140001811",
+    "name": "Magischnek",
+    "family": "Mount Zinit",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4247",
+    "gfx_id": "140001810",
+    "name": "Slith",
+    "family": "Mount Zinit",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "4248",
+    "gfx_id": "140001809",
+    "name": "Gunky Schnek",
+    "family": "Mount Zinit",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "4280",
+    "gfx_id": "188604280",
+    "name": "Schnek Sy",
+    "family": "Mount Zinit",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4281",
+    "gfx_id": "188604281",
+    "name": "Schnekzebub",
+    "family": "Mount Zinit",
+    "level": "Lvl 93 - 98"
+  },
+  {
+    "id": "4251",
+    "gfx_id": "140001837",
+    "name": "Queen Schnek",
+    "family": "Mount Zinit",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4242",
+    "gfx_id": "188304242",
+    "name": "Hammer Selachii",
+    "family": "Mount Zinit",
+    "level": "Lvl 55 - 59"
+  },
+  {
+    "id": "4243",
+    "gfx_id": "135901694",
+    "name": "Spear Selachii",
+    "family": "Mount Zinit",
+    "level": "Lvl 59 - 63"
+  },
+  {
+    "id": "4267",
+    "gfx_id": "135902117",
+    "name": "Sharkinoa",
+    "family": "Mount Zinit",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4268",
+    "gfx_id": "135901693",
+    "name": "Selachii",
+    "family": "Mount Zinit",
+    "level": "Lvl 63 - 68"
+  },
+  {
+    "id": "4241",
+    "gfx_id": "135901692",
+    "name": "Sweetlachii",
+    "family": "Mount Zinit",
+    "level": "Lvl 53 - 57"
+  },
+  {
+    "id": "4244",
+    "gfx_id": "135902197",
+    "name": "Royal Selachii",
+    "family": "Mount Zinit",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4239",
+    "gfx_id": "188104239",
+    "name": "Kralove",
+    "family": "Mount Zinit",
+    "level": "Lvl 53 - 57"
+  },
+  {
+    "id": "4255",
+    "gfx_id": "188104255",
+    "name": "Kraken",
+    "family": "Mount Zinit",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4237",
+    "gfx_id": "188104237",
+    "name": "Darth Mussel",
+    "family": "Mount Zinit",
+    "level": "Lvl 55 - 59"
+  },
+  {
+    "id": "4240",
+    "gfx_id": "122102178",
+    "name": "Kralaboss",
+    "family": "Mount Zinit",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4238",
+    "gfx_id": "188104238",
+    "name": "Snailmet",
+    "family": "Mount Zinit",
+    "level": "Lvl 59 - 63"
+  },
+  {
+    "id": "4256",
+    "gfx_id": "188104256",
+    "name": "Vertigo",
+    "family": "Mount Zinit",
+    "level": "Lvl 63 - 68"
+  },
+  {
+    "id": "4212",
+    "gfx_id": "100201511",
+    "name": "Potrick Gobball",
+    "family": "Events",
+    "level": "Lvl 8 - 12"
+  },
+  {
+    "id": "4235",
+    "gfx_id": "187704235",
+    "name": "Whirlaugh",
+    "family": "Mount Zinit",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "4230",
+    "gfx_id": "187704230",
+    "name": "Whirly Cuatic",
+    "family": "Mount Zinit",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "4229",
+    "gfx_id": "187704229",
+    "name": "Whirlibig",
+    "family": "Mount Zinit",
+    "level": "Lvl 119 - 123"
+  },
+  {
+    "id": "4236",
+    "gfx_id": "187704236",
+    "name": "Whirlcoal",
+    "family": "Mount Zinit",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "4228",
+    "gfx_id": "187704228",
+    "name": "Whirlikid",
+    "family": "Mount Zinit",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "4231",
+    "gfx_id": "187704231",
+    "name": "Silmawhirly",
+    "family": "Mount Zinit",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "4319",
+    "gfx_id": "102201284",
+    "name": "Gallery",
+    "family": "Mount Zinit",
+    "level": "Lvl 55"
+  },
+  {
+    "id": "4221",
+    "gfx_id": "187404221",
+    "name": "Pet Drheller",
+    "family": "Mount Zinit",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "4223",
+    "gfx_id": "102200145",
+    "name": "Young Drheller",
+    "family": "Mount Zinit",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "4269",
+    "gfx_id": "187404269",
+    "name": "Gray XIII",
+    "family": "Mount Zinit",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4270",
+    "gfx_id": "187404270",
+    "name": "Firedrhell the Untimely",
+    "family": "Mount Zinit",
+    "level": "Lvl 138 - 143"
+  },
+  {
+    "id": "4254",
+    "gfx_id": "187404254",
+    "name": "Rascal",
+    "family": "Mount Zinit",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4222",
+    "gfx_id": "187404222",
+    "name": "Trained Drheller",
+    "family": "Mount Zinit",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "4344",
+    "gfx_id": "186604203",
+    "name": "Wounded Badgeroxxor",
+    "family": "Mount Zinit",
+    "level": "Lvl 165"
+  },
+  {
+    "id": "4215",
+    "gfx_id": "187204215",
+    "name": "Tankheart",
+    "family": "Mount Zinit",
+    "level": "Lvl 160 - 166"
+  },
+  {
+    "id": "4304",
+    "gfx_id": "187204304",
+    "name": "Sister Solder the Melted",
+    "family": "Mount Zinit",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4216",
+    "gfx_id": "187204216",
+    "name": "Hemogluru",
+    "family": "Mount Zinit",
+    "level": "Lvl 160 - 166"
+  },
+  {
+    "id": "4232",
+    "gfx_id": "187204232",
+    "name": "Bully the Racketeer",
+    "family": "Mount Zinit",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4214",
+    "gfx_id": "187204214",
+    "name": "Sistzerker",
+    "family": "Mount Zinit",
+    "level": "Lvl 160 - 166"
+  },
+  {
+    "id": "4217",
+    "gfx_id": "187204217",
+    "name": "Kali",
+    "family": "Mount Zinit",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4203",
+    "gfx_id": "186604203",
+    "name": "Badgeroxxor",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4318",
+    "gfx_id": "186604318",
+    "name": "Badgwitch the Furiox",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4328",
+    "gfx_id": "186604328",
+    "name": "Eyeliner the Badgerager",
+    "family": "Mount Zinit",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "4205",
+    "gfx_id": "186604205",
+    "name": "Beardger",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4329",
+    "gfx_id": "186604329",
+    "name": "Uhu the Honeyed",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4204",
+    "gfx_id": "186604204",
+    "name": "Badgerage",
+    "family": "Mount Zinit",
+    "level": "Lvl 187 - 195"
+  },
+  {
+    "id": "4218",
+    "gfx_id": "186704220",
+    "name": "Biceggphalous Dreggon",
+    "family": "Mount Zinit",
+    "level": "Lvl 198 - 203"
+  },
+  {
+    "id": "4400",
+    "gfx_id": "186704400",
+    "name": "Ancient Egg",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4208",
+    "gfx_id": "186704208",
+    "name": "Dregger",
+    "family": "Mount Zinit",
+    "level": "Lvl 188 - 192"
+  },
+  {
+    "id": "4220",
+    "gfx_id": "186704218",
+    "name": "Minibuliette",
+    "family": "Mount Zinit",
+    "level": "Lvl 203 - 208"
+  },
+  {
+    "id": "4209",
+    "gfx_id": "186704209",
+    "name": "Soft-Boiled Dreggon",
+    "family": "Mount Zinit",
+    "level": "Lvl 194 - 198"
+  },
+  {
+    "id": "4210",
+    "gfx_id": "186704210",
+    "name": "Dreggon Warrior",
+    "family": "Mount Zinit",
+    "level": "Lvl 190 - 194"
+  },
+  {
+    "id": "4194",
+    "gfx_id": "101100834",
+    "name": "Fragmented Mimic",
+    "family": "",
+    "level": "Lvl 1 - 245"
+  },
+  {
+    "id": "4196",
+    "gfx_id": "101100834",
+    "name": "Sweet Mimic",
+    "family": "",
+    "level": "Lvl 1 - 245"
+  },
+  {
+    "id": "4195",
+    "gfx_id": "101100834",
+    "name": "Domestic Mimic",
+    "family": "",
+    "level": "Lvl 1 - 245"
+  },
+  {
+    "id": "4189",
+    "gfx_id": "101100834",
+    "name": "Runic Mimic",
+    "family": "",
+    "level": "Lvl 1 - 245"
+  },
+  {
+    "id": "4140",
+    "gfx_id": "178603773",
+    "name": "Gankr",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 60"
+  },
+  {
+    "id": "4168",
+    "gfx_id": "143604168",
+    "name": "Hardy Wyrmling",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 190"
+  },
+  {
+    "id": "4188",
+    "gfx_id": "143604167",
+    "name": "Prismatic Wyrmling",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 195"
+  },
+  {
+    "id": "3433",
+    "gfx_id": "143603433",
+    "name": "Nogord Wungleezared",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 200"
+  },
+  {
+    "id": "4167",
+    "gfx_id": "143604167",
+    "name": "Ferocious Wyrmling",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 190"
+  },
+  {
+    "id": "3212",
+    "gfx_id": "102800927",
+    "name": "Skeleton Rat",
+    "family": "Skeletons",
+    "level": "Lvl 19 - 23"
+  },
+  {
+    "id": "3214",
+    "gfx_id": "100201533",
+    "name": "Skeletal Gobball",
+    "family": "Skeletons",
+    "level": "Lvl 22 - 26"
+  },
+  {
+    "id": "3215",
+    "gfx_id": "165303215",
+    "name": "Skeleton Guard",
+    "family": "Skeletons",
+    "level": "Lvl 26 - 30"
+  },
+  {
+    "id": "3216",
+    "gfx_id": "158102793",
+    "name": "Morfor",
+    "family": "Skeletons",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "4042",
+    "gfx_id": "117904042",
+    "name": "Skrapur Kutmairo",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4044",
+    "gfx_id": "117904044",
+    "name": "Tonguetwist LaMouth",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4040",
+    "gfx_id": "117904040",
+    "name": "Mechanical Biscuit Cushion",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4043",
+    "gfx_id": "117904043",
+    "name": "Savhanna the Silky",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4039",
+    "gfx_id": "117904039",
+    "name": "Charles-Henri of Vileardent",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "1724",
+    "gfx_id": "100201511",
+    "name": "Ballotwine Gobball",
+    "family": "Events",
+    "level": "Lvl 8 - 12"
+  },
+  {
+    "id": "3606",
+    "gfx_id": "117903606",
+    "name": "Etnop - the Meridia of Eggs",
+    "family": "Events",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "3644",
+    "gfx_id": "117402505",
+    "name": "Mama Wodent",
+    "family": "Events",
+    "level": "Lvl 15"
+  },
+  {
+    "id": "4021",
+    "gfx_id": "115600987",
+    "name": "Sänd Cästle",
+    "family": "Events",
+    "level": "Lvl 39"
+  },
+  {
+    "id": "4018",
+    "gfx_id": "100500868",
+    "name": "Mimi Skäte",
+    "family": "Events",
+    "level": "Lvl 31"
+  },
+  {
+    "id": "3646",
+    "gfx_id": "117402504",
+    "name": "Wodent",
+    "family": "Events",
+    "level": "Lvl 12"
+  },
+  {
+    "id": "4016",
+    "gfx_id": "117904016",
+    "name": "Gnat - Meridia of Shells",
+    "family": "Events",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4022",
+    "gfx_id": "181704022",
+    "name": "Bläck Skäte",
+    "family": "Events",
+    "level": "Lvl 50"
+  },
+  {
+    "id": "3645",
+    "gfx_id": "117402506",
+    "name": "Tiwodent",
+    "family": "Events",
+    "level": "Lvl 10"
+  },
+  {
+    "id": "4019",
+    "gfx_id": "100500867",
+    "name": "Bubble Skäte",
+    "family": "Events",
+    "level": "Lvl 33"
+  },
+  {
+    "id": "4020",
+    "gfx_id": "115600968",
+    "name": "Imperiäl Skäte",
+    "family": "Events",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4032",
+    "gfx_id": "117904032",
+    "name": "Sister Kate",
+    "family": "Events",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4033",
+    "gfx_id": "181704022",
+    "name": "Bläck Skäte Clone",
+    "family": "Events",
+    "level": "Lvl 50"
+  },
+  {
+    "id": "4076",
+    "gfx_id": "182804076",
+    "name": "Treechnid",
+    "family": "Treechnees",
+    "level": "Lvl 29 - 33"
+  },
+  {
+    "id": "4079",
+    "gfx_id": "182804079",
+    "name": "Arachnee",
+    "family": "Treechnees",
+    "level": "Lvl 19 - 23"
+  },
+  {
+    "id": "4098",
+    "gfx_id": "182804098",
+    "name": "Abribus the Protector",
+    "family": "Treechnees",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "4077",
+    "gfx_id": "182804077",
+    "name": "Treechorn",
+    "family": "Treechnees",
+    "level": "Lvl 23 - 27"
+  },
+  {
+    "id": "4094",
+    "gfx_id": "182804094",
+    "name": "Dominant Treechnid",
+    "family": "Treechnees",
+    "level": "Lvl 33 - 38"
+  },
+  {
+    "id": "4078",
+    "gfx_id": "182804078",
+    "name": "Arachnee Embroiderer",
+    "family": "Treechnees",
+    "level": "Lvl 25 - 29"
+  },
+  {
+    "id": "4107",
+    "gfx_id": "182804107",
+    "name": "Treechnell",
+    "family": "Treechnees",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "4048",
+    "gfx_id": "177704048",
+    "name": "Trained Bythard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "4049",
+    "gfx_id": "177704049",
+    "name": "Mechan-0",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4054",
+    "gfx_id": "177704054",
+    "name": "Tutaur'Kama",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 45"
+  },
+  {
+    "id": "4055",
+    "gfx_id": "177704055",
+    "name": "Sand Mummy",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "4052",
+    "gfx_id": "177704052",
+    "name": "Attack Bythard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4053",
+    "gfx_id": "177704053",
+    "name": "Mummidified Mechan-0",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4046",
+    "gfx_id": "177704046",
+    "name": "Guard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "4047",
+    "gfx_id": "177704047",
+    "name": "Sleepy Guard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 30"
+  },
+  {
+    "id": "4051",
+    "gfx_id": "177704051",
+    "name": "Mummypnotized Guard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4050",
+    "gfx_id": "177704050",
+    "name": "Mummypnotized Sergeant",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 36"
+  },
+  {
+    "id": "4045",
+    "gfx_id": "117904045",
+    "name": "Bodyguard",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "4061",
+    "gfx_id": "182204061",
+    "name": "Drainacask",
+    "family": "Viticultists",
+    "level": "Lvl 142"
+  },
+  {
+    "id": "4060",
+    "gfx_id": "182204060",
+    "name": "High Priestess Sydonia",
+    "family": "Viticultists",
+    "level": "Lvl 141"
+  },
+  {
+    "id": "4062",
+    "gfx_id": "182204062",
+    "name": "Mama Lenyal",
+    "family": "Viticultists",
+    "level": "Lvl 138"
+  },
+  {
+    "id": "4064",
+    "gfx_id": "182204064",
+    "name": "Serprieuse",
+    "family": "Viticultists",
+    "level": "Lvl 134"
+  },
+  {
+    "id": "4063",
+    "gfx_id": "182204063",
+    "name": "Grampycrat",
+    "family": "Viticultists",
+    "level": "Lvl 136"
+  },
+  {
+    "id": "4012",
+    "gfx_id": "181404012",
+    "name": "Olavrann the External",
+    "family": "Embrysouls",
+    "level": "Lvl 5"
+  },
+  {
+    "id": "4013",
+    "gfx_id": "181404013",
+    "name": "Distorted Soul",
+    "family": "Embrysouls",
+    "level": "Lvl 4"
+  },
+  {
+    "id": "4014",
+    "gfx_id": "181404014",
+    "name": "Stasified Gobball",
+    "family": "Embrysouls",
+    "level": "Lvl 3"
+  },
+  {
+    "id": "4015",
+    "gfx_id": "181404015",
+    "name": "Corrupted Tofoone",
+    "family": "Embrysouls",
+    "level": "Lvl 2"
+  },
+  {
+    "id": "3774",
+    "gfx_id": "178603774",
+    "name": "Grambodo",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 16"
+  },
+  {
+    "id": "3780",
+    "gfx_id": "178603778",
+    "name": "Foweman Cult Shredder",
+    "family": "Ogrest's Cult?",
+    "level": "Lvl 20"
+  },
+  {
+    "id": "3926",
+    "gfx_id": "180103926",
+    "name": "Vilenya",
+    "family": "Huppermage School",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "5306",
+    "gfx_id": "1108305306",
+    "name": "Rushu",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 230"
+  },
+  {
+    "id": "3870",
+    "gfx_id": "143603870",
+    "name": "Sham Moon",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 185"
+  },
+  {
+    "id": "3867",
+    "gfx_id": "179403867",
+    "name": "Koko Riko",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3879",
+    "gfx_id": "179403879",
+    "name": "Darkli Moon",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3972",
+    "gfx_id": "181103972",
+    "name": "Dandy Mos Croc",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3868",
+    "gfx_id": "179403868",
+    "name": "Gengas Kin",
+    "family": "Moon Island",
+    "level": "Lvl 188 - 193"
+  },
+  {
+    "id": "3733",
+    "gfx_id": "177103733",
+    "name": "Gore-Goner",
+    "family": "Zoogeymen",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "3734",
+    "gfx_id": "177103734",
+    "name": "Gargrowler",
+    "family": "Zoogeymen",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "3735",
+    "gfx_id": "177103735",
+    "name": "Viktoria-Franka Enstein",
+    "family": "Zoogeymen",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "3732",
+    "gfx_id": "177103732",
+    "name": "Flatissier",
+    "family": "Zoogeymen",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4393",
+    "gfx_id": "177104393",
+    "name": "The White Lady",
+    "family": "Zoogeymen",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "3708",
+    "gfx_id": "177003708",
+    "name": "Araknomecha",
+    "family": "Kelba Peaks",
+    "level": "Lvl 75"
+  },
+  {
+    "id": "3709",
+    "gfx_id": "173603696",
+    "name": "Korbot K-800",
+    "family": "Kelba Peaks",
+    "level": "Lvl 75"
+  },
+  {
+    "id": "3713",
+    "gfx_id": "140501825",
+    "name": "Borbat",
+    "family": "Kelba Peaks",
+    "level": "Lvl 75"
+  },
+  {
+    "id": "3707",
+    "gfx_id": "177003707",
+    "name": "Kraw-gyver",
+    "family": "Kelba Peaks",
+    "level": "Lvl 80"
+  },
+  {
+    "id": "3611",
+    "gfx_id": "106400636",
+    "name": "Crobak Chief",
+    "family": "",
+    "level": "Lvl 75"
+  },
+  {
+    "id": "3612",
+    "gfx_id": "106400562",
+    "name": "Crobak",
+    "family": "",
+    "level": "Lvl 69"
+  },
+  {
+    "id": "3613",
+    "gfx_id": "120501760",
+    "name": "Badskin",
+    "family": "",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "3614",
+    "gfx_id": "120501758",
+    "name": "Badaclocom",
+    "family": "",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "3615",
+    "gfx_id": "120501756",
+    "name": "Badgoat",
+    "family": "",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "3610",
+    "gfx_id": "106400565",
+    "name": "Croboar",
+    "family": "",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "3609",
+    "gfx_id": "106400568",
+    "name": "Crobeak",
+    "family": "",
+    "level": "Lvl 72"
+  },
+  {
+    "id": "3582",
+    "gfx_id": "143603582",
+    "name": "Steel Beak",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 170"
+  },
+  {
+    "id": "3573",
+    "gfx_id": "173803573",
+    "name": "Krobelle",
+    "family": "Kelba Peaks",
+    "level": "Lvl 68 - 72"
+  },
+  {
+    "id": "3587",
+    "gfx_id": "173803587",
+    "name": "Grand Orrok",
+    "family": "Kelba Peaks",
+    "level": "Lvl 85"
+  },
+  {
+    "id": "4370",
+    "gfx_id": "173804370",
+    "name": "Orrokimaru the Creeper",
+    "family": "Kelba Peaks",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "3571",
+    "gfx_id": "173803571",
+    "name": "Krocky",
+    "family": "Kelba Peaks",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "3702",
+    "gfx_id": "173803702",
+    "name": "Krobelle Adonni",
+    "family": "Kelba Peaks",
+    "level": "Lvl 78 - 83"
+  },
+  {
+    "id": "3568",
+    "gfx_id": "173803568",
+    "name": "Krawmagnon",
+    "family": "Kelba Peaks",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "3566",
+    "gfx_id": "120501169",
+    "name": "Badaclocom",
+    "family": "Kelba",
+    "level": "Lvl 49"
+  },
+  {
+    "id": "3596",
+    "gfx_id": "120501760",
+    "name": "Badskin",
+    "family": "Kelba",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "3595",
+    "gfx_id": "120501758",
+    "name": "Badaclocom",
+    "family": "Kelba",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "3597",
+    "gfx_id": "120501756",
+    "name": "Badgoat",
+    "family": "Kelba",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "3565",
+    "gfx_id": "120501167",
+    "name": "Badskin",
+    "family": "Kelba",
+    "level": "Lvl 43"
+  },
+  {
+    "id": "3591",
+    "gfx_id": "120501168",
+    "name": "Passer",
+    "family": "Kelba",
+    "level": "Lvl 46"
+  },
+  {
+    "id": "3712",
+    "gfx_id": "173603712",
+    "name": "Case Carrier",
+    "family": "Kelba",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "3567",
+    "gfx_id": "120501168",
+    "name": "Badgoat",
+    "family": "Kelba",
+    "level": "Lvl 46"
+  },
+  {
+    "id": "3711",
+    "gfx_id": "173803568",
+    "name": "Box Carrier",
+    "family": "Kelba",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "3530",
+    "gfx_id": "163403122",
+    "name": "His Eminence's Henchman",
+    "family": "Xelots",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3531",
+    "gfx_id": "163403122",
+    "name": "His Eminence's Henchman",
+    "family": "Xelots",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3517",
+    "gfx_id": "159303071",
+    "name": "Security Krosmoglob",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3519",
+    "gfx_id": "150403101",
+    "name": "Mega-Krosmo",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3515",
+    "gfx_id": "150403515",
+    "name": "Unsynchronized Krosmogolem",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3516",
+    "gfx_id": "159303071",
+    "name": "Security Krosmoglob",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3514",
+    "gfx_id": "159303514",
+    "name": "Unsynchronized Krosmoglob",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3518",
+    "gfx_id": "150403518",
+    "name": "Security Krosmogolem",
+    "family": "Hulors",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "2430",
+    "gfx_id": "143602430",
+    "name": "Dragon Pig",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 125"
+  },
+  {
+    "id": "42",
+    "gfx_id": "100200042",
+    "name": "Magmog the Gobbalrog",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 110"
+  },
+  {
+    "id": "1987",
+    "gfx_id": "105501794",
+    "name": "Milkar the Moowolf",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 95"
+  },
+  {
+    "id": "1986",
+    "gfx_id": "138901819",
+    "name": "Excarnus",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 80"
+  },
+  {
+    "id": "1988",
+    "gfx_id": "101101150",
+    "name": "Black Crow",
+    "family": "Ultimate Bosses",
+    "level": "Lvl 110"
+  },
+  {
+    "id": "2709",
+    "gfx_id": "153902709",
+    "name": "Kralaman",
+    "family": "Alkatrool",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2714",
+    "gfx_id": "153902714",
+    "name": "Lardevil",
+    "family": "Alkatrool",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2708",
+    "gfx_id": "153902708",
+    "name": "Merkator",
+    "family": "Alkatrool",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2710",
+    "gfx_id": "153902710",
+    "name": "Decepticod",
+    "family": "Alkatrool",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "3398",
+    "gfx_id": "169303398",
+    "name": "Vertox the Timeless",
+    "family": "Xelots",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4357",
+    "gfx_id": "169304357",
+    "name": "Roonaldo the Returner",
+    "family": "Xelots",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "3396",
+    "gfx_id": "169303396",
+    "name": "Lapse",
+    "family": "Xelots",
+    "level": "Lvl 164 - 168"
+  },
+  {
+    "id": "4355",
+    "gfx_id": "169304355",
+    "name": "Lavoose the Chronologically Triggered",
+    "family": "Xelots",
+    "level": "Lvl 168 - 173"
+  },
+  {
+    "id": "3395",
+    "gfx_id": "169303395",
+    "name": "Orda Gova",
+    "family": "Xelots",
+    "level": "Lvl 158 - 162"
+  },
+  {
+    "id": "3397",
+    "gfx_id": "169303397",
+    "name": "Crolk",
+    "family": "Xelots",
+    "level": "Lvl 160 - 164"
+  },
+  {
+    "id": "3394",
+    "gfx_id": "169203394",
+    "name": "Syclick",
+    "family": "Hulors",
+    "level": "Lvl 164 - 168"
+  },
+  {
+    "id": "3399",
+    "gfx_id": "169203399",
+    "name": "Robowl the Outcast",
+    "family": "Hulors",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4356",
+    "gfx_id": "169204356",
+    "name": "Saunic the Supersonic",
+    "family": "Hulors",
+    "level": "Lvl 168 - 173"
+  },
+  {
+    "id": "4358",
+    "gfx_id": "169204358",
+    "name": "The Time-Bird",
+    "family": "Hulors",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "3393",
+    "gfx_id": "169203393",
+    "name": "Culler of the Wind",
+    "family": "Hulors",
+    "level": "Lvl 160 - 164"
+  },
+  {
+    "id": "3392",
+    "gfx_id": "169203392",
+    "name": "Poz",
+    "family": "Hulors",
+    "level": "Lvl 158 - 162"
+  },
+  {
+    "id": "3147",
+    "gfx_id": "70",
+    "name": "Shadow Healer",
+    "family": "Summons",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "3143",
+    "gfx_id": "80",
+    "name": "Shadow Warrior",
+    "family": "Summons",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "3146",
+    "gfx_id": "10",
+    "name": "Shadow Protector",
+    "family": "Summons",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "3145",
+    "gfx_id": "10",
+    "name": "Shadow Motivator",
+    "family": "Summons",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "3144",
+    "gfx_id": "90",
+    "name": "Shadow Archer",
+    "family": "Summons",
+    "level": "Lvl 140"
+  },
+  {
+    "id": "3141",
+    "gfx_id": "163603090",
+    "name": "Badomain",
+    "family": "Enutreasures",
+    "level": "Lvl 146"
+  },
+  {
+    "id": "3179",
+    "gfx_id": "163603092",
+    "name": "Enutrojan",
+    "family": "Enutreasures",
+    "level": "Lvl 152"
+  },
+  {
+    "id": "3180",
+    "gfx_id": "163603091",
+    "name": "Stalliance of Troa",
+    "family": "Enutreasures",
+    "level": "Lvl 149"
+  },
+  {
+    "id": "3178",
+    "gfx_id": "163603093",
+    "name": "Kamarammasing",
+    "family": "Enutreasures",
+    "level": "Lvl 155"
+  },
+  {
+    "id": "4375",
+    "gfx_id": "162904375",
+    "name": "Komrad the Sharer",
+    "family": "Enutreasures",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "3090",
+    "gfx_id": "163603090",
+    "name": "Badosaurus",
+    "family": "Enutreasures",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "3094",
+    "gfx_id": "163603094",
+    "name": "Cledus 'Onist the Key-Keeper",
+    "family": "Enutreasures",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "3092",
+    "gfx_id": "163603092",
+    "name": "Enucoffer Safe",
+    "family": "Enutreasures",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "3175",
+    "gfx_id": "163403101",
+    "name": "Sir Urh the Recluse",
+    "family": "Enutreasures",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "3091",
+    "gfx_id": "163603091",
+    "name": "Stalliance",
+    "family": "Enutreasures",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "3093",
+    "gfx_id": "163603093",
+    "name": "Kamarachnid",
+    "family": "Enutreasures",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "3508",
+    "gfx_id": "163403122",
+    "name": "His Eminence's Scout",
+    "family": "",
+    "level": "Lvl 150"
+  },
+  {
+    "id": "3077",
+    "gfx_id": "162903077",
+    "name": "Longblade Trainer",
+    "family": "Srambadians",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "3078",
+    "gfx_id": "162903078",
+    "name": "Cadaverous Apothecary",
+    "family": "Srambadians",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "3080",
+    "gfx_id": "162903080",
+    "name": "Solkrupt the Shadow-Eater",
+    "family": "Srambadians",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "3079",
+    "gfx_id": "162903079",
+    "name": "Sramva",
+    "family": "Srambadians",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "4374",
+    "gfx_id": "162904374",
+    "name": "Sweepney the Chim",
+    "family": "Srambadians",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "3076",
+    "gfx_id": "162903076",
+    "name": "Dwarf Bulldagger",
+    "family": "Srambadians",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "3098",
+    "gfx_id": "163403098",
+    "name": "Raval Disciple",
+    "family": "Srambadians",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "5314",
+    "gfx_id": "119403072",
+    "name": "Cap'n Atcha",
+    "family": "",
+    "level": "Lvl 0 - 1"
+  },
+  {
+    "id": "5315",
+    "gfx_id": "119403072",
+    "name": "Cap'n Atcha",
+    "family": "",
+    "level": "Lvl 0 - 1"
+  },
+  {
+    "id": "3051",
+    "gfx_id": "127803051",
+    "name": "Tsubo",
+    "family": "Shushus",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "3050",
+    "gfx_id": "127803050",
+    "name": "Hexaku",
+    "family": "Shushus",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "4392",
+    "gfx_id": "127804392",
+    "name": "Victim the Whacky",
+    "family": "Shushus",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "3048",
+    "gfx_id": "127803048",
+    "name": "Flaxhid the Impaler",
+    "family": "Shushus",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4391",
+    "gfx_id": "127804391",
+    "name": "Mihmosa the Flowery",
+    "family": "Shushus",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "3043",
+    "gfx_id": "127803043",
+    "name": "Victus",
+    "family": "Shushus",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "3007",
+    "gfx_id": "127802792",
+    "name": "Shiemahn",
+    "family": "Shushus",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "3009",
+    "gfx_id": "127802785",
+    "name": "Shusnitch",
+    "family": "Shushus",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "3008",
+    "gfx_id": "127802787",
+    "name": "Ocushu",
+    "family": "Shushus",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "2827",
+    "gfx_id": "127802827",
+    "name": "Spectrex the Tormentor",
+    "family": "Shushus",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "2974",
+    "gfx_id": "161102974",
+    "name": "Bicephalous Amionite",
+    "family": "Ohwymi",
+    "level": "Lvl 128"
+  },
+  {
+    "id": "2977",
+    "gfx_id": "161102977",
+    "name": "Sugnuf of Gillamush",
+    "family": "Ohwymi",
+    "level": "Lvl 145"
+  },
+  {
+    "id": "4373",
+    "gfx_id": "161104373",
+    "name": "Hoppipop the Radiant",
+    "family": "Ohwymi",
+    "level": "Lvl 138 - 143"
+  },
+  {
+    "id": "2973",
+    "gfx_id": "161102973",
+    "name": "Haploid Sporelator",
+    "family": "Ohwymi",
+    "level": "Lvl 131"
+  },
+  {
+    "id": "2975",
+    "gfx_id": "161102975",
+    "name": "Leaping Coprinus",
+    "family": "Ohwymi",
+    "level": "Lvl 125"
+  },
+  {
+    "id": "4372",
+    "gfx_id": "161104372",
+    "name": "Issnotmee the Innocent",
+    "family": "Ohwymi",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "2988",
+    "gfx_id": "161102988",
+    "name": "Crushing Hyphalump",
+    "family": "Ohwymi",
+    "level": "Lvl 134"
+  },
+  {
+    "id": "2972",
+    "gfx_id": "160802972",
+    "name": "Ponktius",
+    "family": "Ohwymi",
+    "level": "Lvl 135"
+  },
+  {
+    "id": "2968",
+    "gfx_id": "160802968",
+    "name": "Moloch",
+    "family": "Ohwymi",
+    "level": "Lvl 117"
+  },
+  {
+    "id": "2969",
+    "gfx_id": "160802969",
+    "name": "Castupod",
+    "family": "Ohwymi",
+    "level": "Lvl 119"
+  },
+  {
+    "id": "2967",
+    "gfx_id": "160802967",
+    "name": "Schanker",
+    "family": "Ohwymi",
+    "level": "Lvl 115"
+  },
+  {
+    "id": "2983",
+    "gfx_id": "160802982",
+    "name": "Ancestral Spirit",
+    "family": "Ohwymi",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "2970",
+    "gfx_id": "160802970",
+    "name": "Pampastuc",
+    "family": "Ohwymi",
+    "level": "Lvl 121"
+  },
+  {
+    "id": "2971",
+    "gfx_id": "160802971",
+    "name": "Saguaro",
+    "family": "Ohwymi",
+    "level": "Lvl 123"
+  },
+  {
+    "id": "2992",
+    "gfx_id": "161502992",
+    "name": "Troolgodyte",
+    "family": "Ohwymi",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "2773",
+    "gfx_id": "158402773",
+    "name": "Cybwork",
+    "family": "Bworks",
+    "level": "Lvl 61"
+  },
+  {
+    "id": "2771",
+    "gfx_id": "158402771",
+    "name": "Bwork Bomber",
+    "family": "Bworks",
+    "level": "Lvl 57"
+  },
+  {
+    "id": "2774",
+    "gfx_id": "158402774",
+    "name": "Thork",
+    "family": "Bworks",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "2770",
+    "gfx_id": "158402770",
+    "name": "Bwork Miner",
+    "family": "Bworks",
+    "level": "Lvl 55"
+  },
+  {
+    "id": "2772",
+    "gfx_id": "158402772",
+    "name": "Bwork Warrior",
+    "family": "Bworks",
+    "level": "Lvl 59"
+  },
+  {
+    "id": "2764",
+    "gfx_id": "158102764",
+    "name": "Wild War Chief",
+    "family": "Wild Gobballs",
+    "level": "Lvl 55"
+  },
+  {
+    "id": "2765",
+    "gfx_id": "158102765",
+    "name": "Wild Gobball",
+    "family": "Wild Gobballs",
+    "level": "Lvl 50"
+  },
+  {
+    "id": "4371",
+    "gfx_id": "158104371",
+    "name": "Gobpuddlet the Hairy",
+    "family": "Wild Gobballs",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "2766",
+    "gfx_id": "158102766",
+    "name": "Shaman Gobbette",
+    "family": "Wild Gobballs",
+    "level": "Lvl 52"
+  },
+  {
+    "id": "2767",
+    "gfx_id": "158102767",
+    "name": "Wild Gobbly",
+    "family": "Wild Gobballs",
+    "level": "Lvl 54"
+  },
+  {
+    "id": "2768",
+    "gfx_id": "158102768",
+    "name": "Great Wild Gobball",
+    "family": "Wild Gobballs",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "4401",
+    "gfx_id": "158104401",
+    "name": "Buffaloble the Rider",
+    "family": "Wild Gobballs",
+    "level": "Lvl 63 - 68"
+  },
+  {
+    "id": "2616",
+    "gfx_id": "108900833",
+    "name": "Bow Meow",
+    "family": "Bow Meows",
+    "level": "Lvl 4 - 6"
+  },
+  {
+    "id": "2617",
+    "gfx_id": "117601209",
+    "name": "White Bow Meow",
+    "family": "Bow Meows",
+    "level": "Lvl 4 - 6"
+  },
+  {
+    "id": "2598",
+    "gfx_id": "117602598",
+    "name": "Angora Bow Meow",
+    "family": "Bow Meows",
+    "level": "Lvl 6 - 8"
+  },
+  {
+    "id": "1816",
+    "gfx_id": "117601816",
+    "name": "Maine Goon",
+    "family": "Bow Meows",
+    "level": "Lvl 10"
+  },
+  {
+    "id": "2604",
+    "gfx_id": "155202604",
+    "name": "Boney Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 145 - 149"
+  },
+  {
+    "id": "2608",
+    "gfx_id": "155202608",
+    "name": "Wo Zwombbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "2605",
+    "gfx_id": "155202605",
+    "name": "Gweat GM Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "2607",
+    "gfx_id": "155202607",
+    "name": "Bandaged Gwandpa Zwombbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "2606",
+    "gfx_id": "155202606",
+    "name": "Boney Tiwabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "2743",
+    "gfx_id": "155202572",
+    "name": "Zombowabbit the Putrefied",
+    "family": "Wabbit Island",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "4386",
+    "gfx_id": "155202626",
+    "name": "Igow the Whipping Boy",
+    "family": "Wabbit Island",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "2583",
+    "gfx_id": "155602583",
+    "name": "Wipley the Suwvivow",
+    "family": "Wabbit Island",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "2578",
+    "gfx_id": "155602578",
+    "name": "Wabbit Cavaliew",
+    "family": "Wabbit Island",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "2580",
+    "gfx_id": "155602580",
+    "name": "Wobot",
+    "family": "Wabbit Island",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "4387",
+    "gfx_id": "155604387",
+    "name": "The Dawk Knight",
+    "family": "Wabbit Island",
+    "level": "Lvl 153 - 158"
+  },
+  {
+    "id": "2579",
+    "gfx_id": "155602579",
+    "name": "Wabbit Guawd",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 147"
+  },
+  {
+    "id": "2581",
+    "gfx_id": "155602581",
+    "name": "Wobot in Chief",
+    "family": "Wabbit Island",
+    "level": "Lvl 147 - 151"
+  },
+  {
+    "id": "2577",
+    "gfx_id": "155602577",
+    "name": "Wabbit Shawpshootew",
+    "family": "Wabbit Island",
+    "level": "Lvl 149 - 153"
+  },
+  {
+    "id": "2582",
+    "gfx_id": "155602582",
+    "name": "Wa Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 158 - 163"
+  },
+  {
+    "id": "2567",
+    "gfx_id": "155202567",
+    "name": "Wo Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 132 - 136"
+  },
+  {
+    "id": "2570",
+    "gfx_id": "155202570",
+    "name": "Gwand Viziew Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4541",
+    "gfx_id": "155202583",
+    "name": "Wambo",
+    "family": "Wabbit Island",
+    "level": "Lvl 138 - 143"
+  },
+  {
+    "id": "2566",
+    "gfx_id": "155202566",
+    "name": "Wabbits",
+    "family": "Wabbit Island",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "5532",
+    "gfx_id": "154802563",
+    "name": "Jafaw the Genie",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "2565",
+    "gfx_id": "155202565",
+    "name": "Tiwabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "2568",
+    "gfx_id": "155202568",
+    "name": "Gwandpa Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "2559",
+    "gfx_id": "154802559",
+    "name": "Black Tiwabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 120"
+  },
+  {
+    "id": "2560",
+    "gfx_id": "154802560",
+    "name": "Black Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 122"
+  },
+  {
+    "id": "2562",
+    "gfx_id": "154802562",
+    "name": "Black Gwandpa Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 125"
+  },
+  {
+    "id": "2561",
+    "gfx_id": "154802561",
+    "name": "Black Wo Wabbit",
+    "family": "Wabbit Island",
+    "level": "Lvl 128"
+  },
+  {
+    "id": "2860",
+    "gfx_id": "154502552",
+    "name": "Blind Old Lenald",
+    "family": "Wabbit Island",
+    "level": "Lvl 130"
+  },
+  {
+    "id": "2556",
+    "gfx_id": "154502555",
+    "name": "Lenald Empelol Lin Shi",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4385",
+    "gfx_id": "154504385",
+    "name": "The Glay Lenald",
+    "family": "Wabbit Island",
+    "level": "Lvl 138 - 143"
+  },
+  {
+    "id": "2552",
+    "gfx_id": "154502552",
+    "name": "Old Lenald",
+    "family": "Wabbit Island",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "2550",
+    "gfx_id": "154502550",
+    "name": "Juniolenald",
+    "family": "Wabbit Island",
+    "level": "Lvl 132 - 136"
+  },
+  {
+    "id": "2551",
+    "gfx_id": "154502551",
+    "name": "Lenald",
+    "family": "Wabbit Island",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "2553",
+    "gfx_id": "154502553",
+    "name": "Bignald",
+    "family": "Wabbit Island",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "2630",
+    "gfx_id": "154502554",
+    "name": "Lenaldix",
+    "family": "Wabbit Island",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "2469",
+    "gfx_id": "153302469",
+    "name": "Bilby Queen",
+    "family": "Bilbiboyz",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2465",
+    "gfx_id": "10",
+    "name": "Blue Raspberry Bilbiboy",
+    "family": "Bilbiboyz",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2466",
+    "gfx_id": "11",
+    "name": "Mint Bilbigirl",
+    "family": "Bilbiboyz",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2468",
+    "gfx_id": "11",
+    "name": "Lemon Bilbigirl",
+    "family": "Bilbiboyz",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2467",
+    "gfx_id": "10",
+    "name": "Strawberry Bilbiboy",
+    "family": "Bilbiboyz",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2464",
+    "gfx_id": "152802464",
+    "name": "Pearly Bilbimussel",
+    "family": "Bilbibeach monsters",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "2462",
+    "gfx_id": "152802462",
+    "name": "Baby Sludgeworm",
+    "family": "Bilbibeach monsters",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "2463",
+    "gfx_id": "152802463",
+    "name": "Vermicious Sludgeworm",
+    "family": "Bilbibeach monsters",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "2461",
+    "gfx_id": "152802461",
+    "name": "Clammer Shark",
+    "family": "Bilbibeach monsters",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "2460",
+    "gfx_id": "152802460",
+    "name": "Muss Tashio",
+    "family": "Bilbibeach monsters",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "2440",
+    "gfx_id": "133501896",
+    "name": "Troolk Hoogan",
+    "family": "",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "2443",
+    "gfx_id": "152602443",
+    "name": "El Pochito",
+    "family": "",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "2441",
+    "gfx_id": "133501897",
+    "name": "The Undertroolker",
+    "family": "",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "2442",
+    "gfx_id": "133501898",
+    "name": "Rey Mystroolrio",
+    "family": "",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "2368",
+    "gfx_id": "151002368",
+    "name": "YeCh'Ti'Wawa",
+    "family": "Boohemoth",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2384",
+    "gfx_id": "151002384",
+    "name": "Fhenris the Lone Boohemoth",
+    "family": "Boohemoth",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2364",
+    "gfx_id": "151002364",
+    "name": "Crobamoth",
+    "family": "Boohemoth",
+    "level": "Lvl 98 - 102"
+  },
+  {
+    "id": "2366",
+    "gfx_id": "151002366",
+    "name": "Boohemoon",
+    "family": "Boohemoth",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2367",
+    "gfx_id": "151002367",
+    "name": "Enraged Boohemoth",
+    "family": "Boohemoth",
+    "level": "Lvl 104 - 108"
+  },
+  {
+    "id": "4500",
+    "gfx_id": "151004500",
+    "name": "Corberg the Treasure Diver",
+    "family": "Boohemoth",
+    "level": "Lvl 108 - 113"
+  },
+  {
+    "id": "2365",
+    "gfx_id": "151002365",
+    "name": "Crobamoon",
+    "family": "Boohemoth",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2359",
+    "gfx_id": "150702359",
+    "name": "Brrrbliwi",
+    "family": "Brrrblis",
+    "level": "Lvl 98 - 102"
+  },
+  {
+    "id": "2360",
+    "gfx_id": "150702360",
+    "name": "Brrrbli",
+    "family": "Brrrblis",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2372",
+    "gfx_id": "150702372",
+    "name": "Pumbrrr",
+    "family": "Brrrblis",
+    "level": "Lvl 108 - 113"
+  },
+  {
+    "id": "2362",
+    "gfx_id": "150702362",
+    "name": "Frozenhorn Brrrbli",
+    "family": "Brrrblis",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2363",
+    "gfx_id": "150702363",
+    "name": "Brrrbley Spears",
+    "family": "Brrrblis",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2361",
+    "gfx_id": "150702361",
+    "name": "Steely Brrrbli",
+    "family": "Brrrblis",
+    "level": "Lvl 104 - 108"
+  },
+  {
+    "id": "4381",
+    "gfx_id": "150704381",
+    "name": "Robrrrt the Brrrave",
+    "family": "Brrrblis",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2354",
+    "gfx_id": "150402354",
+    "name": "Sylargh",
+    "family": "Mechas",
+    "level": "Lvl 130"
+  },
+  {
+    "id": "4384",
+    "gfx_id": "150404384",
+    "name": "Mechazord the Combined",
+    "family": "Mechas",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "2351",
+    "gfx_id": "150402351",
+    "name": "Mechrobak",
+    "family": "Mechas",
+    "level": "Lvl 114"
+  },
+  {
+    "id": "2352",
+    "gfx_id": "150402352",
+    "name": "Mechanistro",
+    "family": "Mechas",
+    "level": "Lvl 117"
+  },
+  {
+    "id": "4480",
+    "gfx_id": "104702383",
+    "name": "Count Harebourg's Image",
+    "family": "Mechas",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "2350",
+    "gfx_id": "150402350",
+    "name": "Mechabra",
+    "family": "Mechas",
+    "level": "Lvl 110"
+  },
+  {
+    "id": "2353",
+    "gfx_id": "150402353",
+    "name": "Mechazerker",
+    "family": "Mechas",
+    "level": "Lvl 120"
+  },
+  {
+    "id": "2347",
+    "gfx_id": "150002347",
+    "name": "Northern Tracker",
+    "family": "Northern Chafers",
+    "level": "Lvl 125 - 129"
+  },
+  {
+    "id": "2345",
+    "gfx_id": "150002345",
+    "name": "Northern Guard",
+    "family": "Northern Chafers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "2346",
+    "gfx_id": "150002346",
+    "name": "Northern Archer",
+    "family": "Northern Chafers",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "2348",
+    "gfx_id": "150002348",
+    "name": "Kya, Missiz Freezz",
+    "family": "Northern Chafers",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "2344",
+    "gfx_id": "150002344",
+    "name": "Northern Brute",
+    "family": "Northern Chafers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "2340",
+    "gfx_id": "149702340",
+    "name": "Polar Crackern",
+    "family": "Polar Cracklers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "2342",
+    "gfx_id": "149702342",
+    "name": "Crackchok",
+    "family": "Polar Cracklers",
+    "level": "Lvl 119 - 123"
+  },
+  {
+    "id": "2339",
+    "gfx_id": "149702339",
+    "name": "Crackmite",
+    "family": "Polar Cracklers",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "2341",
+    "gfx_id": "149702341",
+    "name": "Cracktite",
+    "family": "Polar Cracklers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "2343",
+    "gfx_id": "149702343",
+    "name": "Hagen Daz",
+    "family": "Polar Cracklers",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "4382",
+    "gfx_id": "14974382",
+    "name": "Frozenuts",
+    "family": "Polar Cracklers",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "2088",
+    "gfx_id": "145102088",
+    "name": "The Lisper",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 100"
+  },
+  {
+    "id": "2489",
+    "gfx_id": "145102076",
+    "name": "Bow Meow Loving Whisperer",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "2074",
+    "gfx_id": "145102074",
+    "name": "Infantry Whisperers",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 104 - 108"
+  },
+  {
+    "id": "2078",
+    "gfx_id": "145102078",
+    "name": "Whispered Crackler",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2083",
+    "gfx_id": "145102083",
+    "name": "Whispered Crackrock",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 98 - 102"
+  },
+  {
+    "id": "2075",
+    "gfx_id": "145102075",
+    "name": "Crossbow Whisperers",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 98 - 102"
+  },
+  {
+    "id": "2084",
+    "gfx_id": "145102084",
+    "name": "Big Whispered Crackler",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 104 - 108"
+  },
+  {
+    "id": "2100",
+    "gfx_id": "145102100",
+    "name": "Master Shhhudoku",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 120"
+  },
+  {
+    "id": "2076",
+    "gfx_id": "145102076",
+    "name": "Standard-Bearing Whisperer",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2134",
+    "gfx_id": "145102076",
+    "name": "Chuchen the Independent",
+    "family": "Shhhudoku Kingdom",
+    "level": "Lvl 108 - 113"
+  },
+  {
+    "id": "1836",
+    "gfx_id": "140501836",
+    "name": "Vampyro",
+    "family": "Ghouls",
+    "level": "Lvl 95"
+  },
+  {
+    "id": "1827",
+    "gfx_id": "140501827",
+    "name": "Ghoul",
+    "family": "Ghouls",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "1829",
+    "gfx_id": "140501829",
+    "name": "Borbat",
+    "family": "Ghouls",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "2133",
+    "gfx_id": "140502133",
+    "name": "Refrighteration the Cold",
+    "family": "Ghouls",
+    "level": "Lvl 93 - 98"
+  },
+  {
+    "id": "1825",
+    "gfx_id": "140501825",
+    "name": "Beefy Borbat",
+    "family": "Ghouls",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "1828",
+    "gfx_id": "140501828",
+    "name": "Ghourmand",
+    "family": "Ghouls",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "2129",
+    "gfx_id": "107702129",
+    "name": "Ratagasd the Brown",
+    "family": "Rats",
+    "level": "Lvl 78 - 83"
+  },
+  {
+    "id": "1787",
+    "gfx_id": "107700210",
+    "name": "Accelerat",
+    "family": "Rats",
+    "level": "Lvl 70"
+  },
+  {
+    "id": "1789",
+    "gfx_id": "102801789",
+    "name": "Rattler",
+    "family": "Rats",
+    "level": "Lvl 72"
+  },
+  {
+    "id": "4481",
+    "gfx_id": "107704481",
+    "name": "Ratafia the Unsteady",
+    "family": "Rats",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "2313",
+    "gfx_id": "107702313",
+    "name": "Ratical",
+    "family": "Rats",
+    "level": "Lvl 84"
+  },
+  {
+    "id": "1790",
+    "gfx_id": "102801790",
+    "name": "Blimprat",
+    "family": "Rats",
+    "level": "Lvl 74"
+  },
+  {
+    "id": "1777",
+    "gfx_id": "138601777",
+    "name": "Grim Preacher",
+    "family": "Monks",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "1778",
+    "gfx_id": "138601778",
+    "name": "Skidmonk",
+    "family": "Monks",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "1779",
+    "gfx_id": "138601779",
+    "name": "Friar Tubs",
+    "family": "Monks",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4389",
+    "gfx_id": "138604389",
+    "name": "Kronin Berg",
+    "family": "Monks",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "1786",
+    "gfx_id": "138601786",
+    "name": "Nun",
+    "family": "Monks",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4388",
+    "gfx_id": "138604388",
+    "name": "Rack Istley",
+    "family": "Monks",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4737",
+    "gfx_id": "135502116",
+    "name": "Kokoblong the Vertical",
+    "family": "Kokokos",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4728",
+    "gfx_id": "135501688",
+    "name": "Rokoko",
+    "family": "Kokokos",
+    "level": "Lvl 59 - 63"
+  },
+  {
+    "id": "4731",
+    "gfx_id": "135501703",
+    "name": "Lokoko",
+    "family": "Kokokos",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4729",
+    "gfx_id": "135501687",
+    "name": "Kokoko",
+    "family": "Kokokos",
+    "level": "Lvl 55 - 59"
+  },
+  {
+    "id": "4730",
+    "gfx_id": "135501686",
+    "name": "Tikoko",
+    "family": "Kokokos",
+    "level": "Lvl 53 - 57"
+  },
+  {
+    "id": "4738",
+    "gfx_id": "135502116",
+    "name": "Dominant Kokoko",
+    "family": "Kokokos",
+    "level": "Lvl 63 - 68"
+  },
+  {
+    "id": "2127",
+    "gfx_id": "134601705",
+    "name": "Dominant Stalagmote",
+    "family": "Stalagmotes",
+    "level": "Lvl 168 - 173"
+  },
+  {
+    "id": "4923",
+    "gfx_id": "13482452",
+    "name": "Mamagmote",
+    "family": "Stalagmotes",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4920",
+    "gfx_id": "13482455",
+    "name": "Stalagnome",
+    "family": "Stalagmotes",
+    "level": "Lvl 158 - 162"
+  },
+  {
+    "id": "4921",
+    "gfx_id": "13482454",
+    "name": "Stalagawk",
+    "family": "Stalagmotes",
+    "level": "Lvl 160 - 164"
+  },
+  {
+    "id": "4853",
+    "gfx_id": "134602127",
+    "name": "Stalagmonarch the Rigid",
+    "family": "Stalagmotes",
+    "level": "Lvl 173 - 178"
+  },
+  {
+    "id": "4922",
+    "gfx_id": "13482453",
+    "name": "Stalaguar",
+    "family": "Stalagmotes",
+    "level": "Lvl 164 - 168"
+  },
+  {
+    "id": "4750",
+    "gfx_id": "132601584",
+    "name": "Father Cwabstix",
+    "family": "Cwabs",
+    "level": "Lvl 61 - 64"
+  },
+  {
+    "id": "4748",
+    "gfx_id": "132601583",
+    "name": "Surimi",
+    "family": "Cwabs",
+    "level": "Lvl 51"
+  },
+  {
+    "id": "4752",
+    "gfx_id": "177804154",
+    "name": "Sebastian Cwabtellanos",
+    "family": "Cwabs",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4753",
+    "gfx_id": "132602115",
+    "name": "Dominant Cwab",
+    "family": "Cwabs",
+    "level": "Lvl 63 - 68"
+  },
+  {
+    "id": "4749",
+    "gfx_id": "132601585",
+    "name": "Cwablock",
+    "family": "Cwabs",
+    "level": "Lvl 51 - 55"
+  },
+  {
+    "id": "4751",
+    "gfx_id": "132901597",
+    "name": "Albatrocious",
+    "family": "Cwabs",
+    "level": "Lvl 56 - 60"
+  },
+  {
+    "id": "4754",
+    "gfx_id": "132602285",
+    "name": "Royal Cwab",
+    "family": "Cwabs",
+    "level": "Lvl 68 - 73"
+  },
+  {
+    "id": "4725",
+    "gfx_id": "131501555",
+    "name": "Don Puffnando",
+    "family": "Snappers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "4727",
+    "gfx_id": "131501696",
+    "name": "Black Zordfish",
+    "family": "Snappers",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "4889",
+    "gfx_id": "177804172",
+    "name": "Leviatun",
+    "family": "Snappers",
+    "level": "Lvl 125"
+  },
+  {
+    "id": "1638",
+    "gfx_id": "131501638",
+    "name": "Snappy the Fishfrier",
+    "family": "Snappers",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "2114",
+    "gfx_id": "131502114",
+    "name": "Dominant Snapper",
+    "family": "Snappers",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "4724",
+    "gfx_id": "131501553",
+    "name": "Sergeant Izungry",
+    "family": "Snappers",
+    "level": "Lvl 119 - 123"
+  },
+  {
+    "id": "4723",
+    "gfx_id": "131501554",
+    "name": "Zordfish",
+    "family": "Snappers",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "4726",
+    "gfx_id": "131501556",
+    "name": "Bernardo dia Reya",
+    "family": "Snappers",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "4512",
+    "gfx_id": "129001451",
+    "name": "Crackrock",
+    "family": "Cracklers",
+    "level": "Lvl 38 - 42"
+  },
+  {
+    "id": "4368",
+    "gfx_id": "129004368",
+    "name": "Cracknut the Nuisance",
+    "family": "Cracklers",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "4369",
+    "gfx_id": "129004369",
+    "name": "Dominant Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 48 - 53"
+  },
+  {
+    "id": "4519",
+    "gfx_id": "129002198",
+    "name": "Royal Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "4510",
+    "gfx_id": "129001793",
+    "name": "Ancestral Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "4511",
+    "gfx_id": "129001452",
+    "name": "Crackler",
+    "family": "Cracklers",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "4867",
+    "gfx_id": "128802291",
+    "name": "Strich",
+    "family": "Striches",
+    "level": "Lvl 68 - 72"
+  },
+  {
+    "id": "4869",
+    "gfx_id": "128801447",
+    "name": "Thingamastrich",
+    "family": "Striches",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "2126",
+    "gfx_id": "128802126",
+    "name": "Dominant Strich",
+    "family": "Striches",
+    "level": "Lvl 77 - 82"
+  },
+  {
+    "id": "1631",
+    "gfx_id": "128801631",
+    "name": "Stodgy the Podgy",
+    "family": "Striches",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "4871",
+    "gfx_id": "128802273",
+    "name": "Her Highstrichness Ungaria O'Stricha",
+    "family": "Striches",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "4868",
+    "gfx_id": "128801446",
+    "name": "Strichon",
+    "family": "Striches",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "1749",
+    "gfx_id": "128301738",
+    "name": "Scaramel the Melty",
+    "family": "Scaras",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "2125",
+    "gfx_id": "128302125",
+    "name": "Dominant Scara",
+    "family": "Scaras",
+    "level": "Lvl 93 - 98"
+  },
+  {
+    "id": "4910",
+    "gfx_id": "128401430",
+    "name": "Scarafly",
+    "family": "Scaras",
+    "level": "Lvl 81"
+  },
+  {
+    "id": "4913",
+    "gfx_id": "128301738",
+    "name": "Scarador",
+    "family": "Scaras",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4909",
+    "gfx_id": "128401429",
+    "name": "Scaraboss",
+    "family": "Scaras",
+    "level": "Lvl 86 - 90"
+  },
+  {
+    "id": "4911",
+    "gfx_id": "128401431",
+    "name": "Scaramel",
+    "family": "Scaras",
+    "level": "Lvl 91 - 95"
+  },
+  {
+    "id": "4912",
+    "gfx_id": "128401432",
+    "name": "Scaralady",
+    "family": "Scaras",
+    "level": "Lvl 81 - 85"
+  },
+  {
+    "id": "1359",
+    "gfx_id": "126001359",
+    "name": "Blue Raspberry Blii",
+    "family": "Jellies",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "1360",
+    "gfx_id": "126001360",
+    "name": "Lemon Blii",
+    "family": "Jellies",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "1361",
+    "gfx_id": "126001361",
+    "name": "Strawberry Blii",
+    "family": "Jellies",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "1362",
+    "gfx_id": "126001362",
+    "name": "Mint Blii",
+    "family": "Jellies",
+    "level": "Lvl 35"
+  },
+  {
+    "id": "1358",
+    "gfx_id": "126001358",
+    "name": "Lemon Jelly",
+    "family": "Jellies",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "2475",
+    "gfx_id": "126002474",
+    "name": "Licorice Jelly",
+    "family": "Jellies",
+    "level": "Lvl 108 - 113"
+  },
+  {
+    "id": "1339",
+    "gfx_id": "126001339",
+    "name": "Blue Raspberry Jelly",
+    "family": "Jellies",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "4390",
+    "gfx_id": "126004390",
+    "name": "Prince Jellu",
+    "family": "Jellies",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "1340",
+    "gfx_id": "126001340",
+    "name": "Mint Jelly",
+    "family": "Jellies",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "1341",
+    "gfx_id": "126001341",
+    "name": "Strawberry Jelly",
+    "family": "Jellies",
+    "level": "Lvl 100 - 104"
+  },
+  {
+    "id": "1345",
+    "gfx_id": "1300035",
+    "name": "Emperor Jellix",
+    "family": "Jellies",
+    "level": "Lvl 118 - 123"
+  },
+  {
+    "id": "2123",
+    "gfx_id": "122602123",
+    "name": "Dominant Puddly",
+    "family": "Puddly",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "4717",
+    "gfx_id": "122602278",
+    "name": "Puddly Chief",
+    "family": "Puddly",
+    "level": "Lvl 119 - 123"
+  },
+  {
+    "id": "1633",
+    "gfx_id": "122601633",
+    "name": "Puddleton the Bare",
+    "family": "Puddly",
+    "level": "Lvl 123 - 128"
+  },
+  {
+    "id": "4716",
+    "gfx_id": "122602281",
+    "name": "Dinky Puddly",
+    "family": "Puddly",
+    "level": "Lvl 109 - 113"
+  },
+  {
+    "id": "4719",
+    "gfx_id": "122602280",
+    "name": "Mama Puddly",
+    "family": "Puddly",
+    "level": "Lvl 115 - 119"
+  },
+  {
+    "id": "4718",
+    "gfx_id": "122602279",
+    "name": "Puddly Warrior",
+    "family": "Puddly",
+    "level": "Lvl 113 - 117"
+  },
+  {
+    "id": "4720",
+    "gfx_id": "122602272",
+    "name": "Royal Puddly",
+    "family": "Puddly",
+    "level": "Lvl 128 - 133"
+  },
+  {
+    "id": "5008",
+    "gfx_id": "120501171",
+    "name": "Dominant Magik Riktus",
+    "family": "Riktus",
+    "level": "Lvl 97 - 105"
+  },
+  {
+    "id": "5010",
+    "gfx_id": "120504520",
+    "name": "Chapoto the Friendly",
+    "family": "Riktus",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "4520",
+    "gfx_id": "120504520",
+    "name": "Magik Hat",
+    "family": "Riktus",
+    "level": "Lvl 113 - 118"
+  },
+  {
+    "id": "1166",
+    "gfx_id": "120501166",
+    "name": "Badenalty",
+    "family": "Riktus",
+    "level": "Lvl 97 - 105"
+  },
+  {
+    "id": "1167",
+    "gfx_id": "120501167",
+    "name": "Badskin",
+    "family": "Riktus",
+    "level": "Lvl 97 - 105"
+  },
+  {
+    "id": "1169",
+    "gfx_id": "120501169",
+    "name": "Badaclocom",
+    "family": "Riktus",
+    "level": "Lvl 97 - 105"
+  },
+  {
+    "id": "1168",
+    "gfx_id": "120501168",
+    "name": "Badgoat",
+    "family": "Riktus",
+    "level": "Lvl 97 - 105"
+  },
+  {
+    "id": "2118",
+    "gfx_id": "121802118",
+    "name": "Dominant Moogrroon",
+    "family": "Moogrr",
+    "level": "Lvl 48 - 53"
+  },
+  {
+    "id": "1632",
+    "gfx_id": "121801632",
+    "name": "Moothane the Gas",
+    "family": "Moogrr",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "4755",
+    "gfx_id": "100500980",
+    "name": "Moofly",
+    "family": "Moogrr",
+    "level": "Lvl 38 - 42"
+  },
+  {
+    "id": "4758",
+    "gfx_id": "121802271",
+    "name": "Royal Moogrr",
+    "family": "Moogrr",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "4756",
+    "gfx_id": "121801220",
+    "name": "Moogrroon",
+    "family": "Moogrr",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "4757",
+    "gfx_id": "121801221",
+    "name": "Moogrr",
+    "family": "Moogrr",
+    "level": "Lvl 40 - 48"
+  },
+  {
+    "id": "125",
+    "gfx_id": "101400125",
+    "name": "Green Larva",
+    "family": "Larvae",
+    "level": "Lvl 8 - 18"
+  },
+  {
+    "id": "4096",
+    "gfx_id": "101404096",
+    "name": "Dominant Larva",
+    "family": "Larvae",
+    "level": "Lvl 18 - 23"
+  },
+  {
+    "id": "123",
+    "gfx_id": "101400123",
+    "name": "Blue Larva",
+    "family": "Larvae",
+    "level": "Lvl 8 - 18"
+  },
+  {
+    "id": "735",
+    "gfx_id": "101400735",
+    "name": "White Larva",
+    "family": "Larvae",
+    "level": "Lvl 8 - 18"
+  },
+  {
+    "id": "4097",
+    "gfx_id": "101404097",
+    "name": "Explosive Larvawork",
+    "family": "Larvae",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "124",
+    "gfx_id": "101400124",
+    "name": "Orange Larva",
+    "family": "Larvae",
+    "level": "Lvl 8 - 18"
+  },
+  {
+    "id": "785",
+    "gfx_id": "101400785",
+    "name": "Purple Larva",
+    "family": "Larvae",
+    "level": "Lvl 8 - 18"
+  },
+  {
+    "id": "2157",
+    "gfx_id": "101402157",
+    "name": "Shin Larva",
+    "family": "Larvae",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "95",
+    "gfx_id": "101600095",
+    "name": "Demonic Rose",
+    "family": "Field Plants",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "1275",
+    "gfx_id": "101601275",
+    "name": "Spiny Glutton",
+    "family": "Field Plants",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "1726",
+    "gfx_id": "101601726",
+    "name": "Carnivorous Plant",
+    "family": "Field Plants",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "2122",
+    "gfx_id": "101602122",
+    "name": "Dominant Plant",
+    "family": "Field Plants",
+    "level": "Lvl 48 - 53"
+  },
+  {
+    "id": "1274",
+    "gfx_id": "101601274",
+    "name": "Exploding Sunflower",
+    "family": "Field Plants",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "135",
+    "gfx_id": "101600135",
+    "name": "Dandy Lion",
+    "family": "Field Plants",
+    "level": "Lvl 38 - 42"
+  },
+  {
+    "id": "1636",
+    "gfx_id": "101601636",
+    "name": "Dandel the Boy",
+    "family": "Field Plants",
+    "level": "Lvl 45"
+  },
+  {
+    "id": "4544",
+    "gfx_id": "101600144",
+    "name": "Darkover Rose",
+    "family": "Field Plants",
+    "level": "Lvl 40 - 44"
+  },
+  {
+    "id": "94",
+    "gfx_id": "101600094",
+    "name": "Evil Dandelion",
+    "family": "Field Plants",
+    "level": "Lvl 44 - 48"
+  },
+  {
+    "id": "5005",
+    "gfx_id": "101600401",
+    "name": "Dew the Early Riser",
+    "family": "Field Plants",
+    "level": "Lvl 53 - 58"
+  },
+  {
+    "id": "2819",
+    "gfx_id": "1014002819",
+    "name": "Nanny Larva",
+    "family": "Larvae",
+    "level": "Lvl 5"
+  },
+  {
+    "id": "4916",
+    "gfx_id": "100601070",
+    "name": "Moskito",
+    "family": "Mushdskitos",
+    "level": "Lvl 68 - 72"
+  },
+  {
+    "id": "4917",
+    "gfx_id": "100600901",
+    "name": "Bloodsucker Tsu Tsu",
+    "family": "Mushdskitos",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "4918",
+    "gfx_id": "100601278",
+    "name": "Tsu Tsu Tsar",
+    "family": "Mushdskitos",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "4915",
+    "gfx_id": "120001132",
+    "name": "Big Mushd",
+    "family": "Mushdskitos",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "1639",
+    "gfx_id": "120001277",
+    "name": "Mushdmallow",
+    "family": "Mushdskitos",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "2120",
+    "gfx_id": "120002120",
+    "name": "Dominant Mushd",
+    "family": "Mushdskitos",
+    "level": "Lvl 78 - 83"
+  },
+  {
+    "id": "4761",
+    "gfx_id": "100700058",
+    "name": "Glai",
+    "family": "Cania Creatures",
+    "level": "Lvl 70 - 74"
+  },
+  {
+    "id": "4762",
+    "gfx_id": "100700054",
+    "name": "Aggressive Blibli",
+    "family": "Cania Creatures",
+    "level": "Lvl 74 - 78"
+  },
+  {
+    "id": "4763",
+    "gfx_id": "100701727",
+    "name": "Royal Blibli",
+    "family": "Cania Creatures",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "4764",
+    "gfx_id": "100702119",
+    "name": "Dominant Blibli",
+    "family": "Cania Creatures",
+    "level": "Lvl 45"
+  },
+  {
+    "id": "4760",
+    "gfx_id": "100700052",
+    "name": "Young Wild Sow",
+    "family": "Cania Creatures",
+    "level": "Lvl 66 - 68"
+  },
+  {
+    "id": "4765",
+    "gfx_id": "100701645",
+    "name": "Boarnigen the Damasker",
+    "family": "Cania Creatures",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "4766",
+    "gfx_id": "123301263",
+    "name": "Prespic",
+    "family": "Cania Creatures",
+    "level": "Lvl 68 - 72"
+  },
+  {
+    "id": "1152",
+    "gfx_id": "106400562",
+    "name": "Crobak",
+    "family": "Crobaks",
+    "level": "Lvl 69"
+  },
+  {
+    "id": "1153",
+    "gfx_id": "106400568",
+    "name": "Crobeak",
+    "family": "Crobaks",
+    "level": "Lvl 72"
+  },
+  {
+    "id": "1784",
+    "gfx_id": "106400565",
+    "name": "Croboar",
+    "family": "Crobaks",
+    "level": "Lvl 65"
+  },
+  {
+    "id": "1155",
+    "gfx_id": "106400636",
+    "name": "Crobak Chief",
+    "family": "Crobaks",
+    "level": "Lvl 75"
+  },
+  {
+    "id": "3701",
+    "gfx_id": "120201407",
+    "name": "Tigri Smisse",
+    "family": "Crobaks",
+    "level": "Lvl 83 - 88"
+  },
+  {
+    "id": "2132",
+    "gfx_id": "106402132",
+    "name": "Corbiyar the Smuggler",
+    "family": "Crobaks",
+    "level": "Lvl 78 - 83"
+  },
+  {
+    "id": "3696",
+    "gfx_id": "173603696",
+    "name": "Korbot K-800",
+    "family": "Crobaks",
+    "level": "Lvl 80"
+  },
+  {
+    "id": "5103",
+    "gfx_id": "119401152",
+    "name": "Grave",
+    "family": "Chafers",
+    "level": "Lvl 1"
+  },
+  {
+    "id": "1750",
+    "gfx_id": "104701750",
+    "name": "Chafaldrag the Charming",
+    "family": "Chafers",
+    "level": "Lvl 95"
+  },
+  {
+    "id": "4741",
+    "gfx_id": "104701364",
+    "name": "Elite Chafer",
+    "family": "Chafers",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "5020",
+    "gfx_id": "104701363",
+    "name": "Dominant Chafer",
+    "family": "Chafers",
+    "level": "Lvl 89 - 93"
+  },
+  {
+    "id": "4742",
+    "gfx_id": "104701355",
+    "name": "Chafer Lancer",
+    "family": "Chafers",
+    "level": "Lvl 83 - 87"
+  },
+  {
+    "id": "5019",
+    "gfx_id": "104701707",
+    "name": "Chaferime the Slow",
+    "family": "Chafers",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4739",
+    "gfx_id": "104701707",
+    "name": "Chaferfu, Chafer King",
+    "family": "Chafers",
+    "level": "Lvl 98 - 103"
+  },
+  {
+    "id": "4740",
+    "gfx_id": "104701366",
+    "name": "Chafer Archer",
+    "family": "Chafers",
+    "level": "Lvl 85 - 89"
+  },
+  {
+    "id": "5",
+    "gfx_id": "100100005",
+    "name": "Tofoone",
+    "family": "Tofus",
+    "level": "Lvl 10 - 14"
+  },
+  {
+    "id": "704",
+    "gfx_id": "100100704",
+    "name": "Tofurby",
+    "family": "Tofus",
+    "level": "Lvl 14 - 18"
+  },
+  {
+    "id": "4",
+    "gfx_id": "100100004",
+    "name": "Tofu",
+    "family": "Tofus",
+    "level": "Lvl 8 - 12"
+  },
+  {
+    "id": "4101",
+    "gfx_id": "100104101",
+    "name": "Claud Sharpe",
+    "family": "Tofus",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "4092",
+    "gfx_id": "100104092",
+    "name": "Dominant Tofu",
+    "family": "Tofus",
+    "level": "Lvl 18 - 23"
+  },
+  {
+    "id": "6",
+    "gfx_id": "100100006",
+    "name": "Baby Tofu",
+    "family": "Tofus",
+    "level": "Lvl 4 - 8"
+  },
+  {
+    "id": "1259",
+    "gfx_id": "100100050",
+    "name": "Royal Tofu",
+    "family": "Tofus",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "1187",
+    "gfx_id": "101501187",
+    "name": "Royal Piwi",
+    "family": "Piwis",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "4100",
+    "gfx_id": "101504100",
+    "name": "Gunner Pewpew",
+    "family": "Piwis",
+    "level": "Lvl 38 - 43"
+  },
+  {
+    "id": "88",
+    "gfx_id": "101500088",
+    "name": "Blue Piwi",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "90",
+    "gfx_id": "101500090",
+    "name": "Green Piwi",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "271",
+    "gfx_id": "101500271",
+    "name": "Purple Piwi",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "272",
+    "gfx_id": "101500272",
+    "name": "Pink Piwi",
+    "family": "Piwis",
+    "level": "Lvl 26 - 34"
+  },
+  {
+    "id": "1268",
+    "gfx_id": "101500780",
+    "name": "Red Googoo",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "1269",
+    "gfx_id": "101500781",
+    "name": "Green Googoo",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "4093",
+    "gfx_id": "101504093",
+    "name": "Dominant Piwi",
+    "family": "Piwis",
+    "level": "Lvl 33 - 38"
+  },
+  {
+    "id": "87",
+    "gfx_id": "101500087",
+    "name": "Red Piwi",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "1267",
+    "gfx_id": "101500782",
+    "name": "Blue Googoo",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "1270",
+    "gfx_id": "101500783",
+    "name": "Purple Googoo",
+    "family": "Piwis",
+    "level": "Lvl 22 - 30"
+  },
+  {
+    "id": "4874",
+    "gfx_id": "104804874",
+    "name": "Soft Oak",
+    "family": "Dark Treechnids",
+    "level": "Lvl 143 - 148"
+  },
+  {
+    "id": "4998",
+    "gfx_id": "104800398",
+    "name": "Caustic Abrasive",
+    "family": "Dark Treechnids",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "4886",
+    "gfx_id": "104804886",
+    "name": "Ancestral Treechnid",
+    "family": "Dark Treechnids",
+    "level": "Lvl 134 - 138"
+  },
+  {
+    "id": "2121",
+    "gfx_id": "104802121",
+    "name": "Dominant Treechnid",
+    "family": "Dark Treechnids",
+    "level": "Lvl 137 - 142"
+  },
+  {
+    "id": "4887",
+    "gfx_id": "104804887",
+    "name": "Dark Trunknid",
+    "family": "Dark Treechnids",
+    "level": "Lvl 130 - 134"
+  },
+  {
+    "id": "4888",
+    "gfx_id": "104804888",
+    "name": "Dark Treechnid",
+    "family": "Dark Treechnids",
+    "level": "Lvl 128 - 132"
+  },
+  {
+    "id": "3",
+    "gfx_id": "100200003",
+    "name": "Gobball War Chief",
+    "family": "Gobballs",
+    "level": "Lvl 14 - 18"
+  },
+  {
+    "id": "41",
+    "gfx_id": "100200041",
+    "name": "Gobbette",
+    "family": "Gobballs",
+    "level": "Lvl 10 - 14"
+  },
+  {
+    "id": "4085",
+    "gfx_id": "100204085",
+    "name": "Dominant Gobball",
+    "family": "Gobballs",
+    "level": "Lvl 18 - 23"
+  },
+  {
+    "id": "39",
+    "gfx_id": "100200039",
+    "name": "White Gobbly",
+    "family": "Gobballs",
+    "level": "Lvl 4 - 8"
+  },
+  {
+    "id": "44",
+    "gfx_id": "100200044",
+    "name": "Royal Gobball",
+    "family": "Gobballs",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "4086",
+    "gfx_id": "100204086",
+    "name": "Filholl the Forsaken",
+    "family": "Gobballs",
+    "level": "Lvl 23 - 28"
+  },
+  {
+    "id": "2",
+    "gfx_id": "100200002",
+    "name": "Black Gobbly",
+    "family": "Gobballs",
+    "level": "Lvl 4 - 8"
+  },
+  {
+    "id": "1",
+    "gfx_id": "100200001",
+    "name": "Gobball",
+    "family": "Gobballs",
+    "level": "Lvl 8 - 12"
+  }
+]
