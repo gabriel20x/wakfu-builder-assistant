@@ -216,6 +216,7 @@ const translations = {
     
     // Recipe Method
     'metadata.recipeInfo': 'Este item se obtiene mediante crafteo/receta',
+    'metadata.ingredients': 'ingredientes',
     
     // Fragments Method
     'metadata.fragmentItemId': 'ID del Fragmento',
@@ -435,6 +436,7 @@ const translations = {
     
     // Recipe Method
     'metadata.recipeInfo': 'This item is obtained through crafting/recipe',
+    'metadata.ingredients': 'ingredients',
     
     // Fragments Method
     'metadata.fragmentItemId': 'Fragment ID',
@@ -654,6 +656,7 @@ const translations = {
     
     // Recipe Method
     'metadata.recipeInfo': 'Cet item est obtenu par craft/recette',
+    'metadata.ingredients': 'ingrédients',
     
     // Fragments Method
     'metadata.fragmentItemId': 'ID du Fragment',

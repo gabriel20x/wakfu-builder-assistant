@@ -85,20 +85,22 @@
         @mouseenter="showMetadataPopover"
         @mouseleave="hideMetadataPopover"
       >
-        <div v-if="hasManualMetadata" class="popover-section">
+        <!-- Acquisition Methods (excluding drops - shown below) -->
+        <div v-if="hasNonDropMetadata" class="popover-section">
           <div class="popover-header">
             <strong>{{ t("metadata.acquisitionMethodsTitle") }}</strong>
           </div>
           <div class="popover-grid">
-            <div v-if="metadataMethods.drop" class="popover-row">
-              <div class="popover-label">💀 {{ t("metadata.methodDrop") }}:</div>
-              <div class="popover-value">{{ metadataMethods.drop }}</div>
-            </div>
             <div v-if="metadataMethods.recipe" class="popover-row">
               <div class="popover-label">
                 🔨 {{ t("metadata.methodRecipe") }}:
               </div>
-              <div class="popover-value">✓</div>
+              <div class="popover-value">
+                <span v-if="recipeDetails">
+                  {{ recipeDetails.ingredientCount }} {{ t("metadata.ingredients") }}
+                </span>
+                <span v-else>✓</span>
+              </div>
             </div>
             <div v-if="metadataMethods.fragments" class="popover-row">
               <div class="popover-label">
@@ -131,6 +133,7 @@
           </div>
         </div>
 
+        <!-- Drop Sources from Database (unified source) -->
         <div v-if="hasDropSources" class="popover-section drop-section">
           <div class="popover-header">
             <strong>{{ t("metadata.dropSourcesDetected") }}</strong>
@@ -242,9 +245,35 @@ const dropSources = computed(() => {
 
 const hasDropSources = computed(() => dropSources.value.length > 0);
 
+// Check if has non-drop metadata (to avoid showing empty section)
+const hasNonDropMetadata = computed(() => {
+  if (!hasManualMetadata.value) return false;
+  const methods = props.metadata.acquisition_methods || {};
+  return (
+    methods.recipe?.enabled ||
+    methods.fragments?.enabled ||
+    methods.crupier?.enabled ||
+    methods.challenge_reward?.enabled ||
+    methods.quest?.enabled ||
+    methods.other?.enabled
+  );
+});
+
 const hasExtendedMetadata = computed(
-  () => hasManualMetadata.value || hasDropSources.value
+  () => hasNonDropMetadata.value || hasDropSources.value
 );
+
+const recipeDetails = computed(() => {
+  if (!hasManualMetadata.value) return null;
+  const methods = props.metadata.acquisition_methods || {};
+  if (!methods.recipe?.enabled) return null;
+  
+  const ingredients = methods.recipe.ingredients || [];
+  return {
+    ingredientCount: ingredients.length,
+    ingredients: ingredients
+  };
+});
 
 const metadataMethods = computed(() => {
   if (!hasManualMetadata.value) return {};
@@ -252,12 +281,7 @@ const metadataMethods = computed(() => {
   const methods = props.metadata.acquisition_methods || {};
   const result = {};
 
-  if (methods.drop?.enabled) {
-    const rates = methods.drop.drop_rates || [];
-    result.drop =
-      rates.length > 0 ? rates.join("%, ") + "%" : t("metadata.yes");
-  }
-
+  // Note: drops are now handled by drop_sources from DB, not metadata
   if (methods.recipe?.enabled) {
     result.recipe = true;
   }
