@@ -1,34 +1,125 @@
 # 🎮 Wakfu Builder Assistant
 
-**Genera builds optimizados de equipamiento para Wakfu automáticamente**
+Bienvenido/a a Wakfu Builder Assistant — una aplicación que genera builds óptimos de equipamiento para Wakfu y te ayuda a elegir los mejores items teniendo en cuenta disponibilidad, rareza y preferencias de stats.
 
-Una aplicación web que te ayuda a crear las mejores combinaciones de equipamiento para tu personaje en Wakfu, considerando qué tan difícil es conseguir cada item.
+Este README ha sido reorganizado para alguien sin conocimientos de programación: pasos claros para ejecutar la aplicación localmente, descripción de módulos principales, mantenimiento básico y notas sobre archivos antiguos que se han limpiado del árbol principal.
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
-![Status](https://img.shields.io/badge/status-active-success)
+Estado del repositorio
+- Artículos principales: API (FastAPI), Frontend (Vue 3), Worker (Python), PostgreSQL (Docker)
+- Contenedores y configuración: `docker-compose.yml`
+- Changelogs: conservados en `docs/changelogs/`
+
+## 1) Ejecutar la aplicación localmente (para NO programadores)
+
+Requisitos mínimos (fáciles):
+- Windows/Mac/Linux
+- Docker Desktop instalado y funcionando
+
+Pasos (rápidos):
+
+1. Abre Docker Desktop y asegúrate de que esté corriendo.
+2. Abre la carpeta del proyecto (por ejemplo, usando el Explorador de archivos).
+3. Ejecuta el archivo de comandos según tu sistema:
+
+    - Windows (PowerShell):
+
+       .\deploy.ps1
+
+       Nota: el script `deploy.ps1` guía el proceso y también puede usarse para desplegar. Si prefieres usar Docker manualmente, continúa con el siguiente paso.
+
+    - Alternativa (todas las plataformas) — usando Docker Compose:
+
+       1) Abre una terminal (PowerShell en Windows).
+       2) Sitúate en la carpeta del proyecto (la que contiene `docker-compose.yml`).
+       3) Ejecuta:
+
+            docker compose up -d --build
+
+       4) Espera a que los contenedores inicien. Verás servicios para `db`, `api`, `frontend` y `worker`.
+
+4. Una vez arriba:
+
+    - Frontend (interfaz web): http://localhost:5173
+    - API (documentación OpenAPI/Swagger): http://localhost:8000/docs
+
+5. Para parar los servicios:
+
+    docker compose down
+
+Consejos para principiantes:
+- Si Windows te pide permisos, acepta los permisos para Docker.
+- Si algún servicio demora en iniciarse (por ejemplo la base de datos), espera 1–2 minutos y vuelve a cargar las URLs.
+
+## 2) Qué hace cada módulo (resumen para no programadores)
+
+He aquí una guía con los módulos principales y su responsabilidad, para entender la arquitectura sin ver código.
+
+- API (carpeta `api/`)
+   - Qué: Un servicio web que expone la funcionalidad del generador de builds y la API para el frontend.
+   - Funcionalidades: endpoints REST para buscar items, generar builds, administrar metadatos de items, y documentación interactiva (Swagger).
+   - Para ver: abre `http://localhost:8000/docs` cuando el proyecto esté corriendo.
+
+- Frontend (carpeta `frontend/`)
+   - Qué: Interfaz visual construida con Vue 3.
+   - Funcionalidades: generador de builds, visualización del inventario, panel de administración de metadatos y control de items ignorados.
+   - Para ver: abre `http://localhost:5173`.
+
+- Worker (carpeta `worker/`)
+   - Qué: scripts que procesan y normalizan los datos del juego (JSON), calculan dificultades y cargan items en la base de datos.
+   - Funcionalidades: mapeo de Action IDs a stats, sincronización de metadatos, actualizaciones de gfx_id, y recalculación de dificultades.
+
+- Base de datos y migraciones (`migrations/`, `docker-compose.yml`)
+   - Qué: PostgreSQL usado para almacenar items, metadatos y caches.
+   - Migraciones: SQL para cambios de esquema (por ejemplo `add_gfx_id.sql`).
+
+- Datos del juego (`wakfu_data/`)
+   - Qué: Contiene `item_metadata.json`, dumps del gamedata y scripts auxiliares. El worker usa estos archivos para poblar la DB.
+
+- Documentación (`docs/`)
+   - Qué: manuales, guías de despliegue, análisis de discrepancias y changelogs.
+   - Importante: los changelogs se mantienen en `docs/changelogs/`.
+
+## 3) Qué se hizo con archivos antiguos y tests
+
+Se han limpiado algunos artefactos de verificación y reportes antiguos del árbol principal para que el proyecto sea más sencillo de entender. Esos archivos quedaron documentados en `ARCHIVE/ARCHIVE_SUMMARY.md` (nuevo) en lugar de estar mezclados en la raíz. Los changelogs permanecen en `docs/changelogs/`.
+
+Archivos removidos del raíz o carpeta principal (su contenido está documentado en `ARCHIVE/ARCHIVE_SUMMARY.md`):
+- `verify_improvements.py` (script de verificación)
+- Tests antiguos en `api/tests/` (archivados en la lista)
+- Reportes de sesión/resúmenes (varios `RESUMEN_*.md`, `FINAL_*.md`, `FIXES_*.md`, etc.)
+
+Si prefieres que esos archivos se restauren o se copien dentro de una carpeta `archive/` con su contenido original completo, dime y lo hago.
+
+## 4) Cómo mantener y actualizar datos (operaciones comunes)
+
+- Volver a cargar gamedata completo (worker):
+
+   1) Asegúrate de que la DB esté corriendo y accesible.
+   2) Ejecuta el worker que importa los datos (puede hacerse via `docker compose restart worker` o mediante el comando que se haya documentado en `worker/`).
+
+- Aplicar migraciones SQL:
+
+   - Si usas el contenedor del DB: docker compose exec db psql -U wakfu -d wakfu_builder -f /migrations/add_gfx_id.sql
+
+## 5) Despliegue en la nube (opciones rápidas)
+
+- Render.com: se provee `render.yaml` para un blueprint con servicios (db, api, frontend, worker). Recomendado para usuarios sin conocimientos infra.
+- Railway / Fly.io: opciones alternativas (más avanzadas).
+
+## 6) Seguridad y notas finales
+
+- No incluyas credenciales sensibles en repositorios públicos.
+- Variables de entorno críticas: `DATABASE_URL`, `VITE_API_URL`, `GAMEDATA_PATH`, `CORS_ORIGINS`.
+
+## 7) Soporte y próximos pasos
+
+- ¿Quieres que restauraré algunos reportes y tests antes de borrarlos? (Recomendado: mantener tests en un branch `archive/tests` si no los quieres ejecutar ahora.)
+- Puedo también generar un `README_deploy_quick.md` con capturas/screenshot si quieres una guía tipo "paso a paso con imágenes" para un público totalmente no técnico.
 
 ---
 
-## 📖 ¿Qué hace esta aplicación?
+Gracias — si quieres que haga una copia del README en inglés, o que empaque una versión PDF para enviar a otros, dímelo y lo preparo.
 
-Esta herramienta te ayuda a:
-- ✨ **Generar builds automáticamente** - Ya no tienes que buscar item por item
-- 🎯 **Optimizar tus stats** - Elige qué stats son importantes para ti
-- 📊 **Ver 3 opciones diferentes** - Fácil, Medio y Difícil de conseguir
-- 🔍 **Comparar equipamiento** - Ve todos los items de cada build en un solo lugar
-- 📱 **Usar desde cualquier dispositivo** - Funciona en PC, tablet y móvil
-
----
-
-## 🚀 Empezar a Usar (Para Principiantes)
-
-### ¿Qué necesito instalar?
-
-Solo necesitas instalar **2 programas gratuitos**:
-
-1. **Docker Desktop** - Es como una "caja mágica" que ejecuta la aplicación
-   - 📥 Descargar: [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
-   - 💻 Disponible para: Windows, Mac, Linux
 
 2. **Git** - Para descargar el código de la aplicación
    - 📥 Descargar: [https://git-scm.com/downloads](https://git-scm.com/downloads)
