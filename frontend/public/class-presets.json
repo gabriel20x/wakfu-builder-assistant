@@ -538,38 +538,18 @@
           "level_range": [20, 245],
           "elements": ["Water", "Earth"],
           "stat_priorities": {
-            "HP": 9,
+            "HP": 10,
             "AP": 10,
-            "MP": 9,
+            "MP": 10,
             "Range": 8,
             "Block": 8,
             "Lock": 8,
             "Dodge": 6,
-            "Elemental_Resistance": 6,
-            "Fire_Resistance": 6,
-            "Water_Resistance": 6,
-            "Earth_Resistance": 6,
-            "Air_Resistance": 6
-          }
-        },
-        {
-          "id": "dps_melee",
-          "name": "DPS Melé",
-          "is_primary": false,
-          "level_range": [100, 245],
-          "elements": ["Water", "Fire"],
-          "stat_priorities": {
-            "Melee_Mastery": 10,
-            "Rear_Mastery": 10,
-            "Water_Mastery": 9,
-            "Fire_Mastery": 9,
-            "Critical_Hit": 8,
-            "Critical_Mastery": 7,
-            "AP": 10,
-            "MP": 7,
-            "HP": 6,
-            "Lock": 6,
-            "Elemental_Resistance": 5
+            "Elemental_Resistance": 7,
+            "Fire_Resistance": 7,
+            "Water_Resistance": 7,
+            "Earth_Resistance": 7,
+            "Air_Resistance": 7
           }
         }
       ]
