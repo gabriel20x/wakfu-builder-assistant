@@ -88,6 +88,22 @@ class MonsterDrop(Base):
     drop_rate_percent = Column(Float, nullable=False)  # Original percent value (0-100)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
+class Monster(Base):
+    __tablename__ = "monsters"
+    
+    monster_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    family_id = Column(Integer, index=True, nullable=True)
+    level_min = Column(Integer, nullable=True)
+    level_max = Column(Integer, nullable=True)
+    gfx_id = Column(Integer, nullable=True)
+    extra = Column(JSON, default=dict)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
 class MonsterFamily(Base):
     __tablename__ = "monster_families"
     
@@ -499,7 +515,18 @@ def main():
         
         community_data_path = data_path / "community-data"
         monster_drops_data = load_json(community_data_path / "monsterDrops.json")
-        monster_families_data = load_json(community_data_path / "monsterFamilies.json")
+        
+        processed_metadata_path = Path("/wakfu_data/processed/monsters_metadata.json")
+        monster_metadata_raw = {}
+        if processed_metadata_path.exists():
+            monster_metadata_raw = load_json(processed_metadata_path)
+        else:
+            logger.warning(
+                "Processed monster metadata not found at %s. "
+                "Family enrichment will be limited.",
+                processed_metadata_path,
+            )
+        
         dungeons_data = load_json(community_data_path / "dungeons.json")
         
         logger.info(f"Loaded {len(items_data)} items from JSON")
@@ -530,6 +557,31 @@ def main():
             resource_id = resource.get("definition", {}).get("id")
             if resource_id:
                 collectible_map[resource_id] = resource
+
+        metadata_monsters = []
+        metadata_lookup = {}
+        metadata_family_map = {}
+        if isinstance(monster_metadata_raw, dict):
+            metadata_monsters = monster_metadata_raw.get("monsters", [])
+            for monster_entry in metadata_monsters or []:
+                monster_id = monster_entry.get("monster_id")
+                if monster_id is None:
+                    continue
+                metadata_lookup[monster_id] = monster_entry
+
+                family_info = monster_entry.get("family") or {}
+                family_id = family_info.get("id")
+                if family_id is None:
+                    continue
+
+                names_map = family_info.get("names") or {}
+                family_entry = metadata_family_map.setdefault(
+                    family_id, {"id": family_id, "names": {}}
+                )
+                family_names = family_entry["names"]
+                for lang, value in names_map.items():
+                    if value and not family_names.get(lang):
+                        family_names[lang] = value
         
         # Clear existing data
         logger.info("Clearing existing data...")
@@ -537,6 +589,7 @@ def main():
         session.query(Recipe).delete()
         session.query(HarvestResource).delete()
         session.query(MonsterDrop).delete()
+        session.query(Monster).delete()
         session.query(MonsterFamily).delete()
         session.query(Dungeon).delete()
         session.commit()
@@ -755,31 +808,68 @@ def main():
                 return value if value else None
             return None
         
-        # Process monster families
-        if monster_families_data:
-            logger.info("Processing monster families...")
-            families_loaded = 0
-            for family in monster_families_data:
-                family_id = family.get("id")
-                names = family.get("name", [])
-                
-                if not family_id:
+        # Process monsters
+        if metadata_monsters:
+            logger.info("Processing monsters from processed metadata...")
+            monsters_loaded = 0
+            for monster_entry in metadata_monsters:
+                monster_id = monster_entry.get("monster_id")
+                if monster_id is None:
                     continue
                 
+                names = monster_entry.get("name", {})
+                family_info = monster_entry.get("family", {})
+                family_id = family_info.get("id") if family_info else None
+                
+                # Extract notes for extra field (handle None case)
+                notes = monster_entry.get("notes") or {}
+                extra_data = {
+                    "item_sources": notes.get("item_sources", []) if isinstance(notes, dict) else []
+                }
+                
+                monster = Monster(
+                    monster_id=monster_id,
+                    name_fr=names.get("fr"),
+                    name_en=names.get("en"),
+                    name_es=names.get("es"),
+                    name_pt=names.get("pt"),
+                    family_id=family_id,
+                    level_min=monster_entry.get("level_min"),
+                    level_max=monster_entry.get("level_max"),
+                    gfx_id=monster_entry.get("gfx_id"),
+                    extra=extra_data
+                )
+                session.add(monster)
+                monsters_loaded += 1
+                
+                if monsters_loaded % 100 == 0:
+                    session.commit()
+            
+            session.commit()
+            logger.info(f"Loaded {monsters_loaded} monsters (processed metadata)")
+        else:
+            logger.info("No processed monster metadata available for monsters.")
+        
+        # Process monster families
+        if metadata_family_map:
+            logger.info("Processing monster families from processed metadata...")
+            families_loaded = 0
+            for family_id, family_data in metadata_family_map.items():
+                names_map = family_data.get("names", {})
                 monster_family = MonsterFamily(
                     family_id=family_id,
-                    name_fr=get_localized_name(names, 0),
-                    name_en=get_localized_name(names, 1),
-                    name_es=get_localized_name(names, 2),
-                    name_pt=get_localized_name(names, 3)
+                    name_fr=names_map.get("fr"),
+                    name_en=names_map.get("en"),
+                    name_es=names_map.get("es"),
+                    name_pt=names_map.get("pt"),
                 )
                 session.add(monster_family)
                 families_loaded += 1
             
             session.commit()
-            logger.info(f"Loaded {families_loaded} monster families")
+            logger.info(f"Loaded {families_loaded} monster families (processed metadata)")
         else:
-            logger.info("No monster families data found (community-data/monsterFamilies.json)")
+            logger.info("No processed monster metadata available for monster families.")
         
         # Process dungeons
         if dungeons_data:
@@ -813,6 +903,7 @@ def main():
         if monster_drops_data:
             logger.info("Processing monster drops...")
             drops_loaded = 0
+            drops_missing_metadata = set()
             
             for entry in monster_drops_data:
                 monster_id = entry.get("id")
@@ -820,6 +911,9 @@ def main():
                 
                 if not monster_id or not isinstance(drops, list):
                     continue
+                
+                if metadata_lookup and monster_id not in metadata_lookup:
+                    drops_missing_metadata.add(monster_id)
                 
                 for drop in drops:
                     item_id = drop.get("itemId")
@@ -848,6 +942,12 @@ def main():
             
             session.commit()
             logger.info(f"Loaded {drops_loaded} monster drop records")
+            if drops_missing_metadata:
+                logger.warning(
+                    "Monster metadata missing for %d drop entries (sample: %s)",
+                    len(drops_missing_metadata),
+                    sorted(list(drops_missing_metadata))[:10],
+                )
         else:
             logger.info("No monster drop data found (community-data/monsterDrops.json)")
         

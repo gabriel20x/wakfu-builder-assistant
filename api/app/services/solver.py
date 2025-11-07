@@ -15,7 +15,7 @@ Performance: Only considers items within 25 levels of target to reduce computati
 """
 
 from sqlalchemy.orm import Session
-from app.db.models import Item, MonsterDrop
+from app.db.models import Item, MonsterDrop, Monster, MonsterFamily
 from app.core.config import settings
 from pulp import LpProblem, LpMaximize, LpVariable, lpSum, LpStatus, value
 import logging
@@ -624,20 +624,84 @@ def _solve_single_build(
     ]
     selected_ids = [item.item_id for item in selected_sql_items]
     
-    # Preload drop sources for selected items
+    # Preload drop sources for selected items with enriched monster metadata
     drop_map = {}
     if db and selected_ids:
         drop_rows = db.query(MonsterDrop).filter(
             MonsterDrop.item_id.in_(selected_ids)
         ).all()
         
+        # Preload all monsters and families for efficiency
+        monster_ids = {drop.monster_id for drop in drop_rows}
+        monsters = db.query(Monster).filter(Monster.monster_id.in_(monster_ids)).all()
+        monster_map = {m.monster_id: m for m in monsters}
+        
+        family_ids = {m.family_id for m in monsters if m.family_id}
+        families = db.query(MonsterFamily).filter(MonsterFamily.family_id.in_(family_ids)).all()
+        family_map = {f.family_id: f for f in families}
+        
         for drop in drop_rows:
+            monster = monster_map.get(drop.monster_id)
+            
+            # Build monster names dict
+            monster_names = {}
+            if monster:
+                if monster.name_fr:
+                    monster_names["fr"] = monster.name_fr
+                if monster.name_en:
+                    monster_names["en"] = monster.name_en
+                if monster.name_es:
+                    monster_names["es"] = monster.name_es
+                if monster.name_pt:
+                    monster_names["pt"] = monster.name_pt
+            
+            # Get family info if available
+            family_info = None
+            if monster and monster.family_id:
+                family = family_map.get(monster.family_id)
+                if family:
+                    family_names = {}
+                    if family.name_fr:
+                        family_names["fr"] = family.name_fr
+                    if family.name_en:
+                        family_names["en"] = family.name_en
+                    if family.name_es:
+                        family_names["es"] = family.name_es
+                    if family.name_pt:
+                        family_names["pt"] = family.name_pt
+                    
+                    family_info = {
+                        "id": family.family_id,
+                        "names": family_names if family_names else None,
+                        "match": True,
+                        "candidate_ids": None
+                    }
+            
+            # Build image URL
+            gfx_id = monster.gfx_id if monster and monster.gfx_id else drop.monster_id
+            image_url = f"https://static.ankama.com/wakfu/portal/game/monster/{gfx_id}/image"
+            
+            # Get preferred name (en > fr > es > pt)
+            monster_name = None
+            if monster:
+                monster_name = (
+                    monster.name_en or 
+                    monster.name_fr or 
+                    monster.name_es or 
+                    monster.name_pt or 
+                    f"Monster {drop.monster_id}"
+                )
+            
             drop_map.setdefault(drop.item_id, []).append({
                 "monster_id": drop.monster_id,
-                "monster_name": getattr(drop, "monster_name", None),
+                "monster_name": monster_name,
+                "monster_names": monster_names if monster_names else None,
+                "family": family_info,
+                "level_min": monster.level_min if monster else None,
+                "level_max": monster.level_max if monster else None,
                 "drop_rate": drop.drop_rate,
                 "drop_rate_percent": drop.drop_rate_percent,
-                "image_url": f"https://vertylo.github.io/wakassets/monsters/{drop.monster_id}.png"
+                "image_url": image_url
             })
     
     for item in selected_sql_items:

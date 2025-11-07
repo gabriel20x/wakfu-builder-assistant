@@ -63,16 +63,6 @@ class HarvestResource(Base):
     quantity = Column(Integer, default=1)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
-class MonsterDrop(Base):
-    __tablename__ = "monster_drops"
-    
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    monster_id = Column(Integer, index=True, nullable=False)
-    item_id = Column(Integer, index=True, nullable=False)
-    drop_rate = Column(Float, nullable=False)  # 0-1 probability
-    drop_rate_percent = Column(Float, nullable=False)  # Original percent value (0-100)
-    created_at = Column(DateTime(timezone=True), server_default=func.now())
-
 class MonsterFamily(Base):
     __tablename__ = "monster_families"
     
@@ -81,6 +71,32 @@ class MonsterFamily(Base):
     name_en = Column(String)
     name_es = Column(String)
     name_pt = Column(String)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+class Monster(Base):
+    __tablename__ = "monsters"
+    
+    monster_id = Column(Integer, primary_key=True, index=True)
+    name_fr = Column(String)
+    name_en = Column(String)
+    name_es = Column(String)
+    name_pt = Column(String)
+    family_id = Column(Integer, index=True, nullable=True)
+    level_min = Column(Integer, nullable=True)
+    level_max = Column(Integer, nullable=True)
+    gfx_id = Column(Integer, nullable=True)
+    extra = Column(JSON, default=dict)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
+class MonsterDrop(Base):
+    __tablename__ = "monster_drops"
+    
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
+    monster_id = Column(Integer, index=True, nullable=False)
+    item_id = Column(Integer, index=True, nullable=False)
+    drop_rate = Column(Float, nullable=False)  # 0-1 probability
+    drop_rate_percent = Column(Float, nullable=False)  # Original percent value (0-100)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
 class Dungeon(Base):
