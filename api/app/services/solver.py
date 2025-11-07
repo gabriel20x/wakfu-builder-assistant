@@ -212,24 +212,24 @@ def _solve_single_build(
                      and not item.is_relic]
             logger.info(f"Build EASY (lvl<80): Filtering to rarity <= Raro (includes Común). Items: {len(items)}")
         else:
-            # High level EASY: Hasta Míticos (rarity <= 4)
+            # High level EASY: Hasta Míticos (rarity <= 3)
             items = [item for item in items 
-                     if item.rarity <= 4 
+                     if item.rarity <= 3 
                      and not item.is_epic 
                      and not item.is_relic
                      and item.difficulty <= 48.0]
-            logger.info(f"Build EASY (lvl≥80): Filtering to rarity <= Mítico, difficulty <= 48. Items: {len(items)}")
+            logger.info(f"Build EASY (lvl≥80): Filtering to rarity <= Mítico (≤3), difficulty <= 48. Items: {len(items)}")
     
     elif build_type == "medium":
         # ✅ ADAPTIVE: For low levels (< 80), Legendaries are too hard to get
-        # MEDIUM should only allow Mythical (≤4) for levels < 80
+        # MEDIUM should only allow Mythical (≤3) for levels < 80
         if level_max < 80:
-            # Low level MEDIUM: Hasta Míticos (rarity <= 4), NO Legendarios
+            # Low level MEDIUM: Hasta Míticos (rarity <= 3), NO Legendarios
             items = [item for item in items 
-                     if item.rarity <= 4 
+                     if item.rarity <= 3 
                      and not item.is_epic 
                      and not item.is_relic]
-            logger.info(f"Build MEDIUM (lvl<80): Filtering to rarity <= Mítico. Items: {len(items)}")
+            logger.info(f"Build MEDIUM (lvl<80): Filtering to rarity <= Mítico (≤3). Items: {len(items)}")
         else:
             # High level MEDIUM: Allows up to 1 Legendary (constraint added later)
             items = [item for item in items 

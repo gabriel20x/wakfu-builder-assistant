@@ -289,16 +289,20 @@
         </div>
         
         <div class="panel-content">
+          <!-- Equipment Slots -->
+          <div class="equipment-section">
+            <EquipmentSlots 
+              v-if="currentBuildItems" 
+              :items="currentBuildItems"
+              :selected-class="selectedClass"
+            />
+          </div>
+          
           <BuildStatSheet 
             v-if="currentBuildStats" 
             :stats="currentBuildStats" 
             :character-level="characterLevel"
           />
-          
-          <!-- Damage Estimator -->
-          <div class="damage-section">
-            <DamageEstimator v-if="currentBuildStats" :build-stats="currentBuildStats" />
-          </div>
         </div>
       </div>
     </div>
@@ -323,7 +327,7 @@ import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
 import ClassPresetSelector from './ClassPresetSelector.vue'
-import DamageEstimator from './DamageEstimator.vue'
+import EquipmentSlots from './EquipmentSlots.vue'
 import BuildHistory from './BuildHistory.vue'
 
 const toast = useToast()
@@ -401,6 +405,15 @@ const currentBuildStats = computed(() => {
   const activeBuildType = buildTypes[activeTabIndex.value]
   
   return builds.value[activeBuildType]?.total_stats || null
+})
+
+const currentBuildItems = computed(() => {
+  if (!builds.value) return []
+  
+  const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+  const activeBuildType = buildTypes[activeTabIndex.value]
+  
+  return builds.value[activeBuildType]?.items || []
 })
 
 // Category collapse state
@@ -810,10 +823,10 @@ defineExpose({
   .panel-content {
     padding: 1rem;
     
-    .damage-section {
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    .equipment-section {
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
   }
 }

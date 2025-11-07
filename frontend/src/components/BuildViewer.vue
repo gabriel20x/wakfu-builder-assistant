@@ -153,16 +153,20 @@
         </div>
         
         <div class="panel-content">
+          <!-- Equipment Slots -->
+          <div class="equipment-section">
+            <EquipmentSlots 
+              v-if="currentBuildItems" 
+              :items="currentBuildItems"
+              :selected-class="selectedBuild.config?.selectedClass"
+            />
+          </div>
+          
           <BuildStatSheet 
             v-if="currentBuildStats" 
             :stats="currentBuildStats" 
             :character-level="selectedBuild.config?.level_max || 230"
           />
-          
-          <!-- Damage Estimator -->
-          <div class="damage-section">
-            <DamageEstimator v-if="currentBuildStats" :build-stats="currentBuildStats" />
-          </div>
         </div>
       </div>
     </div>
@@ -215,7 +219,7 @@ import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import BuildResult from './BuildResult.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
-import DamageEstimator from './DamageEstimator.vue'
+import EquipmentSlots from './EquipmentSlots.vue'
 
 const emit = defineEmits(['go-to-builder', 'load-build'])
 const toast = useToast()
@@ -239,6 +243,15 @@ const currentBuildStats = computed(() => {
   const activeBuildType = buildTypes[activeTabIndex.value]
   
   return selectedBuild.value.builds[activeBuildType]?.total_stats || null
+})
+
+const currentBuildItems = computed(() => {
+  if (!selectedBuild.value) return []
+  
+  const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+  const activeBuildType = buildTypes[activeTabIndex.value]
+  
+  return selectedBuild.value.builds[activeBuildType]?.items || []
 })
 
 const loadBuildHistory = () => {
@@ -680,8 +693,10 @@ onMounted(() => {
   }
 }
 
-.damage-section {
-  margin-top: 1.5rem;
+.equipment-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 :deep(.p-tabview) {

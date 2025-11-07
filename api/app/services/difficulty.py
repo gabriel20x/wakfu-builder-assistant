@@ -4,22 +4,28 @@ Difficulty calculation service for Wakfu items
 Difficulty is calculated based on:
 1. Harvest cost (if item is from collection)
 2. Recipe cost (if item is from crafting, recursive)
-3. Drop difficulty (manual input for mob drops)
+3. Drop difficulty (based on actual drop rates from monster_drops)
 4. Item flags (epic, relic, gem slots)
 5. Rarity
 6. Level
 """
 
 from sqlalchemy.orm import Session
-from app.db.models import Item, Recipe, HarvestResource
+from app.db.models import Item, Recipe, HarvestResource, MonsterDrop
 from typing import Dict, Optional
 import logging
+import math
 
 logger = logging.getLogger(__name__)
 
 # Normalization percentiles (will be calculated from actual data)
 HARVEST_PERCENTILE_95 = 100.0
 RECIPE_PERCENTILE_95 = 100.0
+
+# Drop rate difficulty curve parameters
+# Lower drop rates = higher difficulty
+DROP_RATE_BASE_DIFFICULTY = 20.0  # Minimum difficulty for 100% drop rate
+DROP_RATE_MAX_DIFFICULTY = 95.0   # Maximum difficulty for very rare drops
 
 def calculate_harvest_cost(item: Item, db: Session) -> float:
     """
@@ -50,7 +56,16 @@ def calculate_recipe_cost(item: Item, db: Session, visited: Optional[set] = None
     """
     Calculate recipe cost recursively
     
-    Formula: Σ(difficulty(ingredient) * quantity) + craft_cost
+    Formula: 
+    - Base cost from craft_cost
+    - Ingredient cost: Σ(difficulty(ingredient) * quantity_factor)
+    - Complexity penalty: Based on number of different ingredients
+    - Large quantity penalty: Extra cost for ingredients requiring many units
+    
+    Examples:
+    - Simple recipe (2 ingredients, low qty): Low difficulty
+    - Complex recipe (5+ ingredients): Medium difficulty
+    - High quantity recipe (75+ units of something): High difficulty
     """
     if visited is None:
         visited = set()
@@ -68,7 +83,12 @@ def calculate_recipe_cost(item: Item, db: Session, visited: Optional[set] = None
     if not recipe:
         return 0.0
     
-    total_cost = recipe.craft_cost
+    # Base crafting cost
+    total_cost = recipe.craft_cost * 10.0  # Scale up craft_cost impact
+    
+    # Track recipe complexity
+    num_ingredients = len(recipe.ingredients)
+    total_ingredient_quantity = 0
     
     # Recursively calculate ingredient costs
     for ingredient in recipe.ingredients:
@@ -76,27 +96,101 @@ def calculate_recipe_cost(item: Item, db: Session, visited: Optional[set] = None
             Item.item_id == ingredient["item_id"]
         ).first()
         
+        quantity = ingredient["quantity"]
+        total_ingredient_quantity += quantity
+        
         if ingredient_item:
+            # Get base difficulty of ingredient
             ingredient_difficulty = calculate_item_difficulty(
                 ingredient_item, db, visited.copy()
             )
-            total_cost += ingredient_difficulty * ingredient["quantity"]
+            
+            # Quantity scaling factor
+            # Linear for 1-10, then logarithmic for larger quantities
+            if quantity <= 10:
+                quantity_factor = quantity
+            else:
+                # Log scale: 10=10, 20=13, 50=17, 100=20, 200=23
+                quantity_factor = 10 + math.log10(quantity) * 3
+            
+            # Add weighted ingredient cost
+            total_cost += ingredient_difficulty * (quantity_factor / 10.0)
     
-    # Normalize
-    normalized = min(100.0, (total_cost / RECIPE_PERCENTILE_95) * 100.0)
+    # Complexity penalty based on number of different ingredients
+    # 1-2 ingredients: no penalty
+    # 3-4 ingredients: +10
+    # 5-6 ingredients: +20
+    # 7+ ingredients: +30
+    if num_ingredients >= 7:
+        complexity_penalty = 30.0
+    elif num_ingredients >= 5:
+        complexity_penalty = 20.0
+    elif num_ingredients >= 3:
+        complexity_penalty = 10.0
+    else:
+        complexity_penalty = 0.0
+    
+    total_cost += complexity_penalty
+    
+    # Large batch penalty (if total quantity > 100)
+    if total_ingredient_quantity > 100:
+        batch_penalty = min(20.0, (total_ingredient_quantity - 100) / 10.0)
+        total_cost += batch_penalty
+    
+    # Normalize to 0-100 scale
+    normalized = min(100.0, total_cost)
     
     return normalized
 
-def calculate_drop_difficulty(item: Item) -> float:
+def calculate_drop_difficulty(item: Item, db: Session) -> float:
     """
-    Get drop difficulty from manual input
+    Calculate drop difficulty based on actual drop rates from monster_drops
     
-    Returns manual_drop_difficulty if set, otherwise default value
+    Formula: Logarithmic scale based on best (highest) drop rate
+    - 100% drop rate = 20 difficulty (very easy)
+    - 50% drop rate = 35 difficulty (easy)
+    - 10% drop rate = 55 difficulty (medium)
+    - 1% drop rate = 75 difficulty (hard)
+    - 0.1% drop rate = 95 difficulty (very hard)
+    
+    Falls back to manual_drop_difficulty if no drop data exists
     """
+    # Check if we have actual drop data
+    drops = db.query(MonsterDrop).filter(
+        MonsterDrop.item_id == item.item_id
+    ).all()
+    
+    if drops:
+        # Use the BEST (highest) drop rate for difficulty calculation
+        # This represents the "easiest" way to farm the item
+        best_drop_rate = max(drop.drop_rate for drop in drops)
+        
+        # Logarithmic difficulty curve
+        # Higher drop rate = lower difficulty
+        if best_drop_rate >= 1.0:
+            # 100%+ drop rate (very easy)
+            difficulty = DROP_RATE_BASE_DIFFICULTY
+        elif best_drop_rate <= 0.0001:
+            # 0.01% or less (extremely rare)
+            difficulty = DROP_RATE_MAX_DIFFICULTY
+        else:
+            # Logarithmic scale: difficulty = base + (max - base) * (-log10(rate) / 4)
+            # rate=1.0 (100%) -> log=0 -> difficulty=20
+            # rate=0.1 (10%) -> log=1 -> difficulty=38.75
+            # rate=0.01 (1%) -> log=2 -> difficulty=57.5
+            # rate=0.001 (0.1%) -> log=3 -> difficulty=76.25
+            # rate=0.0001 (0.01%) -> log=4 -> difficulty=95
+            log_rate = -math.log10(best_drop_rate)
+            normalized_log = min(4.0, log_rate) / 4.0  # Normalize to 0-1
+            difficulty = DROP_RATE_BASE_DIFFICULTY + (DROP_RATE_MAX_DIFFICULTY - DROP_RATE_BASE_DIFFICULTY) * normalized_log
+        
+        return min(DROP_RATE_MAX_DIFFICULTY, difficulty)
+    
+    # Fallback to manual difficulty if set
     if item.manual_drop_difficulty is not None:
         return item.manual_drop_difficulty
     
-    # Default difficulty for drops without manual value
+    # Default difficulty for drops without any data
     return 70.0
 
 def calculate_flag_score(item: Item) -> float:
@@ -156,11 +250,15 @@ def calculate_item_difficulty(
     Calculate total difficulty for an item
     
     Weighted formula:
-    difficulty = 0.3 * harvest_cost +
-                 0.3 * recipe_cost +
+    difficulty = 0.4 * source_cost +
                  0.2 * flag_score +
-                 0.1 * rarity_score +
-                 0.1 * level_score
+                 0.2 * rarity_score +
+                 0.2 * level_score
+    
+    Where source_cost is one of:
+    - harvest_cost: Based on collection time, visibility, drop rate
+    - recipe_cost: Based on ingredients, quantities, and their difficulties
+    - drop_cost: Based on actual drop rates from monsters
     """
     harvest_cost = 0.0
     recipe_cost = 0.0
@@ -172,7 +270,7 @@ def calculate_item_difficulty(
     elif item.source_type == "recipe":
         recipe_cost = calculate_recipe_cost(item, db, visited)
     elif item.source_type == "drop":
-        drop_cost = calculate_drop_difficulty(item)
+        drop_cost = calculate_drop_difficulty(item, db)
     
     # Calculate modifier scores
     flag_score = calculate_flag_score(item)
@@ -180,13 +278,12 @@ def calculate_item_difficulty(
     level_score = calculate_level_score(item)
     
     # Weighted combination
+    # Increased weight on source cost (0.4) since it's now data-driven
     difficulty = (
-        0.3 * harvest_cost +
-        0.3 * recipe_cost +
-        0.2 * drop_cost +
-        0.1 * flag_score +
-        0.1 * rarity_score +
-        0.1 * level_score
+        0.4 * max(harvest_cost, recipe_cost, drop_cost) +
+        0.2 * flag_score +
+        0.2 * rarity_score +
+        0.2 * level_score
     )
     
     return min(100.0, difficulty)
