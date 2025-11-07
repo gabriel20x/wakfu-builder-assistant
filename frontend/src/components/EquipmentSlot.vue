@@ -1,8 +1,9 @@
 <template>
   <div 
     class="equipment-slot" 
-    :class="{ 'has-item': hasItem, 'empty-slot': !hasItem }"
+    :class="{ 'has-item': hasItem, 'empty-slot': !hasItem, 'clickable': hasItem }"
     :title="itemName"
+    @click="onSlotClick"
   >
     <div class="slot-border" :style="{ borderColor: rarityColor }">
       <div v-if="hasItem" class="item-image-container">
@@ -41,7 +42,15 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(['item-click'])
+
 const { getItemName } = useLanguage()
+
+const onSlotClick = () => {
+  if (hasItem.value) {
+    emit('item-click', props.item)
+  }
+}
 
 const hasItem = computed(() => props.item !== null && props.item !== undefined)
 
@@ -151,8 +160,16 @@ const slotIcon = computed(() => {
   gap: 0.25rem;
   transition: transform 0.2s;
   
-  &:hover {
-    transform: scale(1.05);
+  &.clickable {
+    cursor: pointer;
+    
+    &:hover {
+      transform: scale(1.05);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
   }
 }
 

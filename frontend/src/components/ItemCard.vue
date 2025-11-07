@@ -1,5 +1,5 @@
 <template>
-  <div class="item-card" :style="{ borderColor: rarityColor }">
+  <div class="item-card" :id="`item-${item.item_id}`" :style="{ borderColor: rarityColor }">
     <!-- Edit Metadata Button -->
     <button
       v-if="showMetadataButton"

@@ -295,6 +295,7 @@
               v-if="currentBuildItems" 
               :items="currentBuildItems"
               :selected-class="selectedClass"
+              @item-click="scrollToItem"
             />
           </div>
           
@@ -624,6 +625,48 @@ const saveCurrentBuildWithName = () => {
       life: 3000
     })
   }
+}
+
+const scrollToItem = (item) => {
+  if (!item || !item.item_id) return
+  
+  // Wait for next tick to ensure DOM is updated
+  setTimeout(() => {
+    // Since multiple tabs can have items with the same ID, we need to find the visible one
+    const elements = document.querySelectorAll(`[id="item-${item.item_id}"]`)
+    
+    // Find the element that's in a visible container (active tab)
+    let visibleElement = null
+    let visibleContainer = null
+    
+    for (const el of elements) {
+      const container = el.closest('.build-content')
+      if (container && container.offsetParent !== null) {
+        visibleElement = el
+        visibleContainer = container
+        break
+      }
+    }
+    
+    if (visibleElement && visibleContainer) {
+      const offset = 100 // Top offset in pixels
+      const containerRect = visibleContainer.getBoundingClientRect()
+      const elementRect = visibleElement.getBoundingClientRect()
+      const relativeTop = elementRect.top - containerRect.top + visibleContainer.scrollTop
+      
+      visibleContainer.scrollTo({
+        top: relativeTop - offset,
+        behavior: 'smooth'
+      })
+      
+      // Add a brief highlight effect
+      visibleElement.style.transition = 'box-shadow 0.3s ease'
+      visibleElement.style.boxShadow = '0 0 20px 5px rgba(92, 107, 192, 0.8)'
+      setTimeout(() => {
+        visibleElement.style.boxShadow = ''
+      }, 1500)
+    }
+  }, 100)
 }
 
 const loadBuild = async (buildData) => {

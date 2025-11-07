@@ -11,26 +11,31 @@
           slot-name="head"
           label="Cabeza"
           :item="getItemBySlot('HEAD')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="neck"
           label="Cuello"
           :item="getItemBySlot('NECK')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="chest"
           label="Pechera"
           :item="getItemBySlot('CHEST')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="ring"
           label="Anillo 1"
           :item="getItemBySlot('LEFT_HAND', 0) || getItemBySlot('RIGHT_HAND', 0)"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="boots"
           label="Botas"
           :item="getItemBySlot('LEGS')"
+          @item-click="onItemClick"
         />
       </div>
       
@@ -54,26 +59,31 @@
           slot-name="back"
           label="Capa"
           :item="getItemBySlot('BACK')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="shoulders"
           label="Hombros"
           :item="getItemBySlot('SHOULDERS')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="belt"
           label="Cinturón"
           :item="getItemBySlot('BELT')"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="ring2"
           label="Anillo 2"
           :item="getItemBySlot('LEFT_HAND', 1) || getItemBySlot('RIGHT_HAND', 0)"
+          @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="pet"
           label="Mascota"
           :item="getItemBySlot('PET')"
+          @item-click="onItemClick"
         />
       </div>
     </div>
@@ -84,16 +94,19 @@
         slot-name="weapon2"
         label="Arma Secundaria"
         :item="getItemBySlot('SECOND_WEAPON')"
+        @item-click="onItemClick"
       />
       <EquipmentSlot 
         slot-name="weapon1"
         label="Arma Principal"
         :item="getItemBySlot('FIRST_WEAPON')"
+        @item-click="onItemClick"
       />
       <EquipmentSlot 
         slot-name="accessory"
         label="Insignia"
         :item="getItemBySlot('ACCESSORY')"
+        @item-click="onItemClick"
       />
     </div>
   </div>
@@ -114,10 +127,16 @@ const props = defineProps({
   }
 })
 
+const emit = defineEmits(['item-click'])
+
 const getItemBySlot = (slotName, index = 0) => {
   if (!props.items || props.items.length === 0) return null
   const items = props.items.filter(item => item.slot === slotName)
   return items[index] || null
+}
+
+const onItemClick = (item) => {
+  emit('item-click', item)
 }
 
 const classIconUrl = computed(() => {
