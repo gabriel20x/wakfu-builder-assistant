@@ -10,6 +10,17 @@
       ⚙️
     </button>
 
+    <!-- Ban/Unban Button -->
+    <button
+      v-if="showIgnoreButton"
+      class="btn-ignore"
+      :class="{ 'is-ignored': isIgnored }"
+      @click.stop="toggleIgnore"
+      :title="isIgnored ? t('ignoredItems.unignore') : t('ignoredItems.ignore')"
+    >
+      <i :class="isIgnored ? 'pi pi-check' : 'pi pi-ban'"></i>
+    </button>
+
     <div class="item-header" :style="{ background: rarityGradient }">
       <div class="item-image-wrapper">
         <img
@@ -176,6 +187,7 @@ import { computed, ref } from "vue";
 import { getRarityColor, getRarityName } from "../composables/useStats";
 import { useLanguage } from "../composables/useLanguage";
 import { useI18n } from "../composables/useI18n";
+import { useIgnoredItems } from "../composables/useIgnoredItems";
 import ItemStatList from "./ItemStatList.vue";
 
 const props = defineProps({
@@ -191,9 +203,25 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  showIgnoreButton: {
+    type: Boolean,
+    default: true,
+  },
 });
 
-const emit = defineEmits(["edit-metadata"]);
+const emit = defineEmits(["edit-metadata", "item-ignored", "item-restored"]);
+
+const { isItemIgnored, toggleItemIgnored } = useIgnoredItems();
+const isIgnored = computed(() => isItemIgnored(props.item.item_id));
+
+const toggleIgnore = () => {
+  const nowIgnored = toggleItemIgnored(props.item)
+  if (nowIgnored) {
+    emit("item-ignored", props.item)
+  } else {
+    emit("item-restored", props.item)
+  }
+};
 
 const { getItemName, currentLanguage } = useLanguage();
 const { t } = useI18n();
@@ -525,6 +553,43 @@ const onImageError = (event) => {
   &:hover {
     background: rgba(102, 126, 234, 1);
     transform: scale(1.1);
+  }
+}
+
+.btn-ignore {
+  position: absolute;
+  top: 8px;
+  right: 48px;
+  background: rgba(244, 67, 54, 0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: white;
+
+  &:hover {
+    background: rgba(244, 67, 54, 1);
+    transform: scale(1.1);
+  }
+
+  &.is-ignored {
+    background: rgba(76, 175, 80, 0.9);
+    
+    &:hover {
+      background: rgba(76, 175, 80, 1);
+    }
+  }
+
+  i {
+    font-size: 0.875rem;
   }
 }
 

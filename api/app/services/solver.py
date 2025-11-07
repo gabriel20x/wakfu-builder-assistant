@@ -46,7 +46,8 @@ def solve_build(
     include_accessory: bool = True,
     only_droppable: bool = False,
     damage_preferences: List[str] = None,
-    resistance_preferences: List[str] = None
+    resistance_preferences: List[str] = None,
+    ignored_item_ids: List[int] = None
 ) -> Dict:
     """
     Solve for five builds: easy, medium, hard_epic, hard_relic, full
@@ -107,11 +108,17 @@ def solve_build(
     if only_droppable:
         query = query.filter(Item.source_type == "drop")
     
+    # Filter out ignored items if list is provided
+    if ignored_item_ids and len(ignored_item_ids) > 0:
+        query = query.filter(~Item.item_id.in_(ignored_item_ids))
+    
     items = query.all()
     
     filter_info = f"level {level_min}-{level_max}"
     if only_droppable:
         filter_info += " (only droppable)"
+    if ignored_item_ids and len(ignored_item_ids) > 0:
+        filter_info += f" (ignored {len(ignored_item_ids)} items)"
     logger.info(f"Solving with {len(items)} items ({filter_info})")
     
     # Generate each build type

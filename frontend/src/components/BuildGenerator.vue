@@ -231,6 +231,11 @@
             </div>
           </div>
 
+          <!-- Ignored Items Manager -->
+          <div class="config-section">
+            <IgnoredItemsManager />
+          </div>
+
           <!-- Error Display -->
           <div v-if="error" class="error-message">
             <i class="pi pi-exclamation-triangle"></i>
@@ -323,6 +328,7 @@ import { builderAPI } from '../services/api'
 import { STAT_NAMES } from '../composables/useStats'
 import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
+import { useIgnoredItems } from '../composables/useIgnoredItems'
 import BuildResult from './BuildResult.vue'
 import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
@@ -330,6 +336,7 @@ import BuildStatSheet from './BuildStatSheet.vue'
 import ClassPresetSelector from './ClassPresetSelector.vue'
 import EquipmentSlots from './EquipmentSlots.vue'
 import BuildHistory from './BuildHistory.vue'
+import IgnoredItemsManager from './IgnoredItemsManager.vue'
 
 const toast = useToast()
 const { t } = useI18n()
@@ -340,6 +347,7 @@ const {
   getCurrentConfig,
   saveBuildWithName 
 } = useBuildPersistence()
+const { ignoredItemIds } = useIgnoredItems()
 
 const emit = defineEmits(['edit-metadata'])
 
@@ -577,7 +585,8 @@ const generateBuilds = async () => {
       include_accessory: includeAccessory.value,
       only_droppable: onlyDroppable.value,
       damage_preferences: damagePreferences.value,
-      resistance_preferences: resistancePreferences.value
+      resistance_preferences: resistancePreferences.value,
+      ignored_item_ids: ignoredItemIds.value
     })
     
     builds.value = response.data

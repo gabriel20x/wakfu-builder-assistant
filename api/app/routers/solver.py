@@ -25,6 +25,7 @@ class SolveRequest(BaseModel):
     only_droppable: bool = False  # Solo items que se pueden obtener de drops de monstruos
     damage_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para daños elementales
     resistance_preferences: list = ['Fire', 'Water', 'Earth', 'Air']  # Orden de preferencia para resistencias
+    ignored_item_ids: List[int] = []  # Lista de IDs de items a ignorar/excluir
 
 class BuildResponse(BaseModel):
     items: list
@@ -60,7 +61,8 @@ async def solve(request: SolveRequest, db: Session = Depends(get_db)):
             include_accessory=request.include_accessory,
             only_droppable=request.only_droppable,
             damage_preferences=request.damage_preferences,
-            resistance_preferences=request.resistance_preferences
+            resistance_preferences=request.resistance_preferences,
+            ignored_item_ids=request.ignored_item_ids
         )
         
         # Save to database
