@@ -128,6 +128,14 @@ const translations = {
     'common.confirm': 'Confirmar',
     'common.yes': 'Sí',
     'common.no': 'No',
+    'common.loading': 'Cargando...',
+    
+    // Monster Type Filter
+    'monsterTypeFilter.title': 'Filtro por Tipo de Monstruo',
+    'monsterTypeFilter.description': 'Selecciona qué tipos de monstruos considerar para los drops',
+    'monsterTypeFilter.selectAll': 'Todos',
+    'monsterTypeFilter.deselectAll': 'Ninguno',
+    'monsterTypeFilter.error': 'Error al cargar tipos',
     
     // Stats Panel
     'statsPanel.title': 'Stats Totales',
@@ -372,6 +380,52 @@ const translations = {
     'builds.noSavedBuilds': 'No saved builds',
     'builds.noHistory': 'No build history',
     'builds.deleteConfirm': 'Delete this build?',
+    
+    // My Builds View
+    'myBuilds.title': 'My Saved Builds',
+    'myBuilds.createNew': 'Create New',
+    'myBuilds.loading': 'Loading builds...',
+    'myBuilds.noBuildsSaved': 'You have no saved builds',
+    'myBuilds.startByCreating': 'Start by creating your first build in the generator',
+    'myBuilds.goToBuilder': 'Go to Generator',
+    'myBuilds.unnamedBuild': 'Unnamed build',
+    'myBuilds.selectBuild': 'Select a build',
+    'myBuilds.selectBuildDescription': 'Choose a build from the sidebar to view its details',
+    'myBuilds.loadInBuilder': 'Load in Generator',
+    'myBuilds.rename': 'Rename',
+    'myBuilds.renameBuild': 'Rename Build',
+    'myBuilds.buildName': 'Build Name',
+    'myBuilds.enterBuildName': 'Enter a name',
+    'myBuilds.deleteBuild': 'Delete Build',
+    'myBuilds.deleteConfirmation': 'Are you sure you want to delete this build?',
+    'myBuilds.buildDeleted': 'Build deleted successfully',
+    'myBuilds.buildRenamed': 'Build renamed successfully',
+    'myBuilds.loadedInBuilder': 'Build loaded in generator',
+    'myBuilds.errorLoading': 'Error loading builds',
+    'myBuilds.errorDeleting': 'Error deleting build',
+    'myBuilds.errorRenaming': 'Error renaming build',
+    'myBuilds.justNow': 'Just now',
+    'myBuilds.minutesAgo': '{count} minutes ago',
+    'myBuilds.hoursAgo': '{count} hours ago',
+    'myBuilds.daysAgo': '{count} days ago',
+    
+    // Common
+    'common.cancel': 'Cancel',
+    'common.save': 'Save',
+    'common.delete': 'Delete',
+    'common.edit': 'Edit',
+    'common.close': 'Close',
+    'common.confirm': 'Confirm',
+    'common.yes': 'Yes',
+    'common.no': 'No',
+    'common.loading': 'Loading...',
+    
+    // Monster Type Filter
+    'monsterTypeFilter.title': 'Monster Type Filter',
+    'monsterTypeFilter.description': 'Select which monster types to consider for drops',
+    'monsterTypeFilter.selectAll': 'All',
+    'monsterTypeFilter.deselectAll': 'None',
+    'monsterTypeFilter.error': 'Error loading types',
     
     // Stats Panel
     'statsPanel.title': 'Total Stats',

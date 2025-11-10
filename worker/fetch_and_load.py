@@ -100,6 +100,7 @@ class Monster(Base):
     level_min = Column(Integer, nullable=True)
     level_max = Column(Integer, nullable=True)
     gfx_id = Column(Integer, nullable=True)
+    monster_type = Column(String, index=True, nullable=True)  # monster, boss, archmonster, ultimate_boss, dominant
     extra = Column(JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
@@ -827,6 +828,9 @@ def main():
                     "item_sources": notes.get("item_sources", []) if isinstance(notes, dict) else []
                 }
                 
+                # Extract monster type from metadata
+                monster_type = monster_entry.get("type")  # monster, boss, archmonster, ultimate_boss, dominant
+                
                 monster = Monster(
                     monster_id=monster_id,
                     name_fr=names.get("fr"),
@@ -837,6 +841,7 @@ def main():
                     level_min=monster_entry.get("level_min"),
                     level_max=monster_entry.get("level_max"),
                     gfx_id=monster_entry.get("gfx_id"),
+                    monster_type=monster_type,
                     extra=extra_data
                 )
                 session.add(monster)

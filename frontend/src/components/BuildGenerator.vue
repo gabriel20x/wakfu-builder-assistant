@@ -184,6 +184,11 @@
             />
           </div>
 
+          <!-- Monster Type Filter -->
+          <div class="config-section">
+            <MonsterTypeFilter v-model="selectedMonsterTypes" />
+          </div>
+
           <!-- Opciones Avanzadas -->
           <div class="config-section">
             <h3>{{ t('config.advancedOptions') }}</h3>
@@ -337,6 +342,7 @@ import ClassPresetSelector from './ClassPresetSelector.vue'
 import EquipmentSlots from './EquipmentSlots.vue'
 import BuildHistory from './BuildHistory.vue'
 import IgnoredItemsManager from './IgnoredItemsManager.vue'
+import MonsterTypeFilter from './MonsterTypeFilter.vue'
 
 const toast = useToast()
 const { t } = useI18n()
@@ -355,6 +361,7 @@ const characterLevel = ref(230)
 const includePet = ref(true)
 const includeAccessory = ref(true)
 const onlyDroppable = ref(false)
+const selectedMonsterTypes = ref([])  // Monster type filter
 const builds = ref(null)
 const isLoading = ref(false)
 const error = ref(null)
@@ -586,7 +593,8 @@ const generateBuilds = async () => {
       only_droppable: onlyDroppable.value,
       damage_preferences: damagePreferences.value,
       resistance_preferences: resistancePreferences.value,
-      ignored_item_ids: ignoredItemIds.value
+      ignored_item_ids: ignoredItemIds.value,
+      monster_types: selectedMonsterTypes.value
     })
     
     builds.value = response.data

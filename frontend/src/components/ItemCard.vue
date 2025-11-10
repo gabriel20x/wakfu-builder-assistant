@@ -159,11 +159,18 @@
                 :src="drop.imageUrl"
                 :alt="`Monster ${drop.monsterId}`"
                 class="drop-monster-image"
+                :style="drop.monsterType ? { 
+                  borderColor: getMonsterTypeColor(drop.monsterType),
+                  borderWidth: '2px'
+                } : {}"
                 @error="onMonsterImageError"
               />
               <div class="drop-info">
-                <div class="drop-monster-id">
+                <div class="drop-monster-name">
                   {{ drop.displayName }}
+                  <span v-if="drop.monsterType" class="monster-type-text">
+                    - {{ getMonsterTypeName(drop.monsterType) }}
+                  </span>
                 </div>
                 <div class="drop-chance">
                   <span class="drop-rate-chip">
@@ -261,6 +268,7 @@ const dropSources = computed(() => {
       drop.drop_rate_percent ?? (drop.drop_rate ?? 0) * 100;
     return {
       monsterId: drop.monster_id,
+      monsterType: drop.monster_type,
       rate: drop.drop_rate ?? ratePercent / 100,
       ratePercent,
       imageUrl:
@@ -480,6 +488,26 @@ const formatSourceType = (sourceType) => {
     dungeon: "Mazmorra",
   };
   return sourceNames[sourceType] || sourceType || "Desconocido";
+};
+
+// Monster type formatting
+const monsterTypeData = {
+  'monster': { en: 'Monster', es: 'Monstruo', fr: 'Monstre', color: '#9E9E9E' },
+  'boss': { en: 'Boss', es: 'Jefe', fr: 'Boss', color: '#FFD700' },
+  'archmonster': { en: 'Archmonster', es: 'Archimonstruo', fr: 'Archimonstre', color: '#E91E63' },
+  'ultimate_boss': { en: 'Ultimate Boss', es: 'Jefe Supremo', fr: 'Boss Ultime', color: '#FF4500' },
+  'dominant': { en: 'Dominant', es: 'Dominante', fr: 'Dominant', color: '#9C27B0' }
+};
+
+const getMonsterTypeName = (monsterType) => {
+  if (!monsterType) return null;
+  const lang = currentLanguage.value;
+  return monsterTypeData[monsterType]?.[lang] || monsterType;
+};
+
+const getMonsterTypeColor = (monsterType) => {
+  if (!monsterType) return '#9E9E9E';
+  return monsterTypeData[monsterType]?.color || '#9E9E9E';
 };
 
 const onImageError = (event) => {
@@ -858,6 +886,7 @@ const onImageError = (event) => {
   border-radius: 6px;
   background: rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.2s;
 }
 
 .drop-info {
@@ -865,6 +894,18 @@ const onImageError = (event) => {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.drop-monster-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.monster-type-text {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
 }
 
 .drop-monster-id {

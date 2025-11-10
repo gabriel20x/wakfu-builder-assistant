@@ -21,6 +21,7 @@ class DropSourceResponse(BaseModel):
     monster_id: int
     monster_name: Optional[str] = None
     monster_names: Optional[Dict[str, str]] = None
+    monster_type: Optional[str] = None  # monster, boss, archmonster, ultimate_boss, dominant
     family: Optional[MonsterFamilyResponse] = None
     level_min: Optional[int] = None
     level_max: Optional[int] = None
@@ -121,6 +122,7 @@ def _build_drop_source(drop: MonsterDrop, db: Session) -> DropSourceResponse:
         monster_id=drop.monster_id,
         monster_name=monster_name,
         monster_names=monster_names if monster_names else None,
+        monster_type=monster.monster_type if monster else None,
         family=family_response,
         level_min=monster.level_min if monster else None,
         level_max=monster.level_max if monster else None,

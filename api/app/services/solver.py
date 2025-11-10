@@ -47,7 +47,8 @@ def solve_build(
     only_droppable: bool = False,
     damage_preferences: List[str] = None,
     resistance_preferences: List[str] = None,
-    ignored_item_ids: List[int] = None
+    ignored_item_ids: List[int] = None,
+    monster_types: List[str] = None
 ) -> Dict:
     """
     Solve for five builds: easy, medium, hard_epic, hard_relic, full
@@ -112,6 +113,32 @@ def solve_build(
     if ignored_item_ids and len(ignored_item_ids) > 0:
         query = query.filter(~Item.item_id.in_(ignored_item_ids))
     
+    # Filter by monster types if provided
+    if monster_types and len(monster_types) > 0:
+        # Get items that drop from monsters of the selected types
+        # Join with MonsterDrop and Monster tables
+        from sqlalchemy import and_
+        
+        monster_drop_query = db.query(MonsterDrop.item_id).join(
+            Monster, Monster.monster_id == MonsterDrop.monster_id
+        ).filter(
+            Monster.monster_type.in_(monster_types)
+        ).distinct()
+        
+        droppable_item_ids = [row[0] for row in monster_drop_query.all()]
+        
+        # Keep items that either:
+        # 1. Drop from selected monster types
+        # 2. Are not from drops (craft, harvest, etc.) - unless only_droppable is True
+        if only_droppable:
+            # Only include items from selected monster types
+            query = query.filter(Item.item_id.in_(droppable_item_ids))
+        else:
+            # Include items from selected monster types OR non-drop items
+            query = query.filter(
+                (Item.item_id.in_(droppable_item_ids)) | (Item.source_type != "drop")
+            )
+    
     items = query.all()
     
     filter_info = f"level {level_min}-{level_max}"
@@ -119,6 +146,8 @@ def solve_build(
         filter_info += " (only droppable)"
     if ignored_item_ids and len(ignored_item_ids) > 0:
         filter_info += f" (ignored {len(ignored_item_ids)} items)"
+    if monster_types and len(monster_types) > 0:
+        filter_info += f" (monster types: {', '.join(monster_types)})"
     logger.info(f"Solving with {len(items)} items ({filter_info})")
     
     # Generate each build type
@@ -703,6 +732,7 @@ def _solve_single_build(
                 "monster_id": drop.monster_id,
                 "monster_name": monster_name,
                 "monster_names": monster_names if monster_names else None,
+                "monster_type": monster.monster_type if monster else None,
                 "family": family_info,
                 "level_min": monster.level_min if monster else None,
                 "level_max": monster.level_max if monster else None,

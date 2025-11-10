@@ -85,6 +85,7 @@ class Monster(Base):
     level_min = Column(Integer, nullable=True)
     level_max = Column(Integer, nullable=True)
     gfx_id = Column(Integer, nullable=True)
+    monster_type = Column(String, index=True, nullable=True)  # monster, boss, archmonster, ultimate_boss, dominant
     extra = Column(JSON, default=dict)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())

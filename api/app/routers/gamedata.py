@@ -1,7 +1,8 @@
 from fastapi import APIRouter, Depends, BackgroundTasks
 from sqlalchemy.orm import Session
+from sqlalchemy import distinct
 from app.db.database import get_db
-from app.db.models import GameDataVersion
+from app.db.models import GameDataVersion, Monster
 from app.services.normalizer import load_gamedata
 
 router = APIRouter()
@@ -44,5 +45,27 @@ async def get_status(db: Session = Depends(get_db)):
         "status": latest.status,
         "loaded_items": latest.loaded_items,
         "created_at": latest.created_at
+    }
+
+@router.get("/monster-types")
+async def get_monster_types(db: Session = Depends(get_db)):
+    """Get available monster types from database"""
+    # Query distinct monster types
+    types = db.query(distinct(Monster.monster_type)).filter(
+        Monster.monster_type.isnot(None)
+    ).all()
+    
+    # Extract values from tuples and sort
+    monster_types = sorted([t[0] for t in types if t[0]])
+    
+    # Count monsters per type
+    type_counts = {}
+    for mtype in monster_types:
+        count = db.query(Monster).filter(Monster.monster_type == mtype).count()
+        type_counts[mtype] = count
+    
+    return {
+        "types": monster_types,
+        "counts": type_counts
     }
 

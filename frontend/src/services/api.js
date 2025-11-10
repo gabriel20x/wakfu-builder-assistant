@@ -128,11 +128,24 @@ export const metadataAPI = {
   },
 }
 
+export const gamedataAPI = {
+  // Get available monster types
+  getMonsterTypes() {
+    return api.get('/gamedata/monster-types')
+  },
+
+  // Get gamedata status
+  getGamedataStatus() {
+    return api.get('/gamedata/status')
+  },
+}
+
 export default {
   ...builderAPI,
   ...presetsAPI,
   ...damageAPI,
   ...metadataAPI,
+  ...gamedataAPI,
   // Keep the axios instance for custom calls
   get: api.get.bind(api),
   post: api.post.bind(api),
