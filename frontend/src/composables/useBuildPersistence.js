@@ -1,29 +1,38 @@
 import { ref } from 'vue'
 
+// Storage keys
+// LAST_SEARCH_* are for builder generated results (type 1)
+// SAVED_BUILDS are the user's saved builds (type 2)
 const STORAGE_KEYS = {
-  CURRENT_BUILD: 'wakfu_current_build',
-  CURRENT_CONFIG: 'wakfu_current_config',
-  SAVED_BUILDS: 'wakfu_saved_builds'
+  // New keys
+  LAST_SEARCH_BUILD: 'wakfu_last_search_build',
+  LAST_SEARCH_CONFIG: 'wakfu_last_search_config',
+  SAVED_BUILDS: 'wakfu_saved_builds',
+  // Backward-compatible legacy keys (read-only)
+  LEGACY_CURRENT_BUILD: 'wakfu_current_build',
+  LEGACY_CURRENT_CONFIG: 'wakfu_current_config'
 }
 
 const MAX_SAVED = 20
 
 // Reactive state
-const currentBuild = ref(null)
-const currentConfig = ref(null)
+const currentBuild = ref(null) // last generated (type 1)
+const currentConfig = ref(null) // last generator config (type 1)
 const savedBuilds = ref([])
 
 // Initialize from localStorage
 function initializePersistence() {
   try {
-    // Load current build
-    const storedBuild = localStorage.getItem(STORAGE_KEYS.CURRENT_BUILD)
+    // Load current/last search build (prefer new key, fallback to legacy)
+    const storedBuild = localStorage.getItem(STORAGE_KEYS.LAST_SEARCH_BUILD)
+      || localStorage.getItem(STORAGE_KEYS.LEGACY_CURRENT_BUILD)
     if (storedBuild) {
       currentBuild.value = JSON.parse(storedBuild)
     }
 
-    // Load current config
-    const storedConfig = localStorage.getItem(STORAGE_KEYS.CURRENT_CONFIG)
+    // Load current/last search config (prefer new key, fallback to legacy)
+    const storedConfig = localStorage.getItem(STORAGE_KEYS.LAST_SEARCH_CONFIG)
+      || localStorage.getItem(STORAGE_KEYS.LEGACY_CURRENT_CONFIG)
     if (storedConfig) {
       currentConfig.value = JSON.parse(storedConfig)
     }
@@ -38,7 +47,7 @@ function initializePersistence() {
   }
 }
 
-// Save current build
+// Save last generated build (type 1). Do not use for previewing saved builds.
 export function saveCurrentBuild(builds, config) {
   try {
     const buildData = {
@@ -48,17 +57,21 @@ export function saveCurrentBuild(builds, config) {
     }
     
     currentBuild.value = buildData
-    localStorage.setItem(STORAGE_KEYS.CURRENT_BUILD, JSON.stringify(buildData))
+    localStorage.setItem(STORAGE_KEYS.LAST_SEARCH_BUILD, JSON.stringify(buildData))
   } catch (error) {
     console.error('Error saving current build:', error)
   }
 }
 
-// Save current config (when generating)
+// Save/merge last search config (when configuring or generating)
 export function saveCurrentConfig(config) {
   try {
-    currentConfig.value = config
-    localStorage.setItem(STORAGE_KEYS.CURRENT_CONFIG, JSON.stringify(config))
+    const merged = {
+      ...(currentConfig.value || {}),
+      ...(config || {})
+    }
+    currentConfig.value = merged
+    localStorage.setItem(STORAGE_KEYS.LAST_SEARCH_CONFIG, JSON.stringify(merged))
   } catch (error) {
     console.error('Error saving current config:', error)
   }
@@ -150,8 +163,8 @@ export function clearAllPersistence() {
     currentConfig.value = null
     savedBuilds.value = []
     
-    localStorage.removeItem(STORAGE_KEYS.CURRENT_BUILD)
-    localStorage.removeItem(STORAGE_KEYS.CURRENT_CONFIG)
+    localStorage.removeItem(STORAGE_KEYS.LAST_SEARCH_BUILD)
+    localStorage.removeItem(STORAGE_KEYS.LAST_SEARCH_CONFIG)
     localStorage.removeItem(STORAGE_KEYS.SAVED_BUILDS)
   } catch (error) {
     console.error('Error clearing persistence:', error)

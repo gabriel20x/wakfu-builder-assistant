@@ -378,17 +378,67 @@ const onEditMetadata = (item) => {
 // Restore builds on mount - DISABLED (now using BuildViewer)
 // BuildGenerator should start fresh, builds are managed in BuildViewer
 onMounted(async () => {
-  // No auto-restore, BuildGenerator starts clean
-  console.log('BuildGenerator mounted - starting fresh')
-})
+  // Restore last generated build + config
+  const persistedConfig = getCurrentConfig()
+  const persistedBuild = getCurrentBuild()
 
-// Watch builds and save automatically - DISABLED
-// Builds are now managed in BuildViewer, not auto-saved
-// Only manual saves via "Guardar Build" button
-watch(builds, (newBuilds) => {
-  // Auto-save disabled - using manual save only
-  console.log('Build generated, use "Guardar Build" to save')
-}, { deep: true })
+  if (persistedConfig) {
+    // Basic fields
+    characterLevel.value = persistedConfig.level_max || characterLevel.value
+    includePet.value = persistedConfig.include_pet !== false
+    includeAccessory.value = persistedConfig.include_accessory !== false
+    onlyDroppable.value = persistedConfig.only_droppable === true
+    if (Array.isArray(persistedConfig.damage_preferences)) {
+      damagePreferences.value = persistedConfig.damage_preferences
+    }
+    if (Array.isArray(persistedConfig.resistance_preferences)) {
+      resistancePreferences.value = persistedConfig.resistance_preferences
+    }
+    if (Array.isArray(persistedConfig.monster_types)) {
+      selectedMonsterTypes.value = persistedConfig.monster_types
+    }
+    // Restore active tab
+    if (typeof persistedConfig.active_tab_index === 'number') {
+      activeTabIndex.value = persistedConfig.active_tab_index
+    }
+    // Restore class + role
+    if (persistedConfig.selectedClass) {
+      selectedClass.value = persistedConfig.selectedClass
+    }
+    if (persistedConfig.selectedRole) {
+      selectedRole.value = persistedConfig.selectedRole
+    }
+  }
+
+  // Restore stat weights
+  if (persistedConfig?.stat_weights) {
+    allStats.value.forEach(stat => {
+      stat.enabled = false
+      stat.weight = 1.0
+    })
+    Object.entries(persistedConfig.stat_weights).forEach(([k, w]) => {
+      const target = allStats.value.find(s => s.key === k)
+      if (target) {
+        target.enabled = true
+        target.weight = w
+      }
+    })
+  }
+
+  // Restore builds payload
+  if (persistedBuild?.builds) {
+    builds.value = persistedBuild.builds
+  }
+
+  // If we have class/role, attempt to restore preset UI state
+  if (classPresetSelectorRef.value && selectedClass.value && selectedRole.value) {
+    try {
+      await classPresetSelectorRef.value.restoreValues(selectedClass.value, selectedRole.value)
+    } catch (e) {
+      console.warn('Could not restore preset selector values:', e)
+    }
+  }
+})
 
 // Level options for dropdown
 const levelOptions = computed(() => [
@@ -412,6 +462,30 @@ const levelOptions = computed(() => [
 // Element preferences
 const damagePreferences = ref(['Fire', 'Water', 'Earth', 'Air'])
 const resistancePreferences = ref(['Fire', 'Water', 'Earth', 'Air'])
+
+// Persist active tab changes
+watch(activeTabIndex, (idx) => {
+  saveCurrentConfig({ active_tab_index: idx })
+})
+
+// Persist element preferences & monster types
+watch([damagePreferences, resistancePreferences, selectedMonsterTypes], ([dmg, res, monsters]) => {
+  saveCurrentConfig({
+    damage_preferences: dmg,
+    resistance_preferences: res,
+    monster_types: monsters
+  })
+}, { deep: true })
+
+// Persist basic toggles
+watch([characterLevel, includePet, includeAccessory, onlyDroppable], ([lvl, pet, acc, drop]) => {
+  saveCurrentConfig({
+    level_max: lvl,
+    include_pet: pet,
+    include_accessory: acc,
+    only_droppable: drop
+  })
+})
 
 // Current build stats based on active tab
 const currentBuildStats = computed(() => {
@@ -496,6 +570,17 @@ const allStats = computed(() => {
   ]
 })
 
+// Persist stat weights when they change (enabled/weight)
+watch(() => allStats.value.map(s => ({ key: s.key, enabled: s.enabled, weight: s.weight })), (statsSnapshot) => {
+  const weights = {}
+  statsSnapshot.forEach(s => {
+    if (s.enabled && s.weight > 0) {
+      weights[s.key] = s.weight
+    }
+  })
+  saveCurrentConfig({ stat_weights: weights })
+}, { deep: true })
+
 // Total count of available stats
 const totalStatsCount = computed(() => {
   return allStats.value.length
@@ -557,6 +642,9 @@ const onPresetApplied = (preset) => {
   // Save class and role info
   selectedClass.value = className
   selectedRole.value = roleName
+
+  // Persist class/role immediately
+  saveCurrentConfig({ selectedClass: className, selectedRole: roleName })
   
   // Show success message
   toast.add({
@@ -598,6 +686,23 @@ const generateBuilds = async () => {
     })
     
     builds.value = response.data
+
+    // Persist generated builds + full config snapshot
+    const configSnapshot = {
+      level_max: characterLevel.value,
+      stat_weights: activeStatWeights.value,
+      include_pet: includePet.value,
+      include_accessory: includeAccessory.value,
+      only_droppable: onlyDroppable.value,
+      damage_preferences: damagePreferences.value,
+      resistance_preferences: resistancePreferences.value,
+      monster_types: selectedMonsterTypes.value,
+      selectedClass: selectedClass.value,
+      selectedRole: selectedRole.value,
+      active_tab_index: activeTabIndex.value
+    }
+    saveCurrentConfig(configSnapshot)
+    saveCurrentBuild(builds.value, configSnapshot)
     
     toast.add({
       severity: 'success',
@@ -630,7 +735,11 @@ const saveCurrentBuildWithName = () => {
       include_accessory: includeAccessory.value,
       only_droppable: onlyDroppable.value,
       damage_preferences: damagePreferences.value,
-      resistance_preferences: resistancePreferences.value
+      resistance_preferences: resistancePreferences.value,
+      monster_types: selectedMonsterTypes.value,
+      selectedClass: selectedClass.value,
+      selectedRole: selectedRole.value,
+      active_tab_index: activeTabIndex.value
     }
     
     saveBuildWithName(builds.value, config, name)
@@ -742,6 +851,14 @@ const loadBuild = async (buildData) => {
       await classPresetSelectorRef.value.restoreValues(config.selectedClass, config.selectedRole)
     }
   }
+
+  // Restore active tab index (defaults to 0 if missing)
+  if (typeof config.active_tab_index === 'number') {
+    activeTabIndex.value = config.active_tab_index
+  }
+
+  // Persist restored config as current search context WITHOUT overriding last generated build (preview only)
+  saveCurrentConfig({ ...config })
   
   toast.add({
     severity: 'info',
