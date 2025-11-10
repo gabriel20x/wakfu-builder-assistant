@@ -451,6 +451,7 @@ const translations = {
     'language': 'Language',
     
     // Navigation
+    'nav.myBuilds': 'My Builds',
     'nav.builder': 'Build Generator',
     'nav.metadata': 'Item Metadata',
     
@@ -889,6 +890,7 @@ const translations = {
     'language': 'Langue',
     
     // Navigation
+    'nav.myBuilds': 'Mes Builds',
     'nav.builder': 'Générateur de Build',
     'nav.metadata': 'Métadonnées d\'Items',
     
