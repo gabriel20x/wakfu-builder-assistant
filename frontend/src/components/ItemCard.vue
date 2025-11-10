@@ -34,7 +34,7 @@
       <div class="item-basic-info">
         <div class="item-name">{{ itemName }}</div>
         <div class="item-meta">
-          <span class="item-level">Nivel {{ item.level }}</span>
+          <span class="item-level">{{ t('ui.level') }} {{ item.level }}</span>
           <span v-if="item.slot" class="item-slot">{{
             formatSlot(item.slot)
           }}</span>

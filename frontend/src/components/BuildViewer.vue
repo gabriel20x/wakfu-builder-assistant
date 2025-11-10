@@ -53,7 +53,7 @@
               <div class="build-meta">
                 <span class="meta-item">
                   <i class="pi pi-chart-line"></i>
-                  Nivel {{ build.config?.level_max || 230 }}
+                  {{ t('ui.level') }} {{ build.config?.level_max || 230 }}
                 </span>
                 <span class="meta-item">
                   <i class="pi pi-bolt"></i>
@@ -96,7 +96,7 @@
                 </span>
                 <span class="level-badge">
                   <i class="pi pi-chart-line"></i>
-                  Nivel {{ selectedBuild.config?.level_max || 230 }}
+                  {{ t('ui.level') }} {{ selectedBuild.config?.level_max || 230 }}
                 </span>
                 <span class="date-badge">
                   <i class="pi pi-calendar"></i>

@@ -1,7 +1,7 @@
 <template>
   <div class="equipment-slots">
     <div class="equipment-header">
-      <h3>Equipamiento</h3>
+      <h3>{{ t('equipment.title') }}</h3>
     </div>
     
     <div class="slots-container">
@@ -9,31 +9,31 @@
       <div class="slots-column left-column">
         <EquipmentSlot 
           slot-name="head"
-          label="Cabeza"
+          :label="t('equipment.head')"
           :item="getItemBySlot('HEAD')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="neck"
-          label="Cuello"
+          :label="t('equipment.neck')"
           :item="getItemBySlot('NECK')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="chest"
-          label="Pechera"
+          :label="t('equipment.chest')"
           :item="getItemBySlot('CHEST')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="ring"
-          label="Anillo 1"
+          :label="t('equipment.ring1')"
           :item="getItemBySlot('LEFT_HAND', 0) || getItemBySlot('RIGHT_HAND', 0)"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="boots"
-          label="Botas"
+          :label="t('equipment.boots')"
           :item="getItemBySlot('LEGS')"
           @item-click="onItemClick"
         />
@@ -57,31 +57,31 @@
       <div class="slots-column right-column">
         <EquipmentSlot 
           slot-name="back"
-          label="Capa"
+          :label="t('equipment.back')"
           :item="getItemBySlot('BACK')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="shoulders"
-          label="Hombros"
+          :label="t('equipment.shoulders')"
           :item="getItemBySlot('SHOULDERS')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="belt"
-          label="Cinturón"
+          :label="t('equipment.belt')"
           :item="getItemBySlot('BELT')"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="ring2"
-          label="Anillo 2"
+          :label="t('equipment.ring2')"
           :item="getItemBySlot('LEFT_HAND', 1) || getItemBySlot('RIGHT_HAND', 0)"
           @item-click="onItemClick"
         />
         <EquipmentSlot 
           slot-name="pet"
-          label="Mascota"
+          :label="t('equipment.pet')"
           :item="getItemBySlot('PET')"
           @item-click="onItemClick"
         />
@@ -92,19 +92,19 @@
     <div class="bottom-slots">
       <EquipmentSlot 
         slot-name="weapon2"
-        label="Arma Secundaria"
+        :label="t('equipment.weapon2')"
         :item="getItemBySlot('SECOND_WEAPON')"
         @item-click="onItemClick"
       />
       <EquipmentSlot 
         slot-name="weapon1"
-        label="Arma Principal"
+        :label="t('equipment.weapon1')"
         :item="getItemBySlot('FIRST_WEAPON')"
         @item-click="onItemClick"
       />
       <EquipmentSlot 
         slot-name="accessory"
-        label="Insignia"
+        :label="t('equipment.accessory')"
         :item="getItemBySlot('ACCESSORY')"
         @item-click="onItemClick"
       />
@@ -115,6 +115,9 @@
 <script setup>
 import { computed } from 'vue'
 import EquipmentSlot from './EquipmentSlot.vue'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   items: {

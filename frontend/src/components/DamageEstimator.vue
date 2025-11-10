@@ -3,18 +3,18 @@
     <div class="estimator-header">
       <h3>
         <i class="pi pi-chart-line"></i>
-        Estimación de Daño por Elemento
+        {{ t('ui.damageEstimation') }}
       </h3>
       <p class="help-text">
-        Daño estimado vs resistencias enemigas (hechizo base 100 | <strong>{{ isMelee ? 'Melé' : 'Distancia' }}</strong> | Single Target)<br>
-        <small>Resistencias planas convertidas a % con fórmula oficial: 1 - 0.8^(res/100)</small>
+        {{ t('ui.damageEstimationDesc', { type: isMelee ? t('ui.melee') : t('ui.distance') }) }}<br>
+        <small>{{ t('ui.resistanceFormula') }}</small>
       </p>
     </div>
 
     <!-- Loading State -->
     <div v-if="isLoading" class="loading-state">
       <p-progressSpinner style="width: 30px; height: 30px" />
-      <span>Calculando daño...</span>
+      <span>{{ t('ui.calculating') }} {{ t('ui.damage').toLowerCase() }}...</span>
     </div>
 
     <!-- Error State -->
@@ -28,7 +28,7 @@
       <!-- Resistance Presets Toggle -->
       <div class="controls">
         <div class="control-group">
-          <label>Resistencias a mostrar (valores planos):</label>
+          <label>{{ t('ui.resistancesToShow') }}:</label>
           <div class="resistance-toggles">
             <p-button
               v-for="preset in availablePresets"
@@ -45,10 +45,10 @@
 
         <div class="control-row">
           <div class="control-group">
-            <label>Tipo de daño:</label>
+            <label>{{ t('ui.damageType') }}:</label>
             <div class="damage-type-selector">
               <p-button
-                label="⚔️ Melé"
+                :label="`⚔️ ${t('ui.melee')}`"
                 size="small"
                 :severity="isMelee ? 'primary' : 'secondary'"
                 :outlined="!isMelee"
@@ -56,7 +56,7 @@
                 class="damage-type-btn"
               />
               <p-button
-                label="🏹 Distancia"
+                :label="`🏹 ${t('ui.distance')}`"
                 size="small"
                 :severity="!isMelee ? 'primary' : 'secondary'"
                 :outlined="isMelee"
@@ -72,7 +72,7 @@
               :binary="true"
               input-id="show-critical"
             />
-            <label for="show-critical" class="checkbox-label">Mostrar daño crítico</label>
+            <label for="show-critical" class="checkbox-label">{{ t('ui.showCritical') }}</label>
           </div>
         </div>
       </div>
@@ -88,7 +88,7 @@
             <span class="element-icon">{{ getElementIcon(estimate.element) }}</span>
             <div class="element-info">
               <span class="element-name">{{ estimate.element }}</span>
-              <span class="element-mastery">{{ Math.round(estimate.base_mastery) }} dominio</span>
+              <span class="element-mastery">{{ Math.round(estimate.base_mastery) }} {{ t('ui.mastery') }}</span>
             </div>
           </div>
 
@@ -105,7 +105,7 @@
               <div class="damage-values">
                 <!-- Normal Damage -->
                 <div class="damage-bar-container">
-                  <div class="damage-bar-label">⚔️ Normal</div>
+                  <div class="damage-bar-label">⚔️ {{ t('ui.normal') }}</div>
                   <div 
                     class="damage-bar normal"
                     :style="{ width: getDamageBarWidth(scenario.normal_damage) }"
@@ -120,7 +120,7 @@
                 
                 <!-- Critical Damage -->
                 <div v-if="showCritical && scenario.critical_damage !== null" class="damage-bar-container">
-                  <div class="damage-bar-label">💥 Crítico</div>
+                  <div class="damage-bar-label">💥 {{ t('ui.critical') }}</div>
                   <div 
                     class="damage-bar critical"
                     :style="{ width: getDamageBarWidth(scenario.critical_damage) }"
@@ -135,7 +135,7 @@
                 
                 <!-- Backstab Damage -->
                 <div v-if="scenario.backstab_damage !== null" class="damage-bar-container">
-                  <div class="damage-bar-label">🎯 Espalda</div>
+                  <div class="damage-bar-label">🎯 {{ t('ui.backstab') }}</div>
                   <div 
                     class="damage-bar backstab"
                     :style="{ width: getDamageBarWidth(scenario.backstab_damage) }"
@@ -150,7 +150,7 @@
                 
                 <!-- Backstab + Critical Damage -->
                 <div v-if="showCritical && scenario.backstab_critical_damage !== null" class="damage-bar-container">
-                  <div class="damage-bar-label">🎯💥 Espalda + Crít</div>
+                  <div class="damage-bar-label">🎯💥 {{ t('ui.backstabCritical') }}</div>
                   <div 
                     class="damage-bar backstab-critical"
                     :style="{ width: getDamageBarWidth(scenario.backstab_critical_damage) }"
@@ -172,7 +172,7 @@
       <div class="recommendation">
         <i class="pi pi-info-circle"></i>
         <div class="recommendation-content">
-          <strong>Recomendación:</strong>
+          <strong>{{ t('ui.recommendation') }}:</strong>
           <span>{{ getBestElementRecommendation() }}</span>
         </div>
       </div>
@@ -181,7 +181,7 @@
     <!-- Empty State -->
     <div v-else class="empty-state">
       <i class="pi pi-chart-line"></i>
-      <p>No hay estadísticas disponibles para calcular daño</p>
+      <p>{{ t('ui.noDamageStats') }}</p>
     </div>
   </div>
 </template>
@@ -189,6 +189,9 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
 import { damageAPI } from '../services/api'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   buildStats: {
@@ -279,8 +282,8 @@ const getBestElementRecommendation = () => {
   })
   
   return bestElement 
-    ? `${getElementIcon(bestElement)} ${bestElement} ofrece el mejor daño promedio (${Math.round(bestAvgDamage)} por hechizo)`
-    : 'No hay suficientes datos'
+    ? `${getElementIcon(bestElement)} ${bestElement} ${t('ui.bestElementDamage')} (${Math.round(bestAvgDamage)} ${t('ui.perSpell')})`
+    : t('ui.noData')
 }
 
 // Load damage estimates
@@ -304,7 +307,7 @@ const loadDamageEstimates = async () => {
     damageEstimates.value = response.data
   } catch (err) {
     console.error('Error loading damage estimates:', err)
-    error.value = 'Error al calcular daño'
+    error.value = t('ui.errorCalculating')
   } finally {
     isLoading.value = false
   }

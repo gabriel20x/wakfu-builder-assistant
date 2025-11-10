@@ -1,87 +1,89 @@
+import { useI18n } from './useI18n'
+
 export const STAT_NAMES = {
   // Core stats
-  HP: { label: 'PdV', icon: 'health_points.png' },
-  AP: { label: 'PA', icon: 'action_points.png' },
-  MP: { label: 'PM', icon: 'movement_points.png' },
-  WP: { label: 'PW', icon: 'wakfu_points.png' },
+  HP: { key: 'HP', icon: 'health_points.png' },
+  AP: { key: 'AP', icon: 'action_points.png' },
+  MP: { key: 'MP', icon: 'movement_points.png' },
+  WP: { key: 'WP', icon: 'wakfu_points.png' },
   
   // Elemental Masteries
-  Water_Mastery: { label: 'Maestría Agua', icon: 'water_coin.png' },
-  Air_Mastery: { label: 'Maestría Aire', icon: 'air_coin.png' },
-  Earth_Mastery: { label: 'Maestría Tierra', icon: 'earth_coin.png' },
-  Fire_Mastery: { label: 'Maestría Fuego', icon: 'fire_coin.png' },
-  Elemental_Mastery: { label: 'Maestría Elemental', icon: 'elemental_mastery.png' },
+  Water_Mastery: { key: 'Water_Mastery', icon: 'water_coin.png' },
+  Air_Mastery: { key: 'Air_Mastery', icon: 'air_coin.png' },
+  Earth_Mastery: { key: 'Earth_Mastery', icon: 'earth_coin.png' },
+  Fire_Mastery: { key: 'Fire_Mastery', icon: 'fire_coin.png' },
+  Elemental_Mastery: { key: 'Elemental_Mastery', icon: 'elemental_mastery.png' },
   
   // Multi-Element Mastery (✅ CORRECTED - updated from chest review)
-  Multi_Element_Mastery_1: { label: 'Dominio (1 elemento)', icon: 'elemental_mastery.png' },
-  Multi_Element_Mastery_2: { label: 'Dominio (2 elementos)', icon: 'elemental_mastery.png' },
-  Multi_Element_Mastery_3: { label: 'Dominio (3 elementos)', icon: 'elemental_mastery.png' },
-  Multi_Element_Mastery_4: { label: 'Dominio (4 elementos)', icon: 'elemental_mastery.png' },
+  Multi_Element_Mastery_1: { key: 'Multi_Element_Mastery_1', icon: 'elemental_mastery.png' },
+  Multi_Element_Mastery_2: { key: 'Multi_Element_Mastery_2', icon: 'elemental_mastery.png' },
+  Multi_Element_Mastery_3: { key: 'Multi_Element_Mastery_3', icon: 'elemental_mastery.png' },
+  Multi_Element_Mastery_4: { key: 'Multi_Element_Mastery_4', icon: 'elemental_mastery.png' },
   
   // Legacy naming (for backwards compatibility)
-  Elemental_Mastery_1_elements: { label: 'Maestría (1 elemento)', icon: 'elemental_mastery.png' },
-  Elemental_Mastery_2_elements: { label: 'Maestría (2 elementos)', icon: 'elemental_mastery.png' },
-  Elemental_Mastery_3_elements: { label: 'Maestría (3 elementos)', icon: 'elemental_mastery.png' },
-  Elemental_Mastery_4_elements: { label: 'Maestría (4 elementos)', icon: 'elemental_mastery.png' },
-  Random_Elemental_Mastery: { label: 'Maestría Elemental Aleatoria', icon: 'elemental_mastery.png' },
+  Elemental_Mastery_1_elements: { key: 'Elemental_Mastery_1_elements', icon: 'elemental_mastery.png' },
+  Elemental_Mastery_2_elements: { key: 'Elemental_Mastery_2_elements', icon: 'elemental_mastery.png' },
+  Elemental_Mastery_3_elements: { key: 'Elemental_Mastery_3_elements', icon: 'elemental_mastery.png' },
+  Elemental_Mastery_4_elements: { key: 'Elemental_Mastery_4_elements', icon: 'elemental_mastery.png' },
+  Random_Elemental_Mastery: { key: 'Random_Elemental_Mastery', icon: 'elemental_mastery.png' },
   
   // Position Masteries
-  Critical_Mastery: { label: 'Dominio Crítico', icon: 'critical_mastery.png' },
-  Rear_Mastery: { label: 'Dominio Espalda', icon: 'rear_mastery.png' },
-  Melee_Mastery: { label: 'Dominio de Melé', icon: 'melee_mastery.png' },
-  Distance_Mastery: { label: 'Dominio Distancia', icon: 'distance_mastery.png' },
-  Healing_Mastery: { label: 'Dominio Cura', icon: 'healing_mastery.png' },
-  Berserk_Mastery: { label: 'Dominio Berserker', icon: 'berserk_mastery.png' },
+  Critical_Mastery: { key: 'Critical_Mastery', icon: 'critical_mastery.png' },
+  Rear_Mastery: { key: 'Rear_Mastery', icon: 'rear_mastery.png' },
+  Melee_Mastery: { key: 'Melee_Mastery', icon: 'melee_mastery.png' },
+  Distance_Mastery: { key: 'Distance_Mastery', icon: 'distance_mastery.png' },
+  Healing_Mastery: { key: 'Healing_Mastery', icon: 'healing_mastery.png' },
+  Berserk_Mastery: { key: 'Berserk_Mastery', icon: 'berserk_mastery.png' },
   
   // Elemental Resistances
-  Water_Resistance: { label: 'Resistencia Agua', icon: 'water_coin.png' },
-  Air_Resistance: { label: 'Resistencia Aire', icon: 'air_coin.png' },
-  Earth_Resistance: { label: 'Resistencia Tierra', icon: 'earth_coin.png' },
-  Fire_Resistance: { label: 'Resistencia Fuego', icon: 'fire_coin.png' },
-  Elemental_Resistance: { label: 'Resistencia Elemental', icon: 'elemental_resistance.png' },
+  Water_Resistance: { key: 'Water_Resistance', icon: 'water_coin.png' },
+  Air_Resistance: { key: 'Air_Resistance', icon: 'air_coin.png' },
+  Earth_Resistance: { key: 'Earth_Resistance', icon: 'earth_coin.png' },
+  Fire_Resistance: { key: 'Fire_Resistance', icon: 'fire_coin.png' },
+  Elemental_Resistance: { key: 'Elemental_Resistance', icon: 'elemental_resistance.png' },
   
   // Random Elemental Resistance (✅ CORRECTED - updated naming)
-  Random_Elemental_Resistance_1: { label: 'Resistencia (1 elemento)', icon: 'elemental_resistance.png' },
-  Random_Elemental_Resistance_2: { label: 'Resistencia (2 elementos)', icon: 'elemental_resistance.png' },
-  Random_Elemental_Resistance_3: { label: 'Resistencia (3 elementos)', icon: 'elemental_resistance.png' },
-  Random_Elemental_Resistance_4: { label: 'Resistencia (4 elementos)', icon: 'elemental_resistance.png' },
+  Random_Elemental_Resistance_1: { key: 'Random_Elemental_Resistance_1', icon: 'elemental_resistance.png' },
+  Random_Elemental_Resistance_2: { key: 'Random_Elemental_Resistance_2', icon: 'elemental_resistance.png' },
+  Random_Elemental_Resistance_3: { key: 'Random_Elemental_Resistance_3', icon: 'elemental_resistance.png' },
+  Random_Elemental_Resistance_4: { key: 'Random_Elemental_Resistance_4', icon: 'elemental_resistance.png' },
   
   // Legacy naming (for backwards compatibility)
-  Elemental_Resistance_1_elements: { label: 'Resistencia (1 elemento)', icon: 'elemental_resistance.png' },
-  Elemental_Resistance_2_elements: { label: 'Resistencia (2 elementos)', icon: 'elemental_resistance.png' },
-  Elemental_Resistance_3_elements: { label: 'Resistencia (3 elementos)', icon: 'elemental_resistance.png' },
-  Elemental_Resistance_4_elements: { label: 'Resistencia (4 elementos)', icon: 'elemental_resistance.png' },
-  Random_Elemental_Resistance: { label: 'Resistencia Elemental Aleatoria', icon: 'elemental_resistance.png' },
+  Elemental_Resistance_1_elements: { key: 'Elemental_Resistance_1_elements', icon: 'elemental_resistance.png' },
+  Elemental_Resistance_2_elements: { key: 'Elemental_Resistance_2_elements', icon: 'elemental_resistance.png' },
+  Elemental_Resistance_3_elements: { key: 'Elemental_Resistance_3_elements', icon: 'elemental_resistance.png' },
+  Elemental_Resistance_4_elements: { key: 'Elemental_Resistance_4_elements', icon: 'elemental_resistance.png' },
+  Random_Elemental_Resistance: { key: 'Random_Elemental_Resistance', icon: 'elemental_resistance.png' },
   
   // Other Resistances
-  Critical_Resistance: { label: 'Resistencia Crítica', icon: 'critical_resistance.png' },
-  Rear_Resistance: { label: 'Resistencia Espalda', icon: 'rear_resistance.png' },
+  Critical_Resistance: { key: 'Critical_Resistance', icon: 'critical_resistance.png' },
+  Rear_Resistance: { key: 'Rear_Resistance', icon: 'rear_resistance.png' },
   
   // Combat stats
-  Critical_Hit: { label: 'Golpe Crítico', icon: 'critical_hit.png', suffix: '%' },
-  Block: { label: 'Anticipación', icon: 'block.png', suffix: '%' },
-  Initiative: { label: 'Iniciativa', icon: 'initiative.png' },
-  Dodge: { label: 'Esquiva', icon: 'dodge.png' },
-  Lock: { label: 'Placaje', icon: 'lock.png' },
-  Wisdom: { label: 'Sabiduría', icon: 'wisdom.png' },
-  Prospecting: { label: 'Prospección', icon: 'prospecting.png' },
-  Range: { label: 'Alcance', icon: 'range.png' },
-  Control: { label: 'Control', icon: 'control.png' },
-  Force_Of_Will: { label: 'Voluntad', icon: 'force_of_will.png' },
+  Critical_Hit: { key: 'Critical_Hit', icon: 'critical_hit.png', suffix: '%' },
+  Block: { key: 'Block', icon: 'block.png', suffix: '%' },
+  Initiative: { key: 'Initiative', icon: 'initiative.png' },
+  Dodge: { key: 'Dodge', icon: 'dodge.png' },
+  Lock: { key: 'Lock', icon: 'lock.png' },
+  Wisdom: { key: 'Wisdom', icon: 'wisdom.png' },
+  Prospecting: { key: 'Prospecting', icon: 'prospecting.png' },
+  Range: { key: 'Range', icon: 'range.png' },
+  Control: { key: 'Control', icon: 'control.png' },
+  Force_Of_Will: { key: 'Force_Of_Will', icon: 'force_of_will.png' },
   
   // Percentages
-  Damage_Inflicted: { label: 'Daños Finales', icon: 'damage_inflicted.png', suffix: '%' },
-  Heals_Performed: { label: 'Curas Finales', icon: 'heals_performed.png', suffix: '%' },
-  Heals_Received: { label: 'Curas Recibidas', icon: 'heals_received.png', suffix: '%' },
-  Armor_Given: { label: 'Armadura Dada', icon: 'armor_given.png', suffix: '%' },
-  Armor_Received: { label: 'Armadura Recibida', icon: 'armor_received.png', suffix: '%' },
-  Indirect_Damage: { label: 'Daños Indirectos', icon: 'indirect_damage.png', suffix: '%' },
+  Damage_Inflicted: { key: 'Damage_Inflicted', icon: 'damage_inflicted.png', suffix: '%' },
+  Heals_Performed: { key: 'Heals_Performed', icon: 'heals_performed.png', suffix: '%' },
+  Heals_Received: { key: 'Heals_Received', icon: 'heals_received.png', suffix: '%' },
+  Armor_Given: { key: 'Armor_Given', icon: 'armor_given.png', suffix: '%' },
+  Armor_Received: { key: 'Armor_Received', icon: 'armor_received.png', suffix: '%' },
+  Indirect_Damage: { key: 'Indirect_Damage', icon: 'indirect_damage.png', suffix: '%' },
   
   // Kit Skill
-  Kit_Skill: { label: 'Nivel de Kit', icon: 'kit_skill.png' },
+  Kit_Skill: { key: 'Kit_Skill', icon: 'kit_skill.png' },
   
   // Resistance (generic)
-  Resistance: { label: 'Resistencia', icon: 'resistance.png' },
+  Resistance: { key: 'Resistance', icon: 'resistance.png' },
 }
 
 export const STAT_CATEGORIES = {
@@ -135,7 +137,12 @@ export const RARITY_NAMES = {
 }
 
 export function getStatLabel(statKey) {
-  return STAT_NAMES[statKey]?.label || statKey
+  const { t } = useI18n()
+  const statInfo = STAT_NAMES[statKey]
+  if (statInfo?.key) {
+    return t(`stat.${statInfo.key}`)
+  }
+  return statKey
 }
 
 export function getStatIcon(statKey) {
@@ -151,6 +158,17 @@ export function getRarityColor(rarity) {
 }
 
 export function getRarityName(rarity) {
-  return RARITY_NAMES[rarity] || 'Unknown'
+  const { t } = useI18n()
+  const rarityMap = {
+    0: 'common',
+    1: 'common',
+    3: 'rare',
+    4: 'mythic',
+    5: 'legendary',
+    6: 'relic',
+    7: 'epic'
+  }
+  const rarityKey = rarityMap[rarity]
+  return rarityKey ? t(`rarity.${rarityKey}`) : 'Unknown'
 }
 

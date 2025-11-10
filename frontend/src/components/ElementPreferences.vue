@@ -22,7 +22,7 @@
           >
             <i class="pi pi-bars drag-handle"></i>
             <span class="element-icon">{{ element.icon }}</span>
-            <span class="element-label">{{ element.label }}</span>
+            <span class="element-label">{{ element.label() }}</span>
             <span class="priority-badge">{{ index + 1 }}</span>
           </div>
         </div>
@@ -46,7 +46,7 @@
           >
             <i class="pi pi-bars drag-handle"></i>
             <span class="element-icon">{{ element.icon }}</span>
-            <span class="element-label">{{ element.label }}</span>
+            <span class="element-label">{{ element.label() }}</span>
             <span class="priority-badge">{{ index + 1 }}</span>
           </div>
         </div>
@@ -55,7 +55,7 @@
     
     <div class="reset-section">
       <p-button 
-        label="Restablecer a predeterminado" 
+        :label="t('ui.resetToDefault')" 
         size="small"
         severity="secondary"
         text
@@ -87,10 +87,10 @@ const emit = defineEmits(['update:damagePreferences', 'update:resistancePreferen
 
 // Element definitions
 const elements = [
-  { key: 'Fire', label: 'Fuego', icon: '🔥' },
-  { key: 'Water', label: 'Agua', icon: '💧' },
-  { key: 'Earth', label: 'Tierra', icon: '🌍' },
-  { key: 'Air', label: 'Aire', icon: '💨' }
+  { key: 'Fire', label: () => t('element.Fire'), icon: '🔥' },
+  { key: 'Water', label: () => t('element.Water'), icon: '💧' },
+  { key: 'Earth', label: () => t('element.Earth'), icon: '🌍' },
+  { key: 'Air', label: () => t('element.Air'), icon: '💨' }
 ]
 
 // Initialize orders from props

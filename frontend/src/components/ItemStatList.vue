@@ -1,7 +1,7 @@
 <template>
   <div class="item-stat-list">
     <div v-if="Object.keys(stats).length === 0" class="no-stats">
-      <span>Sin stats</span>
+      <span>{{ t('item.noStats') }}</span>
     </div>
     
     <div v-else class="stats-table">
@@ -29,6 +29,9 @@
 
 <script setup>
 import { getStatLabel, getStatIcon, getStatSuffix } from '../composables/useStats'
+import { useI18n } from '../composables/useI18n'
+
+const { t } = useI18n()
 
 const props = defineProps({
   stats: {

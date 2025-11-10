@@ -26,7 +26,7 @@
             {{ item.name }}
           </div>
           <div class="item-meta">
-            <span class="item-level">Niv. {{ item.level }}</span>
+            <span class="item-level">{{ t('ui.level') }} {{ item.level }}</span>
             <span class="item-slot">{{ formatSlot(item.slot) }}</span>
             <span class="item-rarity">{{ getRarityName(item.rarity) }}</span>
           </div>
@@ -99,23 +99,9 @@ const {
 const fileInput = ref(null)
 
 const formatSlot = (slot) => {
-  const slotNames = {
-    HEAD: 'Cabeza',
-    NECK: 'Cuello',
-    CHEST: 'Pecho',
-    LEGS: 'Piernas',
-    BACK: 'Espalda',
-    SHOULDERS: 'Hombros',
-    BELT: 'Cinturón',
-    FIRST_WEAPON: 'Arma',
-    SECOND_WEAPON: 'Arma 2',
-    ACCESSORY: 'Accesorio',
-    LEFT_HAND: 'Anillo',
-    RIGHT_HAND: 'Anillo',
-    PET: 'Mascota',
-    MOUNT: 'Montura',
-  }
-  return slotNames[slot] || slot
+  // Use translation keys for slot names
+  const slotKey = `slot.${slot}`
+  return t(slotKey) !== slotKey ? t(slotKey) : slot
 }
 
 const formatDate = (isoString) => {

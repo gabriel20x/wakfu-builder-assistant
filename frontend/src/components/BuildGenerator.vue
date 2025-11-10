@@ -52,14 +52,14 @@
               <template #value="slotProps">
                 <div v-if="slotProps.value" class="flex align-items-center">
                   <i class="pi pi-star-fill mr-2" style="color: #ffd700;"></i>
-                  <span class="font-semibold">Nivel {{ slotProps.value }}</span>
+                  <span class="font-semibold">{{ t('ui.level') }} {{ slotProps.value }}</span>
                 </div>
                 <span v-else>{{ slotProps.placeholder }}</span>
               </template>
               <template #option="slotProps">
                 <div class="flex align-items-center">
                   <i class="pi pi-star mr-2" style="color: #9fa8da;"></i>
-                  <span>Nivel {{ slotProps.option.value }}</span>
+                  <span>{{ t('ui.level') }} {{ slotProps.option.value }}</span>
                 </div>
               </template>
             </p-dropdown>
@@ -330,7 +330,7 @@
 import { ref, computed, reactive, onMounted, watch } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
-import { STAT_NAMES } from '../composables/useStats'
+import { STAT_NAMES, getStatLabel } from '../composables/useStats'
 import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import { useIgnoredItems } from '../composables/useIgnoredItems'
@@ -391,23 +391,23 @@ watch(builds, (newBuilds) => {
 }, { deep: true })
 
 // Level options for dropdown
-const levelOptions = [
-  { label: 'Nivel 20', value: 20 },
-  { label: 'Nivel 35', value: 35 },
-  { label: 'Nivel 50', value: 50 },
-  { label: 'Nivel 65', value: 65 },
-  { label: 'Nivel 80', value: 80 },
-  { label: 'Nivel 95', value: 95 },
-  { label: 'Nivel 110', value: 110 },
-  { label: 'Nivel 125', value: 125 },
-  { label: 'Nivel 140', value: 140 },
-  { label: 'Nivel 155', value: 155 },
-  { label: 'Nivel 170', value: 170 },
-  { label: 'Nivel 185', value: 185 },
-  { label: 'Nivel 200', value: 200 },
-  { label: 'Nivel 215', value: 215 },
-  { label: 'Nivel 230', value: 230 }
-]
+const levelOptions = computed(() => [
+  { label: `${t('ui.level')} 20`, value: 20 },
+  { label: `${t('ui.level')} 35`, value: 35 },
+  { label: `${t('ui.level')} 50`, value: 50 },
+  { label: `${t('ui.level')} 65`, value: 65 },
+  { label: `${t('ui.level')} 80`, value: 80 },
+  { label: `${t('ui.level')} 95`, value: 95 },
+  { label: `${t('ui.level')} 110`, value: 110 },
+  { label: `${t('ui.level')} 125`, value: 125 },
+  { label: `${t('ui.level')} 140`, value: 140 },
+  { label: `${t('ui.level')} 155`, value: 155 },
+  { label: `${t('ui.level')} 170`, value: 170 },
+  { label: `${t('ui.level')} 185`, value: 185 },
+  { label: `${t('ui.level')} 200`, value: 200 },
+  { label: `${t('ui.level')} 215`, value: 215 },
+  { label: `${t('ui.level')} 230`, value: 230 }
+])
 
 // Element preferences
 const damagePreferences = ref(['Fire', 'Water', 'Earth', 'Air'])
@@ -443,46 +443,46 @@ const categories = reactive({
 // Organized stat groups
 const statGroups = reactive({
   main: [
-    { key: 'HP', label: 'PdV', icon: '❤️', enabled: true, weight: 1.0 },
-    { key: 'AP', label: 'PA', icon: '⭐', enabled: true, weight: 2.5 },
-    { key: 'WP', label: 'PW', icon: '💧', enabled: false, weight: 1.5 },
-    { key: 'MP', label: 'PM', icon: '⚡', enabled: true, weight: 2.0 },
+    { key: 'HP', label: computed(() => getStatLabel('HP')), icon: '❤️', enabled: true, weight: 1.0 },
+    { key: 'AP', label: computed(() => getStatLabel('AP')), icon: '⭐', enabled: true, weight: 2.5 },
+    { key: 'WP', label: computed(() => getStatLabel('WP')), icon: '💧', enabled: false, weight: 1.5 },
+    { key: 'MP', label: computed(() => getStatLabel('MP')), icon: '⚡', enabled: true, weight: 2.0 },
   ],
   masteries: [
-    { key: 'Elemental_Mastery', label: 'Dominio elem.', icon: '🔮', enabled: false, weight: 2.0 },
-    { key: 'Fire_Mastery', label: 'Dominio de fuego', icon: '🔥', enabled: false, weight: 1.8 },
-    { key: 'Water_Mastery', label: 'Dominio de agua', icon: '💧', enabled: false, weight: 1.8 },
-    { key: 'Earth_Mastery', label: 'Dominio de tierra', icon: '🌍', enabled: false, weight: 1.8 },
-    { key: 'Air_Mastery', label: 'Dominio de aire', icon: '💨', enabled: false, weight: 1.8 },
-    { key: 'Elemental_Resistance', label: 'Resistencia elem.', icon: '🛡️', enabled: false, weight: 1.0 },
-    { key: 'Fire_Resistance', label: 'Resistencia al fuego', icon: '🔥', enabled: false, weight: 1.0 },
-    { key: 'Water_Resistance', label: 'Resistencia al agua', icon: '💧', enabled: false, weight: 1.0 },
-    { key: 'Earth_Resistance', label: 'Resistencia a la tierra', icon: '🌍', enabled: false, weight: 1.0 },
-    { key: 'Air_Resistance', label: 'Resistencia al aire', icon: '💨', enabled: false, weight: 1.0 },
+    { key: 'Elemental_Mastery', label: computed(() => getStatLabel('Elemental_Mastery')), icon: '🔮', enabled: false, weight: 2.0 },
+    { key: 'Fire_Mastery', label: computed(() => getStatLabel('Fire_Mastery')), icon: '🔥', enabled: false, weight: 1.8 },
+    { key: 'Water_Mastery', label: computed(() => getStatLabel('Water_Mastery')), icon: '💧', enabled: false, weight: 1.8 },
+    { key: 'Earth_Mastery', label: computed(() => getStatLabel('Earth_Mastery')), icon: '🌍', enabled: false, weight: 1.8 },
+    { key: 'Air_Mastery', label: computed(() => getStatLabel('Air_Mastery')), icon: '💨', enabled: false, weight: 1.8 },
+    { key: 'Elemental_Resistance', label: computed(() => getStatLabel('Elemental_Resistance')), icon: '🛡️', enabled: false, weight: 1.0 },
+    { key: 'Fire_Resistance', label: computed(() => getStatLabel('Fire_Resistance')), icon: '🔥', enabled: false, weight: 1.0 },
+    { key: 'Water_Resistance', label: computed(() => getStatLabel('Water_Resistance')), icon: '💧', enabled: false, weight: 1.0 },
+    { key: 'Earth_Resistance', label: computed(() => getStatLabel('Earth_Resistance')), icon: '🌍', enabled: false, weight: 1.0 },
+    { key: 'Air_Resistance', label: computed(() => getStatLabel('Air_Resistance')), icon: '💨', enabled: false, weight: 1.0 },
   ],
   combat: [
-    { key: 'Critical_Hit', label: 'Golpe crítico', icon: '💥', enabled: false, weight: 1.5 },
-    { key: 'Block', label: 'Anticipación', icon: '🛡️', enabled: false, weight: 1.2 },
-    { key: 'Initiative', label: 'Iniciativa', icon: '⚔️', enabled: false, weight: 1.0 },
-    { key: 'Range', label: 'Alcance', icon: '🎯', enabled: false, weight: 2.0 },
-    { key: 'Dodge', label: 'Esquiva', icon: '💨', enabled: false, weight: 1.0 },
-    { key: 'Lock', label: 'Placaje', icon: '🔒', enabled: false, weight: 1.0 },
-    { key: 'Control', label: 'Control', icon: '👑', enabled: false, weight: 1.2 },
-    { key: 'Force_Of_Will', label: 'Voluntad', icon: '💪', enabled: false, weight: 1.0 },
+    { key: 'Critical_Hit', label: computed(() => getStatLabel('Critical_Hit')), icon: '💥', enabled: false, weight: 1.5 },
+    { key: 'Block', label: computed(() => getStatLabel('Block')), icon: '🛡️', enabled: false, weight: 1.2 },
+    { key: 'Initiative', label: computed(() => getStatLabel('Initiative')), icon: '⚔️', enabled: false, weight: 1.0 },
+    { key: 'Range', label: computed(() => getStatLabel('Range')), icon: '🎯', enabled: false, weight: 2.0 },
+    { key: 'Dodge', label: computed(() => getStatLabel('Dodge')), icon: '💨', enabled: false, weight: 1.0 },
+    { key: 'Lock', label: computed(() => getStatLabel('Lock')), icon: '🔒', enabled: false, weight: 1.0 },
+    { key: 'Control', label: computed(() => getStatLabel('Control')), icon: '👑', enabled: false, weight: 1.2 },
+    { key: 'Force_Of_Will', label: computed(() => getStatLabel('Force_Of_Will')), icon: '💪', enabled: false, weight: 1.0 },
   ],
   secondary: [
-    { key: 'Critical_Mastery', label: 'Dominio crítico', icon: '💥', enabled: false, weight: 2.0 },
-    { key: 'Critical_Resistance', label: 'Resistencia crítica', icon: '🛡️', enabled: false, weight: 1.0 },
-    { key: 'Rear_Mastery', label: 'Dominio espalda', icon: '🎯', enabled: false, weight: 1.5 },
-    { key: 'Rear_Resistance', label: 'Resistencia por la espalda', icon: '🛡️', enabled: false, weight: 1.0 },
-    { key: 'Melee_Mastery', label: 'Dominio de melé', icon: '⚔️', enabled: false, weight: 2.0 },
-    { key: 'Distance_Mastery', label: 'Dominio distancia', icon: '🏹', enabled: false, weight: 2.0 },
-    { key: 'Armor_Given', label: 'Armadura dada', icon: '🛡️', enabled: false, weight: 1.0 },
-    { key: 'Armor_Received', label: 'Armadura recibida', icon: '🛡️', enabled: false, weight: 1.0 },
-    { key: 'Healing_Mastery', label: 'Dominio cura', icon: '💚', enabled: false, weight: 1.5 },
-    { key: 'Berserk_Mastery', label: 'Dominio berserker', icon: '😈', enabled: false, weight: 1.5 },
-    { key: 'Wisdom', label: 'Sabiduría', icon: '📖', enabled: false, weight: 1.0 },
-    { key: 'Prospecting', label: 'Prospección', icon: '💎', enabled: false, weight: 0.8 },
+    { key: 'Critical_Mastery', label: computed(() => getStatLabel('Critical_Mastery')), icon: '💥', enabled: false, weight: 2.0 },
+    { key: 'Critical_Resistance', label: computed(() => getStatLabel('Critical_Resistance')), icon: '🛡️', enabled: false, weight: 1.0 },
+    { key: 'Rear_Mastery', label: computed(() => getStatLabel('Rear_Mastery')), icon: '🎯', enabled: false, weight: 1.5 },
+    { key: 'Rear_Resistance', label: computed(() => getStatLabel('Rear_Resistance')), icon: '🛡️', enabled: false, weight: 1.0 },
+    { key: 'Melee_Mastery', label: computed(() => getStatLabel('Melee_Mastery')), icon: '⚔️', enabled: false, weight: 2.0 },
+    { key: 'Distance_Mastery', label: computed(() => getStatLabel('Distance_Mastery')), icon: '🏹', enabled: false, weight: 2.0 },
+    { key: 'Armor_Given', label: computed(() => getStatLabel('Armor_Given')), icon: '🛡️', enabled: false, weight: 1.0 },
+    { key: 'Armor_Received', label: computed(() => getStatLabel('Armor_Received')), icon: '🛡️', enabled: false, weight: 1.0 },
+    { key: 'Healing_Mastery', label: computed(() => getStatLabel('Healing_Mastery')), icon: '💚', enabled: false, weight: 1.5 },
+    { key: 'Berserk_Mastery', label: computed(() => getStatLabel('Berserk_Mastery')), icon: '😈', enabled: false, weight: 1.5 },
+    { key: 'Wisdom', label: computed(() => getStatLabel('Wisdom')), icon: '📖', enabled: false, weight: 1.0 },
+    { key: 'Prospecting', label: computed(() => getStatLabel('Prospecting')), icon: '💎', enabled: false, weight: 0.8 },
   ]
 })
 

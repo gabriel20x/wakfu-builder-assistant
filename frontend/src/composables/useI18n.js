@@ -37,6 +37,8 @@ const translations = {
     // Stat Categories
     'stats.main': 'Características',
     'stats.masteries': 'Dominios y Resistencias',
+    'stats.elementalMasteries': 'Dominios Elementales',
+    'stats.elementalResistances': 'Resistencias Elementales',
     'stats.combat': 'Combate',
     'stats.secondary': 'Secundarias',
     
@@ -295,7 +297,152 @@ const translations = {
     'rarity.mythic': 'Mítico',
     'rarity.legendary': 'Legendario',
     'rarity.relic': 'Reliquia',
-    'rarity.epic': 'Épico'
+    'rarity.epic': 'Épico',
+    
+    // Stats - Core
+    'stat.HP': 'PdV',
+    'stat.AP': 'PA',
+    'stat.MP': 'PM',
+    'stat.WP': 'PW',
+    
+    // Stats - Elemental Masteries
+    'stat.Water_Mastery': 'Maestría Agua',
+    'stat.Air_Mastery': 'Maestría Aire',
+    'stat.Earth_Mastery': 'Maestría Tierra',
+    'stat.Fire_Mastery': 'Maestría Fuego',
+    'stat.Elemental_Mastery': 'Maestría Elemental',
+    
+    // Stats - Multi-Element Mastery
+    'stat.Multi_Element_Mastery_1': 'Dominio (1 elemento)',
+    'stat.Multi_Element_Mastery_2': 'Dominio (2 elementos)',
+    'stat.Multi_Element_Mastery_3': 'Dominio (3 elementos)',
+    'stat.Multi_Element_Mastery_4': 'Dominio (4 elementos)',
+    'stat.Elemental_Mastery_1_elements': 'Maestría (1 elemento)',
+    'stat.Elemental_Mastery_2_elements': 'Maestría (2 elementos)',
+    'stat.Elemental_Mastery_3_elements': 'Maestría (3 elementos)',
+    'stat.Elemental_Mastery_4_elements': 'Maestría (4 elementos)',
+    'stat.Random_Elemental_Mastery': 'Maestría Elemental Aleatoria',
+    
+    // Stats - Position Masteries
+    'stat.Critical_Mastery': 'Dominio Crítico',
+    'stat.Rear_Mastery': 'Dominio Espalda',
+    'stat.Melee_Mastery': 'Dominio de Melé',
+    'stat.Distance_Mastery': 'Dominio Distancia',
+    'stat.Healing_Mastery': 'Dominio Cura',
+    'stat.Berserk_Mastery': 'Dominio Berserker',
+    
+    // Stats - Elemental Resistances
+    'stat.Water_Resistance': 'Resistencia Agua',
+    'stat.Air_Resistance': 'Resistencia Aire',
+    'stat.Earth_Resistance': 'Resistencia Tierra',
+    'stat.Fire_Resistance': 'Resistencia Fuego',
+    'stat.Elemental_Resistance': 'Resistencia Elemental',
+    
+    // Stats - Random Elemental Resistance
+    'stat.Random_Elemental_Resistance_1': 'Resistencia (1 elemento)',
+    'stat.Random_Elemental_Resistance_2': 'Resistencia (2 elementos)',
+    'stat.Random_Elemental_Resistance_3': 'Resistencia (3 elementos)',
+    'stat.Random_Elemental_Resistance_4': 'Resistencia (4 elementos)',
+    'stat.Elemental_Resistance_1_elements': 'Resistencia (1 elemento)',
+    'stat.Elemental_Resistance_2_elements': 'Resistencia (2 elementos)',
+    'stat.Elemental_Resistance_3_elements': 'Resistencia (3 elementos)',
+    'stat.Elemental_Resistance_4_elements': 'Resistencia (4 elementos)',
+    'stat.Random_Elemental_Resistance': 'Resistencia Elemental Aleatoria',
+    
+    // Stats - Other Resistances
+    'stat.Critical_Resistance': 'Resistencia Crítica',
+    'stat.Rear_Resistance': 'Resistencia Espalda',
+    
+    // Stats - Combat
+    'stat.Critical_Hit': 'Golpe Crítico',
+    'stat.Block': 'Anticipación',
+    'stat.Initiative': 'Iniciativa',
+    'stat.Dodge': 'Esquiva',
+    'stat.Lock': 'Placaje',
+    'stat.Wisdom': 'Sabiduría',
+    'stat.Prospecting': 'Prospección',
+    'stat.Range': 'Alcance',
+    'stat.Control': 'Control',
+    'stat.Force_Of_Will': 'Voluntad',
+    
+    // Stats - Percentages
+    'stat.Damage_Inflicted': 'Daños Finales',
+    'stat.Heals_Performed': 'Curas Finales',
+    'stat.Heals_Received': 'Curas Recibidas',
+    'stat.Armor_Given': 'Armadura Dada',
+    'stat.Armor_Received': 'Armadura Recibida',
+    'stat.Indirect_Damage': 'Daños Indirectos',
+    
+    // Stats - Other
+    'stat.Kit_Skill': 'Nivel de Kit',
+    'stat.Resistance': 'Resistencia',
+    
+    // General UI
+    'ui.level': 'Nivel',
+    'ui.damage': 'Daño',
+    'ui.critical': 'Crítico',
+    'ui.estimating': 'Estimando',
+    'ui.calculating': 'Calculando',
+    'ui.melee': 'Melé',
+    'ui.distance': 'Distancia',
+    'ui.damageType': 'Tipo de daño',
+    'ui.showCritical': 'Mostrar daño crítico',
+    'ui.noDamageStats': 'No hay estadísticas disponibles para calcular daño',
+    'ui.bestElementDamage': 'ofrece el mejor daño promedio',
+    'ui.perSpell': 'por hechizo',
+    'ui.errorCalculating': 'Error al calcular daño',
+    'ui.damageEstimation': 'Estimación de Daño por Elemento',
+    'ui.damageEstimationDesc': 'Daño estimado vs resistencias enemigas (hechizo base 100 | {type} | Single Target)',
+    'ui.resistanceFormula': 'Resistencias planas convertidas a % con fórmula oficial: 1 - 0.8^(res/100)',
+    'ui.resistancesToShow': 'Resistencias a mostrar (valores planos)',
+    'ui.normal': 'Normal',
+    'ui.backstab': 'Espalda',
+    'ui.backstabCritical': 'Espalda + Crít',
+    'ui.recommendation': 'Recomendación',
+    'ui.noData': 'No hay suficientes datos',
+    'ui.mastery': 'dominio',
+    'ui.resetToDefault': 'Restablecer a predeterminado',
+    
+    // Elements
+    'element.Fire': 'Fuego',
+    'element.Water': 'Agua',
+    'element.Earth': 'Tierra',
+    'element.Air': 'Aire',
+    
+    // Equipment Slots
+    'equipment.title': 'Equipamiento',
+    'equipment.head': 'Cabeza',
+    'equipment.neck': 'Cuello',
+    'equipment.chest': 'Pechera',
+    'equipment.ring1': 'Anillo 1',
+    'equipment.ring2': 'Anillo 2',
+    'equipment.boots': 'Botas',
+    'equipment.back': 'Capa',
+    'equipment.shoulders': 'Hombros',
+    'equipment.belt': 'Cinturón',
+    'equipment.pet': 'Mascota',
+    'equipment.weapon1': 'Arma Principal',
+    'equipment.weapon2': 'Arma Secundaria',
+    'equipment.accessory': 'Insignia',
+    
+    // Slot Names (for formatSlot function)
+    'slot.HEAD': 'Cabeza',
+    'slot.NECK': 'Cuello',
+    'slot.CHEST': 'Pecho',
+    'slot.LEGS': 'Piernas',
+    'slot.BACK': 'Espalda',
+    'slot.SHOULDERS': 'Hombros',
+    'slot.BELT': 'Cinturón',
+    'slot.FIRST_WEAPON': 'Arma',
+    'slot.SECOND_WEAPON': 'Arma 2',
+    'slot.ACCESSORY': 'Accesorio',
+    'slot.LEFT_HAND': 'Anillo',
+    'slot.RIGHT_HAND': 'Anillo',
+    'slot.PET': 'Mascota',
+    'slot.MOUNT': 'Montura',
+    
+    // Item
+    'item.noStats': 'Sin stats'
   },
   en: {
     // Header
@@ -328,6 +475,8 @@ const translations = {
     // Stat Categories
     'stats.main': 'Main Stats',
     'stats.masteries': 'Masteries & Resistances',
+    'stats.elementalMasteries': 'Elemental Masteries',
+    'stats.elementalResistances': 'Elemental Resistances',
     'stats.combat': 'Combat',
     'stats.secondary': 'Secondary',
     
@@ -367,6 +516,7 @@ const translations = {
     
     // Build Management
     'builds.saveBuild': 'Save Build',
+    'builds.loadBuild': 'Load Build',
     'builds.manageBuilds': 'Manage Builds',
     'builds.savedBuilds': 'Saved Builds',
     'builds.history': 'History',
@@ -442,6 +592,30 @@ const translations = {
     'toast.errorGenerating': 'Error generating builds. Please try again.',
     'toast.presetApplied': 'Preset Applied',
     'toast.presetError': 'Could not apply preset',
+    
+    // Ignored Items
+    'ignoredItems.title': 'Ignored Items',
+    'ignoredItems.description': 'Items that will not be included in future searches',
+    'ignoredItems.empty': 'No ignored items',
+    'ignoredItems.emptyHelp': 'Click the ban button (🚫) on any item to ignore it',
+    'ignoredItems.ignore': 'Ignore item',
+    'ignoredItems.unignore': 'Allow item',
+    'ignoredItems.restore': 'Restore',
+    'ignoredItems.ignoredAt': 'Ignored',
+    'ignoredItems.clearAll': 'Clear All',
+    'ignoredItems.confirmClearAll': 'Are you sure you want to remove all ignored items?',
+    'ignoredItems.cleared': 'List Cleared',
+    'ignoredItems.clearedDetail': 'All items have been restored',
+    'ignoredItems.restored': 'Item Restored',
+    'ignoredItems.restoredDetail': 'The item will now appear in searches',
+    'ignoredItems.export': 'Export',
+    'ignoredItems.import': 'Import',
+    'ignoredItems.exported': 'Exported',
+    'ignoredItems.exportedDetail': 'Ignored items list downloaded',
+    'ignoredItems.imported': 'Imported',
+    'ignoredItems.importedDetail': 'Ignored items list loaded',
+    'ignoredItems.exportError': 'Export error',
+    'ignoredItems.importError': 'Import error',
     
     // Item Metadata Admin
     'metadata.title': 'Item Metadata Administrator',
@@ -561,7 +735,152 @@ const translations = {
     'rarity.mythic': 'Mythic',
     'rarity.legendary': 'Legendary',
     'rarity.relic': 'Relic',
-    'rarity.epic': 'Epic'
+    'rarity.epic': 'Epic',
+    
+    // Stats - Core
+    'stat.HP': 'HP',
+    'stat.AP': 'AP',
+    'stat.MP': 'MP',
+    'stat.WP': 'WP',
+    
+    // Stats - Elemental Masteries
+    'stat.Water_Mastery': 'Water Mastery',
+    'stat.Air_Mastery': 'Air Mastery',
+    'stat.Earth_Mastery': 'Earth Mastery',
+    'stat.Fire_Mastery': 'Fire Mastery',
+    'stat.Elemental_Mastery': 'Elemental Mastery',
+    
+    // Stats - Multi-Element Mastery
+    'stat.Multi_Element_Mastery_1': 'Mastery (1 element)',
+    'stat.Multi_Element_Mastery_2': 'Mastery (2 elements)',
+    'stat.Multi_Element_Mastery_3': 'Mastery (3 elements)',
+    'stat.Multi_Element_Mastery_4': 'Mastery (4 elements)',
+    'stat.Elemental_Mastery_1_elements': 'Mastery (1 element)',
+    'stat.Elemental_Mastery_2_elements': 'Mastery (2 elements)',
+    'stat.Elemental_Mastery_3_elements': 'Mastery (3 elements)',
+    'stat.Elemental_Mastery_4_elements': 'Mastery (4 elements)',
+    'stat.Random_Elemental_Mastery': 'Random Elemental Mastery',
+    
+    // Stats - Position Masteries
+    'stat.Critical_Mastery': 'Critical Mastery',
+    'stat.Rear_Mastery': 'Rear Mastery',
+    'stat.Melee_Mastery': 'Melee Mastery',
+    'stat.Distance_Mastery': 'Distance Mastery',
+    'stat.Healing_Mastery': 'Healing Mastery',
+    'stat.Berserk_Mastery': 'Berserk Mastery',
+    
+    // Stats - Elemental Resistances
+    'stat.Water_Resistance': 'Water Resistance',
+    'stat.Air_Resistance': 'Air Resistance',
+    'stat.Earth_Resistance': 'Earth Resistance',
+    'stat.Fire_Resistance': 'Fire Resistance',
+    'stat.Elemental_Resistance': 'Elemental Resistance',
+    
+    // Stats - Random Elemental Resistance
+    'stat.Random_Elemental_Resistance_1': 'Resistance (1 element)',
+    'stat.Random_Elemental_Resistance_2': 'Resistance (2 elements)',
+    'stat.Random_Elemental_Resistance_3': 'Resistance (3 elements)',
+    'stat.Random_Elemental_Resistance_4': 'Resistance (4 elements)',
+    'stat.Elemental_Resistance_1_elements': 'Resistance (1 element)',
+    'stat.Elemental_Resistance_2_elements': 'Resistance (2 elements)',
+    'stat.Elemental_Resistance_3_elements': 'Resistance (3 elements)',
+    'stat.Elemental_Resistance_4_elements': 'Resistance (4 elements)',
+    'stat.Random_Elemental_Resistance': 'Random Elemental Resistance',
+    
+    // Stats - Other Resistances
+    'stat.Critical_Resistance': 'Critical Resistance',
+    'stat.Rear_Resistance': 'Rear Resistance',
+    
+    // Stats - Combat
+    'stat.Critical_Hit': 'Critical Hit',
+    'stat.Block': 'Block',
+    'stat.Initiative': 'Initiative',
+    'stat.Dodge': 'Dodge',
+    'stat.Lock': 'Lock',
+    'stat.Wisdom': 'Wisdom',
+    'stat.Prospecting': 'Prospecting',
+    'stat.Range': 'Range',
+    'stat.Control': 'Control',
+    'stat.Force_Of_Will': 'Force of Will',
+    
+    // Stats - Percentages
+    'stat.Damage_Inflicted': 'Damage Inflicted',
+    'stat.Heals_Performed': 'Heals Performed',
+    'stat.Heals_Received': 'Heals Received',
+    'stat.Armor_Given': 'Armor Given',
+    'stat.Armor_Received': 'Armor Received',
+    'stat.Indirect_Damage': 'Indirect Damage',
+    
+    // Stats - Other
+    'stat.Kit_Skill': 'Kit Skill',
+    'stat.Resistance': 'Resistance',
+    
+    // General UI
+    'ui.level': 'Level',
+    'ui.damage': 'Damage',
+    'ui.critical': 'Critical',
+    'ui.estimating': 'Estimating',
+    'ui.calculating': 'Calculating',
+    'ui.melee': 'Melee',
+    'ui.distance': 'Distance',
+    'ui.damageType': 'Damage type',
+    'ui.showCritical': 'Show critical damage',
+    'ui.noDamageStats': 'No stats available to calculate damage',
+    'ui.bestElementDamage': 'offers the best average damage',
+    'ui.perSpell': 'per spell',
+    'ui.errorCalculating': 'Error calculating damage',
+    'ui.damageEstimation': 'Damage Estimation by Element',
+    'ui.damageEstimationDesc': 'Estimated damage vs enemy resistances (base spell 100 | {type} | Single Target)',
+    'ui.resistanceFormula': 'Flat resistances converted to % with official formula: 1 - 0.8^(res/100)',
+    'ui.resistancesToShow': 'Resistances to show (flat values)',
+    'ui.normal': 'Normal',
+    'ui.backstab': 'Backstab',
+    'ui.backstabCritical': 'Backstab + Crit',
+    'ui.recommendation': 'Recommendation',
+    'ui.noData': 'Not enough data',
+    'ui.mastery': 'mastery',
+    'ui.resetToDefault': 'Reset to default',
+    
+    // Elements
+    'element.Fire': 'Fire',
+    'element.Water': 'Water',
+    'element.Earth': 'Earth',
+    'element.Air': 'Air',
+    
+    // Equipment Slots
+    'equipment.title': 'Equipment',
+    'equipment.head': 'Head',
+    'equipment.neck': 'Neck',
+    'equipment.chest': 'Chest',
+    'equipment.ring1': 'Ring 1',
+    'equipment.ring2': 'Ring 2',
+    'equipment.boots': 'Boots',
+    'equipment.back': 'Cape',
+    'equipment.shoulders': 'Shoulders',
+    'equipment.belt': 'Belt',
+    'equipment.pet': 'Pet',
+    'equipment.weapon1': 'Main Weapon',
+    'equipment.weapon2': 'Secondary Weapon',
+    'equipment.accessory': 'Emblem',
+    
+    // Slot Names (for formatSlot function)
+    'slot.HEAD': 'Head',
+    'slot.NECK': 'Neck',
+    'slot.CHEST': 'Chest',
+    'slot.LEGS': 'Legs',
+    'slot.BACK': 'Back',
+    'slot.SHOULDERS': 'Shoulders',
+    'slot.BELT': 'Belt',
+    'slot.FIRST_WEAPON': 'Weapon',
+    'slot.SECOND_WEAPON': 'Weapon 2',
+    'slot.ACCESSORY': 'Accessory',
+    'slot.LEFT_HAND': 'Ring',
+    'slot.RIGHT_HAND': 'Ring',
+    'slot.PET': 'Pet',
+    'slot.MOUNT': 'Mount',
+    
+    // Item
+    'item.noStats': 'No stats'
   },
   fr: {
     // Header
@@ -594,6 +913,8 @@ const translations = {
     // Stat Categories
     'stats.main': 'Caractéristiques',
     'stats.masteries': 'Maîtrises & Résistances',
+    'stats.elementalMasteries': 'Maîtrises Élémentaires',
+    'stats.elementalResistances': 'Résistances Élémentaires',
     'stats.combat': 'Combat',
     'stats.secondary': 'Secondaires',
     
@@ -633,6 +954,7 @@ const translations = {
     
     // Build Management
     'builds.saveBuild': 'Sauvegarder Build',
+    'builds.loadBuild': 'Charger Build',
     'builds.manageBuilds': 'Gérer les Builds',
     'builds.savedBuilds': 'Builds Sauvegardées',
     'builds.history': 'Historique',
@@ -662,6 +984,30 @@ const translations = {
     'toast.errorGenerating': 'Erreur lors de la génération des builds. Veuillez réessayer.',
     'toast.presetApplied': 'Preset Appliqué',
     'toast.presetError': 'Impossible d\'appliquer le preset',
+    
+    // Ignored Items
+    'ignoredItems.title': 'Items Ignorés',
+    'ignoredItems.description': 'Items qui ne seront pas inclus dans les recherches futures',
+    'ignoredItems.empty': 'Aucun item ignoré',
+    'ignoredItems.emptyHelp': 'Cliquez sur le bouton d\'interdiction (🚫) sur n\'importe quel item pour l\'ignorer',
+    'ignoredItems.ignore': 'Ignorer l\'item',
+    'ignoredItems.unignore': 'Autoriser l\'item',
+    'ignoredItems.restore': 'Restaurer',
+    'ignoredItems.ignoredAt': 'Ignoré',
+    'ignoredItems.clearAll': 'Tout Effacer',
+    'ignoredItems.confirmClearAll': 'Êtes-vous sûr de vouloir supprimer tous les items ignorés?',
+    'ignoredItems.cleared': 'Liste Effacée',
+    'ignoredItems.clearedDetail': 'Tous les items ont été restaurés',
+    'ignoredItems.restored': 'Item Restauré',
+    'ignoredItems.restoredDetail': 'L\'item apparaîtra maintenant dans les recherches',
+    'ignoredItems.export': 'Exporter',
+    'ignoredItems.import': 'Importer',
+    'ignoredItems.exported': 'Exporté',
+    'ignoredItems.exportedDetail': 'Liste d\'items ignorés téléchargée',
+    'ignoredItems.imported': 'Importé',
+    'ignoredItems.importedDetail': 'Liste d\'items ignorés chargée',
+    'ignoredItems.exportError': 'Erreur d\'exportation',
+    'ignoredItems.importError': 'Erreur d\'importation',
     
     // Item Metadata Admin
     'metadata.title': 'Administrateur de Métadonnées d\'Items',
@@ -781,7 +1127,152 @@ const translations = {
     'rarity.mythic': 'Mythique',
     'rarity.legendary': 'Légendaire',
     'rarity.relic': 'Relique',
-    'rarity.epic': 'Épique'
+    'rarity.epic': 'Épique',
+    
+    // Stats - Core
+    'stat.HP': 'PdV',
+    'stat.AP': 'PA',
+    'stat.MP': 'PM',
+    'stat.WP': 'PW',
+    
+    // Stats - Elemental Masteries
+    'stat.Water_Mastery': 'Maîtrise Eau',
+    'stat.Air_Mastery': 'Maîtrise Air',
+    'stat.Earth_Mastery': 'Maîtrise Terre',
+    'stat.Fire_Mastery': 'Maîtrise Feu',
+    'stat.Elemental_Mastery': 'Maîtrise Élémentaire',
+    
+    // Stats - Multi-Element Mastery
+    'stat.Multi_Element_Mastery_1': 'Maîtrise (1 élément)',
+    'stat.Multi_Element_Mastery_2': 'Maîtrise (2 éléments)',
+    'stat.Multi_Element_Mastery_3': 'Maîtrise (3 éléments)',
+    'stat.Multi_Element_Mastery_4': 'Maîtrise (4 éléments)',
+    'stat.Elemental_Mastery_1_elements': 'Maîtrise (1 élément)',
+    'stat.Elemental_Mastery_2_elements': 'Maîtrise (2 éléments)',
+    'stat.Elemental_Mastery_3_elements': 'Maîtrise (3 éléments)',
+    'stat.Elemental_Mastery_4_elements': 'Maîtrise (4 éléments)',
+    'stat.Random_Elemental_Mastery': 'Maîtrise Élémentaire Aléatoire',
+    
+    // Stats - Position Masteries
+    'stat.Critical_Mastery': 'Maîtrise Critique',
+    'stat.Rear_Mastery': 'Maîtrise Dos',
+    'stat.Melee_Mastery': 'Maîtrise Mêlée',
+    'stat.Distance_Mastery': 'Maîtrise Distance',
+    'stat.Healing_Mastery': 'Maîtrise Soin',
+    'stat.Berserk_Mastery': 'Maîtrise Berserk',
+    
+    // Stats - Elemental Resistances
+    'stat.Water_Resistance': 'Résistance Eau',
+    'stat.Air_Resistance': 'Résistance Air',
+    'stat.Earth_Resistance': 'Résistance Terre',
+    'stat.Fire_Resistance': 'Résistance Feu',
+    'stat.Elemental_Resistance': 'Résistance Élémentaire',
+    
+    // Stats - Random Elemental Resistance
+    'stat.Random_Elemental_Resistance_1': 'Résistance (1 élément)',
+    'stat.Random_Elemental_Resistance_2': 'Résistance (2 éléments)',
+    'stat.Random_Elemental_Resistance_3': 'Résistance (3 éléments)',
+    'stat.Random_Elemental_Resistance_4': 'Résistance (4 éléments)',
+    'stat.Elemental_Resistance_1_elements': 'Résistance (1 élément)',
+    'stat.Elemental_Resistance_2_elements': 'Résistance (2 éléments)',
+    'stat.Elemental_Resistance_3_elements': 'Résistance (3 éléments)',
+    'stat.Elemental_Resistance_4_elements': 'Résistance (4 éléments)',
+    'stat.Random_Elemental_Resistance': 'Résistance Élémentaire Aléatoire',
+    
+    // Stats - Other Resistances
+    'stat.Critical_Resistance': 'Résistance Critique',
+    'stat.Rear_Resistance': 'Résistance Dos',
+    
+    // Stats - Combat
+    'stat.Critical_Hit': 'Coup Critique',
+    'stat.Block': 'Parade',
+    'stat.Initiative': 'Initiative',
+    'stat.Dodge': 'Esquive',
+    'stat.Lock': 'Tacle',
+    'stat.Wisdom': 'Sagesse',
+    'stat.Prospecting': 'Prospection',
+    'stat.Range': 'Portée',
+    'stat.Control': 'Contrôle',
+    'stat.Force_Of_Will': 'Volonté',
+    
+    // Stats - Percentages
+    'stat.Damage_Inflicted': 'Dégâts Infligés',
+    'stat.Heals_Performed': 'Soins Réalisés',
+    'stat.Heals_Received': 'Soins Reçus',
+    'stat.Armor_Given': 'Armure Donnée',
+    'stat.Armor_Received': 'Armure Reçue',
+    'stat.Indirect_Damage': 'Dégâts Indirects',
+    
+    // Stats - Other
+    'stat.Kit_Skill': 'Niveau de Kit',
+    'stat.Resistance': 'Résistance',
+    
+    // General UI
+    'ui.level': 'Niveau',
+    'ui.damage': 'Dégâts',
+    'ui.critical': 'Critique',
+    'ui.estimating': 'Estimation',
+    'ui.calculating': 'Calcul',
+    'ui.melee': 'Mêlée',
+    'ui.distance': 'Distance',
+    'ui.damageType': 'Type de dégâts',
+    'ui.showCritical': 'Afficher dégâts critiques',
+    'ui.noDamageStats': 'Aucune statistique disponible pour calculer les dégâts',
+    'ui.bestElementDamage': 'offre les meilleurs dégâts moyens',
+    'ui.perSpell': 'par sort',
+    'ui.errorCalculating': 'Erreur lors du calcul des dégâts',
+    'ui.damageEstimation': 'Estimation des Dégâts par Élément',
+    'ui.damageEstimationDesc': 'Dégâts estimés vs résistances ennemies (sort de base 100 | {type} | Cible unique)',
+    'ui.resistanceFormula': 'Résistances plates converties en % avec formule officielle: 1 - 0.8^(res/100)',
+    'ui.resistancesToShow': 'Résistances à afficher (valeurs plates)',
+    'ui.normal': 'Normal',
+    'ui.backstab': 'Dos',
+    'ui.backstabCritical': 'Dos + Crit',
+    'ui.recommendation': 'Recommandation',
+    'ui.noData': 'Pas assez de données',
+    'ui.mastery': 'maîtrise',
+    'ui.resetToDefault': 'Réinitialiser par défaut',
+    
+    // Elements
+    'element.Fire': 'Feu',
+    'element.Water': 'Eau',
+    'element.Earth': 'Terre',
+    'element.Air': 'Air',
+    
+    // Equipment Slots
+    'equipment.title': 'Équipement',
+    'equipment.head': 'Tête',
+    'equipment.neck': 'Cou',
+    'equipment.chest': 'Plastron',
+    'equipment.ring1': 'Anneau 1',
+    'equipment.ring2': 'Anneau 2',
+    'equipment.boots': 'Bottes',
+    'equipment.back': 'Cape',
+    'equipment.shoulders': 'Épaulettes',
+    'equipment.belt': 'Ceinture',
+    'equipment.pet': 'Familier',
+    'equipment.weapon1': 'Arme Principale',
+    'equipment.weapon2': 'Arme Secondaire',
+    'equipment.accessory': 'Emblème',
+    
+    // Slot Names (for formatSlot function)
+    'slot.HEAD': 'Tête',
+    'slot.NECK': 'Cou',
+    'slot.CHEST': 'Plastron',
+    'slot.LEGS': 'Jambes',
+    'slot.BACK': 'Dos',
+    'slot.SHOULDERS': 'Épaulettes',
+    'slot.BELT': 'Ceinture',
+    'slot.FIRST_WEAPON': 'Arme',
+    'slot.SECOND_WEAPON': 'Arme 2',
+    'slot.ACCESSORY': 'Accessoire',
+    'slot.LEFT_HAND': 'Anneau',
+    'slot.RIGHT_HAND': 'Anneau',
+    'slot.PET': 'Familier',
+    'slot.MOUNT': 'Monture',
+    
+    // Item
+    'item.noStats': 'Aucune stat'
   }
 }
 
