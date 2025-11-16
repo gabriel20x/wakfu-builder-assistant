@@ -248,6 +248,13 @@ const translations = {
     'metadata.fragmentRatePlaceholder': 'ej: 8.12',
     'metadata.notes': 'Notas Generales',
     
+    // Alternatives Modal
+    'alternatives.title': 'Alternativas de Items',
+    'alternatives.itemPower': 'Item Power',
+    'alternatives.betterAlternatives': 'Alternativas con Menor Power',
+    'alternatives.noAlternatives': 'No hay alternativas disponibles para este item en el rango de nivel',
+    'alternatives.viewAlternatives': 'Ver alternativas',
+
     // Recipe Method
     'metadata.recipeInfo': 'Este item se obtiene mediante crafteo/receta',
     'metadata.ingredients': 'ingredientes',
@@ -687,6 +694,13 @@ const translations = {
     'metadata.fragmentRatePlaceholder': 'e.g: 8.12',
     'metadata.notes': 'General Notes',
     
+    // Alternatives Modal
+    'alternatives.title': 'Item Alternatives',
+    'alternatives.itemPower': 'Item Power',
+    'alternatives.betterAlternatives': 'Alternatives with Lower Power',
+    'alternatives.noAlternatives': 'No alternatives available for this item in the level range',
+    'alternatives.viewAlternatives': 'View alternatives',
+
     // Recipe Method
     'metadata.recipeInfo': 'This item is obtained through crafting/recipe',
     'metadata.ingredients': 'ingredients',
@@ -1080,6 +1094,13 @@ const translations = {
     'metadata.fragmentRatePlaceholder': 'ex: 8.12',
     'metadata.notes': 'Notes Générales',
     
+    // Alternatives Modal
+    'alternatives.title': 'Alternatives d\'Items',
+    'alternatives.itemPower': 'Puissance Item',
+    'alternatives.betterAlternatives': 'Alternatives avec Puissance Inférieure',
+    'alternatives.noAlternatives': 'Aucune alternative disponible pour cet item dans la plage de niveau',
+    'alternatives.viewAlternatives': 'Voir alternatives',
+
     // Recipe Method
     'metadata.recipeInfo': 'Cet item est obtenu par craft/recette',
     'metadata.ingredients': 'ingrédients',

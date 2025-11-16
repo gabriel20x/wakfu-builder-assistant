@@ -10,6 +10,16 @@
       ⚙️
     </button>
 
+    <!-- Alternatives Button (if alternatives exist) -->
+    <button
+      v-if="hasAlternatives"
+      class="btn-alternatives"
+      @click.stop="openAlternativesModal"
+      :title="t('alternatives.viewAlternatives')"
+    >
+      ⇄
+    </button>
+
     <!-- Ban/Unban Button -->
     <button
       v-if="showIgnoreButton"
@@ -186,6 +196,15 @@
         </div>
       </div>
     </Teleport>
+
+    <!-- Alternatives Modal -->
+    <ItemAlternativesModal
+      :isOpen="showAlternativesModal"
+      :item="item"
+      :alternatives="item.alternatives || []"
+      :itemPower="itemPowerValue"
+      @close="closeAlternativesModal"
+    />
   </div>
 </template>
 
@@ -196,6 +215,7 @@ import { useLanguage } from "../composables/useLanguage";
 import { useI18n } from "../composables/useI18n";
 import { useIgnoredItems } from "../composables/useIgnoredItems";
 import ItemStatList from "./ItemStatList.vue";
+import ItemAlternativesModal from "./ItemAlternativesModal.vue";
 
 const props = defineProps({
   item: {
@@ -298,6 +318,22 @@ const hasNonDropMetadata = computed(() => {
 const hasExtendedMetadata = computed(
   () => hasNonDropMetadata.value || hasDropSources.value
 );
+
+// ========== ALTERNATIVES MODAL ==========
+const showAlternativesModal = ref(false);
+const itemPowerValue = ref(0);
+
+const hasAlternatives = computed(() => {
+  return props.item.alternatives && props.item.alternatives.length > 0;
+});
+
+const openAlternativesModal = () => {
+  showAlternativesModal.value = true;
+};
+
+const closeAlternativesModal = () => {
+  showAlternativesModal.value = false;
+};
 
 const recipeDetails = computed(() => {
   if (!hasManualMetadata.value) return null;
@@ -584,10 +620,36 @@ const onImageError = (event) => {
   }
 }
 
-.btn-ignore {
+.btn-alternatives {
   position: absolute;
   top: 8px;
   right: 48px;
+  background: rgba(0, 200, 255, 0.9);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: bold;
+
+  &:hover {
+    background: rgba(0, 200, 255, 1);
+    transform: scale(1.1);
+  }
+}
+
+.btn-ignore {
+  position: absolute;
+  top: 8px;
+  right: 88px;
   background: rgba(244, 67, 54, 0.9);
   border: none;
   width: 32px;

@@ -38,6 +38,213 @@ SLOTS = [
     "PET", "MOUNT", "ACCESSORY"  # Pet, mount, emblem
 ]
 
+
+def calculate_item_power(item: Item, stat_weights: Dict[str, float], damage_preferences: List[str] = None, resistance_preferences: List[str] = None) -> float:
+    """
+    Calculate item power based on its stats and user preferences.
+    
+    Power = sum of (stat_value × user_weight × normalization_factor)
+    
+    Used to rank items and find alternatives with lower power.
+    """
+    if damage_preferences is None:
+        damage_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    if resistance_preferences is None:
+        resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    
+    # Resolve elemental stats
+    resolved_stats = resolve_element_stats(
+        item.stats.copy(),
+        damage_preferences,
+        resistance_preferences
+    )
+    
+    # Normalization factors (same as in _solve_single_build)
+    normalization_factors = {
+        "AP": 100.0, "MP": 80.0, "Range": 60.0,
+        "Critical_Hit": 20.0, "WP": 20.0, "Control": 10.0, "Block": 5.0,
+        "Critical_Mastery": 2.0, "Dodge": 1.0, "Lock": 1.0,
+        "Fire_Mastery": 1.0, "Water_Mastery": 1.0, "Earth_Mastery": 1.0, "Air_Mastery": 1.0,
+        "Melee_Mastery": 1.0, "Distance_Mastery": 1.0, "Rear_Mastery": 1.0,
+        "Healing_Mastery": 1.0, "Berserk_Mastery": 1.0,
+        "Fire_Resistance": 1.2, "Water_Resistance": 1.2, "Earth_Resistance": 1.2, "Air_Resistance": 1.2,
+        "Elemental_Resistance": 1.5, "Critical_Resistance": 1.0, "Rear_Resistance": 1.0,
+        "HP": 0.1, "Initiative": 0.5, "Prospecting": 0.5, "Wisdom": 0.5,
+        "Armor_Given": 0.8, "Armor_Received": 0.8,
+    }
+    
+    power = 0.0
+    for stat_name, stat_value in resolved_stats.items():
+        if stat_value > 0 and stat_name in stat_weights:
+            norm_factor = normalization_factors.get(stat_name, 1.0)
+            user_weight = stat_weights[stat_name]
+            power += stat_value * user_weight * norm_factor
+    
+    return power
+
+
+def find_item_alternatives(
+    db: Session,
+    item: Item,
+    all_items: List[Item],
+    stat_weights: Dict[str, float],
+    num_alternatives: int = 3,
+    damage_preferences: List[str] = None,
+    resistance_preferences: List[str] = None
+) -> List[Dict]:
+    """
+    Find alternative items for the same slot with lower item power.
+    
+    Returns list of up to num_alternatives items with:
+    - Same slot as original item
+    - Lower item power than original
+    - Sorted by power (highest first)
+    """
+    if damage_preferences is None:
+        damage_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    if resistance_preferences is None:
+        resistance_preferences = ['Fire', 'Water', 'Earth', 'Air']
+    
+    # Calculate original item power
+    original_power = calculate_item_power(item, stat_weights, damage_preferences, resistance_preferences)
+    
+    # Find candidates: same slot, lower power
+    candidates = []
+    for candidate in all_items:
+        if candidate.item_id == item.item_id:
+            continue  # Skip self
+        if candidate.slot != item.slot:
+            continue  # Different slot
+        
+        candidate_power = calculate_item_power(candidate, stat_weights, damage_preferences, resistance_preferences)
+        if candidate_power < original_power:  # Must have lower power
+            candidates.append({
+                'item': candidate,
+                'power': candidate_power,
+                'power_diff': original_power - candidate_power
+            })
+    
+    # Sort by power (highest first)
+    candidates.sort(key=lambda x: x['power'], reverse=True)
+    
+    # Return top N
+    return candidates[:num_alternatives]
+
+
+def format_alternative_item(
+    candidate_dict: Dict,
+    db: Session = None,
+    metadata_map: Dict = None
+) -> Dict:
+    """
+    Format a candidate item for the alternatives list.
+    Same structure as main item but includes power_diff.
+    """
+    item = candidate_dict['item']
+    item_metadata = metadata_map.get(str(item.item_id), {}) if metadata_map else {}
+    
+    # Get drop sources
+    drop_sources = []
+    if db:
+        drop_rows = db.query(MonsterDrop).filter(
+            MonsterDrop.item_id == item.item_id
+        ).all()
+        
+        if drop_rows:
+            monster_ids = {drop.monster_id for drop in drop_rows}
+            monsters = db.query(Monster).filter(Monster.monster_id.in_(monster_ids)).all()
+            monster_map = {m.monster_id: m for m in monsters}
+            
+            family_ids = {m.family_id for m in monsters if m.family_id}
+            families = db.query(MonsterFamily).filter(MonsterFamily.family_id.in_(family_ids)).all()
+            family_map = {f.family_id: f for f in families}
+            
+            for drop in drop_rows:
+                monster = monster_map.get(drop.monster_id)
+                
+                monster_names = {}
+                if monster:
+                    if monster.name_fr:
+                        monster_names["fr"] = monster.name_fr
+                    if monster.name_en:
+                        monster_names["en"] = monster.name_en
+                    if monster.name_es:
+                        monster_names["es"] = monster.name_es
+                    if monster.name_pt:
+                        monster_names["pt"] = monster.name_pt
+                
+                family_info = None
+                if monster and monster.family_id:
+                    family = family_map.get(monster.family_id)
+                    if family:
+                        family_names = {}
+                        if family.name_fr:
+                            family_names["fr"] = family.name_fr
+                        if family.name_en:
+                            family_names["en"] = family.name_en
+                        if family.name_es:
+                            family_names["es"] = family.name_es
+                        if family.name_pt:
+                            family_names["pt"] = family.name_pt
+                        
+                        family_info = {
+                            "id": family.family_id,
+                            "names": family_names if family_names else None,
+                            "match": True,
+                            "candidate_ids": None
+                        }
+                
+                gfx_id = monster.gfx_id if monster and monster.gfx_id else drop.monster_id
+                image_url = f"https://vertylo.github.io/wakassets/monsters/{gfx_id}.png"
+                
+                monster_name = None
+                if monster:
+                    monster_name = (
+                        monster.name_en or 
+                        monster.name_fr or 
+                        monster.name_es or 
+                        monster.name_pt or 
+                        f"Monster {drop.monster_id}"
+                    )
+                
+                drop_sources.append({
+                    "monster_id": drop.monster_id,
+                    "monster_name": monster_name,
+                    "monster_names": monster_names if monster_names else None,
+                    "monster_type": monster.monster_type if monster else None,
+                    "family": family_info,
+                    "level_min": monster.level_min if monster else None,
+                    "level_max": monster.level_max if monster else None,
+                    "drop_rate": drop.drop_rate,
+                    "drop_rate_percent": drop.drop_rate_percent,
+                    "image_url": image_url
+                })
+    
+    return {
+        "item_id": item.item_id,
+        "name": item.name,
+        "name_es": item.name_es,
+        "name_en": item.name_en,
+        "name_fr": item.name_fr,
+        "level": item.level,
+        "slot": item.slot,
+        "rarity": item.rarity,
+        "is_epic": item.is_epic,
+        "is_relic": item.is_relic,
+        "difficulty": item.difficulty,
+        "gfx_id": item.gfx_id,
+        "stats": item.stats,
+        "source_type": item.source_type,
+        "has_gem_slot": item.has_gem_slot,
+        "metadata": item_metadata if item_metadata else {},
+        "drop_sources": drop_sources,
+        "item_power": candidate_dict['power'],
+        "power_difference": candidate_dict['power_diff']
+    }
+
+
+
+
 def solve_build(
     db: Session,
     level_max: int,
@@ -770,7 +977,8 @@ def _solve_single_build(
         # Get metadata for this item if available
         item_metadata = metadata_map.get(str(item.item_id), {})
         
-        selected_items.append({
+        # Build main item structure
+        item_dict = {
             "item_id": item.item_id,
             "name": item.name,
             "name_es": item.name_es,
@@ -787,8 +995,26 @@ def _solve_single_build(
             "source_type": item.source_type,
             "has_gem_slot": item.has_gem_slot,
             "metadata": item_metadata if item_metadata else {},
-            "drop_sources": drop_map.get(item.item_id, [])
-        })
+            "drop_sources": drop_map.get(item.item_id, []),
+            "alternatives": []
+        }
+        
+        # Find and add alternatives
+        alternatives = find_item_alternatives(
+            db,
+            item,
+            items,
+            stat_weights,
+            num_alternatives=3,
+            damage_preferences=damage_preferences,
+            resistance_preferences=resistance_preferences
+        )
+        
+        for alt_candidate in alternatives:
+            alt_item_dict = format_alternative_item(alt_candidate, db, metadata_map)
+            item_dict["alternatives"].append(alt_item_dict)
+        
+        selected_items.append(item_dict)
         
         # Collect stats for resolution
         items_stats_list.append(item.stats)
