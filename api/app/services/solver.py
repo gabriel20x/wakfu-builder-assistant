@@ -105,13 +105,14 @@ def solve_build(
     if excluded_slots:
         query = query.filter(~Item.slot.in_(excluded_slots))
     
-    # Filter for only droppable items if requested
-    if only_droppable:
-        query = query.filter(Item.source_type == "drop")
-    
     # Filter out ignored items if list is provided
     if ignored_item_ids and len(ignored_item_ids) > 0:
         query = query.filter(~Item.item_id.in_(ignored_item_ids))
+    
+    # Get list of droppable items (items that have at least one MonsterDrop entry)
+    # This includes items with source_type='recipe' if they also drop from monsters
+    droppable_item_ids = db.query(MonsterDrop.item_id).distinct().all()
+    droppable_item_ids = [row[0] for row in droppable_item_ids]
     
     # Filter by monster types if provided
     if monster_types and len(monster_types) > 0:
@@ -125,19 +126,23 @@ def solve_build(
             Monster.monster_type.in_(monster_types)
         ).distinct()
         
-        droppable_item_ids = [row[0] for row in monster_drop_query.all()]
+        monster_type_droppable_ids = [row[0] for row in monster_drop_query.all()]
         
         # Keep items that either:
         # 1. Drop from selected monster types
         # 2. Are not from drops (craft, harvest, etc.) - unless only_droppable is True
         if only_droppable:
-            # Only include items from selected monster types
-            query = query.filter(Item.item_id.in_(droppable_item_ids))
+            # Only include items from selected monster types (and are droppable)
+            query = query.filter(Item.item_id.in_(monster_type_droppable_ids))
         else:
             # Include items from selected monster types OR non-drop items
             query = query.filter(
-                (Item.item_id.in_(droppable_item_ids)) | (Item.source_type != "drop")
+                (Item.item_id.in_(monster_type_droppable_ids)) | (Item.source_type != "drop")
             )
+    elif only_droppable:
+        # Filter to only droppable items (have a MonsterDrop entry)
+        # This includes items with source_type='recipe' if they drop from monsters
+        query = query.filter(Item.item_id.in_(droppable_item_ids))
     
     items = query.all()
     
@@ -387,16 +392,36 @@ def _solve_single_build(
                     user_weight = stat_weights[stat_name]
                     stat_score += stat_value * user_weight * norm_factor
                 else:
-                    # Si NO lo pidió: dar pequeño bonus (10% del valor normalizado)
-                    # EXCEPTO: dominios elementales/secundarios (no contar si no se piden)
-                    excluded_from_bonus = {"Fire_Mastery", "Water_Mastery", "Earth_Mastery", "Air_Mastery",
-                                          "Melee_Mastery", "Distance_Mastery", "Rear_Mastery", 
+                    # Si NO lo pidió, puede ser bonus pero depende del tipo de stat:
+                    
+                    # ========== DOMINIOS ELEMENTALES SECUNDARIOS ==========
+                    # Los dominios elementales SÍ deben contar como bonus porque afectan
+                    # el multiplicador de daño en la fórmula: (1 + [Elemental_Mastery + Secondary_Mastery]/100)
+                    # Por ejemplo: si pides Distance_Mastery, los Fire/Water/Earth/Air_Mastery son secundarios
+                    # Bonus: 30% del valor normalizado (son importantes para daño total)
+                    elemental_masteries = {"Fire_Mastery", "Water_Mastery", "Earth_Mastery", "Air_Mastery"}
+                    
+                    # ========== DOMINIOS SECUNDARIOS (no elementales) ==========
+                    # Estos sí se pueden ignorar si no se piden (Critical_Mastery sin Critical_Hit, etc.)
+                    secondary_masteries = {"Melee_Mastery", "Rear_Mastery", 
                                           "Healing_Mastery", "Berserk_Mastery", "Critical_Mastery"}
                     
-                    if stat_name not in excluded_from_bonus:
-                        # Stats con valores moderados dan pequeño bonus
+                    # ========== DISTANCE_MASTERY como primario ==========
+                    # Si el usuario pidió Distance_Mastery, los elemental_masteries son importantes (30% bonus)
+                    # Si NO pidió Distance_Mastery pero pidió otros primarios, los elemental_masteries siguen siendo 30% bonus
+                    is_distance_requested = "Distance_Mastery" in stat_weights
+                    is_melee_requested = "Melee_Mastery" in stat_weights
+                    is_any_damage_primary_requested = is_distance_requested or is_melee_requested
+                    
+                    if stat_name in elemental_masteries:
+                        # Si hay un dominio primario solicitado, los elementales son secundarios pero importantes
+                        # Bonus: 30% del valor normalizado
+                        bonus_score += stat_value * norm_factor * 0.3
+                    elif stat_name not in secondary_masteries:
+                        # Otros stats (no masteries): dar pequeño bonus (10% del valor normalizado)
                         # HP incluido: 210 × 0.1 (norm) × 0.1 (bonus) = ~2 puntos OK
                         bonus_score += stat_value * norm_factor * 0.1
+                    # Si es un mastery secundario no solicitado: no contar (0 bonus)
         
         # Bonus total por stats extra (no solicitados)
         power_bonus = bonus_score
