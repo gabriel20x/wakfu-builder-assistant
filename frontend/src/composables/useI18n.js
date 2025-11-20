@@ -305,6 +305,33 @@ const translations = {
     'rarity.legendary': 'Legendario',
     'rarity.relic': 'Reliquia',
     'rarity.epic': 'Épico',
+    'rarity.souvenir': 'Recuerdo',
+    
+    // Print
+    'print.title': 'Items',
+    'print.recommendedItems': 'Items Recomendados',
+    'print.slot': 'Slot',
+    'print.name': 'Nombre',
+    'print.level': 'Nivel',
+    'print.rarity': 'Rareza',
+    'print.difficulty': 'Dificultad',
+    'print.generated': 'Generado',
+    'print.noItems': 'No hay items para imprimir',
+    
+    // Slots
+    'slots.head': 'Cabeza',
+    'slots.neck': 'Cuello',
+    'slots.chest': 'Pecho',
+    'slots.legs': 'Piernas',
+    'slots.back': 'Espalda',
+    'slots.shoulders': 'Hombros',
+    'slots.belt': 'Cinturón',
+    'slots.weapon': 'Arma',
+    'slots.secondWeapon': 'Arma 2',
+    'slots.accessory': 'Accesorio',
+    'slots.ring': 'Anillo',
+    'slots.pet': 'Mascota',
+    'slots.mount': 'Montura',
     
     // Stats - Core
     'stat.HP': 'PdV',
@@ -751,6 +778,33 @@ const translations = {
     'rarity.legendary': 'Legendary',
     'rarity.relic': 'Relic',
     'rarity.epic': 'Epic',
+    'rarity.souvenir': 'Souvenir',
+    
+    // Print
+    'print.title': 'Items',
+    'print.recommendedItems': 'Recommended Items',
+    'print.slot': 'Slot',
+    'print.name': 'Name',
+    'print.level': 'Level',
+    'print.rarity': 'Rarity',
+    'print.difficulty': 'Difficulty',
+    'print.generated': 'Generated',
+    'print.noItems': 'No items to print',
+    
+    // Slots
+    'slots.head': 'Head',
+    'slots.neck': 'Neck',
+    'slots.chest': 'Chest',
+    'slots.legs': 'Legs',
+    'slots.back': 'Back',
+    'slots.shoulders': 'Shoulders',
+    'slots.belt': 'Belt',
+    'slots.weapon': 'Weapon',
+    'slots.secondWeapon': 'Second Weapon',
+    'slots.accessory': 'Accessory',
+    'slots.ring': 'Ring',
+    'slots.pet': 'Pet',
+    'slots.mount': 'Mount',
     
     // Stats - Core
     'stat.HP': 'HP',
@@ -1151,6 +1205,33 @@ const translations = {
     'rarity.legendary': 'Légendaire',
     'rarity.relic': 'Relique',
     'rarity.epic': 'Épique',
+    'rarity.souvenir': 'Souvenir',
+    
+    // Print
+    'print.title': 'Objets',
+    'print.recommendedItems': 'Objets Recommandés',
+    'print.slot': 'Emplacement',
+    'print.name': 'Nom',
+    'print.level': 'Niveau',
+    'print.rarity': 'Rareté',
+    'print.difficulty': 'Difficulté',
+    'print.generated': 'Généré',
+    'print.noItems': 'Aucun objet à imprimer',
+    
+    // Slots
+    'slots.head': 'Tête',
+    'slots.neck': 'Cou',
+    'slots.chest': 'Torse',
+    'slots.legs': 'Jambes',
+    'slots.back': 'Dos',
+    'slots.shoulders': 'Épaules',
+    'slots.belt': 'Ceinture',
+    'slots.weapon': 'Arme',
+    'slots.secondWeapon': 'Arme Secondaire',
+    'slots.accessory': 'Accessoire',
+    'slots.ring': 'Anneau',
+    'slots.pet': 'Familier',
+    'slots.mount': 'Monture',
     
     // Stats - Core
     'stat.HP': 'PdV',

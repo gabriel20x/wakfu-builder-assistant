@@ -118,6 +118,13 @@
                 outlined
                 @click="showRenameDialog = true"
               />
+                      <p-button
+                        icon="pi pi-print"
+                        label="Imprimir Items"
+                        severity="help"
+                        outlined
+                        @click="printItems"
+                      />
             </div>
           </div>
           
@@ -215,8 +222,10 @@
 
 <script setup>
 import { ref, computed, onMounted } from 'vue'
+import { getRarityName } from '../composables/useStats'
 import { useToast } from 'primevue/usetoast'
 import { useI18n } from '../composables/useI18n'
+import { useLanguage } from '../composables/useLanguage'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import BuildResult from './BuildResult.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
@@ -225,6 +234,7 @@ import EquipmentSlots from './EquipmentSlots.vue'
 const emit = defineEmits(['go-to-builder', 'load-build'])
 const toast = useToast()
 const { t } = useI18n()
+const { getItemName } = useLanguage()
 const { getBuildHistory, deleteBuildFromHistory, renameBuildInHistory } = useBuildPersistence()
 
 const buildHistory = ref([])
@@ -435,6 +445,128 @@ const renameBuild = () => {
 onMounted(() => {
   loadBuildHistory()
 })
+
+// ============= PRINT FUNCTIONALITY =============
+const getLocalizedSlotName = (slot) => {
+  const slotTranslations = {
+    HEAD: { key: 'slots.head', fallback: 'Head' },
+    NECK: { key: 'slots.neck', fallback: 'Neck' },
+    CHEST: { key: 'slots.chest', fallback: 'Chest' },
+    LEGS: { key: 'slots.legs', fallback: 'Legs' },
+    BACK: { key: 'slots.back', fallback: 'Back' },
+    SHOULDERS: { key: 'slots.shoulders', fallback: 'Shoulders' },
+    BELT: { key: 'slots.belt', fallback: 'Belt' },
+    FIRST_WEAPON: { key: 'slots.weapon', fallback: 'Weapon' },
+    SECOND_WEAPON: { key: 'slots.secondWeapon', fallback: 'Second Weapon' },
+    ACCESSORY: { key: 'slots.accessory', fallback: 'Accessory' },
+    LEFT_HAND: { key: 'slots.ring', fallback: 'Ring' },
+    RIGHT_HAND: { key: 'slots.ring', fallback: 'Ring' },
+    PET: { key: 'slots.pet', fallback: 'Pet' },
+    MOUNT: { key: 'slots.mount', fallback: 'Mount' }
+  }
+  const trans = slotTranslations[slot]
+  return trans ? (t(trans.key) || trans.fallback) : slot
+}
+
+const getLocalizedRarity = (item) => {
+  if (item.is_epic) return t('rarity.epic') || 'Epic'
+  if (item.is_relic) return t('rarity.relic') || 'Relic'
+  if (item.rarity === 6 && !item.is_relic) return t('rarity.souvenir') || 'Souvenir'
+  return getRarityName(item.rarity)
+}
+
+const buildTypeKeys = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+
+const buildTypeLabels = () => ({
+  easy: t('builds.easy'),
+  medium: t('builds.medium'),
+  hard_epic: t('builds.hardEpic'),
+  hard_relic: t('builds.hardRelic'),
+  full: t('builds.full')
+})
+
+const printItems = () => {
+  if (!selectedBuild.value) return
+  
+  const buildName = selectedBuild.value.name || t('myBuilds.unnamedBuild')
+  const labelMap = buildTypeLabels()
+  
+  // Generate sections for all builds
+  const buildSections = buildTypeKeys.map(buildType => {
+    const build = selectedBuild.value.builds[buildType]
+    const items = build?.items || []
+    if (!items.length) return ''
+    
+    const rows = items.map(it => {
+      const rarity = getLocalizedRarity(it)
+      const slot = getLocalizedSlotName(it.slot)
+      const itemName = getItemName(it)
+      const diff = (it.difficulty != null) ? it.difficulty.toFixed(1) : '—'
+      return `<tr>
+        <td>${slot}</td>
+        <td>${escapeHtml(itemName)}</td>
+        <td>${it.level || ''}</td>
+        <td>${rarity}</td>
+        <td>${diff}</td>
+      </tr>`
+    }).join('')
+    
+    return `
+      <h2 style="margin-top:24px;font-size:16px;border-bottom:2px solid #444;padding-bottom:4px;">${escapeHtml(labelMap[buildType])}</h2>
+      <table>
+        <thead><tr><th>${t('print.slot')}</th><th>${t('print.name')}</th><th>${t('print.level')}</th><th>${t('print.rarity')}</th><th>${t('print.difficulty')}</th></tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    `
+  }).filter(Boolean).join('')
+  
+  if (!buildSections) {
+    toast.add({
+      severity: 'warn',
+      summary: t('toast.warning'),
+      detail: t('print.noItems') || 'No hay items para imprimir.',
+      life: 2500
+    })
+    return
+  }
+
+  const htmlParts = [
+    '<!DOCTYPE html><html><head><meta charset="utf-8" />',
+    `<title>${t('print.title')} - ${escapeHtml(buildName)}</title>`,
+    '<style>',
+    'body { font-family: Arial, sans-serif; margin: 24px; color: #111; }',
+    'h1 { margin-top: 0; font-size: 20px; border-bottom: 3px solid #333; padding-bottom: 8px; }',
+    'h2 { margin-top: 24px; font-size: 16px; border-bottom: 2px solid #444; padding-bottom: 4px; }',
+    'table { width: 100%; border-collapse: collapse; margin-top: 12px; margin-bottom: 16px; }',
+    'th, td { border: 1px solid #444; padding: 6px 8px; font-size: 12px; }',
+    'th { background: #eee; text-align: left; font-weight: 600; }',
+    'tr:nth-child(even) { background: #f9f9f9; }',
+    '@media print { body { margin: 8mm; } h2 { page-break-before: auto; } }',
+    '</style></head><body>',
+    `<h1>${t('print.recommendedItems')} - ${escapeHtml(buildName)}</h1>`,
+    buildSections,
+    `<p style="margin-top:24px;font-size:10px;color:#555;border-top:1px solid #ccc;padding-top:8px;">${t('print.generated')} ${new Date().toLocaleString()} - Wakfu Builder Assistant</p>`,
+    '<script>window.print()<\/script>',
+    '</body></html>'
+  ]
+  
+  const html = htmlParts.join('')
+
+  const w = window.open('', '_blank')
+  if (!w) return
+  w.document.write(html)
+  w.document.close()
+}
+
+const escapeHtml = (str) => {
+  if (str == null) return ''
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
 </script>
 
 <style lang="scss" scoped>
