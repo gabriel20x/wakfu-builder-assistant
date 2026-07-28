@@ -1,0 +1,15 @@
+# Legacy backend — Vercel treats a root api/ dir as serverless functions,
+# so it must be excluded or the Python builder kicks in and fails.
+api
+worker
+migrations
+
+# Not needed at build/serve time (the processed data lives in frontend/public/data)
+wakfu_data
+docs
+ARCHIVE
+*.tar.gz
+docker-compose.yml
+render.yaml
+Dockerfile
+Makefile
