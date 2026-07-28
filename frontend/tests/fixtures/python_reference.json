@@ -1,0 +1,1205 @@
+{
+ "calc_basic": {
+  "total_mastery": 1000.0,
+  "preliminary_damage": 1100.0,
+  "effective_damage": 1100.0,
+  "final_damage": 1100.0,
+  "damage_after_armor": 1100.0,
+  "details": {
+   "flat_resistance": 0.0,
+   "resistance_percent": 0.0,
+   "backstab_bonus": 1.0,
+   "secondary_mastery": 0,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_resist200": {
+  "total_mastery": 1000.0,
+  "preliminary_damage": 704.0,
+  "effective_damage": 704.0,
+  "final_damage": 704.0,
+  "damage_after_armor": 704.0,
+  "details": {
+   "flat_resistance": 200.0,
+   "resistance_percent": 36.0,
+   "backstab_bonus": 1.0,
+   "secondary_mastery": 0,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_crit": {
+  "total_mastery": 1400.0,
+  "preliminary_damage": 1500.0,
+  "effective_damage": 1500.0,
+  "final_damage": 1500.0,
+  "damage_after_armor": 1500.0,
+  "details": {
+   "flat_resistance": 0.0,
+   "resistance_percent": 0.0,
+   "backstab_bonus": 1.0,
+   "secondary_mastery": 400,
+   "is_critical": true,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_armor": {
+  "total_mastery": 500.0,
+  "preliminary_damage": 600.0,
+  "effective_damage": 600.0,
+  "final_damage": 600.0,
+  "damage_after_armor": 400.0,
+  "details": {
+   "flat_resistance": 0.0,
+   "resistance_percent": 0.0,
+   "backstab_bonus": 1.0,
+   "secondary_mastery": 0,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_backstab": {
+  "total_mastery": 1250.0,
+  "preliminary_damage": 1207.0,
+  "effective_damage": 1207.0,
+  "final_damage": 1207.0,
+  "damage_after_armor": 1207.0,
+  "details": {
+   "flat_resistance": 150.0,
+   "resistance_percent": 28.45,
+   "backstab_bonus": 1.25,
+   "secondary_mastery": 250,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_sidestab": {
+  "total_mastery": 900.0,
+  "preliminary_damage": 1100.0,
+  "effective_damage": 1100.0,
+  "final_damage": 1100.0,
+  "damage_after_armor": 1100.0,
+  "details": {
+   "flat_resistance": 0.0,
+   "resistance_percent": 0.0,
+   "backstab_bonus": 1.1,
+   "secondary_mastery": 100,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "calc_full": {
+  "total_mastery": 1817.0,
+  "preliminary_damage": 1402.0,
+  "effective_damage": 1402.0,
+  "final_damage": 1640.0,
+  "damage_after_armor": 1590.0,
+  "details": {
+   "flat_resistance": 333.0,
+   "resistance_percent": 52.43,
+   "backstab_bonus": 1.25,
+   "secondary_mastery": 830,
+   "is_critical": true,
+   "is_berserk": true,
+   "is_melee": false,
+   "is_single_target": false,
+   "final_damage_bonus": 17.0
+  }
+ },
+ "calc_defaults": {
+  "total_mastery": 0.0,
+  "preliminary_damage": 100.0,
+  "effective_damage": 100.0,
+  "final_damage": 100.0,
+  "damage_after_armor": 100.0,
+  "details": {
+   "flat_resistance": 0.0,
+   "resistance_percent": 0.0,
+   "backstab_bonus": 1.0,
+   "secondary_mastery": 0,
+   "is_critical": false,
+   "is_berserk": false,
+   "is_melee": true,
+   "is_single_target": true,
+   "final_damage_bonus": 0.0
+  }
+ },
+ "estimate_basic": {
+  "estimates": [
+   {
+    "element": "Fire",
+    "base_mastery": 1600.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1700.0,
+      "critical_damage": 2000.0,
+      "backstab_damage": 2125.0,
+      "backstab_critical_damage": 2500.0
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 1360.0,
+      "critical_damage": 1600.0,
+      "backstab_damage": 1700.0,
+      "backstab_critical_damage": 2000.0
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 1088.0,
+      "critical_damage": 1280.0,
+      "backstab_damage": 1360.0,
+      "backstab_critical_damage": 1600.0
+     }
+    ]
+   },
+   {
+    "element": "Water",
+    "base_mastery": 1200.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1300.0,
+      "critical_damage": 1600.0,
+      "backstab_damage": 1625.0,
+      "backstab_critical_damage": 2000.0
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 1040.0,
+      "critical_damage": 1280.0,
+      "backstab_damage": 1300.0,
+      "backstab_critical_damage": 1600.0
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 832.0,
+      "critical_damage": 1024.0,
+      "backstab_damage": 1040.0,
+      "backstab_critical_damage": 1280.0
+     }
+    ]
+   },
+   {
+    "element": "Earth",
+    "base_mastery": 1400.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1500.0,
+      "critical_damage": 1800.0,
+      "backstab_damage": 1875.0,
+      "backstab_critical_damage": 2250.0
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 1200.0,
+      "critical_damage": 1440.0,
+      "backstab_damage": 1500.0,
+      "backstab_critical_damage": 1800.0
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 960.0,
+      "critical_damage": 1152.0,
+      "backstab_damage": 1200.0,
+      "backstab_critical_damage": 1440.0
+     }
+    ]
+   },
+   {
+    "element": "Air",
+    "base_mastery": 1000.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1100.0,
+      "critical_damage": 1400.0,
+      "backstab_damage": 1375.0,
+      "backstab_critical_damage": 1750.0
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 880.0,
+      "critical_damage": 1120.0,
+      "backstab_damage": 1100.0,
+      "backstab_critical_damage": 1400.0
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 704.0,
+      "critical_damage": 896.0,
+      "backstab_damage": 880.0,
+      "backstab_critical_damage": 1120.0
+     }
+    ]
+   }
+  ],
+  "base_spell_damage": 100.0,
+  "resistance_presets": [
+   0,
+   100,
+   200
+  ],
+  "is_melee": true
+ },
+ "estimate_distance_nocrit": {
+  "estimates": [
+   {
+    "element": "Fire",
+    "base_mastery": 1000.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1375.0,
+      "critical_damage": null,
+      "backstab_damage": 1881.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 1100.0,
+      "critical_damage": null,
+      "backstab_damage": 1505.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 880.0,
+      "critical_damage": null,
+      "backstab_damage": 1204.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 300,
+      "resistance_percent": 48.8,
+      "normal_damage": 704.0,
+      "critical_damage": null,
+      "backstab_damage": 963.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 400,
+      "resistance_percent": 59.0,
+      "normal_damage": 563.0,
+      "critical_damage": null,
+      "backstab_damage": 771.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 500,
+      "resistance_percent": 67.2,
+      "normal_damage": 451.0,
+      "critical_damage": null,
+      "backstab_damage": 616.0,
+      "backstab_critical_damage": null
+     }
+    ]
+   },
+   {
+    "element": "Water",
+    "base_mastery": 150.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 525.0,
+      "critical_damage": null,
+      "backstab_damage": 819.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 420.0,
+      "critical_damage": null,
+      "backstab_damage": 655.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 336.0,
+      "critical_damage": null,
+      "backstab_damage": 524.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 300,
+      "resistance_percent": 48.8,
+      "normal_damage": 269.0,
+      "critical_damage": null,
+      "backstab_damage": 419.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 400,
+      "resistance_percent": 59.0,
+      "normal_damage": 215.0,
+      "critical_damage": null,
+      "backstab_damage": 335.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 500,
+      "resistance_percent": 67.2,
+      "normal_damage": 172.0,
+      "critical_damage": null,
+      "backstab_damage": 268.0,
+      "backstab_critical_damage": null
+     }
+    ]
+   },
+   {
+    "element": "Earth",
+    "base_mastery": 150.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 525.0,
+      "critical_damage": null,
+      "backstab_damage": 819.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 420.0,
+      "critical_damage": null,
+      "backstab_damage": 655.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 336.0,
+      "critical_damage": null,
+      "backstab_damage": 524.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 300,
+      "resistance_percent": 48.8,
+      "normal_damage": 269.0,
+      "critical_damage": null,
+      "backstab_damage": 419.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 400,
+      "resistance_percent": 59.0,
+      "normal_damage": 215.0,
+      "critical_damage": null,
+      "backstab_damage": 335.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 500,
+      "resistance_percent": 67.2,
+      "normal_damage": 172.0,
+      "critical_damage": null,
+      "backstab_damage": 268.0,
+      "backstab_critical_damage": null
+     }
+    ]
+   },
+   {
+    "element": "Air",
+    "base_mastery": 770.0,
+    "resistance_scenarios": [
+     {
+      "flat_resistance": 0,
+      "resistance_percent": 0.0,
+      "normal_damage": 1145.0,
+      "critical_damage": null,
+      "backstab_damage": 1594.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 100,
+      "resistance_percent": 20.0,
+      "normal_damage": 916.0,
+      "critical_damage": null,
+      "backstab_damage": 1275.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 200,
+      "resistance_percent": 36.0,
+      "normal_damage": 733.0,
+      "critical_damage": null,
+      "backstab_damage": 1020.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 300,
+      "resistance_percent": 48.8,
+      "normal_damage": 586.0,
+      "critical_damage": null,
+      "backstab_damage": 816.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 400,
+      "resistance_percent": 59.0,
+      "normal_damage": 469.0,
+      "critical_damage": null,
+      "backstab_damage": 653.0,
+      "backstab_critical_damage": null
+     },
+     {
+      "flat_resistance": 500,
+      "resistance_percent": 67.2,
+      "normal_damage": 375.0,
+      "critical_damage": null,
+      "backstab_damage": 522.0,
+      "backstab_critical_damage": null
+     }
+    ]
+   }
+  ],
+  "base_spell_damage": 100.0,
+  "resistance_presets": [
+   0,
+   100,
+   200,
+   300,
+   400,
+   500
+  ],
+  "is_melee": false
+ },
+ "custom_res": {
+  "damage_per_element": {
+   "Fire": {
+    "normal": 1216.0,
+    "critical": 1408.0,
+    "average": 1312.0,
+    "flat_resistance": 200.0,
+    "resistance_percent": 36.0
+   },
+   "Water": {
+    "normal": 1200.0,
+    "critical": 1440.0,
+    "average": 1320.0,
+    "flat_resistance": 100.0,
+    "resistance_percent": 20.0
+   },
+   "Earth": {
+    "normal": 501.0,
+    "critical": 716.0,
+    "average": 608.5,
+    "flat_resistance": 150.0,
+    "resistance_percent": 28.4
+   },
+   "Air": {
+    "normal": 626.0,
+    "critical": 894.0,
+    "average": 760.0,
+    "flat_resistance": 50.0,
+    "resistance_percent": 10.6
+   }
+  },
+  "enemy_resistances": {
+   "Fire": 200.0,
+   "Water": 100.0,
+   "Earth": 150.0,
+   "Air": 50.0
+  },
+  "base_spell_damage": 100.0
+ },
+ "classes": [
+  {
+   "id": "feca",
+   "name": "Feca",
+   "icon": "feca",
+   "primary_role": "tank",
+   "roles": [
+    "tank",
+    "support"
+   ]
+  },
+  {
+   "id": "osamodas",
+   "name": "Osamodas",
+   "icon": "osamodas",
+   "primary_role": "support",
+   "roles": [
+    "summoner",
+    "dps"
+   ]
+  },
+  {
+   "id": "enutrof",
+   "name": "Enutrof",
+   "icon": "enutrof",
+   "primary_role": "support",
+   "roles": [
+    "support_mp",
+    "dps"
+   ]
+  },
+  {
+   "id": "sram",
+   "name": "Sram",
+   "icon": "sram",
+   "primary_role": "dps_melee",
+   "roles": [
+    "assassin",
+    "trap"
+   ]
+  },
+  {
+   "id": "xelor",
+   "name": "Xelor",
+   "icon": "xelor",
+   "primary_role": "dps_distance",
+   "roles": [
+    "dps_ap",
+    "support"
+   ]
+  },
+  {
+   "id": "ecaflip",
+   "name": "Ecaflip",
+   "icon": "ecaflip",
+   "primary_role": "dps_melee",
+   "roles": [
+    "dps_crit",
+    "tank"
+   ]
+  },
+  {
+   "id": "eniripsa",
+   "name": "Eniripsa",
+   "icon": "eniripsa",
+   "primary_role": "healer",
+   "roles": [
+    "healer",
+    "dps_fire"
+   ]
+  },
+  {
+   "id": "iop",
+   "name": "Iop",
+   "icon": "iop",
+   "primary_role": "dps_melee",
+   "roles": [
+    "dps_melee",
+    "berserker"
+   ]
+  },
+  {
+   "id": "cra",
+   "name": "Cra",
+   "icon": "cra",
+   "primary_role": "dps_distance",
+   "roles": [
+    "sniper",
+    "support"
+   ]
+  },
+  {
+   "id": "sadida",
+   "name": "Sadida",
+   "icon": "sadida",
+   "primary_role": "support",
+   "roles": [
+    "summoner_heal",
+    "dps_poison"
+   ]
+  },
+  {
+   "id": "sacrier",
+   "name": "Sacrier",
+   "icon": "sacrier",
+   "primary_role": "berserker",
+   "roles": [
+    "tank_aggro",
+    "berserker"
+   ]
+  },
+  {
+   "id": "pandawa",
+   "name": "Pandawa",
+   "icon": "pandawa",
+   "primary_role": "tank",
+   "roles": [
+    "tank_support",
+    "dps_melee"
+   ]
+  },
+  {
+   "id": "rogue",
+   "name": "Rogue",
+   "icon": "rogue",
+   "primary_role": "dps_distance",
+   "roles": [
+    "bomber",
+    "support_wall"
+   ]
+  },
+  {
+   "id": "masqueraider",
+   "name": "Masqueraider",
+   "icon": "masqueraider",
+   "primary_role": "dps_melee",
+   "roles": [
+    "dps_versatile",
+    "tank"
+   ]
+  },
+  {
+   "id": "foggernaut",
+   "name": "Foggernaut",
+   "icon": "foggernaut",
+   "primary_role": "dps_distance",
+   "roles": [
+    "dps_railgun",
+    "tank_fire"
+   ]
+  },
+  {
+   "id": "eliotrope",
+   "name": "Eliotrope",
+   "icon": "eliotrope",
+   "primary_role": "dps_distance",
+   "roles": [
+    "dps_portal",
+    "support"
+   ]
+  },
+  {
+   "id": "huppermage",
+   "name": "Huppermage",
+   "icon": "huppermage",
+   "primary_role": "dps_distance",
+   "roles": [
+    "dps_quad",
+    "dps_tri"
+   ]
+  },
+  {
+   "id": "ouginak",
+   "name": "Ouginak",
+   "icon": "ouginak",
+   "primary_role": "dps_melee",
+   "roles": [
+    "dps_fury",
+    "tank_prey"
+   ]
+  }
+ ],
+ "class_count": 18,
+ "role_templates": {
+  "tank": {
+   "description": "Maximiza supervivencia y control de zona",
+   "primary_stats": [
+    "HP",
+    "Lock",
+    "Block"
+   ],
+   "secondary_stats": [
+    "Dodge",
+    "Force_Of_Will",
+    "Initiative"
+   ],
+   "resistances": [
+    "Elemental_Resistance",
+    "Critical_Resistance",
+    "Rear_Resistance"
+   ],
+   "weights": {
+    "HP": 10.0,
+    "Lock": 8.0,
+    "Block": 8.0,
+    "Dodge": 6.0,
+    "Force_Of_Will": 6.0,
+    "Elemental_Resistance": 7.0,
+    "Critical_Resistance": 5.0,
+    "Rear_Resistance": 5.0,
+    "AP": 6.0,
+    "MP": 5.0,
+    "Initiative": 4.0
+   }
+  },
+  "dps_melee": {
+   "description": "Daño cuerpo a cuerpo",
+   "primary_stats": [
+    "AP",
+    "Melee_Mastery",
+    "Critical_Hit",
+    "Critical_Mastery"
+   ],
+   "secondary_stats": [
+    "Damage_Inflicted",
+    "Rear_Mastery",
+    "Berserk_Mastery"
+   ],
+   "weights": {
+    "AP": 10.0,
+    "Melee_Mastery": 9.0,
+    "Critical_Hit": 8.0,
+    "Critical_Mastery": 8.0,
+    "Damage_Inflicted": 7.0,
+    "Rear_Mastery": 7.0,
+    "MP": 6.0,
+    "Berserk_Mastery": 6.0,
+    "HP": 4.0,
+    "Initiative": 3.0
+   }
+  },
+  "dps_distance": {
+   "description": "Daño a distancia",
+   "primary_stats": [
+    "AP",
+    "Distance_Mastery",
+    "Critical_Hit",
+    "Range"
+   ],
+   "secondary_stats": [
+    "Critical_Mastery",
+    "Damage_Inflicted",
+    "Rear_Mastery"
+   ],
+   "weights": {
+    "AP": 10.0,
+    "Distance_Mastery": 9.0,
+    "Critical_Hit": 8.0,
+    "Critical_Mastery": 8.0,
+    "Range": 7.0,
+    "Damage_Inflicted": 7.0,
+    "Rear_Mastery": 6.0,
+    "MP": 5.0,
+    "HP": 3.0,
+    "Initiative": 3.0
+   }
+  },
+  "healer": {
+   "description": "Soporte y curación",
+   "primary_stats": [
+    "AP",
+    "WP",
+    "Healing_Mastery",
+    "Heals_Performed"
+   ],
+   "secondary_stats": [
+    "HP",
+    "Critical_Hit",
+    "Critical_Mastery",
+    "Initiative"
+   ],
+   "weights": {
+    "AP": 10.0,
+    "WP": 9.0,
+    "Healing_Mastery": 9.0,
+    "Heals_Performed": 8.0,
+    "Critical_Hit": 6.0,
+    "Critical_Mastery": 6.0,
+    "HP": 5.0,
+    "MP": 5.0,
+    "Initiative": 4.0,
+    "Wisdom": 3.0
+   }
+  },
+  "support": {
+   "description": "Buffs, debuffs y control",
+   "primary_stats": [
+    "AP",
+    "MP",
+    "Control",
+    "Initiative"
+   ],
+   "secondary_stats": [
+    "WP",
+    "HP",
+    "Critical_Hit"
+   ],
+   "weights": {
+    "AP": 10.0,
+    "MP": 8.0,
+    "Control": 7.0,
+    "Initiative": 7.0,
+    "WP": 6.0,
+    "HP": 5.0,
+    "Range": 5.0,
+    "Critical_Hit": 4.0,
+    "Wisdom": 3.0
+   }
+  },
+  "berserker": {
+   "description": "DPS basado en Berserk",
+   "primary_stats": [
+    "AP",
+    "Berserk_Mastery",
+    "Melee_Mastery",
+    "Critical_Hit"
+   ],
+   "secondary_stats": [
+    "Critical_Mastery",
+    "Damage_Inflicted",
+    "HP"
+   ],
+   "weights": {
+    "AP": 10.0,
+    "Berserk_Mastery": 9.0,
+    "Melee_Mastery": 8.0,
+    "Critical_Hit": 7.0,
+    "Critical_Mastery": 7.0,
+    "Damage_Inflicted": 6.0,
+    "HP": 5.0,
+    "MP": 5.0,
+    "Rear_Mastery": 4.0
+   }
+  }
+ },
+ "roles_iop": [
+  {
+   "id": "dps_melee",
+   "name": "DPS Melé",
+   "description": "Máximo daño cuerpo a cuerpo",
+   "elements": [
+    "Fire",
+    "Air"
+   ],
+   "is_primary": true
+  },
+  {
+   "id": "berserker",
+   "name": "Berserker",
+   "description": "DPS con Berserk",
+   "elements": [
+    "Fire"
+   ],
+   "is_primary": false
+  }
+ ],
+ "roles_feca": [
+  {
+   "id": "tank",
+   "name": "Tank Protector",
+   "description": "Máxima supervivencia con glifos protectores",
+   "elements": [
+    "Water",
+    "Earth"
+   ],
+   "is_primary": true
+  },
+  {
+   "id": "support",
+   "name": "Support Glifo",
+   "description": "Buffs de equipo con glifos",
+   "elements": [
+    "Fire",
+    "Air"
+   ],
+   "is_primary": false
+  }
+ ],
+ "roles_unknown": [],
+ "preset_iop_default": {
+  "weights": {
+   "AP": 10.0,
+   "Fire_Mastery": 9.0,
+   "Air_Mastery": 8.0,
+   "Melee_Mastery": 9.0,
+   "Critical_Hit": 8.0,
+   "Critical_Mastery": 8.0,
+   "Damage_Inflicted": 8.0,
+   "MP": 6.0,
+   "Rear_Mastery": 7.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Air",
+   "Water",
+   "Earth"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Air",
+   "Water",
+   "Earth"
+  ]
+ },
+ "preset_iop_berserker": {
+  "weights": {
+   "AP": 10.0,
+   "Fire_Mastery": 9.0,
+   "Berserk_Mastery": 10.0,
+   "Melee_Mastery": 8.0,
+   "Critical_Hit": 7.0,
+   "Critical_Mastery": 7.0,
+   "Damage_Inflicted": 7.0,
+   "HP": 6.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_osamodas_default": {
+  "weights": {
+   "AP": 10.0,
+   "MP": 8.0,
+   "Control": 7.0,
+   "Initiative": 7.0,
+   "WP": 6.0,
+   "HP": 5.0,
+   "Range": 5.0,
+   "Critical_Hit": 4.0,
+   "Wisdom": 3.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_sram_default": {
+  "weights": {
+   "AP": 10.0,
+   "Melee_Mastery": 9.0,
+   "Critical_Hit": 8.0,
+   "Critical_Mastery": 8.0,
+   "Damage_Inflicted": 7.0,
+   "Rear_Mastery": 7.0,
+   "MP": 6.0,
+   "Berserk_Mastery": 6.0,
+   "HP": 4.0,
+   "Initiative": 3.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_hupper_quad": {
+  "weights": {
+   "AP": 10.0,
+   "Fire_Mastery": 9.0,
+   "Water_Mastery": 9.0,
+   "Earth_Mastery": 9.0,
+   "Air_Mastery": 9.0,
+   "Elemental_Mastery": 8.0,
+   "Critical_Hit": 7.0,
+   "Distance_Mastery": 7.0,
+   "MP": 6.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_unknown_class": {
+  "weights": {},
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_iop_badrole": {
+  "weights": {},
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "preset_iop_tank_template": {
+  "weights": {
+   "HP": 10.0,
+   "Lock": 8.0,
+   "Block": 8.0,
+   "Dodge": 6.0,
+   "Force_Of_Will": 6.0,
+   "Elemental_Resistance": 7.0,
+   "Critical_Resistance": 5.0,
+   "Rear_Resistance": 5.0,
+   "AP": 6.0,
+   "MP": 5.0,
+   "Initiative": 4.0
+  },
+  "damage_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  "resistance_preferences": [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ },
+ "prefs_eniripsa": [
+  [
+   "Water",
+   "Fire",
+   "Earth",
+   "Air"
+  ],
+  [
+   "Water",
+   "Fire",
+   "Earth",
+   "Air"
+  ]
+ ],
+ "prefs_hupper_quad": [
+  [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ ],
+ "prefs_unknown": [
+  [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ],
+  [
+   "Fire",
+   "Water",
+   "Earth",
+   "Air"
+  ]
+ ],
+ "details_ecaflip": {
+  "name": "Ecaflip",
+  "icon": "ecaflip",
+  "primary_role": "dps_melee",
+  "roles": {
+   "dps_crit": {
+    "name": "DPS Crítico",
+    "description": "Máximo daño con críticos",
+    "elements": [
+     "Fire",
+     "Air"
+    ],
+    "weights": {
+     "AP": 10.0,
+     "Fire_Mastery": 9.0,
+     "Air_Mastery": 8.0,
+     "Critical_Hit": 10.0,
+     "Critical_Mastery": 10.0,
+     "Melee_Mastery": 8.0,
+     "Damage_Inflicted": 7.0,
+     "MP": 6.0
+    }
+   },
+   "tank": {
+    "name": "Tank Ágil",
+    "description": "Tanque con esquiva",
+    "elements": [
+     "Water",
+     "Earth"
+    ],
+    "weights": {
+     "HP": 9.0,
+     "AP": 8.0,
+     "Water_Mastery": 7.0,
+     "Earth_Mastery": 7.0,
+     "Dodge": 8.0,
+     "Lock": 7.0,
+     "Critical_Hit": 7.0,
+     "MP": 6.0
+    }
+   }
+  }
+ },
+ "details_unknown": {
+  "error": "Class not found"
+ }
+}

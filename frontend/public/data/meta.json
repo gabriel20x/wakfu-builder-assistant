@@ -1,0 +1,20 @@
+{
+  "gamedata_version": "1.92.1.59",
+  "community_data_version": "1.90.1.43",
+  "item_count": 7920,
+  "monster_types": [
+    "archmonster",
+    "boss",
+    "dominant",
+    "monster",
+    "ultimate_boss"
+  ],
+  "monster_type_counts": {
+    "archmonster": 85,
+    "boss": 118,
+    "dominant": 80,
+    "monster": 431,
+    "ultimate_boss": 11
+  },
+  "status": "completed"
+}

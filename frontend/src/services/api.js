@@ -1,143 +1,302 @@
-import axios from 'axios'
+/**
+ * Local (backend-less) implementation of the old REST API.
+ *
+ * Every function keeps the exact same name and axios-like `{ data }` response
+ * shape the components already consume, but resolves everything locally:
+ *  - static gamedata JSON (frontend/public/data/, built by scripts/build_static_data.py)
+ *  - MILP solver running in a Web Worker (frontend/src/lib/solver/)
+ *  - damage calculator and class presets ported to JS (frontend/src/lib/)
+ *  - manual metadata edits persisted in localStorage (dataStore overlay)
+ */
 
-const api = axios.create({
-  baseURL: '/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-})
+import {
+  loadItems,
+  loadMeta,
+  getItemById,
+  getItemsByIds,
+  getEffectiveMetadata,
+  getAllEffectiveMetadata,
+  setMetadataOverride,
+  deleteMetadataOverride,
+  withEffectiveMetadata,
+} from './dataStore'
+import { solveBuildInWorker } from './localSolver'
+import {
+  estimateDamage,
+  calculateWithCustomResistances,
+  calculateDetailed,
+} from '../lib/damage/damageCalculator'
+import {
+  listAllClasses,
+  listRolesForClass,
+  getClassPreset,
+  getClassDetails,
+  ROLE_TEMPLATES,
+} from '../lib/presets/classPresets'
+
+const ok = (data) => ({ data })
+
+const BUILD_HISTORY_KEY = 'wakfu_build_history_v1'
+
+function readBuildHistory() {
+  try {
+    return JSON.parse(localStorage.getItem(BUILD_HISTORY_KEY)) || []
+  } catch {
+    return []
+  }
+}
+
+function pushBuildHistory(params, result) {
+  const history = readBuildHistory()
+  history.unshift({
+    id: Date.now(),
+    params,
+    result,
+    created_at: new Date().toISOString(),
+  })
+  localStorage.setItem(BUILD_HISTORY_KEY, JSON.stringify(history.slice(0, 20)))
+}
 
 export const builderAPI = {
-  // Generate builds based on stat weights
-  solveBuild(params) {
-    return api.post('/build/solve', params)
+  async solveBuild(params) {
+    const result = await solveBuildInWorker(params)
+    try {
+      pushBuildHistory(
+        { level_max: params.level_max, stat_weights: params.stat_weights },
+        result
+      )
+    } catch {
+      /* localStorage full — history is best-effort */
+    }
+    return ok(result)
   },
 
-  // Get build history
-  getBuildHistory(limit = 10) {
-    return api.get(`/build/history?limit=${limit}`)
+  async getBuildHistory(limit = 10) {
+    return ok(readBuildHistory().slice(0, limit))
   },
 
-  // Refresh items with latest data from database
-  refreshItems(itemIds) {
-    return api.post('/build/refresh-items', { item_ids: itemIds })
+  async refreshItems(itemIds) {
+    const items = await getItemsByIds(itemIds)
+    return ok({
+      items: items.map((item) => ({
+        item_id: item.item_id,
+        name: item.name,
+        name_es: item.name_es,
+        name_en: item.name_en,
+        name_fr: item.name_fr,
+        level: item.level,
+        slot: item.slot,
+        rarity: item.rarity,
+        is_epic: item.is_epic,
+        is_relic: item.is_relic,
+        difficulty: item.difficulty,
+        gfx_id: item.gfx_id,
+        stats: item.stats,
+        source_type: item.source_type,
+        has_gem_slot: item.has_gem_slot,
+        drop_sources: item.drop_sources,
+        metadata: getEffectiveMetadata(item),
+      })),
+    })
   },
 
-  // Get items with filters
-  getItems(filters = {}) {
-    const params = new URLSearchParams()
-    if (filters.level_min) params.append('level_min', filters.level_min)
-    if (filters.level_max) params.append('level_max', filters.level_max)
-    if (filters.slot) params.append('slot', filters.slot)
-    if (filters.source_type) params.append('source_type', filters.source_type)
-    if (filters.limit) params.append('limit', filters.limit)
-    
-    return api.get(`/items?${params.toString()}`)
+  async getItems(filters = {}) {
+    const all = await loadItems()
+    let result = all
+    if (filters.level_min != null) result = result.filter((i) => i.level >= filters.level_min)
+    if (filters.level_max != null) result = result.filter((i) => i.level <= filters.level_max)
+    if (filters.slot) result = result.filter((i) => i.slot === filters.slot)
+    if (filters.source_type) result = result.filter((i) => i.source_type === filters.source_type)
+    return ok(result.slice(0, filters.limit || 100))
   },
 
-  // Get single item
-  getItem(itemId) {
-    return api.get(`/items/${itemId}`)
+  async getItem(itemId) {
+    const item = await getItemById(Number(itemId))
+    if (!item) throw apiError(404, 'Item not found')
+    return ok(item)
   },
 }
 
 export const presetsAPI = {
-  // Get all available classes
-  getClasses() {
-    return api.get('/presets/classes')
+  async getClasses() {
+    return ok(listAllClasses())
   },
 
-  // Get roles for a specific class
-  getClassRoles(className) {
-    return api.get(`/presets/classes/${className}/roles`)
+  async getClassRoles(className) {
+    return ok(listRolesForClass(className))
   },
 
-  // Get preset for a class and role
-  getClassPreset(className, role = null) {
-    const params = role ? `?role=${role}` : ''
-    return api.get(`/presets/classes/${className}/preset${params}`)
+  async getClassPreset(className, role = null) {
+    // Returns the full `/preset` endpoint shape (incl. fallback for unknown class)
+    return ok(getClassPreset(className, role))
   },
 
-  // Get base role templates
-  getRoleTemplates() {
-    return api.get('/presets/roles')
+  async getRoleTemplates() {
+    return ok(ROLE_TEMPLATES)
   },
 
-  // Get complete class details
-  getClassDetails(className) {
-    return api.get(`/presets/classes/${className}`)
+  async getClassDetails(className) {
+    return ok(getClassDetails(className))
   },
 }
 
 export const damageAPI = {
-  // Estimate damage for a build at different resistance levels
-  estimateDamage(buildStats, options = {}) {
-    return api.post('/damage/estimate', {
-      build_stats: buildStats,
-      base_spell_damage: options.baseSpellDamage || 100.0,
-      resistance_presets: options.resistancePresets || [0, 100, 200, 300, 400, 500],
-      include_critical: options.includeCritical !== false,
-      is_melee: options.isMelee !== false  // Default to melee
-    })
+  async estimateDamage(buildStats, options = {}) {
+    return ok(
+      estimateDamage(buildStats, {
+        baseSpellDamage: options.baseSpellDamage || 100.0,
+        resistancePresets: options.resistancePresets || [0, 100, 200, 300, 400, 500],
+        includeCritical: options.includeCritical !== false,
+        isMelee: options.isMelee !== false,
+      })
+    )
   },
 
-  // Calculate damage with custom enemy resistances
-  calculateWithCustomResistances(buildStats, enemyResistances, baseSpellDamage = 100.0) {
-    return api.post('/damage/custom-resistances', {
-      build_stats: buildStats,
-      enemy_resistances: enemyResistances,
-      base_spell_damage: baseSpellDamage
-    })
+  async calculateWithCustomResistances(buildStats, enemyResistances, baseSpellDamage = 100.0) {
+    return ok(calculateWithCustomResistances(buildStats, enemyResistances, baseSpellDamage))
   },
 
-  // Calculate damage with detailed parameters
-  calculateDetailed(params) {
-    return api.post('/damage/calculate', params)
+  async calculateDetailed(params) {
+    return ok(calculateDetailed(params))
   },
 }
 
 export const metadataAPI = {
-  // Get all metadata
-  getAllMetadata() {
-    return api.get('/item-metadata/all')
+  async getAllMetadata() {
+    const data = await getAllEffectiveMetadata()
+    return ok({ success: true, message: 'Metadata retrieved successfully', data })
   },
 
-  // Get metadata statistics
-  getMetadataStats() {
-    return api.get('/item-metadata/stats')
+  async getMetadataStats() {
+    const [items, doc] = await Promise.all([loadItems(), getAllEffectiveMetadata()])
+    const entries = Object.values(doc.items)
+    const enabled = (entry, method) =>
+      entry?.acquisition_methods?.[method]?.enabled ? 1 : 0
+    const count = (method) => entries.reduce((acc, e) => acc + enabled(e, method), 0)
+    const total = items.length
+    return ok({
+      success: true,
+      message: 'Statistics retrieved',
+      data: {
+        total_items_in_game: total,
+        total_items_with_metadata: entries.length,
+        coverage_percent: total > 0 ? Math.round((entries.length / total) * 10000) / 100 : 0,
+        items_with_drop: count('drop'),
+        items_with_recipe: count('recipe'),
+        items_with_fragments: count('fragments'),
+        items_with_crupier: count('crupier'),
+        items_with_challenge: count('challenge_reward'),
+        last_updated: doc.last_updated,
+      },
+    })
   },
 
-  // Search items for metadata editing
-  searchItemsForMetadata(query) {
-    return api.get(`/item-metadata/search?query=${encodeURIComponent(query)}`)
+  async searchItemsForMetadata(query) {
+    const items = await loadItems()
+    const q = String(query).toLowerCase()
+    const matches = items
+      .filter(
+        (i) =>
+          (i.name && i.name.toLowerCase().includes(q)) ||
+          (i.name_es && i.name_es.toLowerCase().includes(q)) ||
+          (i.name_en && i.name_en.toLowerCase().includes(q))
+      )
+      .slice(0, 50)
+    const results = matches.map((item) => {
+      const metadata = getEffectiveMetadata(item)
+      return {
+        item_id: item.item_id,
+        name: item.name,
+        name_es: item.name_es,
+        name_en: item.name_en,
+        level: item.level,
+        rarity: item.rarity,
+        slot: item.slot,
+        source_type: item.source_type,
+        has_metadata: Object.keys(metadata).length > 0,
+        metadata,
+      }
+    })
+    return ok({
+      success: true,
+      message: `Found ${results.length} items`,
+      data: { items: results },
+    })
   },
 
-  // Get metadata for a specific item
-  getItemMetadata(itemId) {
-    return api.get(`/item-metadata/item/${itemId}`)
+  async getItemMetadata(itemId) {
+    const item = await getItemById(Number(itemId))
+    if (!item) throw apiError(404, 'Item not found in database')
+    return ok({
+      success: true,
+      message: 'Item metadata retrieved successfully',
+      data: {
+        item_id: item.item_id,
+        name: item.name,
+        name_es: item.name_es,
+        name_en: item.name_en,
+        level: item.level,
+        rarity: item.rarity,
+        slot: item.slot,
+        source_type: item.source_type,
+        difficulty: item.difficulty,
+        metadata: getEffectiveMetadata(item),
+      },
+    })
   },
 
-  // Update/create metadata for an item
-  updateItemMetadata(itemId, metadata) {
-    return api.post(`/item-metadata/item/${itemId}`, metadata)
+  async updateItemMetadata(itemId, metadata) {
+    const item = await getItemById(Number(itemId))
+    if (!item) throw apiError(404, 'Item not found in database')
+    const entry = {
+      ...metadata,
+      item_id: Number(itemId),
+      name: item.name,
+      added_date: metadata.added_date || new Date().toISOString(),
+    }
+    setMetadataOverride(itemId, entry)
+    return ok({
+      success: true,
+      message: `Metadata updated for item ${itemId}`,
+      data: entry,
+    })
   },
 
-  // Delete metadata for an item
-  deleteItemMetadata(itemId) {
-    return api.delete(`/item-metadata/item/${itemId}`)
+  async deleteItemMetadata(itemId) {
+    deleteMetadataOverride(itemId)
+    return ok({
+      success: true,
+      message: `Metadata deleted for item ${itemId}`,
+      data: null,
+    })
   },
 }
 
 export const gamedataAPI = {
-  // Get available monster types
-  getMonsterTypes() {
-    return api.get('/gamedata/monster-types')
+  async getMonsterTypes() {
+    const meta = await loadMeta()
+    return ok({
+      types: meta.monster_types || [],
+      counts: meta.monster_type_counts || {},
+    })
   },
 
-  // Get gamedata status
-  getGamedataStatus() {
-    return api.get('/gamedata/status')
+  async getGamedataStatus() {
+    const meta = await loadMeta()
+    return ok({
+      version: meta.gamedata_version,
+      status: meta.status || 'completed',
+      loaded_items: meta.item_count,
+      created_at: null,
+    })
   },
+}
+
+/** Axios-compatible error so existing `err.response?.data?.detail` keeps working. */
+function apiError(status, detail) {
+  const err = new Error(detail)
+  err.response = { status, data: { detail } }
+  return err
 }
 
 export default {
@@ -146,10 +305,4 @@ export default {
   ...damageAPI,
   ...metadataAPI,
   ...gamedataAPI,
-  // Keep the axios instance for custom calls
-  get: api.get.bind(api),
-  post: api.post.bind(api),
-  put: api.put.bind(api),
-  delete: api.delete.bind(api),
 }
-
