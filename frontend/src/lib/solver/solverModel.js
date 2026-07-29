@@ -31,6 +31,12 @@ export const SETTINGS = {
   EASY_LAMBDA: 2.0, // Penaliza Míticos, prefiere Raros cuando sea posible
   MEDIUM_LAMBDA: 0.5, // Moderado: acepta Míticos/Legendarios si valen la pena
   HARD_LAMBDA: 0.0, // Sin penalización: puro stats + rarity bonus
+  // Fraction of a major stat's score (AP/MP/Range) that an Epic/Relic loses
+  // when it does not BEAT the best non-epic/non-relic item of the same slot
+  // on that stat. At 1.0, a relic weapon giving the same 1 AP as a legendary
+  // weapon gets zero credit for it (it wastes the unique relic slot), while a
+  // relic giving +1 AP over the baseline keeps full credit for its AP.
+  REDUNDANT_MAJOR_STAT_PENALTY: 1.0,
 };
 
 // Normalization factors based on stat rarity/frequency on items
@@ -79,8 +85,69 @@ export const NORMALIZATION_FACTORS = {
 
 const DEFAULT_ELEMENTS = ['Fire', 'Water', 'Earth', 'Air'];
 
+// "Major" stats an Epic/Relic is usually equipped for. These never come from
+// random elemental stats, so raw item.stats values are safe to compare.
+export const MAJOR_STATS = ['AP', 'MP', 'Range'];
+
 function has(obj, key) {
   return obj != null && Object.prototype.hasOwnProperty.call(obj, key);
+}
+
+// Baseline key: weapons only compete against weapons of the same handedness
+// (a 2H weapon's 2 AP is not a fair baseline for a 1H relic).
+function majorStatBaselineKey(item) {
+  if (item.slot === 'FIRST_WEAPON') {
+    return item.blocks_second_weapon ? 'FIRST_WEAPON_2H' : 'FIRST_WEAPON_1H';
+  }
+  return item.slot;
+}
+
+/**
+ * For each slot, find the best AP/MP/Range obtainable from non-epic,
+ * non-relic items (the "legendary baseline" an Epic/Relic must beat).
+ * @returns {Map<string, {AP: number, MP: number, Range: number}>}
+ */
+export function computeMajorStatBaselines(items) {
+  const baselines = new Map();
+  for (const item of items) {
+    if (item.is_epic || item.is_relic) continue;
+    const key = majorStatBaselineKey(item);
+    let base = baselines.get(key);
+    if (!base) {
+      base = { AP: 0, MP: 0, Range: 0 };
+      baselines.set(key, base);
+    }
+    const stats = item.stats || {};
+    for (const stat of MAJOR_STATS) {
+      const value = stats[stat] || 0;
+      if (value > base[stat]) base[stat] = value;
+    }
+  }
+  return baselines;
+}
+
+/**
+ * Penalty for an Epic/Relic whose major stats (AP/MP/Range) don't exceed
+ * what a non-epic/non-relic item of the same slot already provides.
+ * Only requested stats (present in statWeights) are penalized; a relic that
+ * pushes the stat ABOVE the baseline brings unique value and pays nothing.
+ */
+export function computeRedundantMajorStatPenalty(item, baselines, statWeights) {
+  if (!item.is_epic && !item.is_relic) return 0.0;
+  const base = baselines.get(majorStatBaselineKey(item));
+  if (!base) return 0.0;
+
+  let penalty = 0.0;
+  const stats = item.stats || {};
+  for (const stat of MAJOR_STATS) {
+    const value = stats[stat] || 0;
+    if (value <= 0 || !has(statWeights, stat)) continue;
+    if (value > base[stat]) continue; // beats the baseline: unique value
+    penalty +=
+      value * statWeights[stat] * NORMALIZATION_FACTORS[stat] *
+      SETTINGS.REDUNDANT_MAJOR_STAT_PENALTY;
+  }
+  return penalty;
 }
 
 /**
@@ -184,8 +251,16 @@ export function formatAlternativeItem(candidateDict) {
  * Global eligibility filter — port of the SQLAlchemy query in solve_build().
  *
  * - slot must be set
- * - level in [level_max - 10, level_max], OR
- *   level in [level_max - 10, level_max + 10] for rarity 5/6/7, OR slot == PET
+ * - level in [level_max - levelWindow, level_max], OR
+ *   same lower bound up to level_max + 10 for rarity 5/6/7, OR
+ *   level in [level_max - 25, level_max + 10] for Epics/Relics, OR slot == PET
+ *
+ * levelWindow defaults to 15: one full cap step back (caps are 15 levels
+ * apart), so e.g. at level_max 170 the strong 155 gear still competes.
+ * Benchmarks (2 profiles x 5 level caps x 5 tiers): 15 captures nearly all of
+ * the objective gain over 10 (+0.5%..+4.4% where old caps matter); 25/40 only
+ * add pool size and solve time. Epics/Relics reach level_max - 25 so they
+ * cover the previous cap even when level_max sits between caps.
  * - exclude Inusual (rarity 2) unless PET
  * - exclude Recuerdos (rarity 6 + is_relic == false) — PVP items
  * - optional PET / ACCESSORY exclusion
@@ -194,13 +269,14 @@ export function formatAlternativeItem(candidateDict) {
  */
 export function filterEligibleItems(allItems, {
   levelMax,
+  levelWindow = 15,
   includePet = true,
   includeAccessory = true,
   onlyDroppable = false,
   ignoredItemIds = null,
   monsterTypes = null,
 } = {}) {
-  const levelMin = Math.max(1, levelMax - 10);
+  const levelMin = Math.max(1, levelMax - levelWindow);
   const levelMaxHighRarity = levelMax + 10;
 
   const excludedSlots = new Set();
@@ -219,13 +295,20 @@ export function filterEligibleItems(allItems, {
   return allItems.filter((item) => {
     if (item.slot == null) return false;
 
-    // Level range: normal, extended for high rarity, or PET
+    // Level range: normal, extended for high rarity, extended down to the
+    // previous level cap for Epics/Relics, or PET
     const inNormalRange = item.level <= levelMax && item.level >= levelMin;
     const inHighRarityRange =
       item.level <= levelMaxHighRarity &&
       item.level >= levelMin &&
       [5, 6, 7].includes(item.rarity);
-    if (!(inNormalRange || inHighRarityRange || item.slot === 'PET')) return false;
+    const inEpicRelicRange =
+      (item.is_epic || item.is_relic) &&
+      item.level <= levelMaxHighRarity &&
+      item.level >= Math.max(1, levelMax - 25);
+    if (!(inNormalRange || inHighRarityRange || inEpicRelicRange || item.slot === 'PET')) {
+      return false;
+    }
 
     // Exclude Inusual (rarity 2) unless it's a PET
     if (item.rarity === 2 && item.slot !== 'PET') return false;
@@ -464,13 +547,16 @@ export function buildLpModel(eligibleItems, {
 }) {
   const items = applyBuildTypeFilter(eligibleItems, buildType, levelMax);
 
+  // Epic/Relic redundancy: baseline of AP/MP/Range reachable without them
+  const majorStatBaselines = computeMajorStatBaselines(items);
+
   // Objective coefficients
   const objTerms = [];
   for (const item of items) {
     const score = computeItemScore(
       item, statWeights, levelMax, lambdaWeight, buildType,
       damagePreferences, resistancePreferences
-    );
+    ) - computeRedundantMajorStatPenalty(item, majorStatBaselines, statWeights);
     const sign = score < 0 ? '-' : '+';
     objTerms.push(`${sign} ${fmt(Math.abs(score))} ${varName(item)}`);
   }

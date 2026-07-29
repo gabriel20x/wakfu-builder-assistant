@@ -13,6 +13,10 @@ import path from 'node:path';
 
 import { solveBuild } from '../src/lib/solver/solver.js';
 import {
+  computeMajorStatBaselines,
+  computeRedundantMajorStatPenalty,
+} from '../src/lib/solver/solverModel.js';
+import {
   inferElementPreferencesFromWeights,
   resolveElementStats,
   resolveBuildStats,
@@ -485,6 +489,117 @@ async function testLowLevelAdaptive() {
   );
 }
 
+async function testRedundantMajorStatPenalty() {
+  section('epic/relic redundant major stat penalty');
+
+  nextId = 4000;
+  // 1H legendary and 1H relic both give 1 AP: the relic's AP is redundant.
+  // The HEAD relic gives 1 AP no legendary head can provide.
+  const legWeapon = makeItem({
+    slot: 'FIRST_WEAPON', rarity: 5, stats: { AP: 1, Fire_Mastery: 100 },
+  });
+  const relicWeapon = makeItem({
+    slot: 'FIRST_WEAPON', rarity: 6, is_relic: true,
+    stats: { AP: 1, Fire_Mastery: 700 },
+  });
+  const twoHandLegend = makeItem({
+    slot: 'FIRST_WEAPON', rarity: 5, blocks_second_weapon: true,
+    stats: { AP: 2, Fire_Mastery: 50 },
+  });
+  const dagger = makeItem({ slot: 'SECOND_WEAPON', rarity: 5, stats: { Fire_Mastery: 500 } });
+  const legHead = makeItem({ slot: 'HEAD', rarity: 5, stats: { HP: 50, Fire_Mastery: 80 } });
+  const relicHead = makeItem({
+    slot: 'HEAD', rarity: 6, is_relic: true, stats: { AP: 1, Fire_Mastery: 60 },
+  });
+  const items = [legWeapon, relicWeapon, twoHandLegend, dagger, legHead, relicHead];
+  const statWeights = { AP: 10.0, Fire_Mastery: 2.0 };
+
+  // Unit: baselines split weapons by handedness
+  const baselines = computeMajorStatBaselines(items);
+  assertEqual(baselines.get('FIRST_WEAPON_1H').AP, 1, 'penalty: 1H baseline AP');
+  assertEqual(baselines.get('FIRST_WEAPON_2H').AP, 2, 'penalty: 2H baseline AP');
+  assertEqual(baselines.get('HEAD').AP, 0, 'penalty: HEAD baseline AP');
+
+  // Unit: redundant AP is penalized, AP above the baseline is not
+  assert(
+    computeRedundantMajorStatPenalty(relicWeapon, baselines, statWeights) > 0,
+    'penalty: relic weapon with baseline-equal AP is penalized'
+  );
+  assertEqual(
+    computeRedundantMajorStatPenalty(relicHead, baselines, statWeights), 0,
+    'penalty: relic head with net-new AP pays nothing'
+  );
+  assertEqual(
+    computeRedundantMajorStatPenalty(legWeapon, baselines, statWeights), 0,
+    'penalty: non-epic/non-relic items never pay'
+  );
+
+  // Integration: without the penalty the relic weapon's mastery surplus wins;
+  // with it, the solver picks the relic that raises the build's AP instead.
+  const builds = await solveBuild(items, { level_max: 230, stat_weights: statWeights });
+  for (const tier of ['hard_relic', 'full']) {
+    const relic = builds[tier].items.find((i) => i.is_relic);
+    assert(relic != null, `penalty/${tier}: a relic is selected`);
+    assertEqual(
+      relic && relic.item_id, relicHead.item_id,
+      `penalty/${tier}: AP-advancing HEAD relic beats redundant-AP weapon relic`
+    );
+    const weapon = builds[tier].items.find((i) => i.slot === 'FIRST_WEAPON');
+    assertEqual(
+      weapon && weapon.item_id, legWeapon.item_id,
+      `penalty/${tier}: weapon slot falls back to the legendary`
+    );
+  }
+}
+
+async function testPreviousCapEpicRelic() {
+  section('epic/relic previous level cap eligibility');
+
+  nextId = 5000;
+  // level_max 170: normal window is [155, 170/180], Epics/Relics reach 145.
+  // A 150 relic is outside the normal window but must still compete;
+  // a 150 legendary must not.
+  const currentRelic = makeItem({
+    slot: 'HEAD', level: 170, rarity: 6, is_relic: true,
+    stats: { HP: 100, Fire_Mastery: 50 },
+  });
+  const oldBetterRelic = makeItem({
+    slot: 'HEAD', level: 150, rarity: 6, is_relic: true,
+    stats: { AP: 1, Fire_Mastery: 40 },
+  });
+  const tooOldRelic = makeItem({
+    slot: 'HEAD', level: 140, rarity: 6, is_relic: true,
+    stats: { AP: 2, Fire_Mastery: 200 },
+  });
+  const oldLegendary = makeItem({
+    slot: 'CHEST', level: 150, rarity: 5, stats: { AP: 5, Fire_Mastery: 500 },
+  });
+  const currentChest = makeItem({
+    slot: 'CHEST', level: 170, rarity: 5, stats: { MP: 1, Fire_Mastery: 60 },
+  });
+  const items = [currentRelic, oldBetterRelic, tooOldRelic, oldLegendary, currentChest];
+  const statWeights = { AP: 10.0, MP: 7.0, Fire_Mastery: 2.0 };
+
+  const builds = await solveBuild(items, { level_max: 170, stat_weights: statWeights });
+
+  for (const tier of ['hard_relic', 'full']) {
+    const build = builds[tier];
+    const relic = build.items.find((i) => i.is_relic);
+    assertEqual(
+      relic && relic.item_id, oldBetterRelic.item_id,
+      `prevcap/${tier}: previous-cap relic (150) wins when it fits the build better`
+    );
+    assert(
+      !build.items.some((i) => i.item_id === tooOldRelic.item_id),
+      `prevcap/${tier}: relic two caps back (140) stays ineligible`
+    );
+    assert(
+      !build.items.some((i) => i.item_id === oldLegendary.item_id),
+      `prevcap/${tier}: non-epic/non-relic items keep the normal level window`
+    );
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Integration test with the real items.json
 // ---------------------------------------------------------------------------
@@ -543,8 +658,13 @@ async function testIntegration() {
     for (const item of build.items) {
       if (item.slot === 'PET') continue;
       const cap = [5, 6, 7].includes(item.rarity) ? 240 : 230;
+      // Normal window is level_max - 15; Epics/Relics reach level_max - 25
+      const floor = item.is_epic || item.is_relic ? 205 : 215;
       assert(item.level <= cap, `${label}: item ${item.item_id} level ${item.level} <= ${cap}`);
-      assert(item.level >= 220, `${label}: item ${item.item_id} level ${item.level} >= 220`);
+      assert(
+        item.level >= floor,
+        `${label}: item ${item.item_id} level ${item.level} >= ${floor}`
+      );
     }
 
     // Epic/relic limits per tier
@@ -609,6 +729,8 @@ async function main() {
   await testSyntheticFixture();
   await testParamFilters();
   await testLowLevelAdaptive();
+  await testRedundantMajorStatPenalty();
+  await testPreviousCapEpicRelic();
   await testIntegration();
 
   console.log(`\n${passed} passed, ${failed} failed (${Date.now() - t0} ms total)`);

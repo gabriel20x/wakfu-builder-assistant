@@ -72,8 +72,34 @@ item sets, with identical objective values** (diff 0.0 on every tier).
    intentionally kept dead here (do not "fix" without changing Python parity).
 7. **Not ported** (backend-only concerns): build history persistence
    (`Build` table write in the router), `/history`, `/refresh-items`.
+8. **Epic/Relic redundant major stat penalty** (new behavior, not in Python):
+   an Epic/Relic's AP/MP/Range gets zero objective credit when it does not
+   *exceed* the best value available on non-epic/non-relic items of the same
+   slot (weapons compared within the same handedness). Rationale: the unique
+   Epic/Relic slot should buy something legendaries can't provide — a relic
+   weapon giving the same 1 AP as a legendary weapon was beating relics that
+   raise the build's total AP. Implemented in `computeMajorStatBaselines` /
+   `computeRedundantMajorStatPenalty` (`SETTINGS.REDUNDANT_MAJOR_STAT_PENALTY`),
+   applied in `buildLpModel`. Covered by `testRedundantMajorStatPenalty` in
+   `frontend/tests/solver.test.mjs`.
+9. **Epic/Relic previous-cap eligibility** (new behavior, not in Python):
+   Epics/Relics are eligible down to `level_max - 25` (instead of
+   `level_max - 10`), which reaches exactly one level cap back (caps are 15
+   levels apart). Old caps' Epics/Relics often stay best-in-slot for a build
+   (e.g. Hombreras de Dark Vlad 155 at level_max 170); the solver now lets
+   them compete instead of silently dropping them. Non-epic/non-relic items
+   keep the normal window. Covered by `testPreviousCapEpicRelic`.
+10. **Normal level window widened to 15** (new behavior, not in Python; Python
+    used `level_max - 10`): the eligibility floor for all items is
+    `level_max - levelWindow` with a default of 15 — one full cap step back —
+    overridable per solve via the `level_window` request param. Benchmarked
+    (2 profiles x 5 level caps x 5 tiers x windows 10/15/25/40): widening only
+    adds candidates so the objective never worsens; 15 captured nearly all the
+    gain (+0.5%..+4.4% at level caps 80/110/170/230, 0% at 200), while 25/40
+    mainly grew pool size and solve time (~2x at 25, ~3x at 40) and only the
+    thin `easy` tier kept improving past 15.
 
-Everything else — filtering (level window `[level_max-10, level_max]`,
+Everything else — filtering (level window per deviations 8-10 above,
 +10 for rarity 5/6/7, PET exemption, rarity-2 and "Recuerdo" exclusions),
 adaptive tier rarity rules at level 80, ring duplicate/no-2H-with-off-hand
 pair constraints, the `difficulty_max * 14` aggregate difficulty cap, scoring

@@ -171,6 +171,7 @@ async function solveSingleBuild(eligibleItems, {
  */
 export async function solveBuild(allItems, params = {}) {
   const levelMax = params.level_max != null ? params.level_max : 230;
+  const levelWindow = params.level_window != null ? params.level_window : 15;
   const statWeights =
     params.stat_weights != null ? params.stat_weights : { ...DEFAULT_STAT_WEIGHTS };
   const includePet = params.include_pet != null ? params.include_pet : true;
@@ -192,6 +193,7 @@ export async function solveBuild(allItems, params = {}) {
 
   const eligibleItems = filterEligibleItems(allItems, {
     levelMax,
+    levelWindow,
     includePet,
     includeAccessory,
     onlyDroppable,
