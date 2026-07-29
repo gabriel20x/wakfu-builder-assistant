@@ -102,6 +102,15 @@ a:hover {
   --secondary-20: rgba(76, 175, 80, 0.2);
   --secondary-50: #4caf50;
   --secondary-70: rgba(76, 175, 80, 0.7);
+
+  // Engarces (rune slots). El índice coincide con shardsParameters.color
+  // del gamedata: 0 blanco (comodín), 1 rojo, 2 verde, 3 azul.
+  --rune-white: #d8dee9;
+  --rune-red: #f4574f;
+  --rune-green: #4fc46a;
+  --rune-blue: #43b6f0;
+  --rune-epic: #ff83b8;
+  --rune-relic: #ff73df;
 }
 
 // Utility classes

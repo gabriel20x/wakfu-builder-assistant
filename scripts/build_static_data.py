@@ -9,12 +9,15 @@ Usage:
     python scripts/build_static_data.py [--version 1.92.1.59]
 
 Outputs:
-    frontend/public/data/items.json    - processed equipment items (API ItemResponse shape)
-    frontend/public/data/meta.json     - gamedata version, counts, monster types
+    frontend/public/data/items.json         - processed equipment items (API ItemResponse shape)
+    frontend/public/data/meta.json          - gamedata version, counts, monster types
+    frontend/public/data/runes.json         - enchantment runes (engarces): color, values, restrictions
+    frontend/public/data/sublimations.json  - sublimation scrolls with localized effect templates
 """
 
 import argparse
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -144,6 +147,72 @@ PENALTIES = {
 RARITY_MAP = {1: 1, 2: 3, 3: 4, 4: 5, 5: 6, 6: 6, 7: 7}
 
 RARITY_SCORES = {0: 0, 1: 5, 2: 10, 3: 15, 4: 30, 5: 50, 6: 45, 7: 40}
+
+# ---------------------------------------------------------------------------
+# Enchantment system (engarces): runes and sublimations
+# ---------------------------------------------------------------------------
+
+SUBLIMATION_TYPE_ID = 812   # itemTypeId of sublimation scrolls
+RUNE_TYPE_ID = 811          # itemTypeId of enchantment runes (shards)
+STATE_ACTION_ID = 304       # equipEffect action "applies a state"
+
+# itemProperties.json: 19 = EPIC_GEMMABLE, 20 = RELIC_GEMMABLE (special PvP gear
+# that grants the epic/relic sublimation slot without being epic/relic rarity)
+EPIC_GEMMABLE_PROP = 19
+RELIC_GEMMABLE_PROP = 20
+
+# Deprecated runes still present in gamedata but removed from the live game
+# (single-target / area mastery were merged into the other mastery runes)
+DEPRECATED_RUNE_IDS = {27095, 27096}
+
+# Per-rune-level stat values. Gamedata only ships the shard leveling curves,
+# not the stat amounts, so these come from Wakforge (MIT, Tmktahu/wakforge
+# src/models/useStats.js) which hardcodes the same in-game tables.
+RUNE_VALUES_MASTERY = [1, 3, 4, 6, 7, 10, 15, 19, 24, 30, 33]
+RUNE_VALUES_RESISTANCE = [2, 5, 7, 10, 12, 15, 17, 20, 22, 25, 27]
+RUNE_VALUES_DODGE_LOCK = [3, 6, 9, 12, 15, 21, 30, 39, 48, 60, 66]
+RUNE_VALUES_ELEM_MASTERY = [1, 2, 3, 4, 5, 7, 10, 13, 16, 20, 22]
+RUNE_VALUES_INITIATIVE = [2, 4, 6, 8, 10, 14, 20, 26, 32, 40, 44]
+RUNE_VALUES_HEALTH = [4, 8, 12, 16, 20, 28, 40, 52, 64, 80, 88]
+
+# rune item_id -> (stat key in useStats.js vocabulary, per-level values)
+RUNE_DEFS = {
+    27094: ("Elemental_Mastery", RUNE_VALUES_ELEM_MASTERY),
+    27097: ("Melee_Mastery", RUNE_VALUES_MASTERY),
+    27098: ("Distance_Mastery", RUNE_VALUES_MASTERY),
+    27099: ("Berserk_Mastery", RUNE_VALUES_MASTERY),
+    27100: ("Critical_Mastery", RUNE_VALUES_MASTERY),
+    27101: ("Rear_Mastery", RUNE_VALUES_MASTERY),
+    27102: ("Lock", RUNE_VALUES_DODGE_LOCK),
+    27103: ("Dodge", RUNE_VALUES_DODGE_LOCK),
+    27104: ("Initiative", RUNE_VALUES_INITIATIVE),
+    27105: ("Fire_Resistance", RUNE_VALUES_RESISTANCE),
+    27106: ("Water_Resistance", RUNE_VALUES_RESISTANCE),
+    27107: ("Earth_Resistance", RUNE_VALUES_RESISTANCE),
+    27108: ("Air_Resistance", RUNE_VALUES_RESISTANCE),
+    27109: ("HP", RUNE_VALUES_HEALTH),
+    27110: ("Healing_Mastery", RUNE_VALUES_MASTERY),
+}
+
+# shardsParameters.doubleBonusPosition raw ids -> equipment slot keys
+RAW_SLOT_IDS = {
+    0: "HEAD",
+    3: "SHOULDERS",
+    4: "NECK",
+    5: "CHEST",
+    7: "LEFT_HAND",
+    8: "RIGHT_HAND",
+    10: "BELT",
+    12: "LEGS",
+    13: "BACK",
+    15: "FIRST_WEAPON",
+}
+
+# "stackable up to level N" in the scroll description (es/en), used for max_stack
+MAX_STACK_PATTERNS = [
+    re.compile(r"nivel de (\d+)"),
+    re.compile(r"level of (\d+)"),
+]
 
 
 def load_json(path: Path):
@@ -293,6 +362,139 @@ def build_drop_sources(monster_drops_data, monster_lookup, families):
     return by_item
 
 
+def localized(title: dict, fallback: str = "") -> dict:
+    """Normalize an Ankama title/description block to {en, es, fr}."""
+    title = title or {}
+    en = title.get("en") or title.get("fr") or fallback
+    return {
+        "en": en,
+        "es": title.get("es") or en,
+        "fr": title.get("fr") or en,
+    }
+
+
+def extract_state_effect(item_data: dict):
+    """Return (state_id, state_level) from the first actionId-304 equip effect."""
+    for effect in item_data.get("definition", {}).get("equipEffects", []):
+        effect_def = effect.get("effect", {}).get("definition", {})
+        if effect_def.get("actionId") == STATE_ACTION_ID and effect_def.get("params"):
+            params = effect_def["params"]
+            state_id = int(params[0])
+            state_level = int(params[2]) if len(params) > 2 else 1
+            return state_id, state_level
+    return None, None
+
+
+def build_wakforge_effects(wakforge_dir: Path):
+    """state_id -> {name_key, lines: [{text: {en,es,fr}, indented, nums: {num_N: [per-level]}}]}."""
+    state_data = load_json(wakforge_dir / "state_data.json")
+    translations = {
+        lang: load_json(wakforge_dir / f"{lang}_states.json")
+        for lang in ("en", "es", "fr")
+    }
+
+    def translate(key):
+        return {
+            lang: translations[lang].get(key) or translations["en"].get(key) or ""
+            for lang in ("en", "es", "fr")
+        }
+
+    effects = {}
+    for state in state_data or []:
+        try:
+            state_id = int(state.get("id"))
+        except (TypeError, ValueError):
+            continue
+        lines = []
+        for part in state.get("descriptionData", []):
+            nums = {}
+            for key, per_level in part.items():
+                if key.startswith("num_") and isinstance(per_level, dict):
+                    ordered = sorted(
+                        per_level.items(),
+                        key=lambda kv: int(kv[0].rsplit("_", 1)[1]),
+                    )
+                    nums[key] = [v for _, v in ordered]
+            lines.append({
+                "text": translate(part.get("text", "")),
+                "indented": bool(part.get("indented")),
+                "nums": nums or None,
+            })
+        effects[state_id] = {"lines": lines}
+    return effects
+
+
+def parse_max_stack(description: dict):
+    for lang in ("es", "en"):
+        text = (description or {}).get(lang) or ""
+        for pattern in MAX_STACK_PATTERNS:
+            match = pattern.search(text)
+            if match:
+                return int(match.group(1))
+    return None
+
+
+def build_sublimations(items_data, wakforge_effects, states_by_id):
+    subs = []
+    missing_effects = 0
+    for item_data in items_data:
+        item_def = item_data.get("definition", {}).get("item", {})
+        if item_def.get("baseParameters", {}).get("itemTypeId") != SUBLIMATION_TYPE_ID:
+            continue
+        sub_params = item_def.get("sublimationParameters", {}) or {}
+        state_id, state_level = extract_state_effect(item_data)
+        effect = wakforge_effects.get(state_id) if state_id is not None else None
+        if effect is None:
+            missing_effects += 1
+        state_title = states_by_id.get(state_id)
+        subs.append({
+            "id": item_def.get("id"),
+            "name": localized(item_data.get("title"), f"Sublimation {item_def.get('id')}"),
+            "rarity": item_def.get("baseParameters", {}).get("rarity", 0),
+            "gfx_id": item_def.get("graphicParameters", {}).get("gfxId"),
+            "pattern": sub_params.get("slotColorPattern") or [],
+            "is_epic": bool(sub_params.get("isEpic")),
+            "is_relic": bool(sub_params.get("isRelic")),
+            "state_id": state_id,
+            "state_level": state_level,
+            "max_stack": parse_max_stack(item_data.get("description")),
+            "state_name": localized(state_title) if state_title else None,
+            "effect": effect,
+        })
+    subs.sort(key=lambda s: (s["name"]["es"], s["id"]))
+    return subs, missing_effects
+
+
+def build_runes(items_data):
+    runes = []
+    for item_data in items_data:
+        item_def = item_data.get("definition", {}).get("item", {})
+        item_id = item_def.get("id")
+        shards = item_def.get("shardsParameters")
+        if not shards or item_id in DEPRECATED_RUNE_IDS:
+            continue
+        stat_def = RUNE_DEFS.get(item_id)
+        if not stat_def:
+            print(f"WARNING: rune {item_id} has no stat mapping, skipped")
+            continue
+        stat_key, values = stat_def
+        runes.append({
+            "id": item_id,
+            "name": localized(item_data.get("title"), f"Rune {item_id}"),
+            "color": shards.get("color"),  # 1=red, 2=green, 3=blue
+            "gfx_id": item_def.get("graphicParameters", {}).get("gfxId"),
+            "stat": stat_key,
+            "values": values,  # index = rune level - 1
+            "level_requirements": shards.get("shardLevelRequirement") or [],
+            "double_bonus_slots": [
+                RAW_SLOT_IDS[raw] for raw in (shards.get("doubleBonusPosition") or [])
+                if raw in RAW_SLOT_IDS
+            ],
+        })
+    runes.sort(key=lambda r: (r["color"], r["name"]["es"]))
+    return runes
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--version", default="1.92.1.59")
@@ -313,6 +515,12 @@ def main():
     equipment_types = load_json(gamedata / "equipmentItemTypes.json")
     recipe_results = load_json(gamedata / "recipeResults.json")
     harvest_loots = load_json(gamedata / "harvestLoots.json")
+    states_data = load_json(gamedata / "states.json")
+    wakforge_effects = build_wakforge_effects(WAKFU_DATA / "community-sourced" / "wakforge")
+    states_by_id = {
+        s.get("definition", {}).get("id"): s.get("title")
+        for s in states_data or []
+    }
 
     monster_drops_data = load_json(community / "monsterDrops.json")
     monsters_metadata = load_json(WAKFU_DATA / "processed" / "monsters_metadata.json")
@@ -357,6 +565,11 @@ def main():
         rarity = RARITY_MAP.get(rarity_raw, rarity_raw)
         is_epic = rarity == 7
         is_relic = rarity_raw == 5  # only true Relics, not "Recuerdo" (raw 6)
+
+        shard_slots = item_def.get("baseParameters", {}).get("maximumShardSlotNumber", 0)
+        properties = item_def.get("properties") or []
+        epic_gem_slot = is_epic or EPIC_GEMMABLE_PROP in properties
+        relic_gem_slot = is_relic or RELIC_GEMMABLE_PROP in properties
 
         blocks_second_weapon = (
             slot == "FIRST_WEAPON"
@@ -414,7 +627,10 @@ def main():
             "slot": slot,
             "is_epic": is_epic,
             "is_relic": is_relic,
-            "has_gem_slot": False,
+            "has_gem_slot": epic_gem_slot or relic_gem_slot,
+            "shard_slots": shard_slots,
+            "epic_gem_slot": epic_gem_slot,
+            "relic_gem_slot": relic_gem_slot,
             "blocks_second_weapon": blocks_second_weapon,
             "source_type": source_type,
             "difficulty": difficulty,
@@ -431,10 +647,30 @@ def main():
     with open(items_path, "w", encoding="utf-8") as f:
         json.dump(items_out, f, ensure_ascii=False, separators=(",", ":"))
 
+    sublimations, missing_effects = build_sublimations(
+        items_data, wakforge_effects, states_by_id
+    )
+    sublimations_path = out_dir / "sublimations.json"
+    with open(sublimations_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "attribution": "Effect templates from Tmktahu/wakforge (MIT)",
+            "sublimations": sublimations,
+        }, f, ensure_ascii=False, separators=(",", ":"))
+
+    runes = build_runes(items_data)
+    runes_path = out_dir / "runes.json"
+    with open(runes_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "attribution": "Per-level stat values from Tmktahu/wakforge (MIT)",
+            "runes": runes,
+        }, f, ensure_ascii=False, separators=(",", ":"))
+
     meta = {
         "gamedata_version": args.version,
         "community_data_version": args.community_version,
         "item_count": len(items_out),
+        "sublimation_count": len(sublimations),
+        "rune_count": len(runes),
         "monster_types": sorted(monster_type_counts.keys()),
         "monster_type_counts": dict(sorted(monster_type_counts.items())),
         "status": "completed",
@@ -444,6 +680,9 @@ def main():
 
     size_mb = items_path.stat().st_size / 1024 / 1024
     print(f"Wrote {len(items_out)} items -> {items_path} ({size_mb:.1f} MB)")
+    print(f"Wrote {len(sublimations)} sublimations -> {sublimations_path} "
+          f"({missing_effects} without Wakforge effect template)")
+    print(f"Wrote {len(runes)} runes -> {runes_path}")
     print(f"Monster types: {meta['monster_types']}")
 
 

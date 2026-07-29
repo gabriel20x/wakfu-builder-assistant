@@ -183,6 +183,34 @@
             <span class="bonus-value">+{{ value }}{{ bonusSuffix(statKey) }}</span>
           </div>
         </div>
+
+        <!-- Builds guardadas de este personaje -->
+        <div class="editor-panel section-panel builds-panel">
+          <div class="section-header">
+            <h3>🗂️ {{ t('characters.buildsTitle') }}</h3>
+            <span class="builds-count">{{ characterBuilds.length }}</span>
+          </div>
+
+          <div v-if="!characterBuilds.length" class="empty-bonus">
+            {{ t('characters.noBuilds') }}
+          </div>
+
+          <div
+            v-for="build in characterBuilds"
+            :key="build.id"
+            class="build-row"
+            @click="emit('open-build', build)"
+          >
+            <div class="build-info">
+              <span class="build-name">{{ build.name }}</span>
+              <span class="build-meta">
+                {{ t('characters.level') }} {{ build.config?.level_max || '?' }} ·
+                {{ formatDate(build.saved_at) }}
+              </span>
+            </div>
+            <i class="pi pi-arrow-right" />
+          </div>
+        </div>
       </div>
 
       <!-- Acciones -->
@@ -214,6 +242,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { useI18n } from '../composables/useI18n'
 import { useCharacters } from '../composables/useCharacters'
+import { useBuildPersistence } from '../composables/useBuildPersistence'
 import { getStatLabel, getStatSuffix } from '../composables/useStats'
 import {
   SECTIONS,
@@ -225,10 +254,11 @@ import {
   allocationToBonusStats
 } from '../lib/characteristics'
 
-const emit = defineEmits(['use-in-builder'])
+const emit = defineEmits(['use-in-builder', 'open-build'])
 
 const { t } = useI18n()
 const toast = useToast()
+const { getBuildsForCharacter } = useBuildPersistence()
 const { characters, createCharacter, updateCharacter, deleteCharacter } = useCharacters()
 
 const selectedId = ref(characters.value[0]?.id || null)
@@ -250,6 +280,19 @@ const currentCode = computed(() =>
 const bonusEntries = computed(() =>
   Object.entries(allocationToBonusStats(selected.value?.allocation || {}))
 )
+
+// Builds guardadas asociadas a este personaje, más recientes primero
+const characterBuilds = computed(() => {
+  if (!selected.value) return []
+  return [...getBuildsForCharacter(selected.value.id)].sort(
+    (a, b) => new Date(b.saved_at) - new Date(a.saved_at)
+  )
+})
+
+const formatDate = (iso) => {
+  if (!iso) return ''
+  return new Date(iso).toLocaleDateString()
+}
 
 // Claves especiales que no son stats de equipo — usan etiquetas propias
 const SPECIAL_BONUS_LABELS = {
@@ -694,6 +737,66 @@ const useInBuilder = () => {
       color: #8fd18f;
     }
   }
+}
+
+.builds-panel {
+  .empty-bonus {
+    color: #808a9a;
+    font-size: 0.85rem;
+  }
+
+  .builds-count {
+    padding: 0.1rem 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-60);
+    background: rgba(92, 107, 192, 0.25);
+    border-radius: 10px;
+  }
+}
+
+.build-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.35rem;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+
+  &:hover {
+    background: rgba(92, 107, 192, 0.2);
+    border-color: var(--primary-40);
+  }
+
+  i {
+    color: var(--primary-60);
+    font-size: 0.8rem;
+  }
+}
+
+.build-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.build-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.build-meta {
+  font-size: 0.72rem;
+  color: #808a9a;
 }
 
 .editor-actions {

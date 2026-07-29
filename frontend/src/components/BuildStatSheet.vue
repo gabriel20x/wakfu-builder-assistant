@@ -11,6 +11,18 @@
         <span>{{ t('statsPanel.withBase') }}</span>
       </div>
     </div>
+
+    <!-- Toggle: incluir los bonos de las runas engarzadas -->
+    <div v-if="hasRuneStats" class="stats-toggle-container enchant-toggle-row">
+      <div
+        class="toggle-option"
+        :class="{ active: includeEnchantments }"
+        @click="includeEnchantments = !includeEnchantments"
+      >
+        <i class="pi pi-star"></i>
+        <span>{{ t('enchant.withEnchants') }}</span>
+      </div>
+    </div>
     
     <!-- Main Stats (HP, AP, MP, WP) -->
     <div class="flex justify-content-between w-full px-2 mb-3">
@@ -328,6 +340,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from '../composables/useI18n'
 import { getStatLabel } from '../composables/useStats'
+import { useEnchantments } from '../composables/useEnchantments'
 
 const { t } = useI18n()
 
@@ -345,11 +358,27 @@ const props = defineProps({
   characterBonusStats: {
     type: Object,
     default: null
+  },
+  // Clave de encantamientos de la build mostrada (ver useEnchantments)
+  enchantKey: {
+    type: String,
+    default: null
   }
 })
 
 // Toggle para mostrar stats base o no
 const includeBaseStats = ref(false)
+// Toggle para sumar los bonos de las runas engarzadas
+const includeEnchantments = ref(true)
+
+const { getRuneStats } = useEnchantments()
+
+// Bonos aportados por las runas de la build actual
+const runeStats = computed(() =>
+  props.enchantKey ? getRuneStats(props.enchantKey) : {}
+)
+
+const hasRuneStats = computed(() => Object.keys(runeStats.value).length > 0)
 
 // Calcular stats base del personaje según nivel
 const baseStats = computed(() => {
@@ -366,14 +395,21 @@ const baseStats = computed(() => {
 // Claves especiales de característica que no se suman directamente
 const SPECIAL_BONUS_KEYS = ['HP_Percent', 'Armor_Percent', 'Barrier']
 
-// Stats a mostrar (equipo + base + características si está activado)
+// Stats a mostrar (equipo + runas + base + características, según los toggles)
 const displayStats = computed(() => {
+  const withRunes = { ...props.stats }
+  if (includeEnchantments.value && hasRuneStats.value) {
+    Object.entries(runeStats.value).forEach(([stat, value]) => {
+      withRunes[stat] = (withRunes[stat] || 0) + value
+    })
+  }
+
   if (!includeBaseStats.value) {
-    return props.stats
+    return withRunes
   }
 
   // Combinar stats del equipo con stats base
-  const combined = { ...props.stats }
+  const combined = { ...withRunes }
   Object.keys(baseStats.value).forEach(stat => {
     combined[stat] = (combined[stat] || 0) + baseStats.value[stat]
   })
@@ -568,6 +604,10 @@ const calcResistancePercentage = (resistance) => {
     font-weight: 600;
     box-shadow: 0 0 10px rgba(92, 107, 192, 0.3);
   }
+}
+
+.enchant-toggle-row {
+  margin-top: -0.5rem;
 }
 
 .base-stat-indicator {

@@ -87,14 +87,16 @@ export function getCurrentConfig() {
   return currentConfig.value
 }
 
-// Save a build with name (user saved builds)
-export function saveBuildWithName(builds, config, name) {
+// Save a build with name (user saved builds).
+// `characterId` asocia la build a un personaje de "Mis PJ" (opcional).
+export function saveBuildWithName(builds, config, name, characterId = null) {
   try {
     const buildData = {
       id: Date.now().toString(),
       name: name || `Build ${new Date().toLocaleString()}`,
       builds,
       config,
+      character_id: characterId,
       saved_at: new Date().toISOString(),
       timestamp: new Date().toISOString()
     }
@@ -143,6 +145,25 @@ export function getSavedBuilds() {
   return savedBuilds.value
 }
 
+// Builds asociadas a un personaje concreto
+export function getBuildsForCharacter(characterId) {
+  if (!characterId) return []
+  return savedBuilds.value.filter(b => b.character_id === characterId)
+}
+
+// Asociar (o desasociar, pasando null) una build guardada a un personaje
+export function setBuildCharacter(buildId, characterId) {
+  try {
+    const build = savedBuilds.value.find(b => b.id === buildId)
+    if (build) {
+      build.character_id = characterId
+      localStorage.setItem(STORAGE_KEYS.SAVED_BUILDS, JSON.stringify(savedBuilds.value))
+    }
+  } catch (error) {
+    console.error('Error linking build to character:', error)
+  }
+}
+
 // Aliases for BuildViewer compatibility
 export function getBuildHistory() {
   return getSavedBuilds()
@@ -187,6 +208,8 @@ export function useBuildPersistence() {
     deleteSavedBuild,
     renameSavedBuild,
     getSavedBuilds,
+    getBuildsForCharacter,
+    setBuildCharacter,
     getBuildHistory,
     deleteBuildFromHistory,
     renameBuildInHistory,

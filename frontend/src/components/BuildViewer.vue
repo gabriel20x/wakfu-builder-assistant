@@ -43,6 +43,11 @@
               <h3>{{ build.name || t('myBuilds.unnamedBuild') }}</h3>
               <span class="build-date">{{ formatDate(build.saved_at) }}</span>
             </div>
+
+            <div v-if="characterNameFor(build)" class="character-badge">
+              <i class="pi pi-user"></i>
+              <span>{{ characterNameFor(build) }}</span>
+            </div>
             
             <div class="build-info">
               <div v-if="build.config?.selectedClass && build.config?.selectedRole" class="build-preset">
@@ -131,23 +136,23 @@
           <!-- Builds Tabs -->
           <p-tabView class="builds-tabview" v-model:activeIndex="activeTabIndex">
             <p-tabPanel :header="t('builds.easy')">
-              <BuildResult :build="selectedBuild.builds.easy" :difficulty="t('builds.easy')" :show-stats="false" />
+              <BuildResult :build="selectedBuild.builds.easy" :tier="'easy'" :build-id="selectedBuild.id" :difficulty="t('builds.easy')" :show-stats="false" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.medium')">
-              <BuildResult :build="selectedBuild.builds.medium" :difficulty="t('builds.medium')" :show-stats="false" />
+              <BuildResult :build="selectedBuild.builds.medium" :tier="'medium'" :build-id="selectedBuild.id" :difficulty="t('builds.medium')" :show-stats="false" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardEpic')">
-              <BuildResult :build="selectedBuild.builds.hard_epic" :difficulty="t('builds.hardEpic')" :show-stats="false" />
+              <BuildResult :build="selectedBuild.builds.hard_epic" :tier="'hard_epic'" :build-id="selectedBuild.id" :difficulty="t('builds.hardEpic')" :show-stats="false" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardRelic')">
-              <BuildResult :build="selectedBuild.builds.hard_relic" :difficulty="t('builds.hardRelic')" :show-stats="false" />
+              <BuildResult :build="selectedBuild.builds.hard_relic" :tier="'hard_relic'" :build-id="selectedBuild.id" :difficulty="t('builds.hardRelic')" :show-stats="false" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.full')">
-              <BuildResult :build="selectedBuild.builds.full" :difficulty="t('builds.full')" :show-stats="false" />
+              <BuildResult :build="selectedBuild.builds.full" :tier="'full'" :build-id="selectedBuild.id" :difficulty="t('builds.full')" :show-stats="false" />
             </p-tabPanel>
           </p-tabView>
         </div>
@@ -170,10 +175,11 @@
             />
           </div>
           
-          <BuildStatSheet 
-            v-if="currentBuildStats" 
-            :stats="currentBuildStats" 
+          <BuildStatSheet
+            v-if="currentBuildStats"
+            :stats="currentBuildStats"
             :character-level="selectedBuild.config?.level_max || 230"
+            :enchant-key="currentEnchantKey"
           />
         </div>
       </div>
@@ -227,6 +233,8 @@ import { useToast } from 'primevue/usetoast'
 import { useI18n } from '../composables/useI18n'
 import { useLanguage } from '../composables/useLanguage'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
+import { useCharacters } from '../composables/useCharacters'
+import { buildKeyFor } from '../composables/useEnchantments'
 import BuildResult from './BuildResult.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
 import EquipmentSlots from './EquipmentSlots.vue'
@@ -235,6 +243,7 @@ const emit = defineEmits(['go-to-builder', 'load-build'])
 const toast = useToast()
 const { t } = useI18n()
 const { getItemName } = useLanguage()
+const { characters } = useCharacters()
 const { getBuildHistory, deleteBuildFromHistory, renameBuildInHistory } = useBuildPersistence()
 
 const buildHistory = ref([])
@@ -258,11 +267,18 @@ const currentBuildStats = computed(() => {
 
 const currentBuildItems = computed(() => {
   if (!selectedBuild.value) return []
-  
+
   const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
   const activeBuildType = buildTypes[activeTabIndex.value]
-  
+
   return selectedBuild.value.builds[activeBuildType]?.items || []
+})
+
+// Clave de encantamientos del tier visible (los engarces son por build y tier)
+const currentEnchantKey = computed(() => {
+  if (!selectedBuild.value) return null
+  const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+  return buildKeyFor(selectedBuild.value.id, buildTypes[activeTabIndex.value])
 })
 
 const loadBuildHistory = () => {
@@ -321,6 +337,16 @@ const formatDate = (timestamp) => {
 const countStats = (statWeights) => {
   if (!statWeights) return 0
   return Object.keys(statWeights).length
+}
+
+// Nombre del personaje asociado a la build (si sigue existiendo).
+// Las builds antiguas no tienen character_id: se cae al nombre del snapshot.
+const characterNameFor = (build) => {
+  if (build.character_id) {
+    const character = characters.value.find(c => c.id === build.character_id)
+    if (character) return character.name
+  }
+  return build.config?.active_character?.name || null
 }
 
 const confirmDelete = (build) => {
@@ -688,7 +714,30 @@ const escapeHtml = (str) => {
       white-space: nowrap;
     }
   }
-  
+
+  .character-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.72rem;
+    color: var(--primary-60);
+    background: rgba(92, 107, 192, 0.22);
+    border-radius: 10px;
+
+    i {
+      font-size: 0.65rem;
+    }
+
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
   .build-info {
     display: flex;
     flex-direction: column;

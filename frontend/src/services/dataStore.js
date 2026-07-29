@@ -12,6 +12,8 @@ const METADATA_OVERLAY_KEY = 'wakfu_item_metadata_overrides_v1'
 let itemsPromise = null
 let metaPromise = null
 let itemsById = null
+let runesPromise = null
+let sublimationsPromise = null
 
 const baseUrl = import.meta.env.BASE_URL || '/'
 
@@ -38,6 +40,34 @@ export function loadMeta() {
     metaPromise = fetchJson('data/meta.json')
   }
   return metaPromise
+}
+
+/** Runas de encantamiento, indexadas por id además de la lista ordenada. */
+export function loadRunes() {
+  if (!runesPromise) {
+    runesPromise = fetchJson('data/runes.json').then((doc) => {
+      const runes = doc.runes || []
+      return { runes, runesById: Object.fromEntries(runes.map((r) => [r.id, r])) }
+    })
+  }
+  return runesPromise
+}
+
+/** Sublimaciones, separadas en normales (con patrón de colores) y épicas/relicarias. */
+export function loadSublimations() {
+  if (!sublimationsPromise) {
+    sublimationsPromise = fetchJson('data/sublimations.json').then((doc) => {
+      const all = doc.sublimations || []
+      return {
+        all,
+        byId: Object.fromEntries(all.map((s) => [s.id, s])),
+        normal: all.filter((s) => s.pattern.length > 0),
+        epic: all.filter((s) => s.is_epic),
+        relic: all.filter((s) => s.is_relic),
+      }
+    })
+  }
+  return sublimationsPromise
 }
 
 export async function getItemById(itemId) {

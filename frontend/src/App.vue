@@ -65,6 +65,7 @@
       <MyCharacters
         v-else-if="currentView === 'characters'"
         @use-in-builder="handleUseCharacter"
+        @open-build="handleLoadBuild"
       />
       <ItemMetadataAdmin
         v-else-if="currentView === 'metadata'"

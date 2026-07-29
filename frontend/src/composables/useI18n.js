@@ -46,6 +46,8 @@ const translations = {
     'characters.noBonus': 'Asigna puntos para ver los bonos.',
     'characters.appliedToBuilder': 'Personaje aplicado al generador',
     'characters.clearFromBuilder': 'Quitar personaje',
+    'characters.buildsTitle': 'Builds de este personaje',
+    'characters.noBuilds': 'Aún no has guardado builds para este personaje. Genera una y guárdala con el personaje aplicado.',
 
     // Características (aptitudes)
     'charac.section.intelligence': 'Inteligencia',
@@ -546,7 +548,38 @@ const translations = {
     'slot.MOUNT': 'Montura',
     
     // Item
-    'item.noStats': 'Sin stats'
+    'item.noStats': 'Sin stats',
+
+    // Encantamientos (engarces)
+    'enchant.tab': 'Encantamientos',
+    'enchant.title': 'Encantamientos',
+    'enchant.loading': 'Cargando runas y sublimaciones…',
+    'enchant.myRunes': 'Mis runas',
+    'enchant.runes': 'Runas',
+    'enchant.sublimations': 'Sublimaciones',
+    'enchant.search': 'Buscar…',
+    'enchant.runeLevel': 'Nivel',
+    'enchant.subSlot': 'Sublimación',
+    'enchant.epicSub': 'Épica',
+    'enchant.relicSub': 'Relicaria',
+    'enchant.epicShort': 'ÉPICA',
+    'enchant.relicShort': 'RELIQUIA',
+    'enchant.emptySlot': 'Engarce vacío',
+    'enchant.subMismatch': 'La combinación de colores no coincide',
+    'enchant.pickSlotFirst': 'Selecciona un objeto o un engarce.',
+    'enchant.pickRuneFor': 'Runa para: {slot}',
+    'enchant.pickSubFor': 'Sublimación para: {slot}',
+    'enchant.pickEpic': 'Elige una sublimación épica.',
+    'enchant.pickRelic': 'Elige una sublimación relicaria.',
+    'enchant.doubleBonus': 'Bono duplicado en este slot',
+    'enchant.maxStack': 'Máx: {n}',
+    'enchant.noItems': 'Esta build no tiene objetos encantables.',
+    'enchant.notEnchantable': 'Sin engarces (el juego no permite encantarlos):',
+    'enchant.noResults': 'No se encontraron sublimaciones.',
+    'enchant.clearAll': 'Borrar todo',
+    'enchant.confirmClear': '¿Borrar todos los encantamientos de esta build?',
+    'enchant.withEnchants': 'Con encantamientos',
+    'enchant.activeSubs': 'Sublimaciones activas'
   },
   en: {
     // Header
@@ -589,6 +622,8 @@ const translations = {
     'characters.noBonus': 'Assign points to see the bonuses.',
     'characters.appliedToBuilder': 'Character applied to the generator',
     'characters.clearFromBuilder': 'Remove character',
+    'characters.buildsTitle': 'Builds for this character',
+    'characters.noBuilds': 'No saved builds for this character yet. Generate one and save it with the character applied.',
 
     // Characteristics (aptitudes)
     'charac.section.intelligence': 'Intelligence',
@@ -1089,7 +1124,38 @@ const translations = {
     'slot.MOUNT': 'Mount',
     
     // Item
-    'item.noStats': 'No stats'
+    'item.noStats': 'No stats',
+
+    // Enchantments (rune sockets)
+    'enchant.tab': 'Enchantments',
+    'enchant.title': 'Enchantments',
+    'enchant.loading': 'Loading runes and sublimations…',
+    'enchant.myRunes': 'My runes',
+    'enchant.runes': 'Runes',
+    'enchant.sublimations': 'Sublimations',
+    'enchant.search': 'Search…',
+    'enchant.runeLevel': 'Level',
+    'enchant.subSlot': 'Sublimation',
+    'enchant.epicSub': 'Epic',
+    'enchant.relicSub': 'Relic',
+    'enchant.epicShort': 'EPIC',
+    'enchant.relicShort': 'RELIC',
+    'enchant.emptySlot': 'Empty socket',
+    'enchant.subMismatch': 'Color combination does not match',
+    'enchant.pickSlotFirst': 'Select an item or a socket.',
+    'enchant.pickRuneFor': 'Rune for: {slot}',
+    'enchant.pickSubFor': 'Sublimation for: {slot}',
+    'enchant.pickEpic': 'Choose an epic sublimation.',
+    'enchant.pickRelic': 'Choose a relic sublimation.',
+    'enchant.doubleBonus': 'Bonus doubled on this slot',
+    'enchant.maxStack': 'Max: {n}',
+    'enchant.noItems': 'This build has no enchantable items.',
+    'enchant.notEnchantable': 'No sockets (the game does not allow enchanting these):',
+    'enchant.noResults': 'No sublimations found.',
+    'enchant.clearAll': 'Clear all',
+    'enchant.confirmClear': 'Clear every enchantment in this build?',
+    'enchant.withEnchants': 'With enchantments',
+    'enchant.activeSubs': 'Active sublimations'
   },
   fr: {
     // Header
@@ -1132,6 +1198,8 @@ const translations = {
     'characters.noBonus': 'Attribue des points pour voir les bonus.',
     'characters.appliedToBuilder': 'Personnage appliqué au générateur',
     'characters.clearFromBuilder': 'Retirer le personnage',
+    'characters.buildsTitle': 'Builds de ce personnage',
+    'characters.noBuilds': 'Aucun build enregistré pour ce personnage. Générez-en un et sauvegardez-le avec le personnage appliqué.',
 
     // Caractéristiques (aptitudes)
     'charac.section.intelligence': 'Intelligence',
@@ -1586,7 +1654,38 @@ const translations = {
     'slot.MOUNT': 'Monture',
     
     // Item
-    'item.noStats': 'Aucune stat'
+    'item.noStats': 'Aucune stat',
+
+    // Enchantements (châsses)
+    'enchant.tab': 'Enchantements',
+    'enchant.title': 'Enchantements',
+    'enchant.loading': 'Chargement des runes et sublimations…',
+    'enchant.myRunes': 'Mes runes',
+    'enchant.runes': 'Runes',
+    'enchant.sublimations': 'Sublimations',
+    'enchant.search': 'Rechercher…',
+    'enchant.runeLevel': 'Niveau',
+    'enchant.subSlot': 'Sublimation',
+    'enchant.epicSub': 'Épique',
+    'enchant.relicSub': 'Relique',
+    'enchant.epicShort': 'ÉPIQUE',
+    'enchant.relicShort': 'RELIQUE',
+    'enchant.emptySlot': 'Châsse vide',
+    'enchant.subMismatch': 'La combinaison de couleurs ne correspond pas',
+    'enchant.pickSlotFirst': 'Sélectionne un objet ou une châsse.',
+    'enchant.pickRuneFor': 'Rune pour : {slot}',
+    'enchant.pickSubFor': 'Sublimation pour : {slot}',
+    'enchant.pickEpic': 'Choisis une sublimation épique.',
+    'enchant.pickRelic': 'Choisis une sublimation relique.',
+    'enchant.doubleBonus': 'Bonus doublé sur cet emplacement',
+    'enchant.maxStack': 'Max : {n}',
+    'enchant.noItems': 'Ce build n\'a pas d\'objets enchantables.',
+    'enchant.notEnchantable': 'Sans châsses (le jeu ne permet pas de les enchanter) :',
+    'enchant.noResults': 'Aucune sublimation trouvée.',
+    'enchant.clearAll': 'Tout effacer',
+    'enchant.confirmClear': 'Effacer tous les enchantements de ce build ?',
+    'enchant.withEnchants': 'Avec enchantements',
+    'enchant.activeSubs': 'Sublimations actives'
   }
 }
 

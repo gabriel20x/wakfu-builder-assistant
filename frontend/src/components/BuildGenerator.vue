@@ -280,23 +280,23 @@
         <div v-else-if="builds" class="builds-container">
           <p-tabView class="builds-tabview" v-model:activeIndex="activeTabIndex">
             <p-tabPanel :header="t('builds.easy')">
-              <BuildResult :build="builds.easy" :difficulty="t('builds.easy')" :show-stats="false" @edit-metadata="onEditMetadata" />
+              <BuildResult :build="builds.easy" :tier="'easy'" :difficulty="t('builds.easy')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.medium')">
-              <BuildResult :build="builds.medium" :difficulty="t('builds.medium')" :show-stats="false" @edit-metadata="onEditMetadata" />
+              <BuildResult :build="builds.medium" :tier="'medium'" :difficulty="t('builds.medium')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardEpic')">
-              <BuildResult :build="builds.hard_epic" :difficulty="t('builds.hardEpic')" :show-stats="false" @edit-metadata="onEditMetadata" />
+              <BuildResult :build="builds.hard_epic" :tier="'hard_epic'" :difficulty="t('builds.hardEpic')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.hardRelic')">
-              <BuildResult :build="builds.hard_relic" :difficulty="t('builds.hardRelic')" :show-stats="false" @edit-metadata="onEditMetadata" />
+              <BuildResult :build="builds.hard_relic" :tier="'hard_relic'" :difficulty="t('builds.hardRelic')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
             
             <p-tabPanel :header="t('builds.full')">
-              <BuildResult :build="builds.full" :difficulty="t('builds.full')" :show-stats="false" @edit-metadata="onEditMetadata" />
+              <BuildResult :build="builds.full" :tier="'full'" :difficulty="t('builds.full')" :show-stats="false" @edit-metadata="onEditMetadata" />
             </p-tabPanel>
           </p-tabView>
         </div>
@@ -331,6 +331,7 @@
             :stats="currentBuildStats"
             :character-level="activeCharacter?.level || characterLevel"
             :character-bonus-stats="characterBonusStats"
+            :enchant-key="currentEnchantKey"
           />
         </div>
       </div>
@@ -353,6 +354,7 @@ import { allocationToBonusStats } from '../lib/characteristics'
 import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import { useIgnoredItems } from '../composables/useIgnoredItems'
+import { useEnchantments, buildKeyFor } from '../composables/useEnchantments'
 import BuildResult from './BuildResult.vue'
 import StatWeightInput from './StatWeightInput.vue'
 import ElementPreferences from './ElementPreferences.vue'
@@ -373,6 +375,7 @@ const {
   saveBuildWithName 
 } = useBuildPersistence()
 const { ignoredItemIds } = useIgnoredItems()
+const { copyEnchantments } = useEnchantments()
 
 const emit = defineEmits(['edit-metadata'])
 
@@ -548,11 +551,18 @@ const currentBuildStats = computed(() => {
 
 const currentBuildItems = computed(() => {
   if (!builds.value) return []
-  
+
   const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
   const activeBuildType = buildTypes[activeTabIndex.value]
-  
+
   return builds.value[activeBuildType]?.items || []
+})
+
+// Clave de encantamientos del tier visible. La build recién generada aún no
+// tiene id, así que usa la clave 'current' hasta que se guarde con nombre.
+const currentEnchantKey = computed(() => {
+  const buildTypes = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+  return buildKeyFor(null, buildTypes[activeTabIndex.value])
 })
 
 // Category collapse state
@@ -835,11 +845,26 @@ const saveCurrentBuildWithName = () => {
       monster_types: selectedMonsterTypes.value,
       selectedClass: selectedClass.value,
       selectedRole: selectedRole.value,
-      active_tab_index: activeTabIndex.value
+      active_tab_index: activeTabIndex.value,
+      active_character: activeCharacter.value
     }
-    
-    saveBuildWithName(builds.value, config, name)
-    
+
+    const saved = saveBuildWithName(
+      builds.value,
+      config,
+      name,
+      activeCharacter.value?.id || null
+    )
+
+    // Los engarces se editaron sobre la clave 'current': trasladarlos a la
+    // build recién guardada para que sobrevivan al cambio de identidad.
+    if (saved) {
+      const tiers = ['easy', 'medium', 'hard_epic', 'hard_relic', 'full']
+      tiers.forEach((tier) => {
+        copyEnchantments(buildKeyFor(null, tier), buildKeyFor(saved.id, tier))
+      })
+    }
+
     toast.add({
       severity: 'success',
       summary: t('builds.buildSaved'),

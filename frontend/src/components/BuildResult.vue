@@ -14,6 +14,21 @@
         <BuildStatSheet :stats="build.total_stats" />
       </div>
 
+      <!-- Enchantments (engarces) -->
+      <div class="enchant-section">
+        <button class="enchant-toggle" @click="showEnchantments = !showEnchantments">
+          <i :class="showEnchantments ? 'pi pi-chevron-down' : 'pi pi-chevron-right'" />
+          <span>{{ t('enchant.title') }}</span>
+          <span v-if="enchantSummary" class="enchant-summary">{{ enchantSummary }}</span>
+        </button>
+
+        <EnchantmentPanel
+          v-if="showEnchantments"
+          :items="build.items || []"
+          :build-key="enchantKey"
+        />
+      </div>
+
       <!-- Items -->
       <div class="items-section">
         <h4>Items Recomendados ({{ build.items?.length || 0 }})</h4>
@@ -36,9 +51,12 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import ItemCard from './ItemCard.vue'
 import BuildStatSheet from './BuildStatSheet.vue'
+import EnchantmentPanel from './EnchantmentPanel.vue'
+import { useI18n } from '../composables/useI18n'
+import { useEnchantments, buildKeyFor } from '../composables/useEnchantments'
 
 const props = defineProps({
   build: {
@@ -52,10 +70,39 @@ const props = defineProps({
   showStats: {
     type: Boolean,
     default: true
+  },
+  // Identificadores para persistir los engarces de esta build/tier
+  buildId: {
+    type: String,
+    default: null
+  },
+  tier: {
+    type: String,
+    default: null
   }
 })
 
 const emit = defineEmits(['edit-metadata'])
+
+const { t } = useI18n()
+const { getRuneStats, getActiveSublimations } = useEnchantments()
+
+const showEnchantments = ref(false)
+
+const enchantKey = computed(() =>
+  buildKeyFor(props.buildId, props.tier || props.build?.build_type)
+)
+
+const enchantSummary = computed(() => {
+  const runeStats = getRuneStats(enchantKey.value)
+  const subs = getActiveSublimations(enchantKey.value)
+  const runeCount = Object.keys(runeStats).length
+  if (!runeCount && !subs.length) return ''
+  const parts = []
+  if (runeCount) parts.push(`${runeCount} ${t('enchant.runes').toLowerCase()}`)
+  if (subs.length) parts.push(`${subs.length} ${t('enchant.sublimations').toLowerCase()}`)
+  return parts.join(' · ')
+})
 
 const difficultyClass = computed(() => {
   const diff = props.build.total_difficulty || 0
@@ -155,6 +202,44 @@ const onEditMetadata = (item) => {
     color: #fff;
     font-size: 1.1rem;
   }
+}
+
+.enchant-section {
+  margin-bottom: 1.5rem;
+}
+
+.enchant-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  background: rgba(92, 107, 192, 0.15);
+  border: 1px solid var(--highlight-50);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+
+  &:hover {
+    background: rgba(92, 107, 192, 0.28);
+  }
+
+  i {
+    font-size: 0.8rem;
+    color: var(--primary-60);
+  }
+}
+
+.enchant-summary {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--primary-60);
 }
 
 .items-grid {

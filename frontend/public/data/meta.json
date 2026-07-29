@@ -2,6 +2,8 @@
   "gamedata_version": "1.92.1.59",
   "community_data_version": "1.90.1.43",
   "item_count": 7920,
+  "sublimation_count": 467,
+  "rune_count": 15,
   "monster_types": [
     "archmonster",
     "boss",
