@@ -57,9 +57,9 @@ const translations = {
     // Element Preferences
     'elements.title': 'Preferencias de Elementos',
     'elements.damagePrefs': 'Elementos de Daño',
-    'elements.damageHelp': 'Prioridad para stats de dominio elemental',
+    'elements.damageHelp': 'Prioridad para stats de dominio elemental. Se ordena automáticamente según los pesos de maestría; arrastra para desempatar.',
     'elements.resistancePrefs': 'Elementos de Resistencia',
-    'elements.resistanceHelp': 'Prioridad para stats de resistencia elemental',
+    'elements.resistanceHelp': 'Prioridad para stats de resistencia elemental. Se ordena automáticamente según los pesos de resistencia; arrastra para desempatar.',
     
     // Results Panel
     'results.title': 'Items de la Build',
@@ -530,9 +530,9 @@ const translations = {
     // Element Preferences
     'elements.title': 'Element Preferences',
     'elements.damagePrefs': 'Damage Elements',
-    'elements.damageHelp': 'Priority for elemental mastery stats',
+    'elements.damageHelp': 'Priority for elemental mastery stats. Auto-ordered by mastery weights; drag to break ties.',
     'elements.resistancePrefs': 'Resistance Elements',
-    'elements.resistanceHelp': 'Priority for elemental resistance stats',
+    'elements.resistanceHelp': 'Priority for elemental resistance stats. Auto-ordered by resistance weights; drag to break ties.',
     
     // Results Panel
     'results.title': 'Build Items',
@@ -1003,9 +1003,9 @@ const translations = {
     // Element Preferences
     'elements.title': 'Préférences d\'Éléments',
     'elements.damagePrefs': 'Éléments de Dégâts',
-    'elements.damageHelp': 'Priorité pour les stats de maîtrise élémentaire',
+    'elements.damageHelp': 'Priorité pour les stats de maîtrise élémentaire. Ordre automatique selon les poids de maîtrise ; glissez pour départager.',
     'elements.resistancePrefs': 'Éléments de Résistance',
-    'elements.resistanceHelp': 'Priorité pour les stats de résistance élémentaire',
+    'elements.resistanceHelp': 'Priorité pour les stats de résistance élémentaire. Ordre automatique selon les poids de résistance ; glissez pour départager.',
     
     // Results Panel
     'results.title': 'Items du Build',

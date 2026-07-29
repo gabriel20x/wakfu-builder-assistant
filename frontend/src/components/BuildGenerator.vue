@@ -327,7 +327,7 @@
 </template>
 
 <script setup>
-import { ref, computed, reactive, onMounted, watch } from 'vue'
+import { ref, computed, reactive, onMounted, watch, nextTick } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
 import { STAT_NAMES, getStatLabel } from '../composables/useStats'
@@ -381,6 +381,9 @@ onMounted(async () => {
   // Restore last generated build + config
   const persistedConfig = getCurrentConfig()
   const persistedBuild = getCurrentBuild()
+  // Note: preference sync stays active here on purpose — persisted configs may
+  // carry an element order that contradicts the weights (the pre-sync bug);
+  // letting the watcher run after restore self-heals them.
 
   if (persistedConfig) {
     // Basic fields
@@ -581,6 +584,50 @@ watch(() => allStats.value.map(s => ({ key: s.key, enabled: s.enabled, weight: s
   saveCurrentConfig({ stat_weights: weights })
 }, { deep: true })
 
+// Auto-sync element preference order with elemental stat weights.
+// Random-element stats ("Mastery of 2 random elements") resolve onto the first
+// N elements of the preference list, so the list must follow the weights or
+// the solver undervalues those items. Ties and disabled elements keep their
+// current (drag-and-drop) order; programmatic loads (presets, restores) set
+// explicit preferences and suspend the sync for that tick.
+let suppressPreferenceSync = false
+
+const elementWeightGetter = (suffix) => (element) => {
+  const stat = statGroups.masteries.find(s => s.key === `${element}_${suffix}`)
+  return stat && stat.enabled && stat.weight > 0 ? stat.weight : 0
+}
+
+const reorderByWeights = (preferencesRef, weightOf) => {
+  const current = preferencesRef.value
+  const reordered = [...current].sort((a, b) => weightOf(b) - weightOf(a))
+  if (reordered.some((el, i) => el !== current[i])) {
+    preferencesRef.value = reordered
+  }
+}
+
+const syncPreferencesFromWeights = () => {
+  reorderByWeights(damagePreferences, elementWeightGetter('Mastery'))
+  reorderByWeights(resistancePreferences, elementWeightGetter('Resistance'))
+}
+
+const suspendPreferenceSync = () => {
+  suppressPreferenceSync = true
+  nextTick(() => { suppressPreferenceSync = false })
+}
+
+watch(
+  () => ['Fire', 'Water', 'Earth', 'Air'].flatMap(el =>
+    ['Mastery', 'Resistance'].map(suffix => {
+      const stat = statGroups.masteries.find(s => s.key === `${el}_${suffix}`)
+      return stat ? `${stat.key}:${stat.enabled}:${stat.weight}` : ''
+    })
+  ).join('|'),
+  () => {
+    if (suppressPreferenceSync) return
+    syncPreferencesFromWeights()
+  }
+)
+
 // Total count of available stats
 const totalStatsCount = computed(() => {
   return allStats.value.length
@@ -623,7 +670,10 @@ const clearAllStats = () => {
 // Apply preset from ClassPresetSelector
 const onPresetApplied = (preset) => {
   const { weights, damagePreferences: dmgPrefs, resistancePreferences: resPrefs, className, roleName } = preset
-  
+
+  // Presets define their own element order; don't auto-reorder it
+  suspendPreferenceSync()
+
   // Apply stat weights
   allStats.value.forEach(stat => {
     if (weights[stat.key]) {
@@ -797,7 +847,10 @@ const scrollToItem = (item) => {
 
 const loadBuild = async (buildData) => {
   console.log('Loading build:', buildData)
-  
+
+  // Saved builds carry explicit preferences; don't auto-reorder them
+  suspendPreferenceSync()
+
   // Close modal
   showHistoryModal.value = false
   
