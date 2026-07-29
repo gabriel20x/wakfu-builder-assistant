@@ -76,14 +76,14 @@
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/water_coin.png" />
             <span class="ml-1">{{ t('element.Water') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ stats.Water_Mastery || 0 }}</span>
+            <span>{{ displayStats.Water_Mastery || 0 }}</span>
           </div>
 
           <div class="stat-block pr-2">
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/air_coin.png" />
             <span class="ml-1">{{ t('element.Air') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ stats.Air_Mastery || 0 }}</span>
+            <span>{{ displayStats.Air_Mastery || 0 }}</span>
           </div>
         </div>
         <div class="flex flex-column flex-grow-1" style="max-width: 50%">
@@ -91,14 +91,14 @@
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/earth_coin.png" />
             <span class="ml-1">{{ t('element.Earth') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ stats.Earth_Mastery || 0 }}</span>
+            <span>{{ displayStats.Earth_Mastery || 0 }}</span>
           </div>
 
           <div class="stat-block pr-2">
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/fire_coin.png" />
             <span class="ml-1">{{ t('element.Fire') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ stats.Fire_Mastery || 0 }}</span>
+            <span>{{ displayStats.Fire_Mastery || 0 }}</span>
           </div>
         </div>
       </div>
@@ -110,14 +110,14 @@
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/water_coin.png" />
             <span class="ml-1">{{ t('element.Water') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ calcResistancePercentage(stats.Water_Resistance) }}% ({{ stats.Water_Resistance || 0 }})</span>
+            <span>{{ calcResistancePercentage(displayStats.Water_Resistance) }}% ({{ displayStats.Water_Resistance || 0 }})</span>
           </div>
 
           <div class="stat-block pr-2">
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/air_coin.png" />
             <span class="ml-1">{{ t('element.Air') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ calcResistancePercentage(stats.Air_Resistance) }}% ({{ stats.Air_Resistance || 0 }})</span>
+            <span>{{ calcResistancePercentage(displayStats.Air_Resistance) }}% ({{ displayStats.Air_Resistance || 0 }})</span>
           </div>
         </div>
         <div class="flex flex-column flex-grow-1" style="max-width: 50%">
@@ -125,14 +125,14 @@
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/earth_coin.png" />
             <span class="ml-1">{{ t('element.Earth') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ calcResistancePercentage(stats.Earth_Resistance) }}% ({{ stats.Earth_Resistance || 0 }})</span>
+            <span>{{ calcResistancePercentage(displayStats.Earth_Resistance) }}% ({{ displayStats.Earth_Resistance || 0 }})</span>
           </div>
 
           <div class="stat-block pr-2">
             <p-image class="stat-icon element" src="https://tmktahu.github.io/WakfuAssets/statistics/fire_coin.png" />
             <span class="ml-1">{{ t('element.Fire') }}</span>
             <div class="flex-grow-1" />
-            <span>{{ calcResistancePercentage(stats.Fire_Resistance) }}% ({{ stats.Fire_Resistance || 0 }})</span>
+            <span>{{ calcResistancePercentage(displayStats.Fire_Resistance) }}% ({{ displayStats.Fire_Resistance || 0 }})</span>
           </div>
         </div>
       </div>
@@ -146,7 +146,7 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/damage_inflicted.png" />
               <span class="ml-1">{{ getStatLabel('Damage_Inflicted') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Damage_Inflicted || 0 }}%</span>
+              <span>{{ displayStats.Damage_Inflicted || 0 }}%</span>
             </div>
 
             <div class="stat-block pr-2">
@@ -165,28 +165,28 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/initiative.png" />
               <span class="ml-1">{{ getStatLabel('Initiative') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Initiative || 0 }}</span>
+              <span>{{ displayStats.Initiative || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/dodge.png" />
               <span class="ml-1">{{ getStatLabel('Dodge') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Dodge || 0 }}</span>
+              <span>{{ displayStats.Dodge || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/wisdom.png" />
               <span class="ml-1">{{ getStatLabel('Wisdom') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Wisdom || 0 }}</span>
+              <span>{{ displayStats.Wisdom || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/control.png" />
               <span class="ml-1">{{ getStatLabel('Control') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Control || 0 }}</span>
+              <span>{{ displayStats.Control || 0 }}</span>
             </div>
           </div>
           <div class="flex flex-column flex-grow-1" style="max-width: 50%">
@@ -194,42 +194,42 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/heals_performed.png" />
               <span class="ml-1">{{ getStatLabel('Heals_Performed') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Heals_Performed || 0 }}%</span>
+              <span>{{ displayStats.Heals_Performed || 0 }}%</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/block.png" />
               <span class="ml-1">{{ getStatLabel('Block') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Block || 0 }}%</span>
+              <span>{{ displayStats.Block || 0 }}%</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/range.png" />
               <span class="ml-1">{{ getStatLabel('Range') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Range || 0 }}</span>
+              <span>{{ displayStats.Range || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/lock.png" />
               <span class="ml-1">{{ getStatLabel('Lock') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Lock || 0 }}</span>
+              <span>{{ displayStats.Lock || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/prospecting.png" />
               <span class="ml-1">{{ getStatLabel('Prospecting') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Prospecting || 0 }}</span>
+              <span>{{ displayStats.Prospecting || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/force_of_will.png" />
               <span class="ml-1">{{ getStatLabel('Force_Of_Will') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Force_Of_Will || 0 }}</span>
+              <span>{{ displayStats.Force_Of_Will || 0 }}</span>
             </div>
           </div>
         </div>
@@ -244,42 +244,42 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/critical_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Critical_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Critical_Mastery || 0 }}</span>
+              <span>{{ displayStats.Critical_Mastery || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/rear_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Rear_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Rear_Mastery || 0 }}</span>
+              <span>{{ displayStats.Rear_Mastery || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/melee_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Melee_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Melee_Mastery || 0 }}</span>
+              <span>{{ displayStats.Melee_Mastery || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/distance_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Distance_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Distance_Mastery || 0 }}</span>
+              <span>{{ displayStats.Distance_Mastery || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/healing_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Healing_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Healing_Mastery || 0 }}</span>
+              <span>{{ displayStats.Healing_Mastery || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/berserk_mastery.png" />
               <span class="ml-1">{{ getStatLabel('Berserk_Mastery') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Berserk_Mastery || 0 }}</span>
+              <span>{{ displayStats.Berserk_Mastery || 0 }}</span>
             </div>
           </div>
           <div class="flex flex-column flex-grow-1" style="max-width: 50%">
@@ -287,35 +287,35 @@
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/critical_resistance.png" />
               <span class="ml-1">{{ getStatLabel('Critical_Resistance') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Critical_Resistance || 0 }}</span>
+              <span>{{ displayStats.Critical_Resistance || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/rear_resistance.png" />
               <span class="ml-1">{{ getStatLabel('Rear_Resistance') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Rear_Resistance || 0 }}</span>
+              <span>{{ displayStats.Rear_Resistance || 0 }}</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/armor_given.png" />
               <span class="ml-1">{{ getStatLabel('Armor_Given') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Armor_Given || 0 }}%</span>
+              <span>{{ displayStats.Armor_Given || 0 }}%</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/armor_received.png" />
               <span class="ml-1">{{ getStatLabel('Armor_Received') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Armor_Received || 0 }}%</span>
+              <span>{{ displayStats.Armor_Received || 0 }}%</span>
             </div>
 
             <div class="stat-block pr-2">
               <p-image class="stat-icon" src="https://tmktahu.github.io/WakfuAssets/statistics/indirect_damage.png" />
               <span class="ml-1">{{ getStatLabel('Indirect_Damage') }}</span>
               <div class="flex-grow-1" />
-              <span>{{ stats.Indirect_Damage || 0 }}%</span>
+              <span>{{ displayStats.Indirect_Damage || 0 }}%</span>
             </div>
           </div>
         </div>
@@ -339,6 +339,12 @@ const props = defineProps({
   characterLevel: {
     type: Number,
     default: 1
+  },
+  // Bonos derivados de los puntos de característica del personaje activo
+  // (claves internas de useStats + especiales HP_Percent/Armor_Percent/Barrier)
+  characterBonusStats: {
+    type: Object,
+    default: null
   }
 })
 
@@ -357,18 +363,50 @@ const baseStats = computed(() => {
   }
 })
 
-// Stats a mostrar (equipo + base si está activado)
+// Claves especiales de característica que no se suman directamente
+const SPECIAL_BONUS_KEYS = ['HP_Percent', 'Armor_Percent', 'Barrier']
+
+// Stats a mostrar (equipo + base + características si está activado)
 const displayStats = computed(() => {
   if (!includeBaseStats.value) {
     return props.stats
   }
-  
+
   // Combinar stats del equipo con stats base
   const combined = { ...props.stats }
   Object.keys(baseStats.value).forEach(stat => {
     combined[stat] = (combined[stat] || 0) + baseStats.value[stat]
   })
-  
+
+  // Sumar bonos de puntos de característica del personaje activo
+  if (props.characterBonusStats) {
+    const ELEMENT_MASTERY_KEYS = ['Water_Mastery', 'Air_Mastery', 'Earth_Mastery', 'Fire_Mastery']
+    const ELEMENT_RES_KEYS = ['Water_Resistance', 'Air_Resistance', 'Earth_Resistance', 'Fire_Resistance']
+
+    Object.entries(props.characterBonusStats).forEach(([stat, value]) => {
+      if (SPECIAL_BONUS_KEYS.includes(stat)) return
+      // El dominio/resistencia elemental de características aplica a los 4 elementos
+      if (stat === 'Elemental_Mastery') {
+        ELEMENT_MASTERY_KEYS.forEach(key => {
+          combined[key] = (combined[key] || 0) + value
+        })
+        return
+      }
+      if (stat === 'Elemental_Resistance') {
+        ELEMENT_RES_KEYS.forEach(key => {
+          combined[key] = (combined[key] || 0) + value
+        })
+        return
+      }
+      combined[stat] = (combined[stat] || 0) + value
+    })
+    // % de puntos de vida se aplica sobre el total de PdV
+    const hpPercent = props.characterBonusStats.HP_Percent || 0
+    if (hpPercent > 0) {
+      combined.HP = Math.floor((combined.HP || 0) * (1 + hpPercent / 100))
+    }
+  }
+
   return combined
 })
 

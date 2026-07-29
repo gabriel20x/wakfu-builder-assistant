@@ -30,11 +30,17 @@
         >
           📚 {{ t('nav.myBuilds') }}
         </button>
-        <button 
-          @click="currentView = 'builder'" 
+        <button
+          @click="currentView = 'builder'"
           :class="['tab', { active: currentView === 'builder' }]"
         >
           🏗️ {{ t('nav.builder') }}
+        </button>
+        <button
+          @click="currentView = 'characters'"
+          :class="['tab', { active: currentView === 'characters' }]"
+        >
+          🧙 {{ t('nav.characters') }}
         </button>
         <button 
           @click="currentView = 'metadata'" 
@@ -56,8 +62,12 @@
         ref="buildGenerator"
         @edit-metadata="handleEditMetadata"
       />
-      <ItemMetadataAdmin 
-        v-else-if="currentView === 'metadata'" 
+      <MyCharacters
+        v-else-if="currentView === 'characters'"
+        @use-in-builder="handleUseCharacter"
+      />
+      <ItemMetadataAdmin
+        v-else-if="currentView === 'metadata'"
         ref="metadataAdmin"
         :preselected-item="preselectedItem"
       />
@@ -72,6 +82,7 @@ import { useI18n } from './composables/useI18n'
 import { useToast } from 'primevue/usetoast'
 import BuildViewer from './components/BuildViewer.vue'
 import BuildGenerator from './components/BuildGenerator.vue'
+import MyCharacters from './components/MyCharacters.vue'
 import ItemMetadataAdmin from './components/ItemMetadataAdmin.vue'
 
 const { currentLanguage, setLanguage, languageOptions } = useLanguage()
@@ -95,6 +106,24 @@ const handleEditMetadata = (item) => {
 
 const handleGoToBuilder = () => {
   currentView.value = 'builder'
+}
+
+const handleUseCharacter = async (character) => {
+  currentView.value = 'builder'
+
+  // Wait for BuildGenerator to mount
+  await new Promise(resolve => setTimeout(resolve, 100))
+
+  if (buildGenerator.value && buildGenerator.value.applyCharacter) {
+    buildGenerator.value.applyCharacter(character)
+
+    toast.add({
+      severity: 'success',
+      summary: t('toast.success'),
+      detail: t('characters.appliedToBuilder'),
+      life: 3000
+    })
+  }
 }
 
 const handleLoadBuild = async (buildData) => {

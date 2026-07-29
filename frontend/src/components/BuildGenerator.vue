@@ -38,6 +38,23 @@
         </div>
         
         <div class="panel-content">
+          <!-- Personaje activo (desde Mis PJ) -->
+          <div v-if="activeCharacter" class="config-section active-character-chip">
+            <span class="chip-emoji">🧙</span>
+            <div class="chip-info">
+              <span class="chip-name">{{ activeCharacter.name }}</span>
+              <span class="chip-meta">{{ t('characters.level') }} {{ activeCharacter.level }}</span>
+            </div>
+            <p-button
+              icon="pi pi-times"
+              text
+              rounded
+              size="small"
+              :title="t('characters.clearFromBuilder')"
+              @click="clearActiveCharacter"
+            />
+          </div>
+
           <!-- Character Level (AL INICIO - DROPDOWN) -->
           <div class="config-section level-section-top">
             <label>{{ t('config.characterLevel') }}</label>
@@ -309,10 +326,11 @@
             />
           </div>
           
-          <BuildStatSheet 
-            v-if="currentBuildStats" 
-            :stats="currentBuildStats" 
-            :character-level="characterLevel"
+          <BuildStatSheet
+            v-if="currentBuildStats"
+            :stats="currentBuildStats"
+            :character-level="activeCharacter?.level || characterLevel"
+            :character-bonus-stats="characterBonusStats"
           />
         </div>
       </div>
@@ -331,6 +349,7 @@ import { ref, computed, reactive, onMounted, watch, nextTick } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
 import { STAT_NAMES, getStatLabel } from '../composables/useStats'
+import { allocationToBonusStats } from '../lib/characteristics'
 import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import { useIgnoredItems } from '../composables/useIgnoredItems'
@@ -371,6 +390,30 @@ const selectedClass = ref(null)
 const selectedRole = ref(null)
 const classPresetSelectorRef = ref(null)
 
+// Personaje activo aplicado desde "Mis PJ"
+const activeCharacter = ref(null)
+
+const characterBonusStats = computed(() =>
+  activeCharacter.value
+    ? allocationToBonusStats(activeCharacter.value.allocation || {})
+    : null
+)
+
+const applyCharacter = (character) => {
+  activeCharacter.value = character
+  // El dropdown de nivel filtra items por nivel máximo: usar la opción más alta
+  // que el personaje pueda equipar
+  const options = levelOptions.value.map(o => o.value)
+  const fitting = options.filter(v => v <= character.level)
+  characterLevel.value = fitting.length ? Math.max(...fitting) : options[0]
+  saveCurrentConfig({ active_character: character })
+}
+
+const clearActiveCharacter = () => {
+  activeCharacter.value = null
+  saveCurrentConfig({ active_character: null })
+}
+
 const onEditMetadata = (item) => {
   emit('edit-metadata', item)
 }
@@ -388,6 +431,9 @@ onMounted(async () => {
   if (persistedConfig) {
     // Basic fields
     characterLevel.value = persistedConfig.level_max || characterLevel.value
+    if (persistedConfig.active_character) {
+      activeCharacter.value = persistedConfig.active_character
+    }
     includePet.value = persistedConfig.include_pet !== false
     includeAccessory.value = persistedConfig.include_accessory !== false
     onlyDroppable.value = persistedConfig.only_droppable === true
@@ -977,13 +1023,48 @@ const refreshBuildItems = async (buildsData) => {
 
 // Expose methods for parent component
 defineExpose({
-  loadBuild
+  loadBuild,
+  applyCharacter
 })
 </script>
 
 <style lang="scss" scoped>
 .build-generator {
   width: 100%;
+}
+
+.active-character-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  background: rgba(102, 126, 234, 0.12);
+  border: 1px solid rgba(102, 126, 234, 0.4);
+  border-radius: 8px;
+
+  .chip-emoji {
+    font-size: 1.3rem;
+  }
+
+  .chip-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+
+    .chip-name {
+      font-weight: 600;
+      color: #c3cdf5;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .chip-meta {
+      font-size: 0.75rem;
+      color: #8a96c9;
+    }
+  }
 }
 
 .generator-grid {
