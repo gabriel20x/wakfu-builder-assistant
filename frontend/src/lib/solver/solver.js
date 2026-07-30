@@ -204,6 +204,30 @@ export async function solveBuild(allItems, params = {}) {
     monsterTypes,
   });
 
+  // DEBUG: dump the fully-resolved search params (after defaults and element
+  // inference) so a reported build can be reproduced exactly. Copy/paste the
+  // JSON below into a bug report.
+  console.log(
+    '[solver] search params:\n' +
+      JSON.stringify(
+        {
+          level_max: levelMax,
+          level_window: levelWindow,
+          stat_weights: statWeights,
+          include_pet: includePet,
+          include_accessory: includeAccessory,
+          only_droppable: onlyDroppable,
+          damage_preferences: damagePreferences,
+          resistance_preferences: resistancePreferences,
+          ignored_item_ids: ignoredItemIds,
+          monster_types: monsterTypes,
+          eligible_item_count: eligibleItems.length,
+        },
+        null,
+        2
+      )
+  );
+
   const common = {
     statWeights,
     levelMax,
