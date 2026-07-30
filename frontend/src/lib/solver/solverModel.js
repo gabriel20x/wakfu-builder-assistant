@@ -37,6 +37,17 @@ export const SETTINGS = {
   // weapon gets zero credit for it (it wastes the unique relic slot), while a
   // relic giving +1 AP over the baseline keeps full credit for its AP.
   REDUNDANT_MAJOR_STAT_PENALTY: 1.0,
+  // Floor for the effective weight used when penalizing a slot that is MISSING
+  // its typical major stat (AP on BACK/NECK, MP on CHEST/LEGS).
+  //
+  // A user weight expresses "how much more of this stat do I want"; it is NOT a
+  // statement that the stat is expendable. AP/MP are near-binary on gear (1
+  // point you either have or don't) and losing one costs a tempo no amount of
+  // mastery buys back. Scaling the absence penalty by a low user weight (e.g.
+  // the MP: 1 that several class presets ship) made the penalty ~200 while a
+  // high-mastery item gained 1000+, so no-MP boots outranked every MP boot.
+  // Penalizing on max(userWeight, this floor) decouples the two meanings.
+  MISSING_MAJOR_STAT_WEIGHT_FLOOR: 5.0,
 };
 
 // Normalization factors based on stat rarity/frequency on items
@@ -443,7 +454,12 @@ export function computeItemScore(item, statWeights, levelMax, lambdaWeight, buil
 
     if (has(statWeights, 'AP')) {
       if (apValue <= 0) {
-        const baseApPenalty = statWeights.AP * 200;
+        // Same floor rationale as the MP block below.
+        const apPenaltyWeight = Math.max(
+          statWeights.AP,
+          SETTINGS.MISSING_MAJOR_STAT_WEIGHT_FLOOR
+        );
+        const baseApPenalty = apPenaltyWeight * 200;
         let totalCompensation = 0.0;
 
         if (mpValue > 0 && has(statWeights, 'MP')) {
@@ -472,7 +488,14 @@ export function computeItemScore(item, statWeights, levelMax, lambdaWeight, buil
 
     if (has(statWeights, 'MP')) {
       if (mpValue <= 0) {
-        const baseMpPenalty = statWeights.MP * 200;
+        // Penalize on at least the floor weight: a low MP weight means "don't
+        // stack MP", not "MP is optional on boots". See
+        // SETTINGS.MISSING_MAJOR_STAT_WEIGHT_FLOOR.
+        const mpPenaltyWeight = Math.max(
+          statWeights.MP,
+          SETTINGS.MISSING_MAJOR_STAT_WEIGHT_FLOOR
+        );
+        const baseMpPenalty = mpPenaltyWeight * 200;
         let totalCompensation = 0.0;
 
         if (apValue > 0 && has(statWeights, 'AP')) {
