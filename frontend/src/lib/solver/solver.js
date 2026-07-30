@@ -47,6 +47,72 @@ function emptyBuild(buildType) {
   };
 }
 
+/** [from, from-1, ..., to] descending; empty-safe when from < to. */
+function rangeDown(from, to) {
+  const out = [];
+  for (let v = from; v >= to; v--) out.push(v);
+  return out.length > 0 ? out : [from];
+}
+
+/**
+ * Solve a tier honoring AP/MP targets, relaxing them if infeasible.
+ *
+ * A hard target can be unreachable (level window too low, too many ignored
+ * items, an over-ambitious number). Rather than returning an empty build, walk
+ * the target down one point at a time and report what was actually achieved via
+ * `target_shortfall`, so the UI can say "12 AP not reachable, best was 11".
+ *
+ * MP relaxes before AP: AP is almost always the bigger damage lever, so when
+ * both can't be met the AP target is the one worth keeping.
+ */
+async function solveWithTargets(eligibleItems, opts) {
+  const { apTarget, mpTarget, baseAp, baseMp } = opts;
+
+  if (apTarget == null && mpTarget == null) {
+    return solveSingleBuild(eligibleItems, opts);
+  }
+
+  // Candidate (ap, mp) pairs ordered by total shortfall, so the first feasible
+  // one is the closest to what was asked. Within the same shortfall, prefer
+  // giving up MP over AP (AP is the bigger damage lever).
+  const apSteps = apTarget == null ? [null] : rangeDown(apTarget, baseAp);
+  const mpSteps = mpTarget == null ? [null] : rangeDown(mpTarget, baseMp);
+
+  const attempts = [];
+  for (const ap of apSteps) {
+    for (const mp of mpSteps) {
+      attempts.push([ap, mp]);
+    }
+  }
+  attempts.sort((a, b) => {
+    const lossA = (apTarget == null ? 0 : apTarget - a[0]) + (mpTarget == null ? 0 : mpTarget - a[1]);
+    const lossB = (apTarget == null ? 0 : apTarget - b[0]) + (mpTarget == null ? 0 : mpTarget - b[1]);
+    if (lossA !== lossB) return lossA - lossB;
+    // Tie-break: keep the higher AP.
+    return (b[0] ?? 0) - (a[0] ?? 0);
+  });
+
+  for (const [ap, mp] of attempts) {
+    const build = await solveSingleBuild(eligibleItems, {
+      ...opts,
+      apTarget: ap,
+      mpTarget: mp,
+    });
+    if (build.items.length > 0) {
+      const shortfall = {};
+      if (apTarget != null && ap !== apTarget) shortfall.AP = { requested: apTarget, achieved: ap };
+      if (mpTarget != null && mp !== mpTarget) shortfall.MP = { requested: mpTarget, achieved: mp };
+      if (Object.keys(shortfall).length > 0) {
+        build.target_shortfall = shortfall;
+      }
+      return build;
+    }
+  }
+
+  // Nothing worked even fully relaxed — fall back to an unconstrained solve.
+  return solveSingleBuild(eligibleItems, { ...opts, apTarget: null, mpTarget: null });
+}
+
 /**
  * Solve a single build tier. Port of _solve_single_build().
  */
@@ -58,6 +124,10 @@ async function solveSingleBuild(eligibleItems, {
   buildType,
   damagePreferences,
   resistancePreferences,
+  apTarget = null,
+  mpTarget = null,
+  baseAp = 0,
+  baseMp = 0,
 }) {
   const { lpText, items } = buildLpModel(eligibleItems, {
     statWeights,
@@ -67,6 +137,10 @@ async function solveSingleBuild(eligibleItems, {
     buildType,
     damagePreferences,
     resistancePreferences,
+    apTarget,
+    mpTarget,
+    baseAp,
+    baseMp,
   });
 
   // PuLP happily "solves" an empty problem as Optimal with no items;
@@ -204,42 +278,54 @@ export async function solveBuild(allItems, params = {}) {
     monsterTypes,
   });
 
+  // AP/MP targets: total the finished character should reach. `base_ap`/`base_mp`
+  // is what it already has without gear (innate + major aptitudes), so the
+  // constraint only asks the items for the remainder. null = no target.
+  const apTarget = params.ap_target != null ? params.ap_target : null;
+  const mpTarget = params.mp_target != null ? params.mp_target : null;
+  const baseAp = params.base_ap != null ? params.base_ap : 0;
+  const baseMp = params.base_mp != null ? params.base_mp : 0;
+
   const common = {
     statWeights,
     levelMax,
     damagePreferences,
     resistancePreferences,
+    apTarget,
+    mpTarget,
+    baseAp,
+    baseMp,
   };
 
-  const easy = await solveSingleBuild(eligibleItems, {
+  const easy = await solveWithTargets(eligibleItems, {
     ...common,
     difficultyMax: SETTINGS.EASY_DIFFICULTY_MAX,
     lambdaWeight: SETTINGS.EASY_LAMBDA,
     buildType: 'easy',
   });
 
-  const medium = await solveSingleBuild(eligibleItems, {
+  const medium = await solveWithTargets(eligibleItems, {
     ...common,
     difficultyMax: SETTINGS.MEDIUM_DIFFICULTY_MAX,
     lambdaWeight: SETTINGS.MEDIUM_LAMBDA,
     buildType: 'medium',
   });
 
-  const hardEpic = await solveSingleBuild(eligibleItems, {
+  const hardEpic = await solveWithTargets(eligibleItems, {
     ...common,
     difficultyMax: SETTINGS.HARD_DIFFICULTY_MAX,
     lambdaWeight: SETTINGS.HARD_LAMBDA,
     buildType: 'hard_epic',
   });
 
-  const hardRelic = await solveSingleBuild(eligibleItems, {
+  const hardRelic = await solveWithTargets(eligibleItems, {
     ...common,
     difficultyMax: SETTINGS.HARD_DIFFICULTY_MAX,
     lambdaWeight: SETTINGS.HARD_LAMBDA,
     buildType: 'hard_relic',
   });
 
-  const full = await solveSingleBuild(eligibleItems, {
+  const full = await solveWithTargets(eligibleItems, {
     ...common,
     difficultyMax: SETTINGS.HARD_DIFFICULTY_MAX,
     lambdaWeight: SETTINGS.HARD_LAMBDA,

@@ -134,9 +134,11 @@ function checkResponseShape(builds, label) {
     assert(Array.isArray(build.items), `${label}: ${tier} items is array`);
     assert(typeof build.total_stats === 'object', `${label}: ${tier} total_stats is object`);
     assert(typeof build.total_difficulty === 'number', `${label}: ${tier} total_difficulty is number`);
-    // Response contract: exactly the 4 BuildResponse keys (router strips extras)
+    // Response contract: the 4 BuildResponse keys (router strips extras), plus
+    // the optional `target_shortfall`, present only when an AP/MP target had to
+    // be relaxed to keep the tier feasible.
     assertEqual(
-      Object.keys(build).sort(),
+      Object.keys(build).filter((k) => k !== 'target_shortfall').sort(),
       ['build_type', 'items', 'total_difficulty', 'total_stats'],
       `${label}: ${tier} has exactly the BuildResponse keys`
     );
@@ -721,6 +723,114 @@ async function testIntegration() {
 }
 
 // ---------------------------------------------------------------------------
+// AP/MP targets (hard constraint + relaxation fallback)
+// ---------------------------------------------------------------------------
+async function testApMpTargets() {
+  section('AP/MP targets');
+
+  const itemsPath = path.resolve(__dirname, '..', 'public', 'data', 'items.json');
+  const allItems = JSON.parse(readFileSync(itemsPath, 'utf-8'));
+
+  // Mirrors a real reported config: high mastery weights, low MP weight.
+  const base = {
+    level_max: 170,
+    level_window: 15,
+    stat_weights: {
+      HP: 5, AP: 10, MP: 1,
+      Water_Mastery: 7, Air_Mastery: 7,
+      Critical_Hit: 9, Dodge: 6, Critical_Mastery: 8,
+      Rear_Mastery: 10, Melee_Mastery: 10,
+    },
+    damage_preferences: ['Air', 'Water', 'Fire', 'Earth'],
+    resistance_preferences: ['Fire', 'Water', 'Earth', 'Air'],
+    ignored_item_ids: [],
+    monster_types: [],
+  };
+  const BASE_AP = 7; // innate 6 + major aptitude
+  const BASE_MP = 4; // innate 3 + major aptitude
+
+  const totalFor = (build, stat, floor) => floor + (build.total_stats?.[stat] || 0);
+
+  // 1) A reachable target is met exactly or exceeded.
+  const withTargets = await solveBuild(allItems, {
+    ...base, ap_target: 12, mp_target: 6, base_ap: BASE_AP, base_mp: BASE_MP,
+  });
+  for (const tier of TIERS) {
+    const build = withTargets[tier];
+    if (build.items.length === 0) continue;
+    if (build.target_shortfall) continue; // relaxed tiers checked separately
+    assert(
+      totalFor(build, 'AP', BASE_AP) >= 12,
+      `targets: ${tier} reaches AP target (got ${totalFor(build, 'AP', BASE_AP)})`
+    );
+    assert(
+      totalFor(build, 'MP', BASE_MP) >= 6,
+      `targets: ${tier} reaches MP target (got ${totalFor(build, 'MP', BASE_MP)})`
+    );
+  }
+
+  // 2) A relaxed tier reports what it actually achieved, and honors it.
+  for (const tier of TIERS) {
+    const build = withTargets[tier];
+    const sf = build.target_shortfall;
+    if (!sf) continue;
+    if (sf.AP) {
+      assert(sf.AP.achieved < sf.AP.requested, `targets: ${tier} shortfall AP is a real shortfall`);
+      assert(
+        totalFor(build, 'AP', BASE_AP) >= sf.AP.achieved,
+        `targets: ${tier} meets its relaxed AP level`
+      );
+    }
+    if (sf.MP) {
+      assert(sf.MP.achieved < sf.MP.requested, `targets: ${tier} shortfall MP is a real shortfall`);
+      assert(
+        totalFor(build, 'MP', BASE_MP) >= sf.MP.achieved,
+        `targets: ${tier} meets its relaxed MP level`
+      );
+    }
+  }
+
+  // 3) Targets trade surplus away: constraining AP up should not silently drop
+  //    the build, and total_stats must stay consistent.
+  checkResponseShape(withTargets, 'targets');
+  for (const tier of TIERS) {
+    checkTotalStats(withTargets[tier], base.damage_preferences, base.resistance_preferences, `targets:${tier}`);
+  }
+
+  // 4) An impossible target still returns a usable build, flagged as short.
+  const impossible = await solveBuild(allItems, {
+    ...base, ap_target: 20, mp_target: 12, base_ap: BASE_AP, base_mp: BASE_MP,
+  });
+  assert(impossible.full.items.length > 0, 'targets: impossible target still yields a build');
+  assert(
+    impossible.full.target_shortfall != null,
+    'targets: impossible target reports a shortfall'
+  );
+
+  // 5) A target already covered by the character base constrains nothing:
+  //    same result as no target at all.
+  const noTarget = await solveBuild(allItems, base);
+  const coveredByBase = await solveBuild(allItems, {
+    ...base, ap_target: BASE_AP, mp_target: BASE_MP, base_ap: BASE_AP, base_mp: BASE_MP,
+  });
+  assertEqual(
+    coveredByBase.full.items.map((i) => i.item_id).sort().join(','),
+    noTarget.full.items.map((i) => i.item_id).sort().join(','),
+    'targets: target met by base alone changes nothing'
+  );
+  assert(
+    coveredByBase.full.target_shortfall == null,
+    'targets: target met by base reports no shortfall'
+  );
+
+  // 6) Omitting targets keeps the previous behaviour untouched.
+  assert(
+    noTarget.full.target_shortfall == null,
+    'targets: no target set reports no shortfall'
+  );
+}
+
+// ---------------------------------------------------------------------------
 // Runner
 // ---------------------------------------------------------------------------
 async function main() {
@@ -732,6 +842,7 @@ async function main() {
   await testRedundantMajorStatPenalty();
   await testPreviousCapEpicRelic();
   await testIntegration();
+  await testApMpTargets();
 
   console.log(`\n${passed} passed, ${failed} failed (${Date.now() - t0} ms total)`);
   if (failed > 0) {

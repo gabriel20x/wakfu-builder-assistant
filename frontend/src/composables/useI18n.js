@@ -105,6 +105,15 @@ const translations = {
     'config.generateButton': 'Generar Builds',
     'config.generating': 'Generando...',
     
+    // Objetivos PA/PM
+    'targets.title': 'Objetivos de PA / PM',
+    'targets.hint': 'Fija el total que quieres alcanzar. El solver lo garantiza y gasta el resto en daño, en vez de acumular PA/PM que no usas.',
+    'targets.base': 'base',
+    'targets.gear': 'equipo',
+    'targets.noCharacter': 'Sin personaje activo se asume la base sin aptitudes mayores (6 PA / 3 PM). Aplica un PJ desde «Mis PJ» para mayor precisión.',
+    'targets.unreachable': 'Objetivo no alcanzable',
+    'targets.unreachableDetail': 'Se generó el build más cercano posible:',
+
     // Stat Categories
     'stats.main': 'Características',
     'stats.masteries': 'Dominios y Resistencias',
@@ -681,6 +690,15 @@ const translations = {
     'config.generateButton': 'Generate Builds',
     'config.generating': 'Generating...',
     
+    // AP/MP targets
+    'targets.title': 'AP / MP Targets',
+    'targets.hint': 'Set the total you want to reach. The solver guarantees it and spends everything else on damage, instead of hoarding AP/MP you never use.',
+    'targets.base': 'base',
+    'targets.gear': 'gear',
+    'targets.noCharacter': 'With no active character the base assumes no major aptitudes (6 AP / 3 MP). Apply a character from "My Characters" for accuracy.',
+    'targets.unreachable': 'Target not reachable',
+    'targets.unreachableDetail': 'Generated the closest possible build:',
+
     // Stat Categories
     'stats.main': 'Main Stats',
     'stats.masteries': 'Masteries & Resistances',
@@ -1257,6 +1275,15 @@ const translations = {
     'config.generateButton': 'Générer Builds',
     'config.generating': 'Génération...',
     
+    // Objectifs PA/PM
+    'targets.title': 'Objectifs PA / PM',
+    'targets.hint': 'Fixez le total à atteindre. Le solveur le garantit et consacre le reste aux dégâts, au lieu d\'accumuler des PA/PM inutiles.',
+    'targets.base': 'base',
+    'targets.gear': 'équipement',
+    'targets.noCharacter': 'Sans personnage actif, la base suppose aucune aptitude majeure (6 PA / 3 PM). Appliquez un personnage depuis « Mes persos » pour plus de précision.',
+    'targets.unreachable': 'Objectif inatteignable',
+    'targets.unreachableDetail': 'Build le plus proche généré :',
+
     // Stat Categories
     'stats.main': 'Caractéristiques',
     'stats.masteries': 'Maîtrises & Résistances',

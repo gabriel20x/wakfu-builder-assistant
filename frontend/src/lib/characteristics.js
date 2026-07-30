@@ -12,6 +12,26 @@ export const MAJOR_LEVELS = [25, 75, 125, 175, 225]
 
 export const MAX_CHARACTER_LEVEL = 245
 
+// PA/PM que todo personaje tiene antes de equipo y aptitudes.
+export const BASE_AP = 6
+export const BASE_MP = 3
+
+/**
+ * PA/PM base de un personaje: los puntos innatos más los que aportan las
+ * aptitudes mayores (majorAp / majorMp). Es el punto de partida sobre el que
+ * el solver debe alcanzar un objetivo de PA/PM: el equipo solo tiene que
+ * cubrir la diferencia.
+ *
+ * @param {Object} bonusStats - salida de allocationToBonusStats()
+ * @returns {{AP: number, MP: number}}
+ */
+export function baseApMp(bonusStats = null) {
+  return {
+    AP: BASE_AP + (bonusStats?.AP || 0),
+    MP: BASE_MP + (bonusStats?.MP || 0),
+  }
+}
+
 // statsPerPoint usa las claves internas de useStats.js. Claves especiales que
 // no existen como stat de equipo: HP_Percent, Armor_Percent, Barrier.
 export const APTITUDES = [

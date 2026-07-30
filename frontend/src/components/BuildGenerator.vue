@@ -128,6 +128,64 @@
               </div>
             </div>
             
+            <!-- Objetivos de PA/PM -->
+            <div class="stat-category ap-mp-targets">
+              <div class="category-header" @click="toggleCategory('targets')">
+                <i class="pi pi-bullseye category-icon"></i>
+                <span>{{ t('targets.title') }}</span>
+                <i class="pi" :class="categories.targets ? 'pi-chevron-up' : 'pi-chevron-down'"></i>
+              </div>
+              <div v-show="categories.targets" class="category-content">
+                <p class="targets-hint">{{ t('targets.hint') }}</p>
+
+                <div class="target-row" :class="{ 'target-off': !apTargetEnabled }">
+                  <p-checkbox v-model="apTargetEnabled" :binary="true" input-id="ap-target-cb" />
+                  <label for="ap-target-cb" class="target-label">
+                    <span class="target-icon">⭐</span>{{ t('stat.AP') }}
+                  </label>
+                  <p-inputNumber
+                    v-model="apTarget"
+                    :disabled="!apTargetEnabled"
+                    :min="baseApMpValues.AP"
+                    :max="16"
+                    show-buttons
+                    button-layout="horizontal"
+                    increment-button-icon="pi pi-plus"
+                    decrement-button-icon="pi pi-minus"
+                    class="target-input"
+                  />
+                  <span v-if="apTargetEnabled" class="target-breakdown">
+                    {{ t('targets.base') }} {{ baseApMpValues.AP }} + {{ t('targets.gear') }} {{ apFromGear }}
+                  </span>
+                </div>
+
+                <div class="target-row" :class="{ 'target-off': !mpTargetEnabled }">
+                  <p-checkbox v-model="mpTargetEnabled" :binary="true" input-id="mp-target-cb" />
+                  <label for="mp-target-cb" class="target-label">
+                    <span class="target-icon">⚡</span>{{ t('stat.MP') }}
+                  </label>
+                  <p-inputNumber
+                    v-model="mpTarget"
+                    :disabled="!mpTargetEnabled"
+                    :min="baseApMpValues.MP"
+                    :max="9"
+                    show-buttons
+                    button-layout="horizontal"
+                    increment-button-icon="pi pi-plus"
+                    decrement-button-icon="pi pi-minus"
+                    class="target-input"
+                  />
+                  <span v-if="mpTargetEnabled" class="target-breakdown">
+                    {{ t('targets.base') }} {{ baseApMpValues.MP }} + {{ t('targets.gear') }} {{ mpFromGear }}
+                  </span>
+                </div>
+
+                <p v-if="!activeCharacter && (apTargetEnabled || mpTargetEnabled)" class="targets-warning">
+                  <i class="pi pi-info-circle"></i> {{ t('targets.noCharacter') }}
+                </p>
+              </div>
+            </div>
+
             <!-- Características (Principales) -->
             <div class="stat-category">
               <div class="category-header" @click="toggleCategory('main')">
@@ -350,7 +408,7 @@ import { ref, computed, reactive, onMounted, watch, nextTick } from 'vue'
 import { useToast } from 'primevue/usetoast'
 import { builderAPI } from '../services/api'
 import { STAT_NAMES, getStatLabel } from '../composables/useStats'
-import { allocationToBonusStats } from '../lib/characteristics'
+import { allocationToBonusStats, baseApMp } from '../lib/characteristics'
 import { useI18n } from '../composables/useI18n'
 import { useBuildPersistence } from '../composables/useBuildPersistence'
 import { useIgnoredItems } from '../composables/useIgnoredItems'
@@ -402,6 +460,23 @@ const characterBonusStats = computed(() =>
     : null
 )
 
+// ===== Objetivos de PA/PM =====
+// PA/PM son stats de umbral, no acumulativos: pasar de 11 a 12 PA da un hechizo
+// más por turno, mientras el 13.º puede no dar nada. Un peso no expresa eso —
+// solo acumula. Fijar un objetivo lo vuelve una restricción del modelo y libera
+// el resto del presupuesto para daño.
+const apTargetEnabled = ref(false)
+const mpTargetEnabled = ref(false)
+const apTarget = ref(12)
+const mpTarget = ref(6)
+
+// Base sin equipo: innata + aptitudes mayores del personaje activo.
+const baseApMpValues = computed(() => baseApMp(characterBonusStats.value))
+
+// Lo que el equipo debe aportar para llegar al objetivo.
+const apFromGear = computed(() => Math.max(0, apTarget.value - baseApMpValues.value.AP))
+const mpFromGear = computed(() => Math.max(0, mpTarget.value - baseApMpValues.value.MP))
+
 const applyCharacter = (character) => {
   activeCharacter.value = character
   // El dropdown de nivel filtra items por nivel máximo: usar la opción más alta
@@ -448,6 +523,14 @@ onMounted(async () => {
     }
     if (Array.isArray(persistedConfig.monster_types)) {
       selectedMonsterTypes.value = persistedConfig.monster_types
+    }
+    apTargetEnabled.value = persistedConfig.ap_target_enabled === true
+    mpTargetEnabled.value = persistedConfig.mp_target_enabled === true
+    if (typeof persistedConfig.ap_target === 'number') {
+      apTarget.value = persistedConfig.ap_target
+    }
+    if (typeof persistedConfig.mp_target === 'number') {
+      mpTarget.value = persistedConfig.mp_target
     }
     // Restore active tab
     if (typeof persistedConfig.active_tab_index === 'number') {
@@ -567,6 +650,7 @@ const currentEnchantKey = computed(() => {
 
 // Category collapse state
 const categories = reactive({
+  targets: true,
   main: true,
   masteries: true,
   combat: false,
@@ -788,7 +872,11 @@ const generateBuilds = async () => {
       damage_preferences: damagePreferences.value,
       resistance_preferences: resistancePreferences.value,
       ignored_item_ids: ignoredItemIds.value,
-      monster_types: selectedMonsterTypes.value
+      monster_types: selectedMonsterTypes.value,
+      ap_target: apTargetEnabled.value ? apTarget.value : null,
+      mp_target: mpTargetEnabled.value ? mpTarget.value : null,
+      base_ap: baseApMpValues.value.AP,
+      base_mp: baseApMpValues.value.MP
     })
     
     builds.value = response.data
@@ -805,17 +893,46 @@ const generateBuilds = async () => {
       monster_types: selectedMonsterTypes.value,
       selectedClass: selectedClass.value,
       selectedRole: selectedRole.value,
-      active_tab_index: activeTabIndex.value
+      active_tab_index: activeTabIndex.value,
+      ap_target_enabled: apTargetEnabled.value,
+      mp_target_enabled: mpTargetEnabled.value,
+      ap_target: apTarget.value,
+      mp_target: mpTarget.value
     }
     saveCurrentConfig(configSnapshot)
     saveCurrentBuild(builds.value, configSnapshot)
-    
+
     toast.add({
       severity: 'success',
       summary: t('toast.buildsGenerated'),
       detail: `5 ${t('toast.buildsGeneratedDetail')} (${enabledCount} ${t('toast.statsSelected')})`,
       life: 3000
     })
+
+    // Avisar si algún tier no pudo alcanzar el objetivo pedido. El solver relaja
+    // el umbral en vez de devolver vacío, así que sin este aviso el recorte
+    // pasaría inadvertido.
+    const shortfalls = Object.values(builds.value || {})
+      .filter(b => b && b.target_shortfall)
+      .map(b => b.target_shortfall)
+    if (shortfalls.length > 0) {
+      const parts = []
+      for (const stat of ['AP', 'MP']) {
+        const worst = shortfalls
+          .map(s => s[stat])
+          .filter(Boolean)
+          .sort((a, b) => a.achieved - b.achieved)[0]
+        if (worst) {
+          parts.push(`${t(`stat.${stat}`)}: ${worst.requested} → ${worst.achieved}`)
+        }
+      }
+      toast.add({
+        severity: 'warn',
+        summary: t('targets.unreachable'),
+        detail: `${t('targets.unreachableDetail')} ${parts.join(', ')}`,
+        life: 6000
+      })
+    }
   } catch (err) {
     error.value = err.response?.data?.detail || t('toast.errorGenerating')
     
@@ -1425,6 +1542,73 @@ defineExpose({
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+.ap-mp-targets {
+  .targets-hint {
+    margin: 0.25rem 0.25rem 0.6rem;
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.55);
+  }
+
+  .target-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.25rem;
+    flex-wrap: wrap;
+    transition: opacity 0.2s;
+
+    &.target-off {
+      opacity: 0.5;
+    }
+  }
+
+  .target-label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-width: 3.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .target-icon {
+    font-size: 0.95rem;
+  }
+
+  .target-input {
+    width: 7.5rem;
+
+    :deep(input) {
+      width: 3rem;
+      text-align: center;
+      font-weight: 700;
+    }
+  }
+
+  .target-breakdown {
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.45);
+    white-space: nowrap;
+  }
+
+  .targets-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin: 0.4rem 0.25rem 0.1rem;
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: rgba(255, 193, 7, 0.75);
+
+    i {
+      margin-top: 0.1rem;
+    }
   }
 }
 

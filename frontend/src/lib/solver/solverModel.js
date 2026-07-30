@@ -567,6 +567,10 @@ export function buildLpModel(eligibleItems, {
   buildType,
   damagePreferences = null,
   resistancePreferences = null,
+  apTarget = null,
+  mpTarget = null,
+  baseAp = 0,
+  baseMp = 0,
 }) {
   const items = applyBuildTypeFilter(eligibleItems, buildType, levelMax);
 
@@ -603,6 +607,32 @@ export function buildLpModel(eligibleItems, {
     } else {
       addConstraint(`max_one_${slot}`, `${varsInSlot.join(' + ')} <= 1`);
     }
+  }
+
+  // Constraint: AP/MP targets. These stats are threshold-shaped, not additive:
+  // the jump from 11 to 12 AP buys a spell per turn, while a 13th point may buy
+  // nothing. A weight can't express that — it just hoards the stat. Stating the
+  // target as a constraint lets the objective spend everything else on damage.
+  // `base*` is what the character already has (innate + major aptitudes), so
+  // gear only needs to cover the remainder.
+  for (const [statName, target, base] of [['AP', apTarget, baseAp], ['MP', mpTarget, baseMp]]) {
+    if (target == null) continue;
+    const needed = target - base;
+    if (needed <= 0) continue; // already met without any gear
+
+    const terms = [];
+    for (const item of items) {
+      // Raw stats: AP/MP never come from random elemental rolls.
+      const value = (item.stats || {})[statName] || 0;
+      if (value === 0) continue;
+      const sign = value < 0 ? '-' : '+';
+      terms.push(`${sign} ${fmt(Math.abs(value))} ${varName(item)}`);
+    }
+    if (terms.length === 0) continue; // no item supplies it; infeasible anyway
+
+    // Strip a leading '+ ' so the expression starts with a term.
+    const expr = terms.join(' ').replace(/^\+\s*/, '');
+    addConstraint(`${statName.toLowerCase()}_target`, `${expr} >= ${fmt(needed)}`);
   }
 
   // Constraint: rings cannot be duplicated (same item_id OR same base name)
